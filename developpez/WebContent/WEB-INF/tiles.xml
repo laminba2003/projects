@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+  <definition name="baseLayout" template="/template.jsp">
+      <put-attribute name="title"  value="Template"/>
+      <put-attribute name="header"   value="/header.jsp"/> 
+      <put-attribute name="menu"  value="menu"/>
+      <put-attribute name="content"   value="content"/>
+  </definition>
+  
+  <definition name="index" template="/index.jsp">
+      <put-attribute name="title"  value="Home"/>
+      <put-attribute name="header"   value="/header.jsp"/>      
+  </definition>
+  
+  <definition name="c" extends="baseLayout">
+      <put-attribute name="title"  value="Langage C"/>
+       <put-attribute name="menu"   value="/tutorials/c/menu.jsp"/> 
+      <put-attribute name="content"   value="/tutorials/c/index.jsp"/>      
+  </definition>
+  
+  <definition name="cplus" extends="baseLayout">
+      <put-attribute name="title"  value="Langage C++"/>
+       <put-attribute name="menu"   value="/tutorials/c++/menu.jsp"/> 
+      <put-attribute name="content"   value="/tutorials/c++/index.jsp"/>      
+  </definition>
+  
+  <definition name="java" extends="baseLayout">
+      <put-attribute name="title"  value="Langage Java"/>
+       <put-attribute name="menu"   value="/tutorials/java/menu.jsp"/> 
+      <put-attribute name="content"   value="/tutorials/java/index.jsp"/>      
+  </definition>
+  
+   <definition name="php" extends="baseLayout">
+      <put-attribute name="title"  value="Langage Php"/>
+       <put-attribute name="menu"   value="/tutorials/php/menu.jsp"/> 
+      <put-attribute name="content"   value="/tutorials/php/index.jsp"/>      
+  </definition>
+  
+   <definition name="javascript" extends="baseLayout">
+      <put-attribute name="title"  value="Langage JavaScript"/>
+       <put-attribute name="menu"   value="/tutorials/javascript/menu.jsp"/> 
+      <put-attribute name="content"   value="/tutorials/javascript/index.jsp"/>      
+  </definition>
+  
+   <definition name="node" extends="baseLayout">
+      <put-attribute name="title"  value="Node"/>
+       <put-attribute name="menu"   value="/tutorials/node/menu.jsp"/> 
+      <put-attribute name="content"   value="/tutorials/node/index.jsp"/>      
+  </definition>
+  
+  <definition name="web" extends="baseLayout">
+      <put-attribute name="title"  value="Web"/>
+       <put-attribute name="menu"   value="/tutorials/web/menu.jsp"/> 
+      <put-attribute name="content"   value="/tutorials/web/index.jsp"/>      
+  </definition>
+  
+  <definition name="mobile" extends="baseLayout">
+      <put-attribute name="title"  value="Mobile"/>
+       <put-attribute name="menu"   value="/tutorials/mobile/menu.jsp"/> 
+      <put-attribute name="content"   value="/tutorials/mobile/index.jsp"/>      
+  </definition>
+    
+   <definition name="poo" extends="baseLayout">
+      <put-attribute name="title"  value="POO"/>
+       <put-attribute name="menu"   value="/tutorials/poo/menu.jsp"/> 
+      <put-attribute name="content"   value="/tutorials/poo/index.jsp"/>      
+  </definition>
+  
+   <definition name="uml" extends="baseLayout">
+      <put-attribute name="title"  value="UML"/>
+       <put-attribute name="menu"   value="/tutorials/uml/menu.jsp"/> 
+      <put-attribute name="content"   value="/tutorials/uml/index.jsp"/>      
+  </definition>
+  
+  <definition name="patterns" extends="baseLayout">
+      <put-attribute name="title"  value="Patterns"/>
+       <put-attribute name="menu"   value="/tutorials/patterns/menu.jsp"/> 
+      <put-attribute name="content"   value="/tutorials/patterns/index.jsp"/>      
+  </definition>
+  
+  <definition name="classe" extends="poo">
+      <put-attribute name="title"  value="POO/Classe"/>
+      <put-attribute name="content"   value="/tutorials/poo/classe.jsp"/>      
+  </definition>
+  
+   <definition name="objet" extends="poo">
+      <put-attribute name="title"  value="POO/Objet"/>
+      <put-attribute name="content"   value="/tutorials/poo/objet.jsp"/>      
+  </definition>
+  
+  <definition name="association" extends="poo">
+      <put-attribute name="title"  value="POO/Association"/>
+      <put-attribute name="content"   value="/tutorials/poo/association.jsp"/>      
+  </definition>
+  
+  <definition name="heritage" extends="poo">
+      <put-attribute name="title"  value="POO/Objet"/>
+      <put-attribute name="content"   value="/tutorials/poo/heritage.jsp"/>      
+  </definition>
+  
+  <definition name="interface" extends="poo">
+      <put-attribute name="title"  value="POO/Interface"/>
+      <put-attribute name="content"   value="/tutorials/poo/interface.jsp"/>      
+  </definition>
+  
+  <definition name="package" extends="poo">
+      <put-attribute name="title"  value="POO/Package"/>
+      <put-attribute name="content"   value="/tutorials/poo/package.jsp"/>      
+  </definition>
+  
+  <definition name="api" extends="poo">
+      <put-attribute name="title"  value="POO/API"/>
+      <put-attribute name="content"   value="/tutorials/poo/api.jsp"/>      
+  </definition>
+  
+  <definition name="pattern" extends="poo">
+      <put-attribute name="title"  value="POO/Pattern"/>
+      <put-attribute name="content"   value="/tutorials/poo/pattern.jsp"/>      
+  </definition>
+  
+   <definition name="poo-exercices" extends="poo">
+      <put-attribute name="title"  value="POO/Exercices"/>
+      <put-attribute name="content"   value="/tutorials/poo/exercices.jsp"/>      
+  </definition>
+ 
+</tiles-definitions>

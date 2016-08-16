@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   <constant name="struts.devMode" value="true" />
+   
+   <package name="default" namespace="/" extends="tiles-default">
+     
+     <default-action-ref name="index"></default-action-ref>
+     
+      <action name="index">
+            <result name="success" type="tiles">index</result>
+      </action>
+      
+      <action name="c">
+            <result name="success" type="tiles">c</result>
+      </action>
+      
+      <action name="cplus">
+            <result name="success" type="tiles">cplus</result>
+      </action>
+      
+      <action name="java">
+            <result name="success" type="tiles">java</result>
+      </action>
+      
+      <action name="php">
+            <result name="success" type="tiles">php</result>
+      </action>
+      
+       <action name="javascript">
+            <result name="success" type="tiles">javascript</result>
+      </action>
+      
+      <action name="node">
+            <result name="success" type="tiles">node</result>
+      </action>
+      
+      <action name="web">
+            <result name="success" type="tiles">web</result>
+      </action>
+      
+      <action name="mobile">
+            <result name="success" type="tiles">mobile</result>
+      </action>
+      
+       <action name="poo">
+            <result name="success" type="tiles">poo</result>
+      </action>
+      
+      <action name="uml">
+            <result name="success" type="tiles">uml</result>
+      </action>
+      
+      <action name="patterns">
+            <result name="success" type="tiles">patterns</result>
+      </action>
+      
+   </package>
+   
+  
+   <package name="poo" namespace="/poo" extends="tiles-default">
+     
+      
+       <action name="classe">
+            <result name="success" type="tiles">classe</result>
+      </action>
+      
+       <action name="objet">
+            <result name="success" type="tiles">objet</result>
+      </action>
+      
+      <action name="association">
+            <result name="success" type="tiles">association</result>
+      </action>
+      
+      <action name="heritage">
+            <result name="success" type="tiles">heritage</result>
+      </action>
+      
+      <action name="interface">
+            <result name="success" type="tiles">interface</result>
+      </action>
+      
+      <action name="package">
+            <result name="success" type="tiles">package</result>
+      </action>
+      
+      <action name="api">
+            <result name="success" type="tiles">api</result>
+      </action>
+      
+      <action name="pattern">
+            <result name="success" type="tiles">pattern</result>
+      </action>
+      
+       <action name="exercices">
+            <result name="success" type="tiles">poo-exercices</result>
+      </action>
+      
+   </package>
+   
+  
+</struts>
