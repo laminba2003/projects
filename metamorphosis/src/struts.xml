@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+	<constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+	<constant name="struts.patternMatcher" value="regex" />
+	
+   <package name="root" extends="tiles-default">
+   
+     <interceptors>   
+         <interceptor name="moduleInterceptor" class="org.metamorphosis.core.ModuleInterceptor"></interceptor>
+         <interceptor-stack name="moduleStack">
+         	<interceptor-ref name="moduleInterceptor"/>
+        	 <interceptor-ref name="defaultStack" />
+         </interceptor-stack>
+     </interceptors>
+     
+     <default-interceptor-ref name="moduleStack"></default-interceptor-ref>
+     
+     <default-action-ref name="index"></default-action-ref>
+     
+     <action name="">
+            <result name="success">/index.jsp</result>
+      </action>
+      
+      <action name="index">
+            <result name="success">/index.jsp</result>
+      </action>
+      
+      <action name="{module}">
+	      	<exception-mapping exception="org.apache.tiles.definition.NoSuchDefinitionException"
+	        result="error" />
+            <result name="success" type="tiles">{1}</result>
+            <result name="error" type="redirect">/</result>
+      </action>
+       
+   </package>
+    
+</struts>

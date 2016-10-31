@@ -1,0 +1,149 @@
+.icon-16 {
+	background-image: url("../images/icon-16.png");
+}
+
+.icon-32 {
+	background-image: url("../images/icon-32.png");
+}
+
+.preferences-32 {
+	background-image: url("../images/preferences-32.png");
+}
+
+#content .preferences {
+	width : 100%;
+}
+
+#templates {
+	padding : 10px;
+}
+.template {
+	display : inline-block;
+	width : 250px;
+	height: 150px;
+	margin : 5px;
+}
+
+.template > a > img,.templateDetails > img {
+	width : 128px;
+	height: 128px;
+}
+
+.template img.selected {
+	vertical-align : top;
+	border : none;
+	width : auto;
+	height : auto;
+}
+
+.template div {
+	display : inline-block;
+	text-align : left;
+	width : 80px;
+	height: 128px;
+	vertical-align : top;
+}
+
+.template div span {
+	display : block;
+	text-align : left;
+	width : 80px;
+	margin-bottom :17px;
+}
+.template div span.template-name {
+	font-weight : bold;
+	margin-top :10px;
+	
+}
+
+.template span.template-author {
+	font-size : 85%;
+}
+
+.template span a {
+	font-size : 80%;
+}
+
+.templateDetails {
+	padding-left : 50px;
+	width : 450px;
+}
+
+.templateDetails div span {
+	display : block;
+	text-align : left;
+	width : 300px;
+	margin-bottom :10px;
+	margin-left : 30px;
+	white-space : nowrap;
+	font-size : 90%;
+}
+
+.templateDetails div span a:first-of-type {
+   margin-left : 90px;
+   margin-right : 5px;
+}
+
+#content h2 {
+	margin-bottom :35px;
+}
+
+#content canvas {
+	width : 95%;
+	height : 7em;
+	margin-top : 0.5em;
+	margin-bottom : 0.5em;
+}
+
+
+.account {
+	padding-left : 3.9%;
+}
+
+.account fieldset,.permissions fieldset fieldset {
+	display : inline-block;
+	width : 31%;
+	margin-left : 1%;
+	vertical-align : top;
+	line-height : 1.45em;
+	padding : 4px;
+	margin-top : 4px;
+}
+
+#permissions > fieldset {
+	margin-top : -10px;
+}
+
+#permissions input[type=submit] {
+	float:right;
+	margin-right:50px;
+	margin-top:6px;
+}
+
+.account fieldset > span {
+	display : inline-block;
+	width : 44%;
+	text-align : left;
+	white-space : nowrap;
+}
+
+.account fieldset > span.text-right {
+	text-align : right;
+    width : 38%;
+}
+
+.account h2 {
+	display : inline-block;
+	width : 70%;
+	background-image : none;
+}
+
+.account .change-password fieldset {
+	line-height : 1.5em;
+}
+
+.account .change-password input[type=submit] {
+	float : right;
+	margin-right : 15px;
+	margin-top : 10px;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   
+   <package name="users" namespace="/users" extends="root">
+      
+      <default-action-ref name="index"></default-action-ref>
+      
+      <action name="index">
+            <result name="success" type="redirect">/users</result>
+      </action> 
+      
+      <action name="signIn" class="org.metamorphosis.core.UserAction" method="signIn">
+      </action>
+      
+       <action name="signOut" class="org.metamorphosis.core.UserAction" method="signOut">
+            <result name="success" type="redirect">/</result>
+      </action>
+      
+      <action name="account">
+            <result name="success" type="tiles">users/account</result>
+      </action>
+      
+       <action name="preferences">
+            <result name="success" type="tiles">users/preferences</result>
+      </action>
+      
+       <action name="preferences/templates/select" class="org.metamorphosis.core.TemplateAction" method="selectTemplate">
+            <result name="success" type="redirect">/users/preferences</result>
+      </action>
+      
+      <action name="preferences/templates/details" class="org.metamorphosis.core.TemplateAction" method="showTemplateDetails">
+            <result name="success" type="tiles">users/preferences/templates/details</result>
+            <result name="error"   type="redirect">/users/preferences</result>
+      </action>
+      
+   </package>
+   
+   
+</struts>

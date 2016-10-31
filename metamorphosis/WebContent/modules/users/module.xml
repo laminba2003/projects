@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<name>Users</name>
+	<author>John Doe</author>
+	<authorEmail>john@example.com</authorEmail>
+	<authorUrl>http://www.example.com</authorUrl>
+	<creationDate>2008-05-01</creationDate>
+	<copyright>John Doe 2008</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0.2</version>
+</module>

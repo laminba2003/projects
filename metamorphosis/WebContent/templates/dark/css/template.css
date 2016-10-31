@@ -1,0 +1,332 @@
+html {
+	font-family : Ubuntu;
+}
+h2,span {
+	font-family : Ubuntu;
+}
+
+
+h1.icon-32 a:hover {
+	border : 1px solid rgb(200, 25, 17);
+}
+
+h1.icon-32 a {
+	background-image: url("../images/new-16.png");
+	border : 1px solid #888;
+	color : #000;
+}
+
+h1 {
+	border : 1px solid #9c9c97;
+	 box-shadow: inset 0 -15px 30px rgba(0,0,0,0.02), 0 5px 10px rgba(0,0,0,0.1);
+    background-color:#fff;
+    color : #000;
+    font-family : Cabin;
+    font-weight : normal;
+}
+
+#search input:focus,#search select:focus,input:focus,select:focus,a:focus { 
+	border : 1px solid rgb(200, 25, 17);
+}
+
+.topmenu a:focus, aside a:focus {
+	border : none;
+}
+
+main {
+	margin-top : 5px;
+	background : #e5e2e2;
+	padding-top: 8px;
+	border-top : 1px solid #888;
+}
+
+header {
+	background : #fff;
+	box-shadow: inset 0 -15px 30px rgba(0,0,0,0.015), 0 5px 10px rgba(0,0,0,0.015);
+}
+
+.user-actions a {
+	font-family : Cabin;
+	color : #333;
+}
+
+.user-actions a.active {
+	color : rgb(200, 25, 17);
+}
+
+.account-16{
+	background-image: url("../images/account-16.png");
+}
+
+a.signout-16 {
+	background-image: url("../images/signout-16.png");
+	background-position : 0px 2px;
+}
+
+footer {
+	border : 1px solid #888;
+	box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
+    background-color:#eee;
+    color : #222;
+    font-family : Cabin;
+}
+
+footer p {
+	text-align : center;
+}
+
+#form {
+	position : absolute;
+	top : 0;
+	width : 79%;
+	height : 98%;
+	margin-top : 8px;
+	z-index : 9999;
+	margin-left : 0px;
+	background : #e5e2e2;
+}
+
+#wizard {
+	margin-left : 2px;
+	width : 99.6%;
+}
+
+#contextmenu a:hover {
+	background-color : #fafafa;
+}
+
+th {
+	background-color : #000;
+	color : white;
+	font-family : Arial;
+	font-size : 80%;
+	border : 1px solid #888;
+	border-radius : 8px;
+	 box-shadow: inset 0 -15px 30px rgba(200,200,200,0.2), 0 5px 10px rgba(200,200,200,0.2);
+}
+
+td {
+	font-family : Georgia;
+	border-bottom : 1px solid #000;
+}
+
+tr.focus {
+	background-color : #f4f4f4;
+}
+
+tr.active {
+	background-color : #dbdbdb;
+}
+
+tr.active td {
+	color : #222;
+}
+
+tr.empty td {
+	color : red;
+}
+
+fieldset span {
+	font-family : Cabin;
+	font-size : 100%;
+}
+
+.edit-16 {
+	background-image: url("../images/edit-16.png");
+}
+
+.delete-16 {
+	background-image: url("../images/delete-16.png");
+}
+
+.pdf-16 {
+	background-image: url("../images/pdf-16.png");
+}
+
+.print-16 {
+	background-image: url("../images/print-16.png");
+}
+
+.topmenu >  a {
+	font-family : Ubuntu;
+	margin : 0px;
+}
+
+.topmenu > a > span {
+	margin-top : 2px;
+	color : #222;
+	width :auto;
+	margin-right : 4px;
+}
+
+.topmenu a.active span {
+	color : rgb(200, 25, 17);
+}
+
+aside ul{
+    border : 1px solid #9c9c97;
+    border-top : none;
+    margin-top : -3px;
+    box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
+}
+aside ul li{
+	color : #222;
+    background-color : #e5e2e2;
+	background-image: url("../images/circle-16.png");
+}
+
+aside ul li a {
+	color : #666;
+}
+
+aside a.active {
+	color : rgb(200, 25, 17);
+}
+
+aside h1 {
+    background-position-y : 55%;
+}
+
+div.pager span {
+	border : 1px solid #000;
+}
+
+div.pager span.active {
+	background-color : #000;
+	color : #fff;
+}
+
+#search {
+	float : right;
+}
+
+#search select, #search input {
+	background-color : #c7c7c0;
+	color : #222;
+	border : 1px solid #888;
+	font-family : Cabin;
+}
+
+#search input {
+	background-image: url('../images/search.png');
+}
+
+.template img {
+	border : 1px solid #888;
+}
+
+span a {
+	color : white;
+}
+
+.wait {
+	background-image : url("../images/wait.gif");
+}
+
+#list {
+	clear : both;
+}
+#details,#selection,#list {
+	border : 1px solid #888;
+	background : transparent;
+}
+
+#details > h2 {
+	box-shadow: inset 0 -15px 30px rgba(0,0,0,0.05), 0 5px 10px rgba(0,0,0,0.1);
+    background-color:#fff;
+	color : #000;
+	font-weight : normal;
+}
+
+#selection {
+	background : #ececec;
+}
+
+#selection span {
+	color : red;
+}
+
+.form {
+	background-color : rgb(248, 248, 248);
+}
+
+.form fieldset {
+	background-color : rgb(70,70,70);
+	width :88%;
+}
+
+legend {
+	color : #fff;
+}
+
+.form fieldset span {
+	color : #fff;
+	font-size : 85%;
+}
+
+input,select {
+	border : 1px solid #888;
+	font-size : 12px;
+}
+
+input[type=submit]:hover{
+	border : 1px solid rgb(200, 25, 17);
+}
+
+fieldset {
+	background-color : rgb(70,70,70);
+	border : 1px solid #888;
+	font-family : Ubuntu;
+}
+
+input[type=submit] {
+	background : #000;
+	color : #fff;
+	border : 1px solid #fff;
+}
+
+fieldset span {
+	color :#fff;
+}
+
+ul.tabs li {
+	border : 1px solid #888;
+	font-family : Arial;
+}
+
+ul.tabs li.active{
+  border: 1px solid #fff;   
+  background-color:#000;
+  box-shadow: 5px 5px 8px #888;
+}
+ul.tabs li.active h2 {
+   color : #fff;
+}
+
+.swMain {
+    background-color:#eee;
+    border : none;
+}
+
+.swMain ul.anchor li a.selected{
+  color:#F8F8F8;
+  background: #000;
+  border : 1px solid #fff;
+}
+
+.confirm-dialog {
+	border : 1px solid #888;
+}
+
+
+.confirm-dialog-title {
+	background : #000;
+	color:#F8F8F8;
+	border : 1px solid #fff;
+}
+
+.confirm-dialog-button {
+	background : #000;
+	color : white;
+	border : 1px solid #fff;
+}
