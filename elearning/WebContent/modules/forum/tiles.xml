@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+  
+  <definition name="forum" extends="template">
+      <put-attribute name="title"  value="Forums"/>
+       <put-attribute name="menu"   value="/modules/forum/menu.jsp"/> 
+      <put-attribute name="content"   value="/modules/forum/index.jsp"/>      
+  </definition>
+  
+  <definition name="nouveau-forum-message" extends="forum">
+      <put-attribute name="title"  value="Forum/Nouveau Message"/>
+      <put-attribute name="content"   value="/modules/forum/nouveau.jsp"/>      
+  </definition>
+  
+   <definition name="voir-forum-message" extends="forum">
+      <put-attribute name="title"  value="Forum/Message"/>
+      <put-attribute name="content"   value="/modules/forum/message.jsp"/>      
+  </definition>
+  
+  <definition name="messages-forum" extends="forum">
+      <put-attribute name="title"  value="Forum/Messages"/>
+      <put-attribute name="content"   value="/modules/forum/messages.jsp"/>      
+  </definition>
+  
+  
+</tiles-definitions>

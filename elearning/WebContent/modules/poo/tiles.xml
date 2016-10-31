@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+  
+   <definition name="poo" extends="template">
+      <put-attribute name="title"  value="POO"/>
+       <put-attribute name="menu"   value="/modules/poo/menu.jsp"/> 
+      <put-attribute name="content"   value="/modules/poo/index.jsp"/>      
+  </definition>
+  
+  
+  <definition name="poo/classe" extends="poo">
+      <put-attribute name="title"  value="POO/Classe"/>
+      <put-attribute name="content"   value="/modules/poo/classe.jsp"/>      
+  </definition>
+  
+   <definition name="poo/objet" extends="poo">
+      <put-attribute name="title"  value="POO/Objet"/>
+      <put-attribute name="content"   value="/modules/poo/objet.jsp"/>      
+  </definition>
+  
+  <definition name="poo/association" extends="poo">
+      <put-attribute name="title"  value="POO/Association"/>
+      <put-attribute name="content"   value="/modules/poo/association.jsp"/>      
+  </definition>
+  
+  <definition name="poo/heritage" extends="poo">
+      <put-attribute name="title"  value="POO/Heritage"/>
+      <put-attribute name="content"   value="/modules/poo/heritage.jsp"/>      
+  </definition>
+  
+  <definition name="poo/interface" extends="poo">
+      <put-attribute name="title"  value="POO/Interface"/>
+      <put-attribute name="content"   value="/modules/poo/interface.jsp"/>      
+  </definition>
+  
+  <definition name="poo/package" extends="poo">
+      <put-attribute name="title"  value="POO/Package"/>
+      <put-attribute name="content"   value="/modules/poo/package.jsp"/>      
+  </definition>
+  
+  <definition name="poo/pattern" extends="poo">
+      <put-attribute name="title"  value="POO/Pattern"/>
+      <put-attribute name="content"   value="/modules/poo/pattern.jsp"/>      
+  </definition>
+  
+</tiles-definitions>

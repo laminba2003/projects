@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+  
+  <definition name="web" extends="template">
+      <put-attribute name="title"  value="Web"/>
+      <put-attribute name="menu"   value="/modules/web/menu.jsp"/> 
+      <put-attribute name="content"   value="/modules/web/index.jsp"/>      
+  </definition>
+  
+  <definition name="web/http" extends="web">
+      <put-attribute name="title"  value="Web/HTTP"/>
+      <put-attribute name="content"   value="/modules/web/http.jsp"/>      
+  </definition>
+  
+  <definition name="web/html" extends="web">
+      <put-attribute name="title"  value="Web/HTML"/>
+      <put-attribute name="content"   value="/modules/web/html.jsp"/>      
+  </definition>
+  
+   <definition name="web/css" extends="web">
+      <put-attribute name="title"  value="Web/CSS"/>
+      <put-attribute name="content"   value="/modules/web/css.jsp"/>      
+  </definition>
+  
+   <definition name="web/json" extends="web">
+      <put-attribute name="title"  value="Web/JSON"/>
+      <put-attribute name="content"   value="/modules/web/json.jsp"/>      
+  </definition>
+  
+   <definition name="web/rest" extends="web">
+      <put-attribute name="title"  value="Web/REST"/>
+      <put-attribute name="content"   value="/modules/web/rest.jsp"/>      
+  </definition>
+  
+   <definition name="web/ajax" extends="web">
+      <put-attribute name="title"  value="Web/Ajax"/>
+      <put-attribute name="content"   value="/modules/web/ajax.jsp"/>      
+  </definition>
+  
+</tiles-definitions>

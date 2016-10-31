@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="forums" namespace="/forums" extends="tiles-default">
+     
+      <interceptors>   
+    	<interceptor name="loginInterceptor" class="user.LoginInterceptor"></interceptor>
+         <interceptor-stack name="loginStack">
+         <interceptor-ref name="loginInterceptor"/>
+        <interceptor-ref name="defaultStack" />
+         </interceptor-stack>
+     </interceptors>
+     
+       <action name="{forum}/nouveau" class="forum.ForumAction">
+            <interceptor-ref name="loginStack"></interceptor-ref>
+            <result name="success" type="tiles">nouveau-forum-message</result>
+            <result name="login" type="redirect">/forums</result>
+      </action>
+      
+      <action name="creer/{forum}" class="forum.ForumAction" method="createMessage">
+      		<interceptor-ref name="loginStack"></interceptor-ref>
+            <result name="success" type="redirect">/forums/{1}/messages</result>
+             <result name="login" type="redirect">/forums</result>
+      </action>
+      
+      <action name="message/{id}" class="forum.ForumAction" method="viewMessage">
+            <result name="success" type="tiles">voir-forum-message</result>
+            <result name="error" type="redirect">/forums</result>
+      </action>
+      
+      <action name="repondre/{forum}" class="forum.ForumAction" method="createAnswer">
+      		<interceptor-ref name="loginStack"></interceptor-ref>
+            <result name="success" type="redirect">/forums/{1}/messages</result>
+             <result name="login" type="redirect">/forums</result>
+      </action>
+     
+     
+     <action name="{forum}/messages" class="forum.ForumAction" method="viewMessages">
+            <result name="success" type="tiles">messages-forum</result>
+      </action>
+      
+      
+   </package> 
+
+</struts>

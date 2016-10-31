@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+  
+  <definition name="java" extends="template">
+      <put-attribute name="title"  value="Langage Java"/>
+       <put-attribute name="menu"   value="/modules/java/menu.jsp"/> 
+      <put-attribute name="content"   value="/modules/java/index.jsp"/>      
+  </definition>
+  
+  <definition name="java/outils" extends="java">
+      <put-attribute name="title"  value="Java/Outils"/>
+      <put-attribute name="content"   value="/modules/java/outils.jsp"/>      
+  </definition>
+  
+  <definition name="java/installation" extends="java">
+      <put-attribute name="title"  value="Java/Installation"/>
+      <put-attribute name="content"   value="/modules/java/installation.jsp"/>      
+  </definition>
+  
+  <definition name="java/programme" extends="java">
+      <put-attribute name="title"  value="Java/Premier Programme"/>
+      <put-attribute name="content"   value="/modules/java/programme.jsp"/>      
+  </definition>
+  
+   <definition name="java/classe" extends="java">
+      <put-attribute name="title"  value="Java/Classe"/>
+      <put-attribute name="content"   value="/modules/java/classe.jsp"/>      
+  </definition>
+  
+   <definition name="java/objet" extends="java">
+      <put-attribute name="title"  value="Java/Objet"/>
+      <put-attribute name="content"   value="/modules/java/objet.jsp"/>      
+  </definition>
+  
+  <definition name="java/interface" extends="java">
+      <put-attribute name="title"  value="Java/Interface"/>
+      <put-attribute name="content"   value="/modules/java/interface.jsp"/>      
+  </definition>
+  
+  <definition name="java/primitifs" extends="java">
+      <put-attribute name="title"  value="Java/Primitifs"/>
+      <put-attribute name="content"   value="/modules/java/primitifs.jsp"/>      
+  </definition>
+  
+  <definition name="java/nombres" extends="java">
+      <put-attribute name="title"  value="Java/Nombres"/>
+      <put-attribute name="content"   value="/modules/java/nombres.jsp"/>      
+  </definition>
+  
+  <definition name="java/caracteres" extends="java">
+      <put-attribute name="title"  value="Java/Caractères"/>
+      <put-attribute name="content"   value="/modules/java/caracteres.jsp"/>      
+  </definition>
+  
+  <definition name="java/chaines" extends="java">
+      <put-attribute name="title"  value="Java/Chaînes et Caractères"/>
+      <put-attribute name="content"   value="/modules/java/chaines.jsp"/>      
+  </definition>
+  
+  <definition name="java/tableau" extends="java">
+      <put-attribute name="title"  value="Java/Tableau"/>
+      <put-attribute name="content"   value="/modules/java/tableau.jsp"/>      
+  </definition>
+  
+  <definition name="java/boucle" extends="java">
+      <put-attribute name="title"  value="Java/Boucle"/>
+      <put-attribute name="content"   value="/modules/java/boucle.jsp"/>      
+  </definition>
+  
+   <definition name="java/decision" extends="java">
+      <put-attribute name="title"  value="Java/Décision"/>
+      <put-attribute name="content"   value="/modules/java/decision.jsp"/>      
+  </definition>
+  
+  <definition name="java/collections" extends="java">
+      <put-attribute name="title"  value="Java/Collections"/>
+      <put-attribute name="content"   value="/modules/java/collections.jsp"/>      
+  </definition>
+  
+   <definition name="java/generique" extends="java">
+      <put-attribute name="title"  value="Java/Générique"/>
+      <put-attribute name="content"   value="/modules/java/generique.jsp"/>      
+  </definition>
+  
+   <definition name="java/exception" extends="java">
+      <put-attribute name="title"  value="Java/Exception"/>
+      <put-attribute name="content"   value="/modules/java/exception.jsp"/>      
+  </definition>
+  
+   <definition name="java/flux" extends="java">
+      <put-attribute name="title"  value="Java/Flux et Fichier"/>
+      <put-attribute name="content"   value="/modules/java/flux.jsp"/>      
+  </definition>
+  
+    <definition name="java/exercices" extends="java">
+      <put-attribute name="title"  value="Java/Exercices"/>
+      <put-attribute name="content"   value="/modules/java/exercices.jsp"/>      
+  </definition>
+  
+</tiles-definitions>

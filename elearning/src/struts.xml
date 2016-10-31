@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+	<constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+	<constant name="struts.patternMatcher" value="regex" />
+	
+
+   <package name="default" namespace="/" extends="json-default,tiles-default">
+     
+     <interceptors>   
+    	<interceptor name="loginInterceptor" class="user.LoginInterceptor"></interceptor>
+         <interceptor-stack name="loginStack">
+         	<interceptor-ref name="loginInterceptor"/>
+       		 <interceptor-ref name="defaultStack" />
+         </interceptor-stack>
+         
+         <interceptor name="pageInterceptor" class="core.StaticPageInterceptor"></interceptor>
+         <interceptor-stack name="pageStack">
+         	<interceptor-ref name="pageInterceptor"/>
+        	 <interceptor-ref name="defaultStack" />
+         </interceptor-stack>
+         
+     </interceptors>
+     
+     <action name="">
+            <result name="success" type="tiles">index</result>
+      </action>
+      
+      <action name="index">
+            <result name="success" type="tiles">index</result>
+      </action>
+      
+       <action name="signIn" class="user.UserAction" method="signIn">
+            <result name="success" type="json"></result>
+      </action>
+      
+      <action name="register" class="user.UserAction" method="register">
+            <result name="success" type="json"></result>
+      </action>
+      
+       <action name="recover" class="user.UserAction" method="recover">
+            <result  name="success" type="json"></result>
+      </action>
+      
+       <action name="compte" class="user.UserAction">
+            <interceptor-ref name="loginStack"></interceptor-ref>
+            <result name="success" type="tiles">account</result>
+            <result name="login" type="redirect">/</result>
+      </action>
+      
+      <action name="signOut" class="user.UserAction" method="signOut">
+            <result name="success" type="redirect">/</result>
+      </action>
+      
+      <action name="contact" class="core.ContactAction">
+            <result name="success" type="json"></result>
+      </action>
+      
+      <action name="{module}">
+            <interceptor-ref name="pageStack"></interceptor-ref>
+	      	<exception-mapping exception="org.apache.tiles.definition.NoSuchDefinitionException"
+	        result="error" />
+            <result name="success" type="tiles">{1}</result>
+            <result name="error" type="redirect">/</result>
+      </action>
+      
+        <action name="forums" class="forum.ForumAction">
+            <result name="success" type="tiles">forum</result>
+      </action>
+      
+       <action name="chat">
+       		<interceptor-ref name="loginStack"></interceptor-ref>
+            <result name="success" type="tiles">chat</result>
+            <result name="login" type="redirect">/</result>
+      </action>
+      
+       
+   </package>
+   
+    
+</struts>

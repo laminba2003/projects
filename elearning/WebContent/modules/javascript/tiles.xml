@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+  
+  <definition name="javascript" extends="template">
+      <put-attribute name="title"  value="Langage JavaScript"/>
+       <put-attribute name="menu"   value="/modules/javascript/menu.jsp"/> 
+      <put-attribute name="content"   value="/modules/javascript/index.jsp"/>      
+  </definition>
+  
+  <definition name="javascript/bases" extends="javascript">
+      <put-attribute name="title"  value="JavaScript/Bases"/>
+      <put-attribute name="content"   value="/modules/javascript/bases.jsp"/>      
+  </definition>
+  
+   <definition name="javascript/programme" extends="javascript">
+      <put-attribute name="title"  value="JavaScript/Premier Programme"/>
+      <put-attribute name="content"   value="/modules/javascript/programme.jsp"/>      
+  </definition>
+  
+  <definition name="javascript/objet" extends="javascript">
+      <put-attribute name="title"  value="JavaScript/Objet"/>
+      <put-attribute name="content"   value="/modules/javascript/objet.jsp"/>      
+  </definition>
+  
+  <definition name="javascript/tableau" extends="javascript">
+      <put-attribute name="title"  value="JavaScript/Tableau"/>
+      <put-attribute name="content"   value="/modules/javascript/tableau.jsp"/>      
+  </definition>
+  
+  <definition name="javascript/boucle" extends="javascript">
+      <put-attribute name="title"  value="JavaScript/Boucle"/>
+      <put-attribute name="content"   value="/modules/javascript/boucle.jsp"/>      
+  </definition>
+  
+  <definition name="javascript/decision" extends="javascript">
+      <put-attribute name="title"  value="JavaScript/Décision"/>
+      <put-attribute name="content"   value="/modules/javascript/decision.jsp"/>      
+  </definition>
+  
+  <definition name="javascript/exception" extends="javascript">
+      <put-attribute name="title"  value="JavaScript/Exception"/>
+      <put-attribute name="content"   value="/modules/javascript/exception.jsp"/>      
+  </definition>
+  
+</tiles-definitions>

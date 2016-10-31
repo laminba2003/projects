@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+  
+   <definition name="uml" extends="template">
+      <put-attribute name="title"  value="UML"/>
+       <put-attribute name="menu"   value="/modules/uml/menu.jsp"/> 
+      <put-attribute name="content"   value="/modules/uml/index.jsp"/>      
+  </definition>
+  
+  <definition name="uml/outils" extends="uml">
+      <put-attribute name="title"  value="UML/Outils"/>
+      <put-attribute name="content"   value="/modules/uml/outils.jsp"/>      
+  </definition>
+  
+  <definition name="uml/cas" extends="uml">
+      <put-attribute name="title"  value="UML/Cas d'utilisation"/>
+      <put-attribute name="content"   value="/modules/uml/cas.jsp"/>      
+  </definition>
+  
+  <definition name="uml/classe" extends="uml">
+      <put-attribute name="title"  value="UML/Classe"/>
+      <put-attribute name="content"   value="/modules/uml/classe.jsp"/>      
+  </definition>
+  
+  <definition name="uml/package" extends="uml">
+      <put-attribute name="title"  value="UML/Package"/>
+      <put-attribute name="content"   value="/modules/uml/package.jsp"/>      
+  </definition>
+  
+   <definition name="uml/interaction" extends="uml">
+      <put-attribute name="title"  value="UML/Interaction"/>
+      <put-attribute name="content"   value="/modules/uml/interaction.jsp"/>      
+  </definition>
+  
+   <definition name="uml/activite" extends="uml">
+      <put-attribute name="title"  value="UML/Activité"/>
+      <put-attribute name="content"   value="/modules/uml/activite.jsp"/>      
+  </definition>
+  
+   <definition name="uml/composant" extends="uml">
+      <put-attribute name="title"  value="UML/Composant"/>
+      <put-attribute name="content"   value="/modules/uml/composant.jsp"/>      
+  </definition>
+  
+   <definition name="uml/deploiement" extends="uml">
+      <put-attribute name="title"  value="UML/Déploiement"/>
+      <put-attribute name="content"   value="/modules/uml/deploiement.jsp"/>      
+  </definition>
+  
+  <definition name="uml/etat" extends="uml">
+      <put-attribute name="title"  value="UML/Etat"/>
+      <put-attribute name="content"   value="/modules/uml/etat.jsp"/>      
+  </definition>
+  
+</tiles-definitions>
