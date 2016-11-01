@@ -7,6 +7,7 @@ import java.util.List;
 public class ModuleManager {
 
 	private List<Module> modules = new ArrayList<Module>();
+	private Module main;
 
 	public void loadModules(File root) {
 		ModuleLoader loader = new ModuleLoader();
@@ -19,6 +20,7 @@ public class ModuleManager {
 				    module.setFolder(file);
 				    module.setId(file.getName());
 				    if(module.getUrl()==null) module.setUrl(file.getName().toLowerCase());
+				    if(module.isMain()) main = module;
 				    addModule(module);
 				   }catch(Exception e){
 					   e.printStackTrace();
@@ -43,6 +45,14 @@ public class ModuleManager {
 	
 	public void setModules(List<Module> modules) {
 		this.modules = modules;
+	}
+
+	public Module getMain() {
+		return main;
+	}
+
+	public void setMain(Module main) {
+		this.main = main;
 	}
 	
 }

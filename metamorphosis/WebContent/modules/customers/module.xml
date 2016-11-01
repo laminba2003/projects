@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <module>
 	<name>Customers</name>
+	<main>true</main>
 	<order>1</order>
 	<author>John Doe</author>
 	<authorEmail>john@example.com</authorEmail>
