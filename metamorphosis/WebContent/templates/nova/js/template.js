@@ -19,6 +19,9 @@ page.form.init = function() {
 	       onFinish:onFinishCallback});
 		$('#new').magnificPopup({
 			  type:'inline'
+		}).click(function(){
+			$('#wizard').smartWizard('goToStep',1);
+			$('#wizard').smartWizard('disableStep',2);
 		});
 		$('#form').removeClass("hide");
 	});

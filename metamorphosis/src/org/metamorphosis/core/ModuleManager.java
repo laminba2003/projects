@@ -8,10 +8,6 @@ public class ModuleManager {
 
 	private List<Module> modules = new ArrayList<Module>();
 
-	public List<Module> getModules() {
-		return modules;
-	}
-	
 	public void loadModules(File root) {
 		ModuleLoader loader = new ModuleLoader();
 		for(File file : root.listFiles()) {
@@ -30,12 +26,21 @@ public class ModuleManager {
 			   }
 			}
 		}
+		orderModules();
+	}
+	
+	private void orderModules() {
+	
 	}
 	
 	public void addModule(Module module) {
 		modules.add(module);
 	}
 
+	public List<Module> getModules() {
+		return modules;
+	}
+	
 	public void setModules(List<Module> modules) {
 		this.modules = modules;
 	}
