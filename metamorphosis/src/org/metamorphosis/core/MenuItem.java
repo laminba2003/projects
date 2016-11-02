@@ -6,6 +6,7 @@ public class MenuItem {
 	private String action;
 	private String title;
 	private String page;
+	private boolean visible = true;
 	
 	public String getName() {
 		return name;
@@ -30,6 +31,12 @@ public class MenuItem {
 	}
 	public void setPage(String page) {
 		this.page = page;
+	}
+	public boolean isVisible() {
+		return visible;
+	}
+	public void setVisible(boolean visible) {
+		this.visible = visible;
 	}
 	
 }

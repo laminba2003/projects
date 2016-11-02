@@ -7,6 +7,12 @@ public class Menu {
 
 	private List<MenuItem> menuItems = new ArrayList<MenuItem>();
 
+	public Menu() {
+		
+	}
+	public Menu(List<MenuItem> menuItems) {
+		this.menuItems=menuItems;
+	}
 	public void addMenuItem(MenuItem item) {
 		menuItems.add(item);
 	}
