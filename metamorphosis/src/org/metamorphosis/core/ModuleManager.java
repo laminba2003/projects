@@ -23,11 +23,17 @@ public class ModuleManager {
 				    if(module.getMenu()!=null) {
 					    for(MenuItem item : module.getMenu().getMenuItems()) {
 							if(item.getAction()!=null) {
+								if(item.getPage()==null) {
+									item.setPage(item.getAction()+".jsp");
+								}
 								item.setAction(module.getUrl()+"/"+item.getAction());
 								if(item.getTitle()==null) item.setTitle(module.getUrl()+"/"+item.getName());
 							}else {
 								item.setAction(module.getUrl());
 								item.setTitle(module.getUrl());
+								if(item.getPage()==null) {
+									item.setPage("index.jsp");
+								}
 							}
 						}
 				    }

@@ -26,7 +26,7 @@
 		       </s:iterator>
 		   </div>
 		   <div class="user-actions">
-				<a  class="account-16" href="users/account" title="Account">Account</a>
+				<a  class="account-16" href="users" title="Account">Account</a>
 				<a  href="users/signOut" title="Sign Out" class="signout-16">Sign Out</a>
 			</div>
 		</header>

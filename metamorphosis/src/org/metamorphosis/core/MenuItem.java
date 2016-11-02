@@ -5,6 +5,7 @@ public class MenuItem {
 	private String name;
 	private String action;
 	private String title;
+	private String page;
 	
 	public String getName() {
 		return name;
@@ -23,6 +24,12 @@ public class MenuItem {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getPage() {
+		return page;
+	}
+	public void setPage(String page) {
+		this.page = page;
 	}
 	
 }

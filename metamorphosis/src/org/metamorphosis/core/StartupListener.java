@@ -34,6 +34,8 @@ public class StartupListener implements ServletContextListener {
 			File definition = new File(module.getFolder().getAbsolutePath()+File.separator+"tiles.xml");
 			if(definition.exists()) {
 				tilesDefinitions += ","+"/modules/"+module.getFolder().getName()+"/tiles.xml";
+			}else {
+				tilesDefinitions += ","+createModuleTiles(root,module);
 			}
 			definition = new File(module.getFolder().getAbsolutePath()+File.separator+"struts.xml");
 			if(definition.exists()) {
@@ -74,6 +76,33 @@ public class StartupListener implements ServletContextListener {
 			e.printStackTrace();
 		}
 		return "/templates/"+temp.getName();
+	}
+	
+	public String createModuleTiles(String root,Module module) {
+		String content = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"+
+		"<!DOCTYPE tiles-definitions PUBLIC '-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN' "+
+		 "'http://tiles.apache.org/dtds/tiles-config_2_0.dtd'>"+
+         "<tiles-definitions><definition name='"+module.getId()+"' extends='template'>"+
+         "<put-attribute name='content' value='/modules/"+module.getId()+"/index.jsp'/>"+
+         "</definition>";
+		if(module.getMenu()!=null) {
+		    for(MenuItem item : module.getMenu().getMenuItems()) {
+		    	content+="<definition name='"+item.getAction()+"' extends='template'>";
+		    	content+="<put-attribute name='content' value='/modules/"+module.getId()+"/"+item.getPage()+"'/>";
+		    	content+="</definition>";
+			}
+	    }
+        content +="</tiles-definitions>";
+		File temp=null;
+		try {
+			temp = new File(module.getFolder()+File.separator+"tiles-generated.xml");
+			BufferedWriter bw = new BufferedWriter(new FileWriter(temp));
+	    	bw.write(content);
+	    	bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return "/modules/"+module.getId()+"/"+temp.getName();
 	}
 	
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <module>
-	<name>Users</name>
-	<order>4</order>
+	<name>Admin</name>
+	<order>5</order>
 	<author>John Doe</author>
 	<authorEmail>john@example.com</authorEmail>
 	<authorUrl>http://www.example.com</authorUrl>
@@ -10,7 +10,9 @@
 	<license>GNU/GPL</license>
 	<version>1.0.2</version>
 	<menu>
-	   <menuItem name="Account"/>
-	   <menuItem name="Preferences" action="preferences"/>
+	   <menuItem name="Home"/>
+	   <menuItem name="Users" action="users"/>
+	   <menuItem name="Modules" action="modules"/>
+	   <menuItem name="Templates" action="templates"/>
 	</menu>
 </module>

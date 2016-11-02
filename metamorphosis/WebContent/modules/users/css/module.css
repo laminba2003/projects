@@ -114,12 +114,6 @@
 	margin-top : -10px;
 }
 
-#permissions input[type=submit] {
-	float:right;
-	margin-right:50px;
-	margin-top:6px;
-}
-
 .account fieldset > span {
 	display : inline-block;
 	width : 44%;

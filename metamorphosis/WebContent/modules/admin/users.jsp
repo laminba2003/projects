@@ -367,3 +367,5 @@
     </div>
      
 </form>
+
+<script type="text/javascript" src="modules/admin/js/users.js"></script>

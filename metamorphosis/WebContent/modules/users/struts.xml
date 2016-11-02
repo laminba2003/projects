@@ -19,10 +19,6 @@
             <result name="success" type="redirect">/</result>
       </action>
       
-      <action name="account">
-            <result name="success" type="tiles">users/account</result>
-      </action>
-      
        <action name="preferences">
             <result name="success" type="tiles">users/preferences</result>
       </action>
