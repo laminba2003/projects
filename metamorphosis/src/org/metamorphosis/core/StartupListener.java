@@ -68,7 +68,7 @@ public class StartupListener implements ServletContextListener {
 		"</tiles-definitions>";
 		File temp=null;
 		try {
-			temp = File.createTempFile("tiles", ".xml",new File(root+File.separator+"templates"));
+			temp = new File(root+File.separator+"templates"+File.separator+"tiles.xml");
 			BufferedWriter bw = new BufferedWriter(new FileWriter(temp));
 	    	bw.write(content);
 	    	bw.close();

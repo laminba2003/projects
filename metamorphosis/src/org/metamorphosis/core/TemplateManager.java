@@ -26,8 +26,6 @@ public class TemplateManager {
 					   e.printStackTrace();
 				   }
 			   }
-			}else {
-				file.delete();
 			}
 		}
 	}

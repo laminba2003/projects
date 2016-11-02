@@ -1,1 +1,1 @@
-<h1 class="icon-32">Templates</h1>
+<h1 class="template-32">Templates</h1>

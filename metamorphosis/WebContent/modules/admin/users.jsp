@@ -1,4 +1,4 @@
-<h1 class="icon-32">List Of Users <a id="new" href="#form"></a></h1>
+<h1 class="icon-32 user-32">List Of Users <a id="new" href="#form"></a></h1>
 <form id="search">
 	<span>Filter :</span>
 	<select name="filter">
@@ -31,7 +31,7 @@
    <script type="text/x-handlebars-template">
      {{#each this}}
       <tr id="{{id}}">
-   	        <td class="icon-16">{{firstName}}</td>
+   	        <td class="user-16">{{firstName}}</td>
    	    	<td>{{lastName}}</td>
    	    	<td>{{login}}</td>
    	    	<td>{{email}}</td>
@@ -49,7 +49,7 @@
 </div>
 
 <div id="contextmenu">
-    <a class="icon-16 row-select">Select</a>
+    <a class="user-16 row-select">Select</a>
     <a class="edit-16">Edit</a>
     <a class="delete-16">Delete</a>
     <a class="print-16">Print</a>
@@ -58,14 +58,14 @@
 
 <div id="selection">
 
-  <span class="icon-16">select a user</span>
+  <span class="user-16">select a user</span>
   
 </div>
 
 
 
 <div id="details">
- <h2 class="icon-16"></h2>
+ <h2 class="user-16"></h2>
 
 <ul class="tabs"> 
       <li class="active" rel="informations"><h2 title="Personal Informations">Personal Informations</h2></li>
@@ -259,7 +259,7 @@
 
  <form id="form" class="hide">
   
-  <h1 class="icon-32"></h1>  
+  <h1 class="user-32"></h1>  
    
     <div id="wizard">
 

@@ -1,1 +1,1 @@
-<h1 class="icon-32">Modules</h1>
+<h1 class="module-32">Modules</h1>

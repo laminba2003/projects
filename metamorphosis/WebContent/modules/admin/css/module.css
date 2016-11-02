@@ -6,6 +6,23 @@
 	background-image: url("../images/icon-32.png");
 }
 
+.user-16 {
+	background-image: url("../images/user-16.png");
+}
+
+.user-32 {
+	background-image: url("../images/user-32.png");
+}
+
+.module-32 {
+	background-image: url("../images/module-32.png");
+}
+
+.template-32 {
+	background-image: url("../images/template-32.png");
+}
+
+
 #permissions input[type=submit] {
 	float:right;
 	margin-right:50px;
