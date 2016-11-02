@@ -3,7 +3,8 @@ package org.metamorphosis.core;
 public class MenuItem {
 
 	private String name;
-	private String page;
+	private String action;
+	private String title;
 	
 	public String getName() {
 		return name;
@@ -11,11 +12,17 @@ public class MenuItem {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPage() {
-		return page;
+	public String getAction() {
+		return action;
 	}
-	public void setPage(String page) {
-		this.page = page;
+	public void setAction(String action) {
+		this.action = action;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	
 }

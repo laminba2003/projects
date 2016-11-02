@@ -5,24 +5,19 @@
 
 <tiles-definitions>
 
-  <definition name="users" extends="template">
-      <put-attribute name="title"  value="Users"/>  
-      <put-attribute name="menu"  value="/modules/users/menu.jsp"/>
+  <definition name="users" extends="template"> 
       <put-attribute name="content"   value="/modules/users/index.jsp"/> 
   </definition>
   
    <definition name="users/account" extends="users">
-      <put-attribute name="title"  value="Users/Account"/>  
       <put-attribute name="content"   value="/modules/users/account.jsp"/> 
   </definition>
   
    <definition name="users/preferences" extends="users">
-      <put-attribute name="title"  value="Users/Preferences"/>  
       <put-attribute name="content"   value="/modules/users/preferences.jsp"/> 
   </definition>
   
-   <definition name="users/preferences/templates/details" extends="users">
-      <put-attribute name="title"  value="Users/Preferences/Templates/Details"/>  
+   <definition name="users/preferences/templates/details" extends="users"> 
       <put-attribute name="content"   value="/modules/users/templateDetails.jsp"/> 
   </definition>
   

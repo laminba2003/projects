@@ -7,8 +7,8 @@ public class ModuleLoader {
 
 	public Module loadModule(File file) throws Exception {
 		Digester digester = new Digester();
-		digester.setValidating( false );
-		digester.addObjectCreate("module", Module.class );
+		digester.setValidating(false);
+		digester.addObjectCreate("module", Module.class);
 		digester.addBeanPropertySetter("module/name");
 		digester.addBeanPropertySetter("module/url");
 		digester.addBeanPropertySetter("module/main");
@@ -20,6 +20,11 @@ public class ModuleLoader {
 		digester.addBeanPropertySetter("module/copyright");
 		digester.addBeanPropertySetter("module/license");
 		digester.addBeanPropertySetter("module/version");
+		digester.addObjectCreate("module/menu", Menu.class);
+		digester.addObjectCreate("module/menu/menuItem", MenuItem.class);
+		digester.addSetProperties("module/menu/menuItem");
+		digester.addSetNext("module/menu/menuItem", "addMenuItem");
+		digester.addSetNext("module/menu", "setMenu");
 		return (Module) digester.parse(file);
 	}
 }

@@ -20,6 +20,17 @@ public class ModuleManager {
 				    module.setFolder(file);
 				    module.setId(file.getName());
 				    if(module.getUrl()==null) module.setUrl(file.getName().toLowerCase());
+				    if(module.getMenu()!=null) {
+					    for(MenuItem item : module.getMenu().getMenuItems()) {
+							if(item.getAction()!=null) {
+								item.setAction(module.getUrl()+"/"+item.getAction());
+								if(item.getTitle()==null) item.setTitle(module.getUrl()+"/"+item.getName());
+							}else {
+								item.setAction(module.getUrl());
+								item.setTitle(module.getUrl());
+							}
+						}
+				    }
 				    if(module.isMain()) main = module;
 				    addModule(module);
 				   }catch(Exception e){
@@ -33,6 +44,15 @@ public class ModuleManager {
 	
 	private void orderModules() {
 	
+	}
+	
+	public Module getModuleByUrl(String url) {
+		
+		for(Module module : modules) {
+			if(module.getUrl().equals(url)) return module;
+		}
+		return null;
+		
 	}
 	
 	public void addModule(Module module) {

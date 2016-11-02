@@ -10,4 +10,8 @@
 	<copyright>John Doe 2008</copyright>
 	<license>GNU/GPL</license>
 	<version>1.0.2</version>
+	<menu>
+	   <menuItem name="List"/>
+	   <menuItem name="Chart" action="chart"/>
+	</menu>
 </module>

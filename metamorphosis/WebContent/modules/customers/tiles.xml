@@ -6,13 +6,10 @@
 <tiles-definitions>
   
    <definition name="customers" extends="template">
-      <put-attribute name="title"  value="Customers"/>  
-      <put-attribute name="menu"  value="/modules/customers/menu.jsp"/>
       <put-attribute name="content"   value="/modules/customers/index.jsp"/> 
   </definition>
   
    <definition name="customers/chart" extends="customers">
-      <put-attribute name="title"  value="Customers/Chart"/>  
       <put-attribute name="content"   value="/modules/customers/chart.jsp"/> 
   </definition>
 

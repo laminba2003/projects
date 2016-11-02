@@ -5,6 +5,7 @@ public class Module extends Extension {
 	private int order;
 	private String url;
     private boolean main;
+    private Menu menu;
     
 	public int getOrder() {
 		return order;
@@ -18,15 +19,23 @@ public class Module extends Extension {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	
 	public boolean isMain() {
 		return main;
 	}
 	public void setMain(boolean main) {
 		this.main = main;
 	}
+	public Menu getMenu() {
+		return menu;
+	}
+	public void setMenu(Menu menu) {
+		this.menu = menu;
+	}
 	public String getIcon() {
 		return "modules/"+getId()+"/images/icon-16.png";
 	}
 	
+	public String getPath() {
+		return "modules/"+getFolder().getName();
+	}
 }
