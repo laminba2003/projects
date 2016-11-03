@@ -30,6 +30,60 @@
 	background-image: url("../images/template-32.png");
 }
 
+#content .extensions-details {
+	width : 100%;
+}
+
+#extensions {
+	padding : 10px;
+}
+.extension {
+	display : inline-block;
+	width : 250px;
+	height: 150px;
+	margin : 5px;
+}
+
+.extension > a > img,.extensionDetails > img {
+	width : 128px;
+	height: 128px;
+}
+
+.extension img.selected {
+	vertical-align : top;
+	border : none;
+	width : auto;
+	height : auto;
+}
+
+.extension div {
+	display : inline-block;
+	text-align : left;
+	width : 80px;
+	height: 128px;
+	vertical-align : top;
+}
+
+.extension div span {
+	display : block;
+	text-align : left;
+	width : 80px;
+	margin-bottom :17px;
+}
+.extension div span.extension-name {
+	font-weight : bold;
+	margin-top :10px;
+	
+}
+
+.extension span.extension-author {
+	font-size : 85%;
+}
+
+.extension span a {
+	font-size : 80%;
+}
+
 
 #permissions input[type=submit] {
 	float:right;

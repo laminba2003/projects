@@ -31,7 +31,7 @@ public class ModuleInterceptor extends AbstractInterceptor {
 		List<MenuItem> items = new ArrayList<MenuItem>();
 		if(module.getMenu()!=null) {
 		    for(MenuItem item : module.getMenu().getMenuItems()) {
-				if(item.getAction().equals(action)) {
+				if(item.getAction().equals(action) && item.getTitle()!=null) {
 					request.setAttribute("title",item.getTitle());
 				}
 				if(item.isVisible())items.add(item);

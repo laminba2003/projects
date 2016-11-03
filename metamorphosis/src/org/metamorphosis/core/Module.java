@@ -6,6 +6,7 @@ public class Module extends Extension {
 	private String url;
     private boolean main;
     private boolean visible = true;
+    private String home="index.jsp";
     private Menu menu;
     
 	public int getOrder() {
@@ -31,6 +32,12 @@ public class Module extends Extension {
 	}
 	public void setVisible(boolean visible) {
 		this.visible = visible;
+	}
+	public String getHome() {
+		return home;
+	}
+	public void setHome(String home) {
+		this.home = home;
 	}
 	public Menu getMenu() {
 		return menu;

@@ -11,6 +11,7 @@ public class ModuleLoader {
 		digester.addObjectCreate("module", Module.class);
 		digester.addBeanPropertySetter("module/name");
 		digester.addBeanPropertySetter("module/url");
+		digester.addBeanPropertySetter("module/home");
 		digester.addBeanPropertySetter("module/main");
 		digester.addBeanPropertySetter("module/visible");
 		digester.addBeanPropertySetter("module/order");

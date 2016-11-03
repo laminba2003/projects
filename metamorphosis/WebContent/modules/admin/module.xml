@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <module>
 	<name>Admin</name>
+	<home>users.jsp</home>
 	<order>5</order>
 	<author>John Doe</author>
 	<authorEmail>john@example.com</authorEmail>
@@ -10,8 +11,7 @@
 	<license>GNU/GPL</license>
 	<version>1.0.2</version>
 	<menu>
-	   <menuItem name="Home"/>
-	   <menuItem name="Users" action="users"/>
+	   <menuItem name="Users"/>
 	   <menuItem name="Groups" action="groups"/>
 	   <menuItem name="Modules" action="modules"/>
 	   <menuItem name="Templates" action="templates"/>
