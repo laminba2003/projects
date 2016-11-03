@@ -12,6 +12,7 @@
 	<menu>
 	   <menuItem name="Home"/>
 	   <menuItem name="Users" action="users"/>
+	   <menuItem name="Groups" action="groups"/>
 	   <menuItem name="Modules" action="modules"/>
 	   <menuItem name="Templates" action="templates"/>
 	</menu>

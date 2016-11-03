@@ -6,12 +6,6 @@
    
    <package name="users" namespace="/users" extends="root">
       
-      <default-action-ref name="index"></default-action-ref>
-      
-      <action name="index">
-            <result name="success" type="redirect">/users</result>
-      </action> 
-      
       <action name="signIn" class="org.metamorphosis.core.UserAction" method="signIn">
       </action>
       
