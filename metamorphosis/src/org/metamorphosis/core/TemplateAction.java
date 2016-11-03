@@ -9,7 +9,6 @@ import com.opensymphony.xwork2.ActionSupport;
 public class TemplateAction extends ActionSupport {
 
 	private String id;
-	private Template template;
 	
 	@SuppressWarnings("rawtypes")
 	public String selectTemplate() {
@@ -20,18 +19,11 @@ public class TemplateAction extends ActionSupport {
 		}
 		return SUCCESS;
 	}
-	
 	public String getId() {
 		return id;
 	}
-
 	public void setId(String id) {
 		this.id = id;
 	}
 
-	public Template getSelected() {
-		return template;
-	}
-
-	
 }
