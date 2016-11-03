@@ -1,16 +1,10 @@
-var print = function(user) {
-	var docDefinition = { content: page.form.entity +" : " +user.firstName+" "+user.lastName};
-	pdfMake.createPdf(docDefinition).print();
+var doc = function(group) {
+	return { content: page.form.entity +" : " +group.name};
 };
 
-var pdf = function(user) {
-	var docDefinition = { content: page.form.entity +" : " +user.firstName+" "+user.lastName};
-	pdfMake.createPdf(docDefinition).open();
-};
-
-page.list.details.show = function(user) {
-	page.list.details.setTitle("Details "+page.form.entity + " : " +user.firstName+" "+user.lastName);
-	page.list.details.render(["informations","contact","permissions"],user);
+page.list.details.show = function(group) {
+	page.list.details.setTitle("Details "+page.form.entity + " : " +group.name);
+	page.list.details.render(["informations","permissions"],group);
 };
 
 var leaveAStepCallback = function() {

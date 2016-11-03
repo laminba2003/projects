@@ -49,11 +49,10 @@
 
 
 <div id="details">
- <h2 class="user-16"></h2>
+ <h2 class="group-16"></h2>
 
 <ul class="tabs"> 
-      <li class="active" rel="informations"><h2 title="Personal Informations">Personal Informations</h2></li>
-      <li rel="contact"><h2 title="Contact">Contact</h2></li>
+      <li class="active" rel="informations"><h2 title="Informations">Informations</h2></li>
       <li rel="permissions"><h2 title="Permissions">Permissions</h2></li>
 </ul>
 <div class="tab_container"> 
@@ -61,95 +60,15 @@
      <script  type="text/x-handlebars-template">
 
        <fieldset>
-		<span>First Name : </span>
-		<span>{{firstName}}</span>
+		<span>Name : </span>
+		<span>{{name}}</span>
 		
-		<span>Last Name : </span>
-		<span>{{lastName}}</span>
-		
-		<span>Login :</span>
-		<span>{{login}}</span>
-		
-        <span>email :</span>
-		<span>{{email}}</span>
-
-        <span>group :</span>
-		<span>{{group}}</span>
-
-         <span>role :</span>
-		<span>{{role}}</span>
-
-		<span>Date Of Birth :</span>
-		<span>{{dateOfBirth}}</span>
-		
-		<span>Country :</span>
-		<span>{{country}}</span>
-		
-		<span>Sex :</span>
-		<span>{{sex}}</span>
-		
-		</fieldset>
-		
-		<fieldset>
-		
-		<span>Telephone :</span>
-		<span>{{telephone}}</span>
-		
-		<span>Mobile :</span>
-		<span>{{mobile}}</span>
-	   
-	    <span>Email :</span>
-		<span>{{email}}</span>
-	
 	  </fieldset>
 
      </script>
      
    </div>
-   <div id="contact" class="tab_content">
-    <script  type="text/x-handlebars-template">
-      <fieldset>
-		<span>First Name : </span>
-		<span>{{contact.firstName}}</span>
-		
-		<span>Last Name : </span>
-		<span>{{contact.lastName}}</span>
-		
-		<span>Profession :</span>
-		<span>{{contact.profession}}</span>
-		
-		<span>Date Of Birth :</span>
-		<span>{{contact.dateOfBirth}}</span>
-		
-		<span>Country :</span>
-		<span>{{contact.country}}</span>
-		
-		<span>Sex :</span>
-		<span>{{contact.sex}}</span>
-		
-		<span>Relation :</span>
-		<span>{{contact.relation}}</span>
-		
-		</fieldset>
-		
-		<fieldset>
-		
-		<span>Telephone :</span>
-		<span>{{contact.telephone}}</span>
-		
-		<span>Mobile :</span>
-		<span>{{contact.mobile}}</span>
-	   
-	    <span>Email :</span>
-		<span>{{contact.email}}</span>
-	
-	  </fieldset>
-
-   </script>
-   
-   </div>
-   
-   <div id="permissions" class="tab_content">
+      <div id="permissions" class="tab_content">
     <script  type="text/x-handlebars-template">
        <fieldset>
          <legend>Module Customers</legend>
@@ -243,7 +162,7 @@
 
  <form id="form" class="hide">
   
-  <h1 class="user-32"></h1>  
+  <h1 class="group-32"></h1>  
    
     <div id="wizard">
 
@@ -251,7 +170,10 @@
           
            <fieldset class="info">
 		<legend>Group</legend>
-	
+	   
+	   <span class="required">Name : </span>
+		<input title="Name" name="name" type="text"/>
+		<input name="createdBy" type="hidden" value="admin"/>
 	
 	</fieldset>
       </div>

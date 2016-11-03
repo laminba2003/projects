@@ -1,11 +1,5 @@
-var print = function(product) {
-	var docDefinition = { content: page.form.entity +" : " +product.name};
-	pdfMake.createPdf(docDefinition).print();
-};
-
-var pdf = function(product) {
-	var docDefinition = { content: page.form.entity +" : " +product.name};
-	pdfMake.createPdf(docDefinition).open();
+var doc = function(product) {
+	return { content: page.form.entity +" : " +product.name};
 };
 
 page.list.details.show = function(product) {

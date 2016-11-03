@@ -91,6 +91,14 @@ app.pdf = function(url,callback) {
 	 });
 };
 
+var print = function(entity) {
+	pdfMake.createPdf(doc(entity)).print();
+};
+
+var pdf = function(entity) {
+	pdfMake.createPdf(doc(entity)).open();
+};
+
 var page = {};
 page.animate = function(element) {
 	element.shake(1,100);

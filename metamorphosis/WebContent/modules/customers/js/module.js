@@ -1,11 +1,5 @@
-var print = function(customer) {
-	var docDefinition = {content: page.form.entity +" : " +customer.firstName+" "+customer.lastName};
-	pdfMake.createPdf(docDefinition).print();
-};
-
-var pdf = function(customer) {
-	var docDefinition = {content: page.form.entity +" : " +customer.firstName+" "+customer.lastName};
-	pdfMake.createPdf(docDefinition).open();
+var doc = function(customer) {
+	return {content: page.form.entity +" : " +customer.firstName+" "+customer.lastName};
 };
 
 page.list.details.show = function(customer) {

@@ -1,11 +1,5 @@
-var print = function(user) {
-	var docDefinition = { content: page.form.entity +" : " +user.firstName+" "+user.lastName};
-	pdfMake.createPdf(docDefinition).print();
-};
-
-var pdf = function(user) {
-	var docDefinition = { content: page.form.entity +" : " +user.firstName+" "+user.lastName};
-	pdfMake.createPdf(docDefinition).open();
+var doc = function(user) {
+	return { content: page.form.entity +" : " +user.firstName+" "+user.lastName};
 };
 
 page.list.details.show = function(user) {
