@@ -5,6 +5,7 @@ public class Module extends Extension {
 	private int order;
 	private String url;
     private boolean main;
+    private boolean visible = true;
     private Menu menu;
     
 	public int getOrder() {
@@ -25,6 +26,12 @@ public class Module extends Extension {
 	public void setMain(boolean main) {
 		this.main = main;
 	}
+	public boolean isVisible() {
+		return visible;
+	}
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}
 	public Menu getMenu() {
 		return menu;
 	}
@@ -38,4 +45,5 @@ public class Module extends Extension {
 	public String getPath() {
 		return "modules/"+getFolder().getName();
 	}
+	
 }

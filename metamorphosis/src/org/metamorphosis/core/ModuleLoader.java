@@ -12,6 +12,7 @@ public class ModuleLoader {
 		digester.addBeanPropertySetter("module/name");
 		digester.addBeanPropertySetter("module/url");
 		digester.addBeanPropertySetter("module/main");
+		digester.addBeanPropertySetter("module/visible");
 		digester.addBeanPropertySetter("module/order");
 		digester.addBeanPropertySetter("module/author");
 		digester.addBeanPropertySetter("module/authorEmail");

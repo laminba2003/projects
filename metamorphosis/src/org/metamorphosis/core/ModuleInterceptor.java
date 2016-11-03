@@ -24,7 +24,7 @@ public class ModuleInterceptor extends AbstractInterceptor {
         url = url.indexOf("/")!=-1 ? url.substring(0,url.indexOf("/")) : url;
         Map application = (Map) ActionContext.getContext().get("application");
 		ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
-		request.setAttribute("modules",moduleManager.getModules());
+		request.setAttribute("modules",moduleManager.getVisibleModules());
 		Module module = moduleManager.getModuleByUrl(url); 
 		request.setAttribute("module",module);
 		request.setAttribute("title",action);

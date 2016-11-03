@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <module>
 	<name>Users</name>
-	<order>4</order>
+	<visible>false</visible>
 	<author>John Doe</author>
 	<authorEmail>john@example.com</authorEmail>
 	<authorUrl>http://www.example.com</authorUrl>

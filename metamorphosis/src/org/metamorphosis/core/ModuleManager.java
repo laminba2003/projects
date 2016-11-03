@@ -73,6 +73,14 @@ public class ModuleManager {
 	public void setModules(List<Module> modules) {
 		this.modules = modules;
 	}
+	
+	public List<Module> getVisibleModules() {
+		List<Module> modules = new ArrayList<Module>();
+		for(Module module : this.modules) {
+			if(module.isVisible())modules.add(module);
+		}
+		return modules;
+	}
 
 	public Module getMain() {
 		return main;
