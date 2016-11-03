@@ -21,11 +21,6 @@
             <result name="success" type="redirect">/users/preferences</result>
       </action>
       
-      <action name="preferences/templates/details" class="org.metamorphosis.core.TemplateAction" method="showTemplateDetails">
-            <result name="success" type="tiles">users/preferences/templates/details</result>
-            <result name="error"   type="redirect">/users/preferences</result>
-      </action>
-      
    </package>
    
    

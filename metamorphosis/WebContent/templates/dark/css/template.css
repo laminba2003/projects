@@ -289,6 +289,10 @@ fieldset span {
 	color :#fff;
 }
 
+.templateDetails span {
+	color : #222;
+}
+
 ul.tabs li {
 	border : 1px solid #888;
 	font-family : Arial;

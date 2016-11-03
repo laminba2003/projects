@@ -21,14 +21,6 @@ public class TemplateAction extends ActionSupport {
 		return SUCCESS;
 	}
 	
-	@SuppressWarnings("rawtypes")
-	public String showTemplateDetails() {
-	   Map application = (Map) ActionContext.getContext().get("application");
-	   TemplateManager templateManager = (TemplateManager) application.get("templateManager");
-	   template = templateManager.getTemplate(id);
-	   return template!=null ? SUCCESS : ERROR;
-	}
-
 	public String getId() {
 		return id;
 	}

@@ -10,14 +10,24 @@
 	   
 	      <div class="template">
 	      <img class="selected" src="modules/users/images/selected-32.png" style="display:${template==name?'inline-block':'none'}"/>
-		  <a href="users/preferences/templates/details?id=${id}">
+		  <a>
 		  <img src="templates/${id}/thumbnail.png"/>
 		  </a>
-		  <div>
+		  <div class="info">
 		  <span class="template-name">${name}</span>
 		  <span class="template-author">${author}</span>
 		  <span><a href="users/preferences/templates/select?id=${id}">[Select]</a></span>
 		  </div>
+		  <div class="templateDetails">
+		      	  <span>Name : ${name}</span>
+				  <span>Author : ${author}</span>
+				  <span>Author Email : ${authorEmail}</span>
+				  <span>Author Url : ${authorUrl}</span>
+				  <span>Creation Date : ${creationDate}</span>
+				  <span>Copyright : ${copyright}</span>
+				  <span>License : ${license}</span>
+				  <span>Version : ${version}</span>
+		 </div>
 		</div>
 		
 	   </s:iterator>
@@ -26,3 +36,4 @@
 </fieldset>
 
 </div>
+<script type="text/javascript" src="modules/users/js/preferences.js"></script>
