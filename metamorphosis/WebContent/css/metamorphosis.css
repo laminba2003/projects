@@ -104,9 +104,9 @@ fieldset {
 }
 
 legend {
-	margin-top :15px;
 	font-size : 1em;
 	font-weight : bold;
+	line-height : 10px;
 }
 
 select {
