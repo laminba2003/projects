@@ -7,7 +7,7 @@ page.list.details.show = function(order) {
 	page.list.details.render(["informations-1","informations-2"],order);
 };
 
-var leaveAStepCallback = function() {
+var nextStep = function() {
 	return true;
 };
 

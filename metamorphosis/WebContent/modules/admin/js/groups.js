@@ -7,7 +7,7 @@ page.list.details.show = function(group) {
 	page.list.details.render(["informations","permissions"],group);
 };
 
-var leaveAStepCallback = function() {
+var nextStep = function() {
 	return true;
 };
 

@@ -5,7 +5,7 @@ page.form.edit = function() {
 	$('.form h1').html("Edit "+page.form.entity+": Informations");
 };
 
-var onFinishCallback = function(obj,context) {
+var onFinish = function(obj,context) {
 	page.form.submit();
 	$('#new').magnificPopup('close');
 	return true;
@@ -15,8 +15,8 @@ var onFinishCallback = function(obj,context) {
 page.form.init = function() {
 	$('#form').addClass("hide form mfp-hide");
 	head.load("templates/nova/js/jquery.smartWizard.js","templates/nova/js/jquery.magnific-popup.min.js", function() {
-		var wizard = $('#wizard').addClass("swMain").smartWizard({noForwardJumping:true,onLeaveStep:leaveAStepCallback,
-	       onFinish:onFinishCallback});
+		var wizard = $('#wizard').addClass("swMain").smartWizard({noForwardJumping:true,onLeaveStep:nextStep,
+	       onFinish:onFinish});
 		$('#new').magnificPopup({
 			  type:'inline'
 		}).click(function(){

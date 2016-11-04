@@ -26,18 +26,20 @@ public class ModuleInterceptor extends AbstractInterceptor {
 		ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
 		request.setAttribute("modules",moduleManager.getVisibleModules());
 		Module module = moduleManager.getModuleByUrl(url); 
-		request.setAttribute("module",module);
-		request.setAttribute("title",action);
-		List<MenuItem> items = new ArrayList<MenuItem>();
-		if(module.getMenu()!=null) {
-		    for(MenuItem item : module.getMenu().getMenuItems()) {
-				if(item.getAction().equals(action) && item.getTitle()!=null) {
-					request.setAttribute("title",item.getTitle());
+		if(module!=null) {
+			request.setAttribute("module",module);
+			request.setAttribute("title",action);
+			List<MenuItem> items = new ArrayList<MenuItem>();
+			if(module.getMenu()!=null) {
+			    for(MenuItem item : module.getMenu().getMenuItems()) {
+					if(item.getAction().equals(action) && item.getTitle()!=null) {
+						request.setAttribute("title",item.getTitle());
+					}
+					if(item.isVisible())items.add(item);
 				}
-				if(item.isVisible())items.add(item);
-			}
-	    }
-		request.setAttribute("menu",new Menu(items));
+		    }
+			request.setAttribute("menu",new Menu(items));
+		}
         return invocation.invoke();
     }
 }

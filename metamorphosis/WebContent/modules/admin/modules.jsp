@@ -10,10 +10,24 @@
 	      <a>
 		  <img src="modules/admin/images/module-128.png"/>
 		  </a>
-		  <div>
+		  <div class="info">
 		  <span class="extension-name">${name}</span>
 		  <span class="extension-author">${author}</span>
 		  </div>
+		  <div class="extensionDetails">
+		      	  <span>Name : ${name}</span>
+		      	  <span>Url : /${url}</span>
+		      	  <span>Home : ${home}</span>
+		      	  <span>Main : ${main}</span>
+		      	  <span>Visible : ${visible}</span>
+				  <span>Author : ${author}</span>
+				  <span>Author Email : ${authorEmail}</span>
+				  <span>Author Url : ${authorUrl}</span>
+				  <span>Creation Date : ${creationDate}</span>
+				  <span>Copyright : ${copyright}</span>
+				  <span>License : ${license}</span>
+				  <span>Version : ${version}</span>
+		 </div>
 		</div>
 		
 	   </s:iterator>
@@ -21,3 +35,4 @@
 	</div>
 </fieldset>
 </div>
+<script type="text/javascript" src="modules/admin/js/extensions.js"></script>

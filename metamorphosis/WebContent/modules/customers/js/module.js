@@ -7,7 +7,7 @@ page.list.details.show = function(customer) {
 	page.list.details.render(["informations","contact"],customer);
 };
 
-var leaveAStepCallback = function() {
+var nextStep = function() {
 	return true;
 };
 
