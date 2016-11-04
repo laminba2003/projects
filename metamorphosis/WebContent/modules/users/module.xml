@@ -11,18 +11,21 @@
 	<license>GNU/GPL</license>
 	<version>1.0</version>
 	<menu>
-	   <menuItem name="Account"/>
-	   <menuItem name="Preferences" action="preferences"/>
+		<menuItem name="Account" />
+		<menuItem name="Preferences" action="preferences" />
 	</menu>
 	<actions>
-	   <action name="signIn" class="org.metamorphosis.core.UserAction" method="signIn"/>
-      
-       <action name="signOut" class="org.metamorphosis.core.UserAction" method="signOut">
-            <result type="redirect">/</result>
-      </action>
-      
-       <action name="preferences/templates/select" class="org.metamorphosis.core.TemplateAction" method="selectTemplate">
-            <result type="redirect">/users/preferences</result>
-      </action>
+		<action name="signIn" class="org.metamorphosis.core.UserAction"
+			method="signIn" />
+
+		<action name="signOut" class="org.metamorphosis.core.UserAction"
+			method="signOut">
+			<result type="redirect">/</result>
+		</action>
+
+		<action name="preferences/templates/select" class="org.metamorphosis.core.TemplateAction"
+			method="selectTemplate">
+			<result type="redirect">/users/preferences</result>
+		</action>
 	</actions>
 </module>

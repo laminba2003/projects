@@ -11,29 +11,29 @@ public class TemplateManager {
 	public List<Template> getTemplates() {
 		return templates;
 	}
-	
+
 	public void loadTemplates(File root) {
 		TemplateLoader loader = new TemplateLoader();
 		for(File file : root.listFiles()) {
 			if(file.isDirectory()) {
-			   File metadata = new File(file+File.separator+"template.xml");
-			   if(metadata.exists()) {
-				   try {
-				    Template template = loader.loadTemplate(metadata);
-				    template.setId(file.getName());
-				    addTemplate(template);
-				   }catch(Exception e){
-					   e.printStackTrace();
-				   }
-			   }
+				File metadata = new File(file+File.separator+"template.xml");
+				if(metadata.exists()) {
+					try {
+						Template template = loader.loadTemplate(metadata);
+						template.setId(file.getName());
+						addTemplate(template);
+					}catch(Exception e){
+						e.printStackTrace();
+					}
+				}
 			}
 		}
 	}
-	
+
 	public void addTemplate(Template template) {
 		templates.add(template);
 	}
-	
+
 	public Template getTemplate(String id) {
 		for(Template template : templates) {
 			if(template.getId().equals(id)) return template;
@@ -44,5 +44,5 @@ public class TemplateManager {
 	public void setTemplates(List<Template> templates) {
 		this.templates = templates;
 	}
-	
+
 }

@@ -14,53 +14,51 @@ public class ModuleManager {
 		ModuleLoader loader = new ModuleLoader();
 		for(File file : root.listFiles()) {
 			if(file.isDirectory()) {
-			   File metadata = new File(file+File.separator+"module.xml");
-			   if(metadata.exists()) {
-				   try {
-				    Module module = loader.loadModule(metadata);
-				    module.setFolder(file);
-				    module.setId(file.getName());
-				    if(module.getUrl()==null) module.setUrl(file.getName().toLowerCase());
-				    if(module.getMenu()!=null) {
-					    for(MenuItem item : module.getMenu().getMenuItems()) {
-							if(item.getAction()!=null) {
-								if(item.getPage()==null) {
-									item.setPage(item.getAction()+".jsp");
-								}
-								item.setAction(module.getUrl()+"/"+item.getAction());
-							}else {
-								item.setAction(module.getUrl());
-								item.setTitle(module.getUrl());
-								if(item.getPage()==null) {
-									item.setPage(module.getHome());
+				File metadata = new File(file+File.separator+"module.xml");
+				if(metadata.exists()) {
+					try {
+						Module module = loader.loadModule(metadata);
+						module.setFolder(file);
+						module.setId(file.getName());
+						if(module.getUrl()==null) module.setUrl(file.getName().toLowerCase());
+						if(module.getMenu()!=null) {
+							for(MenuItem item : module.getMenu().getMenuItems()) {
+								if(item.getAction()!=null) {
+									if(item.getPage()==null) {
+										item.setPage(item.getAction()+".jsp");
+									}
+									item.setAction(module.getUrl()+"/"+item.getAction());
+								}else {
+									item.setAction(module.getUrl());
+									item.setTitle(module.getUrl());
+									if(item.getPage()==null) {
+										item.setPage(module.getHome());
+									}
 								}
 							}
 						}
-				    }
-				    if(module.isMain()) main = module;
-				    addModule(module);
-				   }catch(Exception e){
-					   e.printStackTrace();
-				   }
-			   }
+						if(module.isMain()) main = module;
+						addModule(module);
+					}catch(Exception e){
+						e.printStackTrace();
+					}
+				}
 			}
 		}
 		orderModules();
 	}
-	
+
 	private void orderModules() {
-	
+
 	}
-	
+
 	public Module getModuleByUrl(String url) {
-		
 		for(Module module : modules) {
 			if(module.getUrl().equals(url)) return module;
 		}
 		return null;
-		
 	}
-	
+
 	public void addModule(Module module) {
 		modules.add(module);
 	}
@@ -68,11 +66,11 @@ public class ModuleManager {
 	public List<Module> getModules() {
 		return modules;
 	}
-	
+
 	public void setModules(List<Module> modules) {
 		this.modules = modules;
 	}
-	
+
 	public List<Module> getVisibleModules() {
 		List<Module> modules = new ArrayList<Module>();
 		for(Module module : this.modules) {
@@ -80,7 +78,7 @@ public class ModuleManager {
 		}
 		return modules;
 	}
-	
+
 	public List<Module> getAdminModules() {
 		List<Module> modules = new ArrayList<Module>();
 		for(Module module : this.modules) {
@@ -96,5 +94,5 @@ public class ModuleManager {
 	public void setMain(Module main) {
 		this.main = main;
 	}
-	
+
 }

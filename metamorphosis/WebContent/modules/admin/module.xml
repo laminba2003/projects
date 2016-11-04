@@ -12,9 +12,9 @@
 	<license>GNU/GPL</license>
 	<version>1.0</version>
 	<menu>
-	   <menuItem name="Users"/>
-	   <menuItem name="Groups" action="groups"/>
-	   <menuItem name="Modules" action="modules"/>
-	   <menuItem name="Templates" action="templates"/>
+		<menuItem name="Users" />
+		<menuItem name="Groups" action="groups" />
+		<menuItem name="Modules" action="modules" />
+		<menuItem name="Templates" action="templates" />
 	</menu>
 </module>
