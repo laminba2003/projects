@@ -6,6 +6,7 @@ public class Module extends Extension {
 	private String url;
     private boolean main;
     private boolean visible = true;
+    private boolean administrable = true;
     private String home="index.jsp";
     private Menu menu;
     
@@ -32,6 +33,12 @@ public class Module extends Extension {
 	}
 	public void setVisible(boolean visible) {
 		this.visible = visible;
+	}
+	public boolean isAdministrable() {
+		return administrable;
+	}
+	public void setAdministrable(boolean administrable) {
+		this.administrable = administrable;
 	}
 	public String getHome() {
 		return home;

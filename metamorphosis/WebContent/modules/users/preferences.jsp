@@ -11,7 +11,7 @@
 	      <div class="template">
 	      <img class="selected" src="modules/users/images/selected-32.png" style="display:${template==name?'inline-block':'none'}"/>
 		  <a>
-		  <img src="templates/${id}/thumbnail.png"/>
+		  <img src="${thumbnail}"/>
 		  </a>
 		  <div class="info">
 		  <span class="template-name">${name}</span>

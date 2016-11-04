@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <module>
 	<name>Admin</name>
+	<administrable>false</administrable>
 	<home>users.jsp</home>
 	<order>5</order>
 	<author>John Doe</author>

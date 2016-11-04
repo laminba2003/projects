@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <h1 class="icon-32 group-32">List Of Groups <a id="new" href="#form"></a></h1>
 <form id="search">
 	<span>Filter :</span>
@@ -70,87 +71,36 @@
    </div>
       <div id="permissions" class="tab_content">
     <script  type="text/x-handlebars-template">
+      <s:iterator value="#application.moduleManager.adminModules">
        <fieldset>
-         <legend>Module Customers</legend>
+         <legend>Module ${name}</legend>
         <span>Create : </span>
-        <span>yes<input type="radio" name="customers.create" value="yes" checked/>
-        no<input type="radio" name="customers.create" value="no"/>
+        <span>yes<input type="radio" name="${id}.create" value="yes" checked/>
+        no<input type="radio" name="${id}.create" value="no"/>
        </span>
         <span>Read : </span>
-        <span>yes<input type="radio" name="customers.read" value="yes" checked/>
-        no<input type="radio" name="customers.read" value="no"/>
+        <span>yes<input type="radio" name="${id}.read" value="yes" checked/>
+        no<input type="radio" name="${id}.read" value="no"/>
        </span>
        <span>Update : </span>
-        <span>yes<input type="radio" name="customers.update" value="yes" checked/>
-        no<input type="radio" name="customers.update" value="no"/>
+        <span>yes<input type="radio" name="${id}.update" value="yes" checked/>
+        no<input type="radio" name="${id}.update" value="no"/>
        </span>
        <span>Delete : </span>
-        <span>yes<input type="radio" name="customers.delete" value="yes" checked/>
-        no<input type="radio" name="customers.delete" value="no"/>
+        <span>yes<input type="radio" name="${id}.delete" value="yes" checked/>
+        no<input type="radio" name="${id}.delete" value="no"/>
        </span>
        <span>PDF : </span>
-        <span>yes<input type="radio" name="customers.pdf" value="yes" checked/>
-        no<input type="radio" name="customers.pdf" value="no"/>
+        <span>yes<input type="radio" name="${id}.pdf" value="yes" checked/>
+        no<input type="radio" name="${id}.pdf" value="no"/>
        </span>
        <span>Print : </span>
-        <span>yes<input type="radio" name="customers.print" value="yes" checked/>
-        no<input type="radio" name="customers.print" value="no"/>
+        <span>yes<input type="radio" name="${id}.print" value="yes" checked/>
+        no<input type="radio" name="${id}.print" value="no"/>
        </span>
        </fieldset>
-       <fieldset>
-         <legend>Module Products</legend>
-          <span>Create : </span>
-        <span>yes<input type="radio" name="products.create" value="yes" checked/>
-        no<input type="radio" name="products.create" value="no"/>
-       </span>
-        <span>Read : </span>
-        <span>yes<input type="radio" name="products.read" value="yes" checked/>
-        no<input type="radio" name="products.read" value="no"/>
-       </span>
-       <span>Update : </span>
-        <span>yes<input type="radio" name="products.update" value="yes" checked/>
-        no<input type="radio" name="products.update" value="no"/>
-       </span>
-       <span>Delete : </span>
-        <span>yes<input type="radio" name="products.delete" value="yes" checked/>
-        no<input type="radio" name="products.delete" value="no"/>
-       </span>
-       <span>PDF : </span>
-        <span>yes<input type="radio" name="products.pdf" value="yes" checked/>
-        no<input type="radio" name="products.pdf" value="no"/>
-       </span>
-       <span>Print : </span>
-        <span>yes<input type="radio" name="products.print" value="yes" checked/>
-        no<input type="radio" name="products.print" value="no"/>
-       </span>
-       </fieldset>
-       <fieldset>
-         <legend>Module Orders</legend>
-          <span>Create : </span>
-        <span>yes<input type="radio" name="orders.create" value="yes" checked/>
-        no<input type="radio" name="orders.create" value="no"/>
-       </span>
-        <span>Read : </span>
-        <span>yes<input type="radio" name="orders.read" value="yes" checked/>
-        no<input type="radio" name="orders.read" value="no"/>
-       </span>
-       <span>Update : </span>
-        <span>yes<input type="radio" name="orders.update" value="yes" checked/>
-        no<input type="radio" name="orders.update" value="no"/>
-       </span>
-       <span>Delete : </span>
-        <span>yes<input type="radio" name="orders.delete" value="yes" checked/>
-        no<input type="radio" name="orders.delete" value="no"/>
-       </span>
-       <span>PDF : </span>
-        <span>yes<input type="radio" name="orders.pdf" value="yes" checked/>
-        no<input type="radio" name="orders.pdf" value="no"/>
-       </span>
-       <span>Print : </span>
-        <span>yes<input type="radio" name="orders.print" value="yes" checked/>
-        no<input type="radio" name="orders.print" value="no"/>
-       </span>
-       </fieldset>
+      </s:iterator>
+       
       <input type="submit" value="Change"/>
     </script>
    </div>

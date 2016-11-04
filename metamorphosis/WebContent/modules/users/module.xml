@@ -2,6 +2,7 @@
 <module>
 	<name>Users</name>
 	<visible>false</visible>
+	<administrable>false</administrable>
 	<author>John Doe</author>
 	<authorEmail>john@example.com</authorEmail>
 	<authorUrl>http://www.example.com</authorUrl>

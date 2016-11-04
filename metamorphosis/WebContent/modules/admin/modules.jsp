@@ -20,6 +20,7 @@
 		      	  <span>Home : ${home}</span>
 		      	  <span>Main : ${main}</span>
 		      	  <span>Visible : ${visible}</span>
+		      	  <span>Administrable : ${administrable}</span>
 				  <span>Author : ${author}</span>
 				  <span>Author Email : ${authorEmail}</span>
 				  <span>Author Url : ${authorUrl}</span>

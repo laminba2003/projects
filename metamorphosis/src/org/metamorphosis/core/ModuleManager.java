@@ -80,6 +80,14 @@ public class ModuleManager {
 		}
 		return modules;
 	}
+	
+	public List<Module> getAdminModules() {
+		List<Module> modules = new ArrayList<Module>();
+		for(Module module : this.modules) {
+			if(module.isAdministrable())modules.add(module);
+		}
+		return modules;
+	}
 
 	public Module getMain() {
 		return main;
