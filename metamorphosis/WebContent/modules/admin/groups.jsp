@@ -142,4 +142,4 @@
      
 </form>
 
-<script type="text/javascript" src="modules/admin/js/groups.js"></script>
+<script type="text/javascript" src="${js}/groups.js"></script>

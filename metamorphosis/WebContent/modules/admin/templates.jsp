@@ -7,7 +7,7 @@
 	   <s:iterator value="#application.templateManager.templates">
 	   
 	      <div class="extension">
-	      <img class="selected" src="modules/users/images/selected-32.png" style="display:${template==name?'inline-block':'none'}"/>
+	      <img class="selected" src="${images}/selected-32.png" style="display:${template==name?'inline-block':'none'}"/>
 		  <a>
 		  <img src="templates/${id}/thumbnail.png"/>
 		  </a>
@@ -32,4 +32,4 @@
 	</div>
 </fieldset>
 </div>
-<script type="text/javascript" src="modules/admin/js/extensions.js"></script>
+<script type="text/javascript" src="${js}/extensions.js"></script>

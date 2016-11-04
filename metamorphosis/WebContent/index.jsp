@@ -7,10 +7,8 @@
    <meta name="robots" content="All" />
    <meta name="description" content="" />
    <meta name="keywords" content="" />
-   <base href="/app/"/>
    <title>Home</title>
    <link href="images/favicon.ico" rel="icon" sizes="16x16" type="image/x-icon" />
-   <link href="images/favicon-32x32.ico" rel="icon" sizes="32x32" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" />
    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet" />
    <link href="css/home.css" rel="stylesheet" />
@@ -37,7 +35,7 @@
 		
 		<main>
 		    <h1><b>Jelastic Customer Relation Management</b></h1>
-		    <img  src="images/Configuration-and-Management-large1.png"/>
+		    <img  src="images/computer.png"/>
 		   	<p style="display:none">
 		   	<b>Jelastic</b> offers a complete and integrated <b>CRM</b> solution that breaks down silos to deliver a seamless customer experience across marketing, sales, commerce, service, and social.
 		   	 </p>		   

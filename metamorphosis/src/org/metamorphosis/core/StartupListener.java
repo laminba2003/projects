@@ -35,11 +35,15 @@ public class StartupListener implements ServletContextListener {
 			if(definition.exists()) {
 				tilesDefinitions += ","+"/modules/"+module.getFolder().getName()+"/tiles.xml";
 			}else {
-				tilesDefinitions += ","+createModuleTiles(root,module);
+				tilesDefinitions += ","+createModuleTiles(module);
 			}
 			definition = new File(module.getFolder().getAbsolutePath()+File.separator+"struts.xml");
 			if(definition.exists()) {
 				config += ","+definition.getAbsolutePath();
+			}else {
+				if(module.getActions().size()>0) {
+					config += ","+createModuleConfig(module);
+				}
 			}
 		}
 		FilterRegistration struts2 = event.getServletContext().addFilter("struts2", org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.class);
@@ -48,19 +52,19 @@ public class StartupListener implements ServletContextListener {
 		event.getServletContext().setInitParameter("org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG",tilesDefinitions);
 	}
 	
-	public TemplateManager loadTemplates(String root) {
+	private TemplateManager loadTemplates(String root) {
 		TemplateManager manager = new TemplateManager();
 		manager.loadTemplates(new File(root+File.separator+"templates"));
 		return manager;
 	}
 	
-	public ModuleManager loadModules(String root) {
+	private ModuleManager loadModules(String root) {
 		ModuleManager manager = new ModuleManager();
 		manager.loadModules(new File(root+File.separator+"modules"));
 		return manager;
 	}
 	
-	public String createTemplateTiles(String root,String template) {
+	private String createTemplateTiles(String root,String template) {
 		String content = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"+
 		"<!DOCTYPE tiles-definitions PUBLIC '-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN' "+
 		 "'http://tiles.apache.org/dtds/tiles-config_2_0.dtd'>"+
@@ -78,7 +82,7 @@ public class StartupListener implements ServletContextListener {
 		return "/templates/"+temp.getName();
 	}
 	
-	public String createModuleTiles(String root,Module module) {
+	private String createModuleTiles(Module module) {
 		String content = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"+
 		"<!DOCTYPE tiles-definitions PUBLIC '-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN' "+
 		 "'http://tiles.apache.org/dtds/tiles-config_2_0.dtd'>"+
@@ -103,6 +107,51 @@ public class StartupListener implements ServletContextListener {
 			e.printStackTrace();
 		}
 		return "/modules/"+module.getId()+"/"+temp.getName();
+	}
+	
+	private String createModuleConfig(Module module) {
+		String content = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"+
+		"<!DOCTYPE struts PUBLIC '-//Apache Software Foundation//DTD Struts Configuration 2.0//EN' "+
+		 "'http://struts.apache.org/dtds/struts-2.0.dtd'>"+
+         "<struts><package name='"+module.getId()+"' namespace='/"+module.getUrl()+"' extends='root'>";
+		if(module.getMenu()!=null) {
+		    for(MenuItem item : module.getMenu().getMenuItems()) {
+		    	if(item.getAction().equals(module.getUrl())) {
+			    	content+="<action name='"+item.getAction()+"'>";
+			    	content+="<result name='success' type='tiles'>"+module.getUrl();
+		    		content+="</result>";
+			    	content+="</action>";
+		    	}else {
+		    		String name = item.getAction().substring(module.getUrl().length()+1);
+		    		content+="<action name='"+name+"'>";
+			    	content+="<result name='success' type='tiles'>"+item.getAction();
+		    		content+="</result>";
+			    	content+="</action>";
+		    	}
+			}
+	    }
+	    for(Action action : module.getActions()) {
+	    	content+="<action name='"+action.getName()+"' class='"+action.getClassName()+"' method='"+action.getMethod()+"'>";
+	    	for(Result result : action.getResults()) {
+	    		if(!result.getValue().equals("") && !result.getValue().startsWith("/")) {
+	    			result.setValue(module.getUrl()+"/"+result.getValue());
+	    		}
+	    		content+="<result name='"+result.getName()+"' type='"+result.getType()+"'>"+result.getValue();
+	    		content+="</result>";
+	    	}
+	    	content+="</action>";
+		}
+        content +="</package></struts>";
+		File temp=null;
+		try {
+			temp = new File(module.getFolder()+File.separator+"struts-generated.xml");
+			BufferedWriter bw = new BufferedWriter(new FileWriter(temp));
+	    	bw.write(content);
+	    	bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return temp.getAbsolutePath();
 	}
 	
 }

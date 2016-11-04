@@ -29,12 +29,12 @@ public class ModuleInterceptor extends AbstractInterceptor {
 		if(module!=null) {
 			request.setAttribute("module",module);
 			request.setAttribute("title",action);
+			request.setAttribute("js","modules/"+module.getId()+"/js");
+			request.setAttribute("css","modules/"+module.getId()+"/css");
+			request.setAttribute("images","modules/"+module.getId()+"/images");
 			List<MenuItem> items = new ArrayList<MenuItem>();
 			if(module.getMenu()!=null) {
 			    for(MenuItem item : module.getMenu().getMenuItems()) {
-					if(item.getAction().equals(action) && item.getTitle()!=null) {
-						request.setAttribute("title",item.getTitle());
-					}
 					if(item.isVisible())items.add(item);
 				}
 		    }

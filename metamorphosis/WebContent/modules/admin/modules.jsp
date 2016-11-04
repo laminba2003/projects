@@ -8,7 +8,7 @@
 	   
 	      <div class="extension">
 	      <a>
-		  <img src="modules/admin/images/module-128.png"/>
+		  <img src="${images}/module-128.png"/>
 		  </a>
 		  <div class="info">
 		  <span class="extension-name">${name}</span>
@@ -36,4 +36,4 @@
 	</div>
 </fieldset>
 </div>
-<script type="text/javascript" src="modules/admin/js/extensions.js"></script>
+<script type="text/javascript" src="${js}/extensions.js"></script>

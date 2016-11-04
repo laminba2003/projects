@@ -1,6 +1,6 @@
 <h1 class="icon-32">Account</h1>
 <div id="content" class="account">
-<img src="modules/users/images/user_64.png"/>
+<img src="${images}/user_64.png"/>
 <fieldset>
    <legend>Info Account</legend>
    <span class="text-right">Login : </span>
@@ -14,7 +14,7 @@
     <span class="text-right">Date : </span>
    <span>date</span>
 </fieldset>
-<img src="modules/users/images/info_64.png"/>
+<img src="${images}/info_64.png"/>
 <fieldset>
     <legend>User</legend>
 	<span class="text-right">Email : </span>
@@ -25,7 +25,7 @@
     <span>last name</span>
 </fieldset>
 <div class="change-password">
-<img src="modules/users/images/security_64.png"/>
+<img src="${images}/security_64.png"/>
 <fieldset>
    <legend>Change your password </legend>
 	<span class="text-right">Old : </span>

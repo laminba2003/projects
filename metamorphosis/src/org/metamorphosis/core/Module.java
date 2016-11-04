@@ -1,5 +1,8 @@
 package org.metamorphosis.core;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Module extends Extension {
 
 	private int order;
@@ -9,6 +12,7 @@ public class Module extends Extension {
     private boolean administrable = true;
     private String home="index.jsp";
     private Menu menu;
+    private List<Action> actions = new ArrayList<Action>();
     
 	public int getOrder() {
 		return order;
@@ -51,6 +55,15 @@ public class Module extends Extension {
 	}
 	public void setMenu(Menu menu) {
 		this.menu = menu;
+	}
+	public List<Action> getActions() {
+		return actions;
+	}
+	public void setActions(List<Action> actions) {
+		this.actions = actions;
+	}
+	public void addAction(Action action) {
+		actions.add(action);
 	}
 	public String getIcon() {
 		return "modules/"+getId()+"/images/icon-16.png";

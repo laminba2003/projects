@@ -318,4 +318,4 @@
      
 </form>
 
-<script type="text/javascript" src="modules/admin/js/users.js"></script>
+<script type="text/javascript" src="${js}/users.js"></script>

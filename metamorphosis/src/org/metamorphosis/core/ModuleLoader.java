@@ -28,6 +28,14 @@ public class ModuleLoader {
 		digester.addSetProperties("module/menu/menuItem");
 		digester.addSetNext("module/menu/menuItem", "addMenuItem");
 		digester.addSetNext("module/menu", "setMenu");
+		digester.addObjectCreate("module/actions/action", Action.class);
+		digester.addSetProperties("module/actions/action");
+		digester.addSetProperties("module/actions/action","class","className");
+		digester.addObjectCreate("module/actions/action/result", Result.class);
+		digester.addSetProperties("module/actions/action/result");
+		digester.addSetNext("module/actions/action/result", "addResult");
+		digester.addCallMethod("module/actions/action/result","setValue",0);
+		digester.addSetNext("module/actions/action", "addAction");
 		return (Module) digester.parse(file);
 	}
 }
