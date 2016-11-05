@@ -9,7 +9,7 @@
 	<constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
 	<constant name="struts.patternMatcher" value="regex" />
 	
-   <package name="root" extends="tiles-default">
+   <package name="root" namespace="/" extends="tiles-default">
    
      <interceptors>   
          <interceptor name="moduleInterceptor" class="org.metamorphosis.core.ModuleInterceptor"></interceptor>
@@ -20,16 +20,6 @@
      </interceptors>
      
      <default-interceptor-ref name="moduleStack"></default-interceptor-ref>
-     
-     <default-action-ref name="index"></default-action-ref>
-     
-     <action name="">
-            <result name="success">/index.jsp</result>
-      </action>
-      
-      <action name="index">
-            <result name="success">/index.jsp</result>
-      </action>
       
       <action name="{module}">
 	      	<exception-mapping exception="org.apache.tiles.definition.NoSuchDefinitionException"
