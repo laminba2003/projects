@@ -289,7 +289,7 @@ fieldset span {
 	color :#fff;
 }
 
-.templateDetails span {
+.extensionDetails span,.templateDetails span {
 	color : #222;
 }
 
