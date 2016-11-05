@@ -3,7 +3,7 @@
   <groupId>org.metamorphosis</groupId>
   <artifactId>metamorphosis-core</artifactId>
   <version>1.0</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
    <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
