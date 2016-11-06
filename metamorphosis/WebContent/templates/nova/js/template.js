@@ -2,7 +2,8 @@ page.form.edit = function() {
 	$('#new').magnificPopup('open');
 	$('#wizard').smartWizard('goToStep',1);
 	$('#wizard').smartWizard('disableStep',2);
-	$('.form h1').html("Edit "+page.form.entity+": Informations");
+	$('.form h1').html("Update "+page.form.entity+": Informations");
+	page.edit = true;
 };
 
 var onFinish = function(obj,context) {

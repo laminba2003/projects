@@ -7,8 +7,9 @@ page.animate = function(element) {
 };
 
 page.form.edit = function() {
-	$('.form h1').html("Edit "+page.form.entity+" : Informations");
+	$('.form h1').html("Update "+page.form.entity+" : Informations");
 	$('#form').removeClass("hide");
+	page.edit = true;
 };
 
 page.form.init = function() {

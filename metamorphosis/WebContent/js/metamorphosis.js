@@ -263,6 +263,9 @@ page.list.bindContextmenu = function(element,callback) {
 		var row = $(this);
 		var id = row.attr("id");
 		$("a",contextmenu).unbind("click");
+		$(".new-16",contextmenu).click(function(event){
+		   page.form.create();
+		});
 		$(".row-select",contextmenu).click(function(event){
 			row.click();
 		});
@@ -424,6 +427,7 @@ page.form.submit = function() {
 };
 page.form.create = function() {
 	page.edit = false;
+	$('#new').click();
 };
 page.render = function(element,data,container) {
 	app.templates = app.templates ? app.templates : {};
@@ -453,7 +457,7 @@ module.init = function(entity) {
 				$('.form h1').html("New "+page.form.entity +" : Informations");
 				$('.form input:not([type=hidden]').val("");
 				$('#form').removeClass("hide");
-				page.form.create();
+				page.edit = false;
 				return false;
 			});
 			page.list.render(entity+"s","no "+entity);

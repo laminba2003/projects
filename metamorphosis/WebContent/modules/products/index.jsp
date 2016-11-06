@@ -36,8 +36,9 @@
 </div>
 
 <div id="contextmenu">
-    <a class="icon-16 row-select">Select</a>
-    <a class="edit-16">Edit</a>
+    <a class="new-16">Create</a>
+    <a class="icon-16 row-select">Read</a>
+    <a class="edit-16">Update</a>
     <a class="delete-16">Delete</a>
     <a class="print-16">Print</a>
     <a class="pdf-16">PDF</a>
