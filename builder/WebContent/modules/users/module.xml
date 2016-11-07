@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<name>users</name>
+	<visible>false</visible>
+	<administrable>false</administrable>
+	<author>Jelastic</author>
+	<authorEmail>dev@jelastic.com</authorEmail>
+	<authorUrl>http://www.jelastic.com</authorUrl>
+	<creationDate>2016-09-01</creationDate>
+	<copyright>© 2016 Jelastic, Inc</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0</version>
+	<menu>
+		<menuItem name="Account" />
+		<menuItem name="Preferences" action="preferences" />
+	</menu>
+	<actions>
+		<action name="signIn" class="org.metamorphosis.core.UserAction" method="signIn" />
+		<action name="signOut" class="org.metamorphosis.core.UserAction" method="signOut">
+			<result type="redirect">/</result>
+		</action>
+		<action name="preferences/templates/select" class="org.metamorphosis.core.TemplateAction" method="selectTemplate"/>
+	</actions>
+</module>
