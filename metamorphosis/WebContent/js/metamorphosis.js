@@ -452,9 +452,9 @@ module.init = function(entity) {
 		page.form.entity = entity[0].toUpperCase() + entity.slice(1);
 		if($("#form").size()==1)page.form.init();
 		if($("#list").size()==1){
-			var title="New "+page.form.entity;
+			var title="Create "+page.form.entity;
 			$('#new').attr("title",title).html(title).click(function(){
-				$('.form h1').html("New "+page.form.entity +" : Informations");
+				$('.form h1').html("Create "+page.form.entity +" : Informations");
 				$('.form input:not([type=hidden]').val("");
 				$('#form').removeClass("hide");
 				page.edit = false;

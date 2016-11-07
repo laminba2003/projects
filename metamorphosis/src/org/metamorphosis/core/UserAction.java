@@ -15,7 +15,8 @@ public class UserAction extends ActionSupport {
 		ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
 		Module module = moduleManager.getMain()!=null ? moduleManager.getMain() : moduleManager.getModules().get(0);
 		String contextPath = ServletActionContext.getRequest().getContextPath();
-		ServletActionContext.getResponse().sendRedirect(contextPath+"/"+module.getUrl());
+		String url = module!=null ? contextPath+"/"+module.getUrl() : contextPath+"/";
+		ServletActionContext.getResponse().sendRedirect(url);
 	}
 	
 	public String signOut() {
