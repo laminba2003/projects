@@ -2,6 +2,7 @@
 <module>
 	<name>builder</name>
 	<main>true</main>
+	<home>modules.jsp</home>
 	<author>Jelastic</author>
 	<authorEmail>dev@jelastic.com</authorEmail>
 	<authorUrl>http://www.jelastic.com</authorUrl>
@@ -10,7 +11,17 @@
 	<license>GNU/GPL</license>
 	<version>1.0</version>
 	<menu>
-		<menuItem name="Modules" action="modules"/>
+		<menuItem name="Modules"/>
 		<menuItem name="Templates" action="templates"/>
+		<menuItem name="edit" action="modules/edit" page="editor.jsp" visible="false"/>
+		<menuItem name="edit" action="templates/edit" page="editor.jsp" visible="false"/>
 	</menu>
+	<actions>
+		<action name="modules/edit" class="org.metamorphosis.builder.ModuleAction">
+		  <result>modules/edit</result>
+		</action>	
+		<action name="templates/edit" class="org.metamorphosis.builder.TemplateAction">
+		  <result>templates/edit</result>
+		</action>
+	</actions>
 </module>

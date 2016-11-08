@@ -43,9 +43,9 @@ p:before,h1:before{
 }
 
 input[type=submit]{
-	border : 1px solid rgb(240, 240, 240);
+	border : 1px solid #000;
 	cursor : pointer;
-	background : rgb(40,40,40);
+	background : #474744;
 	color : white;
 	padding : 6px;
 }
@@ -71,12 +71,14 @@ h1 {
 	position:relative;
 	padding:0.8125em 0.203125em;
 	color : white;
+	margin : 0;
+	padding-top : 0.4em;
 }
 
 header {
 	height : 5.5em;
 	padding : 0 0.3em;
-	background : #fff;
+	background : #fffbff;
 }
 
 main p {
@@ -139,10 +141,14 @@ b {
 	display : inline-block;
 	padding-left : 20px;
 	background-repeat : no-repeat;
-	background-position : 0px 1px;
+	background-position : 0px 4px;
 	font-family : Itim;
 	color : #222;
 	text-decoration : none;
+}
+
+.menu a.active {
+	color : #fd1d1d;
 }
 
 .home-16 {
@@ -171,20 +177,23 @@ b {
 	margin-right : 200px;
 	width : 280px;
 	line-height :1.7em;
-	font-size:80%;
+	font-size:75%;
 }
 
 .login input[type=submit]{
 	position : absolute;
-	font-family : Itim;
+	font-family : Arial;
 	right:120px;
-	margin-top : -42px;
+	top : 20px;
+	font-size : 90%;
 }
 
 .login input[type=text],.login input[type=password]{
-	border : 1px solid rgb(40, 40, 40);
+	border : 1px solid #1e1e1e;
 	height : 25px;
 	margin-top : 5px;
+	font-size:95%;
+	width : 160px;
 }
 
 .login span {
@@ -192,8 +201,7 @@ b {
 	width : 100px;
 	text-align : right;
 	font-family : Itim;
-	font-weight : bold;
-	color : rgb(40, 40, 40);
+	color : #1e1e1e;
 }
 
 .login a {
@@ -201,6 +209,7 @@ b {
 	font-size : 90%;
 	cursor : pointer;
 	font-family : Itim;
+	display : inline-block;
 }
 
 .login a:first-of-type {

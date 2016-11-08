@@ -21,6 +21,7 @@ public class TemplateManager {
 					try {
 						Template template = loader.loadTemplate(metadata);
 						template.setId(file.getName());
+						template.setFolder(file);
 						addTemplate(template);
 					}catch(Exception e){
 						e.printStackTrace();

@@ -12,6 +12,7 @@
    <title>Metamorphosis</title>
    <link href="images/favicon.ico" rel="icon" sizes="16x16" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet" />
+     <link href="css/metamorphosis.css" rel="stylesheet"/>
    <link href="css/home.css" rel="stylesheet" />
  </head>
 <body>
@@ -23,7 +24,7 @@
 		     		<img src="images/logo.png"/>
 		   		</div>
 		         <div class="menu">
-		            <a href="${path}" class="home-16">Home</a>
+		            <a href="${path}" class="home-16 active">Home</a>
 		            <a href="public/documentation" class="documentation-16">Documentation</a>
 		            <a href="public/download" class="download-16">Download</a>
 		            <a href="public/modules" class="modules-16">Modules</a>

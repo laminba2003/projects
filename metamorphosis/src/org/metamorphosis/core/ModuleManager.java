@@ -58,6 +58,13 @@ public class ModuleManager {
 		}
 		return null;
 	}
+	
+	public Module getModuleById(String id) {
+		for(Module module : modules) {
+			if(module.getId().equals(id)) return module;
+		}
+		return null;
+	}
 
 	public void addModule(Module module) {
 		modules.add(module);
