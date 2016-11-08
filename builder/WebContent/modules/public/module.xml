@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<name>public</name>
+	<visible>false</visible>
+	<template>home</template>
+	<author>Jelastic</author>
+	<authorEmail>dev@jelastic.com</authorEmail>
+	<authorUrl>http://www.jelastic.com</authorUrl>
+	<creationDate>2016-09-01</creationDate>
+	<copyright>© 2016 Jelastic, Inc</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0</version>
+	
+</module>

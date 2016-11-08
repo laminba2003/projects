@@ -83,17 +83,32 @@ public class StartupListener implements ServletContextListener {
 	}
 
 	private String createModuleTiles(Module module) {
+		String template = module.getTemplate()!=null ? module.getTemplate() : "template";
 		String content = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"+
 				"<!DOCTYPE tiles-definitions PUBLIC '-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN' "+
 				"'http://tiles.apache.org/dtds/tiles-config_2_0.dtd'>"+
-				"<tiles-definitions><definition name='"+module.getId()+"' extends='template'>"+
+				"<tiles-definitions><definition name='"+module.getUrl()+"' extends='"+template+"'>"+
 				"<put-attribute name='content' value='/modules/"+module.getId()+"/"+module.getHome()+"'/>"+
 				"</definition>";
+		if(module.getTemplate()!=null) {
+			content+="<definition name='"+module.getTemplate()+"' template='/template.jsp'/>";
+		}
 		if(module.getMenu()!=null) {
 			for(MenuItem item : module.getMenu().getMenuItems()) {
-				content+="<definition name='"+item.getAction()+"' extends='template'>";
-				content+="<put-attribute name='content' value='/modules/"+module.getId()+"/"+item.getPage()+"'/>";
-				content+="</definition>";
+					if(!module.getUrl().equals(item.getAction())) {
+					content+="<definition name='"+item.getAction()+"' extends='"+module.getUrl()+"'>";
+					content+="<put-attribute name='content' value='/modules/"+module.getId()+"/"+item.getPage()+"'/>";
+					content+="</definition>";
+				}
+			}
+		}else {
+			for(File file : module.getFolder().listFiles()) {
+				if(file.isFile() && file.getName().endsWith(".jsp")) {
+					String name = file.getName().substring(0,file.getName().length()-4);
+					content+="<definition name='"+module.getUrl()+"/"+name+"' extends='"+module.getUrl()+"'>";
+					content+="<put-attribute name='content' value='/modules/"+module.getId()+"/"+file.getName()+"'/>";
+					content+="</definition>";
+				}
 			}
 		}
 		content +="</tiles-definitions>";

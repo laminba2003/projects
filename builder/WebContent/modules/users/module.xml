@@ -2,7 +2,6 @@
 <module>
 	<name>users</name>
 	<visible>false</visible>
-	<administrable>false</administrable>
 	<author>Jelastic</author>
 	<authorEmail>dev@jelastic.com</authorEmail>
 	<authorUrl>http://www.jelastic.com</authorUrl>

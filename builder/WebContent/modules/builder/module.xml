@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<name>builder</name>
+	<main>true</main>
+	<author>Jelastic</author>
+	<authorEmail>dev@jelastic.com</authorEmail>
+	<authorUrl>http://www.jelastic.com</authorUrl>
+	<creationDate>2016-09-01</creationDate>
+	<copyright>© 2016 Jelastic, Inc</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0</version>
+	<menu>
+		<menuItem name="Modules" action="modules"/>
+		<menuItem name="Templates" action="templates"/>
+	</menu>
+</module>

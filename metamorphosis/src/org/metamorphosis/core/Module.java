@@ -11,6 +11,7 @@ public class Module extends Extension {
     private boolean visible = true;
     private boolean administrable = true;
     private String home="index.jsp";
+    private String template;
     private Menu menu;
     private List<Action> actions = new ArrayList<Action>();
     
@@ -49,6 +50,12 @@ public class Module extends Extension {
 	}
 	public void setHome(String home) {
 		this.home = home;
+	}
+	public String getTemplate() {
+		return template;
+	}
+	public void setTemplate(String template) {
+		this.template = template;
 	}
 	public Menu getMenu() {
 		return menu;
