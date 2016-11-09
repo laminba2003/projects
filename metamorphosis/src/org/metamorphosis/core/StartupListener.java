@@ -9,7 +9,11 @@ import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
+import org.apache.tiles.web.startup.TilesListener;
+
+@WebListener
 public class StartupListener implements ServletContextListener {
 
 	@Override
@@ -50,6 +54,8 @@ public class StartupListener implements ServletContextListener {
 		struts2.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST),true, "/*");
 		struts2.setInitParameter("config",config);
 		event.getServletContext().setInitParameter("org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG",tilesDefinitions);
+		TilesListener listener = new TilesListener();
+		listener.contextInitialized(event);
 	}
 
 	private TemplateManager loadTemplates(String root) {
