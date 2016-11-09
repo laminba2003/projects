@@ -43,5 +43,9 @@ public class TemplateAction extends ActionSupport {
 		}
 		return "";
 	}
+	
+	public String getType() {
+		return "Templates";
+	}
 
 }

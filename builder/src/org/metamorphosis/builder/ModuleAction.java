@@ -43,4 +43,9 @@ public class ModuleAction extends ActionSupport {
 		}
 		return "";
 	}
+	
+	public String getType() {
+		return "Modules";
+	}
+
 }
