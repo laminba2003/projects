@@ -3,7 +3,7 @@ define("ace/theme/eclipse",["require","exports","module","ace/lib/dom"], functio
 
 exports.isDark = false;
 exports.cssText = ".ace-eclipse .ace_gutter {\
-background: #ebebeb;\
+background: #fff;\
 border-right: 1px solid rgb(159, 159, 159);\
 color: rgb(136, 136, 136);\
 }\

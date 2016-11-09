@@ -12,7 +12,7 @@
 
 #files {
 	display : inline-block;
-	width : 13%;
+	width : 14.45%;
 	vertical-align : top;
 	padding-top : 15px;
 }
@@ -20,13 +20,13 @@
 #edition {
 	vertical-align : top;
 	margin:auto;
-	width : 86%;
+	width : 85%;
 	display : inline-block;
 	font-size : 13px;
-	font-family : Lucida Console;
 	height : 500px;
-	padding-top : 3px;
+	padding-top : 6px;
 }
+
 
 #tabs a {
 	display : inline-block;
@@ -36,14 +36,16 @@
 	border-bottom : none;
 	background-image: url("../images/icon-16.png");
 	background-repeat : no-repeat;
+	background-color : #fff;
 	padding-left : 21px;
-	background-position : 3px 2px;
+	background-position : 3px 3px;
 	font-family : Arial;
 	font-size : 12px;
+	padding-top : 2px;
 }
 
 #editor {
-	height : 475px;
+	height : 480px;
 	border : 1px solid #ccc;
 }
 
@@ -189,7 +191,7 @@
 .css-treeview label,
 .css-treeview label::before
 {
-    background: url("http://experiments.wemakesites.net//pages/css3-treeview/example/icons.png") no-repeat;
+    background: url("../images/icons.png") no-repeat;
 }
  
 .css-treeview label,
