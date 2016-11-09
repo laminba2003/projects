@@ -12,6 +12,24 @@ snippet jstl:fn\n\
 	<%@ taglib uri=\"http://java.sun.com/jsp/jstl/functions\" prefix=\"fn\" %>\n\
 snippet cpath\n\
 	${pageContext.request.contextPath}\n\
+snippet struts:s\n\
+	<%@ taglib prefix=\"s\" uri=\"/struts-tags\"%>\n\
+snippet s:iterator\n\
+	<s:iterator value=\"#${1}\">\n\
+		${2}\n\
+	</s:iterator>\n\
+snippet s:modules\n\
+	<s:iterator value=\"#request.modules\">\n\
+		${2}\n\
+	</s:iterator>\n\
+snippet s:menu\n\
+	<s:iterator value=\"#request.menu.menuItems\">\n\
+		${2}\n\
+	</s:iterator>\n\
+snippet tiles:tiles\n\
+	<%@ taglib prefix=\"tiles\" uri=\"http://tiles.apache.org/tags-tiles\"%>\n\
+snippet tiles:insertAttribute\n\
+	<tiles:insertAttribute name=\"${1}\"/>\n\
 snippet cout\n\
 	<c:out value=\"${1}\" default=\"${2}\" />\n\
 snippet cset\n\
