@@ -16,7 +16,7 @@
 
 #files {
 	display : inline-block;
-	width : 14.45%;
+	width : 15.45%;
 	vertical-align : top;
 	padding-top : 15px;
 }
@@ -24,7 +24,7 @@
 #edition {
 	vertical-align : top;
 	margin:auto;
-	width : 85%;
+	width : 84%;
 	display : inline-block;
 	font-size : 13px;
 	height : 500px;
@@ -158,6 +158,9 @@
     color: #444;
     text-decoration: none;
     cursor : pointer;
+    background-image: url("../images/file-16.png");
+    background-repeat : no-repeat;
+    padding-left : 17px;
 }
  
 .css-treeview a:hover
