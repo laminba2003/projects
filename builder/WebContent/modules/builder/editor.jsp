@@ -1,4 +1,8 @@
-<h1 class="icon-32">Builder/${type}/Edit/${id}</h1>
+<h1 class="icon-32">Builder/${type}/Edit/${id} 
+<a class="delete-16">Delete</a>
+<a class="save-16">Save</a>
+<a class="new-16">Create</a>
+</h1>
 <div>
 <div id="files">
 <div class="css-treeview">

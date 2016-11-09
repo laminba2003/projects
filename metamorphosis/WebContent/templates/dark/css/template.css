@@ -5,15 +5,17 @@ h2,span {
 	font-family : Ubuntu;
 }
 
+h1 a {
+	border : 1px solid #888;
+	color : #000;
+}
 
-h1.icon-32 a:hover {
+h1 a:hover {
 	border : 1px solid rgb(200, 25, 17);
 }
 
-h1.icon-32 a {
+h1 a#new {
 	background-image: url("../images/new-16.png");
-	border : 1px solid #888;
-	color : #000;
 }
 
 h1 {

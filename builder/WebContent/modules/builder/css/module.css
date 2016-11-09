@@ -6,6 +6,10 @@
 	background-image: url("../images/icon-32.png");
 }
 
+.save-16 {
+	background-image: url("../images/save-16.png");
+}
+
 #content .extensions-details {
 	width : 100%;
 }
@@ -24,24 +28,24 @@
 	display : inline-block;
 	font-size : 13px;
 	height : 500px;
-	padding-top : 6px;
+	padding-top : 3px;
 }
 
 
 #tabs a {
 	display : inline-block;
 	width : 100px;
-	height : 25px;
+	height : 28px;
 	border : 1px solid #ccc;
 	border-bottom : none;
 	background-image: url("../images/icon-16.png");
 	background-repeat : no-repeat;
 	background-color : #fff;
 	padding-left : 21px;
-	background-position : 3px 3px;
+	background-position : 3px 5px;
 	font-family : Arial;
 	font-size : 12px;
-	padding-top : 2px;
+	padding-top : 4px;
 }
 
 #editor {

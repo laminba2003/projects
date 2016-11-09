@@ -195,14 +195,17 @@ h2 {
   font-family : Exo;
 }
 
-h1.icon-32 a {
-	background-image: url("../images/new-16.png");
+h1 a {
 	border : 1px solid rgb(86, 182, 255);
 	color : rgb(234, 133, 17);
 	background-color : #fff;
 }
 
-h1.icon-32 a:hover {
+h1 a#new {
+	background-image: url("../images/new-16.png");
+}
+
+h1 a:hover {
 	border : 1px solid rgb(234, 133, 17);
 }
 
@@ -226,8 +229,12 @@ select,input {
 	border : 1px solid rgb(86, 182, 255);
 }
 
+a {
+	color : rgb(0, 172, 235);
+}
+
 span a {
-	color : blue;
+	color : rgb(0, 172, 235);
 }
 
 b {
