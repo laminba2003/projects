@@ -10,13 +10,17 @@
 	background-image: url("../images/save-16.png");
 }
 
+.back-16 {
+	background-image: url("../images/back-16.png");
+}
+
 #content .extensions-details {
 	width : 100%;
 }
 
 #files {
 	display : inline-block;
-	width : 15.45%;
+	width : 14.7%;
 	vertical-align : top;
 	padding-top : 15px;
 }
@@ -24,7 +28,7 @@
 #edition {
 	vertical-align : top;
 	margin:auto;
-	width : 84%;
+	width : 84.8%;
 	display : inline-block;
 	font-size : 13px;
 	height : 500px;

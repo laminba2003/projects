@@ -10,9 +10,10 @@
    <meta name="keywords" content="" />
    <base href="${path}"/>
    <title>${title}</title>
-   <link href="images/favicon.ico" rel="icon" sizes="16x16" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet" />
-     <link href="css/metamorphosis.css" rel="stylesheet"/>
+  <link href="images/favicon.ico" rel="icon" sizes="16x16" type="image/x-icon" />
+   <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet" />
+   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" />
+   <link href="css/metamorphosis.css" rel="stylesheet"/>
    <link href="css/home.css" rel="stylesheet" />
  </head>
 <body>
@@ -30,15 +31,15 @@
 		            <a href="public/modules" class="modules-16">Modules</a>
 		            <a href="public/templates" class="templates-16">Templates</a>
 		         </div>
-				 <div class="login">
+				  <div class="login">
 				  <form action="users/signIn">
 				   <span>Email :</span>
 				   <input type="text" size="20"/>
 				   <span>Password :</span>
 				   <input type="password" size="20"/>
+				   <input type="submit" value="Sign In"/>
 				   <a>register</a>
 				   <a>forgot your password?</a>
-				   <input type="submit" value="Sign In"/>
 				   </form>
 				</div>
 			

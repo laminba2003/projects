@@ -1,5 +1,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<h1 class="icon-32">Builder/Modules</h1>
+<h1 class="icon-32">Builder/Modules
+<a class="new-16">Create Module</a>
+</h1>
 <div id="content">
 <fieldset class="extensions-details">
 	<div id="extensions">
