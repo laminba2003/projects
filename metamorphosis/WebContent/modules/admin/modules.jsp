@@ -1,5 +1,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<h1 class="module-32">Modules</h1>
+<h1 class="module-32">Modules
+<a class="upload-16">Upload Module</a>
+</h1>
 <div id="content">
 <fieldset class="extensions-details">
 	<div id="extensions">

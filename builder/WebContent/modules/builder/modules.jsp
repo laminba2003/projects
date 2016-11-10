@@ -1,5 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <h1 class="icon-32">Builder/Modules
+<a class="upload-16">Upload Module</a>
 <a class="new-16">Create Module</a>
 </h1>
 <div id="content">

@@ -30,6 +30,10 @@
 	background-image: url("../images/template-32.png");
 }
 
+.upload-16 {
+	background-image: url("../images/upload-16.png");
+}
+
 #content .extensions-details {
 	width : 100%;
 }
