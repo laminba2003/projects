@@ -1,5 +1,6 @@
 <h1 class="icon-32">Builder/${type}/Edit/${id} 
 <a class="back-16">Back</a>
+<a class="extension-16">Extensions</a>
 <a class="delete-16">Delete</a>
 <a class="icon-16">Open With</a>
 <a class="save-16">Save</a>
