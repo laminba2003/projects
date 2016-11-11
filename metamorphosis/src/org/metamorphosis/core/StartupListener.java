@@ -29,10 +29,10 @@ public class StartupListener implements ServletContextListener {
 		event.getServletContext().setAttribute("moduleManager",moduleManager);
 		TemplateManager templateManager = loadTemplates(root);
 		event.getServletContext().setAttribute("templateManager",templateManager);
-		String template = event.getServletContext().getInitParameter("template");
-		template = template !=null ? template : templateManager.getTemplates().get(0).getId();
-		event.getServletContext().setAttribute("template",template);
-		String tilesDefinitions = "/WEB-INF/tiles.xml,"+createTemplateTiles(root,template);
+		String id = event.getServletContext().getInitParameter("template");
+		Template template = templateManager.getSelectedTemplate(id);
+		event.getServletContext().setAttribute("template",template.getId());
+		String tilesDefinitions = "/WEB-INF/tiles.xml,"+createTemplateTiles(root,template.getId());
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
 		for(Module module : moduleManager.getModules()) {
 			File definition = new File(module.getFolder().getAbsolutePath()+File.separator+"tiles.xml");

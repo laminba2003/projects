@@ -1,6 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <h1 class="module-32">Modules
-<a class="upload-16">Upload Module</a>
+<a class="upload-16">Upload</a>
 </h1>
 <div id="content">
 <fieldset class="extensions-details">
@@ -27,6 +27,7 @@
 				  <span>Author Email : ${authorEmail}</span>
 				  <span>Author Url : ${authorUrl}</span>
 				  <span>Creation Date : ${creationDate}</span>
+				  <span>Description : ${description}</span>
 				  <span>Copyright : ${copyright}</span>
 				  <span>License : ${license}</span>
 				  <span>Version : ${version}</span>

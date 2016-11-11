@@ -23,6 +23,7 @@
 				  <span>Author Email : ${authorEmail}</span>
 				  <span>Author Url : ${authorUrl}</span>
 				  <span>Creation Date : ${creationDate}</span>
+				  <span>Description : ${description}</span>
 				  <span>Copyright : ${copyright}</span>
 				  <span>License : ${license}</span>
 				  <span>Version : ${version}</span>

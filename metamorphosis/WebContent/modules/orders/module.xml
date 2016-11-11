@@ -5,6 +5,7 @@
 	<author>Jelastic</author>
 	<authorEmail>dev@jelastic.com</authorEmail>
 	<authorUrl>http://www.jelastic.com</authorUrl>
+	<description>module to manage orders</description>
 	<creationDate>2016-09-01</creationDate>
 	<copyright>© 2016 Jelastic, Inc</copyright>
 	<license>GNU/GPL</license>

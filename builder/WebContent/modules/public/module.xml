@@ -8,6 +8,7 @@
 	<authorEmail>dev@jelastic.com</authorEmail>
 	<authorUrl>http://www.jelastic.com</authorUrl>
 	<creationDate>2016-09-01</creationDate>
+	<description>module to manage the public content</description>
 	<copyright>© 2016 Jelastic, Inc</copyright>
 	<license>GNU/GPL</license>
 	<version>1.0</version>

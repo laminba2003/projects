@@ -65,7 +65,7 @@
 }
 
 #editor {
-	height : 480px;
+	height : 490px;
 	border : 1px solid #ccc;
 }
 
@@ -129,7 +129,7 @@
 	padding : 20px;
 	background : #fff;
 	border : 1px solid #ccc;
-	width : 300px;
+	width : auto;
 	margin-top : -128px;
 	display : none;
 	z-index : 999;

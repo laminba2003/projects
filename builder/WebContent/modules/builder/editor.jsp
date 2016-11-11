@@ -1,7 +1,7 @@
 <h1 class="icon-32">Builder/${type}/Edit/${id}
 <a class="download-16">Download</a>
 <a class="upload-16">Upload</a>
-<a class="extension-16">Extensions</a>
+<a class="extension-16">${type}</a>
 <a class="delete-16">Delete</a>
 <a class="icon-16">Open With</a>
 <a class="save-16">Save</a>
@@ -61,6 +61,7 @@
     editor.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true,
-        enableLiveAutocompletion: false
+        enableLiveAutocompletion: false,
+        showPrintMargin : false
     });
 </script>

@@ -41,6 +41,15 @@ public class TemplateManager {
 		}
 		return null;
 	}
+	
+	public Template getSelectedTemplate(String id) {
+		Template template = getTemplate(id);
+		if(template!=null) return template;
+		for(Template current : templates) {
+			if(current.isSelected()) return current;
+		}
+		return templates.get(0);
+	}
 
 	public void setTemplates(List<Template> templates) {
 		this.templates = templates;
