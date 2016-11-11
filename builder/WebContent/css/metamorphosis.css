@@ -81,6 +81,7 @@ input {
 }
 
 h1 a {
+	
 	float : right;
 	font-size : 12px;
 	background-repeat : no-repeat;
@@ -96,6 +97,7 @@ h1 a {
     -moz-user-select: none;     /* Firefox all */
     -ms-user-select: none;      /* IE 10+ */
     user-select: none;
+    
 }
 
 h1 a:first-of-type {
