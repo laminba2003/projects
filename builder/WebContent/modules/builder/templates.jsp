@@ -1,7 +1,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <h1 class="icon-32">Builder/Templates
-<a class="upload-16">Upload</a>
-<a class="new-16">Create</a>
+<a title="upload" class="upload-16">Upload</a>
+<a title="create" class="new-16">Create</a>
 </h1>
 <div id="content">
 <fieldset class="extensions-details">
@@ -14,9 +14,9 @@
 		  <img src="templates/${id}/thumbnail.png"/>
 		  </a>
 		  <div class="info">
-		  <span class="extension-name">${name}</span>
+		  <span class="extension-name">${name}  <a title="delete" class="delete-16"></a><a title="download" class="download-16"></a></span>
 		  <span class="extension-author">${author}</span>
-		  <span><a href="builder/templates/edit?id=${id}">[Edit]</a></span>
+		  <span><a title="edit" href="builder/templates/edit?id=${id}">[Edit]</a></span>
 		  </div>
 		  <div class="extensionDetails">
 		      	  <span>Name : ${name}</span>

@@ -62,6 +62,7 @@
 	font-family : Arial;
 	font-size : 12px;
 	padding-top : 4px;
+	cursor : default;
 }
 
 #editor {
@@ -115,6 +116,13 @@
 	font-weight : bold;
 	margin-top :10px;
 	
+}
+
+.extension div span.extension-name a {
+	width : 16px;
+	height : 16px;
+	margin-right : 3px;
+	display : inline-block;
 }
 
 .extension span.extension-author {

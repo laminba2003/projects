@@ -1,11 +1,11 @@
 <h1 class="icon-32">Builder/${type}/Edit/${id}
-<a class="download-16">Download</a>
-<a class="upload-16">Upload</a>
-<a class="extension-16">${type}</a>
-<a class="delete-16">Delete</a>
-<a class="icon-16">Open With</a>
-<a class="save-16">Save</a>
-<a class="new-16">New</a>
+<a title="Download" class="download-16">Download</a>
+<a title="Upload" class="upload-16">Upload</a>
+<a title="${type}" class="extension-16">${type}</a>
+<a title="Delete" class="delete-16">Delete</a>
+<a title="Open With" class="icon-16">Open With</a>
+<a title="Save" class="save-16">Save</a>
+<a title="New" class="new-16">New</a>
 </h1>
 <div>
 <div id="files">
@@ -44,7 +44,7 @@
 </div>
 <div id="edition">
 <div id="tabs">
- <a>index.jsp</a>
+ <a title="${id}/index.jsp">index.jsp</a>
 </div>
 <div id="editor">
  <textarea>${content}</textarea>
