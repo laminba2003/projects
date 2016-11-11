@@ -46,22 +46,15 @@
 <div id="tabs">
  <a title="${id}/index.jsp">index.jsp</a>
 </div>
-<div id="editor">
+<div id="editor" class="editor" data-editor-lang="html">
  <textarea>${content}</textarea>
 </div>
 </div>
 </div>
-<script src="${js}/ace/src/ace.js" type="text/javascript" charset="utf-8"></script>
-<script src="${js}/ace/src/ext-language_tools.js"></script>
+<link rel="stylesheet" type="text/css" href="http://eclipse.org/orion/editor/releases/current/built-editor.css"/>
+<script src="http://eclipse.org/orion/editor/releases/current/built-editor.min.js"></script>
 <script>
-   ace.require("ace/ext/language_tools");
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/eclipse");
-    editor.getSession().setMode("ace/mode/jsp");
-    editor.setOptions({
-        enableBasicAutocompletion: true,
-        enableSnippets: true,
-        enableLiveAutocompletion: false,
-        showPrintMargin : false
-    });
+	require(["orion/editor/edit"], function(edit) {
+		edit({className: "editor"});
+	});
 </script>

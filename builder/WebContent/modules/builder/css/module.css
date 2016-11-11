@@ -26,6 +26,10 @@
 	background-image: url("../images/extension-16.png");
 }
 
+.share-16 {
+	background-image: url("../images/share-16.png");
+}
+
 #content .extensions-details {
 	width : 100%;
 }
@@ -76,7 +80,7 @@
 
 .extension {
 	display : inline-block;
-	width : 250px;
+	width : auto;
 	height: 150px;
 	margin : 5px;
 }
