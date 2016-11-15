@@ -524,7 +524,7 @@ app.ready(function(){
 	
 	$("body").append('<div class="confirm-dialog-container">'+
 			'<div class="confirm-dialog">'+
-			'<span class="confirm-dialog-title">Delete item</span>'+
+			'<span class="confirm-dialog-title">Confirmation</span>'+
 			'<span class="confirm-dialog-message">Are you sure you want to delete this item?</span>'+
 			'<a id="confirm-dialog-cancel" tabindex="2" class="confirm-dialog-button">Cancel</a>'+
 			'<a id="confirm-dialog-ok" tabindex="1" class="confirm-dialog-button">OK</a></div></div>');

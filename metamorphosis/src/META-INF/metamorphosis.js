@@ -452,9 +452,9 @@ module.init = function(entity) {
 		page.form.entity = entity[0].toUpperCase() + entity.slice(1);
 		if($("#form").size()==1)page.form.init();
 		if($("#list").size()==1){
-			var title="New "+page.form.entity;
+			var title="Create ";
 			$('#new').attr("title",title).html(title).click(function(){
-				$('.form h1').html("New "+page.form.entity +" : Informations");
+				$('.form h1').html("Create "+page.form.entity +" : Informations");
 				$('.form input:not([type=hidden]').val("");
 				$('#form').removeClass("hide");
 				page.edit = false;
@@ -524,7 +524,7 @@ app.ready(function(){
 	
 	$("body").append('<div class="confirm-dialog-container">'+
 			'<div class="confirm-dialog">'+
-			'<span class="confirm-dialog-title">Delete item</span>'+
+			'<span class="confirm-dialog-title">Confirmation</span>'+
 			'<span class="confirm-dialog-message">Are you sure you want to delete this item?</span>'+
 			'<a id="confirm-dialog-cancel" tabindex="2" class="confirm-dialog-button">Cancel</a>'+
 			'<a id="confirm-dialog-ok" tabindex="1" class="confirm-dialog-button">OK</a></div></div>');

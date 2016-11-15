@@ -1,16 +1,18 @@
 package org.metamorphosis.core;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.EnumSet;
 import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-
 import org.apache.tiles.web.startup.TilesListener;
 
 @WebListener
@@ -25,6 +27,7 @@ public class StartupListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent event) {
 		event.getServletContext().setAttribute("path",event.getServletContext().getContextPath()+"/");
 		String root = new File(event.getServletContext().getRealPath(File.separator)).getAbsolutePath();
+		System.out.println("root "+root);
 		ModuleManager moduleManager = loadModules(root);
 		event.getServletContext().setAttribute("moduleManager",moduleManager);
 		TemplateManager templateManager = loadTemplates(root);
@@ -56,6 +59,7 @@ public class StartupListener implements ServletContextListener {
 		event.getServletContext().setInitParameter("org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG",tilesDefinitions);
 		TilesListener listener = new TilesListener();
 		listener.contextInitialized(event);
+		copyFiles(root);
 	}
 
 	private TemplateManager loadTemplates(String root) {
@@ -173,6 +177,36 @@ public class StartupListener implements ServletContextListener {
 			e.printStackTrace();
 		}
 		return temp.getAbsolutePath();
+	}
+	
+	private void copyFiles(String root) {
+		copyFiles(root,"css","metamorphosis.css");
+		copyFiles(root,"js","metamorphosis.js");
+		copyFiles(root,"js","pdfmake.min.js");
+		copyFiles(root,"js","vfs_fonts.js");
+	}
+	
+	private void copyFiles(String root,String dir,String file)	{
+		InputStream source = this.getClass().getClassLoader().getResourceAsStream("META-INF/"+file);
+		if(source!=null) {
+			try {
+			 File folder = new File(root+File.separator+dir);
+			 folder.mkdirs();
+			 copyFile(source,new File(folder+File.separator+file));
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+	}
+	private void copyFile(InputStream source,File destination) throws Exception {
+		 BufferedReader br = new BufferedReader(new InputStreamReader(source));
+		 BufferedWriter bw = new BufferedWriter(new FileWriter(destination));
+		 String content;
+			while ((content = br.readLine()) != null) {
+				bw.write(content+"\n");
+			}
+			br.close();
+			bw.close();
 	}
 
 }
