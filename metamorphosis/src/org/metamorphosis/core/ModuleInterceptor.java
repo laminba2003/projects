@@ -30,7 +30,6 @@ public class ModuleInterceptor extends AbstractInterceptor {
 			if(module!=null) {
 				request.setAttribute("module",module);
 				request.setAttribute("title",action);
-				request.setAttribute("url",module.getUrl());
 				request.setAttribute("js","modules/"+module.getId()+"/js");
 				request.setAttribute("css","modules/"+module.getId()+"/css");
 				request.setAttribute("images","modules/"+module.getId()+"/images");
