@@ -14,7 +14,7 @@
 		  <img src="templates/${id}/thumbnail.png"/>
 		  </a>
 		  <div class="info">
-		  <span class="extension-name">${name}  <a href="${url}/templates/edit?id=${id}" title="edit" class="edit-16"></a><a title="delete" class="delete-16"></a><a title="download" class="download-16"></a><a title="share" class="share-16"></a></span>
+		  <span class="extension-name">${name}  <a href="${module.url}/templates/edit?id=${id}" title="edit" class="edit-16"></a><a title="delete" class="delete-16"></a><a title="download" class="download-16"></a><a title="share" class="share-16"></a></span>
 		  <span class="extension-author">${author}</span>
 		  </div>
 		  <div class="extensionDetails">
