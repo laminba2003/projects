@@ -44,7 +44,7 @@
 
 .extension {
 	display : inline-block;
-	width : 250px;
+	width : auto;
 	height: 150px;
 	margin : 5px;
 }
