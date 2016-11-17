@@ -27,7 +27,6 @@ public class StartupListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent event) {
 		event.getServletContext().setAttribute("path",event.getServletContext().getContextPath()+"/");
 		String root = new File(event.getServletContext().getRealPath(File.separator)).getAbsolutePath();
-		System.out.println("root "+root);
 		ModuleManager moduleManager = loadModules(root);
 		event.getServletContext().setAttribute("moduleManager",moduleManager);
 		TemplateManager templateManager = loadTemplates(root);
