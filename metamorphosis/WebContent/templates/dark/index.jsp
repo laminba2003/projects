@@ -49,7 +49,7 @@
 		   </aside>
 		</main>
 		 <footer>
-			<p>© 2016 Jelastic. All Rights Reserved, Jelastic, Inc.</p>
+			<p>© 2016 powered by Jelastic, Inc.</p>
 		</footer>
 		 
 	</div>

@@ -14,17 +14,20 @@ public class TemplateManager {
 
 	public void loadTemplates(File root) {
 		TemplateLoader loader = new TemplateLoader();
-		for(File file : root.listFiles()) {
-			if(file.isDirectory()) {
-				File metadata = new File(file+File.separator+"template.xml");
-				if(metadata.exists()) {
-					try {
-						Template template = loader.loadTemplate(metadata);
-						template.setId(file.getName());
-						template.setFolder(file);
-						addTemplate(template);
-					}catch(Exception e){
-						e.printStackTrace();
+		File[] files = root.listFiles();
+		if(files!=null){
+			for(File file : root.listFiles()) {
+				if(file.isDirectory()) {
+					File metadata = new File(file+File.separator+"template.xml");
+					if(metadata.exists()) {
+						try {
+							Template template = loader.loadTemplate(metadata);
+							template.setId(file.getName());
+							template.setFolder(file);
+							addTemplate(template);
+						}catch(Exception e){
+							e.printStackTrace();
+						}
 					}
 				}
 			}
@@ -48,7 +51,7 @@ public class TemplateManager {
 		for(Template current : templates) {
 			if(current.isSelected()) return current;
 		}
-		return templates.get(0);
+		return templates.size()> 0 ? templates.get(0) : null;
 	}
 
 	public void setTemplates(List<Template> templates) {

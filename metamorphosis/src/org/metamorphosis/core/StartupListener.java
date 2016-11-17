@@ -1,12 +1,13 @@
 package org.metamorphosis.core;
 
-import java.io.BufferedReader;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.EnumSet;
 import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
@@ -33,6 +34,11 @@ public class StartupListener implements ServletContextListener {
 		event.getServletContext().setAttribute("templateManager",templateManager);
 		String id = event.getServletContext().getInitParameter("template");
 		Template template = templateManager.getSelectedTemplate(id);
+		if(template==null) {
+			copyTemplate(root);
+			templateManager.loadTemplates(new File(root+File.separator+"templates"));
+			template = templateManager.getTemplates().get(0);
+		}
 		event.getServletContext().setAttribute("template",template.getId());
 		String tilesDefinitions = "/WEB-INF/tiles.xml,"+createTemplateTiles(root,template.getId());
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
@@ -185,27 +191,50 @@ public class StartupListener implements ServletContextListener {
 		copyFiles(root,"js","vfs_fonts.js");
 	}
 	
+	private void copyTemplate(String root) {
+		copyFiles(root,"templates","nova/index.jsp");
+		copyFiles(root,"templates","nova/template.xml");
+		copyFiles(root,"templates","nova/thumbnail.png");
+		copyFiles(root,"templates","nova/css/template.css");
+		copyFiles(root,"templates","nova/js/jquery.magnific-popup.min.js");
+		copyFiles(root,"templates","nova/js/jquery.smartWizard.js");
+		copyFiles(root,"templates","nova/js/template.js");
+		copyFiles(root,"templates","nova/images/account-16.png");
+		copyFiles(root,"templates","nova/images/delete-16.png");
+		copyFiles(root,"templates","nova/images/edit-16.png");
+		copyFiles(root,"templates","nova/images/new-16.png");
+		copyFiles(root,"templates","nova/images/pdf-16.png");
+		copyFiles(root,"templates","nova/images/print-16.png");
+		copyFiles(root,"templates","nova/images/search.png");
+		copyFiles(root,"templates","nova/images/signout.png");
+		copyFiles(root,"templates","nova/images/square.png");
+		copyFiles(root,"templates","nova/images/wait.gif");
+	}
+	
 	private void copyFiles(String root,String dir,String file)	{
 		InputStream source = this.getClass().getClassLoader().getResourceAsStream("META-INF/"+file);
 		if(source!=null) {
 			try {
 			 File folder = new File(root+File.separator+dir);
 			 folder.mkdirs();
-			 copyFile(source,new File(folder+File.separator+file));
+			 File dest = new File(folder+File.separator+file);
+			 dest.getParentFile().mkdirs();
+			 copyFile(source,dest);
 			}catch(Exception e){
 				e.printStackTrace();
 			}
 		}
 	}
 	private void copyFile(InputStream source,File destination) throws Exception {
-		 BufferedReader br = new BufferedReader(new InputStreamReader(source));
-		 BufferedWriter bw = new BufferedWriter(new FileWriter(destination));
-		 String content;
-			while ((content = br.readLine()) != null) {
-				bw.write(content+"\n");
-			}
-			br.close();
-			bw.close();
+		 BufferedInputStream br = new BufferedInputStream(source);
+		 BufferedOutputStream bw = new BufferedOutputStream(new FileOutputStream(destination));
+		 byte[] buffer = new byte[1024];
+	        int length;
+	        while ((length = br.read(buffer)) > 0) {
+	            bw.write(buffer, 0, length);
+	        }
+		br.close();
+		bw.close();
 	}
 
 }
