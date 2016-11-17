@@ -8,7 +8,6 @@ if(x.isFunction(n))while(r=o[i++])"+"===r[0]?(r=r.slice(1)||"*",(e[r]=e[r]||[]).
 
 
 var app = {};
-app.apiURL = "http://env-4347792.mircloud.host/";
 app.post = function(url,formData,callback) {
 	  app.wait();
 	  $.ajax({

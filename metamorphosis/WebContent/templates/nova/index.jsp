@@ -41,6 +41,7 @@
 		   </aside>
 		   <section> 
 		    <script type="text/javascript" src="js/metamorphosis.js"></script>
+		    <script type="text/javascript" src="js/app.js"></script>
 		    <script type="text/javascript" src="templates/nova/js/template.js"></script>
 		    <script type="text/javascript" src="${js}/module.js"></script>
 		    <tiles:insertAttribute name="content"/>
