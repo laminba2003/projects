@@ -185,33 +185,39 @@ public class StartupListener implements ServletContextListener {
 	}
 	
 	private void copyFiles(String root) {
-		copyFiles(root,"css","metamorphosis.css");
-		copyFiles(root,"js","metamorphosis.js");
-		copyFiles(root,"js","pdfmake.min.js");
-		copyFiles(root,"js","vfs_fonts.js");
+		copyFile(root,"css","metamorphosis.css");
+		copyFile(root,"js","metamorphosis.js");
+		copyFile(root,"js","pdfmake.min.js");
+		copyFile(root,"js","vfs_fonts.js");
+		if(!new File(root+"/images/logo.png").exists()) {
+			copyFile(root,"images","logo.png");
+		}
+		if(!new File(root+"/images/favicon.ico").exists()) {
+			copyFile(root,"images","favicon.ico");
+		}
 	}
 	
 	private void copyTemplate(String root) {
-		copyFiles(root,"templates","nova/index.jsp");
-		copyFiles(root,"templates","nova/template.xml");
-		copyFiles(root,"templates","nova/thumbnail.png");
-		copyFiles(root,"templates","nova/css/template.css");
-		copyFiles(root,"templates","nova/js/jquery.magnific-popup.min.js");
-		copyFiles(root,"templates","nova/js/jquery.smartWizard.js");
-		copyFiles(root,"templates","nova/js/template.js");
-		copyFiles(root,"templates","nova/images/account-16.png");
-		copyFiles(root,"templates","nova/images/delete-16.png");
-		copyFiles(root,"templates","nova/images/edit-16.png");
-		copyFiles(root,"templates","nova/images/new-16.png");
-		copyFiles(root,"templates","nova/images/pdf-16.png");
-		copyFiles(root,"templates","nova/images/print-16.png");
-		copyFiles(root,"templates","nova/images/search.png");
-		copyFiles(root,"templates","nova/images/signout.png");
-		copyFiles(root,"templates","nova/images/square.png");
-		copyFiles(root,"templates","nova/images/wait.gif");
+		copyFile(root,"templates","nova/index.jsp");
+		copyFile(root,"templates","nova/template.xml");
+		copyFile(root,"templates","nova/thumbnail.png");
+		copyFile(root,"templates","nova/css/template.css");
+		copyFile(root,"templates","nova/js/jquery.magnific-popup.min.js");
+		copyFile(root,"templates","nova/js/jquery.smartWizard.js");
+		copyFile(root,"templates","nova/js/template.js");
+		copyFile(root,"templates","nova/images/account-16.png");
+		copyFile(root,"templates","nova/images/delete-16.png");
+		copyFile(root,"templates","nova/images/edit-16.png");
+		copyFile(root,"templates","nova/images/new-16.png");
+		copyFile(root,"templates","nova/images/pdf-16.png");
+		copyFile(root,"templates","nova/images/print-16.png");
+		copyFile(root,"templates","nova/images/search.png");
+		copyFile(root,"templates","nova/images/signout.png");
+		copyFile(root,"templates","nova/images/square.png");
+		copyFile(root,"templates","nova/images/wait.gif");
 	}
 	
-	private void copyFiles(String root,String dir,String file)	{
+	private void copyFile(String root,String dir,String file)	{
 		InputStream source = this.getClass().getClassLoader().getResourceAsStream("META-INF/"+file);
 		if(source!=null) {
 			try {

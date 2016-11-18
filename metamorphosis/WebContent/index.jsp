@@ -29,7 +29,7 @@
 		
 		<main>
 		    <h1><b>Customer Relation Management</b></h1>
-		    <img  src="images/computer.png"/>
+		    <img  align="top"  src="images/customer.png"/>
 		   	<p style="display:none">
 		   	<b>We offer</b> a complete and integrated <b>CRM</b> solution that breaks down silos to deliver a seamless customer experience across marketing, sales, commerce, service, and social.
 		   	 </p>		   

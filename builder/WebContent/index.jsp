@@ -3,11 +3,6 @@
 <html>
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-   <meta name="author" content="Jelastic"/>
-   <meta name="category" content="internet" />
-   <meta name="robots" content="All" />
-   <meta name="description" content="" />
-   <meta name="keywords" content="" />
    <base href="${path}"/>
    <title>Metamorphosis</title>
    <link href="images/favicon.ico" rel="icon" sizes="16x16" type="image/x-icon" />
