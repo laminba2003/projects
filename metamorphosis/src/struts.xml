@@ -20,7 +20,7 @@
      </interceptors>
      
      <default-interceptor-ref name="moduleStack"></default-interceptor-ref>
-      
+     
       <action name="{module}">
 	      	<exception-mapping exception="org.apache.tiles.definition.NoSuchDefinitionException"
 	        result="error" />

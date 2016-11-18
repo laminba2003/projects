@@ -16,7 +16,6 @@
 </head>
 <body>
 	<div>
-	
 	   <header>
 		   <div class="logo">
 		     <img src="images/logo.png"/>
@@ -26,7 +25,7 @@
 		           <a href="${url}" title="${name}"><img src="${icon}"/><span>${name}</span></a> 
 		       </s:iterator>
 		   </div>
-		   <div class="user-actions">
+		   <div class="user-actions" style="display:${security==true?'inline-block':'none'}">
 				<a  class="account-16" href="users" title="Account">Account</a>
 				<a  href="users/signOut" title="Sign Out" class="signout-16">Sign Out</a>
 			</div>

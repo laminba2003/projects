@@ -57,6 +57,9 @@ public class StartupListener implements ServletContextListener {
 					config += ","+createModuleConfig(module);
 				}
 			}
+			if(module.getUrl().equals("users")) {
+				event.getServletContext().setAttribute("security",true);
+			}
 		}
 		FilterRegistration struts2 = event.getServletContext().addFilter("struts2", org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.class);
 		struts2.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST),true, "/*");

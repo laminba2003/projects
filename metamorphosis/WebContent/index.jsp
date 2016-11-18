@@ -14,7 +14,7 @@
 	
 		<header>
 		     <img src="images/logo.png" style="display:none"/>
-				 <div class="login">
+				 <div class="login" style="display:${security==true?'inline-block':'none'}">
 				  <form action="users/signIn">
 				   <span>Login :</span>
 				   <input id="login" type="text" size="20"/>
