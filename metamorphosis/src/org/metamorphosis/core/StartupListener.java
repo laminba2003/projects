@@ -40,7 +40,7 @@ public class StartupListener implements ServletContextListener {
 			template = templateManager.getTemplates().get(0);
 		}
 		event.getServletContext().setAttribute("template",template.getId());
-		String tilesDefinitions = "/WEB-INF/tiles.xml,"+createTemplateTiles(root,template.getId());
+		String tilesDefinitions = createTemplateTiles(root,template.getId());
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
 		for(Module module : moduleManager.getModules()) {
 			File definition = new File(module.getFolder().getAbsolutePath()+File.separator+"tiles.xml");
