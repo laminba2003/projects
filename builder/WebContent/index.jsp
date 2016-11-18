@@ -26,7 +26,7 @@
 		            <a href="public/modules" class="modules-16">Modules</a>
 		            <a href="public/templates" class="templates-16">Templates</a>
 		         </div>
-				 <div class="login">
+				 <div class="login" style="display:${security==true?'inline-block':'none'}">
 				  <form action="users/signIn">
 				   <span>Email :</span>
 				   <input type="text" size="20"/>
