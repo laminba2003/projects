@@ -15,7 +15,8 @@ public class TemplateAction extends ActionSupport {
 	public void selectTemplate() throws IOException {
 		Map application = (Map) ActionContext.getContext().get("application");
 		TemplateManager templateManager = (TemplateManager) application.get("templateManager");
-		if(templateManager.getTemplate(id)!=null) {
+		Template template = templateManager.getTemplate(id);
+		if(template!=null && template.getType().equals("back-end")) {
 			String referer = ServletActionContext.getRequest().getHeader("referer");
 			ServletActionContext.getRequest().getSession().setAttribute("template",id);
 			ServletActionContext.getResponse().sendRedirect(referer);
