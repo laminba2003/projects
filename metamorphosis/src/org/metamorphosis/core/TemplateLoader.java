@@ -10,6 +10,7 @@ public class TemplateLoader {
 		digester.setValidating( false );
 		digester.addObjectCreate("template", Template.class );
 		digester.addBeanPropertySetter("template/name");
+		digester.addBeanPropertySetter("template/type");
 		digester.addBeanPropertySetter("template/selected");
 		digester.addBeanPropertySetter("template/author");
 		digester.addBeanPropertySetter("template/authorEmail");

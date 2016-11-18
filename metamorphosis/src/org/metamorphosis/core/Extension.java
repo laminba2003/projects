@@ -6,6 +6,7 @@ public abstract class Extension {
 
 	private String id;
 	private String name;
+	private String type="back-end";
 	private String author;
 	private String authorEmail;
 	private String authorUrl;
@@ -27,6 +28,12 @@ public abstract class Extension {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	public String getAuthor() {
 		return author;

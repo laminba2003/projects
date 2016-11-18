@@ -21,6 +21,10 @@
      
      <default-interceptor-ref name="moduleStack"></default-interceptor-ref>
      
+     <action name="index">
+        <result name="success" type="dispatcher">index.jsp</result>
+     </action>
+     
       <action name="{module}">
 	      	<exception-mapping exception="org.apache.tiles.definition.NoSuchDefinitionException"
 	        result="error" />

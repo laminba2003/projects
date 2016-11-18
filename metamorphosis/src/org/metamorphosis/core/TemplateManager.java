@@ -45,14 +45,30 @@ public class TemplateManager {
 		return null;
 	}
 	
-	public Template getSelectedTemplate(String id) {
+	public Template getBackendTemplate(String id) {
 		Template template = getTemplate(id);
 		if(template!=null) return template;
 		for(Template current : templates) {
-			if(current.isSelected()) return current;
+			if(current.isSelected() && current.getType().equals("back-end")) return current;
 		}
-		return templates.size()> 0 ? templates.get(0) : null;
+		for(Template current : templates) {
+			if(current.getType().equals("back-end")) return current;
+		}
+		return null;
 	}
+	
+	public Template getFrontendTemplate(String id) {
+		Template template = getTemplate(id);
+		if(template!=null) return template;
+		for(Template current : templates) {
+			if(current.isSelected() && current.getType().equals("front-end")) return current;
+		}
+		for(Template current : templates) {
+			if(current.getType().equals("front-end")) return current;
+		}
+		return null;
+	}
+
 
 	public void setTemplates(List<Template> templates) {
 		this.templates = templates;

@@ -32,15 +32,18 @@ public class StartupListener implements ServletContextListener {
 		event.getServletContext().setAttribute("moduleManager",moduleManager);
 		TemplateManager templateManager = loadTemplates(root);
 		event.getServletContext().setAttribute("templateManager",templateManager);
-		String id = event.getServletContext().getInitParameter("template");
-		Template template = templateManager.getSelectedTemplate(id);
+		Template template = templateManager.getBackendTemplate(event.getServletContext().getInitParameter("back-end"));
 		if(template==null) {
 			copyTemplate(root);
 			templateManager.loadTemplates(new File(root+File.separator+"templates"));
 			template = templateManager.getTemplates().get(0);
 		}
 		event.getServletContext().setAttribute("template",template.getId());
-		String tilesDefinitions = createTemplateTiles(root,template.getId());
+		String tilesDefinitions = createTemplateTiles(root,template);
+		template = templateManager.getFrontendTemplate(event.getServletContext().getInitParameter("front-end"));
+		if(template!=null) {
+			tilesDefinitions += ","+ createTemplateTiles(root,template);
+		}
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
 		for(Module module : moduleManager.getModules()) {
 			File definition = new File(module.getFolder().getAbsolutePath()+File.separator+"tiles.xml");
@@ -62,7 +65,7 @@ public class StartupListener implements ServletContextListener {
 			}
 		}
 		FilterRegistration struts2 = event.getServletContext().addFilter("struts2", org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.class);
-		struts2.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST),true, "/*");
+		struts2.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST,DispatcherType.FORWARD),true, "/*");
 		struts2.setInitParameter("config",config);
 		event.getServletContext().setInitParameter("org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG",tilesDefinitions);
 		TilesListener listener = new TilesListener();
@@ -82,15 +85,15 @@ public class StartupListener implements ServletContextListener {
 		return manager;
 	}
 
-	private String createTemplateTiles(String root,String template) {
+	private String createTemplateTiles(String root,Template template) {
 		String content = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"+
 				"<!DOCTYPE tiles-definitions PUBLIC '-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN' "+
 				"'http://tiles.apache.org/dtds/tiles-config_2_0.dtd'>"+
-				"<tiles-definitions><definition name='template' template='/templates/"+template+"/index.jsp' preparer='org.metamorphosis.core.PagePreparer'/>"+
+				"<tiles-definitions><definition name='"+template.getType()+"' template='/templates/"+template.getId()+"/index.jsp' preparer='org.metamorphosis.core.PagePreparer'/>"+
 				"</tiles-definitions>";
 		File temp=null;
 		try {
-			temp = new File(root+File.separator+"templates"+File.separator+"tiles.xml");
+			temp = new File(root+File.separator+"templates"+File.separator+"tiles-"+template.getType()+".xml");
 			BufferedWriter bw = new BufferedWriter(new FileWriter(temp));
 			bw.write(content);
 			bw.close();
@@ -101,16 +104,12 @@ public class StartupListener implements ServletContextListener {
 	}
 
 	private String createModuleTiles(Module module) {
-		String template = module.getTemplate()!=null ? module.getTemplate() : "template";
 		String content = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"+
 				"<!DOCTYPE tiles-definitions PUBLIC '-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN' "+
 				"'http://tiles.apache.org/dtds/tiles-config_2_0.dtd'>"+
-				"<tiles-definitions><definition name='"+module.getUrl()+"' extends='"+template+"'>"+
+				"<tiles-definitions><definition name='"+module.getUrl()+"' extends='"+module.getType()+"'>"+
 				"<put-attribute name='content' value='/modules/"+module.getId()+"/"+module.getHome()+"'/>"+
 				"</definition>";
-		if(module.getTemplate()!=null) {
-			content+="<definition name='"+module.getTemplate()+"' template='/template.jsp'/>";
-		}
 		if(module.getMenu()!=null) {
 			for(MenuItem item : module.getMenu().getMenuItems()) {
 					if(!module.getUrl().equals(item.getAction())) {
