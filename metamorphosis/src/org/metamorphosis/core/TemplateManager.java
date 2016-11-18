@@ -13,25 +13,31 @@ public class TemplateManager {
 	}
 
 	public void loadTemplates(File root) {
-		TemplateLoader loader = new TemplateLoader();
 		File[] files = root.listFiles();
 		if(files!=null){
 			for(File file : root.listFiles()) {
 				if(file.isDirectory()) {
-					File metadata = new File(file+File.separator+"template.xml");
-					if(metadata.exists()) {
-						try {
-							Template template = loader.loadTemplate(metadata);
-							template.setId(file.getName());
-							template.setFolder(file);
-							addTemplate(template);
-						}catch(Exception e){
-							e.printStackTrace();
-						}
-					}
+					loadTemplate(file);
 				}
 			}
 		}
+	}
+	
+	public Template loadTemplate(File folder) {
+		TemplateLoader loader = new TemplateLoader();
+		File metadata = new File(folder+File.separator+"template.xml");
+		if(metadata.exists()) {
+			try {
+				Template template = loader.loadTemplate(metadata);
+				template.setId(folder.getName());
+				template.setFolder(folder);
+				addTemplate(template);
+				return template;
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		return null;
 	}
 
 	public void addTemplate(Template template) {

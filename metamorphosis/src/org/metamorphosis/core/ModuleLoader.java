@@ -10,6 +10,7 @@ public class ModuleLoader {
 		digester.setValidating(false);
 		digester.addObjectCreate("module", Module.class);
 		digester.addBeanPropertySetter("module/name");
+		digester.addBeanPropertySetter("module/type");
 		digester.addBeanPropertySetter("module/url");
 		digester.addBeanPropertySetter("module/home");
 		digester.addBeanPropertySetter("module/template");
