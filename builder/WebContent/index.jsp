@@ -71,7 +71,7 @@
     	</main>
 		
 		<footer>
-			<p>© 2016 Jelastic. All Rights Reserved, Jelastic, Inc.</p>
+			<p>© 2016</p>
 		</footer>
 		
 	</div>
