@@ -89,6 +89,12 @@ public class ModuleManager {
 		return modules;
 	}
 
+	public Module getDefaultBackendModule() {
+		for(Module module : this.modules) {
+			if(module.getType().equals("back-end")) return module;
+		}
+		return null;
+	}
 	public List<Module> getAdminModules() {
 		List<Module> modules = new ArrayList<Module>();
 		for(Module module : this.modules) {

@@ -33,6 +33,10 @@ body {
 main{
   display: block;
 }
+
+main > div {
+	padding : 10px;
+}
 p:before,h1:before{
   content: "";
   width: 12em;

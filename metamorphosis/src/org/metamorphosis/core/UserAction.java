@@ -13,7 +13,7 @@ public class UserAction extends ActionSupport {
 	public void signIn() throws IOException {
 		Map application = (Map) ActionContext.getContext().get("application");
 		ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
-		Module module = moduleManager.getMain()!=null ? moduleManager.getMain() : moduleManager.getModules().get(0);
+		Module module = moduleManager.getMain()!=null ? moduleManager.getMain() : moduleManager.getDefaultBackendModule();
 		String contextPath = ServletActionContext.getRequest().getContextPath();
 		String url = module!=null ? contextPath+"/"+module.getUrl() : contextPath+"/";
 		ServletActionContext.getResponse().sendRedirect(url);

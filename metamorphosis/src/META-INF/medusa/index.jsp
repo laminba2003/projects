@@ -44,12 +44,12 @@
 		</header>
 		
 		<main>
-	<div>  
+			<div>  
 		  	
 		  	 <tiles:insertAttribute name="content"/>
  			 <script type="text/javascript" src="js/metamorphosis.js"></script>
  			 
-		</div>  
+			</div>  
     	</main>
 		
 		<footer>
