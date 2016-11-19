@@ -2,7 +2,6 @@
 <module>
 	<name>public</name>
 	<type>front-end</type>
-	<visible>false</visible>
 	<home>documentation.jsp</home>
 	<author>Mamadou Lamine Ba</author>
 	<authorEmail>laminba2003@yahoo.fr</authorEmail>
@@ -11,5 +10,10 @@
 	<copyright>© 2016</copyright>
 	<license>GNU/GPL</license>
 	<version>1.0</version>
-	
+	<menu>
+		<menuItem name="documentation" action="documentation" />
+		<menuItem name="download" action="download" />
+		<menuItem name="modules" action="modules" />
+		<menuItem name="templates" action="templates" />
+	</menu>
 </module>

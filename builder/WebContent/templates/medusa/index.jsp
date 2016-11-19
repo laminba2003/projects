@@ -1,4 +1,5 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,7 @@
    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet" />
    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" />
    <link href="css/metamorphosis.css" rel="stylesheet"/>
-   <link href="css/home.css" rel="stylesheet" />
+   <link href="templates/medusa/css/template.css" rel="stylesheet" />
  </head>
 <body>
 
@@ -20,11 +21,11 @@
 		     		<img src="images/logo.png"/>
 		   		</div>
 		         <div class="menu">
-		            <a href="${path}" class="home-16">Home</a>
-		            <a href="public/documentation" class="documentation-16">Documentation</a>
-		            <a href="public/download" class="download-16">Download</a>
-		            <a href="public/modules" class="modules-16">Modules</a>
-		            <a href="public/templates" class="templates-16">Templates</a>
+		             <s:iterator value="#request.modules" var="current">
+		                 <s:iterator value="#current.menu.menuItems">
+		                  <a href="${action}" class="${name}-16">${name}</a>
+		                </s:iterator>
+		            </s:iterator>
 		         </div>
 				  <div class="login" style="display:${security==true?'inline-block':'none'}">
 				  <form action="users/signIn">
@@ -50,7 +51,7 @@
     	</main>
 		
 		<footer>
-			<p>© 2016</p>
+			<p>© 2016 powered by Metamorphosis.</p>
 		</footer>
 		
 	</div>
