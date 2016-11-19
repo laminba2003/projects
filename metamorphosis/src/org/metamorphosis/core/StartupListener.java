@@ -34,13 +34,17 @@ public class StartupListener implements ServletContextListener {
 		event.getServletContext().setAttribute("templateManager",templateManager);
 		Template template = templateManager.getBackendTemplate(event.getServletContext().getInitParameter("back-end"));
 		if(template==null) {
-			copyTemplate(root);
+			copyBackendTemplate(root);
 			template = templateManager.loadTemplate(new File(root+File.separator+"templates/nova"));
 		}
 		event.getServletContext().setAttribute("template",template.getId());
 		String tilesDefinitions = createTemplateTiles(root,template);
 		template = templateManager.getFrontendTemplate(event.getServletContext().getInitParameter("front-end"));
 		if(template!=null) {
+			tilesDefinitions += ","+ createTemplateTiles(root,template);
+		}else {
+			copyFrontendTemplate(root);
+			template = templateManager.loadTemplate(new File(root+File.separator+"templates/medusa"));
 			tilesDefinitions += ","+ createTemplateTiles(root,template);
 		}
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
@@ -207,7 +211,7 @@ public class StartupListener implements ServletContextListener {
 		}
 	}
 	
-	private void copyTemplate(String root) {
+	private void copyBackendTemplate(String root) {
 		copyFile(root,"templates","nova/index.jsp");
 		copyFile(root,"templates","nova/template.xml");
 		copyFile(root,"templates","nova/thumbnail.png");
@@ -225,6 +229,13 @@ public class StartupListener implements ServletContextListener {
 		copyFile(root,"templates","nova/images/signout.png");
 		copyFile(root,"templates","nova/images/square.png");
 		copyFile(root,"templates","nova/images/wait.gif");
+	}
+	
+	private void copyFrontendTemplate(String root) {
+		copyFile(root,"templates","medusa/index.jsp");
+		copyFile(root,"templates","medusa/template.xml");
+		copyFile(root,"templates","medusa/thumbnail.png");
+		copyFile(root,"templates","medusa/css/template.css");
 	}
 	
 	private void copyFile(String root,String dir,String file)	{

@@ -12,7 +12,9 @@ public class ModuleManager {
 
 	public void loadModules(File root) {
 		ModuleLoader loader = new ModuleLoader();
-		for(File file : root.listFiles()) {
+		File[] files = root.listFiles();
+		if(files!=null) {
+		for(File file : files) {
 			if(file.isDirectory()) {
 				File metadata = new File(file+File.separator+"module.xml");
 				if(metadata.exists()) {
@@ -44,6 +46,7 @@ public class ModuleManager {
 					}
 				}
 			}
+		}
 		}
 		orderModules();
 	}
