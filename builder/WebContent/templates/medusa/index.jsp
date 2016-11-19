@@ -18,7 +18,9 @@
 	
 		<header>
 		    	 <div class="logo">
+		    	   <a href="${path}">
 		     		<img src="images/logo.png"/>
+		     		</a>
 		   		</div>
 		         <div class="menu">
 		             <s:iterator value="#request.modules" var="current">
