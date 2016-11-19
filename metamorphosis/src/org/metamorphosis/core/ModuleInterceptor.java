@@ -26,6 +26,7 @@ public class ModuleInterceptor extends AbstractInterceptor {
 			Map application = (Map) ActionContext.getContext().get("application");
 			ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
 			Module module = moduleManager.getModuleByUrl(url); 
+			module = module!=null ? module : moduleManager.getModuleByUrl("/");
 			if(module!=null) {
 				request.setAttribute("modules",moduleManager.getVisibleModules(module.getType()));
 				request.setAttribute("module",module);

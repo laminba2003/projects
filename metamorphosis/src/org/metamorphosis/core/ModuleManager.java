@@ -29,7 +29,11 @@ public class ModuleManager {
 									if(item.getPage()==null) {
 										item.setPage(item.getAction()+".jsp");
 									}
-									item.setAction(module.getUrl()+"/"+item.getAction());
+									if(module.getUrl().equals("/")) {
+										 item.setAction(item.getAction());
+									} else {
+									 item.setAction(module.getUrl()+"/"+item.getAction());
+									}
 								}else {
 									item.setAction(module.getUrl());
 									item.setTitle(module.getUrl());
