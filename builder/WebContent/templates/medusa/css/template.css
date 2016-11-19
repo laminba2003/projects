@@ -151,6 +151,10 @@ b {
 	font-size : 80%;
 }
 
+.menu a:first-letter {
+	text-transform : uppercase;
+}
+
 .menu a.active {
 	color : #fd1d1d;
 }
