@@ -78,10 +78,10 @@ public class ModuleManager {
 		this.modules = modules;
 	}
 
-	public List<Module> getVisibleModules() {
+	public List<Module> getVisibleModules(String type) {
 		List<Module> modules = new ArrayList<Module>();
 		for(Module module : this.modules) {
-			if(module.isVisible())modules.add(module);
+			if(module.isVisible() && module.getType().equals(type))modules.add(module);
 		}
 		return modules;
 	}

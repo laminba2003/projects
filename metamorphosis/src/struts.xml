@@ -21,8 +21,8 @@
      
      <default-interceptor-ref name="moduleStack"></default-interceptor-ref>
      
-     <action name="index">
-        <result name="success" type="dispatcher">index.jsp</result>
+     <action name="index" class="org.metamorphosis.core.WelcomeAction">
+        <result name="success" type="tiles">index</result>
      </action>
      
       <action name="{module}">

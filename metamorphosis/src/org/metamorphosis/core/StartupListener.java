@@ -88,8 +88,17 @@ public class StartupListener implements ServletContextListener {
 		String content = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"+
 				"<!DOCTYPE tiles-definitions PUBLIC '-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN' "+
 				"'http://tiles.apache.org/dtds/tiles-config_2_0.dtd'>"+
-				"<tiles-definitions><definition name='"+template.getType()+"' template='/templates/"+template.getId()+"/index.jsp' preparer='org.metamorphosis.core.PagePreparer'/>"+
-				"</tiles-definitions>";
+				"<tiles-definitions><definition name='"+template.getType()+"' template='/templates/"+template.getId()+"/index.jsp' preparer='org.metamorphosis.core.PagePreparer'/>";
+		if(template.getType().equals("front-end")) {
+			content += "<definition name='index' extends='"+template.getType()+"'>";
+			if(new File(root+"/index.jsp").exists()) {
+			    content+="<put-attribute name='content' value='/index.jsp'/>";
+			}else {
+				content+="<put-attribute name='content' value='Your Content Here'/>";
+			}
+			content+="</definition>";
+		}
+		content +="</tiles-definitions>";
 		File temp=null;
 		try {
 			temp = new File(root+File.separator+"templates"+File.separator+"tiles-"+template.getType()+".xml");

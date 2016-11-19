@@ -48,7 +48,7 @@
 		   </aside>
 		</main>
 		 <footer>
-			<p>© 2016</p>
+			<p>© 2016 powered by Metamorphosis.</p>
 		</footer>
 		 
 	</div>

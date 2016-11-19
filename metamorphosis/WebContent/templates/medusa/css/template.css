@@ -87,18 +87,6 @@ header {
 	background : #fff;
 }
 
-header b {
-	top : 5px;
-	font-weight : 900;
-	font-family : Exo;
-	font-size : 95%;
-	position : absolute;
-	left : 220px;
-	letter-spacing : 0.5px;
-	word-spacing:0em;
-	color : rgb(234, 133, 17);
-}
-
 main p {
 	width : 32%;
 	font-family : Cabin;
