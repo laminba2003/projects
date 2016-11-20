@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.digester.Digester;
+
 public class TemplateManager {
 
 	private List<Template> templates = new ArrayList<Template>();
@@ -24,11 +26,10 @@ public class TemplateManager {
 	}
 	
 	public Template loadTemplate(File folder) {
-		TemplateLoader loader = new TemplateLoader();
 		File metadata = new File(folder+File.separator+"template.xml");
 		if(metadata.exists()) {
 			try {
-				Template template = loader.loadTemplate(metadata);
+				Template template = parse(metadata);
 				template.setId(folder.getName());
 				template.setFolder(folder);
 				addTemplate(template);
@@ -38,6 +39,24 @@ public class TemplateManager {
 			}
 		}
 		return null;
+	}
+	
+	private Template parse(File file) throws Exception {
+		Digester digester = new Digester();
+		digester.setValidating( false );
+		digester.addObjectCreate("template", Template.class );
+		digester.addBeanPropertySetter("template/name");
+		digester.addBeanPropertySetter("template/type");
+		digester.addBeanPropertySetter("template/selected");
+		digester.addBeanPropertySetter("template/author");
+		digester.addBeanPropertySetter("template/authorEmail");
+		digester.addBeanPropertySetter("template/authorUrl");
+		digester.addBeanPropertySetter("template/description");
+		digester.addBeanPropertySetter("template/creationDate");
+		digester.addBeanPropertySetter("template/copyright");
+		digester.addBeanPropertySetter("template/license");
+		digester.addBeanPropertySetter("template/version");
+		return (Template) digester.parse(file);
 	}
 
 	public void addTemplate(Template template) {

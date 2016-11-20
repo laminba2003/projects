@@ -5,13 +5,51 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.digester.Digester;
+
 public class ModuleManager {
 
 	private List<Module> modules = new ArrayList<Module>();
 	private Module main;
 
+	private Module parse(File file) throws Exception {
+		Digester digester = new Digester();
+		digester.setValidating(false);
+		digester.addObjectCreate("module", Module.class);
+		digester.addBeanPropertySetter("module/name");
+		digester.addBeanPropertySetter("module/type");
+		digester.addBeanPropertySetter("module/url");
+		digester.addBeanPropertySetter("module/home");
+		digester.addBeanPropertySetter("module/template");
+		digester.addBeanPropertySetter("module/main");
+		digester.addBeanPropertySetter("module/visible");
+		digester.addBeanPropertySetter("module/administrable");
+		digester.addBeanPropertySetter("module/order");
+		digester.addBeanPropertySetter("module/author");
+		digester.addBeanPropertySetter("module/authorEmail");
+		digester.addBeanPropertySetter("module/authorUrl");
+		digester.addBeanPropertySetter("module/description");
+		digester.addBeanPropertySetter("module/creationDate");
+		digester.addBeanPropertySetter("module/copyright");
+		digester.addBeanPropertySetter("module/license");
+		digester.addBeanPropertySetter("module/version");
+		digester.addObjectCreate("module/menu", Menu.class);
+		digester.addObjectCreate("module/menu/menuItem", MenuItem.class);
+		digester.addSetProperties("module/menu/menuItem");
+		digester.addSetNext("module/menu/menuItem", "addMenuItem");
+		digester.addSetNext("module/menu", "setMenu");
+		digester.addObjectCreate("module/actions/action", Action.class);
+		digester.addSetProperties("module/actions/action");
+		digester.addSetProperties("module/actions/action","class","className");
+		digester.addObjectCreate("module/actions/action/result", Result.class);
+		digester.addSetProperties("module/actions/action/result");
+		digester.addSetNext("module/actions/action/result", "addResult");
+		digester.addCallMethod("module/actions/action/result","setValue",0);
+		digester.addSetNext("module/actions/action", "addAction");
+		return (Module) digester.parse(file);
+	}
+	
 	public void loadModules(File root) {
-		ModuleLoader loader = new ModuleLoader();
 		File[] files = root.listFiles();
 		if(files!=null) {
 		for(File file : files) {
@@ -19,7 +57,7 @@ public class ModuleManager {
 				File metadata = new File(file+File.separator+"module.xml");
 				if(metadata.exists()) {
 					try {
-						Module module = loader.loadModule(metadata);
+						Module module = parse(metadata);
 						module.setFolder(file);
 						module.setId(file.getName());
 						if(module.getUrl()==null) module.setUrl(file.getName().toLowerCase());
