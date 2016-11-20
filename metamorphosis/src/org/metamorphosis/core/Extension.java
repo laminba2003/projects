@@ -4,18 +4,18 @@ import java.io.File;
 
 public abstract class Extension {
 
-	private String id;
-	private String name;
-	private String type="back-end";
-	private String author;
-	private String authorEmail;
-	private String authorUrl;
-	private String creationDate;
-	private String copyright;
-	private String license;
-	private String version;
-	private String description;
-	private File folder;
+	protected String id;
+	protected String name;
+	protected String type="back-end";
+	protected String author;
+	protected String authorEmail;
+	protected String authorUrl;
+	protected String creationDate;
+	protected String copyright;
+	protected String license;
+	protected String version;
+	protected String description;
+	protected File folder;
 	
 	public String getId() {
 		return id;
@@ -88,6 +88,14 @@ public abstract class Extension {
 	}
 	public void setFolder(File folder) {
 		this.folder = folder;
+	}
+	
+	public boolean isBackend() {
+		return type.equals("back-end") || type.equals("both");
+	}
+	
+	public boolean isFrontend() {
+		return type.equals("front-end") || type.equals("both");
 	}
 	
 }

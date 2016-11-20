@@ -83,11 +83,11 @@ public class Module extends Extension {
 	}
 
 	public String getIcon() {
-		return "modules/" + getId() + "/images/icon-16.png";
+		return "modules/" + id + "/images/icon-16.png";
 	}
 
 	public String getPath() {
-		return "modules/" + getFolder().getName();
+		return "modules/" + folder.getName();
 	}
 
 }
