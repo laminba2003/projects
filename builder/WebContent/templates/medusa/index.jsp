@@ -11,6 +11,7 @@
    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" />
    <link href="css/metamorphosis.css" rel="stylesheet"/>
    <link href="templates/medusa/css/template.css" rel="stylesheet" />
+   <link href="${css}/module.css" rel="stylesheet"/>
  </head>
 <body>
 
@@ -48,7 +49,7 @@
 		  	
 		  	 <tiles:insertAttribute name="content"/>
  			 <script type="text/javascript" src="js/metamorphosis.js"></script>
- 			 
+ 			  <script type="text/javascript" src="${js}/module.js"></script>
 		</div>  
     	</main>
 		

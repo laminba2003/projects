@@ -61,6 +61,10 @@ input {
 	padding-left : 2px;
 }
 
+select {
+	padding : 2px;
+}
+
 h1 {
 	font-size: 1.6em;
     line-height: 1.0666666664em;
