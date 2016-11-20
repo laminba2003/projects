@@ -4,7 +4,6 @@ package org.metamorphosis.core;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.commons.digester.Digester;
 
 public class ModuleManager {

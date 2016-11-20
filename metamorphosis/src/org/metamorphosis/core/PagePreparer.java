@@ -2,12 +2,9 @@ package org.metamorphosis.core;
 
 import org.apache.tiles.preparer.PreparerException;
 import org.apache.tiles.preparer.ViewPreparer;
-
 import com.opensymphony.xwork2.ActionContext;
-
 import java.io.IOException;
 import java.util.Map;
-
 import org.apache.struts2.ServletActionContext;
 import org.apache.tiles.AttributeContext;
 import org.apache.tiles.context.TilesRequestContext;
