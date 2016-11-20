@@ -21,7 +21,7 @@
      
      <default-interceptor-ref name="moduleStack"></default-interceptor-ref>
      
-     <action name="index" class="org.metamorphosis.core.WelcomeAction">
+     <action name="index" class="org.metamorphosis.core.UserAction" method="welcome">
         <result name="success" type="tiles">index</result>
      </action>
      
