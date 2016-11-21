@@ -19,7 +19,8 @@
 		  </div>
 		  <div class="extensionDetails">
 		      	  <span>Name : ${name}</span>
-		      	  <span>Url : /${url}</span>
+		      	  <span>Type : ${type}</span>
+		      	  <span>Url : ${url=='/'? '/' : '/'.concat(url)}</span>
 		      	  <span>Home : ${home}</span>
 		      	  <span>Main : ${main}</span>
 		      	  <span>Visible : ${visible}</span>
