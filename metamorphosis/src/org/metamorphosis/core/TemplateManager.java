@@ -71,24 +71,24 @@ public class TemplateManager {
 	
 	public Template getBackendTemplate(String id) {
 		Template template = getTemplate(id);
-		if(template!=null) return template;
+		if(template!=null && template.isBackend()) return template;
 		for(Template current : templates) {
-			if(current.isSelected() && current.getType().equals("back-end")) return current;
+			if(current.isSelected() && current.isBackend()) return current;
 		}
 		for(Template current : templates) {
-			if(current.getType().equals("back-end")) return current;
+			if(current.isBackend()) return current;
 		}
 		return null;
 	}
 	
 	public Template getFrontendTemplate(String id) {
 		Template template = getTemplate(id);
-		if(template!=null) return template;
+		if(template!=null && template.isFrontend()) return template;
 		for(Template current : templates) {
-			if(current.isSelected() && current.getType().equals("front-end")) return current;
+			if(current.isSelected() && current.isFrontend()) return current;
 		}
 		for(Template current : templates) {
-			if(current.getType().equals("front-end")) return current;
+			if(current.isFrontend()) return current;
 		}
 		return null;
 	}
