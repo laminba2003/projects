@@ -12,6 +12,10 @@
  <option>back-end</option>
  <option>both</option>
 </select>
+<span>version :</span>
+<select>
+ <option>1.0</option>
+</select>
 <fieldset class="extensions-details">
 	<div id="extensions">
 	
