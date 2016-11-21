@@ -30,10 +30,6 @@ body {
     outline: none;
 }
 
-main{
-  display: block;
-}
-
 input[type=submit]{
 	border : 1px solid #4d4a48;
 	cursor : pointer;
@@ -218,6 +214,7 @@ main {
 	padding : 0;
 	padding-top : 0px;
 	position:relative;
+	overflow : hidden;
 }
 
 fieldset {
@@ -313,7 +310,7 @@ footer {
 
 #wowslider-container  .ws_bullets { 
 	float: left;
-	top:79vh;
+	top:75vh;
 	position:absolute;
 	z-index:70;
 	padding: 10px;
