@@ -28,9 +28,8 @@ public class StartupListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent event) {
 		event.getServletContext().setAttribute("path",event.getServletContext().getContextPath()+"/");
 		String root = new File(event.getServletContext().getRealPath(File.separator)).getAbsolutePath();
-		ModuleManager moduleManager = loadModules(root);
-		event.getServletContext().setAttribute("moduleManager",moduleManager);
-		TemplateManager templateManager = loadTemplates(root);
+		TemplateManager templateManager = new TemplateManager();
+		templateManager.loadTemplates(new File(root+File.separator+"templates"));
 		event.getServletContext().setAttribute("templateManager",templateManager);
 		Template template = templateManager.getBackendTemplate(event.getServletContext().getInitParameter("back-end"));
 		if(template==null) {
@@ -48,6 +47,9 @@ public class StartupListener implements ServletContextListener {
 			tilesDefinitions += ","+ createTemplateTiles(root,template);
 		}
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
+		ModuleManager moduleManager = new ModuleManager();
+		moduleManager.loadModules(new File(root+File.separator+"modules"));
+		event.getServletContext().setAttribute("moduleManager",moduleManager);
 		for(Module module : moduleManager.getModules()) {
 			File definition = new File(module.getFolder().getAbsolutePath()+File.separator+"tiles.xml");
 			if(definition.exists()) {
@@ -71,21 +73,8 @@ public class StartupListener implements ServletContextListener {
 		struts2.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST,DispatcherType.FORWARD),true, "/*");
 		struts2.setInitParameter("config",config);
 		event.getServletContext().setInitParameter("org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG",tilesDefinitions);
-		TilesListener listener = new TilesListener();
-		listener.contextInitialized(event);
+		new TilesListener().contextInitialized(event);
 		copyFiles(root);
-	}
-
-	private TemplateManager loadTemplates(String root) {
-		TemplateManager manager = new TemplateManager();
-		manager.loadTemplates(new File(root+File.separator+"templates"));
-		return manager;
-	}
-
-	private ModuleManager loadModules(String root) {
-		ModuleManager manager = new ModuleManager();
-		manager.loadModules(new File(root+File.separator+"modules"));
-		return manager;
 	}
 
 	private String createTemplateTiles(String root,Template template) {
