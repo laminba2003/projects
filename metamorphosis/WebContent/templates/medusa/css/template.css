@@ -33,14 +33,6 @@ body {
 main{
   display: block;
 }
-p:before,h1:before{
-  content: "";
-  width: 12em;
-  display: block;
-  overflow: hidden;
-  /* For Demonstration */
-  /*border: 1px solid green;*/
-}
 
 input[type=submit]{
 	border : 1px solid rgb(10, 136, 247);
@@ -120,7 +112,6 @@ main p:nth-of-type(2){
 
 main img {
 	width : 22em;
-	margin-top : 3em;
 	margin-left:2px;
 	display : inline-block;
 	vertical-align : top;
