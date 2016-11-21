@@ -21,7 +21,6 @@
 .extension > a > img {
 	width : 128px;
 	height: 128px;
-	margin-top : -6px;
 }
 
 .extension img.selected {
