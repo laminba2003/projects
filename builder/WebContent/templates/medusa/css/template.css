@@ -76,6 +76,20 @@ h1 {
 	width : 100%;
 }
 
+#content h2 {
+	font-size : 1.3em;
+	font-weight : 400;
+	font-family : Itim;
+	margin-bottom : 5px;
+	margin-top : 5px;
+}
+
+#content p, #content pre {
+	font-size : 0.9em;
+	font-family : Tahoma;
+	margin-bottom : 5px;
+}
+
 header {
 	height : 5.5em;
 	padding : 0 0.3em;
