@@ -1,5 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<h1>Modules</h1>
+<h1 class="modules-16">Modules</h1>
 <div id="content">
 <span>category :</span>
 <select>

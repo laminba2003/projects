@@ -64,13 +64,14 @@ h1 {
     border-bottom : 1px solid rgb(234, 133, 17);
 	border-left:none;
 	border-right:none;
-	text-align : center;
+	text-align : left;
 	position:relative;
-	padding:0.8125em 0.203125em;
 	color : white;
 	margin : 0;
 	padding-top : 0.4em;
 	width : 100%;
+	background-position-x : 40%;
+	padding-left : 41%;
 }
 
 #content h2 {

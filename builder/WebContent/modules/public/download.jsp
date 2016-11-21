@@ -1,4 +1,4 @@
-<h1>Download</h1>
+<h1 class="download-16">Download</h1>
 <div id="content">
 <div>
 <h2>Status</h2>
