@@ -8,7 +8,7 @@
 	
 	   <s:iterator value="#application.templateManager.templates">
 	   
-	      <div class="template" style="display:${type=='back-end'?'inline-block':'none'}">
+	      <div class="template" style="display:${backend?'inline-block':'none'}">
 	      <img class="selected" src="${images}/selected-32.png" style="display:${template==name?'inline-block':'none'}"/>
 		  <a>
 		  <img src="${thumbnail}"/>
