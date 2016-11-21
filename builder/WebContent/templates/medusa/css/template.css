@@ -19,7 +19,7 @@ html {
 }
 body {
   margin: 0 auto;
-  font-family: sans-serif;
+  font-family: Dosis;
    width: 100%;
   min-height: 100%;
   text-rendering:optimizeLegibility;
@@ -61,7 +61,7 @@ h1 {
 	font-size: 1.6em;
     line-height: 1.0666666664em;
     text-shadow : rgb(234, 133, 17) 0px 0.3px 0px;
-	background-color:rgba(34,34,34,0.8);
+	background-color:rgba(14,14,14,0.8);
 	font-family : Orbitron;
 	border-top : 1px solid rgb(234, 133, 17);
     border-bottom : 1px solid rgb(234, 133, 17);
@@ -85,8 +85,8 @@ h1 {
 }
 
 #content p, #content pre {
-	font-size : 0.9em;
-	font-family : Tahoma;
+	font-size : 1em;
+	font-family : Dosis;
 	margin-bottom : 5px;
 }
 
@@ -185,15 +185,24 @@ a {
 	display : inline-block;
 	width : 100px;
 	text-align : right;
-	font-family : Itim;
+	font-family : Dosis;
 	color : #332115;;
+}
+
+ol {
+	margin-left : 50px;
+	font-family : Dosis;
+}
+
+ol ul {
+	margin-left : 18px;
 }
 
 .login a {
 	color : #332115;
-	font-size : 90%;
+	font-size : 100%;
 	cursor : pointer;
-	font-family : Itim;
+	font-family : Dosis;
 	display : inline-block;
 }
 

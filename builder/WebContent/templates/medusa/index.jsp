@@ -9,6 +9,7 @@
   <link href="images/favicon.ico" rel="icon" sizes="16x16" type="image/x-icon" />
    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet" />
    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" />
+   <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
    <link href="css/metamorphosis.css" rel="stylesheet"/>
    <link href="templates/medusa/css/template.css" rel="stylesheet" />
    <link href="${css}/module.css" rel="stylesheet"/>
