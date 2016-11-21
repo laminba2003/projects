@@ -125,6 +125,10 @@ b {
 	font-size : 80%;
 }
 
+a {
+	color : rgb(0,0,150);
+}
+
 .menu a:first-letter {
 	text-transform : uppercase;
 }
