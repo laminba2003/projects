@@ -61,7 +61,7 @@ h1 {
 	font-size: 1.6em;
     line-height: 1.0666666664em;
     text-shadow : rgb(234, 133, 17) 0px 0.3px 0px;
-	background-color: #000;
+	background-color:rgba(34,34,34,0.8);
 	font-family : Orbitron;
 	border-top : 1px solid rgb(234, 133, 17);
     border-bottom : 1px solid rgb(234, 133, 17);
@@ -174,7 +174,7 @@ a {
 }
 
 .login input[type=text],.login input[type=password]{
-	border : 1px solid #696867;
+	border : 1px solid rgb(234, 133, 17);
 	height : 25px;
 	margin-top : 5px;
 	font-size:95%;
@@ -419,7 +419,7 @@ footer {
 	position:absolute;
 	display:block;
 	bottom: 4em;
-	left: 1.23em;
+	left: 3.23em;
 	margin: 9px;
 	z-index: 50;
 	font-family:Itim;
