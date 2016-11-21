@@ -39,55 +39,57 @@ public class ModuleManager {
 		digester.addSetNext("module/menu", "setMenu");
 		digester.addObjectCreate("module/actions/action", Action.class);
 		digester.addSetProperties("module/actions/action");
-		digester.addSetProperties("module/actions/action","class","className");
+		digester.addSetProperties("module/actions/action", "class", "className");
 		digester.addObjectCreate("module/actions/action/result", Result.class);
 		digester.addSetProperties("module/actions/action/result");
 		digester.addSetNext("module/actions/action/result", "addResult");
-		digester.addCallMethod("module/actions/action/result","setValue",0);
+		digester.addCallMethod("module/actions/action/result", "setValue", 0);
 		digester.addSetNext("module/actions/action", "addAction");
 		return (Module) digester.parse(file);
 	}
-	
+
 	public void loadModules(File root) {
 		File[] files = root.listFiles();
-		if(files!=null) {
-		for(File file : files) {
-			if(file.isDirectory()) {
-				File metadata = new File(file+File.separator+"module.xml");
-				if(metadata.exists()) {
-					try {
-						Module module = parse(metadata);
-						module.setFolder(file);
-						module.setId(file.getName());
-						if(module.getUrl()==null) module.setUrl(file.getName().toLowerCase());
-						if(module.getMenu()!=null) {
-							for(MenuItem item : module.getMenu().getMenuItems()) {
-								if(item.getAction()!=null) {
-									if(item.getPage()==null) {
-										item.setPage(item.getAction()+".jsp");
-									}
-									if(module.getUrl().equals("/")) {
-										 item.setAction(item.getAction());
+		if (files != null) {
+			for (File file : files) {
+				if (file.isDirectory()) {
+					File metadata = new File(file + File.separator + "module.xml");
+					if (metadata.exists()) {
+						try {
+							Module module = parse(metadata);
+							module.setFolder(file);
+							module.setId(file.getName());
+							if (module.getUrl() == null)
+								module.setUrl(file.getName().toLowerCase());
+							if (module.getMenu() != null) {
+								for (MenuItem item : module.getMenu().getMenuItems()) {
+									if (item.getAction() != null) {
+										if (item.getPage() == null) {
+											item.setPage(item.getAction() + ".jsp");
+										}
+										if (module.getUrl().equals("/")) {
+											item.setAction(item.getAction());
+										} else {
+											item.setAction(module.getUrl() + "/" + item.getAction());
+										}
 									} else {
-									 item.setAction(module.getUrl()+"/"+item.getAction());
-									}
-								}else {
-									item.setAction(module.getUrl());
-									item.setTitle(module.getUrl());
-									if(item.getPage()==null) {
-										item.setPage(module.getHome());
+										item.setAction(module.getUrl());
+										item.setTitle(module.getUrl());
+										if (item.getPage() == null) {
+											item.setPage(module.getHome());
+										}
 									}
 								}
 							}
+							if (module.isMain())
+								main = module;
+							addModule(module);
+						} catch (Exception e) {
+							e.printStackTrace();
 						}
-						if(module.isMain()) main = module;
-						addModule(module);
-					}catch(Exception e){
-						e.printStackTrace();
 					}
 				}
 			}
-		}
 		}
 		orderModules();
 	}
@@ -97,15 +99,17 @@ public class ModuleManager {
 	}
 
 	public Module getModuleByUrl(String url) {
-		for(Module module : modules) {
-			if(module.getUrl().equals(url)) return module;
+		for (Module module : modules) {
+			if (module.getUrl().equals(url))
+				return module;
 		}
 		return null;
 	}
-	
+
 	public Module getModuleById(String id) {
-		for(Module module : modules) {
-			if(module.getId().equals(id)) return module;
+		for (Module module : modules) {
+			if (module.getId().equals(id))
+				return module;
 		}
 		return null;
 	}
@@ -124,22 +128,26 @@ public class ModuleManager {
 
 	public List<Module> getVisibleModules(String type) {
 		List<Module> modules = new ArrayList<Module>();
-		for(Module module : this.modules) {
-			if(module.isVisible() && module.getType().equals(type))modules.add(module);
+		for (Module module : this.modules) {
+			if (module.isVisible() && module.getType().equals(type))
+				modules.add(module);
 		}
 		return modules;
 	}
 
 	public Module getDefaultBackendModule() {
-		for(Module module : this.modules) {
-			if(module.getType().equals("back-end")) return module;
+		for (Module module : this.modules) {
+			if (module.isBackend())
+				return module;
 		}
 		return null;
 	}
+
 	public List<Module> getAdminModules() {
 		List<Module> modules = new ArrayList<Module>();
-		for(Module module : this.modules) {
-			if(module.isAdministrable())modules.add(module);
+		for (Module module : this.modules) {
+			if (module.isAdministrable())
+				modules.add(module);
 		}
 		return modules;
 	}
