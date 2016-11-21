@@ -18,6 +18,7 @@
 		  </div>
 		  <div class="extensionDetails">
 		      	  <span>Name : ${name}</span>
+		      	  <span>Type : ${type}</span>
 		      	  <span>Url : /${url}</span>
 		      	  <span>Home : ${home}</span>
 		      	  <span>Main : ${main}</span>

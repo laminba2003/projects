@@ -19,6 +19,7 @@
 		  </div>
 		  <div class="extensionDetails">
 		      	  <span>Name : ${name}</span>
+		      	  <span>Type : ${type}</span>
 				  <span>Author : ${author}</span>
 				  <span>Author Email : ${authorEmail}</span>
 				  <span>Author Url : ${authorUrl}</span>
