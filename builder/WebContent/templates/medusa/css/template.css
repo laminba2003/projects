@@ -54,9 +54,13 @@ select {
 	border : 1px solid rgb(234, 133, 17);
 }
 
+.extension img {
+	border : 1px solid #fdf1ad;
+}
+
 h1 {
 	font-size: 1.6em;
-    line-height: 1.0666666664em;
+    line-height: 1.1em;
     text-shadow : rgb(234, 133, 17) 0px 0.3px 0px;
 	background-color:rgba(14,14,14,0.8);
 	font-family : Orbitron;
@@ -220,7 +224,7 @@ ol ul {
 
 main {
 	min-height : 70vh;
-	background : #fff;
+	background : #fffade;
 	padding : 0;
 	padding-top : 0px;
 	position:relative;
