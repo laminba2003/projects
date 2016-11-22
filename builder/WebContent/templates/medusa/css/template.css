@@ -236,8 +236,8 @@ footer {
 	background : rgb(10, 10, 10);
     color : rgb(60, 60, 60);
     padding: 8px;
-    font-family : Arial, Maven Pro;
-    font-size : 12px;
+    font-family : Itim;
+    font-size : 80%;
     box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
     border-top : 1px solid rgb(234, 133, 17);
     border-bottom : 1px solid rgb(234, 133, 17);
