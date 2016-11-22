@@ -111,6 +111,10 @@
 	display : inline-block;
 }
 
+.extension .info span {
+	font-size : 85%;
+}
+
 .extension div span {
 	display : block;
 	text-align : left;
@@ -127,10 +131,6 @@
 	height : 16px;
 	margin-right : 3px;
 	display : inline-block;
-}
-
-.extension span.extension-author {
-	font-size : 85%;
 }
 
 .extension span a {

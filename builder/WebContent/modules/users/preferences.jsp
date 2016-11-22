@@ -15,7 +15,7 @@
 		  </a>
 		  <div class="info">
 		  <span class="template-name">${name}</span>
-		  <span class="template-author">${author}</span>
+		  <span>${author}</span>
 		  <span style="display:${template==name?'none':'inline-block'}"><a title="select" href="${module.url}/preferences/templates/select?id=${id}">[Select]</a></span>
 		  </div>
 		  <div class="templateDetails">

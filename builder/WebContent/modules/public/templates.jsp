@@ -23,11 +23,12 @@
 	   
 	      <div class="extension">
 	      <a>
-		  <img src="templates/${id}/thumbnail.png"/>
+		  <img src="${thumbnail}"/>
 		  </a>
 		  <div class="info">
 		  <span class="extension-name">${name}  <a title="download" class="download-16"></a></span>
-		  <span class="extension-author">${author}</span>
+		  <span>${author}</span>
+		  <span>Type : ${type}</span>
 		  </div>
 		  <div class="extensionDetails">
 		      	  <span>Name : ${name}</span>
