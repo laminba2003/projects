@@ -46,13 +46,11 @@ public class StartupListener implements ServletContextListener {
 		context.setAttribute("template",template.getId());
 		String tilesDefinitions = createTemplateTiles(root,template);
 		template = templateManager.getFrontendTemplate(context.getInitParameter("front-end"));
-		if(template!=null) {
-			tilesDefinitions += ","+ createTemplateTiles(root,template);
-		}else {
+		if(template==null) {
 			copyFrontendTemplate(root);
 			template = templateManager.loadTemplate(new File(root+File.separator+"templates/medusa"));
-			tilesDefinitions += ","+ createTemplateTiles(root,template);
 		}
+		tilesDefinitions += ","+ createTemplateTiles(root,template);
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
 		ModuleManager moduleManager = new ModuleManager();
 		moduleManager.loadModules(new File(root+File.separator+"modules"));
