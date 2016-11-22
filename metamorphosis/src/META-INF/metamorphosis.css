@@ -663,6 +663,10 @@ span input[type=radio] {
 	padding : 10px;
 }
 
+#search {
+	display : inline-block;
+}
+
 #search span {
 	font-size : 90%;
 }
