@@ -4,21 +4,21 @@
 
 <fieldset class="preferences">
 	<legend>Templates</legend>
-	<div id="templates">
+	<div id="extensions">
 	
 	   <s:iterator value="#application.templateManager.templates">
 	   
-	      <div class="template" style="display:${backend?'inline-block':'none'}">
+	      <div class="extension" style="display:${backend?'inline-block':'none'}">
 	      <img class="selected" src="${images}/selected-32.png" style="display:${template==name?'inline-block':'none'}"/>
 		  <a>
 		  <img src="${thumbnail}"/>
 		  </a>
 		  <div class="info">
-		  <span class="template-name">${name}</span>
+		  <span class="extension-name">${name}</span>
 		  <span>${author}</span>
 		  <span style="display:${template==name?'none':'inline-block'}"><a title="select" href="${module.url}/preferences/templates/select?id=${id}">[Select]</a></span>
 		  </div>
-		  <div class="templateDetails">
+		  <div class="extensionDetails">
 		      	  <span>Name : ${name}</span>
 				  <span>Author : ${author}</span>
 				  <span>Author Email : ${authorEmail}</span>
