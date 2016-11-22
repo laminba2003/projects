@@ -74,12 +74,20 @@ h1 {
 	padding-left : 41%;
 }
 
+#content {
+	padding-top : 5px;
+}
+
 #content h2 {
 	font-size : 1.3em;
 	font-weight : 400;
 	font-family : Itim;
 	margin-bottom : 5px;
 	margin-top : 5px;
+}
+
+#content h2:first-of-type {
+	margin-top : 0px;
 }
 
 #content p, #content pre {
