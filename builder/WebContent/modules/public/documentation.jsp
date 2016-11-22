@@ -3,7 +3,7 @@
 <div>
 <h2>Overview</h2>
 <p>
-Metamorphosis is a Rapid Application Development Framework built on top of the <a href="https://struts.apache.org/" target="_blank">Apache Struts</a> MVC Framework.<br/>
+Metamorphosis is a Rapid Application Development Framework built on top of the <a href="https://struts.apache.org/" target="_blank">Apache Struts</a> Model-View-Controller Framework.<br/>
 Its architecture is extensible and flexible to confer you a total liberty over your development and over your freedom of choices. 
 </p>
 <h2>User Guide</h2>
