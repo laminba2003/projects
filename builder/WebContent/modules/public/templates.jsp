@@ -16,6 +16,10 @@
 <select>
  <option>1.0</option>
 </select>
+<div id="search">
+<span>Search : </span>
+<input/>
+</div>
 <fieldset class="extensions-details">
 	<div id="extensions">
 	

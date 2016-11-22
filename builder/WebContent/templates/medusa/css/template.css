@@ -202,6 +202,15 @@ a {
 	font-family : Dosis;
 	color : #332115;;
 }
+#search {
+	display : inline-block;
+	margin-left : 15px;
+}
+
+#search input { 
+	border:1px solid rgb(234, 133, 17);
+	background-image: url('../images/search.png');
+}
 
 ol {
 	margin-left : 50px;
