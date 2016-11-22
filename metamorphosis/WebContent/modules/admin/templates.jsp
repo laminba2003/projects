@@ -15,7 +15,8 @@
 		  </a>
 		  <div class="info">
 		  <span class="extension-name">${name}</span>
-		  <span class="extension-author">${author}</span>
+		  <span>${author}</span>
+		  <span>Type : ${type}</span>
 		  </div>
 		  <div class="extensionDetails">
 		      	  <span>Name : ${name}</span>

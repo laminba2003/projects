@@ -50,6 +50,10 @@
 	display : inline-block;
 }
 
+.template .info span {
+	font-size : 85%;
+}
+
 .template div span {
 	display : block;
 	text-align : left;
@@ -57,12 +61,7 @@
 }
 .template div span.template-name {
 	font-weight : bold;
-	margin-top :10px;
-	
-}
-
-.template span.template-author {
-	font-size : 85%;
+	margin-top :10px;	
 }
 
 .template span a {
