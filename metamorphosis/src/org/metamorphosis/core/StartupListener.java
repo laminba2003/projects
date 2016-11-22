@@ -5,12 +5,18 @@ import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.EnumSet;
+import javax.script.Compilable;
+import javax.script.CompiledScript;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
@@ -26,19 +32,20 @@ public class StartupListener implements ServletContextListener {
 
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
-		event.getServletContext().setAttribute("path",event.getServletContext().getContextPath()+"/");
-		String root = new File(event.getServletContext().getRealPath(File.separator)).getAbsolutePath();
+		ServletContext context = event.getServletContext();
+		context.setAttribute("path",context.getContextPath()+"/");
+		String root = new File(context.getRealPath(File.separator)).getAbsolutePath();
 		TemplateManager templateManager = new TemplateManager();
 		templateManager.loadTemplates(new File(root+File.separator+"templates"));
-		event.getServletContext().setAttribute("templateManager",templateManager);
-		Template template = templateManager.getBackendTemplate(event.getServletContext().getInitParameter("back-end"));
+		context.setAttribute("templateManager",templateManager);
+		Template template = templateManager.getBackendTemplate(context.getInitParameter("back-end"));
 		if(template==null) {
 			copyBackendTemplate(root);
 			template = templateManager.loadTemplate(new File(root+File.separator+"templates/nova"));
 		}
-		event.getServletContext().setAttribute("template",template.getId());
+		context.setAttribute("template",template.getId());
 		String tilesDefinitions = createTemplateTiles(root,template);
-		template = templateManager.getFrontendTemplate(event.getServletContext().getInitParameter("front-end"));
+		template = templateManager.getFrontendTemplate(context.getInitParameter("front-end"));
 		if(template!=null) {
 			tilesDefinitions += ","+ createTemplateTiles(root,template);
 		}else {
@@ -49,30 +56,31 @@ public class StartupListener implements ServletContextListener {
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
 		ModuleManager moduleManager = new ModuleManager();
 		moduleManager.loadModules(new File(root+File.separator+"modules"));
-		event.getServletContext().setAttribute("moduleManager",moduleManager);
+		context.setAttribute("moduleManager",moduleManager);
 		for(Module module : moduleManager.getModules()) {
-			File definition = new File(module.getFolder().getAbsolutePath()+File.separator+"tiles.xml");
+			File definition = new File(module.getFolder()+File.separator+"tiles.xml");
 			if(definition.exists()) {
 				tilesDefinitions += ","+"/modules/"+module.getFolder().getName()+"/tiles.xml";
 			}else {
 				tilesDefinitions += ","+createModuleTiles(module);
 			}
-			definition = new File(module.getFolder().getAbsolutePath()+File.separator+"struts.xml");
+			definition = new File(module.getFolder()+File.separator+"struts.xml");
 			if(definition.exists()) {
-				config += ","+definition.getAbsolutePath();
+				config += ","+definition;
 			}else {
 				if(module.getActions().size()>0) {
 					config += ","+createModuleConfig(module);
 				}
 			}
-			if(module.getUrl().equals("users")) {
-				event.getServletContext().setAttribute("security",true);
+			if(module.getId().equals("users")) {
+				context.setAttribute("security",true);
 			}
+			compileScripts(module,context);
 		}
-		FilterRegistration struts2 = event.getServletContext().addFilter("struts2", org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.class);
+		FilterRegistration struts2 = context.addFilter("struts2", org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.class);
 		struts2.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST,DispatcherType.FORWARD),true, "/*");
 		struts2.setInitParameter("config",config);
-		event.getServletContext().setInitParameter("org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG",tilesDefinitions);
+		context.setInitParameter("org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG",tilesDefinitions);
 		new TilesListener().contextInitialized(event);
 		copyFiles(root);
 	}
@@ -184,6 +192,31 @@ public class StartupListener implements ServletContextListener {
 			e.printStackTrace();
 		}
 		return temp.getAbsolutePath();
+	}
+	
+	private void compileScripts(Module module,ServletContext context) {
+		File folder = new File(module.getFolder()+"/scripts");
+		if(folder.exists()) {
+			ScriptEngineManager manager = new ScriptEngineManager();
+			File[] files = folder.listFiles();
+			if(files!=null) {
+				for(File file : files) {
+					String name = file.getName();
+					String extension = file.getName().substring(name.indexOf(".")+1);
+					ScriptEngine engine = manager.getEngineByExtension(extension);
+					engine.put("servletContext", context);
+					if(engine instanceof Compilable) {
+						Compilable compilable = (Compilable) engine;
+						try {
+							CompiledScript script = compilable.compile(new FileReader(file));
+							script.eval();
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	private void copyFiles(String root) {
