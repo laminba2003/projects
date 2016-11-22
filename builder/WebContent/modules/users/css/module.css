@@ -14,61 +14,61 @@
 	width : 100%;
 }
 
-#templates {
+#extensions {
 	padding : 10px;
 }
-.template {
+.extension {
 	display : inline-block;
 	width : auto;
 	height: 150px;
 	margin : 5px;
 }
 
-.template > a {
+.extension > a {
 	cursor : pointer;
 }
 
-.template > a > img {
+.extension > a > img {
 	width : 128px;
 	height: 128px;
 }
 
-.template img.selected {
+.extension img.selected {
 	vertical-align : top;
 	border : none;
 	width : auto;
 	height : auto;
 }
 
-.template div {
+.extension div {
 	text-align : left;
 	vertical-align : top;
 }
 
-.template .info {
+.extension .info {
 	height: 128px;
 	display : inline-block;
 }
 
-.template .info span {
+.extension .info span {
 	font-size : 85%;
 }
 
-.template div span {
+.extension div span {
 	display : block;
 	text-align : left;
 	margin-bottom :17px;
 }
-.template div span.template-name {
+.extension div span.extension-name {
 	font-weight : bold;
 	margin-top :10px;
 }
 
-.template span a {
+.extension span a {
 	font-size : 80%;
 }
 
-.templateDetails {
+.extensionDetails {
 	padding : 20px;
 	background : #fff;
 	border : 1px solid #ccc;
@@ -81,7 +81,7 @@
 	margin-right : 15px;
 }
 
-.templateDetails div span {
+.extensionDetails div span {
 	display : block;
 	text-align : left;
 	width : auto;
