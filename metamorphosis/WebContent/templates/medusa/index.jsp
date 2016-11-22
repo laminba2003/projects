@@ -33,7 +33,7 @@
     	</main>
 		
 		<footer>
-			<p>© 2016 powered by Metamorphosis.</p>
+			<p>&copy; 2016 powered by Metamorphosis.</p>
 		</footer>
 		
 	</div>
