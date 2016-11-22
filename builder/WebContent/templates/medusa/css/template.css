@@ -34,7 +34,7 @@ input[type=submit]{
 	border : 1px solid #4d4a48;
 	cursor : pointer;
 	background:rgba(34,34,34,0.6);
-	color : #fff;
+	color : #fdf8eb;
 	border-radius:5px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
@@ -42,7 +42,7 @@ input[type=submit]{
 }
 
 input[type=submit]:hover{
-	background : rgb(10, 136, 255);
+	background : rgb(234, 133, 17);
 }
 
 input {
@@ -70,7 +70,7 @@ h1 {
 	border-right:none;
 	text-align : left;
 	position:relative;
-	color : white;
+	color : #fff3d5;
 	margin : 0;
 	padding-top : 0.4em;
 	width : 100%;
