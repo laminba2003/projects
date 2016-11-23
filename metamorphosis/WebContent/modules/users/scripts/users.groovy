@@ -4,9 +4,22 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class TemplateAction extends ActionSupport {
+public class UserAction extends ActionSupport {
 
 	String id;
+	
+	def signIn()  {
+		def application = ActionContext.getContext().get("application");
+		def moduleManager = application.get("moduleManager");
+		def module = moduleManager.getMain()!=null ? moduleManager.getMain() : moduleManager.getDefaultBackendModule();
+		def contextPath = ServletActionContext.getRequest().getContextPath();
+		def url = module!=null ? contextPath+"/"+module.getUrl() : contextPath+"/";
+		ServletActionContext.getResponse().sendRedirect(url);
+	}
+	
+	def signOut() {
+		return SUCCESS;
+	}
 	
 	def selectTemplate() {
 		def application = ActionContext.getContext().get("application");
@@ -21,4 +34,4 @@ public class TemplateAction extends ActionSupport {
 	
 }
 
-new TemplateAction();
+new UserAction();
