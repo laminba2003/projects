@@ -2,17 +2,17 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class UserAction extends ActionSupport {
+class UserAction extends ActionSupport {
 
 	String id;
 	
 	def signIn()  {
-		def application = ActionContext.getContext().get("application");
-		def moduleManager = application.get("moduleManager");
-		def module = moduleManager.getMain()!=null ? moduleManager.getMain() : moduleManager.getDefaultBackendModule();
-		def contextPath = ServletActionContext.getRequest().getContextPath();
+		def application = ActionContext.context.get("application");
+		def moduleManager = application["moduleManager"];
+		def module = moduleManager.main!=null ? moduleManager.main : moduleManager.defaultBackendModule;
+		def contextPath = ServletActionContext.request.contextPath;
 		def url = module!=null ? contextPath+"/"+module.getUrl() : contextPath+"/";
-		ServletActionContext.getResponse().sendRedirect(url);
+		ServletActionContext.response.sendRedirect(url);
 	}
 	
 	def signOut() {
@@ -20,13 +20,13 @@ public class UserAction extends ActionSupport {
 	}
 	
 	def selectTemplate() {
-		def application = ActionContext.getContext().get("application");
-		def templateManager = application.get("templateManager");
+		def application = ActionContext.context.get("application");
+		def templateManager = application["templateManager"];
 		def template = templateManager.getTemplate(id);
-		if(template!=null && template.isBackend()) {
-			def referer = ServletActionContext.getRequest().getHeader("referer");
-			ServletActionContext.getRequest().getSession().setAttribute("template",id);
-			ServletActionContext.getResponse().sendRedirect(referer);
+		if(template!=null && template.backend) {
+			def referer = ServletActionContext.request.getHeader("referer");
+			ServletActionContext.request.session.setAttribute("template",id);
+			ServletActionContext.response.sendRedirect(referer);
 		}
 	}
 	
