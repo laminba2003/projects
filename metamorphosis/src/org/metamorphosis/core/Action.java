@@ -8,6 +8,7 @@ public class Action {
 	private String name;
 	private String className="";
 	private String method="execute";
+	private String script;
 	private List<Result> results = new ArrayList<Result>();
 	
 	public String getName() {
@@ -27,6 +28,12 @@ public class Action {
 	}
 	public void setMethod(String method) {
 		this.method = method;
+	}
+	public String getScript() {
+		return script;
+	}
+	public void setScript(String script) {
+		this.script = script;
 	}
 	public void addResult(Result result) {
 		results.add(result);

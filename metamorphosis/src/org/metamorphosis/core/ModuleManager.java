@@ -100,7 +100,7 @@ public class ModuleManager {
 
 	public Module getModuleByUrl(String url) {
 		for (Module module : modules) {
-			if (module.getUrl().equals(url))
+			if (module.getUrl().equals(url) || ("/"+module.getUrl()).equals(url))
 				return module;
 		}
 		return null;

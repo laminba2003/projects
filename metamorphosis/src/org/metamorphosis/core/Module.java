@@ -81,6 +81,15 @@ public class Module extends Extension {
 	public void addAction(Action action) {
 		actions.add(action);
 	}
+	
+	public Action getAction(String name) {
+		for(Action action : actions) {
+			if(action.getName().equals(name)) {
+				return action;
+			}
+		}
+		return null;
+	}
 
 	public String getIcon() {
 		return "modules/" + id + "/images/icon-16.png";

@@ -19,6 +19,6 @@
 		<action name="signOut" class="org.metamorphosis.core.UserAction" method="signOut">
 			<result type="redirect">/</result>
 		</action>
-		<action name="preferences/templates/select" class="org.metamorphosis.core.TemplateAction" method="selectTemplate"/>
+		<action name="preferences/templates/select"  script="templateAction.groovy" method="selectTemplate"/>
 	</actions>
 </module>

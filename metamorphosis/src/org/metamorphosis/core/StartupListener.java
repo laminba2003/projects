@@ -5,15 +5,10 @@ import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.EnumSet;
-import javax.script.Compilable;
-import javax.script.CompiledScript;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
@@ -73,7 +68,6 @@ public class StartupListener implements ServletContextListener {
 			if(module.getId().equals("users")) {
 				context.setAttribute("security",true);
 			}
-			compileScripts(module,context);
 		}
 		FilterRegistration struts2 = context.addFilter("struts2", org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.class);
 		struts2.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST,DispatcherType.FORWARD),true, "/*");
@@ -190,31 +184,6 @@ public class StartupListener implements ServletContextListener {
 			e.printStackTrace();
 		}
 		return temp.getAbsolutePath();
-	}
-	
-	private void compileScripts(Module module,ServletContext context) {
-		File folder = new File(module.getFolder()+"/scripts");
-		if(folder.exists()) {
-			ScriptEngineManager manager = new ScriptEngineManager();
-			File[] files = folder.listFiles();
-			if(files!=null) {
-				for(File file : files) {
-					String name = file.getName();
-					String extension = file.getName().substring(name.indexOf(".")+1);
-					ScriptEngine engine = manager.getEngineByExtension(extension);
-					engine.put("servletContext", context);
-					if(engine instanceof Compilable) {
-						Compilable compilable = (Compilable) engine;
-						try {
-							CompiledScript script = compilable.compile(new FileReader(file));
-							script.eval();
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				}
-			}
-		}
 	}
 	
 	private void copyFiles(String root) {
