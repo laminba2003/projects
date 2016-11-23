@@ -11,15 +11,14 @@ class UserAction extends ActionSupport {
 	}
 	
 	def signOut() {
-		return SUCCESS;
+		SUCCESS;
 	}
 	
 	def selectTemplate() {
 		def template = templateManager.getTemplate(id);
 		if(template && template.backend) {
-			def referer = request.getHeader("referer");
 			request.session.setAttribute("template",id);
-			response.sendRedirect(referer);
+			response.sendRedirect(request.getHeader("referer"));
 		}
 	}
 	
