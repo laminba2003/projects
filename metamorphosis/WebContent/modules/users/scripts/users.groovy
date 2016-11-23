@@ -6,9 +6,8 @@ class UserAction extends ActionSupport {
 	
 	def signIn()  {
 		def moduleManager = application["moduleManager"];
-		def module = moduleManager.main!=null ? moduleManager.main : moduleManager.defaultBackendModule;
-		def contextPath = request.contextPath;
-		def url = module ? contextPath+"/"+module.url : contextPath+"/";
+		def module = moduleManager.main ? moduleManager.main : moduleManager.defaultBackendModule;
+		def url = module ? request.contextPath+"/"+module.url : request.contextPath+"/";
 		response.sendRedirect(url);
 	}
 	
