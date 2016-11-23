@@ -21,7 +21,7 @@
 			  crossorigin="anonymous"></script>
 
      <script type="text/javascript" src="js/wowslider.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
+     <script type="text/javascript" src="js/script.js"></script>
       <!-- End WOWSlider.com BODY section -->
- 				
+		
 </div>  

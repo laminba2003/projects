@@ -34,7 +34,7 @@
 				  <div class="login" style="display:${security==true?'inline-block':'none'}">
 				  <form action="users/signIn">
 				   <span>Email :</span>
-				   <input type="text" size="20"/>
+				   <input id="email" type="text" size="20"/>
 				   <span>Password :</span>
 				   <input type="password" size="20"/>
 				   <input type="submit" value="Sign In"/>
@@ -50,7 +50,12 @@
 		  	
 		  	 <tiles:insertAttribute name="content"/>
  			 <script type="text/javascript" src="js/metamorphosis.js"></script>
- 			  <script type="text/javascript" src="${js}/module.js"></script>
+ 			 <script>
+				$(function() {
+					$(".login input[type='text']").val("").focus();
+				});
+    		 </script>
+ 			 <script type="text/javascript" src="${js}/module.js"></script>
 		</div>  
     	</main>
 		
@@ -59,11 +64,5 @@
 		</footer>
 		
 	</div>
-<script>
-
-$(function() {
-	$("#login").val("").focus();
-});
-</script>
 </body>
 </html>
