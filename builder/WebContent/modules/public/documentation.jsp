@@ -5,7 +5,7 @@
 <p>
 Metamorphosis is a Rapid Application Development Framework built on top of the <a href="https://struts.apache.org/" target="_blank">Apache Struts</a> Model-View-Controller Framework.<br/>
 Its architecture is extensible and flexible to confer you a total liberty over your development and over your freedom of choices.<br>
-It does also fully support the <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/scripting/" target="_blank">JSR-223</a> so you can use any compliant scripting language plugged in. 
+It does also fully support the <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/scripting/" target="_blank">JSR-223</a> to let you use any compliant scripting language plugged in. 
 </p>
 <hr/>
 <h2>User Guide</h2>
