@@ -27,13 +27,12 @@ public class ActionFactory extends DefaultActionFactory {
 		if(module!=null) {
 			Action action = module.getAction(actionName);
 			if(action!=null && action.getScript()!=null) {
-				File file = new File(module.getFolder()+"/scripts/"+action.getScript());
-				if(file.exists()) {
-					String name = file.getName();
+				File script = new File(module.getFolder()+"/scripts/"+action.getScript());
+				if(script.exists()) {
+					String name = script.getName();
 					String extension = name.substring(name.indexOf(".")+1);
-					ScriptEngineManager manager = new ScriptEngineManager();
-					ScriptEngine engine = manager.getEngineByExtension(extension);
-					return engine.eval(new FileReader(file));
+					ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(extension);
+				   return engine.eval(new FileReader(script));
 				}
 			}
 			
