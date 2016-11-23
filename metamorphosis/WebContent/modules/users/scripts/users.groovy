@@ -11,7 +11,7 @@ class UserAction extends ActionSupport {
 		def moduleManager = application["moduleManager"];
 		def module = moduleManager.main!=null ? moduleManager.main : moduleManager.defaultBackendModule;
 		def contextPath = ServletActionContext.request.contextPath;
-		def url = module!=null ? contextPath+"/"+module.getUrl() : contextPath+"/";
+		def url = module ? contextPath+"/"+module.url : contextPath+"/";
 		ServletActionContext.response.sendRedirect(url);
 	}
 	
@@ -23,7 +23,7 @@ class UserAction extends ActionSupport {
 		def application = ActionContext.context.get("application");
 		def templateManager = application["templateManager"];
 		def template = templateManager.getTemplate(id);
-		if(template!=null && template.backend) {
+		if(template && template.backend) {
 			def referer = ServletActionContext.request.getHeader("referer");
 			ServletActionContext.request.session.setAttribute("template",id);
 			ServletActionContext.response.sendRedirect(referer);
