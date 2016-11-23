@@ -21,4 +21,12 @@ public class ActionSupport extends com.opensymphony.xwork2.ActionSupport {
 	public Map getApplication() {
 		return (Map) ActionContext.getContext().get("application");
 	}
+	
+	public ModuleManager getModuleManager() {
+		return (ModuleManager) getApplication().get("moduleManager");
+	}
+	
+	public TemplateManager getTemplateManager() {
+		return (TemplateManager) getApplication().get("templateManager");
+	}
 }
