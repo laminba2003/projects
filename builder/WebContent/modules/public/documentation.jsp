@@ -35,6 +35,7 @@ Find <a>here</a> how to create a project with your favourite IDE.
 <hr/>
 <h2>Examples</h2>
 <p>
+You can browse <a>here</a> a large collection of real-world examples like this <a href="http://env-3687617.mircloud.host/app/" target="_blank">CRM application</a> which interacts with <a href="https://nodejs.org/en/" target="_blank">Node.js</a> through REST and CORS.
 </p>
 </div>
 
