@@ -22,7 +22,7 @@ It does also fully support the <a href="http://docs.oracle.com/javase/6/docs/tec
 <hr/>
 <h2>API Documentation</h2>
 <p>
-You can also browse through the API documentation to get a better insight.
+You can also browse through the API documentation to get an architectural view.
 </p>
 <ul>
 <li><a>JavaDoc 1.0</a></li>
