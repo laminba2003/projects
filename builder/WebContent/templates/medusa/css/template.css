@@ -152,6 +152,10 @@ a {
 	background-image: url(../images/templates-16.png);
 }
 
+.community-16 {
+	background-image: url(../images/community-16.png);
+}
+
 .link-16 {
 	background-image: url(../images/link-16.png);
 }
@@ -192,9 +196,6 @@ a {
 }
 #share {
 	display : inline-block;
-}
-#search,#share {
-	margin-left : 15px;
 }
 
 #search input { 
