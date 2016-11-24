@@ -209,13 +209,29 @@ a {
 	font-family : Dosis;
 	color : #332115;;
 }
-#search {
+#share {
+	display : inline-block;
+}
+#search,#share {
 	margin-left : 15px;
 }
 
 #search input { 
 	border:1px solid rgb(234, 133, 17);
 	background-image: url('../images/search.png');
+}
+
+#share input { 
+	border:1px solid rgb(234, 133, 17);
+	background-image: url('../images/share-16.png');
+	padding : 6px;
+	padding-left : 30px;
+	padding-right : 10px;
+	background-repeat : no-repeat;
+	border-radius : 15px;
+	background-position : 8px 10px;
+	background-color : #fffef5;
+	cursor : pointer;
 }
 
 ol {
