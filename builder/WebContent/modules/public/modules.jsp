@@ -19,6 +19,8 @@
 <span>Search : </span>
 <input/>
 </div>
+<span>Share : </span>
+<input type="file" accept="application/zip"/>
 <fieldset class="extensions-details">
 	<div id="extensions">
 	
