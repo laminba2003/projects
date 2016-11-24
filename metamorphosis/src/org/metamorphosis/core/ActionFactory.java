@@ -18,11 +18,11 @@ public class ActionFactory extends DefaultActionFactory {
 		Map application = (Map) ActionContext.getContext().get("application");
 		ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
 		Module module = moduleManager.getCurrentModule(ServletActionContext.getRequest());
-		if (module != null) {
+		if(module != null) {
 			Action action = module.getAction(actionName);
-			if (action != null && action.getScript() != null) {
+			if(action != null && action.getScript() != null) {
 				File script = new File(module.getFolder() + "/scripts/" + action.getScript());
-				if (script.exists()) {
+				if(script.exists()) {
 					String name = script.getName();
 					String extension = name.substring(name.indexOf(".") + 1);
 					ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(extension);

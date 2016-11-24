@@ -5,10 +5,13 @@ import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.EnumSet;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
@@ -75,6 +78,18 @@ public class StartupListener implements ServletContextListener {
 			}
 			if(module.getId().equals("users")) {
 				context.setAttribute("security",true);
+			}
+			File script = new File(module.getFolder() + "/scripts/init.groovy");
+			script = script.exists() ? script : new File(module.getFolder() + "/scripts/"+module.getScript());
+			if(script.exists()) {
+				String name = script.getName();
+				String extension = name.substring(name.indexOf(".") + 1);
+				ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(extension);
+				try {
+					engine.eval(new FileReader(script));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		return config;

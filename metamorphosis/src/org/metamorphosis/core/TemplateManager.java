@@ -40,7 +40,7 @@ public class TemplateManager {
 		return null;
 	}
 	
-	private Template parse(File file) throws Exception {
+	private Template parse(File metadata) throws Exception {
 		Digester digester = new Digester();
 		digester.setValidating( false );
 		digester.addObjectCreate("template", Template.class );
@@ -55,7 +55,7 @@ public class TemplateManager {
 		digester.addBeanPropertySetter("template/copyright");
 		digester.addBeanPropertySetter("template/license");
 		digester.addBeanPropertySetter("template/version");
-		return (Template) digester.parse(file);
+		return (Template) digester.parse(metadata);
 	}
 
 	public void addTemplate(Template template) {

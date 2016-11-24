@@ -12,7 +12,7 @@ public class ModuleManager {
 	private List<Module> modules = new ArrayList<Module>();
 	private Module main;
 
-	private Module parse(File file) throws Exception {
+	private Module parse(File metadata) throws Exception {
 		Digester digester = new Digester();
 		digester.setValidating(false);
 		digester.addObjectCreate("module", Module.class);
@@ -20,6 +20,7 @@ public class ModuleManager {
 		digester.addBeanPropertySetter("module/type");
 		digester.addBeanPropertySetter("module/url");
 		digester.addBeanPropertySetter("module/home");
+		digester.addBeanPropertySetter("module/script");
 		digester.addBeanPropertySetter("module/template");
 		digester.addBeanPropertySetter("module/main");
 		digester.addBeanPropertySetter("module/visible");
@@ -46,7 +47,7 @@ public class ModuleManager {
 		digester.addSetNext("module/actions/action/result", "addResult");
 		digester.addCallMethod("module/actions/action/result", "setValue", 0);
 		digester.addSetNext("module/actions/action", "addAction");
-		return (Module) digester.parse(file);
+		return (Module) digester.parse(metadata);
 	}
 
 	public void loadModules(File root) {
