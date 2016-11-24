@@ -17,5 +17,6 @@
 		<menuItem name="modules" action="modules" />
 		<menuItem name="templates" action="templates" />
 		<menuItem name="community" action="community" />
+		<menuItem name="contribute" action="contribute" />
 	</menu>
 </module>

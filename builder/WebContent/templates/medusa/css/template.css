@@ -89,7 +89,7 @@ b {
 }
 
 .logo {
-	width : 250px;
+	width : 195px;
 	display : inline-block;
 }
 
@@ -100,7 +100,7 @@ b {
 }
 
 .menu a {
-	margin-right : 13px;
+	margin-right : 7px;
 	width : auto;
 	display : inline-block;
 	background-repeat : no-repeat;
@@ -154,6 +154,10 @@ a {
 
 .community-16 {
 	background-image: url(../images/community-16.png);
+}
+
+.contribute-16 {
+	background-image: url(../images/contribute-16.png);
 }
 
 .link-16 {
