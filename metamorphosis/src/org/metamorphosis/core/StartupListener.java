@@ -21,15 +21,20 @@ import org.apache.tiles.web.startup.TilesListener;
 public class StartupListener implements ServletContextListener {
 
 	@Override
-	public void contextDestroyed(ServletContextEvent event) {
-
-	}
-
-	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		ServletContext context = event.getServletContext();
 		context.setAttribute("path",context.getContextPath()+"/");
 		String root = new File(context.getRealPath(File.separator)).getAbsolutePath();
+		FilterRegistration struts2 = context.addFilter("struts2", org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.class);
+		struts2.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST,DispatcherType.FORWARD),true, "/*");
+		StringBuffer buffer = new StringBuffer(loadTemplates(context, root));
+		struts2.setInitParameter("config",loadModules(context, root, buffer));
+		context.setInitParameter("org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG",buffer.toString());
+		new TilesListener().contextInitialized(event);
+		copyFiles(root);
+	}
+	
+	private String loadTemplates(ServletContext context,String root) {
 		TemplateManager templateManager = new TemplateManager();
 		templateManager.loadTemplates(new File(root+File.separator+"templates"));
 		context.setAttribute("templateManager",templateManager);
@@ -45,7 +50,10 @@ public class StartupListener implements ServletContextListener {
 			copyFrontendTemplate(root);
 			template = templateManager.loadTemplate(new File(root+File.separator+"templates/medusa"));
 		}
-		tilesDefinitions += ","+ createTemplateTiles(root,template);
+		return tilesDefinitions += ","+ createTemplateTiles(root,template);
+	}
+	
+	private String loadModules(ServletContext context,String root,StringBuffer buffer) {
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
 		ModuleManager moduleManager = new ModuleManager();
 		moduleManager.loadModules(new File(root+File.separator+"modules"));
@@ -53,28 +61,23 @@ public class StartupListener implements ServletContextListener {
 		for(Module module : moduleManager.getModules()) {
 			File definition = new File(module.getFolder()+File.separator+"tiles.xml");
 			if(definition.exists()) {
-				tilesDefinitions += ","+"/modules/"+module.getFolder().getName()+"/tiles.xml";
+				buffer.append(","+"/modules/"+module.getFolder().getName()+"/tiles.xml");
 			}else {
-				tilesDefinitions += ","+createModuleTiles(module);
+				buffer.append(","+createModuleTiles(module));
 			}
 			definition = new File(module.getFolder()+File.separator+"struts.xml");
 			if(definition.exists()) {
-				config += ","+definition;
+				config +=","+definition;
 			}else {
 				if(module.getActions().size()>0) {
-					config += ","+createModuleConfig(module);
+					config +=","+createModuleConfig(module);
 				}
 			}
 			if(module.getId().equals("users")) {
 				context.setAttribute("security",true);
 			}
 		}
-		FilterRegistration struts2 = context.addFilter("struts2", org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.class);
-		struts2.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST,DispatcherType.FORWARD),true, "/*");
-		struts2.setInitParameter("config",config);
-		context.setInitParameter("org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG",tilesDefinitions);
-		new TilesListener().contextInitialized(event);
-		copyFiles(root);
+		return config;
 	}
 
 	private String createTemplateTiles(String root,Template template) {
@@ -250,6 +253,11 @@ public class StartupListener implements ServletContextListener {
 	        }
 		br.close();
 		bw.close();
+	}
+
+	@Override
+	public void contextDestroyed(ServletContextEvent event) {
+
 	}
 
 }

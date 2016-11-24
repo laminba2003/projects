@@ -17,14 +17,14 @@ public class ModuleInterceptor extends AbstractInterceptor {
 	public String intercept(ActionInvocation invocation)  {
 		try {
 			HttpServletRequest request = ServletActionContext.getRequest();
-			String uri = request.getRequestURI();
-			String action = uri.substring(request.getContextPath().length()+1,uri.length());
 			Map application = (Map) ActionContext.getContext().get("application");
 			ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
 			Module module = moduleManager.getCurrentModule(request);
 			if(module!=null) {
 				request.setAttribute("modules",moduleManager.getVisibleModules(module.getType()));
 				request.setAttribute("module",module);
+				String uri = request.getRequestURI();
+				String action = uri.substring(request.getContextPath().length()+1,uri.length());
 				request.setAttribute("title",action);
 				request.setAttribute("js","modules/"+module.getId()+"/js");
 				request.setAttribute("css","modules/"+module.getId()+"/css");
