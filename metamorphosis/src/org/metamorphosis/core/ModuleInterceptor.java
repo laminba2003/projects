@@ -18,13 +18,10 @@ public class ModuleInterceptor extends AbstractInterceptor {
 		try {
 			HttpServletRequest request = ServletActionContext.getRequest();
 			String uri = request.getRequestURI();
-			String url = uri.substring(request.getContextPath().length()+1,uri.length());
-			String action = url;
-			url = url.indexOf("/")!=-1 ? url.substring(0,url.indexOf("/")) : url;
+			String action = uri.substring(request.getContextPath().length()+1,uri.length());
 			Map application = (Map) ActionContext.getContext().get("application");
 			ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
-			Module module = moduleManager.getModuleByUrl(url); 
-			module = module!=null ? module : moduleManager.getModuleByUrl("/");
+			Module module = moduleManager.getCurrentModule(request);
 			if(module!=null) {
 				request.setAttribute("modules",moduleManager.getVisibleModules(module.getType()));
 				request.setAttribute("module",module);

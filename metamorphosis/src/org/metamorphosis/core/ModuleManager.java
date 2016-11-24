@@ -4,6 +4,7 @@ package org.metamorphosis.core;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.digester.Digester;
 
 public class ModuleManager {
@@ -96,6 +97,14 @@ public class ModuleManager {
 
 	private void orderModules() {
 
+	}
+	
+	public Module getCurrentModule(HttpServletRequest request) {
+		String uri = request.getRequestURI();
+		String url = uri.substring(request.getContextPath().length()+1,uri.length());
+		url = url.indexOf("/")!=-1 ? url.substring(0,url.indexOf("/")) : url;
+		Module module = getModuleByUrl(url); 
+		return module!=null ? module :getModuleByUrl("/");
 	}
 
 	public Module getModuleByUrl(String url) {
