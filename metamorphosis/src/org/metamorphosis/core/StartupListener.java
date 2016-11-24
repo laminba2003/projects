@@ -27,7 +27,7 @@ public class StartupListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent event) {
 		ServletContext context = event.getServletContext();
 		context.setAttribute("path",context.getContextPath()+"/");
-		String root = new File(context.getRealPath(File.separator)).getAbsolutePath();
+		String root = new File(context.getRealPath("/")).getAbsolutePath();
 		FilterRegistration struts2 = context.addFilter("struts2", org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.class);
 		struts2.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST,DispatcherType.FORWARD),true, "/*");
 		StringBuffer buffer = new StringBuffer(loadTemplates(context, root));
@@ -39,19 +39,19 @@ public class StartupListener implements ServletContextListener {
 	
 	private String loadTemplates(ServletContext context,String root) {
 		TemplateManager templateManager = new TemplateManager();
-		templateManager.loadTemplates(new File(root+File.separator+"templates"));
+		templateManager.loadTemplates(new File(root+"/templates"));
 		context.setAttribute("templateManager",templateManager);
 		Template template = templateManager.getBackendTemplate(context.getInitParameter("back-end"));
 		if(template==null) {
 			copyBackendTemplate(root);
-			template = templateManager.loadTemplate(new File(root+File.separator+"templates/nova"));
+			template = templateManager.loadTemplate(new File(root+"/templates/nova"));
 		}
 		context.setAttribute("template",template.getId());
 		String tilesDefinitions = createTemplateTiles(root,template);
 		template = templateManager.getFrontendTemplate(context.getInitParameter("front-end"));
 		if(template==null) {
 			copyFrontendTemplate(root);
-			template = templateManager.loadTemplate(new File(root+File.separator+"templates/medusa"));
+			template = templateManager.loadTemplate(new File(root+"/templates/medusa"));
 		}
 		return tilesDefinitions += ","+ createTemplateTiles(root,template);
 	}
@@ -59,16 +59,16 @@ public class StartupListener implements ServletContextListener {
 	private String loadModules(ServletContext context,String root,StringBuffer buffer) {
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
 		ModuleManager moduleManager = new ModuleManager();
-		moduleManager.loadModules(new File(root+File.separator+"modules"));
+		moduleManager.loadModules(new File(root+"/modules"));
 		context.setAttribute("moduleManager",moduleManager);
 		for(Module module : moduleManager.getModules()) {
-			File definition = new File(module.getFolder()+File.separator+"tiles.xml");
+			File definition = new File(module.getFolder()+"/tiles.xml");
 			if(definition.exists()) {
 				buffer.append(","+"/modules/"+module.getFolder().getName()+"/tiles.xml");
 			}else {
 				buffer.append(","+createModuleTiles(module));
 			}
-			definition = new File(module.getFolder()+File.separator+"struts.xml");
+			definition = new File(module.getFolder()+"/struts.xml");
 			if(definition.exists()) {
 				config +=","+definition;
 			}else {
@@ -111,7 +111,7 @@ public class StartupListener implements ServletContextListener {
 		content +="</tiles-definitions>";
 		File temp=null;
 		try {
-			temp = new File(root+File.separator+"templates"+File.separator+"tiles-"+template.getType()+".xml");
+			temp = new File(root+"/templates"+"/tiles-"+template.getType()+".xml");
 			BufferedWriter bw = new BufferedWriter(new FileWriter(temp));
 			bw.write(content);
 			bw.close();
@@ -149,7 +149,7 @@ public class StartupListener implements ServletContextListener {
 		content +="</tiles-definitions>";
 		File temp=null;
 		try {
-			temp = new File(module.getFolder()+File.separator+"tiles-generated.xml");
+			temp = new File(module.getFolder()+"/tiles-generated.xml");
 			BufferedWriter bw = new BufferedWriter(new FileWriter(temp));
 			bw.write(content);
 			bw.close();
@@ -194,7 +194,7 @@ public class StartupListener implements ServletContextListener {
 		content +="</package></struts>";
 		File temp=null;
 		try {
-			temp = new File(module.getFolder()+File.separator+"struts-generated.xml");
+			temp = new File(module.getFolder()+"/struts-generated.xml");
 			BufferedWriter bw = new BufferedWriter(new FileWriter(temp));
 			bw.write(content);
 			bw.close();
@@ -248,9 +248,9 @@ public class StartupListener implements ServletContextListener {
 		InputStream source = this.getClass().getClassLoader().getResourceAsStream("META-INF/"+file);
 		if(source!=null) {
 			try {
-			 File folder = new File(root+File.separator+dir);
+			 File folder = new File(root+"/"+dir);
 			 folder.mkdirs();
-			 File dest = new File(folder+File.separator+file);
+			 File dest = new File(folder+"/"+file);
 			 dest.getParentFile().mkdirs();
 			 copyFile(source,dest);
 			}catch(Exception e){
