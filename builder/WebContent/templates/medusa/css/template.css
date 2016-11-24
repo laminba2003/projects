@@ -31,7 +31,7 @@ body {
 }
 
 input[type=submit]{
-	border : 1px solid #4d4a48;
+	border : 2px solid rgb(234, 133, 17);
 	cursor : pointer;
 	background-color:rgba(34,34,34,0.6);
 	color : #fff3d5;
