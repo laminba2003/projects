@@ -33,8 +33,8 @@ body {
 input[type=submit]{
 	border : 1px solid #4d4a48;
 	cursor : pointer;
-	background:rgba(34,34,34,0.6);
-	color : #fdf8eb;
+	background-color:rgba(34,34,34,0.6);
+	color : #fff3d5;
 	border-radius:5px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
@@ -62,7 +62,7 @@ h1 {
 	font-size: 1.6em;
     line-height: 1.1em;
     text-shadow : rgb(234, 133, 17) 0px 0.3px 0px;
-	background-color:rgba(14,14,14,0.8);
+	background-color:rgba(64,64,64,0.8);
 	font-family : Orbitron;
 	border-top : 1px solid rgb(234, 133, 17);
     border-bottom : 1px solid rgb(234, 133, 17);
@@ -133,13 +133,13 @@ b {
 	background-repeat : no-repeat;
 	background-position : 4px 7px;
 	font-family : Orbitron;
-	color : #332115;
 	text-decoration : none;
-	font-size : 80%;
-	border : 1px solid rgb(234, 133, 17);
+	font-size : 78%;
+	border : 2px solid rgb(234, 133, 17);
 	padding : 5px;
 	padding-left : 22px;
 	border-radius : 5px;
+	color : rgba(64,64,64,0.8);
 }
 
 a {
@@ -151,6 +151,10 @@ a {
 }
 
 .menu a.active {
+	color : rgb(234, 133, 17);
+}
+
+.menu a:hover {
 	color : rgb(234, 133, 17);
 }
 
@@ -252,12 +256,11 @@ fieldset {
 
 footer {
 	height : 2.8em;
-	background : rgb(10, 10, 10);
-    color : rgb(60, 60, 60);
+	background-color:rgba(34,34,34,0.8);
+    color : #a9a9a9;
     padding: 8px;
     font-family : Itim;
-    font-size : 80%;
-    box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
+    font-size : 70%;
     border-top : 1px solid rgb(234, 133, 17);
     border-bottom : 1px solid rgb(234, 133, 17);
 }
