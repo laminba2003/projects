@@ -152,6 +152,14 @@ a {
 	background-image: url(../images/templates-16.png);
 }
 
+.link-16 {
+	background-image: url(../images/link-16.png);
+}
+
+.info-16 {
+	background-image: url(../images/info-16.png);
+}
+
 .login {
 	display : inline-block;
 	margin-right : 20px;

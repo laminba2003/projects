@@ -33,9 +33,10 @@
 		  <img src="${images}/module-128.png"/>
 		  </a>
 		  <div class="info">
-		  <span class="extension-name">${name} <a title="downlad" class="download-16"></a></span>
+		  <span class="extension-name">${name} <a title="downlad" class="download-16"></a><a title="copy link" class="link-16"></a><a title="details" class="info-16"></a></span>
 		  <span>${author}</span>
-		  <span>Type : ${type}</span>
+		  <span>type : ${type}</span>
+		  <span>downloads : 15600</span>
 		  </div>
 		  <div class="extensionDetails">
 		          <span>Name : ${name}</span>
@@ -44,7 +45,6 @@
 				  <span>Author Email : ${authorEmail}</span>
 				  <span>Author Url : ${authorUrl}</span>
 				  <span>Creation Date : ${creationDate}</span>
-				  <span>Description : ${description}</span>
 				  <span>Copyright : ${copyright}</span>
 				  <span>License : ${license}</span>
 				  <span>Version : ${version}</span>
