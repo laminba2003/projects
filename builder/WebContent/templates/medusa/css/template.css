@@ -1,33 +1,6 @@
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  -webkit-overflow-scrolling: touch;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  width: 100%;
-  height: 100%;
-}
-*, *::before, *::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding:0;
-  font-family:inherit;
-}
 body {
-  margin: 0 auto;
   font-family: Dosis;
-   width: 100%;
-  min-height: 100%;
-  text-rendering:optimizeLegibility;
-  font-style: normal !important;
-}
-
-*:focus {
-    outline: none;
+  background : #fffade;
 }
 
 input[type=submit]{
@@ -55,7 +28,7 @@ select {
 }
 
 .extension img {
-	border : 1px solid #fdf1ad;
+	border : 1px solid rgba(234, 133, 17,0.4);
 }
 
 h1 {
@@ -90,7 +63,7 @@ h1 {
 	font-size : 1.3em;
 	font-weight : 400;
 	font-family : Itim;
-	margin-bottom : 5px;
+	margin-bottom : 0px;
 	margin-top : 5px;
 }
 
@@ -105,7 +78,7 @@ h1 {
 }
 
 header {
-	height : 5em;
+	height : 5.4em;
 	padding : 0 0.3em;
 	background : #fffef5;
 	border-bottom : 1px solid rgb(234, 133, 17);
@@ -234,7 +207,11 @@ a {
 	cursor : pointer;
 }
 
-ol {
+ul {
+	list-style-type : square;
+}
+
+#content div > ol, #content div > ul {
 	margin-left : 50px;
 	font-family : Dosis;
 }
@@ -258,12 +235,9 @@ ol ul {
 }
 
 main {
-	min-height : 70vh;
-	background : #fffade;
 	padding : 0;
 	padding-top : 0px;
-	position:relative;
-	overflow : hidden;
+	background : #fffade;
 }
 
 fieldset {
@@ -279,6 +253,9 @@ footer {
     font-size : 70%;
     border-top : 1px solid rgb(234, 133, 17);
     border-bottom : 1px solid rgb(234, 133, 17);
+    position : fixed;
+    bottom :0;
+    width : 100%;
 }
 
 /*
@@ -294,6 +271,8 @@ footer {
 	text-align:left; /* reset align=center */
 	font-size: 10px;
 	background : #fff;
+	overflow : hidden;
+	margin-top : 4px;
 }
 #wowslider-container.fullscreen-mode,
 #wowslider-container.fullwidth-mode {
@@ -457,10 +436,6 @@ footer {
 	animation: nextArrow .7s infinite ease-in-out;
 }
 
-
-
-
-
 * html #wowslider-container a.ws_next,* html #wowslider-container a.ws_prev{display:block}
 #wowslider-container:hover a.ws_next, #wowslider-container:hover a.ws_prev {display:block}
 /* bottom center */
@@ -513,7 +488,7 @@ footer {
 @-webkit-keyframes wsBasic{0%{left:-0%} 14.88%{left:-0%} 25%{left:-100%} 39.88%{left:-100%} 50%{left:-200%} 64.88%{left:-200%} 75%{left:-300%} 89.88%{left:-300%} }
 
 #wowslider-container .ws_images {
-	background : #fff3d5;
+	background:rgba(34,34,34,0.6);
 }
 
 
