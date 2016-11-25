@@ -228,7 +228,7 @@ ul {
 	list-style-type : square;
 }
 
-#content div > ol, #content div > ul {
+#content > ol, #content > ul {
 	margin-left : 50px;
 	font-family : Dosis;
 	margin-top : -7px;
