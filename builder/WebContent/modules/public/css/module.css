@@ -45,7 +45,7 @@ fieldset {
 }
 
 .extension .info span {
-	font-size : 90%;
+	font-size : 100%;
 }
 
 .extension div span {
@@ -72,8 +72,6 @@ fieldset {
 
 .extensionDetails {
 	padding : 20px;
-	background : #fff;
-	border : 1px solid #ccc;
 	width : auto;
 	margin-top : -128px;
 	display : none;
