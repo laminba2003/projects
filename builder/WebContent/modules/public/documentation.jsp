@@ -1,6 +1,5 @@
 <h1 class="documentation-16">Documentation</h1>
 <div id="content">
-<div>
 <h2>Overview</h2>
 <p>
 Metamorphosis is a Rapid Application Development framework built on top of the <a href="https://struts.apache.org/" target="_blank">Apache Struts</a> Model-View-Controller framework.<br/>
@@ -37,6 +36,4 @@ Find <a>here</a> how to create a project with your favourite IDE.
 <p>
 You can browse <a>here</a> a large collection of real-world examples like this <a href="http://env-3687617.mircloud.host/app/" target="_blank">CRM application</a> hosted on <a href="https://jelastic.cloud/details/mirhosting" target="_blank">MIRhosting</a> <br/> which interacts with <a href="https://nodejs.org/en/" target="_blank">Node.js</a> through REST and CORS.
 </p>
-</div>
-
 </div>

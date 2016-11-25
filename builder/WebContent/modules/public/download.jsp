@@ -1,6 +1,5 @@
 <h1 class="download-16">Download</h1>
 <div id="content">
-<div>
 <h2>Status</h2>
 <p>The status for Metamorphosis 1.0 is : <b>in development</b>.</p>
 <h2>Change log</h2>
@@ -16,5 +15,4 @@
 <span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>dependency</span><span style='color:#a65700; '>></span>
 </pre>
 </p>
-</div>
 </div>
