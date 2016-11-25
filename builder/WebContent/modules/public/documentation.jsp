@@ -9,7 +9,7 @@ It does also fully support the <a href="http://docs.oracle.com/javase/6/docs/tec
 </p>
 <hr/>
 <h2>User Guide</h2>
-<p>Learn how to build modular web applications with Metamorphosis from scratch reading its user guide. <br/>The guide gradually introduces you to the various features of the framework with many real-world examples.
+<p>Learn how to build modular web applications with Metamorphosis from scratch reading its user guide. <br/>The guide gradually introduces you to the various features of the Framework with many real-world examples.
 </p>
 <ol>
 <li>Metamophosis 1.0
@@ -35,7 +35,7 @@ Find <a>here</a> how to create a project with your favourite IDE.
 <hr/>
 <h2>Examples</h2>
 <p>
-You can browse <a>here</a> a large collection of real-world examples like this <a href="http://env-3687617.mircloud.host/app/" target="_blank">CRM application</a> which interacts with <a href="https://nodejs.org/en/" target="_blank">Node.js</a> through REST and CORS.
+You can browse <a>here</a> a large collection of real-world examples like this <a href="http://env-3687617.mircloud.host/app/" target="_blank">CRM application</a> hosted on <a href="https://jelastic.cloud/details/mirhosting" target="_blank">MIRhosting</a> <br/> which interacts with <a href="https://nodejs.org/en/" target="_blank">Node.js</a> through REST and CORS.
 </p>
 </div>
 

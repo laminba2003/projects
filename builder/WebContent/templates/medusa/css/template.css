@@ -228,10 +228,15 @@ ul {
 #content div > ol, #content div > ul {
 	margin-left : 50px;
 	font-family : Dosis;
+	margin-top : -7px;
 }
 
 ol ul {
 	margin-left : 18px;
+}
+
+li {
+	margin-top : -5px;
 }
 
 .login a {
