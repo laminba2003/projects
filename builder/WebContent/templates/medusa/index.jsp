@@ -38,7 +38,7 @@
 				   <span>Password :</span>
 				   <input type="password" size="20"/>
 				   <input type="submit" value="Sign In"/>
-				   <a>register</a>
+				   <a>create an account</a>
 				   <a>forgot your password?</a>
 				   </form>
 				</div>

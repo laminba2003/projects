@@ -29,11 +29,11 @@ You can also browse through the API documentation to get an architectural view.
 <hr/>
 <h2>IDE Support</h2>
 <p>
-Find <a>here</a> how to create a project and deploy it in the Cloud with your favourite IDE.
+Find <a>here</a> how to create a project and deploy it in the Cloud with your favourite IDE (<a href="http://www.eclipse.org/" target="_blank">Eclipse</a>, <a href="https://netbeans.org/" target="_blank">NetBeans</a>, <a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA</a>...).
 </p>
 <hr/>
 <h2>Examples</h2>
 <p>
-You can browse <a>here</a> a large collection of real-world examples like this <a href="http://env-3687617.mircloud.host/app/" target="_blank">CRM application</a> hosted on <a href="https://jelastic.cloud/details/mirhosting" target="_blank">MIRhosting</a> <br/> which interacts with <a href="https://nodejs.org/en/" target="_blank">Node.js</a> through REST and CORS.
+You can browse <a>here</a> a vast collection of real-world examples like this <a href="http://env-3687617.mircloud.host/app/" target="_blank">CRM application</a> hosted on <a href="https://jelastic.cloud/details/mirhosting" target="_blank">MIRhosting</a> <br/> which interacts with <a href="https://nodejs.org/en/" target="_blank">Node.js</a> through REST and CORS.
 </p>
 </div>
