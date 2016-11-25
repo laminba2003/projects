@@ -16,16 +16,16 @@ public class TemplateManager {
 	public void loadTemplates(File root) {
 		File[] files = root.listFiles();
 		if(files!=null){
-			for(File file : root.listFiles()) {
-				if(file.isDirectory()) {
-					loadTemplate(file);
+			for(File folder : root.listFiles()) {
+				if(folder.isDirectory()) {
+					loadTemplate(folder);
 				}
 			}
 		}
 	}
 	
 	public Template loadTemplate(File folder) {
-		File metadata = new File(folder+File.separator+"template.xml");
+		File metadata = new File(folder+"/template.xml");
 		if(metadata.exists()) {
 			try {
 				Template template = parse(metadata);

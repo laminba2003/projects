@@ -2,8 +2,12 @@
 package org.metamorphosis.core;
 
 import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.digester.Digester;
 
@@ -53,38 +57,16 @@ public class ModuleManager {
 	public void loadModules(File root) {
 		File[] files = root.listFiles();
 		if (files != null) {
-			for (File file : files) {
-				if (file.isDirectory()) {
-					File metadata = new File(file + File.separator + "module.xml");
+			for (File folder : files) {
+				if (folder.isDirectory()) {
+					File metadata = new File(folder+"/module.xml");
 					if (metadata.exists()) {
 						try {
 							Module module = parse(metadata);
-							module.setFolder(file);
-							module.setId(file.getName());
-							if (module.getUrl() == null)
-								module.setUrl(file.getName().toLowerCase());
-							if (module.getMenu() != null) {
-								for (MenuItem item : module.getMenu().getMenuItems()) {
-									if (item.getAction() != null) {
-										if (item.getPage() == null) {
-											item.setPage(item.getAction() + ".jsp");
-										}
-										if (module.getUrl().equals("/")) {
-											item.setAction(item.getAction());
-										} else {
-											item.setAction(module.getUrl() + "/" + item.getAction());
-										}
-									} else {
-										item.setAction(module.getUrl());
-										item.setTitle(module.getUrl());
-										if (item.getPage() == null) {
-											item.setPage(module.getHome());
-										}
-									}
-								}
-							}
-							if (module.isMain())
-								main = module;
+							module.setFolder(folder);
+							module.setId(folder.getName());
+							initModule(module);
+							if(module.isMain()) main = module;
 							addModule(module);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -94,6 +76,39 @@ public class ModuleManager {
 			}
 		}
 		orderModules();
+	}
+	
+	private void initModule(Module module) throws Exception {
+		if (module.getUrl() == null)
+			module.setUrl(module.getFolder().getName().toLowerCase());
+		if (module.getMenu() != null) {
+			for (MenuItem item : module.getMenu().getMenuItems()) {
+				if (item.getAction() != null) {
+					if (item.getPage() == null) {
+						item.setPage(item.getAction() + ".jsp");
+					}
+					if (module.getUrl().equals("/")) {
+						item.setAction(item.getAction());
+					} else {
+						item.setAction(module.getUrl() + "/" + item.getAction());
+					}
+				} else {
+					item.setAction(module.getUrl());
+					item.setTitle(module.getUrl());
+					if (item.getPage() == null) {
+						item.setPage(module.getHome());
+					}
+				}
+			}
+		}
+		File script = new File(module.getFolder() + "/scripts/init.groovy");
+		script = script.exists() ? script : new File(module.getFolder() + "/scripts/"+module.getScript());
+		if(script.exists()) {
+			String name = script.getName();
+			String extension = name.substring(name.indexOf(".") + 1);
+			ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(extension);
+			engine.eval(new FileReader(script));
+		}
 	}
 
 	private void orderModules() {
