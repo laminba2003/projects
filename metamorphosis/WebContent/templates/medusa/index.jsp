@@ -3,10 +3,11 @@
 <html>
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-   <title>Home</title>
+   <title>Customer Relation Management</title>
    <link href="images/favicon.ico" rel="icon" sizes="16x16" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" />
    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet" />
+    <link href="css/metamorphosis.css" rel="stylesheet"/>
    <link href="templates/medusa/css/template.css" rel="stylesheet"/>
  </head>
 <body>
