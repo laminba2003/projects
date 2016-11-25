@@ -4,7 +4,7 @@ body {
 }
 
 input[type=submit]{
-	border : 2px solid rgb(234, 133, 17);
+	border : 1px solid rgb(234, 133, 17);
 	cursor : pointer;
 	background-color:rgba(34,34,34,0.6);
 	color : #fff3d5;
@@ -79,7 +79,7 @@ h1 {
 }
 
 header {
-	height : 5.4em;
+	height : 5em;
 	padding : 0 0.3em;
 	background : #fffef5;
 	border-bottom : 1px solid rgb(234, 133, 17);
@@ -109,7 +109,7 @@ b {
 	font-family : Orbitron;
 	text-decoration : none;
 	font-size : 78%;
-	border : 2px solid rgb(234, 133, 17);
+	border : 1px solid rgb(234, 133, 17);
 	padding : 5px;
 	padding-left : 22px;
 	border-radius : 5px;
