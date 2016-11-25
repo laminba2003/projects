@@ -1,6 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <h1 class="modules-16">Modules</h1>
-<div id="content">
+<div id="extensions">
 <span>category :</span>
 <select>
  <option>application</option>
