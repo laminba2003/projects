@@ -1,6 +1,6 @@
 <h1 class="contribute-16">Contribute</h1>
 <div id="content">
-<h2>Collabore with an Open Community</h2>
+<h2>Collaborate with an Open Community</h2>
 <p>
 </p>
 <hr/>
