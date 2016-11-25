@@ -29,7 +29,7 @@ You can also browse through the API documentation to get an architectural view.
 <hr/>
 <h2>IDE Support</h2>
 <p>
-Find <a>here</a> how to create a project with your favourite IDE.
+Find <a>here</a> how to create a project and deploy it in the Cloud with your favourite IDE.
 </p>
 <hr/>
 <h2>Examples</h2>
