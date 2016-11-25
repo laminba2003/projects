@@ -26,8 +26,7 @@ public class ActionFactory extends DefaultActionFactory {
 					String name = script.getName();
 					String extension = name.substring(name.indexOf(".") + 1);
 					ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(extension);
-					Object object = engine.eval(new FileReader(script));
-					return object != null ? object : engine.get("action");
+					return engine.eval(new FileReader(script));
 				}
 			}
 
