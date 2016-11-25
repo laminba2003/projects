@@ -62,19 +62,9 @@ public class StartupListener implements ServletContextListener {
 		moduleManager.loadModules(new File(root+"/modules"));
 		context.setAttribute("moduleManager",moduleManager);
 		for(Module module : moduleManager.getModules()) {
-			File definition = new File(module.getFolder()+"/tiles.xml");
-			if(definition.exists()) {
-				buffer.append(","+"/modules/"+module.getFolder().getName()+"/tiles.xml");
-			}else {
-				buffer.append(","+createModuleTiles(module));
-			}
-			definition = new File(module.getFolder()+"/struts.xml");
-			if(definition.exists()) {
-				config +=","+definition;
-			}else {
-				if(module.getActions().size()>0) {
-					config +=","+createModuleConfig(module);
-				}
+			buffer.append(","+createModuleTiles(module));
+			if(module.getActions().size()>0) {
+				config +=","+createModuleConfig(module);
 			}
 			if(module.getId().equals("users")) {
 				context.setAttribute("security",true);
