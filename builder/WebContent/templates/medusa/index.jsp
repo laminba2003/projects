@@ -5,7 +5,7 @@
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
    <base href="${path}"/>
-   <title>Metamorphosis</title>
+   <title>${title}</title>
   <link href="images/favicon.ico" rel="icon" sizes="16x16" type="image/x-icon" />
    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet" />
    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" />
