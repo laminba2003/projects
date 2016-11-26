@@ -1,6 +1,6 @@
 body {
   font-family: Dosis;
-  background : #fffade;
+  background-color : #fffade;
 }
 
 input[type=submit]{
@@ -31,7 +31,7 @@ h1 {
 	font-size: 1.3em;
     line-height: 0.7em;
     text-shadow : rgb(234, 133, 17) 0px 0.3px 0px;
-	background-color:rgba(64,64,64,0.8);
+	background-color:rgba(44,44,44,0.8);
 	font-family : Orbitron;
 	border-top : 1px solid rgb(234, 133, 17);
     border-bottom : 1px solid rgb(234, 133, 17);
@@ -261,7 +261,7 @@ fieldset {
 
 footer {
 	height : 2.8em;
-	background-color:rgba(34,34,34,0.8);
+	background-color:rgba(44,44,44,0.8);
     color : rgb(234, 133, 17);
     padding: 8px;
     font-family : Itim;
@@ -277,7 +277,7 @@ footer {
 	border : 1px solid rgba(234, 133, 17,0.4);
 }
 .extensionDetails, .extension .info {
-	background : #ffdcb9;
+	background : #fffef5;
 }
 
 /*

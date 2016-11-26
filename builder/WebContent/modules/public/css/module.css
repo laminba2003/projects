@@ -43,11 +43,11 @@ fieldset {
 
 .extension .info {
 	display : inline-block;
-	padding : 3px;
+	padding : 2px;
 }
 
 .extension .info span {
-	font-size : 100%;
+	font-size : 95%;
 }
 
 .extension div span {
