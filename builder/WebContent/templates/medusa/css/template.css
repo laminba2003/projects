@@ -244,9 +244,13 @@ li {
 }
 
 .login a:first-of-type {
-	margin-left : 105px;
+	margin-left : 70px;
 	border-right : 1px solid #c7c7c7;
 	padding-right : 5px;
+	background-image: url('../images/user-16.png');
+	padding-left : 16px;
+	background-repeat : no-repeat;
+	background-position : 0px 3px;
 }
 
 main {
@@ -276,7 +280,11 @@ footer {
 .extensionDetails,.extension img {
 	border : 1px solid rgba(234, 133, 17,0.4);
 }
-.extensionDetails, .extension .info {
+
+.extensionDetails {
+	background-color : #fffade;
+}
+.extension .info {
 	background : #fffef5;
 }
 
