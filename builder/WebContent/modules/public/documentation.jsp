@@ -8,7 +8,7 @@ It does also fully support the <a href="http://docs.oracle.com/javase/6/docs/tec
 </p>
 <hr/>
 <h2>User Guide</h2>
-<p>Learn how to build modular web applications with Metamorphosis from scratch reading its user guide. <br/>The guide gradually introduces you to the various features of the framework with many real-world examples.
+<p>Learn how to build modular and scalable web applications with Metamorphosis from scratch reading its user guide. <br/>The guide gradually introduces you to the various features of the framework with many real-world examples.
 </p>
 <ol>
 <li>Metamophosis 1.0

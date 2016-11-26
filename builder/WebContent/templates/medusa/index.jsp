@@ -48,8 +48,8 @@
 		<main>
 	<div>  
 		  	
+		  	<script type="text/javascript" src="js/metamorphosis.js"></script>
 		  	 <tiles:insertAttribute name="content"/>
- 			 <script type="text/javascript" src="js/metamorphosis.js"></script>
  			 <script>
 				$(function() {
 					$(".login input[type='text']").val("").focus();

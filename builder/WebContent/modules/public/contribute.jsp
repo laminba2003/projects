@@ -8,6 +8,10 @@
 <p>
 </p>
 <hr/>
+<h2>Report an issue</h2>
+<p>
+</p>
+<hr/>
 <h2>Share a module</h2>
 <p>
 </p>
