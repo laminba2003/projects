@@ -253,6 +253,13 @@ li {
 	background-position : 0px 3px;
 }
 
+.login a:last-of-type {
+	background-image: url('../images/key-16.png');
+	padding-left : 16px;
+	background-repeat : no-repeat;
+	background-position : 0px 3px;
+}
+
 main {
 	padding : 0;
 	padding-top : 0px;
