@@ -27,12 +27,6 @@ select {
 	border : 1px solid rgb(234, 133, 17);
 }
 
-.extensionDetails,.extension img {
-	border : 1px solid rgba(234, 133, 17,0.4);
-}
-.extensionDetails {
-	background : #ffdcb9;
-}
 h1 {
 	font-size: 1.3em;
     line-height: 0.7em;
@@ -258,7 +252,7 @@ li {
 main {
 	padding : 0;
 	padding-top : 0px;
-	background : #fffade;
+	background-color : #fffade;
 }
 
 fieldset {
@@ -277,6 +271,13 @@ footer {
     position : fixed;
     bottom :0;
     width : 100%;
+}
+
+.extensionDetails,.extension img {
+	border : 1px solid rgba(234, 133, 17,0.4);
+}
+.extensionDetails, .extension .info {
+	background : #ffdcb9;
 }
 
 /*

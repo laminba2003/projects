@@ -30,15 +30,16 @@
 	   
 	      <div class="extension">
 	      <a>
-		  <img src="${images}/module-128.png"/>
+		  	<img src="${images}/module-128.png"/>
 		  </a>
 		  <div class="info">
-		  <span class="extension-name">${name} <a title="downlad" class="download-16"></a><a title="copy link" class="link-16"></a><a title="details" class="info-16"></a></span>
-		  <span>${author}</span>
-		  <span>type : ${type}</span>
-		  <span>License : ${license}</span>
-		  <span>downloads : 15600</span>
+		      <span class="extension-name">${name} <a title="downlad" class="download-16"></a><a title="copy link" class="link-16"></a><a title="details" class="info-16"></a></span>
+			  <span>${author}</span>
+			  <span>type : ${type}</span>
+			  <span>License : ${license}</span>
+			  <span>downloads : 15600</span>
 		  </div>
+		  <div class="extension-description">${description!=null ? description : "no description provided"}</div>
 		  <div class="extensionDetails">
 		          <span>Name : ${name}</span>
 		          <span>Type : ${type}</span>

@@ -40,6 +40,7 @@
 		  <span>License : ${license}</span>
 		  <span>downloads : 15600</span>
 		  </div>
+		  <div class="extension-description">${description!=null ? description : "no description provided"}</div>
 		  <div class="extensionDetails">
 		      	  <span>Name : ${name}</span>
 		          <span>Type : ${type}</span>

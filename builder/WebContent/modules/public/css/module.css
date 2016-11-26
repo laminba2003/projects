@@ -42,8 +42,8 @@ fieldset {
 }
 
 .extension .info {
-	height: 128px;
 	display : inline-block;
+	padding : 3px;
 }
 
 .extension .info span {
@@ -56,16 +56,20 @@ fieldset {
 	margin-bottom :17px;
 	color : #220202;
 }
-.extension div span.extension-name {
+.extension div .extension-name {
 	font-weight : bold;
-	margin-top :10px;
 }
 
-.extension div span.extension-name a {
+.extension div .extension-name a {
 	width : 16px;
 	height : 16px;
 	margin-right : 3px;
 	display : inline-block;
+}
+
+.extension .extension-description {
+	text-align : left;
+	margin-top : 10px;
 }
 
 .extension span a {
