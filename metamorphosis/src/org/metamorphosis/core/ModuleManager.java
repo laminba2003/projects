@@ -178,7 +178,7 @@ public class ModuleManager {
 	}
 
 	public Module getMain() {
-		return main;
+		return main!=null ? main : getDefaultBackendModule();
 	}
 
 	public void setMain(Module main) {

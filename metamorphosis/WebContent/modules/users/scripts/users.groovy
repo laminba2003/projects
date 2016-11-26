@@ -5,7 +5,7 @@ class UserAction extends ActionSupport {
 	String id
 	
 	def signIn()  {
-		def module = moduleManager.main ? moduleManager.main : moduleManager.defaultBackendModule
+		def module = moduleManager.main
 		def url = module ? request.contextPath+"/"+module.url : request.contextPath+"/"
 		response.sendRedirect(url)
 	}
@@ -17,7 +17,7 @@ class UserAction extends ActionSupport {
 	def selectTemplate() {
 		def template = templateManager.getTemplate(id)
 		if(template && template.backend) {
-			request.session.setAttribute("template",id)
+			session.setAttribute("template",id)
 			response.sendRedirect(request.getHeader("referer"))
 		}
 	}
