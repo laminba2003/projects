@@ -44,6 +44,9 @@ fieldset {
 .extension .info {
 	display : inline-block;
 	padding : 2px;
+	padding-left : 5px;
+	padding-right : 10px;
+	border : 1px solid #ffe4e4;
 }
 
 .extension .info span {
@@ -53,8 +56,7 @@ fieldset {
 .extension div span {
 	display : block;
 	text-align : left;
-	margin-bottom :17px;
-	color : #220202;
+	margin-bottom :16px;
 }
 .extension div .extension-name {
 	font-weight : bold;
