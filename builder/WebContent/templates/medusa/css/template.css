@@ -1,7 +1,7 @@
 body {
   font-family: Dosis;
   background-color : #fffade;
-  font-size : 91%;
+  font-size : 90.5%;
 }
 
 input[type=submit]:hover{
@@ -15,6 +15,10 @@ input {
 select {
 	padding : 2px;
 	border : 1px solid rgb(234, 133, 17);
+}
+
+input,select {
+	font-size : 78%;
 }
 
 h1 {
@@ -302,7 +306,7 @@ footer {
 #extensions span:first-of-type {
 	background-repeat : no-repeat;
 	padding-left : 18px;
-	background-position : 0px 4px;
+	background-position : 0px 0px;
 }
 
 .extensionDetails,.extension img {
@@ -318,6 +322,7 @@ footer {
 }
 .extension .info {
 	background : #fffef5;
+	border : 1px solid #fbefdc;
 }
 
 #do-chat,.chat-left,.chat-right,.chat textarea {

@@ -26,7 +26,7 @@
 	var user = "user";
 
 	function onopen(evt) {
-		$(".wait").hide();
+		app.release();
 		var msg = '{"message":"' + user + " vient de se connecter" + '", "sender":"'
 		+ user + '", "received":""}';
 		wsocket.send(msg);
@@ -71,14 +71,14 @@
 	}
 
 	function connectToChatserver(room) {
-		$(".wait").show();
+		app.wait();
 		$("#changeroom").val(room);
 		wsocket = new WebSocket(serviceLocation + room+"/"+user);
 		wsocket.onmessage = onMessageReceived;
 		wsocket.onopen = onopen;
 		wsocket.onerror = function(evt) {
-			$(".wait").hide();
-			alert("error while connecting to the chat room "+room);
+			app.release();
+			alert("cannot connect to the chat room "+room);
         };
 	}
 
