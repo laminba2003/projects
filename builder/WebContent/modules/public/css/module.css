@@ -50,11 +50,10 @@ fieldset {
 	padding : 2px;
 	padding-left : 5px;
 	padding-right : 10px;
-	border : 1px solid #ffe4e4;
 }
 
 .extension .info span {
-	font-size : 95%;
+	font-size : 98%;
 }
 
 .extension div span {
@@ -75,7 +74,7 @@ fieldset {
 
 .extension .extension-description {
 	text-align : left;
-	line-height : 13px;
+	line-height : 11px;
 	margin-top : 5px;
 }
 

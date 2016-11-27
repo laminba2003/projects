@@ -1,4 +1,4 @@
-<h1 class="discuss-16">Room : <span id="room">General</span> 
+<h1 class="discuss-16">Chat Room : <span id="room">General</span> 
 <select id="changeroom" onchange="changeRoom();">
 	<option value="General">General</option>
 </select>
