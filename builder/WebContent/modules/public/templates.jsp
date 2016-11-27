@@ -38,6 +38,7 @@
 		  <span class="extension-name">${name}  <a title="download" class="download-16"></a><a title="copy link" class="link-16"></a><a title="details" class="info-16"></a></span>
 		  <span>${author}</span>
 		  <span>type : ${type}</span>
+		  <span>version : ${version}</span>
 		  <span>License : ${license}</span>
 		  <span>downloads : 15600</span>
 		  </div>
