@@ -13,8 +13,9 @@ It does also fully support the <a href="http://docs.oracle.com/javase/6/docs/tec
 <ol>
 <li>Metamophosis 1.0
 <ul>
-<li><a>HTML</a></li>
-<li><a>PDF</a></li>
+<li><a>for developers</a></li>
+<li><a>for designers</a></li>
+<li><a>for architects</a></li>
 </ul>
 </li>
 </ol>
