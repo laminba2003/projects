@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.servlet.http.HttpServletRequest;
@@ -60,14 +59,15 @@ public class ModuleManager {
 		if (files != null) {
 			for (File folder : files) {
 				if (folder.isDirectory()) {
-					File metadata = new File(folder+"/module.xml");
+					File metadata = new File(folder + "/module.xml");
 					if (metadata.exists()) {
 						try {
 							Module module = parse(metadata);
 							module.setFolder(folder);
 							module.setId(folder.getName());
 							initModule(module);
-							if(module.isMain()) main = module;
+							if (module.isMain())
+								main = module;
 							addModule(module);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -78,7 +78,7 @@ public class ModuleManager {
 		}
 		orderModules();
 	}
-	
+
 	private void initModule(Module module) throws Exception {
 		if (module.getUrl() == null)
 			module.setUrl(module.getFolder().getName().toLowerCase());
@@ -103,8 +103,8 @@ public class ModuleManager {
 			}
 		}
 		File script = new File(module.getFolder() + "/scripts/init.groovy");
-		script = script.exists() ? script : new File(module.getFolder() + "/scripts/"+module.getScript());
-		if(script.exists()) {
+		script = script.exists() ? script : new File(module.getFolder() + "/scripts/" + module.getScript());
+		if (script.exists()) {
 			String name = script.getName();
 			String extension = name.substring(name.indexOf(".") + 1);
 			ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(extension);
@@ -115,31 +115,31 @@ public class ModuleManager {
 	private void orderModules() {
 
 	}
-	
+
 	public Module getCurrentModule() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String uri = request.getRequestURI();
-		String url = uri.substring(request.getContextPath().length()+1,uri.length());
-		url = url.indexOf("/")!=-1 ? url.substring(0,url.indexOf("/")) : url;
-		Module module = getModuleByUrl(url); 
-		return module!=null ? module :getModuleByUrl("/");
+		String url = uri.substring(request.getContextPath().length() + 1, uri.length());
+		url = url.indexOf("/") != -1 ? url.substring(0, url.indexOf("/")) : url;
+		Module module = getModuleByUrl(url);
+		return module != null ? module : getModuleByUrl("/");
 	}
 
 	public Module getModuleByUrl(String url) {
 		for (Module module : modules) {
-			if (module.getUrl().equals(url) || ("/"+module.getUrl()).equals(url))
+			if (module.getUrl().equals(url) || ("/" + module.getUrl()).equals(url))
 				return module;
 		}
 		return null;
 	}
-	
+
 	public Object buildAction(String actionName) throws Exception {
 		Module module = getCurrentModule();
-		if(module != null) {
+		if (module != null) {
 			Action action = module.getAction(actionName);
-			if(action != null && action.getScript() != null) {
+			if (action != null && action.getScript() != null) {
 				File script = new File(module.getFolder() + "/scripts/" + action.getScript());
-				if(script.exists()) {
+				if (script.exists()) {
 					String name = script.getName();
 					String extension = name.substring(name.indexOf(".") + 1);
 					ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(extension);
@@ -198,7 +198,7 @@ public class ModuleManager {
 	}
 
 	public Module getMain() {
-		return main!=null ? main : getDefaultBackendModule();
+		return main != null ? main : getDefaultBackendModule();
 	}
 
 	public void setMain(Module main) {
