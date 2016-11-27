@@ -1,6 +1,7 @@
 body {
   font-family: Dosis;
   background-color : #fffade;
+  font-size : 91%;
 }
 
 input[type=submit]:hover{
@@ -17,7 +18,7 @@ select {
 }
 
 h1 {
-	font-size: 1.3em;
+	font-size: 110%;
     line-height: 0.7em;
     text-shadow : rgb(234, 133, 17) 0px 0.3px 0px;
 	background-color:rgba(44,44,44,0.8);
@@ -46,7 +47,7 @@ h1 {
 }
 
 #content h2 {
-	font-size : 1.3em;
+	font-size : 110%;
 	font-weight : 400;
 	font-family : Itim;
 	margin-bottom : 0px;
@@ -58,16 +59,15 @@ h1 {
 }
 
 #content p, #content pre {
-	font-size : 1em;
 	font-family : Dosis;
 	margin-bottom : 5px;
 }
 
 header {
-	height : 5em;
+	height : 5.5em;
 	padding : 0 0.3em;
 	background : #fffef5;
-	border-bottom : 1px solid rgb(234, 133, 17);
+	border: 1px solid rgb(234, 133, 17);
 }
 
 b {
@@ -86,14 +86,14 @@ b {
 }
 
 .menu a {
-	margin-right : 7px;
+	margin-right : 2px;
 	width : auto;
 	display : inline-block;
 	background-repeat : no-repeat;
 	background-position : 4px 7px;
 	font-family : Orbitron;
 	text-decoration : none;
-	font-size : 78%;
+	font-size : 70%;
 	border : 1px solid rgb(234, 133, 17);
 	padding : 5px;
 	padding-left : 22px;
@@ -150,6 +150,14 @@ a {
 	background-image: url(../images/contribute-16.png);
 }
 
+.discuss-16 {
+	background-image: url(../images/discuss-16.png);
+}
+
+.forum-16 {
+	background-image: url(../images/forum-16.png);
+}
+
 .link-16 {
 	background-image: url(../images/link-16.png);
 }
@@ -160,8 +168,7 @@ a {
 
 .login {
 	display : inline-block;
-	margin-right : 20px;
-	width : 360px;
+	width : 310px;
 	line-height :1.7em;
 	font-size:75%;
 }
@@ -170,7 +177,7 @@ a {
 	font-family : Itim;
 	font-size : 80%;
 	display : inline-block;
-	margin-left : 10px;
+	margin-left : 5px;
 	border : 1px solid rgb(234, 133, 17);
 	cursor : pointer;
 	background-color:rgba(34,34,34,0.6);
@@ -189,7 +196,7 @@ a {
 
 .login span {
 	display : inline-block;
-	width : 100px;
+	width : 80px;
 	text-align : right;
 	font-family : Dosis;
 	color : #332115;;
@@ -311,6 +318,17 @@ footer {
 }
 .extension .info {
 	background : #fffef5;
+}
+
+#do-chat,.chat-left,.chat-right,.chat textarea {
+	border : 1px solid rgb(234, 133, 17);
+	background : #fffef5;
+}
+
+#do-chat {
+	background-image: url('../images/discuss-16.png');
+	background-repeat : no-repeat;
+	background-position : 20% 56%;
 }
 
 /*

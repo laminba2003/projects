@@ -103,3 +103,149 @@ fieldset {
 	display : inline-block;
 	margin : 10px;
 }
+
+.chat {
+	width : 100%;
+	font-size : 87%;
+	margin:auto;
+	padding-top : 5px;
+}
+
+h1 select {
+	margin-top : -3px;
+}
+
+.chat-left {
+	display : inline-block;
+	width : 75%;
+	height : 380px;
+	vertical-align: top;
+	padding : 10px;
+	border-radius : 15px;
+	overflow : auto;
+}
+
+
+.chat-right {
+	display : inline-block;
+	width : 23%;
+	height : 250px;
+	vertical-align: top;
+	overflow : auto;
+	padding : 5px;
+	border-radius : 10px;
+	font-size : 80%;
+	margin-left : 1%;
+}
+
+.chat-right span {
+	display : block;
+	margin-left : 10px;
+}
+
+.chat-bottom {
+	display : inline-block;
+	width : 100%;
+}
+
+.chat-bottom h3 {
+	font-size : 0.8em;
+}
+
+.chat #users .message-info-user-name {
+	color : #222;
+	font-size : 92%;
+}
+
+.chat #users .user-chat-selected {
+	color : green;
+	font-size : 92%;
+}
+
+.message-info {
+	width : 100%;
+	background : rgb(237, 234, 224);
+	line-height : 1.5em;
+	border-radius : 2px;
+	border:1px rgb(230, 230, 230);
+	border-radius : 8px;
+	
+}
+
+.message-info-user {
+	display : inline-block;
+	width : 20%;
+	vertical-align: top;
+	padding-left : 6px;
+	padding-top : 5px;
+}
+
+.message-info-user-name {
+	background-image: url("../images/user-16.png");
+	background-repeat : no-repeat;
+	padding-left : 20px;
+	background-position : 1% 0px;
+	color : #6F0101;
+}
+
+.chat-right .message-info-user-name {
+	background-position : 1% 3px;
+}
+
+.message-info-time {
+	color : green;
+}
+
+.message-info-user span {
+	display : block;
+	font-size : 80%;
+}
+
+.message-info-content {
+	display : inline-block;
+	width : 78%;
+	vertical-align: top;
+}
+
+.message-info-content p {
+	font-size : 80%;
+	width : 100%;
+	word-wrap: break-word;
+}
+
+.message-info:nth-child(even) {
+    background: rgb(255, 255, 250);
+    border:none;
+    border-radius : 2px;
+} 
+
+.chat textarea {
+	width : 75.3%;
+	height : 80px;
+	padding : 6px;
+	border-radius : 12px;
+	background :#fff;
+	color : #222;
+	font-size : 13px;
+}
+.user-chat-selected {
+	color : green;
+}
+#do-chat {
+	cursor :pointer;
+	margin-top : 30.5px;
+	display : inline-block;
+	width : 100px;
+	float : right;
+	margin-right : 9%;
+	height : 49px;
+}
+
+.chat h2 {
+	text-align : center;
+	background : rgb(255, 251, 227);
+	line-height : 3em;
+	color : #222;
+	border : 1px solid rgb(200,200,200);
+	border-radius : 5px;
+}

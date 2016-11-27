@@ -1,13 +1,5 @@
 <h1 class="community-16">Community</h1>
 <div id="content">
-<h2>Chat</h2>
-<p>
-</p>
-<hr/>
-<h2>Forum</h2>
-<p>
-</p>
-<hr/>
 <h2>News</h2>
 <p>
 </p>
