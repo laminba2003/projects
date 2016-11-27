@@ -14,7 +14,6 @@ import org.apache.struts2.ServletActionContext;
 public class ModuleManager {
 
 	private List<Module> modules = new ArrayList<Module>();
-	private Module main;
 
 	private Module parse(File metadata) throws Exception {
 		Digester digester = new Digester();
@@ -66,8 +65,6 @@ public class ModuleManager {
 							module.setFolder(folder);
 							module.setId(folder.getName());
 							initModule(module);
-							if (module.isMain())
-								main = module;
 							addModule(module);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -152,9 +149,8 @@ public class ModuleManager {
 	}
 
 	public Module getModuleById(String id) {
-		for (Module module : modules) {
-			if (module.getId().equals(id))
-				return module;
+		for(Module module : modules) {
+			if(module.getId().equals(id)) return module;
 		}
 		return null;
 	}
@@ -173,36 +169,33 @@ public class ModuleManager {
 
 	public List<Module> getVisibleModules(String type) {
 		List<Module> modules = new ArrayList<Module>();
-		for (Module module : this.modules) {
-			if (module.isVisible() && module.getType().equals(type))
+		for(Module module : this.modules) {
+			if(module.isVisible() && module.getType().equals(type))
 				modules.add(module);
 		}
 		return modules;
 	}
 
 	public Module getDefaultBackendModule() {
-		for (Module module : this.modules) {
-			if (module.isBackend())
-				return module;
+		for(Module module : this.modules) {
+			if(module.isBackend())return module;
 		}
 		return null;
 	}
 
 	public List<Module> getAdminModules() {
 		List<Module> modules = new ArrayList<Module>();
-		for (Module module : this.modules) {
-			if (module.isAdministrable())
-				modules.add(module);
+		for(Module module : this.modules) {
+			if(module.isAdministrable()) modules.add(module);
 		}
 		return modules;
 	}
 
 	public Module getMain() {
-		return main != null ? main : getDefaultBackendModule();
-	}
-
-	public void setMain(Module main) {
-		this.main = main;
+		for(Module module : this.modules) {
+			if (module.isMain()) return module;
+		}
+		return getDefaultBackendModule();
 	}
 
 }
