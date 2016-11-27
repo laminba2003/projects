@@ -17,7 +17,8 @@
 </p>
 <hr/>
 <h2>Sponsors</h2>
-<p>
+<p class="sponsors">
+<img src="${images}/jelastic.png"/><img src="${images}/mirhosting.png"/>
 </p>
 <hr/>
 </div>

@@ -98,3 +98,8 @@ fieldset {
 	white-space : nowrap;
 	font-size : 90%;
 }
+
+.sponsors img {
+	display : inline-block;
+	margin : 10px;
+}
