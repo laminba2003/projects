@@ -41,6 +41,7 @@
 			  <span>downloads : 15600</span>
 		  </div>
 		  <div class="extension-description">${description!=null ? description : "no description provided"}</div>
+		  <div class="extension-description"><b>Tags</b> : html, css, js, groovy</div>
 		  <div class="extensionDetails">
 		          <span>Name : ${name}</span>
 		          <span>Type : ${type}</span>

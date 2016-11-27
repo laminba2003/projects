@@ -71,7 +71,7 @@ fieldset {
 
 .extension .extension-description {
 	text-align : left;
-	margin-top : 10px;
+	line-height : 18px;
 }
 
 .extension span a {
