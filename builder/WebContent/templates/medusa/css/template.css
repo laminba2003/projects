@@ -305,6 +305,10 @@ footer {
 .extensionDetails {
 	background-color : #fffade;
 }
+
+#extensions .extensionDetails span:first-of-type {
+	padding-left : 0px;
+}
 .extension .info {
 	background : #fffef5;
 }
