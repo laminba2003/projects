@@ -89,10 +89,12 @@
 		wsocket.close();
 		connectToChatserver(room);
 	}
-	connectToChatserver("General");
-	setInterval(function(){ 
-		var msg = '{"message":"' + "users" + '", "sender":"'
-		+ "user" + '", "received":""}';
-		wsocket.send(msg);
-	}, 2000);
+	app.ready(function(){
+		connectToChatserver("General");
+		setInterval(function(){ 
+			var msg = '{"message":"' + "users" + '", "sender":"'
+			+ "user" + '", "received":""}';
+			wsocket.send(msg);
+		}, 2000);
+	});
 </script>
