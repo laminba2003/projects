@@ -10,6 +10,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.digester.Digester;
+import org.apache.struts2.ServletActionContext;
 
 public class ModuleManager {
 
@@ -115,7 +116,8 @@ public class ModuleManager {
 
 	}
 	
-	public Module getCurrentModule(HttpServletRequest request) {
+	public Module getCurrentModule() {
+		HttpServletRequest request = ServletActionContext.getRequest();
 		String uri = request.getRequestURI();
 		String url = uri.substring(request.getContextPath().length()+1,uri.length());
 		url = url.indexOf("/")!=-1 ? url.substring(0,url.indexOf("/")) : url;
@@ -127,6 +129,24 @@ public class ModuleManager {
 		for (Module module : modules) {
 			if (module.getUrl().equals(url) || ("/"+module.getUrl()).equals(url))
 				return module;
+		}
+		return null;
+	}
+	
+	public Object buildAction(String actionName) throws Exception {
+		Module module = getCurrentModule();
+		if(module != null) {
+			Action action = module.getAction(actionName);
+			if(action != null && action.getScript() != null) {
+				File script = new File(module.getFolder() + "/scripts/" + action.getScript());
+				if(script.exists()) {
+					String name = script.getName();
+					String extension = name.substring(name.indexOf(".") + 1);
+					ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(extension);
+					return engine.eval(new FileReader(script));
+				}
+			}
+
 		}
 		return null;
 	}

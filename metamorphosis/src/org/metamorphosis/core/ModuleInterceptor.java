@@ -16,11 +16,11 @@ public class ModuleInterceptor extends AbstractInterceptor {
 	@Override
 	public String intercept(ActionInvocation invocation)  {
 		try {
-			HttpServletRequest request = ServletActionContext.getRequest();
 			Map application = (Map) ActionContext.getContext().get("application");
 			ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
-			Module module = moduleManager.getCurrentModule(request);
+			Module module = moduleManager.getCurrentModule();
 			if(module!=null) {
+				HttpServletRequest request = ServletActionContext.getRequest();
 				request.setAttribute("modules",moduleManager.getVisibleModules(module.getType()));
 				request.setAttribute("module",module);
 				String uri = request.getRequestURI();
