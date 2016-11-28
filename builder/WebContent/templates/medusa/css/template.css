@@ -259,7 +259,7 @@ ul {
 	list-style-type : square;
 }
 
-#content > ol, #content > ul {
+article > ol, article > ul {
 	margin-left : 50px;
 	margin-top : -7px;
 }
