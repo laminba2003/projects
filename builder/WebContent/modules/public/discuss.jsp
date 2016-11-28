@@ -1,6 +1,8 @@
-<h1 class="discuss-16">Chat Room : <span id="room">General</span> 
+<h1 class="discuss-16">Chat Room :
 <select id="changeroom" onchange="changeRoom();">
-	<option value="General">General</option>
+	<option value="general">general</option>
+	<option value="developers">developers</option>
+	<option value="designers">designers</option>
 </select>
 </h1>
 <div class="chat">
@@ -82,13 +84,12 @@
 
 	function changeRoom() {
 		var room = $("#changeroom").val();
-		$("#room").html(room);
 		$(".chat-left").empty();
 		wsocket.close();
 		connectToChatserver(room);
 	}
 	app.ready(function(){
-		connectToChatserver("General");
+		connectToChatserver("general");
 		setInterval(function(){ 
 			var msg = '{"message":"' + "users" + '", "sender":"'
 			+ "user" + '", "received":""}';
