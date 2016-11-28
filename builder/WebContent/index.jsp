@@ -1,4 +1,4 @@
-<div>  
+<div class="slider">  
 		  	
 <!-- Start WOWSlider.com BODY section -->
     <div id="wowslider-container">
