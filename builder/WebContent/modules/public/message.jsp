@@ -1,6 +1,7 @@
-<h1>Forum -> New Message</h1>
+<h1 class="forum-16">Forum -> New Message</h1>
 <script src="${js}/ckeditor/ckeditor.js"></script>
-<div id="content">
+<div id="content" class="forum">
+<h2>Compose<a href="${module.url}/forum" class="forum-16">Messages</a></h2>
 <div  class="forum-message">
   		 <div id="title">
 			<span>Title : </span>

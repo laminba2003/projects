@@ -129,7 +129,6 @@ h1 select {
 	height : 370px;
 	vertical-align: top;
 	padding : 10px;
-	border-radius : 15px;
 	overflow : auto;
 }
 
@@ -141,7 +140,6 @@ h1 select {
 	vertical-align: top;
 	overflow : auto;
 	padding : 5px;
-	border-radius : 10px;
 	font-size : 80%;
 	margin-left : 1%;
 }
@@ -265,10 +263,13 @@ h1 select {
 .forum  h2 a {
 	float : right;
 	font-size : 91%;
-	background-image: url("../images/new-16.png");
 	background-repeat : no-repeat;
 	padding-left : 3%;
 	background-position : 8% 54%;
+}
+
+.new-16 {
+	background-image: url("../images/new-16.png");
 }
 
 .forum table {
@@ -364,7 +365,7 @@ h1 select {
 }
 
 .forum-message .editor {
-	height : 350px;
+	height : 330px;
 	background : #fff;
 	border : 1px solid #ccc;
 }

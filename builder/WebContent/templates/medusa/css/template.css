@@ -100,14 +100,14 @@ b {
 	width : auto;
 	display : inline-block;
 	background-repeat : no-repeat;
-	background-position : 4px 7px;
+	background-position : 4px 5px;
 	font-family : Orbitron;
 	text-decoration : none;
 	font-size : 70%;
 	border : 1px solid rgba(44,44,44,0.8);
 	padding : 5px;
 	padding-left : 22px;
-	border-radius : 5px;
+	border-radius : 7px;
 	color : #000;
 	background-color:#fff;
 }
@@ -198,9 +198,9 @@ a {
 	border-radius:5px;
 	padding : 6px;
 	position : absolute;
-	top : 20px;
+	top : 19px;
 	background-image: url('../images/key-16.png');
-	padding-left : 16px;
+	padding-left : 17px;
 	background-repeat : no-repeat;
 	background-position : 4px 5px;
 }
@@ -291,7 +291,7 @@ li {
 
 .login a:last-of-type {
 	background-image: url('../images/key-16.png');
-	padding-left : 16px;
+	padding-left : 17px;
 	background-repeat : no-repeat;
 	background-position : 0px 3px;
 }
@@ -355,7 +355,7 @@ footer {
 	color : #fff;
 }
 
-.forum-message input[type=submit],#do-chat,.chat-left,.chat-right,.chat textarea,.chat h2 {
+.forum-message input[type=submit],#do-chat,.chat-left,.chat-right,.chat textarea {
 	border : 1px solid rgb(234, 133, 17);
 	background : #ffffff;
 }
