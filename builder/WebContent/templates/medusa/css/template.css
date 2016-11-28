@@ -297,6 +297,8 @@ main {
 
 fieldset {
 	border : 1px solid rgb(234, 133, 17);
+	background : #fff;
+	padding-bottom : 5px;
 }
 
 footer {
@@ -333,6 +335,10 @@ footer {
 .extension .info {
 	background : #fffef5;
 	border : 1px solid #fbefdc;
+}
+
+.chat {
+	background : rgba(230,230,230,0.3);
 }
 
 #do-chat,.chat-left,.chat-right,.chat textarea,.chat h2 {
