@@ -60,7 +60,7 @@
 	function sendMessage() {
 		var val = $("#message").val();
 		if(val.trim() == '') {
-			alert("entrez votre message");
+			alert("enter your message");
 		} else {
 			var msg = '{"message":"' + val + '", "sender":"'
 					+ user + '", "received":""}';

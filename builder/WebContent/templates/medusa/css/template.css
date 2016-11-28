@@ -44,7 +44,7 @@ h1 {
 
 #content {
 	padding-top : 5px;
-	width : 73.7%;
+	width : 72.5%;
 }
 
 #content a {
@@ -93,6 +93,7 @@ b {
 	display : inline-block;
 	vertical-align : top;
 	margin-top : 17px;
+	margin-left : 10px;
 }
 
 .menu a {
@@ -199,7 +200,7 @@ a {
 	border-radius:5px;
 	padding : 6px;
 	position : absolute;
-	top : 19px;
+	top : 17px;
 	background-image: url('../images/key-16.png');
 	padding-left : 17px;
 	background-repeat : no-repeat;
@@ -370,7 +371,7 @@ footer {
 .chat-right h2 {
 	background-image: url('../images/user-16.png');
 	background-repeat : no-repeat;
-	background-position : 32% 53%;
+	background-position : 31.9% 53%;
 	font-size : 95%;
 }
 

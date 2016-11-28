@@ -131,7 +131,7 @@ fieldset {
 .chat-left {
 	display : inline-block;
 	width : 75%;
-	height : 350px;
+	height : 340px;
 	vertical-align: top;
 	padding : 10px;
 	overflow : auto;
@@ -232,7 +232,7 @@ fieldset {
 
 .chat textarea {
 	width : 75.3%;
-	height : 80px;
+	height : 110px;
 	padding : 6px;
 	border-radius : 12px;
 	background :#fff;
@@ -248,7 +248,7 @@ fieldset {
 	display : inline-block;
 	width : 100px;
 	float : right;
-	margin-right : 9%;
+	margin-right : 13%;
 	height : 49px;
 }
 
