@@ -10,7 +10,7 @@
 			<textarea  id="editor1"></textarea>
 		</div><br/>
 		<div>	
-			<input style="cursor:pointer"  type="submit" value="Send" />
+			<input type="submit" value="Send" />
 		</div>
 </div>
 </div>

@@ -13,15 +13,13 @@
 	<menu>
 		<menuItem name="Modules"/>
 		<menuItem name="Templates" action="templates"/>
-		<menuItem name="edit" action="modules/edit" page="editor.jsp" visible="false"/>
-		<menuItem name="edit" action="templates/edit" page="editor.jsp" visible="false"/>
 	</menu>
 	<actions>
-		<action name="modules/edit" class="org.metamorphosis.builder.ModuleAction">
-		  <result>modules/edit</result>
+		<action name="modules/edit" script="module.groovy">
+		  <result>editor</result>
 		</action>	
-		<action name="templates/edit" class="org.metamorphosis.builder.TemplateAction">
-		  <result>templates/edit</result>
+		<action name="templates/edit" script="template.groovy">
+		  <result>editor</result>
 		</action>
 	</actions>
 </module>

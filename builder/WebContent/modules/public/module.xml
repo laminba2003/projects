@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <module>
 	<name>public</name>
-	<url>public</url>
 	<home>documentation.jsp</home>
 	<type>front-end</type>
 	<author>Mamadou Lamine Ba</author>
