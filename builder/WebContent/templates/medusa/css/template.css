@@ -345,10 +345,11 @@ footer {
 	border : 1px solid #fbefdc;
 }
 
-.forum h2,.chat > h2 {
+.forum > h2,.chat > h2 {
 	background-color:rgba(44,44,44,0.8);
 	color : #fff3d5;
 	line-height : 1em;
+	border : 1px solid rgb(234, 133, 17);
 }
 
 .forum th {

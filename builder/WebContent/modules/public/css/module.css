@@ -141,7 +141,7 @@ fieldset {
 .chat-right {
 	display : inline-block;
 	width : 23%;
-	height : 250px;
+	height : 230px;
 	vertical-align: top;
 	overflow : auto;
 	padding : 5px;
