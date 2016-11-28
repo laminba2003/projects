@@ -1,5 +1,6 @@
 <h1 class="community-16">Community</h1>
 <div id="content">
+<article>
 <h2>News</h2>
 <p>
 </p>
@@ -12,5 +13,5 @@
 <p class="sponsors">
 <img src="${images}/jelastic.png"/><img src="${images}/mirhosting.png"/>
 </p>
-<hr/>
+</article>
 </div>

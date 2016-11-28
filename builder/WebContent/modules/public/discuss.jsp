@@ -3,7 +3,6 @@
 	<option value="General">General</option>
 </select>
 </h1>
-<div id="content">
 <div class="chat">
 	<div class="chat-left">
 				
@@ -18,7 +17,6 @@
 		<textarea id="message" rows="2"></textarea>
 		<input id="do-chat" type="submit" value="Send"/>
 	</div>
-</div>
 </div>
 <script>
 	var wsocket;

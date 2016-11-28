@@ -4,6 +4,10 @@ body {
   font-size : 90.8%;
 }
 
+hr {
+	width : 90%;
+}
+
 input {
 	padding-left : 2px;
 }
@@ -62,6 +66,12 @@ h1 {
 	margin-bottom : 5px;
 }
 
+article {
+	background : #fff;
+	padding-left : 30px;
+	border : 1px solid #fbefdc;
+}
+
 header {
 	height : 5.5em;
 	padding : 0 0.3em;
@@ -93,11 +103,12 @@ b {
 	font-family : Orbitron;
 	text-decoration : none;
 	font-size : 70%;
-	border : 1px solid rgb(234, 133, 17);
+	border : 1px solid rgba(44,44,44,0.8);
 	padding : 5px;
 	padding-left : 22px;
 	border-radius : 5px;
-	color : #110101;
+	color : #000;
+	background-color:#fff;
 }
 
 a {
@@ -109,11 +120,13 @@ a {
 }
 
 .menu a.active {
-	color : rgb(234, 133, 17);
+	color :#fff;
+	background-color:rgba(44,44,44,0.8);
 }
 
 .menu a:hover {
-	color : rgb(234, 133, 17);
+	color :#fff;
+	background-color:rgba(44,44,44,0.8);
 }
 
 .home-16 {
@@ -324,7 +337,7 @@ footer {
 
 #do-chat,.chat-left,.chat-right,.chat textarea,.chat h2 {
 	border : 1px solid rgb(234, 133, 17);
-	background : #fffef5;
+	background : #ffffff;
 }
 
 #do-chat {
@@ -336,7 +349,8 @@ footer {
 .chat h2 {
 	background-image: url('../images/user-16.png');
 	background-repeat : no-repeat;
-	background-position : 32% 54%;
+	background-position : 32% 53%;
+	font-size : 95%;
 }
 
 /*

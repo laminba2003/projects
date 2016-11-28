@@ -1,5 +1,6 @@
 <h1 class="contribute-16">Contribute</h1>
 <div id="content">
+<article>
 <h2>Give us a feedback</h2>
 <p>
 </p>
@@ -19,5 +20,5 @@
 <h2>Contribute to the code</h2>
 <p>
 </p>
-<hr/>
+</article>
 </div>

@@ -113,6 +113,10 @@ fieldset {
 	font-size : 87%;
 	margin:auto;
 	padding-top : 5px;
+	padding-left : 15%;
+	padding-right : 15%;
+	background : #fbfbfb;
+	height : 100%;
 }
 
 h1 select {
@@ -122,7 +126,7 @@ h1 select {
 .chat-left {
 	display : inline-block;
 	width : 75%;
-	height : 380px;
+	height : 415px;
 	vertical-align: top;
 	padding : 10px;
 	border-radius : 15px;
