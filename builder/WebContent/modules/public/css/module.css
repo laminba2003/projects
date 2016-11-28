@@ -110,7 +110,6 @@ fieldset {
 
 .chat {
 	width : 100%;
-	font-size : 87%;
 	margin:auto;
 	padding-top : 5px;
 	padding-left : 15%;
@@ -119,14 +118,20 @@ fieldset {
 	padding-bottom : 10px;
 }
 
-h1 select {
+.chat > h2 {
+	margin-bottom : 5px;
+	line-height : 1em;
+	font-size : 95%;
+}
+
+.chat h2 select {
 	margin-top : -5px;
 }
 
 .chat-left {
 	display : inline-block;
 	width : 75%;
-	height : 370px;
+	height : 350px;
 	vertical-align: top;
 	padding : 10px;
 	overflow : auto;
@@ -247,13 +252,12 @@ h1 select {
 	height : 49px;
 }
 
-.chat h2 {
+.chat-right h2 {
 	text-align : center;
-	line-height : 3em;
 	border-radius : 5px;
 }
 
-.forum h2 {
+.forum h2,.chat h2 {
 	border-radius: 10px;
 	padding : 10px;
 	position : sticky;
@@ -367,7 +371,6 @@ h1 select {
 .forum-message .editor {
 	height : 330px;
 	background : #fff;
-	border : 1px solid #ccc;
 }
 
 .forum-message #title {

@@ -344,9 +344,10 @@ footer {
 	border : 1px solid #fbefdc;
 }
 
-.forum h2 {
+.forum h2,.chat > h2 {
 	background-color:rgba(44,44,44,0.8);
 	color : #fff3d5;
+	line-height : 1em;
 }
 
 .forum th {
@@ -366,7 +367,7 @@ footer {
 	background-position : 20% 56%;
 }
 
-.chat h2 {
+.chat-right h2 {
 	background-image: url('../images/user-16.png');
 	background-repeat : no-repeat;
 	background-position : 32% 53%;
