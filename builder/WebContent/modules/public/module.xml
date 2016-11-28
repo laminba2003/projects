@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <module>
 	<name>public</name>
-	<url>/</url>
+	<url>public</url>
 	<home>documentation.jsp</home>
 	<type>front-end</type>
 	<author>Mamadou Lamine Ba</author>
@@ -21,4 +21,9 @@
 		<menuItem name="discuss" action="discuss" />
 		<menuItem name="forum" action="forum" />
 	</menu>
+	<actions>
+		<action name="message">
+			<result>message</result>
+		</action>
+	</actions>
 </module>

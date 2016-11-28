@@ -2,10 +2,11 @@
 <module>
 	<name>users</name>
 	<visible>false</visible>
+	<administrable>false</administrable>
 	<author>Mamadou Lamine Ba</author>
 	<authorEmail>laminba2003@yahoo.fr</authorEmail>
-	<creationDate>2016-09-01</creationDate>
 	<description>module to manage users</description>
+	<creationDate>2016-09-01</creationDate>
 	<copyright>© 2016</copyright>
 	<license>GNU/GPL</license>
 	<version>1.0</version>
@@ -14,10 +15,10 @@
 		<menuItem name="Preferences" action="preferences" />
 	</menu>
 	<actions>
-		<action name="signIn" class="org.metamorphosis.core.UserAction" method="signIn" />
-		<action name="signOut" class="org.metamorphosis.core.UserAction" method="signOut">
+		<action name="signIn"  script="users.groovy" method="signIn" />
+		<action name="signOut" script="users.groovy" method="signOut">
 			<result type="redirect">/</result>
 		</action>
-		<action name="preferences/templates/select" class="org.metamorphosis.core.TemplateAction" method="selectTemplate"/>
+		<action name="preferences/templates/select"  script="users.groovy" method="selectTemplate"/>
 	</actions>
 </module>

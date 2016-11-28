@@ -116,6 +116,7 @@ fieldset {
 	padding-left : 15%;
 	padding-right : 15%;
 	height : 100%;
+	padding-bottom : 10px;
 }
 
 h1 select {
@@ -125,7 +126,7 @@ h1 select {
 .chat-left {
 	display : inline-block;
 	width : 75%;
-	height : 415px;
+	height : 370px;
 	vertical-align: top;
 	padding : 10px;
 	border-radius : 15px;
@@ -341,4 +342,26 @@ h1 select {
 
 .forum td.empty {
 	color : rgb(204, 0, 0);
+}
+
+.forum-message input[type=text] {
+	width : 60%;
+}
+
+.forum-message input[type=submit] {
+	cursor :pointer;
+	margin-top : 30.5px;
+	display : inline-block;
+	width : 100px;
+	float : right;
+	margin-right : 9%;
+	height : 49px;
+}
+
+.forum-message .editor {
+	height : 350px;
+}
+
+.forum-message #title {
+	margin-bottom : 2px;
 }

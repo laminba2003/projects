@@ -5,12 +5,16 @@
    <legend>Info Account</legend>
    <span class="text-right">Email : </span>
    <span>email</span>
-   <span class="text-right">Creation Date : </span>
+   <span class="text-right">Created by : </span>
+   <span>admin</span>
+    <span class="text-right">Date : </span>
    <span>date</span>
 </fieldset>
 <img src="${images}/info_64.png"/>
 <fieldset>
     <legend>User</legend>
+	<span class="text-right">Email : </span>
+	<span>email</span>
 	<span class="text-right">First Name : </span>
 	<span>first name</span>
     <span class="text-right">Last Name : </span>

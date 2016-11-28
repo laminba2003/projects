@@ -3,7 +3,7 @@
 	<div  class="forum">
 		<h2>
 		Messages
-			<a>New message</a>
+			<a href="${module.url}/message">New message</a>
 		</h2>
 	    <table border="1" class="paginated">
 	    	<thead>
