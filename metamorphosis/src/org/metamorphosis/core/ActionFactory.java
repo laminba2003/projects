@@ -13,7 +13,7 @@ public class ActionFactory extends DefaultActionFactory {
 		Map application = (Map) ActionContext.getContext().get("application");
 		ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
 		Object object = moduleManager.buildAction(actionName);
-		return object!=null ? object : config.getClassName() != null ? Class.forName(config.getClassName()).newInstance() : null;
+		return object!=null ? object : super.buildAction(actionName,namespace,config,extraContext);
 	}
 
 }

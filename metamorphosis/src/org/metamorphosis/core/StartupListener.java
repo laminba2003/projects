@@ -1,3 +1,4 @@
+
 package org.metamorphosis.core;
 
 import java.io.BufferedInputStream;
@@ -112,14 +113,17 @@ public class StartupListener implements ServletContextListener {
 					content+="</definition>";
 				}
 			}
-		}else {
-			for(File file : module.getFolder().listFiles()) {
-				if(file.isFile() && file.getName().endsWith(".jsp")) {
-					String name = file.getName().substring(0,file.getName().length()-4);
+		}
+		for(File file : module.getFolder().listFiles()) {
+			if(file.isFile() && file.getName().endsWith(".jsp")) {
+				String name = file.getName().substring(0,file.getName().length()-4);
+				if(module.getUrl().equals("/")) {
+				  content+="<definition name='/"+name+"' extends='"+module.getUrl()+"'>";
+				}else {
 					content+="<definition name='"+module.getUrl()+"/"+name+"' extends='"+module.getUrl()+"'>";
-					content+="<put-attribute name='content' value='/modules/"+module.getId()+"/"+file.getName()+"'/>";
-					content+="</definition>";
 				}
+				content+="<put-attribute name='content' value='/modules/"+module.getId()+"/"+file.getName()+"'/>";
+				content+="</definition>";
 			}
 		}
 		content +="</tiles-definitions>";
