@@ -337,6 +337,17 @@ footer {
 	border : 1px solid #fbefdc;
 }
 
+.forum h2 {
+	background-color:rgba(44,44,44,0.8);
+	color : #fff3d5;
+}
+
+.forum th {
+	border:1px solid rgba(106,206,232,0.4);
+	background:rgb(86,186,202);
+	color : #fff;
+}
+
 .chat {
 	background : rgba(230,230,230,0.3);
 }

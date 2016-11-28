@@ -253,3 +253,92 @@ h1 select {
 	line-height : 3em;
 	border-radius : 5px;
 }
+
+.forum h2 {
+	border-radius: 10px;
+	padding : 10px;
+	position : sticky;
+	top:0;
+}
+
+.forum  h2 a {
+	float : right;
+	font-size : 91%;
+	background-image: url("../images/new-16.png");
+	background-repeat : no-repeat;
+	padding-left : 3%;
+	background-position : 8% 54%;
+}
+
+.forum table {
+	width : 100%;
+	border: none;
+	padding : 0px;
+	margin : 0px;
+}
+.forum th {
+	text-align : center;
+	font-size : 75%;
+	border-radius: 0px;
+	line-height : 1.9em;
+	border-left : none;
+	border-right : none;
+	margin : 0px;
+}
+
+.forum tbody tr:nth-child(odd) {
+   background : rgb(255, 255, 255);
+}
+
+.forum tbody tr:nth-child(even) {
+   background : #e5e3cd;
+}
+
+.forum th:first-of-type {
+	width : 49%;
+}
+
+.forum th:last-of-type {
+	width : 25%;
+}
+
+.forum td {
+	font-size : 85%;
+	vertical-align : middle;
+	padding : 5px;
+	line-height : 1.5em;
+	border:1px solid rgba(106,206,232,0.4);
+}
+
+.forum td a {
+	color : #428bca;
+}
+.forum td span {
+	display : block;
+	text-align : justify;
+}
+
+
+.forum td:first-of-type a {
+	color : rgb(2,24,24);
+}
+
+.forum td:nth-child(1n) {
+	color : #222;
+}
+
+.forum td:nth-child(2n) {
+	text-align : center;
+}
+
+.forum td:nth-child(3n) {
+	text-align : center;
+}
+
+.forum td > span:last-of-type {
+	padding-left : 26%;
+}
+
+.forum td.empty {
+	color : rgb(204, 0, 0);
+}
