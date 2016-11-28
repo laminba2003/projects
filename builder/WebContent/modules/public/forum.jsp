@@ -19,3 +19,8 @@
 	    </table>
 	</div>
 </div>
+<script>
+   app.ready(function(){
+	   $('tbody:not(:has(*))').append("<tr><td class='empty' valign='top' colspan='3'>no message</td></tr>"); 
+   });
+</script>
