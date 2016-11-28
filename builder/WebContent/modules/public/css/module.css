@@ -277,6 +277,11 @@ h1 select {
 	padding : 0px;
 	margin : 0px;
 }
+
+.forum tr {
+	cursor : default;
+}
+
 .forum th {
 	text-align : center;
 	font-size : 75%;
@@ -360,6 +365,8 @@ h1 select {
 
 .forum-message .editor {
 	height : 350px;
+	background : #fff;
+	border : 1px solid #ccc;
 }
 
 .forum-message #title {

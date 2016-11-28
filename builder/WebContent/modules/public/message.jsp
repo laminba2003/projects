@@ -15,10 +15,12 @@
 </div>
 </div>
 <script type="text/javascript">
-	app.wait();
-	CKEDITOR.config.skin = 'flat';
-	CKEDITOR.replace( 'editor1' );
-	CKEDITOR.on("instanceReady",function() {
-		app.release();
+	app.ready(function(){
+		app.wait();
+		CKEDITOR.config.skin = 'flat';
+		CKEDITOR.replace( 'editor1' );
+		CKEDITOR.on("instanceReady",function() {
+			app.release();
+		});
 	});
 </script>
