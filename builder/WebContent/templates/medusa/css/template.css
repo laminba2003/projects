@@ -25,7 +25,6 @@ input,select {
 h1 {
 	font-size: 110%;
     line-height: 0.7em;
-    text-shadow : rgb(234, 133, 17) 0px 0.3px 0px;
 	background-color:rgba(44,44,44,0.8);
 	font-family : Orbitron;
 	border-top : 1px solid #c3c3c3;
@@ -183,10 +182,10 @@ a {
 
 .login {
 	display : inline-block;
-	width : 310px;
+	width : 295px;
 	line-height :1.7em;
 	font-size:75%;
-	margin-top : 3px;
+	margin-top : 1px;
 }
 
 .login input[type=submit]{
@@ -211,8 +210,8 @@ a {
 .login input[type=text],.login input[type=password]{
 	border : 1px solid rgb(234, 133, 17);
 	height : 18px;
-	margin-top : 2px;
-	width : 160px;
+	margin-top : 3px;
+	width : 146px;
 }
 
 .login span {
@@ -349,10 +348,10 @@ footer {
 	background-color:rgba(44,44,44,0.8);
 	color : #fff3d5;
 	line-height : 1em;
-	border : 1px solid #c3c3c3;
+	border : 1px solid rgba(44,44,44,0.8);
 }
 
-.forum th {
+.forum th,.chat-right h2 {
 	border:1px solid rgba(106,206,232,0.4);
 	background:rgb(86,186,202);
 	color : #fff;
