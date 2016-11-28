@@ -1,6 +1,6 @@
 body {
   font-family: Dosis;
-  background-color : #fffade;
+  background-color : #ececec;
   font-size : 90.8%;
 }
 
@@ -10,7 +10,7 @@ hr {
 
 input {
 	padding-left : 2px;
-	border : 1px solid rgb(234, 133, 17);
+	border : 1px solid #c3c3c3;
 }
 
 select {
@@ -28,8 +28,8 @@ h1 {
     text-shadow : rgb(234, 133, 17) 0px 0.3px 0px;
 	background-color:rgba(44,44,44,0.8);
 	font-family : Orbitron;
-	border-top : 1px solid rgb(234, 133, 17);
-    border-bottom : 1px solid rgb(234, 133, 17);
+	border-top : 1px solid #c3c3c3;
+    border-bottom : 1px solid #c3c3c3;
 	border-left:none;
 	border-right:none;
 	text-align : left;
@@ -69,8 +69,9 @@ h1 {
 
 article {
 	background : #fff;
+	padding : 5px;
 	padding-left : 30px;
-	border : 1px solid #fbefdc;
+	border : 1px solid #c3c3c3;
 }
 
 header {
@@ -300,7 +301,6 @@ li {
 main {
 	padding : 0;
 	padding-top : 0px;
-	background-color : #fffade;
 }
 
 fieldset {
@@ -349,7 +349,7 @@ footer {
 	background-color:rgba(44,44,44,0.8);
 	color : #fff3d5;
 	line-height : 1em;
-	border : 1px solid rgb(234, 133, 17);
+	border : 1px solid #c3c3c3;
 }
 
 .forum th {
@@ -359,7 +359,7 @@ footer {
 }
 
 .forum-message .editor,.forum-message input[type=submit],#do-chat,.chat-left,.chat-right,.chat textarea {
-	border : 1px solid rgb(234, 133, 17);
+	border : 1px solid #c3c3c3;
 	background : #ffffff;
 }
 
