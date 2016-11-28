@@ -21,7 +21,7 @@
 </div>
 <script>
 	var wsocket;
-	var serviceLocation =  "ws://" + "env-3511481.cloudhosting.rsaweb.co.za/chat/"+"chat/";
+	var serviceLocation =  "ws://" + "localhost:8080/chat/"+"chat/";
 	var user = "user";
 
 	function onopen(evt) {
@@ -65,6 +65,7 @@
 			var msg = '{"message":"' + val + '", "sender":"'
 					+ user + '", "received":""}';
 			wsocket.send(msg);
+			alert(msg);
 			$("#message").val('').focus();
 		}
 	}
@@ -94,5 +95,9 @@
 			+ "user" + '", "received":""}';
 			wsocket.send(msg);
 		}, 2000);
+		$('#do-chat').click(function(evt) {
+			sendMessage();
+			evt.preventDefault();
+		});
 	});
 </script>

@@ -19,7 +19,7 @@ select {
 }
 
 input,select {
-	font-size : 78%;
+	font-size : 80%;
 }
 
 h1 {
@@ -74,8 +74,8 @@ article {
 }
 
 header {
-	height : 5em;
-	padding : 0 0.3em;
+	height : 4.5em;
+	padding : 0em;
 	background : #fffef5;
 	border: 1px solid rgb(234, 133, 17);
 }
@@ -184,6 +184,7 @@ a {
 	width : 310px;
 	line-height :1.7em;
 	font-size:75%;
+	margin-top : 3px;
 }
 
 .login input[type=submit]{
@@ -207,9 +208,8 @@ a {
 
 .login input[type=text],.login input[type=password]{
 	border : 1px solid rgb(234, 133, 17);
-	height : 21px;
-	margin-top : 5px;
-	font-size:95%;
+	height : 18px;
+	margin-top : 2px;
 	width : 160px;
 }
 
@@ -356,7 +356,7 @@ footer {
 	color : #fff;
 }
 
-.forum-message input[type=submit],#do-chat,.chat-left,.chat-right,.chat textarea {
+.forum-message .editor,.forum-message input[type=submit],#do-chat,.chat-left,.chat-right,.chat textarea {
 	border : 1px solid rgb(234, 133, 17);
 	background : #ffffff;
 }

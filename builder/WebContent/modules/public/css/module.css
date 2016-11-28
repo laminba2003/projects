@@ -360,7 +360,7 @@ fieldset {
 
 .forum-message input[type=submit] {
 	cursor :pointer;
-	margin-top : 30.5px;
+	margin-top : 0px;
 	display : inline-block;
 	width : 100px;
 	float : right;
@@ -369,7 +369,7 @@ fieldset {
 }
 
 .forum-message .editor {
-	height : 330px;
+	height : 375px;
 	background : #fff;
 }
 
