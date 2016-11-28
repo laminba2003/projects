@@ -13,8 +13,6 @@
 <img src="${images}/info_64.png"/>
 <fieldset>
     <legend>User</legend>
-	<span class="text-right">Email : </span>
-	<span>email</span>
 	<span class="text-right">First Name : </span>
 	<span>first name</span>
     <span class="text-right">Last Name : </span>
