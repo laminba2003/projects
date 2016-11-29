@@ -255,7 +255,7 @@ fieldset {
 	font-size : 91%;
 	background-repeat : no-repeat;
 	padding-left : 3%;
-	background-position : 8% 1px;
+	background-position : 8% -1px;
 	line-height : 1.2em;
 	margin-top : -5px;
 }

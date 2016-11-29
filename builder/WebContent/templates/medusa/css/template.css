@@ -364,6 +364,7 @@ footer p {
 	background-color:rgba(44,44,44,0.8);
 	color : #fff3d5;
 	border : 1px solid rgba(44,44,44,0.8);
+	font-size : 90%;
 }
 
 .forum th,.chat-right h2 {
