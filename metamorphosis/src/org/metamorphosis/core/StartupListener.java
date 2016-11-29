@@ -102,23 +102,10 @@ public class StartupListener implements ServletContextListener {
 				"<tiles-definitions><definition name='"+module.getUrl()+"' extends='"+module.getType()+"'>"+
 				"<put-attribute name='content' value='/modules/"+module.getId()+"/"+module.getHome()+"'/>"+
 				"</definition>";
-		if(module.getMenu()!=null) {
-			for(MenuItem item : module.getMenu().getMenuItems()) {
-					if(!module.getUrl().equals(item.getAction())) {
-					content+="<definition name='"+item.getAction()+"' extends='"+module.getUrl()+"'>";
-					content+="<put-attribute name='content' value='/modules/"+module.getId()+"/"+item.getPage()+"'/>";
-					content+="</definition>";
-				}
-			}
-		}
 		for(File file : module.getFolder().listFiles()) {
 			if(file.isFile() && file.getName().endsWith(".jsp")) {
 				String name = file.getName().substring(0,file.getName().length()-4);
-				if(module.getUrl().equals("/")) {
-				  content+="<definition name='/"+name+"' extends='"+module.getUrl()+"'>";
-				}else {
-					content+="<definition name='"+module.getUrl()+"/"+name+"' extends='"+module.getUrl()+"'>";
-				}
+				content+="<definition name='"+module.getUrl()+"/"+name+"' extends='"+module.getUrl()+"'>";
 				content+="<put-attribute name='content' value='/modules/"+module.getId()+"/"+file.getName()+"'/>";
 				content+="</definition>";
 			}
@@ -141,14 +128,13 @@ public class StartupListener implements ServletContextListener {
 				"<!DOCTYPE struts PUBLIC '-//Apache Software Foundation//DTD Struts Configuration 2.0//EN' "+
 				"'http://struts.apache.org/dtds/struts-2.0.dtd'>"+
 				"<struts><package name='"+module.getId()+"' namespace='/"+module.getUrl()+"' extends='root'>";
+		content+="<action name='"+module.getUrl()+"'>";
+		content+="<result name='success' type='tiles'>"+module.getUrl();
+		content+="</result>";
+		content+="</action>";
 		if(module.getMenu()!=null) {
 			for(MenuItem item : module.getMenu().getMenuItems()) {
-				if(item.getAction().equals(module.getUrl())) {
-					content+="<action name='"+item.getAction()+"'>";
-					content+="<result name='success' type='tiles'>"+module.getUrl();
-					content+="</result>";
-					content+="</action>";
-				}else {
+				if(!item.getAction().equals(module.getUrl())) {
 					String name = item.getAction().substring(module.getUrl().length()+1);
 					content+="<action name='"+name+"'>";
 					content+="<result name='success' type='tiles'>"+item.getAction();

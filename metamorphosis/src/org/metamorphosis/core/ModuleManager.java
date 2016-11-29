@@ -82,20 +82,9 @@ public class ModuleManager {
 		if (module.getMenu() != null) {
 			for (MenuItem item : module.getMenu().getMenuItems()) {
 				if (item.getAction() != null) {
-					if (item.getPage() == null) {
-						item.setPage(item.getAction() + ".jsp");
-					}
-					if (module.getUrl().equals("/")) {
-						item.setAction(item.getAction());
-					} else {
-						item.setAction(module.getUrl() + "/" + item.getAction());
-					}
+					item.setAction(module.getUrl() + "/" + item.getAction());
 				} else {
 					item.setAction(module.getUrl());
-					item.setTitle(module.getUrl());
-					if (item.getPage() == null) {
-						item.setPage(module.getHome());
-					}
 				}
 			}
 		}
