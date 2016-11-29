@@ -2,7 +2,8 @@
 <script src="${js}/ckeditor/ckeditor.js"></script>
 <div id="content" class="forum">
 <h2>Compose<a href="${module.url}/forum" class="forum-16">Messages</a></h2>
-<div  class="forum-message">
+<form action="${module.url}/forum">
+<div class="forum-message">
   		 <div id="title">
 			<span>Title : </span>
 			<input type="text"/>
@@ -14,11 +15,12 @@
 			<input type="submit" value="Send" />
 		</div>
 </div>
+</form>
 </div>
 <script type="text/javascript">
 	app.ready(function(){
 		app.wait();
-		CKEDITOR.config.skin = 'flat';
+		CKEDITOR.config.skin = 'moono-dark';
 		CKEDITOR.replace( 'editor1' );
 		CKEDITOR.on("instanceReady",function() {
 			app.release();

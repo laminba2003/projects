@@ -70,7 +70,7 @@ article {
 	background : #fff;
 	padding : 5px;
 	padding-left : 30px;
-	border : 1px solid #c3c3c3;
+	border: 1px solid rgb(234, 133, 17);
 }
 
 header {
@@ -361,7 +361,7 @@ footer p {
 	color : #fff;
 }
 
-.forum-message .editor,.forum-message input[type=submit],#do-chat,.chat-left,.chat-right,.chat textarea {
+.forum-message input[type=submit],#do-chat,.chat-left,.chat-right,.chat textarea {
 	border : 1px solid #c3c3c3;
 	background : #ffffff;
 }
@@ -370,6 +370,10 @@ footer p {
 	background-image: url('../images/discuss-16.png');
 	background-repeat : no-repeat;
 	background-position : 20% 56%;
+}
+
+.forum-message .editor,.forum-message input[type=text]{
+	border : 1px solid rgb(234, 133, 17);
 }
 
 .chat-right h2 {
