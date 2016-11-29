@@ -61,13 +61,10 @@ public class StartupListener implements ServletContextListener {
 		context.setAttribute("moduleManager",moduleManager);
 		for(Module module : moduleManager.getModules()) {
 			buffer.append(","+createModuleTiles(module));
-			if(module.getActions().size()>0) {
-				config +=","+createModuleConfig(module);
-			}
+			config +=","+createModuleConfig(module);
 			if(module.getId().equals("users")) {
 				context.setAttribute("security",true);
 			}
-			
 		}
 		return config;
 	}
