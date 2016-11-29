@@ -1,6 +1,6 @@
 body {
   font-family: Dosis;
-  background-color : #ececec;
+  background-color : #f4f1f1;
   font-size : 90.8%;
 }
 
@@ -71,6 +71,7 @@ article {
 	padding : 5px;
 	padding-left : 30px;
 	border: 1px solid #ccc;
+	border-radius : 10px;
 }
 
 header {
@@ -139,10 +140,13 @@ a {
 	background-image: url(../images/download-16.png);
 }
 
+.new-16 {
+	background-image: url("../images/new-16.png");
+}
+
 .upload-16 {
 	background-image: url(../images/upload-16.png);
 }
-
 
 .documentation-16 {
 	background-image: url(../images/documentation-16.png);
@@ -348,6 +352,14 @@ footer p {
 	border : 1px solid #fbefdc;
 }
 
+.forum tbody tr:nth-child(odd) {
+   background : rgb(255, 255, 255);
+}
+
+.forum tbody tr:nth-child(even) {
+   background : #e5e3cd;
+}
+
 .forum > h2,.chat > h2 {
 	background-color:rgba(44,44,44,0.8);
 	color : #fff3d5;
@@ -361,7 +373,7 @@ footer p {
 	color : #fff;
 }
 
-.forum-message input[type=submit],#do-chat,.chat-left,.chat-right,.chat textarea {
+.forum-message input[type=submit],#do-chat{
 	border : 1px solid #c3c3c3;
 	background : #ffffff;
 }
@@ -376,10 +388,14 @@ footer p {
 	border : 1px solid rgb(234, 133, 17);
 }
 
+.chat-left,.chat textarea,.chat-right {
+	background : #fff;
+	border : 1px solid rgb(234, 133, 17);
+}
 .chat-right h2 {
 	background-image: url('../images/user-16.png');
 	background-repeat : no-repeat;
-	background-position : 31.9% 53%;
+	background-position : 30% 57%;
 	font-size : 95%;
 }
 

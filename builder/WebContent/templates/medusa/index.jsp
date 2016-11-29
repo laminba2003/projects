@@ -27,19 +27,19 @@
 		         <div class="menu">
 		             <s:iterator value="#request.modules" var="current">
 		                 <s:iterator value="#current.menu.menuItems">
-		                  <a href="${action}" class="${name}-16">${name}</a>
+		                  <a href="${action}" class="${name}-16" title="${name}">${name}</a>
 		                </s:iterator>
 		            </s:iterator>
 		         </div>
 				  <div class="login" style="display:${security==true?'inline-block':'none'}">
 				  <form action="users/signIn">
 				   <span>Email :</span>
-				   <input id="email" type="text" size="20"/>
+				   <input id="email" title="email" type="text" size="20"/>
 				   <span>Password :</span>
-				   <input type="password" size="20"/>
-				   <input type="submit" value="Sign In"/>
-				   <a>create an account</a>
-				   <a>forgot your password?</a>
+				   <input title="password" type="password" size="20"/>
+				   <input type="submit" title="sign in" value="Sign In"/>
+				   <a title="create an account">create an account</a>
+				   <a title="forgot your password?">forgot your password?</a>
 				   </form>
 				</div>
 			
