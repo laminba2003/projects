@@ -23,7 +23,7 @@ input,select {
 }
 
 h1 {
-	font-size: 110%;
+	font-size: 100%;
     line-height: 0.7em;
 	background-color:rgba(44,44,44,0.8);
 	font-family : Orbitron;
@@ -320,6 +320,10 @@ footer {
     position : fixed;
     bottom :0;
     width : 100%;
+}
+
+footer p {
+	text-align : center;
 }
 
 #extensions span:first-of-type {
