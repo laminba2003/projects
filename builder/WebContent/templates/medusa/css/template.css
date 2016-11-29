@@ -1,6 +1,6 @@
 body {
   font-family: Dosis;
-  background-color : #f4f1f1;
+  background-color : #fdfdfd;
   font-size : 90.8%;
 }
 
@@ -55,7 +55,6 @@ h1 {
 	font-weight : 400;
 	font-family : Itim;
 	margin-bottom : 0px;
-	margin-top : 5px;
 }
 
 #content h2:first-of-type {
@@ -67,7 +66,7 @@ h1 {
 }
 
 article {
-	background : #fff;
+	background : rgba(255,255,255,0.98);
 	padding : 5px;
 	padding-left : 30px;
 	border: 1px solid #ccc;
@@ -304,11 +303,12 @@ li {
 main {
 	padding : 0;
 	padding-top : 0px;
+	background-color : #fdfdfd;
 }
 
 fieldset {
 	border : 1px solid rgb(234, 133, 17);
-	background : #fff;
+	background : rgba(255,255,255,0.98);
 	padding-bottom : 5px;
 }
 
@@ -363,7 +363,6 @@ footer p {
 .forum > h2,.chat > h2 {
 	background-color:rgba(44,44,44,0.8);
 	color : #fff3d5;
-	line-height : 1em;
 	border : 1px solid rgba(44,44,44,0.8);
 }
 
@@ -389,7 +388,7 @@ footer p {
 }
 
 .chat-left,.chat textarea,.chat-right {
-	background : #fff;
+	background : rgba(255,255,255,0.98);
 	border : 1px solid rgb(234, 133, 17);
 }
 .chat-right h2 {
