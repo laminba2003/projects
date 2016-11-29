@@ -20,8 +20,8 @@
 <script type="text/javascript">
 	app.ready(function(){
 		app.wait();
-		CKEDITOR.config.skin = 'moono-dark';
-		CKEDITOR.replace( 'editor1' );
+		CKEDITOR.config.skin = 'flat';
+		CKEDITOR.replace('editor1');
 		CKEDITOR.on("instanceReady",function() {
 			app.release();
 		});

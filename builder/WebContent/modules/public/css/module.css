@@ -364,6 +364,7 @@ fieldset {
 .forum-message .editor {
 	height : 378px;
 	background : #fff;
+	padding : 1px;
 }
 
 .forum-message #title {
