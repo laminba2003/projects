@@ -1,4 +1,5 @@
 <h1 class="discuss-16">Discuss</h1>
+<div id="content">
 <div class="chat">
 <h2>Chat Room : <select id="changeroom" onchange="changeRoom();">
 	<option value="general">general</option>
@@ -18,6 +19,7 @@
 		<textarea id="message" rows="2"></textarea>
 		<input id="do-chat" type="submit" value="Send"/>
 	</div>
+</div>
 </div>
 <script>
 	var wsocket;
