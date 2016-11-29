@@ -18,12 +18,12 @@
 </select>
 <div id="search">
 <span>Search : </span>
-<input/>
+<input title="search"/>
 </div>
 <div id="share">
 <span>Share : </span>
-<input type="file" accept="application/zip"/>
-<input type="submit" value="Upload"/>
+<input type="file" title="browse" accept="application/zip"/>
+<input type="submit" title="upload" value="Upload"/>
 </div>
 <fieldset class="extensions-details">
 	<div id="extensions">
@@ -32,7 +32,7 @@
 	   
 	      <div class="extension">
 	      <a>
-		  <img src="${thumbnail}"/>
+		  <img title="click for more details" src="${thumbnail}"/>
 		  </a>
 		  <div class="info">
 		  <span class="extension-name">${name}  <a title="download" class="download-16"></a><a title="copy link" class="link-16"></a><a title="details" class="info-16"></a></span>
@@ -43,7 +43,7 @@
 		  <span>downloads : 15600</span>
 		  </div>
 		  <div class="extension-description">${description!=null ? description : "no description provided"}</div>
-		  <div class="extension-description"><b>Tags</b> : html, css, js</div>
+		  <div class="extension-description"><b>Tags</b> : <i>html, css, js</i></div>
 		  <div class="extensionDetails">
 		      	  <span>Name : ${name}</span>
 		          <span>Type : ${type}</span>

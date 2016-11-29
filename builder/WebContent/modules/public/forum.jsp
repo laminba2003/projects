@@ -3,9 +3,9 @@
 	<div  class="forum">
 		<h2>
 		Messages
-			<a href="${module.url}/message" class="new-16">New message</a>
+			<a href="${module.url}/message" title="new message" class="new-16">New message</a>
 		</h2>
-	    <table border="1" class="paginated">
+	    <table border="1">
 	    	<thead>
 	    	   <tr>
 		    		<th>Message / Title</th>

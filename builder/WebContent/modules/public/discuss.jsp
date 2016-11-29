@@ -17,7 +17,7 @@
 	<div class="chat-bottom">
 	   <h3>Enter your message : </h3>
 		<textarea id="message" rows="2"></textarea>
-		<input id="do-chat" type="submit" value="Send"/>
+		<input id="do-chat" type="submit" title="send" value="Send"/>
 	</div>
 </div>
 </div>

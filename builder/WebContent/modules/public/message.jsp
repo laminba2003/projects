@@ -1,7 +1,7 @@
 <h1 class="forum-16">Forum -> New Message</h1>
 <script src="${js}/ckeditor/ckeditor.js"></script>
 <div id="content" class="forum">
-<h2>Compose<a href="${module.url}/forum" class="forum-16">Messages</a></h2>
+<h2>Compose<a href="${module.url}/forum" title="messages" class="forum-16">Messages</a></h2>
 <form action="${module.url}/forum">
 <div class="forum-message">
   		 <div id="title">
@@ -12,7 +12,7 @@
 			<textarea  id="editor1"></textarea>
 		</div><br/>
 		<div>	
-			<input type="submit" value="Send" />
+			<input type="submit" title="send" value="Send" />
 		</div>
 </div>
 </form>

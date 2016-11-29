@@ -336,20 +336,24 @@ footer p {
 	background-position : 0px 0px;
 }
 
+ .extension-description i {
+	color : #0522b2;
+}
+
 .extensionDetails,.extension img {
 	border : 1px solid rgba(234, 133, 17,0.4);
 }
 
 .extensionDetails {
-	background-color : #fffade;
+	background-color : #fdfdfd;
 }
 
 #extensions .extensionDetails span:first-of-type {
 	padding-left : 0px;
 }
 .extension .info {
-	background : #fffef5;
-	border : 1px solid #fbefdc;
+	background : #fdfdfd;
+	border : 1px solid #feefdc;
 }
 
 .forum tbody tr:nth-child(odd) {
