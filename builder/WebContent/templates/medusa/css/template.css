@@ -380,12 +380,14 @@ footer p {
 .forum-message input[type=submit],#do-chat{
 	border : 1px solid #c3c3c3;
 	background : #ffffff;
+	border-radius:5px;
 }
 
 .forum-message input[type=submit],#do-chat {
 	background-image: url('../images/discuss-16.png');
 	background-repeat : no-repeat;
 	background-position : 20% 56%;
+	border : 1px solid rgb(234, 133, 17);
 }
 
 .forum-message .editor,.forum-message input[type=text]{
