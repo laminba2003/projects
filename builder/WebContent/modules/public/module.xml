@@ -21,7 +21,7 @@
 		<menuItem label="discuss" url="discuss" />
 	</menu>
 	<actions>
-		<action name="forum_message" url="forum/message">
+		<action name="message" url="forum/message">
 			<result>message</result>
 		</action>
 	</actions>
