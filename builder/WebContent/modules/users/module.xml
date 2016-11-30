@@ -15,10 +15,10 @@
 		<menuItem name="Preferences" action="preferences" />
 	</menu>
 	<actions>
-		<action name="signIn"  script="users.groovy" method="signIn" />
-		<action name="signOut" script="users.groovy" method="signOut">
+		<action name="signIn" url="signIn" script="users.groovy" method="signIn" />
+		<action name="signOut" url="signOut" script="users.groovy" method="signOut">
 			<result type="redirect">/</result>
 		</action>
-		<action name="preferences/templates/select"  script="users.groovy" method="selectTemplate"/>
+		<action name="selectTemplate" url="preferences/templates/select"  script="users.groovy" method="selectTemplate"/>
 	</actions>
 </module>

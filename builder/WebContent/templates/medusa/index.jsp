@@ -32,7 +32,7 @@
 		            </s:iterator>
 		         </div>
 				  <div class="login" style="display:${security==true?'inline-block':'none'}">
-				  <form action="users/signIn">
+				  <form action="${signIn}">
 				   <span>Email :</span>
 				   <input id="email" title="email" type="text" size="20"/>
 				   <span>Password :</span>

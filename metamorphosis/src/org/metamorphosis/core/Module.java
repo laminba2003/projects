@@ -93,7 +93,7 @@ public class Module extends Extension {
 	
 	public Action getAction(String url) {
 		for(Action action : actions) {
-			if(action.getUrl().equals(url)) {
+			if(action.getUrl()!=null && action.getUrl().equals(url)) {
 				return action;
 			}
 		}
