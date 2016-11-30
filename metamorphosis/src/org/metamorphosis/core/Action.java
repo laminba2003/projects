@@ -6,6 +6,7 @@ import java.util.List;
 public class Action {
 
 	private String name;
+	private String url;
 	private String className="";
 	private String method="execute";
 	private String script;
@@ -16,6 +17,12 @@ public class Action {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
 	}
 	public String getClassName() {
 		return className;

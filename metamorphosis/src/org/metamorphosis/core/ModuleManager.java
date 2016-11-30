@@ -119,10 +119,10 @@ public class ModuleManager {
 		return null;
 	}
 
-	public Object buildAction(String actionName) throws Exception {
+	public Object buildAction(String url) throws Exception {
 		Module module = getCurrentModule();
 		if (module != null) {
-			Action action = module.getAction(actionName);
+			Action action = module.getAction(url);
 			if (action != null && action.getScript() != null) {
 				File script = new File(module.getFolder() + "/scripts/" + action.getScript());
 				if (script.exists()) {

@@ -91,9 +91,9 @@ public class Module extends Extension {
 		actions.add(action);
 	}
 	
-	public Action getAction(String name) {
+	public Action getAction(String url) {
 		for(Action action : actions) {
-			if(action.getName().equals(name)) {
+			if(action.getUrl().equals(url)) {
 				return action;
 			}
 		}

@@ -65,6 +65,9 @@ public class StartupListener implements ServletContextListener {
 			if(module.getId().equals("users")) {
 				context.setAttribute("security",true);
 			}
+			for(Action action : module.getActions()) {
+				context.setAttribute(action.getName(),module.getUrl()+"/"+action.getUrl());
+			}
 		}
 		return config;
 	}
@@ -144,7 +147,7 @@ public class StartupListener implements ServletContextListener {
 			}
 		}
 		for(Action action : module.getActions()) {
-			content+="<action name='"+action.getName()+"' class='"+action.getClassName()+"' method='"+action.getMethod()+"'>";
+			content+="<action name='"+action.getUrl()+"' class='"+action.getClassName()+"' method='"+action.getMethod()+"'>";
 			for(Result result : action.getResults()) {
 				if(!result.getValue().equals("") && !result.getValue().startsWith("/")) {
 					result.setValue(module.getUrl()+"/"+result.getValue());

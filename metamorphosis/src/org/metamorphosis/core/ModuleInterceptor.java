@@ -24,8 +24,8 @@ public class ModuleInterceptor extends AbstractInterceptor {
 				request.setAttribute("modules",moduleManager.getVisibleModules(module.getType()));
 				request.setAttribute("module",module);
 				String uri = request.getRequestURI();
-				String action = uri.substring(request.getContextPath().length()+1,uri.length());
-				request.setAttribute("title",action);
+				String actionURI = uri.substring(request.getContextPath().length()+1,uri.length());
+				request.setAttribute("title",actionURI);
 				request.setAttribute("js","modules/"+module.getId()+"/js");
 				request.setAttribute("css","modules/"+module.getId()+"/css");
 				request.setAttribute("images","modules/"+module.getId()+"/images");
