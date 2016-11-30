@@ -3,8 +3,8 @@
 <img src="${images}/user_64.png"/>
 <fieldset>
    <legend>Info Account</legend>
-   <span class="text-right">Login : </span>
-   <span>login</span>
+   <span class="text-right">Email : </span>
+   <span>email</span>
    <span class="text-right">Group : </span>
    <span>group</span>
    <span class="text-right">Role : </span>
@@ -17,8 +17,6 @@
 <img src="${images}/info_64.png"/>
 <fieldset>
     <legend>User</legend>
-	<span class="text-right">Email : </span>
-	<span>email</span>
 	<span class="text-right">First Name : </span>
 	<span>first name</span>
     <span class="text-right">Last Name : </span>

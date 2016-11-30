@@ -15,10 +15,10 @@
 		<menuItem name="Templates" action="templates"/>
 	</menu>
 	<actions>
-		<action name="modules/edit" script="module.groovy">
+		<action name="modules_edit" url="modules/edit" script="module.groovy">
 		  <result>editor</result>
 		</action>	
-		<action name="templates/edit" script="template.groovy">
+		<action name="templates_edit" url="templates/edit" script="template.groovy">
 		  <result>editor</result>
 		</action>
 	</actions>

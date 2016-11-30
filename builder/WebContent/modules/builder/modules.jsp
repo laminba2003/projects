@@ -14,7 +14,7 @@
 		  <img src="${images}/module-128.png"/>
 		  </a>
 		  <div class="info">
-		  <span class="extension-name">${name}  <a href="${module.url}/modules/edit?id=${id}" title="edit" class="edit-16"></a><a title="delete" class="delete-16"></a><a title="downlad" class="download-16"></a><a title="share" class="share-16"></a></span>
+		  <span class="extension-name">${name}  <a href="${modules_edit}?id=${id}" title="edit" class="edit-16"></a><a title="delete" class="delete-16"></a><a title="downlad" class="download-16"></a><a title="share" class="share-16"></a></span>
 		  <span>${author}</span>
 		  <span>Type : ${type}</span>
 		  </div>
