@@ -11,6 +11,10 @@ hr {
 	border: 1px solid #ffede6;
 }
 
+h3 {
+	color : rgb(234, 133, 17);
+}
+
 hr:first-of-type {
 	margin-top : 0px;
 }
@@ -53,7 +57,7 @@ h1 {
 	width : 72.5%;
 }
 
-#content a {
+a {
 	color : rgb(234, 133, 17);
 }
 
@@ -121,10 +125,6 @@ b {
 	border-radius : 7px;
 	color : #000;
 	background-color:#fff;
-}
-
-a {
-	color : rgb(0,0,150);
 }
 
 .menu a:first-letter {
@@ -374,10 +374,14 @@ footer p {
 }
 
 .forum > h2,.chat > h2 {
-	background-color:rgba(44,44,44,0.8);
+	background:rgb(86,186,202);
 	color : #fff3d5;
-	border : 1px solid rgba(44,44,44,0.8);
+	border: 1px solid #ffede6;
 	font-size : 90%;
+}
+
+.forum  h2 a {
+	color : #fff3d5;
 }
 
 .forum th,.chat-right h2 {

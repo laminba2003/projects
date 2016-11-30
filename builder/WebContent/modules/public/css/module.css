@@ -340,7 +340,7 @@ fieldset {
 }
 
 .forum td.empty {
-	color : rgb(204, 0, 0);
+	color : rgb(234, 133, 17);
 }
 
 .forum-message input[type=text] {
