@@ -349,7 +349,8 @@ footer p {
 }
 
 .extensionDetails,.extension img {
-	border : 1px solid rgba(234, 133, 17,0.4);
+	border: 1px solid #ffede6;
+	padding : 2px;
 }
 
 .extensionDetails {
