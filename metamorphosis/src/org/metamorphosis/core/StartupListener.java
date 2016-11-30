@@ -66,6 +66,7 @@ public class StartupListener implements ServletContextListener {
 				context.setAttribute("security",true);
 			}
 			for(Action action : module.getActions()) {
+				if(action.getName()!=null)
 				context.setAttribute(action.getName(),module.getUrl()+"/"+action.getUrl());
 			}
 		}
