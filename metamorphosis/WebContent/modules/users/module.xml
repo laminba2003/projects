@@ -12,7 +12,7 @@
 	<version>1.0</version>
 	<menu>
 		<menuItem name="Account" />
-		<menuItem name="Preferences" action="preferences" />
+		<menuItem name="Preferences" url="preferences" />
 	</menu>
 	<actions>
 		<action name="signIn" url="signIn" script="users.groovy" method="signIn" />

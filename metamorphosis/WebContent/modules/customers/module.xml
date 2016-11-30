@@ -12,6 +12,6 @@
 	<version>1.0</version>
 	<menu>
 		<menuItem name="List" />
-		<menuItem name="Chart" action="chart" />
+		<menuItem name="Chart" url="chart" />
 	</menu>
 </module>

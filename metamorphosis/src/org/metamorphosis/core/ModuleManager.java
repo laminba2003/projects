@@ -83,10 +83,10 @@ public class ModuleManager {
 			module.setUrl(module.getFolder().getName().toLowerCase());
 		if (module.getMenu() != null) {
 			for (MenuItem item : module.getMenu().getMenuItems()) {
-				if (item.getAction() != null) {
-					item.setAction(module.getUrl() + "/" + item.getAction());
+				if (item.getUrl() != null) {
+					item.setUrl(module.getUrl() + "/" + item.getUrl());
 				} else {
-					item.setAction(module.getUrl());
+					item.setUrl(module.getUrl());
 				}
 			}
 		}

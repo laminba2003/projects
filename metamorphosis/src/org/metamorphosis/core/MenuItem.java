@@ -3,7 +3,7 @@ package org.metamorphosis.core;
 public class MenuItem {
 
 	private String name;
-	private String action;
+	private String url;
 	private String title;
 	private boolean visible = true;
 	
@@ -13,11 +13,11 @@ public class MenuItem {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAction() {
-		return action;
+	public String getUrl() {
+		return url;
 	}
-	public void setAction(String action) {
-		this.action = action;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 	public String getTitle() {
 		return title;

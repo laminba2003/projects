@@ -138,10 +138,10 @@ public class StartupListener implements ServletContextListener {
 		content+="</action>";
 		if(module.getMenu()!=null) {
 			for(MenuItem item : module.getMenu().getMenuItems()) {
-				if(!item.getAction().equals(module.getUrl())) {
-					String name = item.getAction().substring(module.getUrl().length()+1);
+				if(!item.getUrl().equals(module.getUrl())) {
+					String name = item.getUrl().substring(module.getUrl().length()+1);
 					content+="<action name='"+name+"'>";
-					content+="<result name='success' type='tiles'>"+item.getAction();
+					content+="<result name='success' type='tiles'>"+item.getUrl();
 					content+="</result>";
 					content+="</action>";
 				}

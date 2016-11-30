@@ -13,8 +13,8 @@
 	<version>1.0</version>
 	<menu>
 		<menuItem name="Users" />
-		<menuItem name="Groups" action="groups" />
-		<menuItem name="Modules" action="modules" />
-		<menuItem name="Templates" action="templates" />
+		<menuItem name="Groups" url="groups" />
+		<menuItem name="Modules" url="modules" />
+		<menuItem name="Templates" url="templates" />
 	</menu>
 </module>
