@@ -7,6 +7,12 @@ body {
 hr {
 	width : 90%;
 	margin-bottom : 5px;
+	margin-top : 5px;
+	border: 1px solid #dbdbdb;
+}
+
+hr:first-of-type {
+	margin-top : 0px;
 }
 
 input {
