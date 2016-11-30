@@ -49,11 +49,12 @@ fieldset {
 	display : inline-block;
 	padding : 2px;
 	padding-left : 5px;
-	padding-right : 10px;
+	padding-right : 5px;
 }
 
 .extension .info span {
 	font-size : 98%;
+	margin-bottom : 13px;
 }
 
 .extension div span {
@@ -306,7 +307,6 @@ fieldset {
 	vertical-align : middle;
 	padding : 5px;
 	line-height : 1.5em;
-	border:1px solid rgba(106,206,232,0.4);
 }
 
 .forum td a {
