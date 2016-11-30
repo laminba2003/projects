@@ -1,7 +1,9 @@
 <h1 class="forum-16">Forum -> New Message</h1>
 <script src="${js}/ckeditor/ckeditor.js"></script>
 <div id="content" class="forum">
-<h2>Compose<a href="${module.url}/forum" title="messages" class="forum-16">Messages</a></h2>
+<h2>Compose
+<a href="${module.url}/forum" title="messages" class="forum-16">Messages</a>
+</h2>
 <form action="${module.url}/forum">
 <div class="forum-message">
   		 <div id="title">
@@ -20,7 +22,7 @@
 <script type="text/javascript">
 	app.ready(function(){
 		app.wait();
-		CKEDITOR.config.skin = 'flat';
+		CKEDITOR.config.skin = 'moono-dark';
 		CKEDITOR.replace('editor1');
 		CKEDITOR.on("instanceReady",function() {
 			app.release();

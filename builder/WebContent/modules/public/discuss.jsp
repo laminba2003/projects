@@ -1,11 +1,14 @@
 <h1 class="discuss-16">Discuss</h1>
 <div id="content">
 <div class="chat">
-<h2>Chat Room : <select id="changeroom" onchange="changeRoom();">
+<h2>
+<span>Chat Room :</span>
+<select id="changeroom" onchange="changeRoom();">
 	<option value="general">general</option>
 	<option value="developers">developers</option>
 	<option value="designers">designers</option>
-</select></h2>
+</select>
+</h2>
 	<div class="chat-left">
 				
 	</div>
