@@ -11,8 +11,8 @@
 	<license>GNU/GPL</license>
 	<version>1.0</version>
 	<menu>
-		<menuItem name="Account" />
-		<menuItem name="Preferences" url="preferences" />
+		<menuItem label="Account" />
+		<menuItem label="Preferences" url="preferences" />
 	</menu>
 	<actions>
 		<action name="signIn" url="signIn" global="true" script="users.groovy" method="signIn" />

@@ -3,6 +3,7 @@ package org.metamorphosis.core;
 public class MenuItem {
 
 	private String name;
+	private String label;
 	private String url;
 	private String title;
 	private boolean visible = true;
@@ -12,6 +13,12 @@ public class MenuItem {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getLabel() {
+		return label;
+	}
+	public void setLabel(String label) {
+		this.label = label;
 	}
 	public String getUrl() {
 		return url;

@@ -11,7 +11,7 @@
 	<license>GNU/GPL</license>
 	<version>1.0</version>
 	<menu>
-		<menuItem name="List" />
-		<menuItem name="Chart" url="chart" />
+		<menuItem label="List" />
+		<menuItem label="Chart" url="chart" />
 	</menu>
 </module>

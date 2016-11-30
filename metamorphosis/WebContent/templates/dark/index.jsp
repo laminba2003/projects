@@ -42,7 +42,7 @@
 		   	  <h1 class="icon-16">${module.name}</h1>
 		   	   <ul>
 		   	    <s:iterator value="#request.menu.menuItems">
-					<li><a href="${url}">${name}</a></li>
+					<li><a href="${url}">${label}</a></li>
 			   </s:iterator>
 			    </ul>
 		   </aside>
