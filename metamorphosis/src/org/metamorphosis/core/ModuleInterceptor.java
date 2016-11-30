@@ -33,9 +33,15 @@ public class ModuleInterceptor extends AbstractInterceptor {
 				if(module.getMenu()!=null) {
 					for(MenuItem item : module.getMenu().getMenuItems()) {
 						if(item.isVisible())items.add(item);
+						if(item.getName()!=null)
+							request.setAttribute(item.getName(),item.getUrl());
 					}
 				}
 				request.setAttribute("menu",new Menu(items));
+				for(Action action : module.getActions()) {
+					if(action.getName()!=null && !action.isGlobal())
+					request.setAttribute(action.getName(),module.getUrl()+"/"+action.getUrl());
+				}
 			}
 			return invocation.invoke();
 		}catch(Exception e) {

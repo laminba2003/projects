@@ -6,6 +6,7 @@ import java.util.List;
 public class Action {
 
 	private String name;
+	private boolean global;
 	private String url;
 	private String className="";
 	private String method="execute";
@@ -17,6 +18,12 @@ public class Action {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public boolean isGlobal() {
+		return global;
+	}
+	public void setGlobal(boolean global) {
+		this.global = global;
 	}
 	public String getUrl() {
 		return url;
