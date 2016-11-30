@@ -17,12 +17,12 @@ hr:first-of-type {
 
 input {
 	padding-left : 2px;
-	border : 1px solid #c3c3c3;
+	border: 1px solid #ffede6;
 }
 
 select {
 	padding : 2px;
-	border : 1px solid rgb(234, 133, 17);
+	border: 1px solid #ffede6;
 }
 
 input,select {
@@ -206,7 +206,7 @@ a {
 	font-size : 85%;
 	display : inline-block;
 	margin-left : 5px;
-	border : 1px solid rgb(234, 133, 17);
+	border: 1px solid #ffede6;
 	cursor : pointer;
 	color : #000;
 	background-color:#fff;
@@ -221,7 +221,7 @@ a {
 }
 
 .login input[type=text],.login input[type=password]{
-	border : 1px solid rgb(234, 133, 17);
+	border: 1px solid #ffede6;
 	height : 18px;
 	margin-top : 3px;
 	width : 146px;
@@ -243,12 +243,10 @@ a {
 }
 
 #search input { 
-	border:1px solid rgb(234, 133, 17);
 	background-image: url('../images/search.png');
 }
 
 #share input { 
-	border:1px solid rgb(234, 133, 17);
 	padding : 6px;
 	padding-left : 30px;
 	padding-right : 10px;
@@ -363,7 +361,7 @@ footer p {
 }
 .extension .info {
 	background : #fdfdfd;
-	border : 1px solid #feefdc;
+	border: 1px solid #ffede6;
 }
 
 .forum tbody tr:nth-child(odd) {
