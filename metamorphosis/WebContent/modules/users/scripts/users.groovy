@@ -5,9 +5,7 @@ class UserAction extends ActionSupport {
 	String id
 	
 	def signIn()  {
-		def module = moduleManager.main
-		def url = module ? request.contextPath+"/"+module.url : request.contextPath+"/"
-		response.sendRedirect(url)
+		moduleManager.signIn()
 	}
 	
 	def signOut() {

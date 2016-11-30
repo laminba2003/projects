@@ -3,11 +3,13 @@ package org.metamorphosis.core;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.digester.Digester;
 import org.apache.struts2.ServletActionContext;
 
@@ -185,6 +187,14 @@ public class ModuleManager {
 			if (module.isMain()) return module;
 		}
 		return getDefaultBackendModule();
+	}
+	
+	public void signIn() throws IOException {
+		Module module = getMain();
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String url = module!=null ? request.getContextPath()+"/"+module.getUrl() : request.getContextPath()+"/";
+		HttpServletResponse response = ServletActionContext.getResponse();
+		response.sendRedirect(url);
 	}
 
 }
