@@ -11,14 +11,14 @@
 	<license>GNU/GPL</license>
 	<version>1.0</version>
 	<menu>
-		<menuItem name="documentation" url="documentation" />
-		<menuItem name="download" url="download" />
-		<menuItem name="modules" url="modules" />
-		<menuItem name="templates" url="templates" />
-		<menuItem name="community" url="community" />
-		<menuItem name="contribute" url="contribute" />
-		<menuItem name="forum" url="forum" />
-		<menuItem name="discuss" url="discuss" />
+		<menuItem label="documentation" url="documentation" />
+		<menuItem label="download" url="download" />
+		<menuItem label="modules" url="modules" />
+		<menuItem label="templates" url="templates" />
+		<menuItem label="community" url="community" />
+		<menuItem label="contribute" url="contribute" />
+		<menuItem name="forum" label="forum" url="forum" />
+		<menuItem label="discuss" url="discuss" />
 	</menu>
 	<actions>
 		<action name="forum_message" url="forum/message">

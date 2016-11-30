@@ -11,8 +11,8 @@
 	<license>GNU/GPL</license>
 	<version>1.0</version>
 	<menu>
-		<menuItem name="Modules"/>
-		<menuItem name="Templates" url="templates"/>
+		<menuItem label="Modules"/>
+		<menuItem label="Templates" url="templates"/>
 	</menu>
 	<actions>
 		<action name="modules_edit" url="modules/edit" script="module.groovy">

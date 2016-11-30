@@ -2,9 +2,9 @@
 <script src="${js}/ckeditor/ckeditor.js"></script>
 <div id="content" class="forum">
 <h2>Compose
-<a href="${module.url}/forum" title="messages" class="forum-16">Messages</a>
+<a href="${forum}" title="messages" class="forum-16">Messages</a>
 </h2>
-<form action="${module.url}/forum">
+<form action="${forum}">
 <div class="forum-message">
   		 <div id="title">
 			<span>Title : </span>

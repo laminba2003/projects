@@ -11,12 +11,12 @@
 	<license>GNU/GPL</license>
 	<version>1.0</version>
 	<menu>
-		<menuItem name="Account" />
-		<menuItem name="Preferences" url="preferences" />
+		<menuItem label="Account" />
+		<menuItem label="Preferences" url="preferences" />
 	</menu>
 	<actions>
-		<action name="signIn" url="signIn" script="users.groovy" method="signIn" />
-		<action name="signOut" url="signOut" script="users.groovy" method="signOut">
+		<action name="signIn" url="signIn" global="true" script="users.groovy" method="signIn" />
+		<action name="signOut" url="signOut" global="true" script="users.groovy" method="signOut">
 			<result type="redirect">/</result>
 		</action>
 		<action name="selectTemplate" url="preferences/templates/select"  script="users.groovy" method="selectTemplate"/>
