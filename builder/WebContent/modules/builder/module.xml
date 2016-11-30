@@ -12,7 +12,7 @@
 	<version>1.0</version>
 	<menu>
 		<menuItem name="Modules"/>
-		<menuItem name="Templates" action="templates"/>
+		<menuItem name="Templates" url="templates"/>
 	</menu>
 	<actions>
 		<action name="modules_edit" url="modules/edit" script="module.groovy">
