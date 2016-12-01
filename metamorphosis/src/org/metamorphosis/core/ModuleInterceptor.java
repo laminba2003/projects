@@ -35,12 +35,20 @@ public class ModuleInterceptor extends AbstractInterceptor {
 						if(item.isVisible())items.add(item);
 						if(item.getName()!=null)
 							request.setAttribute(item.getName(),item.getUrl());
+						if(item.getUrl().equals(actionURI) && item.getTitle()!=null) {
+							request.setAttribute("title",item.getTitle());
+						}
 					}
 				}
 				request.setAttribute("menu",new Menu(items));
 				for(Action action : module.getActions()) {
-					if(action.getName()!=null && !action.isGlobal())
-					request.setAttribute(action.getName(),module.getUrl()+"/"+action.getUrl());
+					String url = module.getUrl()+"/"+action.getUrl();
+					if(action.getName()!=null && !action.isGlobal()) {
+					  request.setAttribute(action.getName(),url);
+					}
+					if(action.getUrl().equals(url) && action.getTitle()!=null) {
+						request.setAttribute("title",action.getTitle());
+					}
 				}
 			}
 			return invocation.invoke();

@@ -12,7 +12,7 @@
 	<license>GNU/GPL</license>
 	<version>1.0</version>
 	<menu>
-		<menuItem label="Users" />
+		<menuItem label="Users" title="Users"/>
 		<menuItem label="Groups" url="groups" />
 		<menuItem label="Modules" url="modules" />
 		<menuItem label="Templates" url="templates" />
