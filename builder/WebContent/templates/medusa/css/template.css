@@ -293,7 +293,7 @@ li {
 
 .login a:first-of-type {
 	margin-left : 70px;
-	border-right : 1px solid #c7c7c7;
+	border-right : 1px solid #ffede6;
 	padding-right : 5px;
 	background-image: url('../images/user-16.png');
 	padding-left : 16px;
@@ -400,10 +400,15 @@ footer p {
 	background-repeat : no-repeat;
 	background-position : 20% 56%;
 	border: 1px solid #ffede6;
+	color : rgb(234, 133, 17);
 }
 
 .forum-message .editor,.forum-message input[type=text]{
 	border: 1px solid #ffede6;
+}
+
+.forum-message #title span {
+	color : rgb(234, 133, 17);
 }
 
 .chat-left,.chat textarea,.chat-right {
