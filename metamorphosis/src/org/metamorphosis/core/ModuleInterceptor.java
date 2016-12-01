@@ -24,8 +24,8 @@ public class ModuleInterceptor extends AbstractInterceptor {
 				request.setAttribute("modules",moduleManager.getVisibleModules(module.getType()));
 				request.setAttribute("module",module);
 				String uri = request.getRequestURI();
-				String actionURI = uri.substring(request.getContextPath().length()+1,uri.length());
-				request.setAttribute("title",actionURI);
+				String actionURL = uri.substring(request.getContextPath().length()+1,uri.length());
+				request.setAttribute("title",actionURL);
 				request.setAttribute("js","modules/"+module.getId()+"/js");
 				request.setAttribute("css","modules/"+module.getId()+"/css");
 				request.setAttribute("images","modules/"+module.getId()+"/images");
@@ -35,7 +35,7 @@ public class ModuleInterceptor extends AbstractInterceptor {
 						if(item.isVisible())items.add(item);
 						if(item.getName()!=null)
 							request.setAttribute(item.getName(),item.getUrl());
-						if(item.getUrl().equals(actionURI) && item.getTitle()!=null) {
+						if(item.getUrl().equals(actionURL) && item.getTitle()!=null) {
 							request.setAttribute("title",item.getTitle());
 						}
 					}
@@ -46,7 +46,7 @@ public class ModuleInterceptor extends AbstractInterceptor {
 					if(action.getName()!=null && !action.isGlobal()) {
 					  request.setAttribute(action.getName(),url);
 					}
-					if(action.getUrl().equals(url) && action.getTitle()!=null) {
+					if(url.equals(actionURL) && action.getTitle()!=null) {
 						request.setAttribute("title",action.getTitle());
 					}
 				}
