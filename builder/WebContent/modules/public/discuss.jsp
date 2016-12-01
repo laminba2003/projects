@@ -7,6 +7,7 @@
 	<option value="general">general</option>
 	<option value="developers">developers</option>
 	<option value="designers">designers</option>
+	<option value="architects">architects</option>
 </select>
 </h2>
 	<div class="chat-left">
