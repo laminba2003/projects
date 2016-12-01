@@ -510,7 +510,7 @@ footer p {
 	margin-bottom : 0.5em;
 }
 
-.confirm-dialog-container {
+.confirm-dialog-container, .alert-dialog-container{
 	position : absolute;
 	width : 100%;
 	height : 100%;
@@ -521,7 +521,7 @@ footer p {
 	padding-top : 14%;
 	display : none;
 }
-.confirm-dialog {
+.confirm-dialog,.alert-dialog {
 	
 	background : #fcfdff;
 	border : 1px solid rgb(86, 182, 255);
@@ -533,7 +533,7 @@ footer p {
 	padding : 0;
 }
 
-.confirm-dialog-title {
+.confirm-dialog-title,.alert-dialog-title {
 	text-align : left;
 	width : 100%;
 	display : block;
@@ -543,13 +543,13 @@ footer p {
 	padding-left : 10px;
 }
 
-.confirm-dialog-message {
+.confirm-dialog-message,.alert-dialog-message {
 	display : block;
 	font-size : 75%;
 	padding : 15px;
 }
 
-.confirm-dialog-button {
+.confirm-dialog-button,.alert-dialog-button {
 	display : block;
 	font-size : 75%;
 	border : 1px solid rgb(10, 136, 247);

@@ -488,7 +488,10 @@ page.confirmDialog.confirm = function(callback) {
 	
 };
 
-
+var alert = function(message) {
+	$(".alert-dialog-message").html(message);
+	$(".alert-dialog-container").show();
+};
 app.ready(function(){
 	
 	var array = window.location.pathname.split( '/' );
@@ -528,8 +531,19 @@ app.ready(function(){
 			'<a id="confirm-dialog-cancel" tabindex="2" class="confirm-dialog-button">Cancel</a>'+
 			'<a id="confirm-dialog-ok" tabindex="1" class="confirm-dialog-button">OK</a></div></div>');
 	
+	$("body").append('<div class="alert-dialog-container">'+
+			'<div class="alert-dialog">'+
+			'<span class="alert-dialog-title">Alert</span>'+
+			'<span class="alert-dialog-message"></span>'+
+			'<a id="alert-dialog-ok" tabindex="1" class="alert-dialog-button">OK</a></div></div>');
+
+	
 	$("#confirm-dialog-cancel").click(function(event){
 		$(".confirm-dialog-container").hide();
+	});
+	
+	$("#alert-dialog-ok").click(function(event){
+		$(".alert-dialog-container").hide();
 	});
 	
 	 $(".confirm-dialog-container").on('keydown', function (e) {     
@@ -552,6 +566,7 @@ app.ready(function(){
 		$("#contextmenu").hide();
 		$("tr.focus").removeClass("focus");
 	}).append("<div class='wait'/>");
+	
 });
 
 jQuery.fn.shake =
