@@ -422,6 +422,15 @@ footer p {
 	font-size : 95%;
 }
 
+.alert-dialog-message {
+	font-size : 95%;
+	background-image: url('../images/info-16.png');
+	background-repeat : no-repeat;
+	background-position : 12px 56%;
+	text-align : left;
+	padding-left : 30px;
+}
+
 .slider {
 	background:rgba(34,34,34,0.6);
 	padding-top : 5px;
