@@ -31,7 +31,7 @@ You can also browse through the API documentation to get an architectural view.
 <hr/>
 <h2>IDE Support</h2>
 <p>
-Find <a>here</a> how to create a project and deploy it in the Cloud with your favourite IDE (<a href="http://www.eclipse.org/" target="_blank">Eclipse</a>, <a href="https://netbeans.org/" target="_blank">NetBeans</a>, <a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA</a> or using our <a>Cloud IDE</a>).
+Find <a>here</a> how to create a project and deploy it in the Cloud with your favourite IDE (<a href="http://www.eclipse.org/" target="_blank">Eclipse</a>, <a href="https://netbeans.org/" target="_blank">NetBeans</a>, <a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA</a>) or using our Cloud IDE.
 </p>
 <hr/>
 <h2>Examples</h2>
