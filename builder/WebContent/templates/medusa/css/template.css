@@ -38,10 +38,9 @@ h1 {
     line-height: 0.7em;
 	background-color:rgba(44,44,44,0.8);
 	font-family : Orbitron;
-	border-top : 1px solid #c3c3c3;
-    border-bottom : 1px solid #c3c3c3;
-	border-left:none;
-	border-right:none;
+	border: 1px solid #ffede6;
+	border-left : none;
+	border-right : none;
 	text-align : left;
 	position:relative;
 	color : #fff3d5;
@@ -91,7 +90,7 @@ header {
 	height : 4.5em;
 	padding : 0em;
 	background : #fffef5;
-	border: 1px solid rgb(234, 133, 17);
+	border: 1px solid #ffede6;
 }
 
 b {
@@ -326,8 +325,9 @@ footer {
     padding: 8px;
     font-family : Itim;
     font-size : 70%;
-    border-top : 1px solid rgb(234, 133, 17);
-    border-bottom : 1px solid rgb(234, 133, 17);
+    border: 1px solid #ffede6;
+	border-left : none;
+	border-right : none;
     position : fixed;
     bottom :0;
     width : 100%;
