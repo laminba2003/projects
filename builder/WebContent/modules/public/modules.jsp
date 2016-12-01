@@ -31,7 +31,7 @@
 	   
 	      <div class="extension">
 	      <a>
-		  	<img title="click for more details" src="${images}/module-128.png"/>
+		  	<img src="${images}/module-128.png"/>
 		  </a>
 		  <div class="info">
 		      <span class="extension-name">${name} <a title="downlad" class="download-16"></a><a title="copy link" class="link-16"></a><a title="details" class="info-16"></a></span>
@@ -43,17 +43,6 @@
 		  </div>
 		  <div class="extension-description">${description!=null ? description : "no description provided"}</div>
 		  <div class="extension-description"><b>Tags</b> : <i>jsp, html, css, js, groovy</i></div>
-		  <div class="extensionDetails">
-		          <span>Name : ${name}</span>
-		          <span>Type : ${type}</span>
-				  <span>Author : ${author}</span>
-				  <span>Author Email : ${authorEmail}</span>
-				  <span>Author Url : ${authorUrl}</span>
-				  <span>Creation Date : ${creationDate}</span>
-				  <span>Copyright : ${copyright}</span>
-				  <span>License : ${license}</span>
-				  <span>Version : ${version}</span>
-		 </div>
 		</div>
 		
 	   </s:iterator>
