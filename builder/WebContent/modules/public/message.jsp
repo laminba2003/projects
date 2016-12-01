@@ -11,7 +11,7 @@
 			<input type="text"/>
 		 </div>
 		 <div class="editor">
-			<textarea  id="editor1"></textarea>
+			<textarea  id="editor"></textarea>
 		</div><br/>
 		<div>	
 			<input type="submit" title="send" value="Send" />
@@ -23,7 +23,7 @@
 	app.ready(function(){
 		app.wait();
 		CKEDITOR.config.skin = 'moono-dark';
-		CKEDITOR.replace('editor1');
+		CKEDITOR.replace('editor');
 		CKEDITOR.on("instanceReady",function() {
 			app.release();
 		});
