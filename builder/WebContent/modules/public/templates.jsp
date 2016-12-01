@@ -1,6 +1,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <h1 class="templates-16">Templates</h1>
-<div id="extensions">
+<div id="extensions-list">
+<div id="extensions-actions">
 <span class="templates-16">category :</span>
 <select>
  <option>application</option>
@@ -24,6 +25,7 @@
 <span>Share : </span>
 <input type="file" title="browse" accept="application/zip"/>
 <input type="submit" title="upload" value="Upload"/>
+</div>
 </div>
 <fieldset class="extensions-details">
 	<div id="extensions">

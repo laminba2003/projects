@@ -334,10 +334,19 @@ footer p {
 	text-align : center;
 }
 
-#extensions span:first-of-type {
+#extensions-list {
+	width : 80%;
+	margin : auto;
+}
+#extensions-actions {
+	font-size : 90%;
+	width : 88%;
+	margin : auto;
+}
+#extensions-actions span:first-of-type {
 	background-repeat : no-repeat;
 	padding-left : 18px;
-	background-position : 0px 0px;
+	background-position : 0px 1px;
 }
 
  .extension-description i {
@@ -348,15 +357,8 @@ footer p {
 	border: 1px solid #ffede6;
 }
 
-.extensionDetails {
-	background-color : rgb(250,250,250,0.5);
-}
-
-#extensions .extensionDetails span:first-of-type {
-	padding-left : 0px;
-}
 .extension .info {
-	background : #fdfdfd;
+	background : #fff;
 	border: 1px solid #ffede6;
 }
 
