@@ -372,7 +372,7 @@ footer p {
 }
 
 .forum > h2,.chat > h2 {
-	background:rgb(86,186,202);
+	background : rgb(86, 182, 222);
 	color : #fff3d5;
 	border: 1px solid #ffede6;
 	font-size : 90%;
@@ -384,8 +384,9 @@ footer p {
 
 .forum th,.chat-right h2 {
 	border: 1px solid #ffede6;
-	background:rgb(86,186,202);
-	color : #fff;
+	background : #fffef5;
+	color : #000;
+	font-weight : 400;
 }
 
 .forum-message input[type=submit],#do-chat{
