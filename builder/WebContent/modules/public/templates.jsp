@@ -41,8 +41,6 @@
 		  <span>${author}</span>
 		  <span>type : ${type}</span>
 		  <span>version : ${version}</span>
-		  <span>License : ${license}</span>
-		  <span>downloads : 15600</span>
 		  </div>
 		  <div class="extension-description">${description!=null ? description : "no description provided"}</div>
 		  <div class="extension-description"><b>Tags</b> : <i>jsp, html, css, js</i></div>

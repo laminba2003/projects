@@ -357,11 +357,6 @@ footer p {
 	border: 1px solid #ffede6;
 }
 
-.extension .info {
-	background : #fff;
-	border: 1px solid #ffede6;
-}
-
 .forum tbody tr:nth-child(odd) {
    background : rgb(255, 255, 255);
 }
