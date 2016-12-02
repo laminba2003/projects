@@ -3,7 +3,6 @@ package org.metamorphosis.core;
 
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -18,7 +17,6 @@ import java.util.logging.Logger;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.digester.Digester;
 import org.apache.struts2.ServletActionContext;
 
@@ -250,12 +248,4 @@ public class ModuleManager {
 		return getDefaultBackendModule();
 	}
 	
-	public void signIn() throws IOException {
-		Module module = getMain();
-		HttpServletRequest request = ServletActionContext.getRequest();
-		String url = module!=null ? request.getContextPath()+"/"+module.getUrl() : request.getContextPath()+"/";
-		HttpServletResponse response = ServletActionContext.getResponse();
-		response.sendRedirect(url);
-	}
-
 }
