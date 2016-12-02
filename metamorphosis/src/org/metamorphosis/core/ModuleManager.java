@@ -119,7 +119,7 @@ public class ModuleManager {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public void monitorModule(Module module) {
+	private void monitorModule(Module module) {
 		try {
 			WatchService watcher = FileSystems.getDefault().newWatchService();
 			Path dir = Paths.get(module.getFolder().getAbsolutePath());
