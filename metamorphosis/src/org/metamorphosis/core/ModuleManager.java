@@ -19,11 +19,16 @@ import javax.script.ScriptEngineManager;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.digester.Digester;
 import org.apache.struts2.ServletActionContext;
+import com.opensymphony.xwork2.config.Configuration;
+import com.opensymphony.xwork2.config.entities.ActionConfig;
+import com.opensymphony.xwork2.config.entities.PackageConfig;
+import com.opensymphony.xwork2.config.entities.ResultConfig;
 
 public class ModuleManager {
 
 	private List<Module> modules = new ArrayList<Module>();
     private Logger logger = Logger.getLogger(ModuleManager.class.getName());
+    private Configuration configuration;
     
 	private Module parse(File metadata) throws Exception {
 		Digester digester = new Digester();
@@ -138,15 +143,37 @@ public class ModuleManager {
 			        } else if (kind == ENTRY_CREATE) {
 			        	if(fileName.equals("module.xml")) {
 			        	   try {
-			        		   logger.log(Level.INFO,"reloading module  : " + module.getName());
-				        	   File folder = module.getFolder();
-				        	   int index = module.getIndex();
-				        	   module = parse(new File(folder + "/module.xml"));
-							   module.setFolder(folder);
-							   module.setId(folder.getName());
-							   module.setIndex(index);
-							   initModule(module,false);
-							   modules.set(index, module);
+			        		   if(configuration!=null) {
+				        		   logger.log(Level.INFO,"reloading module  : " + module.getName());
+					        	   File folder = module.getFolder();
+					        	   int index = module.getIndex();
+					        	   String id = module.getId();
+					        	   module = parse(new File(folder + "/module.xml"));
+								   module.setFolder(folder);
+								   module.setId(folder.getName());
+								   module.setIndex(index);
+								   initModule(module,false);
+								   modules.set(index, module);
+								   configuration.removePackageConfig(id);
+								   PackageConfig.Builder packageBuilder = new PackageConfig.Builder(module.getId());
+								   packageBuilder.namespace("/"+module.getUrl());
+								   packageBuilder.addParent(configuration.getPackageConfig("root"));
+								   if(module.getMenu()!=null) {
+										for(MenuItem item : module.getMenu().getMenuItems()) {
+											if(!item.getUrl().equals(module.getUrl())) {
+												String url = item.getUrl().substring(module.getUrl().length()+1);
+												ActionConfig.Builder actionBuilder = new ActionConfig.Builder(module.getId(),url,null);
+												actionBuilder.addResultConfig(new ResultConfig.Builder("success","org.apache.struts2.views.tiles.TilesResult").build());
+												ActionConfig actionConfig = actionBuilder.build();
+												packageBuilder.addActionConfig(url, actionConfig);
+												// to do set the tiles
+											}
+										}
+									}
+								   PackageConfig packageConfig = packageBuilder.build();
+								   configuration.addPackageConfig(module.getId(), packageConfig);
+								   configuration.rebuildRuntimeConfiguration();
+			        		   }
 			        	   } catch (Exception e) {
 			       				e.printStackTrace();
 			       			}
@@ -248,6 +275,14 @@ public class ModuleManager {
 			if (module.isMain()) return module;
 		}
 		return getDefaultBackendModule();
+	}
+
+	public Configuration getConfiguration() {
+		return configuration;
+	}
+
+	public void setConfiguration(Configuration configuration) {
+		this.configuration = configuration;
 	}
 	
 }
