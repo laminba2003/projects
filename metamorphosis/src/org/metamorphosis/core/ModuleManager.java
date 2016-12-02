@@ -4,8 +4,17 @@ package org.metamorphosis.core;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.WatchEvent;
+import java.nio.file.WatchKey;
+import java.nio.file.WatchService;
+import static java.nio.file.StandardWatchEventKinds.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +25,8 @@ import org.apache.struts2.ServletActionContext;
 public class ModuleManager {
 
 	private List<Module> modules = new ArrayList<Module>();
-
+    private Logger logger = Logger.getLogger(ModuleManager.class.getName());
+    
 	private Module parse(File metadata) throws Exception {
 		Digester digester = new Digester();
 		digester.setValidating(false);
@@ -63,11 +73,16 @@ public class ModuleManager {
 					File metadata = new File(folder + "/module.xml");
 					if (metadata.exists()) {
 						try {
-							Module module = parse(metadata);
+							final Module module = parse(metadata);
 							module.setFolder(folder);
 							module.setId(folder.getName());
-							initModule(module);
+							initModule(module,true);
 							addModule(module);
+							new Thread(new Runnable(){
+								public void run() {
+									monitorModule(module);
+								}
+							}).start();
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -78,30 +93,75 @@ public class ModuleManager {
 		orderModules();
 	}
 
-	private void initModule(Module module) throws Exception {
+	private void initModule(Module module,boolean runScript) throws Exception {
 		if (module.getUrl() == null)
-			module.setUrl(module.getFolder().getName().toLowerCase());
+			module.setUrl(module.getFolder().getName());
 		if (module.getMenu() != null) {
 			for (MenuItem item : module.getMenu().getMenuItems()) {
-				if (item.getUrl() != null) {
-					item.setUrl(module.getUrl() + "/" + item.getUrl());
-				} else {
-					item.setUrl(module.getUrl());
-				}
+				String url = item.getUrl() != null ? module.getUrl() + "/" + item.getUrl() : module.getUrl();
+				item.setUrl(url);
 			}
 		}
-		File script = new File(module.getFolder() + "/scripts/init.groovy");
-		script = script.exists() ? script : new File(module.getFolder() + "/scripts/" + module.getScript());
-		if (script.exists()) {
-			String name = script.getName();
-			String extension = name.substring(name.indexOf(".") + 1);
-			ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(extension);
-			engine.eval(new FileReader(script));
+		if(runScript) {
+			File script = new File(module.getFolder() + "/scripts/init.groovy");
+			script = script.exists() ? script : new File(module.getFolder() + "/scripts/" + module.getScript());
+			if (script.exists()) {
+				String name = script.getName();
+				String extension = name.substring(name.indexOf(".") + 1);
+				ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(extension);
+				engine.eval(new FileReader(script));
+			}
 		}
 	}
 
 	private void orderModules() {
 
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void monitorModule(Module module) {
+		try {
+			WatchService watcher = FileSystems.getDefault().newWatchService();
+			Path dir = Paths.get(module.getFolder().getAbsolutePath());
+			dir.register(watcher, ENTRY_CREATE);
+			while (true) {
+			    WatchKey key;
+			    try {
+			        key = watcher.take();
+			    } catch (InterruptedException ex) {
+			        return;
+			    }
+			    for (WatchEvent<?> event : key.pollEvents()) {
+			        WatchEvent.Kind<?> kind = event.kind();
+			        WatchEvent<Path> ev = (WatchEvent<Path>) event;
+			        String fileName = ev.context().toString();
+			        if (kind == OVERFLOW) {
+			            continue;
+			        } else if (kind == ENTRY_CREATE) {
+			        	if(fileName.equals("module.xml")) {
+			        	   try {
+			        		   logger.log(Level.INFO,"reloading module  : " + module.getName());
+				        	   File folder = module.getFolder();
+				        	   module = parse(new File(folder + "/module.xml"));
+							   module.setFolder(folder);
+							   module.setId(folder.getName());
+							   initModule(module,false);
+							   modules.set(module.getIndex(), module);
+			        	   } catch (Exception e) {
+			       				e.printStackTrace();
+			       			}
+			        	}
+			        	break;
+			        }
+			    }
+			    boolean valid = key.reset();
+			    if (!valid) {
+			        break;
+			    }
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public Module getCurrentModule() {
@@ -147,6 +207,7 @@ public class ModuleManager {
 	}
 
 	public void addModule(Module module) {
+		module.setIndex(modules.size());
 		modules.add(module);
 	}
 

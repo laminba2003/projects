@@ -16,6 +16,7 @@ public abstract class Extension {
 	protected String version;
 	protected String description;
 	protected File folder;
+	protected int index;
 	
 	public String getId() {
 		return id;
@@ -96,6 +97,13 @@ public abstract class Extension {
 	
 	public boolean isFrontend() {
 		return type.equals("front-end") || type.equals("both");
+	}
+	
+	public int getIndex() {
+		return index;
+	}
+	public void setIndex(int index) {
+		this.index = index;
 	}
 	
 }
