@@ -140,12 +140,13 @@ public class ModuleManager {
 			        	   try {
 			        		   logger.log(Level.INFO,"reloading module  : " + module.getName());
 				        	   File folder = module.getFolder();
+				        	   int index = module.getIndex();
 				        	   module = parse(new File(folder + "/module.xml"));
 							   module.setFolder(folder);
 							   module.setId(folder.getName());
+							   module.setIndex(index);
 							   initModule(module,false);
-							   modules.remove(module.getIndex());
-							   addModule(module);
+							   modules.set(index, module);
 			        	   } catch (Exception e) {
 			       				e.printStackTrace();
 			       			}
