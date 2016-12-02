@@ -162,13 +162,41 @@ public class ModuleManager {
 										for(MenuItem item : module.getMenu().getMenuItems()) {
 											if(!item.getUrl().equals(module.getUrl())) {
 												String url = item.getUrl().substring(module.getUrl().length()+1);
-												ActionConfig.Builder actionBuilder = new ActionConfig.Builder(module.getId(),url,null);
-												actionBuilder.addResultConfig(new ResultConfig.Builder("success","org.apache.struts2.views.tiles.TilesResult").build());
+												ActionConfig.Builder actionBuilder = new ActionConfig.Builder(url,url,null);
+												ResultConfig.Builder resultBuilder = new ResultConfig.Builder("success","org.apache.struts2.views.tiles.TilesResult");
+												resultBuilder.addParam("location", item.getUrl());
+												actionBuilder.addResultConfig(resultBuilder.build());
 												ActionConfig actionConfig = actionBuilder.build();
 												packageBuilder.addActionConfig(url, actionConfig);
-												// to do set the tiles
 											}
 										}
+								   }
+								   for(Action action : module.getActions()) {
+									   ActionConfig.Builder actionBuilder = new ActionConfig.Builder(action.getUrl(),action.getUrl(),action.getClassName());
+									   actionBuilder.methodName(action.getMethod());
+										for(Result result : action.getResults()) {
+											if(!result.getValue().equals("") && !result.getValue().startsWith("/")) {
+												result.setValue(module.getUrl()+"/"+result.getValue());
+											}
+											String type = result.getType();
+											ResultConfig.Builder resultBuilder=null;
+											if(type.equals("tiles")) {
+												resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.views.tiles.TilesResult");
+											}else if(type.equals("redirect")) {
+												resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.dispatcher.ServletRedirectResult");
+											}else if(type.equals("redirectAction")) {
+												resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.dispatcher.ServletActionRedirectResult");
+											}
+											else if(type.equals("dispatcher")) {
+												resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.dispatcher.ServletDispatcherResult");
+											}
+											if(resultBuilder!=null) {
+											   resultBuilder.addParam("location", result.getValue());
+											   actionBuilder.addResultConfig(resultBuilder.build());
+											}
+										}
+										ActionConfig actionConfig = actionBuilder.build();
+										packageBuilder.addActionConfig(action.getUrl(), actionConfig);
 									}
 								   PackageConfig packageConfig = packageBuilder.build();
 								   configuration.addPackageConfig(module.getId(), packageConfig);
