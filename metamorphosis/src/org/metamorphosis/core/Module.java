@@ -12,6 +12,7 @@ public class Module extends Extension {
 	private boolean administrable = true;
 	private String home = "index.jsp";
 	private String script;
+	protected int index;
 	private Menu menu;
 	private List<Action> actions = new ArrayList<Action>();
 
@@ -61,6 +62,13 @@ public class Module extends Extension {
 
 	public void setHome(String home) {
 		this.home = home;
+	}
+	
+	public int getIndex() {
+		return index;
+	}
+	public void setIndex(int index) {
+		this.index = index;
 	}
 
 	public String getScript() {
