@@ -36,7 +36,7 @@ Find <a>here</a> how to create a project and deploy it in the Cloud with your fa
 <hr/>
 <h2>Examples</h2>
 <p>
-You can browse <a>here</a> a vast collection of real-world examples like this <a href="http://env-3687617.mircloud.host/app/" target="_blank">CRM application</a> hosted on <a href="https://jelastic.cloud/details/mirhosting" target="_blank">MIRhosting</a> <br/> which interacts with <a href="https://nodejs.org/en/" target="_blank">Node.js</a> through REST and CORS.
+You can browse <a>here</a> a vast collection of real-world examples like this <a href="http://env-3687617.mircloud.host/app/" target="_blank">CRM application</a> hosted on <a href="https://mirhosting.com/en/cloud" target="_blank">MIRhosting</a> <br/> which interacts with <a href="https://nodejs.org/en/" target="_blank">Node.js</a> through REST and CORS.
 </p>
 </article>
 </div>
