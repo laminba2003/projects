@@ -145,7 +145,7 @@ public class ModuleManager {
 							   module.setId(folder.getName());
 							   initModule(module,false);
 							   modules.remove(module.getIndex());
-							   modules.set(module.getIndex(), module);
+							   addModule(module);
 			        	   } catch (Exception e) {
 			       				e.printStackTrace();
 			       			}
