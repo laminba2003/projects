@@ -132,8 +132,8 @@ public class StartupListener implements ServletContextListener {
 				"<!DOCTYPE struts PUBLIC '-//Apache Software Foundation//DTD Struts Configuration 2.0//EN' "+
 				"'http://struts.apache.org/dtds/struts-2.0.dtd'>"+
 				"<struts><package name='"+module.getId()+"' namespace='/"+module.getUrl()+"' extends='root'>";
-		if(module.getMenu()!=null) {
-			for(MenuItem item : module.getMenu().getMenuItems()) {
+		for(Menu menu : module.getMenus()) {
+			for(MenuItem item : menu.getMenuItems()) {
 				if(!item.getUrl().equals(module.getUrl())) {
 					String url = item.getUrl().substring(module.getUrl().length()+1);
 					content+="<action name='"+url+"'>";

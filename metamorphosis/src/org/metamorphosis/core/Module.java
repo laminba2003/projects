@@ -13,7 +13,7 @@ public class Module extends Extension {
 	private String home = "index.jsp";
 	private String script;
 	protected int index;
-	private Menu menu;
+	private List<Menu> menus = new ArrayList<Menu>();
 	private List<Action> actions = new ArrayList<Action>();
 
 	public int getOrder() {
@@ -79,12 +79,16 @@ public class Module extends Extension {
 		this.script = script;
 	}
 
-	public Menu getMenu() {
-		return menu;
+	public List<Menu> getMenus() {
+		return menus;
 	}
 
-	public void setMenu(Menu menu) {
-		this.menu = menu;
+	public void setMenus(List<Menu> menus) {
+		this.menus = menus;
+	}
+	
+	public void addMenu(Menu menu) {
+		menus.add(menu);
 	}
 
 	public List<Action> getActions() {

@@ -5,10 +5,17 @@ import java.util.List;
 
 public class Menu {
 
+	private String position;
 	private List<MenuItem> menuItems = new ArrayList<MenuItem>();
 
 	public Menu() {
 		
+	}
+	public String getPosition() {
+		return position;
+	}
+	public void setPosition(String position) {
+		this.position = position;
 	}
 	public Menu(List<MenuItem> menuItems) {
 		this.menuItems=menuItems;

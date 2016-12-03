@@ -52,11 +52,12 @@ public class ModuleManager {
 		digester.addBeanPropertySetter("module/copyright");
 		digester.addBeanPropertySetter("module/license");
 		digester.addBeanPropertySetter("module/version");
-		digester.addObjectCreate("module/menu", Menu.class);
-		digester.addObjectCreate("module/menu/menuItem", MenuItem.class);
-		digester.addSetProperties("module/menu/menuItem");
-		digester.addSetNext("module/menu/menuItem", "addMenuItem");
-		digester.addSetNext("module/menu", "setMenu");
+		digester.addObjectCreate("module/menus/menu", Menu.class);
+		digester.addSetProperties("module/menus/menu");
+		digester.addObjectCreate("module/menus/menu/menuItem", MenuItem.class);
+		digester.addSetProperties("module/menus/menu/menuItem");
+		digester.addSetNext("module/menus/menu/menuItem", "addMenuItem");
+		digester.addSetNext("module/menus/menu", "addMenu");
 		digester.addObjectCreate("module/actions/action", Action.class);
 		digester.addSetProperties("module/actions/action");
 		digester.addSetProperties("module/actions/action", "class", "className");
@@ -99,8 +100,8 @@ public class ModuleManager {
 	private void initModule(Module module,boolean runScript) throws Exception {
 		if (module.getUrl() == null)
 			module.setUrl(module.getFolder().getName());
-		if (module.getMenu() != null) {
-			for (MenuItem item : module.getMenu().getMenuItems()) {
+		for(Menu menu : module.getMenus()) {
+			for (MenuItem item : menu.getMenuItems()) {
 				String url = item.getUrl() != null ? module.getUrl() + "/" + item.getUrl() : module.getUrl();
 				item.setUrl(url);
 			}
@@ -158,8 +159,8 @@ public class ModuleManager {
 								   PackageConfig.Builder packageBuilder = new PackageConfig.Builder(module.getId());
 								   packageBuilder.namespace("/"+module.getUrl());
 								   packageBuilder.addParent(configuration.getPackageConfig("root"));
-								   if(module.getMenu()!=null) {
-										for(MenuItem item : module.getMenu().getMenuItems()) {
+								   for(Menu menu : module.getMenus())  {
+										for(MenuItem item : menu.getMenuItems()) {
 											if(!item.getUrl().equals(module.getUrl())) {
 												String url = item.getUrl().substring(module.getUrl().length()+1);
 												ActionConfig.Builder actionBuilder = new ActionConfig.Builder(url,url,null);
@@ -206,7 +207,6 @@ public class ModuleManager {
 			       				e.printStackTrace();
 			       			}
 			        	}
-			        	break;
 			        }
 			    }
 			    boolean valid = key.reset();

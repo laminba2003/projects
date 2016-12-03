@@ -10,8 +10,10 @@
 	<copyright>© 2016</copyright>
 	<license>GNU/GPL</license>
 	<version>1.0</version>
-	<menu>
-		<menuItem label="List" />
-		<menuItem label="Chart" url="chart" />
-	</menu>
+	<menus>
+		<menu>
+			<menuItem label="List" />
+			<menuItem label="Chart" url="chart" />
+		</menu>
+    </menus>
 </module>

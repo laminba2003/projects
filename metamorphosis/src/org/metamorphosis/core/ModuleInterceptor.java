@@ -36,8 +36,8 @@ public class ModuleInterceptor extends AbstractInterceptor {
 				request.setAttribute("css","modules/"+module.getId()+"/css");
 				request.setAttribute("images","modules/"+module.getId()+"/images");
 				List<MenuItem> items = new ArrayList<MenuItem>();
-				if(module.getMenu()!=null) {
-					for(MenuItem item : module.getMenu().getMenuItems()) {
+				for(Menu menu : module.getMenus())  {
+					for(MenuItem item : menu.getMenuItems()) {
 						if(item.isVisible())items.add(item);
 						if(item.getName()!=null)
 							request.setAttribute(item.getName(),item.getUrl());

@@ -10,10 +10,12 @@
 	<copyright>© 2016</copyright>
 	<license>GNU/GPL</license>
 	<version>1.0</version>
-	<menu>
-		<menuItem label="Account" />
-		<menuItem label="Preferences" url="preferences" />
-	</menu>
+	<menus>
+		<menu>
+			<menuItem label="Account" />
+			<menuItem label="Preferences" url="preferences" />
+		</menu>
+	</menus>
 	<actions>
 		<action name="signIn" url="signIn" global="true" script="users.groovy" method="signIn" />
 		<action name="signOut" url="signOut" global="true" script="users.groovy" method="signOut">
