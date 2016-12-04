@@ -10,10 +10,12 @@
 	<copyright>© 2016</copyright>
 	<license>GNU/GPL</license>
 	<version>1.0</version>
-	<menu>
-		<menuItem label="Modules"/>
-		<menuItem label="Templates" url="templates"/>
-	</menu>
+	<menus>
+		<menu>
+			<menuItem label="Modules"/>
+			<menuItem label="Templates" url="templates"/>
+		</menu>
+	</menus>
 	<actions>
 		<action name="modules_edit" url="modules/edit" script="module.groovy">
 		  <result>editor</result>

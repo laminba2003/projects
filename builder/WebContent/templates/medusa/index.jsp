@@ -26,8 +26,10 @@
 		   		</div>
 		         <div class="menu">
 		             <s:iterator value="#request.modules" var="current">
-		                 <s:iterator value="#current.menu.menuItems">
-		                  <a href="${url}" class="${label}-16" title="${label}">${label}</a>
+		                 <s:iterator value="#current.menus" var="menu">
+		                    <s:iterator value="#menu.menuItems">
+		                      <a href="${url}" class="${label}-16" title="${label}">${label}</a>
+		                     </s:iterator>
 		                </s:iterator>
 		            </s:iterator>
 		         </div>

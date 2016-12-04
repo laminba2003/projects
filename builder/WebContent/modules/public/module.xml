@@ -10,16 +10,18 @@
 	<copyright>© 2016</copyright>
 	<license>GNU/GPL</license>
 	<version>1.0</version>
-	<menu>
-		<menuItem label="documentation" url="documentation" />
-		<menuItem label="download" url="download" />
-		<menuItem label="modules" url="modules" />
-		<menuItem label="templates" url="templates" />
-		<menuItem label="community" url="community" />
-		<menuItem label="contribute" url="contribute" />
-		<menuItem name="forum" label="forum" url="forum" />
-		<menuItem label="discuss" url="discuss" />
-	</menu>
+	<menus>
+		<menu>
+			<menuItem label="documentation" url="documentation" />
+			<menuItem label="download" url="download" />
+			<menuItem label="modules" url="modules" />
+			<menuItem label="templates" url="templates" />
+			<menuItem label="community" url="community" />
+			<menuItem label="contribute" url="contribute" />
+			<menuItem name="forum" label="forum" url="forum" />
+			<menuItem label="discuss" url="discuss" />
+		</menu>
+	</menus>
 	<actions>
 		<action name="message" url="forum/message">
 			<result>message</result>
