@@ -139,6 +139,8 @@ public class ModuleManager {
 						 System.out.println(module.getUrl()+"/"+name);
 						 definition.setName(module.getUrl()+"/"+name);
 						 definition.setExtends(module.getUrl());
+						 definition.setTemplate("/templates/nova/index.jsp");
+						 definition.setPreparer("org.metamorphosis.core.PagePreparer");
 						 definition.putAttribute("content", new Attribute("/modules/"+module.getId()+"/"+file.getName()));
 						 container.register(definition,requestContext);
 						 System.out.println(container.getDefinition(module.getUrl()+"/"+name, requestContext));
