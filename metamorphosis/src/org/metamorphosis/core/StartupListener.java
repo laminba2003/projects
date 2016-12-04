@@ -40,14 +40,14 @@ public class StartupListener implements ServletContextListener {
 		TemplateManager templateManager = new TemplateManager();
 		templateManager.loadTemplates(new File(root+"/templates"));
 		context.setAttribute("templateManager",templateManager);
-		Template template = templateManager.getBackendTemplate(context.getInitParameter("back-end"));
+		Template template = templateManager.getBackendTemplate(null);
 		if(template==null) {
 			copyBackendTemplate(root);
 			template = templateManager.loadTemplate(new File(root+"/templates/nova"));
 		}
 		context.setAttribute("template",template.getId());
 		String tilesDefinitions = createTemplateTiles(root,template);
-		template = templateManager.getFrontendTemplate(context.getInitParameter("front-end"));
+		template = templateManager.getFrontendTemplate(null);
 		if(template==null) {
 			copyFrontendTemplate(root);
 			template = templateManager.loadTemplate(new File(root+"/templates/medusa"));
@@ -129,6 +129,7 @@ public class StartupListener implements ServletContextListener {
 	}
 
 	private String createModuleConfig(Module module) {
+		
 		String content = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"+
 				"<!DOCTYPE struts PUBLIC '-//Apache Software Foundation//DTD Struts Configuration 2.0//EN' "+
 				"'http://struts.apache.org/dtds/struts-2.0.dtd'>"+

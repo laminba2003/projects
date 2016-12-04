@@ -5,7 +5,6 @@ import org.apache.tiles.preparer.ViewPreparer;
 import com.opensymphony.xwork2.ActionContext;
 import java.io.IOException;
 import java.util.Map;
-import org.apache.struts2.ServletActionContext;
 import org.apache.tiles.AttributeContext;
 import org.apache.tiles.context.TilesRequestContext;
 
@@ -16,21 +15,32 @@ public class PagePreparer implements ViewPreparer {
 	public void execute(TilesRequestContext tilesContext, AttributeContext attributeContext) throws PreparerException {
 		
 		try {
-			Module module = (Module) ServletActionContext.getRequest().getAttribute("module");
 			Map application = (Map) ActionContext.getContext().get("application");
 			ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
+			TemplateManager templateManager = (TemplateManager) application.get("templateManager");
+			String id = (String) tilesContext.getSessionScope().get("template");
+			Template template = templateManager.getTemplate(id);
+			Module module = moduleManager.getCurrentModule();
 			if(module!=null && module.isBackend()) {
-				if(module.isReloaded())
+				template = template!=null && template.isBackend() ? template : templateManager.getBackendTemplate(null);
+				if(module.isReloaded()) {
 					try {
-						moduleManager.registerPages(module,tilesContext);
+						moduleManager.registerPages(module,template.getIndexPage(),tilesContext);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-				String id = (String) tilesContext.getSessionScope().get("template");
-				TemplateManager templateManager = (TemplateManager) application.get("templateManager");
-				Template template = templateManager.getTemplate(id);
-				if(template!=null && template.isBackend()) tilesContext.dispatch(template.getIndexPage());
-			}else {
+				}
+				tilesContext.dispatch(template.getIndexPage());
+			}else if(module!=null && module.isFrontend()) {
+				template = template!=null && template.isFrontend() ? template : templateManager.getFrontendTemplate(null);
+				if(module.isReloaded()) {
+					try {
+						moduleManager.registerPages(module,template.getIndexPage(),tilesContext);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+				tilesContext.dispatch(template.getIndexPage());
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
