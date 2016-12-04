@@ -30,6 +30,7 @@ public class StartupListener implements ServletContextListener {
 		struts2.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST,DispatcherType.FORWARD),true, "/*");
 		StringBuffer buffer = new StringBuffer(loadTemplates(context, root));
 		struts2.setInitParameter("config",loadModules(context, root, buffer));
+		context.setInitParameter("org.apache.tiles.factory.TilesContainerFactory","org.metamorphosis.core.TilesContainerFactory");
 		context.setInitParameter("org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG",buffer.toString());
 		new TilesListener().contextInitialized(event);
 		copyFiles(root);

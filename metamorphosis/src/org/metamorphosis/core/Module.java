@@ -10,6 +10,7 @@ public class Module extends Extension {
 	private boolean main;
 	private boolean visible = true;
 	private boolean administrable = true;
+	private boolean changed;
 	private String home = "index.jsp";
 	private String script;
 	protected int index;
@@ -118,6 +119,14 @@ public class Module extends Extension {
 
 	public String getPath() {
 		return "modules/" + folder.getName();
+	}
+
+	public boolean isChanged() {
+		return changed;
+	}
+
+	public void setChanged(boolean changed) {
+		this.changed = changed;
 	}
 
 }

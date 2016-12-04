@@ -19,6 +19,10 @@ import javax.script.ScriptEngineManager;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.digester.Digester;
 import org.apache.struts2.ServletActionContext;
+import org.apache.tiles.Attribute;
+import org.apache.tiles.Definition;
+import org.apache.tiles.access.TilesAccess;
+import org.apache.tiles.context.TilesRequestContext;
 import com.opensymphony.xwork2.config.Configuration;
 import com.opensymphony.xwork2.config.entities.ActionConfig;
 import com.opensymphony.xwork2.config.entities.PackageConfig;
@@ -29,6 +33,7 @@ public class ModuleManager {
 	private List<Module> modules = new ArrayList<Module>();
     private Logger logger = Logger.getLogger(ModuleManager.class.getName());
     private Configuration configuration;
+   
     
 	private Module parse(File metadata) throws Exception {
 		Digester digester = new Digester();
@@ -122,6 +127,27 @@ public class ModuleManager {
 
 	}
 	
+	public void rebuild(Module module,TilesRequestContext requestContext) throws Exception {
+		if(module.isChanged()) {
+			System.out.println("registering jsp pages");
+			CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(
+					ServletActionContext.getServletContext());
+			   for(File file : module.getFolder().listFiles()) {
+					if(file.isFile() && file.getName().endsWith(".jsp")) {
+						String name = file.getName().substring(0,file.getName().length()-4);
+						 Definition definition = new Definition();
+						 System.out.println(module.getUrl()+"/"+name);
+						 definition.setName(module.getUrl()+"/"+name);
+						 definition.setExtends(module.getUrl());
+						 definition.putAttribute("content", new Attribute("/modules/"+module.getId()+"/"+file.getName()));
+						 container.register(definition,requestContext);
+						 System.out.println(container.getDefinition(module.getUrl()+"/"+name, requestContext));
+					}
+				}
+			   module.setChanged(false);
+        }
+	 }
+	
 	@SuppressWarnings("unchecked")
 	private void monitorModule(Module module) {
 		try {
@@ -202,6 +228,7 @@ public class ModuleManager {
 								   PackageConfig packageConfig = packageBuilder.build();
 								   configuration.addPackageConfig(module.getId(), packageConfig);
 								   configuration.rebuildRuntimeConfiguration();
+								   module.setChanged(true);
 			        		   }
 			        	   } catch (Exception e) {
 			       				e.printStackTrace();
@@ -299,7 +326,7 @@ public class ModuleManager {
 	}
 
 	public Module getMain() {
-		for(Module module : this.modules) {
+		for(Module module : modules) {
 			if (module.isMain()) return module;
 		}
 		return getDefaultBackendModule();

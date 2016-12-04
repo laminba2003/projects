@@ -17,9 +17,18 @@ public class PagePreparer implements ViewPreparer {
 		
 		try {
 			Module module = (Module) ServletActionContext.getRequest().getAttribute("module");
+			Map application = (Map) ActionContext.getContext().get("application");
+			ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
 			if(module!=null && module.isBackend()) {
+				if(module.isChanged())
+					try {
+						moduleManager.rebuild(module,requestContext);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				String id = (String) requestContext.getSessionScope().get("template");
-				Map application = (Map) ActionContext.getContext().get("application");
+				
 				TemplateManager templateManager = (TemplateManager) application.get("templateManager");
 				Template template = templateManager.getTemplate(id);
 				if(template!=null && template.isBackend()) requestContext.dispatch("/templates/"+template.getId()+"/index.jsp");
