@@ -16,4 +16,8 @@ public class Template extends Extension {
 		return "templates/"+id+"/thumbnail.png";
 	}
 	
+	public String getIndexPage() {
+		return "/templates/"+id+"/index.jsp";
+	}
+	
 }

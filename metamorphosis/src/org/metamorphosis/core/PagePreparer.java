@@ -13,7 +13,7 @@ public class PagePreparer implements ViewPreparer {
 
 	@SuppressWarnings("rawtypes")
 	@Override
-	public void execute(TilesRequestContext requestContext, AttributeContext attributeContext) throws PreparerException {
+	public void execute(TilesRequestContext tilesContext, AttributeContext attributeContext) throws PreparerException {
 		
 		try {
 			Module module = (Module) ServletActionContext.getRequest().getAttribute("module");
@@ -22,14 +22,14 @@ public class PagePreparer implements ViewPreparer {
 			if(module!=null && module.isBackend()) {
 				if(module.isReloaded())
 					try {
-						moduleManager.registerPages(module,requestContext);
+						moduleManager.registerPages(module,tilesContext);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-				String id = (String) requestContext.getSessionScope().get("template");
+				String id = (String) tilesContext.getSessionScope().get("template");
 				TemplateManager templateManager = (TemplateManager) application.get("templateManager");
 				Template template = templateManager.getTemplate(id);
-				if(template!=null && template.isBackend()) requestContext.dispatch("/templates/"+template.getId()+"/index.jsp");
+				if(template!=null && template.isBackend()) tilesContext.dispatch(template.getIndexPage());
 			}else {
 			}
 		} catch (IOException e) {

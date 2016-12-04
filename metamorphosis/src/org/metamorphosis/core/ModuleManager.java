@@ -127,7 +127,7 @@ public class ModuleManager {
 
 	}
 	
-	public void registerPages(Module module,TilesRequestContext requestContext) throws Exception {
+	public void registerPages(Module module,TilesRequestContext tilesContext) throws Exception {
 		if(module.isReloaded()) {
 			CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(
 					ServletActionContext.getServletContext());
@@ -135,12 +135,12 @@ public class ModuleManager {
 					if(file.isFile() && file.getName().endsWith(".jsp")) {
 						String name = file.getName().substring(0,file.getName().length()-4);
 						 Definition definition = new Definition();
-						  definition.setName(module.getUrl()+"/"+name);
+						 definition.setName(module.getUrl()+"/"+name);
 						 definition.setExtends(module.getUrl());
 						 definition.setTemplate("/templates/nova/index.jsp");
 						 definition.setPreparer("org.metamorphosis.core.PagePreparer");
 						 definition.putAttribute("content", new Attribute("/modules/"+module.getId()+"/"+file.getName()));
-						 container.register(definition,requestContext);
+						 container.register(definition,tilesContext);
 					}
 				}
 			   module.setReloaded(false);
