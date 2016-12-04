@@ -11,16 +11,12 @@ public class CachingTilesContainer extends org.apache.tiles.impl.mgmt.CachingTil
 
 	 private Map<String,Definition> definitions = new HashMap<String,Definition>();
 	 
-	 public void register(Definition definition,
-	            TilesRequestContext request) throws DefinitionsFactoryException {
-		 System.out.println("registering definition "+definition);
+	 public void register(Definition definition,TilesRequestContext request) throws DefinitionsFactoryException {
 	       definitions.put(definition.getName(), definition);
 	  }
 	 
 	 
-	  public Definition getDefinition(String definitionName,
-	                                                TilesRequestContext context)
-	        throws DefinitionsFactoryException {
+	  public Definition getDefinition(String definitionName,TilesRequestContext context) throws DefinitionsFactoryException {
 		    Definition definition = definitions.get(definitionName);
 	        return definition !=null ? definition : super.getDefinition(definitionName, context);
 	   }

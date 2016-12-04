@@ -20,15 +20,13 @@ public class PagePreparer implements ViewPreparer {
 			Map application = (Map) ActionContext.getContext().get("application");
 			ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
 			if(module!=null && module.isBackend()) {
-				if(module.isChanged())
+				if(module.isReloaded())
 					try {
-						moduleManager.rebuild(module,requestContext);
+						moduleManager.registerPages(module,requestContext);
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				String id = (String) requestContext.getSessionScope().get("template");
-				
 				TemplateManager templateManager = (TemplateManager) application.get("templateManager");
 				Template template = templateManager.getTemplate(id);
 				if(template!=null && template.isBackend()) requestContext.dispatch("/templates/"+template.getId()+"/index.jsp");

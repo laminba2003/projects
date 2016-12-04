@@ -127,26 +127,23 @@ public class ModuleManager {
 
 	}
 	
-	public void rebuild(Module module,TilesRequestContext requestContext) throws Exception {
-		if(module.isChanged()) {
-			System.out.println("registering jsp pages");
+	public void registerPages(Module module,TilesRequestContext requestContext) throws Exception {
+		if(module.isReloaded()) {
 			CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(
 					ServletActionContext.getServletContext());
 			   for(File file : module.getFolder().listFiles()) {
 					if(file.isFile() && file.getName().endsWith(".jsp")) {
 						String name = file.getName().substring(0,file.getName().length()-4);
 						 Definition definition = new Definition();
-						 System.out.println(module.getUrl()+"/"+name);
-						 definition.setName(module.getUrl()+"/"+name);
+						  definition.setName(module.getUrl()+"/"+name);
 						 definition.setExtends(module.getUrl());
 						 definition.setTemplate("/templates/nova/index.jsp");
 						 definition.setPreparer("org.metamorphosis.core.PagePreparer");
 						 definition.putAttribute("content", new Attribute("/modules/"+module.getId()+"/"+file.getName()));
 						 container.register(definition,requestContext);
-						 System.out.println(container.getDefinition(module.getUrl()+"/"+name, requestContext));
 					}
 				}
-			   module.setChanged(false);
+			   module.setReloaded(false);
         }
 	 }
 	
@@ -171,70 +168,7 @@ public class ModuleManager {
 			            continue;
 			        } else if (kind == ENTRY_CREATE) {
 			        	if(fileName.equals("module.xml")) {
-			        	   try {
-			        		   if(configuration!=null) {
-				        		   logger.log(Level.INFO,"reloading module  : " + module.getName());
-					        	   File folder = module.getFolder();
-					        	   int index = module.getIndex();
-					        	   String id = module.getId();
-					        	   module = parse(new File(folder + "/module.xml"));
-								   module.setFolder(folder);
-								   module.setId(folder.getName());
-								   module.setIndex(index);
-								   initModule(module,false);
-								   modules.set(index, module);
-								   configuration.removePackageConfig(id);
-								   PackageConfig.Builder packageBuilder = new PackageConfig.Builder(module.getId());
-								   packageBuilder.namespace("/"+module.getUrl());
-								   packageBuilder.addParent(configuration.getPackageConfig("root"));
-								   for(Menu menu : module.getMenus())  {
-										for(MenuItem item : menu.getMenuItems()) {
-											if(!item.getUrl().equals(module.getUrl())) {
-												String url = item.getUrl().substring(module.getUrl().length()+1);
-												ActionConfig.Builder actionBuilder = new ActionConfig.Builder(url,url,null);
-												ResultConfig.Builder resultBuilder = new ResultConfig.Builder("success","org.apache.struts2.views.tiles.TilesResult");
-												resultBuilder.addParam("location", item.getUrl());
-												actionBuilder.addResultConfig(resultBuilder.build());
-												ActionConfig actionConfig = actionBuilder.build();
-												packageBuilder.addActionConfig(url, actionConfig);
-											}
-										}
-								   }
-								   for(Action action : module.getActions()) {
-									   ActionConfig.Builder actionBuilder = new ActionConfig.Builder(action.getUrl(),action.getUrl(),action.getClassName());
-									   actionBuilder.methodName(action.getMethod());
-										for(Result result : action.getResults()) {
-											if(!result.getValue().equals("") && !result.getValue().startsWith("/")) {
-												result.setValue(module.getUrl()+"/"+result.getValue());
-											}
-											String type = result.getType();
-											ResultConfig.Builder resultBuilder=null;
-											if(type.equals("tiles")) {
-												resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.views.tiles.TilesResult");
-											}else if(type.equals("redirect")) {
-												resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.dispatcher.ServletRedirectResult");
-											}else if(type.equals("redirectAction")) {
-												resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.dispatcher.ServletActionRedirectResult");
-											}
-											else if(type.equals("dispatcher")) {
-												resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.dispatcher.ServletDispatcherResult");
-											}
-											if(resultBuilder!=null) {
-											   resultBuilder.addParam("location", result.getValue());
-											   actionBuilder.addResultConfig(resultBuilder.build());
-											}
-										}
-										ActionConfig actionConfig = actionBuilder.build();
-										packageBuilder.addActionConfig(action.getUrl(), actionConfig);
-									}
-								   PackageConfig packageConfig = packageBuilder.build();
-								   configuration.addPackageConfig(module.getId(), packageConfig);
-								   configuration.rebuildRuntimeConfiguration();
-								   module.setChanged(true);
-			        		   }
-			        	   } catch (Exception e) {
-			       				e.printStackTrace();
-			       			}
+			        	  reloadModule(module);
 			        	}
 			        }
 			    }
@@ -246,6 +180,73 @@ public class ModuleManager {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void reloadModule(Module module) {
+		 try {
+  		   if(configuration!=null) {
+      		   logger.log(Level.INFO,"reloading module  : " + module.getName());
+        	   File folder = module.getFolder();
+        	   int index = module.getIndex();
+        	   String id = module.getId();
+        	   module = parse(new File(folder + "/module.xml"));
+			   module.setFolder(folder);
+			   module.setId(folder.getName());
+			   module.setIndex(index);
+			   initModule(module,false);
+			   modules.set(index, module);
+			   configuration.removePackageConfig(id);
+			   PackageConfig.Builder packageBuilder = new PackageConfig.Builder(module.getId());
+			   packageBuilder.namespace("/"+module.getUrl());
+			   packageBuilder.addParent(configuration.getPackageConfig("root"));
+			   for(Menu menu : module.getMenus())  {
+					for(MenuItem item : menu.getMenuItems()) {
+						if(!item.getUrl().equals(module.getUrl())) {
+							String url = item.getUrl().substring(module.getUrl().length()+1);
+							ActionConfig.Builder actionBuilder = new ActionConfig.Builder(url,url,null);
+							ResultConfig.Builder resultBuilder = new ResultConfig.Builder("success","org.apache.struts2.views.tiles.TilesResult");
+							resultBuilder.addParam("location", item.getUrl());
+							actionBuilder.addResultConfig(resultBuilder.build());
+							ActionConfig actionConfig = actionBuilder.build();
+							packageBuilder.addActionConfig(url, actionConfig);
+						}
+					}
+			   }
+			   for(Action action : module.getActions()) {
+				   ActionConfig.Builder actionBuilder = new ActionConfig.Builder(action.getUrl(),action.getUrl(),action.getClassName());
+				   actionBuilder.methodName(action.getMethod());
+					for(Result result : action.getResults()) {
+						if(!result.getValue().equals("") && !result.getValue().startsWith("/")) {
+							result.setValue(module.getUrl()+"/"+result.getValue());
+						}
+						String type = result.getType();
+						ResultConfig.Builder resultBuilder=null;
+						if(type.equals("tiles")) {
+							resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.views.tiles.TilesResult");
+						}else if(type.equals("redirect")) {
+							resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.dispatcher.ServletRedirectResult");
+						}else if(type.equals("redirectAction")) {
+							resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.dispatcher.ServletActionRedirectResult");
+						}
+						else if(type.equals("dispatcher")) {
+							resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.dispatcher.ServletDispatcherResult");
+						}
+						if(resultBuilder!=null) {
+						   resultBuilder.addParam("location", result.getValue());
+						   actionBuilder.addResultConfig(resultBuilder.build());
+						}
+					}
+					ActionConfig actionConfig = actionBuilder.build();
+					packageBuilder.addActionConfig(action.getUrl(), actionConfig);
+				}
+			   PackageConfig packageConfig = packageBuilder.build();
+			   configuration.addPackageConfig(module.getId(), packageConfig);
+			   configuration.rebuildRuntimeConfiguration();
+			   module.setReloaded(true);
+  		   }
+  	   } catch (Exception e) {
+ 				e.printStackTrace();
+ 	   }
 	}
 
 	public Module getCurrentModule() {
@@ -278,7 +279,6 @@ public class ModuleManager {
 					return engine.eval(new FileReader(script));
 				}
 			}
-
 		}
 		return null;
 	}
