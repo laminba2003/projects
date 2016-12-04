@@ -1,5 +1,4 @@
 
-
 package org.metamorphosis.core;
 
 import java.io.File;
@@ -32,18 +31,18 @@ import com.opensymphony.xwork2.config.entities.ResultConfig;
 public class ModuleManager {
 
 	private List<Module> modules = new ArrayList<Module>();
-    private Logger logger = Logger.getLogger(ModuleManager.class.getName());
-    private Configuration configuration;
-    private ServletContext servletContext;
-    
-    public ModuleManager() {
-    	
-    }
-    
-    public ModuleManager(ServletContext servletContext) {
-    	this.servletContext = servletContext;
-    }
-    
+	private Logger logger = Logger.getLogger(ModuleManager.class.getName());
+	private Configuration configuration;
+	private ServletContext servletContext;
+
+	public ModuleManager() {
+
+	}
+
+	public ModuleManager(ServletContext servletContext) {
+		this.servletContext = servletContext;
+	}
+
 	private Module parse(File metadata) throws Exception {
 		Digester digester = new Digester();
 		digester.setValidating(false);
@@ -94,9 +93,9 @@ public class ModuleManager {
 							final Module module = parse(metadata);
 							module.setFolder(folder);
 							module.setId(folder.getName());
-							initModule(module,true);
+							initModule(module, true);
 							addModule(module);
-							new Thread(new Runnable(){
+							new Thread(new Runnable() {
 								public void run() {
 									monitorModule(module);
 								}
@@ -111,16 +110,16 @@ public class ModuleManager {
 		orderModules();
 	}
 
-	private void initModule(Module module,boolean runScript) throws Exception {
+	private void initModule(Module module, boolean runScript) throws Exception {
 		if (module.getUrl() == null)
 			module.setUrl(module.getFolder().getName());
-		for(Menu menu : module.getMenus()) {
+		for (Menu menu : module.getMenus()) {
 			for (MenuItem item : menu.getMenuItems()) {
 				String url = item.getUrl() != null ? module.getUrl() + "/" + item.getUrl() : module.getUrl();
 				item.setUrl(url);
 			}
 		}
-		if(runScript) {
+		if (runScript) {
 			File script = new File(module.getFolder() + "/scripts/init.groovy");
 			script = script.exists() ? script : new File(module.getFolder() + "/scripts/" + module.getScript());
 			if (script.exists()) {
@@ -135,7 +134,7 @@ public class ModuleManager {
 	private void orderModules() {
 
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private void monitorModule(Module module) {
 		try {
@@ -143,118 +142,124 @@ public class ModuleManager {
 			Path dir = Paths.get(module.getFolder().getAbsolutePath());
 			dir.register(watcher, ENTRY_CREATE);
 			while (true) {
-			    WatchKey key;
-			    try {
-			        key = watcher.take();
-			    } catch (InterruptedException ex) {
-			        return;
-			    }
-			    for (WatchEvent<?> event : key.pollEvents()) {
-			        WatchEvent.Kind<?> kind = event.kind();
-			        WatchEvent<Path> ev = (WatchEvent<Path>) event;
-			        String fileName = ev.context().toString();
-			        if (kind == OVERFLOW) {
-			            continue;
-			        } else if (kind == ENTRY_CREATE) {
-			        	if(fileName.equals("module.xml")) {
-			        	  reloadModule(module);
-			        	}
-			        }
-			    }
-			    boolean valid = key.reset();
-			    if (!valid) {
-			        break;
-			    }
+				WatchKey key;
+				try {
+					key = watcher.take();
+				} catch (InterruptedException ex) {
+					return;
+				}
+				for (WatchEvent<?> event : key.pollEvents()) {
+					WatchEvent.Kind<?> kind = event.kind();
+					WatchEvent<Path> ev = (WatchEvent<Path>) event;
+					String fileName = ev.context().toString();
+					if (kind == OVERFLOW) {
+						continue;
+					} else if (kind == ENTRY_CREATE) {
+						if (fileName.equals("module.xml")) {
+							reloadModule(module);
+						}
+					}
+				}
+				boolean valid = key.reset();
+				if (!valid) {
+					break;
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	private void reloadModule(Module module) {
-		 try {
-  		   if(configuration!=null) {
-      		   logger.log(Level.INFO,"reloading module  : " + module.getName());
-        	   File folder = module.getFolder();
-        	   int index = module.getIndex();
-        	   String id = module.getId();
-        	   module = parse(new File(folder + "/module.xml"));
-			   module.setFolder(folder);
-			   module.setId(folder.getName());
-			   module.setIndex(index);
-			   initModule(module,false);
-			   modules.set(index, module);
-			   configuration.removePackageConfig(id);
-			   PackageConfig.Builder packageBuilder = new PackageConfig.Builder(module.getId());
-			   packageBuilder.namespace("/"+module.getUrl());
-			   packageBuilder.addParent(configuration.getPackageConfig("root"));
-			   for(Menu menu : module.getMenus())  {
-					for(MenuItem item : menu.getMenuItems()) {
-						if(!item.getUrl().equals(module.getUrl())) {
-							String url = item.getUrl().substring(module.getUrl().length()+1);
-							ActionConfig.Builder actionBuilder = new ActionConfig.Builder(url,url,null);
-							ResultConfig.Builder resultBuilder = new ResultConfig.Builder("success","org.apache.struts2.views.tiles.TilesResult");
+		try {
+			if (configuration != null) {
+				logger.log(Level.INFO, "reloading module  : " + module.getName());
+				File folder = module.getFolder();
+				int index = module.getIndex();
+				String id = module.getId();
+				module = parse(new File(folder + "/module.xml"));
+				module.setFolder(folder);
+				module.setId(folder.getName());
+				module.setIndex(index);
+				initModule(module, false);
+				modules.set(index, module);
+				configuration.removePackageConfig(id);
+				PackageConfig.Builder packageBuilder = new PackageConfig.Builder(module.getId());
+				packageBuilder.namespace("/" + module.getUrl());
+				packageBuilder.addParent(configuration.getPackageConfig("root"));
+				for (Menu menu : module.getMenus()) {
+					for (MenuItem item : menu.getMenuItems()) {
+						if (!item.getUrl().equals(module.getUrl())) {
+							String url = item.getUrl().substring(module.getUrl().length() + 1);
+							ActionConfig.Builder actionBuilder = new ActionConfig.Builder(url, url, null);
+							ResultConfig.Builder resultBuilder = new ResultConfig.Builder("success",
+									"org.apache.struts2.views.tiles.TilesResult");
 							resultBuilder.addParam("location", item.getUrl());
 							actionBuilder.addResultConfig(resultBuilder.build());
 							ActionConfig actionConfig = actionBuilder.build();
 							packageBuilder.addActionConfig(url, actionConfig);
 						}
 					}
-			   }
-			   for(Action action : module.getActions()) {
-				   ActionConfig.Builder actionBuilder = new ActionConfig.Builder(action.getUrl(),action.getUrl(),action.getClassName());
-				   actionBuilder.methodName(action.getMethod());
-					for(Result result : action.getResults()) {
-						if(!result.getValue().equals("") && !result.getValue().startsWith("/")) {
-							result.setValue(module.getUrl()+"/"+result.getValue());
+				}
+				for (Action action : module.getActions()) {
+					ActionConfig.Builder actionBuilder = new ActionConfig.Builder(action.getUrl(), action.getUrl(),
+							action.getClassName());
+					actionBuilder.methodName(action.getMethod());
+					for (Result result : action.getResults()) {
+						if (!result.getValue().equals("") && !result.getValue().startsWith("/")) {
+							result.setValue(module.getUrl() + "/" + result.getValue());
 						}
 						String type = result.getType();
-						ResultConfig.Builder resultBuilder=null;
-						if(type.equals("tiles")) {
-							resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.views.tiles.TilesResult");
-						}else if(type.equals("redirect")) {
-							resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.dispatcher.ServletRedirectResult");
-						}else if(type.equals("redirectAction")) {
-							resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.dispatcher.ServletActionRedirectResult");
+						ResultConfig.Builder resultBuilder = null;
+						if (type.equals("tiles")) {
+							resultBuilder = new ResultConfig.Builder(result.getName(),
+									"org.apache.struts2.views.tiles.TilesResult");
+						} else if (type.equals("redirect")) {
+							resultBuilder = new ResultConfig.Builder(result.getName(),
+									"org.apache.struts2.dispatcher.ServletRedirectResult");
+						} else if (type.equals("redirectAction")) {
+							resultBuilder = new ResultConfig.Builder(result.getName(),
+									"org.apache.struts2.dispatcher.ServletActionRedirectResult");
+						} else if (type.equals("dispatcher")) {
+							resultBuilder = new ResultConfig.Builder(result.getName(),
+									"org.apache.struts2.dispatcher.ServletDispatcherResult");
 						}
-						else if(type.equals("dispatcher")) {
-							resultBuilder = new ResultConfig.Builder(result.getName(),"org.apache.struts2.dispatcher.ServletDispatcherResult");
-						}
-						if(resultBuilder!=null) {
-						   resultBuilder.addParam("location", result.getValue());
-						   actionBuilder.addResultConfig(resultBuilder.build());
+						if (resultBuilder != null) {
+							resultBuilder.addParam("location", result.getValue());
+							actionBuilder.addResultConfig(resultBuilder.build());
 						}
 					}
 					ActionConfig actionConfig = actionBuilder.build();
 					packageBuilder.addActionConfig(action.getUrl(), actionConfig);
 				}
-			   PackageConfig packageConfig = packageBuilder.build();
-			   configuration.addPackageConfig(module.getId(), packageConfig);
-			   configuration.rebuildRuntimeConfiguration();
-			   registerPages(module);
-  		   }
-  	   } catch (Exception e) {
- 				e.printStackTrace();
- 	   }
+				PackageConfig packageConfig = packageBuilder.build();
+				configuration.addPackageConfig(module.getId(), packageConfig);
+				configuration.rebuildRuntimeConfiguration();
+				registerPages(module);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-	
+
 	private void registerPages(Module module) throws Exception {
 		CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(servletContext);
 		TemplateManager templateManager = (TemplateManager) servletContext.getAttribute("templateManager");
-		Template template = module.isBackend() ? templateManager.getBackendTemplate(null) : templateManager.getFrontendTemplate(null);
-		for(File file : module.getFolder().listFiles()) {
-			if(file.isFile() && file.getName().endsWith(".jsp")) {
-				String name = file.getName().substring(0,file.getName().length()-4);
-				 Definition definition = new Definition();
-				 definition.setName(module.getUrl()+"/"+name);
-				 definition.setExtends(module.getUrl());
-				 definition.setTemplate(template.getIndexPage());
-				 definition.setPreparer("org.metamorphosis.core.PagePreparer");
-				 definition.putAttribute("content", new Attribute("/modules/"+module.getId()+"/"+file.getName()));
-				 container.register(definition);
+		Template template = module.isBackend() ? templateManager.getBackendTemplate(null)
+				: templateManager.getFrontendTemplate(null);
+		for (File file : module.getFolder().listFiles()) {
+			if (file.isFile() && file.getName().endsWith(".jsp")) {
+				String name = file.getName().substring(0, file.getName().length() - 4);
+				Definition definition = new Definition();
+				definition.setName(module.getUrl() + "/" + name);
+				definition.setExtends(module.getUrl());
+				definition.setTemplate(template.getIndexPage());
+				definition.setPreparer("org.metamorphosis.core.PagePreparer");
+				definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + file.getName()));
+				container.register(definition);
 			}
-		 }
-	 }
+		}
+	}
 
 	public Module getCurrentModule() {
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -291,8 +296,9 @@ public class ModuleManager {
 	}
 
 	public Module getModuleById(String id) {
-		for(Module module : modules) {
-			if(module.getId().equals(id)) return module;
+		for (Module module : modules) {
+			if (module.getId().equals(id))
+				return module;
 		}
 		return null;
 	}
@@ -312,31 +318,34 @@ public class ModuleManager {
 
 	public List<Module> getVisibleModules(String type) {
 		List<Module> modules = new ArrayList<Module>();
-		for(Module module : this.modules) {
-			if(module.isVisible() && module.getType().equals(type))
+		for (Module module : this.modules) {
+			if (module.isVisible() && module.getType().equals(type))
 				modules.add(module);
 		}
 		return modules;
 	}
 
 	public Module getDefaultBackendModule() {
-		for(Module module : this.modules) {
-			if(module.isBackend())return module;
+		for (Module module : this.modules) {
+			if (module.isBackend())
+				return module;
 		}
 		return null;
 	}
 
 	public List<Module> getAdminModules() {
 		List<Module> modules = new ArrayList<Module>();
-		for(Module module : this.modules) {
-			if(module.isAdministrable()) modules.add(module);
+		for (Module module : this.modules) {
+			if (module.isAdministrable())
+				modules.add(module);
 		}
 		return modules;
 	}
 
 	public Module getMain() {
-		for(Module module : modules) {
-			if (module.isMain()) return module;
+		for (Module module : modules) {
+			if (module.isMain())
+				return module;
 		}
 		return getDefaultBackendModule();
 	}
@@ -356,5 +365,5 @@ public class ModuleManager {
 	public void setServletContext(ServletContext servletContext) {
 		this.servletContext = servletContext;
 	}
-	
+
 }
