@@ -580,7 +580,6 @@ footer p {
 #wowslider-container a.ws_prev:hover{
 	background: #fff3d5;
 	display : none;
-	color : #ccc;
 }
 #wowslider-container a.ws_next{
 	right:10px;
@@ -609,11 +608,13 @@ footer p {
 	-webkit-animation: prevArrow .7s infinite ease-in-out;
 	-moz-animation: prevArrow .7s infinite ease-in-out;
 	animation: prevArrow .7s infinite ease-in-out;
+	color : #000;
 }
 #wowslider-container a.ws_next:hover:after {
 	-webkit-animation: nextArrow .7s infinite ease-in-out;
 	-moz-animation: nextArrow .7s infinite ease-in-out;
 	animation: nextArrow .7s infinite ease-in-out;
+	color : #000;
 }
 
 * html #wowslider-container a.ws_next,* html #wowslider-container a.ws_prev{display:block}
