@@ -15,35 +15,35 @@ public class TemplateManager {
 
 	public void loadTemplates(File root) {
 		File[] files = root.listFiles();
-		if(files!=null){
-			for(File folder : root.listFiles()) {
-				if(folder.isDirectory()) {
+		if (files != null) {
+			for (File folder : root.listFiles()) {
+				if (folder.isDirectory()) {
 					loadTemplate(folder);
 				}
 			}
 		}
 	}
-	
+
 	public Template loadTemplate(File folder) {
-		File metadata = new File(folder+"/template.xml");
-		if(metadata.exists()) {
+		File metadata = new File(folder + "/template.xml");
+		if (metadata.exists()) {
 			try {
 				Template template = parse(metadata);
 				template.setId(folder.getName());
 				template.setFolder(folder);
 				addTemplate(template);
 				return template;
-			}catch(Exception e){
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		return null;
 	}
-	
+
 	private Template parse(File metadata) throws Exception {
 		Digester digester = new Digester();
-		digester.setValidating( false );
-		digester.addObjectCreate("template", Template.class );
+		digester.setValidating(false);
+		digester.addObjectCreate("template", Template.class);
 		digester.addBeanPropertySetter("template/name");
 		digester.addBeanPropertySetter("template/type");
 		digester.addBeanPropertySetter("template/selected");
@@ -63,32 +63,39 @@ public class TemplateManager {
 	}
 
 	public Template getTemplate(String id) {
-		for(Template template : templates) {
-			if(template.getId().equals(id)) return template;
+		for (Template template : templates) {
+			if (template.getId().equals(id))
+				return template;
 		}
 		return null;
 	}
-	
+
 	public Template getBackendTemplate(String id) {
 		Template template = getTemplate(id);
-		if(template!=null && template.isBackend()) return template;
-		for(Template current : templates) {
-			if(current.isSelected() && current.isBackend()) return current;
+		if (template != null && template.isBackend())
+			return template;
+		for (Template current : templates) {
+			if (current.isSelected() && current.isBackend())
+				return current;
 		}
-		for(Template current : templates) {
-			if(current.isBackend()) return current;
+		for (Template current : templates) {
+			if (current.isBackend())
+				return current;
 		}
 		return null;
 	}
-	
+
 	public Template getFrontendTemplate(String id) {
 		Template template = getTemplate(id);
-		if(template!=null && template.isFrontend()) return template;
-		for(Template current : templates) {
-			if(current.isSelected() && current.isFrontend()) return current;
+		if (template != null && template.isFrontend())
+			return template;
+		for (Template current : templates) {
+			if (current.isSelected() && current.isFrontend())
+				return current;
 		}
-		for(Template current : templates) {
-			if(current.isFrontend()) return current;
+		for (Template current : templates) {
+			if (current.isFrontend())
+				return current;
 		}
 		return null;
 	}
