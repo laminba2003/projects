@@ -57,7 +57,7 @@ public class StartupListener implements ServletContextListener {
 	
 	private String loadModules(ServletContext context,String root,StringBuffer buffer) {
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
-		ModuleManager moduleManager = new ModuleManager();
+		ModuleManager moduleManager = new ModuleManager(context);
 		moduleManager.loadModules(new File(root+"/modules"));
 		context.setAttribute("moduleManager",moduleManager);
 		for(Module module : moduleManager.getModules()) {

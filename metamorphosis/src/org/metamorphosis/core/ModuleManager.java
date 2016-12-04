@@ -1,4 +1,5 @@
 
+
 package org.metamorphosis.core;
 
 import java.io.File;
@@ -16,13 +17,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.digester.Digester;
 import org.apache.struts2.ServletActionContext;
 import org.apache.tiles.Attribute;
 import org.apache.tiles.Definition;
 import org.apache.tiles.access.TilesAccess;
-import org.apache.tiles.context.TilesRequestContext;
 import com.opensymphony.xwork2.config.Configuration;
 import com.opensymphony.xwork2.config.entities.ActionConfig;
 import com.opensymphony.xwork2.config.entities.PackageConfig;
@@ -33,7 +34,15 @@ public class ModuleManager {
 	private List<Module> modules = new ArrayList<Module>();
     private Logger logger = Logger.getLogger(ModuleManager.class.getName());
     private Configuration configuration;
-   
+    private ServletContext servletContext;
+    
+    public ModuleManager() {
+    	
+    }
+    
+    public ModuleManager(ServletContext servletContext) {
+    	this.servletContext = servletContext;
+    }
     
 	private Module parse(File metadata) throws Exception {
 		Digester digester = new Digester();
@@ -126,26 +135,6 @@ public class ModuleManager {
 	private void orderModules() {
 
 	}
-	
-	public void registerPages(Module module,String template,TilesRequestContext tilesContext) throws Exception {
-		if(module.isReloaded()) {
-			CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(
-					ServletActionContext.getServletContext());
-			   for(File file : module.getFolder().listFiles()) {
-					if(file.isFile() && file.getName().endsWith(".jsp")) {
-						String name = file.getName().substring(0,file.getName().length()-4);
-						 Definition definition = new Definition();
-						 definition.setName(module.getUrl()+"/"+name);
-						 definition.setExtends(module.getUrl());
-						 definition.setTemplate(template);
-						 definition.setPreparer("org.metamorphosis.core.PagePreparer");
-						 definition.putAttribute("content", new Attribute("/modules/"+module.getId()+"/"+file.getName()));
-						 container.register(definition,tilesContext);
-					}
-				}
-			   module.setReloaded(false);
-        }
-	 }
 	
 	@SuppressWarnings("unchecked")
 	private void monitorModule(Module module) {
@@ -242,12 +231,30 @@ public class ModuleManager {
 			   PackageConfig packageConfig = packageBuilder.build();
 			   configuration.addPackageConfig(module.getId(), packageConfig);
 			   configuration.rebuildRuntimeConfiguration();
-			   module.setReloaded(true);
+			   registerPages(module);
   		   }
   	   } catch (Exception e) {
  				e.printStackTrace();
  	   }
 	}
+	
+	private void registerPages(Module module) throws Exception {
+		CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(servletContext);
+		TemplateManager templateManager = (TemplateManager) servletContext.getAttribute("templateManager");
+		Template template = module.isBackend() ? templateManager.getBackendTemplate(null) : templateManager.getFrontendTemplate(null);
+		for(File file : module.getFolder().listFiles()) {
+			if(file.isFile() && file.getName().endsWith(".jsp")) {
+				String name = file.getName().substring(0,file.getName().length()-4);
+				 Definition definition = new Definition();
+				 definition.setName(module.getUrl()+"/"+name);
+				 definition.setExtends(module.getUrl());
+				 definition.setTemplate(template.getIndexPage());
+				 definition.setPreparer("org.metamorphosis.core.PagePreparer");
+				 definition.putAttribute("content", new Attribute("/modules/"+module.getId()+"/"+file.getName()));
+				 container.register(definition);
+			}
+		 }
+	 }
 
 	public Module getCurrentModule() {
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -340,6 +347,14 @@ public class ModuleManager {
 
 	public void setConfiguration(Configuration configuration) {
 		this.configuration = configuration;
+	}
+
+	public ServletContext getServletContext() {
+		return servletContext;
+	}
+
+	public void setServletContext(ServletContext servletContext) {
+		this.servletContext = servletContext;
 	}
 	
 }

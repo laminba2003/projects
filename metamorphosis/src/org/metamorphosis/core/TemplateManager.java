@@ -93,7 +93,6 @@ public class TemplateManager {
 		return null;
 	}
 
-
 	public void setTemplates(List<Template> templates) {
 		this.templates = templates;
 	}

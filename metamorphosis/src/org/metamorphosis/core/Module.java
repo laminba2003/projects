@@ -10,7 +10,6 @@ public class Module extends Extension {
 	private boolean main;
 	private boolean visible = true;
 	private boolean administrable = true;
-	private boolean reloaded;
 	private String home = "index.jsp";
 	private String script;
 	protected int index;
@@ -119,14 +118,6 @@ public class Module extends Extension {
 
 	public String getPath() {
 		return "modules/" + folder.getName();
-	}
-
-	public boolean isReloaded() {
-		return reloaded;
-	}
-
-	public void setReloaded(boolean reloaded) {
-		this.reloaded = reloaded;
 	}
 
 }

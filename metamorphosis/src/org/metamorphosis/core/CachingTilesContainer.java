@@ -11,7 +11,7 @@ public class CachingTilesContainer extends org.apache.tiles.impl.mgmt.CachingTil
 
 	 private Map<String,Definition> definitions = new HashMap<String,Definition>();
 	 
-	 public void register(Definition definition,TilesRequestContext request) throws DefinitionsFactoryException {
+	 public void register(Definition definition) throws DefinitionsFactoryException {
 	       definitions.put(definition.getName(), definition);
 	  }
 	 
