@@ -1,6 +1,7 @@
 package org.metamorphosis.core;
 
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 import static java.nio.file.StandardWatchEventKinds.OVERFLOW;
 import java.io.File;
 import java.nio.file.FileSystems;
@@ -30,7 +31,7 @@ public class TemplateManager {
 		return templates;
 	}
 
-	public void loadTemplates(File root) {
+	public void loadTemplates(final File root) {
 		File[] files = root.listFiles();
 		if (files != null) {
 			for (File folder : root.listFiles()) {
@@ -39,6 +40,11 @@ public class TemplateManager {
 				}
 			}
 		}
+		new Thread(new Runnable() {
+			public void run() {
+				monitorRoot(root);
+			}
+		}).start();
 	}
 
 	public Template loadTemplate(File folder) {
@@ -102,6 +108,58 @@ public class TemplateManager {
 					} else if (kind == ENTRY_CREATE) {
 						if (fileName.equals("template.xml")) {
 							reloadTemplate(template);
+						}
+					}
+				}
+				boolean valid = key.reset();
+				if (!valid) {
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	@SuppressWarnings("unchecked")
+	private void monitorRoot(File root) {
+		try {
+			WatchService watcher = FileSystems.getDefault().newWatchService();
+			Path dir = Paths.get(root.getAbsolutePath());
+			dir.register(watcher, ENTRY_CREATE,ENTRY_DELETE);
+			while (true) {
+				WatchKey key;
+				try {
+					key = watcher.take();
+				} catch (InterruptedException ex) {
+					return;
+				}
+				for (WatchEvent<?> event : key.pollEvents()) {
+					WatchEvent.Kind<?> kind = event.kind();
+					WatchEvent<Path> ev = (WatchEvent<Path>) event;
+					String fileName = ev.context().toString();
+					if (kind == OVERFLOW) {
+						continue;
+					} else if (kind == ENTRY_CREATE) {
+						File folder = new File(root+"/"+fileName);
+						if(folder.isDirectory()) {
+							logger.log(Level.INFO, "adding template  : " + folder.getName());
+							final Template template = new Template();
+							template.setFolder(folder);
+							template.setId(folder.getName());
+							addTemplate(template);
+							new Thread(new Runnable() {
+								public void run() {
+									monitorTemplate(template);
+								}
+							}).start();
+						}
+					}else if (kind == ENTRY_DELETE) {
+						Template template = getTemplate(fileName);
+						if(template!=null) {
+							logger.log(Level.INFO, "removing template  : " + template.getName());
+							templates.remove(template.getIndex());
 						}
 					}
 				}

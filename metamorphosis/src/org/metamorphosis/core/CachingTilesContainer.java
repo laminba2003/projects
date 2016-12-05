@@ -1,4 +1,3 @@
-
 package org.metamorphosis.core;
 
 import java.util.HashMap;
