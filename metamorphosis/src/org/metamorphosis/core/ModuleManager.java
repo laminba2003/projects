@@ -36,12 +36,14 @@ public class ModuleManager implements DispatcherListener {
 	private Logger logger = Logger.getLogger(ModuleManager.class.getName());
 	private Configuration configuration;
 	private ServletContext servletContext;
+	private static ModuleManager instance;
 
 	public ModuleManager() {
-
+		instance = this;
 	}
 
 	public ModuleManager(ServletContext servletContext) {
+		instance = this;
 		this.servletContext = servletContext;
 	}
 
@@ -298,7 +300,7 @@ public class ModuleManager implements DispatcherListener {
 	
 	private void registerPage(Module module,String file) throws Exception {
 		CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(servletContext);
-		TemplateManager templateManager = (TemplateManager) servletContext.getAttribute("templateManager");
+		TemplateManager templateManager = TemplateManager.getInstance();
 		Template template = module.isBackend() ? templateManager.getBackendTemplate(null)
 				: templateManager.getFrontendTemplate(null);
 		String name = file.substring(0, file.length() - 4);
@@ -313,7 +315,7 @@ public class ModuleManager implements DispatcherListener {
 
 	private void registerPages(Module module) throws Exception {
 		CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(servletContext);
-		TemplateManager templateManager = (TemplateManager) servletContext.getAttribute("templateManager");
+		TemplateManager templateManager = TemplateManager.getInstance();
 		Template template = module.isBackend() ? templateManager.getBackendTemplate(null)
 				: templateManager.getFrontendTemplate(null);
 		Definition definition = new Definition();
@@ -449,6 +451,10 @@ public class ModuleManager implements DispatcherListener {
 	
 	@Override
 	public void dispatcherDestroyed(Dispatcher dispatcher) {
+	}
+
+	public static ModuleManager getInstance() {
+		return instance;
 	}
 	
 }

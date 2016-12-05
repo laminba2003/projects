@@ -28,12 +28,12 @@ public class ActionSupport extends com.opensymphony.xwork2.ActionSupport {
 	}
 	
 	public ModuleManager getModuleManager() {
-		return (ModuleManager) getApplication().get("moduleManager");
+		return ModuleManager.getInstance();
 	}
 	public Module getModule() {
 		return getModuleManager().getCurrentModule();
 	}
 	public TemplateManager getTemplateManager() {
-		return (TemplateManager) getApplication().get("templateManager");
+		return TemplateManager.getInstance();
 	}
 }

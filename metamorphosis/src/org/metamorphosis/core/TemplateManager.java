@@ -13,13 +13,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.apache.commons.digester.Digester;
 
 public class TemplateManager {
 
 	private List<Template> templates = new ArrayList<Template>();
 	private Logger logger = Logger.getLogger(TemplateManager.class.getName());
+	
+	private static TemplateManager instance;
+
+	public TemplateManager() {
+		instance = this;
+	}
+
 
 	public List<Template> getTemplates() {
 		return templates;
@@ -170,6 +176,11 @@ public class TemplateManager {
 
 	public void setTemplates(List<Template> templates) {
 		this.templates = templates;
+	}
+
+
+	public static TemplateManager getInstance() {
+		return instance;
 	}
 
 }

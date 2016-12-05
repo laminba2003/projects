@@ -2,22 +2,18 @@ package org.metamorphosis.core;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.ServletActionContext;
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
 @SuppressWarnings("serial")
 public class ModuleInterceptor extends AbstractInterceptor {
 
-	@SuppressWarnings("rawtypes")
 	@Override
 	public String intercept(ActionInvocation invocation)  {
 		try {
-			Map application = (Map) ActionContext.getContext().get("application");
-			ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
+			ModuleManager moduleManager = ModuleManager.getInstance();
 		    Module module = moduleManager.getCurrentModule();
 			if(module!=null) {
 				HttpServletRequest request = ServletActionContext.getRequest();
