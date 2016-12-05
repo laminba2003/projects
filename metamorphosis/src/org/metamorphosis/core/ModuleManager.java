@@ -109,7 +109,7 @@ public class ModuleManager {
 		orderModules();
 		new Thread(new Runnable() {
 			public void run() {
-				monitorRoot(root);
+				monitorModules(root);
 			}
 		}).start();
 	}
@@ -130,11 +130,11 @@ public class ModuleManager {
 	}
 	
 	@SuppressWarnings("unchecked")
-	private void monitorRoot(File root) {
+	private void monitorModules(File root) {
 		try {
 			WatchService watcher = FileSystems.getDefault().newWatchService();
 			Path dir = Paths.get(root.getAbsolutePath());
-			dir.register(watcher, ENTRY_CREATE);
+			dir.register(watcher, ENTRY_CREATE,ENTRY_DELETE);
 			while (true) {
 				WatchKey key;
 				try {
@@ -162,6 +162,14 @@ public class ModuleManager {
 									monitorModule(module);
 								}
 							}).start();
+						}
+					}else if (kind == ENTRY_DELETE) {
+						Module module = getModuleById(fileName);
+						if(module!=null && configuration!=null) {
+							logger.log(Level.INFO, "removing module  : " + module.getName());
+							modules.remove(module.getIndex());
+							configuration.removePackageConfig(module.getId());
+							configuration.rebuildRuntimeConfiguration();
 						}
 					}
 				}
