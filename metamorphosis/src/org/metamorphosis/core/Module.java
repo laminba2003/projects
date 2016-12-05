@@ -11,7 +11,6 @@ public class Module extends Extension {
 	private boolean visible = true;
 	private boolean administrable = true;
 	private String home = "index.jsp";
-	private String script;
 	protected int index;
 	private List<Menu> menus = new ArrayList<Menu>();
 	private List<Action> actions = new ArrayList<Action>();
@@ -69,14 +68,6 @@ public class Module extends Extension {
 	}
 	public void setIndex(int index) {
 		this.index = index;
-	}
-
-	public String getScript() {
-		return script;
-	}
-
-	public void setScript(String script) {
-		this.script = script;
 	}
 
 	public List<Menu> getMenus() {

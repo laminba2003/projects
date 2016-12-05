@@ -51,7 +51,6 @@ public class ModuleManager {
 		digester.addBeanPropertySetter("module/type");
 		digester.addBeanPropertySetter("module/url");
 		digester.addBeanPropertySetter("module/home");
-		digester.addBeanPropertySetter("module/script");
 		digester.addBeanPropertySetter("module/template");
 		digester.addBeanPropertySetter("module/main");
 		digester.addBeanPropertySetter("module/visible");
@@ -82,7 +81,7 @@ public class ModuleManager {
 		return (Module) digester.parse(metadata);
 	}
 
-	public void loadModules(File root) {
+	public void loadModules(final File root) {
 		File[] files = root.listFiles();
 		if (files != null) {
 			for (File folder : files) {
@@ -93,7 +92,7 @@ public class ModuleManager {
 							final Module module = parse(metadata);
 							module.setFolder(folder);
 							module.setId(folder.getName());
-							initModule(module, true);
+							initModule(module);
 							addModule(module);
 							new Thread(new Runnable() {
 								public void run() {
@@ -108,31 +107,71 @@ public class ModuleManager {
 			}
 		}
 		orderModules();
+		new Thread(new Runnable() {
+			public void run() {
+				monitorRoot(root);
+			}
+		}).start();
 	}
 
-	private void initModule(Module module, boolean runScript) throws Exception {
-		if (module.getUrl() == null)
+	private void initModule(Module module) throws Exception {
+		if(module.getUrl() == null)
 			module.setUrl(module.getFolder().getName());
-		for (Menu menu : module.getMenus()) {
-			for (MenuItem item : menu.getMenuItems()) {
+		for(Menu menu : module.getMenus()) {
+			for(MenuItem item : menu.getMenuItems()) {
 				String url = item.getUrl() != null ? module.getUrl() + "/" + item.getUrl() : module.getUrl();
 				item.setUrl(url);
-			}
-		}
-		if (runScript) {
-			File script = new File(module.getFolder() + "/scripts/init.groovy");
-			script = script.exists() ? script : new File(module.getFolder() + "/scripts/" + module.getScript());
-			if (script.exists()) {
-				String name = script.getName();
-				String extension = name.substring(name.indexOf(".") + 1);
-				ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(extension);
-				engine.eval(new FileReader(script));
 			}
 		}
 	}
 
 	private void orderModules() {
 
+	}
+	
+	@SuppressWarnings("unchecked")
+	private void monitorRoot(File root) {
+		try {
+			WatchService watcher = FileSystems.getDefault().newWatchService();
+			Path dir = Paths.get(root.getAbsolutePath());
+			dir.register(watcher, ENTRY_CREATE);
+			while (true) {
+				WatchKey key;
+				try {
+					key = watcher.take();
+				} catch (InterruptedException ex) {
+					return;
+				}
+				for (WatchEvent<?> event : key.pollEvents()) {
+					WatchEvent.Kind<?> kind = event.kind();
+					WatchEvent<Path> ev = (WatchEvent<Path>) event;
+					String fileName = ev.context().toString();
+					if (kind == OVERFLOW) {
+						continue;
+					} else if (kind == ENTRY_CREATE) {
+						File folder = new File(root+"/"+fileName);
+						if(folder.isDirectory()) {
+							final Module module = new Module();
+							module.setFolder(folder);
+							module.setId(folder.getName());
+							initModule(module);
+							addModule(module);
+							new Thread(new Runnable() {
+								public void run() {
+									monitorModule(module);
+								}
+							}).start();
+						}
+					}
+				}
+				boolean valid = key.reset();
+				if (!valid) {
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@SuppressWarnings("unchecked")
@@ -181,7 +220,7 @@ public class ModuleManager {
 				module.setFolder(folder);
 				module.setId(folder.getName());
 				module.setIndex(index);
-				initModule(module, false);
+				initModule(module);
 				modules.set(index, module);
 				configuration.removePackageConfig(id);
 				PackageConfig.Builder packageBuilder = new PackageConfig.Builder(module.getId());
