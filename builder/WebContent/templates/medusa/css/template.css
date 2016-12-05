@@ -267,12 +267,18 @@ b {
 }
 
 ul {
-	list-style-type : square;
+	list-style-type : disc;
 }
 
-article > ol, article > ul {
+article > ol, article > ol > ul {
 	margin-left : 50px;
 	margin-top : -7px;
+}
+
+article > ul {
+	margin-top : 7px;
+	margin-left : 20px;
+	font-size : 98%;
 }
 
 ol ul {
