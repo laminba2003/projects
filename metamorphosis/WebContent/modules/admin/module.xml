@@ -2,7 +2,7 @@
 <module>
 	<name>admin</name>
 	<administrable>false</administrable>
-	<home>users.jsp</home>
+	<index>users.jsp</index>
 	<order>5</order>
 	<author>Mamadou Lamine Ba</author>
 	<authorEmail>laminba2003@yahoo.fr</authorEmail>

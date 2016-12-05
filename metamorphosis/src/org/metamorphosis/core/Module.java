@@ -10,7 +10,7 @@ public class Module extends Extension {
 	private boolean main;
 	private boolean visible = true;
 	private boolean administrable = true;
-	private String home = "index.jsp";
+	private String indexPage = "index.jsp";
 	private List<Menu> menus = new ArrayList<Menu>();
 	private List<Action> actions = new ArrayList<Action>();
 
@@ -54,12 +54,12 @@ public class Module extends Extension {
 		this.administrable = administrable;
 	}
 
-	public String getHome() {
-		return home;
+	public String getIndexPage() {
+		return indexPage;
 	}
 
-	public void setHome(String home) {
-		this.home = home;
+	public void setIndexPage(String indexPage) {
+		this.indexPage = indexPage;
 	}
 
 	public List<Menu> getMenus() {

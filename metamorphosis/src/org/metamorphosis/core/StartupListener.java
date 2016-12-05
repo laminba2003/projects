@@ -108,7 +108,7 @@ public class StartupListener implements ServletContextListener {
 				"<!DOCTYPE tiles-definitions PUBLIC '-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN' "+
 				"'http://tiles.apache.org/dtds/tiles-config_2_0.dtd'>"+
 				"<tiles-definitions><definition name='"+module.getUrl()+"' extends='"+module.getType()+"'>"+
-				"<put-attribute name='content' value='/modules/"+module.getId()+"/"+module.getHome()+"'/>"+
+				"<put-attribute name='content' value='/modules/"+module.getId()+"/"+module.getIndexPage()+"'/>"+
 				"</definition>";
 		for(File file : module.getFolder().listFiles()) {
 			if(file.isFile() && file.getName().endsWith(".jsp")) {

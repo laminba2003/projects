@@ -54,7 +54,7 @@ public class ModuleManager implements DispatcherListener {
 		digester.addBeanPropertySetter("module/name");
 		digester.addBeanPropertySetter("module/type");
 		digester.addBeanPropertySetter("module/url");
-		digester.addBeanPropertySetter("module/home");
+		digester.addBeanPropertySetter("module/index","indexPage");
 		digester.addBeanPropertySetter("module/template");
 		digester.addBeanPropertySetter("module/main");
 		digester.addBeanPropertySetter("module/visible");
@@ -323,7 +323,7 @@ public class ModuleManager implements DispatcherListener {
 		definition.setExtends(module.getType());
 		definition.setTemplate(template.getIndexPage());
 		definition.setPreparer("org.metamorphosis.core.PagePreparer");
-		definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + module.getHome()));
+		definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + module.getIndexPage()));
 		container.register(definition);
 		for (File file : module.getFolder().listFiles()) {
 			if (file.isFile() && file.getName().endsWith(".jsp")) {
