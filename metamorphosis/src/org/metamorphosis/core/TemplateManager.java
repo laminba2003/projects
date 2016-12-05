@@ -1,13 +1,25 @@
 package org.metamorphosis.core;
 
+import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
+import static java.nio.file.StandardWatchEventKinds.OVERFLOW;
 import java.io.File;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.WatchEvent;
+import java.nio.file.WatchKey;
+import java.nio.file.WatchService;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.apache.commons.digester.Digester;
 
 public class TemplateManager {
 
 	private List<Template> templates = new ArrayList<Template>();
+	private Logger logger = Logger.getLogger(TemplateManager.class.getName());
 
 	public List<Template> getTemplates() {
 		return templates;
@@ -28,10 +40,15 @@ public class TemplateManager {
 		File metadata = new File(folder + "/template.xml");
 		if (metadata.exists()) {
 			try {
-				Template template = parse(metadata);
+				final Template template = parse(metadata);
 				template.setId(folder.getName());
 				template.setFolder(folder);
 				addTemplate(template);
+				new Thread(new Runnable() {
+					public void run() {
+						monitorTemplate(template);
+					}
+				}).start();
 				return template;
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -57,8 +74,59 @@ public class TemplateManager {
 		digester.addBeanPropertySetter("template/version");
 		return (Template) digester.parse(metadata);
 	}
+	
+	@SuppressWarnings("unchecked")
+	private void monitorTemplate(Template template) {
+		try {
+			WatchService watcher = FileSystems.getDefault().newWatchService();
+			Path dir = Paths.get(template.getFolder().getAbsolutePath());
+			dir.register(watcher, ENTRY_CREATE);
+			while (true) {
+				WatchKey key;
+				try {
+					key = watcher.take();
+				} catch (InterruptedException ex) {
+					return;
+				}
+				for (WatchEvent<?> event : key.pollEvents()) {
+					WatchEvent.Kind<?> kind = event.kind();
+					WatchEvent<Path> ev = (WatchEvent<Path>) event;
+					String fileName = ev.context().toString();
+					if (kind == OVERFLOW) {
+						continue;
+					} else if (kind == ENTRY_CREATE) {
+						if (fileName.equals("template.xml")) {
+							reloadTemplate(template);
+						}
+					}
+				}
+				boolean valid = key.reset();
+				if (!valid) {
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
+	private void reloadTemplate(Template template) {
+		try {
+			logger.log(Level.INFO, "reloading template  : " + template.getId());
+			int index = template.getIndex();
+			File folder = template.getFolder();
+			template = parse(new File(folder + "/template.xml"));
+			template.setId(folder.getName());
+			template.setFolder(folder);
+			template.setIndex(index);
+			templates.set(index, template);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void addTemplate(Template template) {
+		template.setIndex(templates.size());
 		templates.add(template);
 	}
 
