@@ -20,6 +20,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.digester.Digester;
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.dispatcher.Dispatcher;
+import org.apache.struts2.dispatcher.DispatcherListener;
 import org.apache.tiles.Attribute;
 import org.apache.tiles.Definition;
 import org.apache.tiles.access.TilesAccess;
@@ -28,7 +30,7 @@ import com.opensymphony.xwork2.config.entities.ActionConfig;
 import com.opensymphony.xwork2.config.entities.PackageConfig;
 import com.opensymphony.xwork2.config.entities.ResultConfig;
 
-public class ModuleManager {
+public class ModuleManager implements DispatcherListener{
 
 	private List<Module> modules = new ArrayList<Module>();
 	private Logger logger = Logger.getLogger(ModuleManager.class.getName());
@@ -165,7 +167,7 @@ public class ModuleManager {
 						}
 					}else if (kind == ENTRY_DELETE) {
 						Module module = getModuleById(fileName);
-						if(module!=null && configuration!=null) {
+						if(module!=null) {
 							logger.log(Level.INFO, "removing module  : " + module.getName());
 							modules.remove(module.getIndex());
 							configuration.removePackageConfig(module.getId());
@@ -226,71 +228,69 @@ public class ModuleManager {
 
 	private void reloadModule(Module module) {
 		try {
-			if (configuration != null) {
-				logger.log(Level.INFO, "reloading module  : " + module.getName());
-				File folder = module.getFolder();
-				int index = module.getIndex();
-				String id = module.getId();
-				module = parse(new File(folder + "/module.xml"));
-				module.setFolder(folder);
-				module.setId(folder.getName());
-				module.setIndex(index);
-				initModule(module);
-				modules.set(index, module);
-				configuration.removePackageConfig(id);
-				PackageConfig.Builder packageBuilder = new PackageConfig.Builder(module.getId());
-				packageBuilder.namespace("/" + module.getUrl());
-				packageBuilder.addParent(configuration.getPackageConfig("root"));
-				for (Menu menu : module.getMenus()) {
-					for (MenuItem item : menu.getMenuItems()) {
-						if (!item.getUrl().equals(module.getUrl())) {
-							String url = item.getUrl().substring(module.getUrl().length() + 1);
-							ActionConfig.Builder actionBuilder = new ActionConfig.Builder(url, url, null);
-							ResultConfig.Builder resultBuilder = new ResultConfig.Builder("success",
-									"org.apache.struts2.views.tiles.TilesResult");
-							resultBuilder.addParam("location", item.getUrl());
-							actionBuilder.addResultConfig(resultBuilder.build());
-							ActionConfig actionConfig = actionBuilder.build();
-							packageBuilder.addActionConfig(url, actionConfig);
-						}
+			logger.log(Level.INFO, "reloading module  : " + module.getName());
+			File folder = module.getFolder();
+			int index = module.getIndex();
+			String id = module.getId();
+			module = parse(new File(folder + "/module.xml"));
+			module.setFolder(folder);
+			module.setId(folder.getName());
+			module.setIndex(index);
+			initModule(module);
+			modules.set(index, module);
+			configuration.removePackageConfig(id);
+			PackageConfig.Builder packageBuilder = new PackageConfig.Builder(module.getId());
+			packageBuilder.namespace("/" + module.getUrl());
+			packageBuilder.addParent(configuration.getPackageConfig("root"));
+			for (Menu menu : module.getMenus()) {
+				for (MenuItem item : menu.getMenuItems()) {
+					if (!item.getUrl().equals(module.getUrl())) {
+						String url = item.getUrl().substring(module.getUrl().length() + 1);
+						ActionConfig.Builder actionBuilder = new ActionConfig.Builder(url, url, null);
+						ResultConfig.Builder resultBuilder = new ResultConfig.Builder("success",
+								"org.apache.struts2.views.tiles.TilesResult");
+						resultBuilder.addParam("location", item.getUrl());
+						actionBuilder.addResultConfig(resultBuilder.build());
+						ActionConfig actionConfig = actionBuilder.build();
+						packageBuilder.addActionConfig(url, actionConfig);
 					}
 				}
-				for (Action action : module.getActions()) {
-					ActionConfig.Builder actionBuilder = new ActionConfig.Builder(action.getUrl(), action.getUrl(),
-							action.getClassName());
-					actionBuilder.methodName(action.getMethod());
-					for (Result result : action.getResults()) {
-						if (!result.getValue().equals("") && !result.getValue().startsWith("/")) {
-							result.setValue(module.getUrl() + "/" + result.getValue());
-						}
-						String type = result.getType();
-						ResultConfig.Builder resultBuilder = null;
-						if (type.equals("tiles")) {
-							resultBuilder = new ResultConfig.Builder(result.getName(),
-									"org.apache.struts2.views.tiles.TilesResult");
-						} else if (type.equals("redirect")) {
-							resultBuilder = new ResultConfig.Builder(result.getName(),
-									"org.apache.struts2.dispatcher.ServletRedirectResult");
-						} else if (type.equals("redirectAction")) {
-							resultBuilder = new ResultConfig.Builder(result.getName(),
-									"org.apache.struts2.dispatcher.ServletActionRedirectResult");
-						} else if (type.equals("dispatcher")) {
-							resultBuilder = new ResultConfig.Builder(result.getName(),
-									"org.apache.struts2.dispatcher.ServletDispatcherResult");
-						}
-						if (resultBuilder != null) {
-							resultBuilder.addParam("location", result.getValue());
-							actionBuilder.addResultConfig(resultBuilder.build());
-						}
-					}
-					ActionConfig actionConfig = actionBuilder.build();
-					packageBuilder.addActionConfig(action.getUrl(), actionConfig);
-				}
-				PackageConfig packageConfig = packageBuilder.build();
-				configuration.addPackageConfig(module.getId(), packageConfig);
-				configuration.rebuildRuntimeConfiguration();
-				registerPages(module);
 			}
+			for (Action action : module.getActions()) {
+				ActionConfig.Builder actionBuilder = new ActionConfig.Builder(action.getUrl(), action.getUrl(),
+						action.getClassName());
+				actionBuilder.methodName(action.getMethod());
+				for (Result result : action.getResults()) {
+					if (!result.getValue().equals("") && !result.getValue().startsWith("/")) {
+						result.setValue(module.getUrl() + "/" + result.getValue());
+					}
+					String type = result.getType();
+					ResultConfig.Builder resultBuilder = null;
+					if (type.equals("tiles")) {
+						resultBuilder = new ResultConfig.Builder(result.getName(),
+								"org.apache.struts2.views.tiles.TilesResult");
+					} else if (type.equals("redirect")) {
+						resultBuilder = new ResultConfig.Builder(result.getName(),
+								"org.apache.struts2.dispatcher.ServletRedirectResult");
+					} else if (type.equals("redirectAction")) {
+						resultBuilder = new ResultConfig.Builder(result.getName(),
+								"org.apache.struts2.dispatcher.ServletActionRedirectResult");
+					} else if (type.equals("dispatcher")) {
+						resultBuilder = new ResultConfig.Builder(result.getName(),
+								"org.apache.struts2.dispatcher.ServletDispatcherResult");
+					}
+					if (resultBuilder != null) {
+						resultBuilder.addParam("location", result.getValue());
+						actionBuilder.addResultConfig(resultBuilder.build());
+					}
+				}
+				ActionConfig actionConfig = actionBuilder.build();
+				packageBuilder.addActionConfig(action.getUrl(), actionConfig);
+			}
+			PackageConfig packageConfig = packageBuilder.build();
+			configuration.addPackageConfig(module.getId(), packageConfig);
+			configuration.rebuildRuntimeConfiguration();
+			registerPages(module);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -440,6 +440,16 @@ public class ModuleManager {
 
 	public void setServletContext(ServletContext servletContext) {
 		this.servletContext = servletContext;
+	}
+	
+	@Override
+	public void dispatcherInitialized(Dispatcher dispatcher) {
+		configuration = dispatcher.getConfigurationManager().getConfiguration();
+	}
+	
+	@Override
+	public void dispatcherDestroyed(Dispatcher du) {
+		
 	}
 
 }

@@ -5,10 +5,8 @@ import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.ServletActionContext;
-import org.apache.struts2.dispatcher.Dispatcher;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
-import com.opensymphony.xwork2.config.Configuration;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
 @SuppressWarnings("serial")
@@ -20,11 +18,7 @@ public class ModuleInterceptor extends AbstractInterceptor {
 		try {
 			Map application = (Map) ActionContext.getContext().get("application");
 			ModuleManager moduleManager = (ModuleManager) application.get("moduleManager");
-			Configuration configuration = moduleManager.getConfiguration();
-			if(configuration == null) {
-				moduleManager.setConfiguration(Dispatcher.getInstance().getConfigurationManager().getConfiguration());
-			}
-			Module module = moduleManager.getCurrentModule();
+		    Module module = moduleManager.getCurrentModule();
 			if(module!=null) {
 				HttpServletRequest request = ServletActionContext.getRequest();
 				request.setAttribute("modules",moduleManager.getVisibleModules(module.getType()));
