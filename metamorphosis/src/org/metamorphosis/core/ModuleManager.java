@@ -247,10 +247,17 @@ public class ModuleManager {
 		TemplateManager templateManager = (TemplateManager) servletContext.getAttribute("templateManager");
 		Template template = module.isBackend() ? templateManager.getBackendTemplate(null)
 				: templateManager.getFrontendTemplate(null);
+		Definition definition = new Definition();
+		definition.setName(module.getUrl());
+		definition.setExtends(module.getType());
+		definition.setTemplate(template.getIndexPage());
+		definition.setPreparer("org.metamorphosis.core.PagePreparer");
+		definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + module.getHome()));
+		container.register(definition);
 		for (File file : module.getFolder().listFiles()) {
 			if (file.isFile() && file.getName().endsWith(".jsp")) {
 				String name = file.getName().substring(0, file.getName().length() - 4);
-				Definition definition = new Definition();
+				definition = new Definition();
 				definition.setName(module.getUrl() + "/" + name);
 				definition.setExtends(module.getUrl());
 				definition.setTemplate(template.getIndexPage());

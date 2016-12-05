@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <module>
 	<name>admin</name>
+	<url>admin</url>
 	<administrable>false</administrable>
 	<home>users.jsp</home>
 	<order>5</order>
