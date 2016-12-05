@@ -8,7 +8,7 @@ hr {
 	width : 90%;
 	margin-bottom : 5px;
 	margin-top : 5px;
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 }
 
 h3 {
@@ -17,12 +17,12 @@ h3 {
 
 input {
 	padding-left : 2px;
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 }
 
 select {
 	padding : 2px;
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 }
 
 input,select {
@@ -34,7 +34,7 @@ h1 {
     line-height: 0.7em;
 	background-color:rgba(44,44,44,0.8);
 	font-family : Orbitron;
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 	border-left : none;
 	border-right : none;
 	text-align : left;
@@ -75,19 +75,19 @@ article {
 	background : rgba(255,255,255,0.98);
 	padding : 5px;
 	padding-left : 30px;
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 	border-radius : 10px;
 }
 
 td {
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 }
 
 header {
 	height : 4.5em;
 	padding : 0em;
 	background : #fffef5;
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 }
 
 b {
@@ -202,7 +202,7 @@ b {
 	font-size : 85%;
 	display : inline-block;
 	margin-left : 5px;
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 	cursor : pointer;
 	color : #000;
 	background-color:#fff;
@@ -217,7 +217,7 @@ b {
 }
 
 .login input[type=text],.login input[type=password]{
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 	height : 18px;
 	margin-top : 3px;
 	width : 146px;
@@ -288,7 +288,7 @@ li {
 
 .login a:first-of-type {
 	margin-left : 70px;
-	border-right : 1px solid #ffede6;
+	border-right : 1px solid #fddccf;
 	padding-right : 5px;
 	background-image: url('../images/user-16.png');
 	padding-left : 16px;
@@ -310,7 +310,7 @@ main {
 }
 
 fieldset {
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 	background : rgba(255,255,255,0.98);
 	padding-bottom : 5px;
 }
@@ -322,7 +322,7 @@ footer {
     padding: 8px;
     font-family : Itim;
     font-size : 70%;
-    border: 1px solid #ffede6;
+    border: 1px solid #fddccf;
 	border-left : none;
 	border-right : none;
     position : fixed;
@@ -354,7 +354,7 @@ footer p {
 }
 
 .extensionDetails,.extension img {
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 }
 
 .forum tbody tr:nth-child(odd) {
@@ -368,7 +368,7 @@ footer p {
 .forum > h2,.chat > h2 {
 	background-color : rgb(255, 255, 255);
 	color : rgb(234, 133, 17);
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 	font-size : 90%;
 	font-weight : 400;
 	background-image: url('../images/discuss-16.png');
@@ -383,7 +383,7 @@ footer p {
 }
 
 .forum th,.chat-right h2 {
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 	background : #fffef5;
 	color : #000;
 	font-weight : 400;
@@ -396,7 +396,7 @@ footer p {
 	background-image: url('../images/discuss-16.png');
 	background-repeat : no-repeat;
 	background-position : 20% 56%;
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 	color : rgb(234, 133, 17);
 }
 
@@ -406,7 +406,7 @@ footer p {
 }
 
 .forum-message .editor,.forum-message input[type=text]{
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 }
 
 .forum-message #title span {
@@ -415,7 +415,7 @@ footer p {
 
 .chat-left,.chat textarea,.chat-right {
 	background : rgba(255,255,255,0.98);
-	border: 1px solid #ffede6;
+	border: 1px solid #fddccf;
 }
 .chat-right h2 {
 	background-image: url('../images/user-16.png');
