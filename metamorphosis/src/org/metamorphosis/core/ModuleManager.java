@@ -151,6 +151,7 @@ public class ModuleManager {
 					} else if (kind == ENTRY_CREATE) {
 						File folder = new File(root+"/"+fileName);
 						if(folder.isDirectory()) {
+							logger.log(Level.INFO, "adding module  : " + folder.getName());
 							final Module module = new Module();
 							module.setFolder(folder);
 							module.setId(folder.getName());
@@ -196,6 +197,12 @@ public class ModuleManager {
 					} else if (kind == ENTRY_CREATE) {
 						if (fileName.equals("module.xml")) {
 							reloadModule(module);
+						}else if (fileName.endsWith(".jsp")) {
+							try {
+								registerPage(module, fileName);
+							}catch(Exception es) {
+								
+							}
 						}
 					}
 				}
@@ -279,6 +286,21 @@ public class ModuleManager {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void registerPage(Module module,String file) throws Exception {
+		CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(servletContext);
+		TemplateManager templateManager = (TemplateManager) servletContext.getAttribute("templateManager");
+		Template template = module.isBackend() ? templateManager.getBackendTemplate(null)
+				: templateManager.getFrontendTemplate(null);
+		String name = file.substring(0, file.length() - 4);
+		Definition definition = new Definition();
+		definition.setName(module.getUrl() + "/" + name);
+		definition.setExtends(module.getUrl());
+		definition.setTemplate(template.getIndexPage());
+		definition.setPreparer("org.metamorphosis.core.PagePreparer");
+		definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + file));
+		container.register(definition);
 	}
 
 	private void registerPages(Module module) throws Exception {
