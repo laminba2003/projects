@@ -109,7 +109,7 @@ public class ModuleManager {
 		orderModules();
 		new Thread(new Runnable() {
 			public void run() {
-				monitorModules(root);
+				monitorRoot(root);
 			}
 		}).start();
 	}
@@ -130,7 +130,7 @@ public class ModuleManager {
 	}
 	
 	@SuppressWarnings("unchecked")
-	private void monitorModules(File root) {
+	private void monitorRoot(File root) {
 		try {
 			WatchService watcher = FileSystems.getDefault().newWatchService();
 			Path dir = Paths.get(root.getAbsolutePath());
