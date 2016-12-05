@@ -1,6 +1,8 @@
 package org.metamorphosis.core;
 
 import java.util.Map;
+
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -25,6 +27,10 @@ public class ActionSupport extends com.opensymphony.xwork2.ActionSupport {
 	@SuppressWarnings("rawtypes")
 	public Map getApplication() {
 		return (Map) ActionContext.getContext().get("application");
+	}
+	
+	public ServletContext getServletContext() {
+		return getModuleManager().getServletContext();
 	}
 	
 	public ModuleManager getModuleManager() {
