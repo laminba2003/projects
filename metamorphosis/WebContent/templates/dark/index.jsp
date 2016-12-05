@@ -39,12 +39,14 @@
 		 	<tiles:insertAttribute name="content"/>
 		 </section>
 		  <aside>
-		   	  <h1 class="icon-16">${module.name}</h1>
-		   	   <ul>
-		   	    <s:iterator value="#request.menu.menuItems">
-					<li><a href="${url}">${label}</a></li>
+		   	   <s:iterator value="#request.module.getMenus('main')" var="menu">
+		   	      <h1 class="icon-16">${menu.label}</h1>
+		   	   		<ul>
+		   	         <s:iterator value="#menu.menuItems">
+						<li><a href="${url}">${label}</a></li>
+					</s:iterator>
+					 </ul>
 			   </s:iterator>
-			    </ul>
 		   </aside>
 		</main>
 		 <footer>

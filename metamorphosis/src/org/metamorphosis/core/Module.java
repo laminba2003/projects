@@ -71,7 +71,18 @@ public class Module extends Extension {
 	}
 	
 	public void addMenu(Menu menu) {
+		if(menu.getLabel()==null) menu.setLabel(name);
 		menus.add(menu);
+	}
+	
+	public List<Menu> getMenus(String position) {
+		List<Menu> menus = new ArrayList<Menu>();
+		for(Menu menu : this.menus) {
+			if(menu.getPosition().equals(position)) {
+				menus.add(menu);
+			}
+		}
+		return menus;
 	}
 
 	public List<Action> getActions() {

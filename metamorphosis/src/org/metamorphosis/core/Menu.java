@@ -5,12 +5,20 @@ import java.util.List;
 
 public class Menu {
 
-	private String position;
+	private String label;
+	private String position = "main";
 	private List<MenuItem> menuItems = new ArrayList<MenuItem>();
 
 	public Menu() {
 		
 	}
+	public String getLabel() {
+		return label;
+	}
+	public void setLabel(String label) {
+		this.label = label;
+	}
+
 	public String getPosition() {
 		return position;
 	}
