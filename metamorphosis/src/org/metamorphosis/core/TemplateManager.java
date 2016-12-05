@@ -19,7 +19,6 @@ public class TemplateManager {
 
 	private List<Template> templates = new ArrayList<Template>();
 	private Logger logger = Logger.getLogger(TemplateManager.class.getName());
-	
 	private static TemplateManager instance;
 
 	public TemplateManager() {
