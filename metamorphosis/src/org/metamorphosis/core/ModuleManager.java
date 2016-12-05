@@ -30,7 +30,7 @@ import com.opensymphony.xwork2.config.entities.ActionConfig;
 import com.opensymphony.xwork2.config.entities.PackageConfig;
 import com.opensymphony.xwork2.config.entities.ResultConfig;
 
-public class ModuleManager implements DispatcherListener{
+public class ModuleManager implements DispatcherListener {
 
 	private List<Module> modules = new ArrayList<Module>();
 	private Logger logger = Logger.getLogger(ModuleManager.class.getName());
@@ -448,8 +448,7 @@ public class ModuleManager implements DispatcherListener{
 	}
 	
 	@Override
-	public void dispatcherDestroyed(Dispatcher du) {
-		
+	public void dispatcherDestroyed(Dispatcher dispatcher) {
 	}
-
+	
 }
