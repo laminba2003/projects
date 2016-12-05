@@ -29,10 +29,8 @@ public class StartupListener implements ServletContextListener {
 		String root = new File(context.getRealPath("/")).getAbsolutePath();
 		FilterRegistration struts2 = context.addFilter("struts2", org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.class);
 		struts2.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST,DispatcherType.FORWARD),true, "/*");
-		ModuleManager moduleManager = new ModuleManager(context);
-		Dispatcher.addDispatcherListener(moduleManager);
 		StringBuffer buffer = new StringBuffer(loadTemplates(context, root));
-		struts2.setInitParameter("config",loadModules(moduleManager, root, buffer));
+		struts2.setInitParameter("config",loadModules(context, root, buffer));
 		context.setInitParameter("org.apache.tiles.factory.TilesContainerFactory","org.metamorphosis.core.TilesContainerFactory");
 		context.setInitParameter("org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG",buffer.toString());
 		new TilesListener().contextInitialized(event);
@@ -59,11 +57,12 @@ public class StartupListener implements ServletContextListener {
 		return tilesDefinitions += ","+ createTemplateTiles(root,template);
 	}
 	
-	private String loadModules(ModuleManager moduleManager,String root,StringBuffer buffer) {
+	private String loadModules(ServletContext context,String root,StringBuffer buffer) {
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
+		ModuleManager moduleManager = new ModuleManager(context);
 		moduleManager.loadModules(new File(root+"/modules"));
-		ServletContext context = moduleManager.getServletContext();
 		context.setAttribute("moduleManager",moduleManager);
+		Dispatcher.addDispatcherListener(moduleManager);
 		for(Module module : moduleManager.getModules()) {
 			buffer.append(","+createModuleTiles(module));
 			config +=","+createModuleConfig(module);
