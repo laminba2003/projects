@@ -17,7 +17,7 @@
 		</menu>
 	</menus>
 	<actions>
-		<action name="signIn" url="signIn" global="true" script="users.groovy" method="signIn" />
+		<action name="signIn"  url="signIn" global="true" script="users.groovy" method="signIn" />
 		<action name="signOut" url="signOut" global="true" script="users.groovy" method="signOut">
 			<result type="redirect">/</result>
 		</action>
