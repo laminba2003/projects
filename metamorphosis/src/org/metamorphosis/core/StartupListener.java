@@ -53,6 +53,8 @@ public class StartupListener implements ServletContextListener {
 			copyFrontendTemplate(root);
 			template = templateManager.loadTemplate(new File(root+"/templates/medusa"));
 		}
+		context.setAttribute("signInForm","signIn");
+		context.setAttribute("registerForm","register");
 		return tilesDefinitions += ","+ createTemplateTiles(root,template);
 	}
 	
