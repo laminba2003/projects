@@ -151,13 +151,13 @@ public class ModuleManager implements DispatcherListener {
 				} catch (InterruptedException ex) {
 					return;
 				}
-				for (WatchEvent<?> event : key.pollEvents()) {
+				for(WatchEvent<?> event : key.pollEvents()) {
 					WatchEvent.Kind<?> kind = event.kind();
 					WatchEvent<Path> ev = (WatchEvent<Path>) event;
 					String fileName = ev.context().toString();
-					if (kind == OVERFLOW) {
+					if(kind == OVERFLOW) {
 						continue;
-					} else if (kind == ENTRY_CREATE) {
+					} else if(kind == ENTRY_CREATE) {
 						File folder = new File(root+"/"+fileName);
 						if(folder.isDirectory()) {
 							logger.log(Level.INFO, "adding module  : " + folder.getName());
@@ -172,7 +172,7 @@ public class ModuleManager implements DispatcherListener {
 								}
 							}).start();
 						}
-					}else if (kind == ENTRY_DELETE) {
+					}else if(kind == ENTRY_DELETE) {
 						Module module = getModuleById(fileName);
 						if(module!=null) {
 							logger.log(Level.INFO, "removing module  : " + module.getName());
@@ -183,7 +183,7 @@ public class ModuleManager implements DispatcherListener {
 					}
 				}
 				boolean valid = key.reset();
-				if (!valid) {
+				if(!valid) {
 					break;
 				}
 			}
@@ -205,16 +205,16 @@ public class ModuleManager implements DispatcherListener {
 				} catch (InterruptedException ex) {
 					return;
 				}
-				for (WatchEvent<?> event : key.pollEvents()) {
+				for(WatchEvent<?> event : key.pollEvents()) {
 					WatchEvent.Kind<?> kind = event.kind();
 					WatchEvent<Path> ev = (WatchEvent<Path>) event;
 					String fileName = ev.context().toString();
-					if (kind == OVERFLOW) {
+					if(kind == OVERFLOW) {
 						continue;
-					} else if (kind == ENTRY_CREATE) {
-						if (fileName.equals(MODULE_METADATA)) {
+					} else if(kind == ENTRY_CREATE) {
+						if(fileName.equals(MODULE_METADATA)) {
 							reloadModule(module);
-						}else if (fileName.endsWith(".jsp")) {
+						}else if(fileName.endsWith(".jsp")) {
 							try {
 								registerPage(module, fileName);
 							}catch(Exception es) {
@@ -224,7 +224,7 @@ public class ModuleManager implements DispatcherListener {
 					}
 				}
 				boolean valid = key.reset();
-				if (!valid) {
+				if(!valid) {
 					break;
 				}
 			}
@@ -249,9 +249,9 @@ public class ModuleManager implements DispatcherListener {
 			PackageConfig.Builder packageBuilder = new PackageConfig.Builder(module.getId());
 			packageBuilder.namespace("/" + module.getUrl());
 			packageBuilder.addParent(configuration.getPackageConfig("root"));
-			for (Menu menu : module.getMenus()) {
-				for (MenuItem item : menu.getMenuItems()) {
-					if (!item.getUrl().equals(module.getUrl())) {
+			for(Menu menu : module.getMenus()) {
+				for(MenuItem item : menu.getMenuItems()) {
+					if(!item.getUrl().equals(module.getUrl())) {
 						String url = item.getUrl().substring(module.getUrl().length() + 1);
 						ActionConfig.Builder actionBuilder = new ActionConfig.Builder(url, url, null);
 						ResultConfig.Builder resultBuilder = new ResultConfig.Builder("success",
@@ -263,30 +263,30 @@ public class ModuleManager implements DispatcherListener {
 					}
 				}
 			}
-			for (Action action : module.getActions()) {
+			for(Action action : module.getActions()) {
 				ActionConfig.Builder actionBuilder = new ActionConfig.Builder(action.getUrl(), action.getUrl(),
 						action.getClassName());
 				actionBuilder.methodName(action.getMethod());
-				for (Result result : action.getResults()) {
-					if (!result.getValue().equals("") && !result.getValue().startsWith("/")) {
+				for(Result result : action.getResults()) {
+					if(!result.getValue().equals("") && !result.getValue().startsWith("/")) {
 						result.setValue(module.getUrl() + "/" + result.getValue());
 					}
 					String type = result.getType();
 					ResultConfig.Builder resultBuilder = null;
-					if (type.equals("tiles")) {
+					if(type.equals("tiles")) {
 						resultBuilder = new ResultConfig.Builder(result.getName(),
 								"org.apache.struts2.views.tiles.TilesResult");
-					} else if (type.equals("redirect")) {
+					} else if(type.equals("redirect")) {
 						resultBuilder = new ResultConfig.Builder(result.getName(),
 								"org.apache.struts2.dispatcher.ServletRedirectResult");
-					} else if (type.equals("redirectAction")) {
+					} else if(type.equals("redirectAction")) {
 						resultBuilder = new ResultConfig.Builder(result.getName(),
 								"org.apache.struts2.dispatcher.ServletActionRedirectResult");
-					} else if (type.equals("dispatcher")) {
+					} else if(type.equals("dispatcher")) {
 						resultBuilder = new ResultConfig.Builder(result.getName(),
 								"org.apache.struts2.dispatcher.ServletDispatcherResult");
 					}
-					if (resultBuilder != null) {
+					if(resultBuilder != null) {
 						resultBuilder.addParam("location", result.getValue());
 						actionBuilder.addResultConfig(resultBuilder.build());
 					}
@@ -333,8 +333,8 @@ public class ModuleManager implements DispatcherListener {
 		definition.setPreparer("org.metamorphosis.core.PagePreparer");
 		definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + module.getIndexPage()));
 		container.register(definition);
-		for (File file : module.getFolder().listFiles()) {
-			if (file.isFile() && file.getName().endsWith(".jsp")) {
+		for(File file : module.getFolder().listFiles()) {
+			if(file.isFile() && file.getName().endsWith(".jsp")) {
 				String name = file.getName().substring(0, file.getName().length() - 4);
 				definition = new Definition();
 				definition.setName(module.getUrl() + "/" + name);
@@ -365,11 +365,11 @@ public class ModuleManager implements DispatcherListener {
 
 	public Object buildAction(String url) throws Exception {
 		Module module = getCurrentModule();
-		if (module != null) {
+		if(module != null) {
 			Action action = module.getAction(url);
-			if (action != null && action.getScript() != null) {
+			if(action != null && action.getScript() != null) {
 				File script = new File(module.getFolder() + "/scripts/" + action.getScript());
-				if (script.exists()) {
+				if(script.exists()) {
 					String name = script.getName();
 					String extension = name.substring(name.indexOf(".") + 1);
 					ScriptEngine engine = new ScriptEngineManager().getEngineByExtension(extension);

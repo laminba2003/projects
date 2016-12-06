@@ -33,9 +33,9 @@ public class TemplateManager {
 
 	public void loadTemplates(final File root) {
 		File[] files = root.listFiles();
-		if (files != null) {
-			for (File folder : root.listFiles()) {
-				if (folder.isDirectory()) {
+		if(files != null) {
+			for(File folder : root.listFiles()) {
+				if(folder.isDirectory()) {
 					loadTemplate(folder);
 				}
 			}
@@ -48,8 +48,8 @@ public class TemplateManager {
 	}
 
 	public Template loadTemplate(File folder) {
-		File metadata = new File(folder + "/"+TEMPLATE_METADATA);
-		if (metadata.exists()) {
+		File metadata = new File(folder+"/"+TEMPLATE_METADATA);
+		if(metadata.exists()) {
 			try {
 				final Template template = parse(metadata);
 				template.setId(folder.getName());
@@ -101,20 +101,20 @@ public class TemplateManager {
 				} catch (InterruptedException ex) {
 					return;
 				}
-				for (WatchEvent<?> event : key.pollEvents()) {
+				for(WatchEvent<?> event : key.pollEvents()) {
 					WatchEvent.Kind<?> kind = event.kind();
 					WatchEvent<Path> ev = (WatchEvent<Path>) event;
 					String fileName = ev.context().toString();
-					if (kind == OVERFLOW) {
+					if(kind == OVERFLOW) {
 						continue;
-					} else if (kind == ENTRY_CREATE) {
-						if (fileName.equals(TEMPLATE_METADATA)) {
+					} else if(kind == ENTRY_CREATE) {
+						if(fileName.equals(TEMPLATE_METADATA)) {
 							reloadTemplate(template);
 						}
 					}
 				}
 				boolean valid = key.reset();
-				if (!valid) {
+				if(!valid) {
 					break;
 				}
 			}
@@ -137,13 +137,13 @@ public class TemplateManager {
 				} catch (InterruptedException ex) {
 					return;
 				}
-				for (WatchEvent<?> event : key.pollEvents()) {
+				for(WatchEvent<?> event : key.pollEvents()) {
 					WatchEvent.Kind<?> kind = event.kind();
 					WatchEvent<Path> ev = (WatchEvent<Path>) event;
 					String fileName = ev.context().toString();
-					if (kind == OVERFLOW) {
+					if(kind == OVERFLOW) {
 						continue;
-					} else if (kind == ENTRY_CREATE) {
+					} else if(kind == ENTRY_CREATE) {
 						File folder = new File(root+"/"+fileName);
 						if(folder.isDirectory()) {
 							logger.log(Level.INFO, "adding template  : " + folder.getName());
@@ -157,7 +157,7 @@ public class TemplateManager {
 								}
 							}).start();
 						}
-					}else if (kind == ENTRY_DELETE) {
+					}else if(kind == ENTRY_DELETE) {
 						Template template = getTemplate(fileName);
 						if(template!=null) {
 							logger.log(Level.INFO, "removing template  : " + template.getName());
@@ -166,7 +166,7 @@ public class TemplateManager {
 					}
 				}
 				boolean valid = key.reset();
-				if (!valid) {
+				if(!valid) {
 					break;
 				}
 			}
@@ -180,7 +180,7 @@ public class TemplateManager {
 			logger.log(Level.INFO, "reloading template  : " + template.getId());
 			int index = template.getIndex();
 			File folder = template.getFolder();
-			template = parse(new File(folder + "/"+TEMPLATE_METADATA));
+			template = parse(new File(folder+"/"+TEMPLATE_METADATA));
 			template.setId(folder.getName());
 			template.setFolder(folder);
 			template.setIndex(index);
@@ -196,39 +196,32 @@ public class TemplateManager {
 	}
 
 	public Template getTemplate(String id) {
-		for (Template template : templates) {
-			if (template.getId().equals(id))
-				return template;
+		for(Template template : templates) {
+			if(template.getId().equals(id)) return template;
 		}
 		return null;
 	}
 
 	public Template getBackendTemplate(String id) {
 		Template template = getTemplate(id);
-		if (template != null && template.isBackend())
-			return template;
-		for (Template current : templates) {
-			if (current.isSelected() && current.isBackend())
-				return current;
+		if(template != null && template.isBackend()) return template;
+		for(Template current : templates) {
+			if(current.isSelected() && current.isBackend()) return current;
 		}
-		for (Template current : templates) {
-			if (current.isBackend())
-				return current;
+		for(Template current : templates) {
+			if(current.isBackend()) return current;
 		}
 		return null;
 	}
 
 	public Template getFrontendTemplate(String id) {
 		Template template = getTemplate(id);
-		if (template != null && template.isFrontend())
-			return template;
-		for (Template current : templates) {
-			if (current.isSelected() && current.isFrontend())
-				return current;
+		if(template != null && template.isFrontend()) return template;
+		for(Template current : templates) {
+			if(current.isSelected() && current.isFrontend()) return current;
 		}
-		for (Template current : templates) {
-			if (current.isFrontend())
-				return current;
+		for(Template current : templates) {
+			if(current.isFrontend()) return current;
 		}
 		return null;
 	}
