@@ -88,26 +88,10 @@ public class ModuleManager implements DispatcherListener {
 
 	public void loadModules(final File root) {
 		File[] files = root.listFiles();
-		if (files != null) {
-			for (File folder : files) {
-				if (folder.isDirectory()) {
-					File metadata = new File(folder + "/"+MODULE_METADATA);
-					if (metadata.exists()) {
-						try {
-							final Module module = parse(metadata);
-							module.setFolder(folder);
-							module.setId(folder.getName());
-							initModule(module);
-							addModule(module);
-							new Thread(new Runnable() {
-								public void run() {
-									monitorModule(module);
-								}
-							}).start();
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
+		if(files != null) {
+			for(File folder : files) {
+				if(folder.isDirectory()) {
+					loadModule(folder);
 				}
 			}
 		}
@@ -119,6 +103,25 @@ public class ModuleManager implements DispatcherListener {
 		}).start();
 	}
 
+	public void loadModule(File folder) {
+		File metadata = new File(folder + "/"+MODULE_METADATA);
+		if(metadata.exists()) {
+			try {
+				final Module module = parse(metadata);
+				module.setFolder(folder);
+				module.setId(folder.getName());
+				initModule(module);
+				addModule(module);
+				new Thread(new Runnable() {
+					public void run() {
+						monitorModule(module);
+					}
+				}).start();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 	private void initModule(Module module) throws Exception {
 		if(module.getUrl() == null)
 			module.setUrl(module.getFolder().getName());
@@ -353,9 +356,8 @@ public class ModuleManager implements DispatcherListener {
 	}
 
 	public Module getModuleByUrl(String url) {
-		for (Module module : modules) {
-			if (module.getUrl().equals(url) || ("/" + module.getUrl()).equals(url))
-				return module;
+		for(Module module : modules) {
+			if(module.getUrl().equals(url) || ("/" + module.getUrl()).equals(url)) return module;
 		}
 		return null;
 	}
@@ -378,9 +380,8 @@ public class ModuleManager implements DispatcherListener {
 	}
 
 	public Module getModuleById(String id) {
-		for (Module module : modules) {
-			if (module.getId().equals(id))
-				return module;
+		for(Module module : modules) {
+			if(module.getId().equals(id)) return module;
 		}
 		return null;
 	}
@@ -400,34 +401,30 @@ public class ModuleManager implements DispatcherListener {
 
 	public List<Module> getVisibleModules(String type) {
 		List<Module> modules = new ArrayList<Module>();
-		for (Module module : this.modules) {
-			if (module.isVisible() && module.getType().equals(type))
-				modules.add(module);
+		for(Module module : this.modules) {
+			if(module.isVisible() && module.getType().equals(type)) modules.add(module);
 		}
 		return modules;
 	}
 
 	public Module getDefaultBackendModule() {
-		for (Module module : this.modules) {
-			if (module.isBackend())
-				return module;
+		for(Module module : this.modules) {
+			if(module.isBackend()) return module;
 		}
 		return null;
 	}
 
 	public List<Module> getAdminModules() {
 		List<Module> modules = new ArrayList<Module>();
-		for (Module module : this.modules) {
-			if (module.isAdministrable())
-				modules.add(module);
+		for(Module module : this.modules) {
+			if(module.isAdministrable()) modules.add(module);
 		}
 		return modules;
 	}
 
 	public Module getMain() {
-		for (Module module : modules) {
-			if (module.isMain())
-				return module;
+		for(Module module : modules) {
+			if(module.isMain()) return module;
 		}
 		return getDefaultBackendModule();
 	}
