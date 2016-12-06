@@ -4,6 +4,7 @@ public class MenuItem {
 
 	private String name;
 	private String label;
+	private String icon;
 	private String url;
 	private String title;
 	private boolean visible = true;
@@ -19,6 +20,12 @@ public class MenuItem {
 	}
 	public void setLabel(String label) {
 		this.label = label;
+	}
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 	public String getUrl() {
 		return url;

@@ -6,6 +6,7 @@ import java.util.List;
 public class Menu {
 
 	private String label;
+	private String icon;
 	private boolean visible = true;
 	private String position = "main";
 	private List<MenuItem> menuItems = new ArrayList<MenuItem>();
@@ -18,6 +19,12 @@ public class Menu {
 	}
 	public void setLabel(String label) {
 		this.label = label;
+	}
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 	public boolean isVisible() {
 		return visible;

@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Module extends Extension {
-
+	
 	private int order;
 	private String url;
+	private String icon;
 	private boolean main;
 	private boolean administrable = true;
 	private String indexPage = "index.jsp";
@@ -16,11 +17,10 @@ public class Module extends Extension {
 	public int getOrder() {
 		return order;
 	}
-
 	public void setOrder(int order) {
 		this.order = order;
 	}
-
+	
 	public String getUrl() {
 		return url;
 	}
@@ -95,9 +95,13 @@ public class Module extends Extension {
 		}
 		return null;
 	}
+	
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
 
 	public String getIcon() {
-		return "modules/" + id + "/images/icon-16.png";
+		return icon!=null ? icon : "modules/" + id + "/images/icon-16.png";
 	}
 
 	public String getPath() {

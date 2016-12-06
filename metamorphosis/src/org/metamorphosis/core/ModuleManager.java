@@ -55,6 +55,7 @@ public class ModuleManager implements DispatcherListener {
 		digester.addBeanPropertySetter("module/name");
 		digester.addBeanPropertySetter("module/type");
 		digester.addBeanPropertySetter("module/url");
+		digester.addBeanPropertySetter("module/icon");
 		digester.addBeanPropertySetter("module/index","indexPage");
 		digester.addBeanPropertySetter("module/template");
 		digester.addBeanPropertySetter("module/main");
