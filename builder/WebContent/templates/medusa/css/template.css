@@ -85,7 +85,7 @@ a {
 }
 
 article {
-	background : rgba(255,255,255,0.98);
+	background : rgb(255,255,255);
 	padding : 5px;
 	padding-left : 30px;
 	border: 1px solid #fddccf;
