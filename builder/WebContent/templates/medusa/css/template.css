@@ -1,6 +1,6 @@
 body {
   font-family: Dosis;
-  background-color : rgba(253,253,253,0.98);
+  background: rgba(250,250,250,0.1);
   font-size : 90.8%;
 }
 
@@ -315,8 +315,8 @@ li {
 main {
 	padding : 0;
 	padding-top : 0px;
-	background-color : rgba(253,253,253,0.98);
     box-shadow: inset 10px 14px 130px -11px rgba(237,237,237,1);
+    background: rgba(250,250,250,0.1);
 }
 
 fieldset {
