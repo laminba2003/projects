@@ -69,9 +69,7 @@ public class StartupListener implements ServletContextListener {
 				if(action.getName()!=null && action.isGlobal())
 				context.setAttribute(action.getName(),module.getUrl()+"/"+action.getUrl());
 			}
-			if(module.getId().equals("users")) {
-				context.setAttribute("security",true);
-			}
+			if(module.getId().equals("users")) context.setAttribute("security",true);
 		}
 		return config;
 	}
@@ -131,7 +129,6 @@ public class StartupListener implements ServletContextListener {
 	}
 
 	private String createModuleConfig(Module module) {
-		
 		String content = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"+
 				"<!DOCTYPE struts PUBLIC '-//Apache Software Foundation//DTD Struts Configuration 2.0//EN' "+
 				"'http://struts.apache.org/dtds/struts-2.0.dtd'>"+
