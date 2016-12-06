@@ -41,7 +41,6 @@
 			  <span>type : ${type}</span>
 			  <span>version : ${version}</span>
 		  </div>
-		  <div class="extension-description">${description!=null ? description : "no description provided"}</div>
 		  <div class="extension-description"><b>Tags</b> : <i>jsp, html, css, js, groovy</i></div>
 		</div>
 		
