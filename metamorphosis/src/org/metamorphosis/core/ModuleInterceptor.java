@@ -15,10 +15,10 @@ public class ModuleInterceptor extends AbstractInterceptor {
 		    Module module = moduleManager.getCurrentModule();
 			if(module!=null) {
 				HttpServletRequest request = ServletActionContext.getRequest();
-				request.setAttribute("modules",moduleManager.getVisibleModules(module.getType()));
-				request.setAttribute("module",module);
 				String uri = request.getRequestURI();
 				String actionURL = uri.substring(request.getContextPath().length()+1,uri.length());
+				request.setAttribute("modules",moduleManager.getVisibleModules(module.getType()));
+				request.setAttribute("module",module);
 				request.setAttribute("title",actionURL);
 				request.setAttribute("js","modules/"+module.getId()+"/js");
 				request.setAttribute("css","modules/"+module.getId()+"/css");

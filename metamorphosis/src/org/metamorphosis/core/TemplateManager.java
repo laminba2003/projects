@@ -21,7 +21,7 @@ public class TemplateManager {
 	private List<Template> templates = new ArrayList<Template>();
 	private Logger logger = Logger.getLogger(TemplateManager.class.getName());
 	private static TemplateManager instance;
-
+    private static final String TEMPLATE_METADATA = "template.xml";
 	public TemplateManager() {
 		instance = this;
 	}
@@ -48,7 +48,7 @@ public class TemplateManager {
 	}
 
 	public Template loadTemplate(File folder) {
-		File metadata = new File(folder + "/template.xml");
+		File metadata = new File(folder + "/"+TEMPLATE_METADATA);
 		if (metadata.exists()) {
 			try {
 				final Template template = parse(metadata);
@@ -106,7 +106,7 @@ public class TemplateManager {
 					if (kind == OVERFLOW) {
 						continue;
 					} else if (kind == ENTRY_CREATE) {
-						if (fileName.equals("template.xml")) {
+						if (fileName.equals(TEMPLATE_METADATA)) {
 							reloadTemplate(template);
 						}
 					}
@@ -178,7 +178,7 @@ public class TemplateManager {
 			logger.log(Level.INFO, "reloading template  : " + template.getId());
 			int index = template.getIndex();
 			File folder = template.getFolder();
-			template = parse(new File(folder + "/template.xml"));
+			template = parse(new File(folder + "/"+TEMPLATE_METADATA));
 			template.setId(folder.getName());
 			template.setFolder(folder);
 			template.setIndex(index);

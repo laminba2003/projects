@@ -37,7 +37,8 @@ public class ModuleManager implements DispatcherListener {
 	private Configuration configuration;
 	private ServletContext servletContext;
 	private static ModuleManager instance;
-
+	private static final String MODULE_METADATA = "module.xml";
+	
 	public ModuleManager() {
 		instance = this;
 	}
@@ -90,7 +91,7 @@ public class ModuleManager implements DispatcherListener {
 		if (files != null) {
 			for (File folder : files) {
 				if (folder.isDirectory()) {
-					File metadata = new File(folder + "/module.xml");
+					File metadata = new File(folder + "/"+MODULE_METADATA);
 					if (metadata.exists()) {
 						try {
 							final Module module = parse(metadata);
@@ -207,7 +208,7 @@ public class ModuleManager implements DispatcherListener {
 					if (kind == OVERFLOW) {
 						continue;
 					} else if (kind == ENTRY_CREATE) {
-						if (fileName.equals("module.xml")) {
+						if (fileName.equals(MODULE_METADATA)) {
 							reloadModule(module);
 						}else if (fileName.endsWith(".jsp")) {
 							try {
@@ -234,7 +235,7 @@ public class ModuleManager implements DispatcherListener {
 			File folder = module.getFolder();
 			int index = module.getIndex();
 			String id = module.getId();
-			module = parse(new File(folder + "/module.xml"));
+			module = parse(new File(folder + "/"+MODULE_METADATA));
 			module.setFolder(folder);
 			module.setId(folder.getName());
 			module.setIndex(index);
