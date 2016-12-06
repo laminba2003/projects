@@ -217,7 +217,7 @@ public class ModuleManager implements DispatcherListener {
 							try {
 								registerPage(module, fileName);
 							}catch(Exception es) {
-								
+								es.printStackTrace();
 							}
 						}
 					}
