@@ -7,13 +7,17 @@ body {
 hr {
 	width : 90%;
 	margin-bottom : 5px;
-	margin-top : 5px;
+	margin-top : 2px;
 	color :  #fddccf;
 	background-color :  #fddccf;
 	border : none;
 	height : 1px;
 }
-
+p {
+	margin-bottom : 2px;
+	margin-top : 2px;
+	line-height : 22px;
+}
 h3 {
 	color : rgb(234, 133, 17);
 }
@@ -73,6 +77,11 @@ a {
 #content p, #content pre {
 	margin-bottom : 5px;
 	font-size : 98%;
+}
+
+#content pre {
+	line-height : 19px;
+	margin-top : 4px;
 }
 
 article {
@@ -342,6 +351,7 @@ footer {
 
 footer p {
 	text-align : center;
+	line-height : 8px;
 }
 
 #extensions-list {
