@@ -8,7 +8,6 @@ public class Module extends Extension {
 	private int order;
 	private String url;
 	private boolean main;
-	private boolean visible = true;
 	private boolean administrable = true;
 	private String indexPage = "index.jsp";
 	private List<Menu> menus = new ArrayList<Menu>();
@@ -37,15 +36,6 @@ public class Module extends Extension {
 	public void setMain(boolean main) {
 		this.main = main;
 	}
-
-	public boolean isVisible() {
-		return visible;
-	}
-
-	public void setVisible(boolean visible) {
-		this.visible = visible;
-	}
-
 	public boolean isAdministrable() {
 		return administrable;
 	}
