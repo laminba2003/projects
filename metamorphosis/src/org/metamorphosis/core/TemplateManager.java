@@ -143,7 +143,7 @@ public class TemplateManager {
 					String fileName = ev.context().toString();
 					if(kind == OVERFLOW) {
 						continue;
-					} else if(kind == ENTRY_CREATE) {
+					}else if(kind == ENTRY_CREATE) {
 						File folder = new File(root+"/"+fileName);
 						if(folder.isDirectory()) {
 							logger.log(Level.INFO, "adding template  : " + folder.getName());
