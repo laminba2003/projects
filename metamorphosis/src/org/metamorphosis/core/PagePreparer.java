@@ -21,7 +21,7 @@ public class PagePreparer implements ViewPreparer {
 				template = template!=null && template.isBackend() ? template : templateManager.getBackendTemplate(null);
 				tilesContext.dispatch(template.getIndexPage());
 			}else {
-				template = template!=null && template.isFrontend() ? template : templateManager.getFrontendTemplate(null);
+				template = templateManager.getFrontendTemplate(null);
 				tilesContext.dispatch(template.getIndexPage());
 			}
 		} catch (IOException e) {
