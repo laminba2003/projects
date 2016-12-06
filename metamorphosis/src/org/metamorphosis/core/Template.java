@@ -2,8 +2,10 @@ package org.metamorphosis.core;
 
 public class Template extends Extension {
 
-	private boolean selected;
-
+	protected boolean selected;
+    protected String loginPage = "login.jsp";
+    protected String registrationPage = "register.jsp";
+    
 	public boolean isSelected() {
 		return selected;
 	}
@@ -12,6 +14,22 @@ public class Template extends Extension {
 		this.selected = selected;
 	}
 	
+	public String getLoginPage() {
+		return loginPage;
+	}
+
+	public void setLoginPage(String loginPage) {
+		this.loginPage = loginPage;
+	}
+
+	public String getRegistrationPage() {
+		return registrationPage;
+	}
+
+	public void setRegistrationPage(String registrationPage) {
+		this.registrationPage = registrationPage;
+	}
+
 	public String getThumbnail() {
 		return "templates/"+id+"/thumbnail.png";
 	}
