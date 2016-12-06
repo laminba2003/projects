@@ -85,17 +85,11 @@ public class StartupListener implements ServletContextListener {
 			content += "<definition name='index' extends='"+template.getType()+"'>";
 			content+="<put-attribute name='content' value='/index.jsp'/>";
 			content+="</definition>";
-			if(new File(template.getFolder()+"/"+template.getSignInPage()).exists()) {
-				content += "<definition name='signin' template='/templates/"+template.getFolder().getName()+"/"+template.getSignInPage()+"'>";
-				content+="</definition>";
-			}
-			if(new File(template.getFolder()+"/"+template.getRegistrationPage()).exists()) {
-				content += "<definition name='register' template='/templates/"+template.getFolder().getName()+"/"+template.getRegistrationPage()+"'>";
-				content+="</definition>";
-			}
-			if(!new File(root+"/index.jsp").exists()) {
-				copyFile(root,"","index.jsp");
-			}
+			content+= "<definition name='signin' template='/templates/"+template.getFolder().getName()+"/"+template.getSignInPage()+"'>";
+			content+="</definition>";
+			content+= "<definition name='register' template='/templates/"+template.getFolder().getName()+"/"+template.getRegistrationPage()+"'>";
+			content+="</definition>";
+			if(!new File(root+"/index.jsp").exists()) copyFile(root,"","index.jsp");
 		}
 		content +="</tiles-definitions>";
 		File temp=null;
