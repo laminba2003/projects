@@ -20,7 +20,7 @@ public class PagePreparer implements ViewPreparer {
 			if(module!=null && module.isBackend()) {
 				template = template!=null && template.isBackend() ? template : templateManager.getBackendTemplate(null);
 				tilesContext.dispatch(template.getIndexPage());
-			}else if(module!=null && module.isFrontend()) {
+			}else {
 				template = template!=null && template.isFrontend() ? template : templateManager.getFrontendTemplate(null);
 				tilesContext.dispatch(template.getIndexPage());
 			}

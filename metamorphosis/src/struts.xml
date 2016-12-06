@@ -26,6 +26,14 @@
         <result name="success" type="tiles">index</result>
      </action>
      
+     <action name="signIn">
+        <result name="success" type="tiles">signin</result>
+     </action>
+     
+     <action name="register">
+        <result name="success" type="tiles">register</result>
+     </action>
+     
       <action name="{module}">
 	      	<exception-mapping exception="org.apache.tiles.definition.NoSuchDefinitionException"
 	        result="error" />
