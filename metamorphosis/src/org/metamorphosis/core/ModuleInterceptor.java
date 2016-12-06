@@ -23,6 +23,14 @@ public class ModuleInterceptor extends AbstractInterceptor {
 				request.setAttribute("js","modules/"+module.getId()+"/js");
 				request.setAttribute("css","modules/"+module.getId()+"/css");
 				request.setAttribute("images","modules/"+module.getId()+"/images");
+				for(Menu menu : module.getMenus()) {
+					for(MenuItem item : menu.getMenuItems()) {
+						if(item.getUrl().equals(actionURL) && item.getTitle()!=null) {
+							request.setAttribute("title",item.getTitle());
+							break;
+						}
+					}
+				}
 				for(Action action : module.getActions()) {
 					String url = module.getUrl()+"/"+action.getUrl();
 					if(action.getName()!=null && !action.isGlobal()) {
