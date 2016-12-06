@@ -9,7 +9,7 @@
 <hr/>
 <h2>Requirements</h2>
 <ul>
-<li>JDK 7.0 or newer</li>
+<li>JDK 7 or newer</li>
 </ul>
 <hr/>
 <h2>Download</h2>
