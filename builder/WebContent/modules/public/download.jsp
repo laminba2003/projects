@@ -7,6 +7,11 @@
 <h2>Change log</h2>
 <p>The change log is not available at the current state of the development process.</p>
 <hr/>
+<h2>Requirements</h2>
+<ul>
+<li>JDK 7.0 or newer</li>
+</ul>
+<hr/>
 <h2>Download</h2>
 <p>The most recent test version in this branch is : 1.0. You can test the current state of development using <a href="https://maven.apache.org/" target="_blank">Apache Maven</a>.</p>
 <hr/>
@@ -17,12 +22,5 @@
     <span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>version</span><span style='color:#a65700; '>></span>1.0<span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>version</span><span style='color:#a65700; '>></span>
 <span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>dependency</span><span style='color:#a65700; '>></span>
 </pre>
-<h2>Requirements</h2>
-<ul>
-<li>JDK 7.0 or newer</li>
-<li>Servlet API 3.0 or newer</li>
-<li>Struts 2.3.16</li>
-<li>Struts-Tiles 2.3.16</li>
-</ul>
 </article>
 </div>
