@@ -211,28 +211,28 @@ public class StartupListener implements ServletContextListener {
 		copyFile(root,"templates","medusa/css/template.css");
 	}
 	
-	private void copyFile(String root,String dir,String file)	{
+	private void copyFile(String root,String directory,String file)	{
 		InputStream source = this.getClass().getClassLoader().getResourceAsStream("META-INF/"+file);
 		if(source!=null) {
 			try {
-			 File folder = new File(root+"/"+dir);
+			 File folder = new File(root+"/"+directory);
 			 folder.mkdirs();
-			 File dest = new File(folder+"/"+file);
-			 dest.getParentFile().mkdirs();
-			 copyFile(source,dest);
+			 File destination = new File(folder+"/"+file);
+			 destination.getParentFile().mkdirs();
+			 copyFile(source,destination);
 			}catch(Exception e){
 				e.printStackTrace();
 			}
 		}
 	}
 	private void copyFile(InputStream source,File destination) throws Exception {
-		 BufferedInputStream br = new BufferedInputStream(source);
-		 BufferedOutputStream bw = new BufferedOutputStream(new FileOutputStream(destination));
-		 byte[] buffer = new byte[1024];
-	        int length;
-	        while ((length = br.read(buffer)) > 0) {
-	            bw.write(buffer, 0, length);
-	        }
+		BufferedInputStream br = new BufferedInputStream(source);
+		BufferedOutputStream bw = new BufferedOutputStream(new FileOutputStream(destination));
+		byte[] buffer = new byte[1024];
+	    int length;
+	    while ((length = br.read(buffer)) > 0) {
+	      bw.write(buffer, 0, length);
+	    }
 		br.close();
 		bw.close();
 	}
