@@ -5,6 +5,10 @@
 <p>
 </p>
 <hr/>
+<h2>Blogs</h2>
+<p>
+</p>
+<hr/>
 <h2>Events</h2>
 <p>
 </p>

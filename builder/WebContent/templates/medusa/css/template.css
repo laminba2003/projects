@@ -53,6 +53,7 @@ h1 {
 #content {
 	padding-top : 2px;
 	width : 72.5%;
+	
 }
 
 a {
@@ -79,7 +80,6 @@ article {
 	padding : 5px;
 	padding-left : 30px;
 	border: 1px solid #fddccf;
-	border-radius : 10px;
 }
 
 td {
@@ -316,6 +316,7 @@ main {
 	padding : 0;
 	padding-top : 0px;
 	background-color : rgba(253,253,253,0.98);
+    box-shadow: inset 10px 14px 130px -11px rgba(237,237,237,1);
 }
 
 fieldset {
