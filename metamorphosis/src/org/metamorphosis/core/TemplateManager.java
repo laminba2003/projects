@@ -25,10 +25,6 @@ public class TemplateManager {
 		instance = this;
 	}
 
-	public List<Template> getTemplates() {
-		return templates;
-	}
-
 	public void loadTemplates(final File root) {
 		File[] files = root.listFiles();
 		if(files != null) {
@@ -222,6 +218,9 @@ public class TemplateManager {
 		this.templates = templates;
 	}
 
+	public List<Template> getTemplates() {
+		return templates;
+	}
 
 	public static TemplateManager getInstance() {
 		return instance;
