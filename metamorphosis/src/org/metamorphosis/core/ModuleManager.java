@@ -1,4 +1,3 @@
-
 package org.metamorphosis.core;
 
 import java.io.File;
@@ -181,10 +180,7 @@ public class ModuleManager implements DispatcherListener {
 						}
 					}
 				}
-				boolean valid = key.reset();
-				if(!valid) {
-					break;
-				}
+				if(!key.reset()) break;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -222,10 +218,7 @@ public class ModuleManager implements DispatcherListener {
 						}
 					}
 				}
-				boolean valid = key.reset();
-				if(!valid) {
-					break;
-				}
+				if(!key.reset()) break;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

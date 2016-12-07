@@ -1,8 +1,5 @@
 package org.metamorphosis.core;
 
-import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
-import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
-import static java.nio.file.StandardWatchEventKinds.OVERFLOW;
 import java.io.File;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -10,6 +7,7 @@ import java.nio.file.Paths;
 import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
+import static java.nio.file.StandardWatchEventKinds.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -22,10 +20,10 @@ public class TemplateManager {
 	private Logger logger = Logger.getLogger(TemplateManager.class.getName());
 	private static TemplateManager instance;
     private static final String TEMPLATE_METADATA = "template.xml";
+    
 	public TemplateManager() {
 		instance = this;
 	}
-
 
 	public List<Template> getTemplates() {
 		return templates;
@@ -113,10 +111,7 @@ public class TemplateManager {
 						}
 					}
 				}
-				boolean valid = key.reset();
-				if(!valid) {
-					break;
-				}
+				if(!key.reset()) break;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -165,10 +160,7 @@ public class TemplateManager {
 						}
 					}
 				}
-				boolean valid = key.reset();
-				if(!valid) {
-					break;
-				}
+				if(!key.reset()) break;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
