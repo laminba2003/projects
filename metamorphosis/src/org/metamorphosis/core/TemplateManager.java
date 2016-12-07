@@ -75,8 +75,8 @@ public class TemplateManager {
 		digester.addBeanPropertySetter("template/name");
 		digester.addBeanPropertySetter("template/type");
 		digester.addBeanPropertySetter("template/selected");
-		digester.addBeanPropertySetter("template/signin","signInPage");
-		digester.addBeanPropertySetter("template/register","registrationPage");
+		digester.addBeanPropertySetter("template/login","loginPage");
+		digester.addBeanPropertySetter("template/registration","registrationPage");
 		digester.addBeanPropertySetter("template/author");
 		digester.addBeanPropertySetter("template/authorEmail");
 		digester.addBeanPropertySetter("template/authorUrl");

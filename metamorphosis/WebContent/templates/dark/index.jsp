@@ -27,7 +27,7 @@
 		   </div>
 		   <div class="user-actions" style="display:${security==true?'inline-block':'none'}">
 				<a  class="account-16" href="users" title="Account">Account</a>
-				<a  href="users/signOut" title="Sign Out" class="signout-16">Sign Out</a>
+				<a  href="${logout}" title="Log Out" class="signout-16">Log Out</a>
 			</div>
 		</header>
 		<main>

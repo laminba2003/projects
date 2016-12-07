@@ -4,13 +4,13 @@ class UserAction extends ActionSupport {
 
 	String id
 	
-	def signIn()  {
+	def login()  {
 		def module = moduleManager.main
 		def url = module ? request.contextPath+"/"+module.url: request.contextPath+"/"
 		response.sendRedirect(url)
 	}
 	
-	def signOut() {
+	def logout() {
 		SUCCESS
 	}
 	

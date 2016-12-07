@@ -17,13 +17,13 @@
 		<header>
 		     <img src="images/logo.png" style="display:none"/>
 				 <div class="login" style="display:${security==true?'inline-block':'none'}">
-				  <form action="${signIn}">
+				  <form action="${login}">
 				   <span>Login :</span>
 				   <input id="login" type="text" size="20"/>
 				   <span>Password :</span>
 				   <input type="password" size="20"/>
 				   <a>forgot your password?</a>
-				   <input type="submit" value="Sign In"/>
+				   <input type="submit" value="Log In"/>
 				   </form>
 				</div>
 			

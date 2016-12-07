@@ -3,7 +3,7 @@ package org.metamorphosis.core;
 public class Template extends Extension {
 
 	protected boolean selected;
-    protected String signInPage = "signin.jsp";
+    protected String loginPage = "login.jsp";
     protected String registrationPage = "register.jsp";
     
 	public boolean isSelected() {
@@ -13,13 +13,13 @@ public class Template extends Extension {
 	public void setSelected(boolean selected) {
 		this.selected = selected;
 	}
-	
-	public String getSignInPage() {
-		return signInPage;
+
+	public String getLoginPage() {
+		return loginPage;
 	}
 
-	public void setSignInPage(String signInPage) {
-		this.signInPage = signInPage;
+	public void setLoginPage(String loginPage) {
+		this.loginPage = loginPage;
 	}
 
 	public String getRegistrationPage() {

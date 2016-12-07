@@ -26,8 +26,8 @@
         <result name="success" type="tiles">index</result>
      </action>
      
-     <action name="signIn">
-        <result name="success" type="tiles">signin</result>
+     <action name="login">
+        <result name="success" type="tiles">login</result>
      </action>
      
      <action name="register">

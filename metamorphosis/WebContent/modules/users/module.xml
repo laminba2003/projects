@@ -17,8 +17,8 @@
 		</menu>
 	</menus>
 	<actions>
-		<action name="signIn" url="signIn" global="true" script="users.groovy" method="signIn" />
-		<action name="signOut" url="signOut" global="true" script="users.groovy" method="signOut">
+		<action name="login"  url="login"  global="true" script="users.groovy" method="login" />
+		<action name="logout" url="logout" global="true" script="users.groovy" method="logout">
 			<result type="redirect">/</result>
 		</action>
 		<action name="selectTemplate" url="preferences/templates/select"  script="users.groovy" method="selectTemplate"/>
