@@ -34,12 +34,12 @@
 		            </s:iterator>
 		         </div>
 				  <div class="login" style="display:${security==true?'inline-block':'none'}">
-				  <form action="${signIn}">
+				  <form action="${login}">
 				   <span>Email :</span>
 				   <input id="email" title="email" type="text" size="20"/>
 				   <span>Password :</span>
 				   <input title="password" type="password" size="20"/>
-				   <input type="submit" title="sign in" value="Sign In"/>
+				   <input type="submit" title="sign in" value="Sign in"/>
 				   <a title="create an account">create an account</a>
 				   <a title="forgot your password?">forgot your password?</a>
 				   </form>
