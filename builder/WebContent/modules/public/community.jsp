@@ -16,7 +16,6 @@
 <hr/>
 <h2>Sponsors</h2>
 <p class="sponsors">
-<img src="${images}/mirhosting.png"/>
 </p>
 </article>
 </div>
