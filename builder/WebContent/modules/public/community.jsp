@@ -6,8 +6,9 @@
 </p>
 <hr/>
 <h2>Blogs</h2>
-<p>
-</p>
+<ul>
+<li><a href="https://laminba2003.wordpress.com/" target="_blank">Mamadou Lamine Ba</a></li>
+</ul>
 <hr/>
 <h2>Events</h2>
 <p>
