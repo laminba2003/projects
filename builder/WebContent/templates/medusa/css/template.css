@@ -1,7 +1,7 @@
 body {
   font-family: Dosis;
   background: rgba(250,250,250,0.1);
-  font-size : 92%;
+  font-size : 100%;
 }
 
 hr {
@@ -203,7 +203,7 @@ b {
 
 .login {
 	display : inline-block;
-	width : 295px;
+	width : 300px;
 	line-height :1.7em;
 	font-size:75%;
 	margin-top : 1px;
@@ -355,7 +355,7 @@ footer p {
 }
 
 #extensions-list {
-	width : 79%;
+	width : 85%;
 	margin : auto;
 }
 #extensions-actions {
