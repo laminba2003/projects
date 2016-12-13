@@ -4,11 +4,10 @@
    "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
   
-    <constant name="struts.devMode" value="false" />
-    <constant name="struts.enable.SlashesInActionNames" value="true"/>
-	<constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
-	<constant name="struts.patternMatcher" value="regex" />
-	<bean type="com.opensymphony.xwork2.factory.ActionFactory"  class="org.metamorphosis.core.ActionFactory" />
+   <constant name="struts.enable.SlashesInActionNames" value="true"/>
+   <constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+   <constant name="struts.patternMatcher" value="regex" />
+   <bean type="com.opensymphony.xwork2.factory.ActionFactory"  class="org.metamorphosis.core.ActionFactory" />
 	
    <package name="root" namespace="/" extends="tiles-default">
    
@@ -16,7 +15,7 @@
          <interceptor name="moduleInterceptor" class="org.metamorphosis.core.ModuleInterceptor"></interceptor>
          <interceptor-stack name="moduleStack">
          	<interceptor-ref name="moduleInterceptor"/>
-        	 <interceptor-ref name="defaultStack" />
+        	<interceptor-ref name="defaultStack" />
          </interceptor-stack>
      </interceptors>
      
