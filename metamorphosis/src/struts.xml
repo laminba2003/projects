@@ -19,7 +19,7 @@
          </interceptor-stack>
      </interceptors>
      
-     <default-interceptor-ref name="moduleStack"></default-interceptor-ref>
+     <default-interceptor-ref name="moduleStack"/>
      
      <action name="index" class="org.metamorphosis.core.WelcomeAction">
         <result name="success" type="tiles">index</result>
