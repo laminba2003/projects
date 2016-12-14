@@ -520,7 +520,6 @@ footer p {
 	display : none;
 }
 .confirm-dialog,.alert-dialog {
-	
 	background : #fcfdff;
 	border : 1px solid rgb(86, 182, 255);
 	min-width : 300px;
