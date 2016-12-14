@@ -21,36 +21,36 @@ public class TemplateManager {
 	public void loadTemplates(final File root) {
 		File[] files = root.listFiles();
 		if(files != null) {
-			for(File folder : root.listFiles()) {
-				if(folder.isDirectory()) {
-					loadTemplate(folder);
-				}
+		  for(File folder : root.listFiles()) {
+			if(folder.isDirectory()) {
+			  loadTemplate(folder);
 			}
+		  }
 		}
 		new Thread(new Runnable() {
-			public void run() {
+		  public void run() {
 				monitorRoot(root);
-			}
+		  }
 		}).start();
 	}
 
 	public Template loadTemplate(File folder) {
 		File metadata = new File(folder+"/"+TEMPLATE_METADATA);
 		if(metadata.exists()) {
-			try {
-				final Template template = parse(metadata);
-				template.setId(folder.getName());
-				template.setFolder(folder);
-				addTemplate(template);
-				new Thread(new Runnable() {
-					public void run() {
-						monitorTemplate(template);
-					}
-				}).start();
-				return template;
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		  try {
+			 final Template template = parse(metadata);
+			 template.setId(folder.getName());
+			 template.setFolder(folder);
+			 addTemplate(template);
+			 new Thread(new Runnable() {
+				public void run() {
+					monitorTemplate(template);
+				}
+			 }).start();
+			 return template;
+		   } catch (Exception e) {
+			 e.printStackTrace();
+		   }
 		}
 		return null;
 	}

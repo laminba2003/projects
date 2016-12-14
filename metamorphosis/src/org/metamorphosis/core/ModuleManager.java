@@ -40,6 +40,43 @@ public class ModuleManager implements DispatcherListener {
 		this.servletContext = servletContext;
 	}
 
+	public void loadModules(final File root) {
+		File[] files = root.listFiles();
+		if(files != null) {
+		  for(File folder : files) {
+			if(folder.isDirectory()) {
+			   loadModule(folder);
+			}
+		  }
+		}
+		orderModules();
+		new Thread(new Runnable() {
+		  public void run() {
+			monitorRoot(root);
+		  }
+		}).start();
+	}
+
+	public void loadModule(File folder) {
+		File metadata = new File(folder + "/"+MODULE_METADATA);
+		if(metadata.exists()) {
+			try {
+				final Module module = parse(metadata);
+				module.setFolder(folder);
+				module.setId(folder.getName());
+				initModule(module);
+				addModule(module);
+				new Thread(new Runnable() {
+					public void run() {
+						monitorModule(module);
+					}
+				}).start();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	private Module parse(File metadata) throws Exception {
 		Digester digester = new Digester();
 		digester.setValidating(false);
@@ -78,43 +115,7 @@ public class ModuleManager implements DispatcherListener {
 		digester.addSetNext("module/actions/action", "addAction");
 		return (Module) digester.parse(metadata);
 	}
-
-	public void loadModules(final File root) {
-		File[] files = root.listFiles();
-		if(files != null) {
-			for(File folder : files) {
-				if(folder.isDirectory()) {
-					loadModule(folder);
-				}
-			}
-		}
-		orderModules();
-		new Thread(new Runnable() {
-			public void run() {
-				monitorRoot(root);
-			}
-		}).start();
-	}
-
-	public void loadModule(File folder) {
-		File metadata = new File(folder + "/"+MODULE_METADATA);
-		if(metadata.exists()) {
-			try {
-				final Module module = parse(metadata);
-				module.setFolder(folder);
-				module.setId(folder.getName());
-				initModule(module);
-				addModule(module);
-				new Thread(new Runnable() {
-					public void run() {
-						monitorModule(module);
-					}
-				}).start();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+	
 	private void initModule(Module module) {
 		if(module.getUrl() == null) module.setUrl(module.getFolder().getName());
 		for(Menu menu : module.getMenus()) {
