@@ -1,13 +1,6 @@
 package org.metamorphosis.core;
 
 import java.io.File;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.WatchEvent;
-import java.nio.file.WatchKey;
-import java.nio.file.WatchService;
-import static java.nio.file.StandardWatchEventKinds.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -82,88 +75,63 @@ public class TemplateManager {
 		return (Template) digester.parse(metadata);
 	}
 	
-	@SuppressWarnings("unchecked")
-	private void monitorTemplate(Template template) {
-		try {
-			WatchService watcher = FileSystems.getDefault().newWatchService();
-			Path dir = Paths.get(template.getFolder().getAbsolutePath());
-			dir.register(watcher, ENTRY_CREATE);
-			while (true) {
-				WatchKey key;
-				try {
-					key = watcher.take();
-				} catch (InterruptedException ex) {
-					return;
-				}
-				for(WatchEvent<?> event : key.pollEvents()) {
-					WatchEvent.Kind<?> kind = event.kind();
-					WatchEvent<Path> ev = (WatchEvent<Path>) event;
-					String fileName = ev.context().toString();
-					if(kind == OVERFLOW) {
-						continue;
-					} else if(kind == ENTRY_CREATE) {
-						if(fileName.equals(TEMPLATE_METADATA)) {
-							reloadTemplate(template);
-						}
-					}
-				}
-				if(!key.reset()) break;
+	private void monitorTemplate(final Template template) {
+		FileMonitor monitor = new FileMonitor(template.getFolder().getAbsolutePath());
+		monitor.addListener(new FileListener() {
+			
+			@Override
+			public void onCreated(String file) {
+				if(file.equals(TEMPLATE_METADATA)) {
+					updateTemplate(template);
+				}			
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+			
+			@Override
+			public void onDeleted(String file) {
+				
+			}
+
+			
+		});
+		monitor.watch();
 	}
 	
+	private void monitorRoot(final File root) {
+		FileMonitor monitor = new FileMonitor(root.getAbsolutePath());
+		monitor.addListener(new FileListener(){
 
-	@SuppressWarnings("unchecked")
-	private void monitorRoot(File root) {
-		try {
-			WatchService watcher = FileSystems.getDefault().newWatchService();
-			Path dir = Paths.get(root.getAbsolutePath());
-			dir.register(watcher, ENTRY_CREATE,ENTRY_DELETE);
-			while (true) {
-				WatchKey key;
-				try {
-					key = watcher.take();
-				} catch (InterruptedException ex) {
-					return;
-				}
-				for(WatchEvent<?> event : key.pollEvents()) {
-					WatchEvent.Kind<?> kind = event.kind();
-					WatchEvent<Path> ev = (WatchEvent<Path>) event;
-					String fileName = ev.context().toString();
-					if(kind == OVERFLOW) {
-						continue;
-					}else if(kind == ENTRY_CREATE) {
-						File folder = new File(root+"/"+fileName);
-						if(folder.isDirectory()) {
-							logger.log(Level.INFO, "adding template  : " + folder.getName());
-							final Template template = new Template();
-							template.setFolder(folder);
-							template.setId(folder.getName());
-							addTemplate(template);
-							new Thread(new Runnable() {
-								public void run() {
-									monitorTemplate(template);
-								}
-							}).start();
+			@Override
+			public void onCreated(String file) {
+				File folder = new File(root+"/"+file);
+				if(folder.isDirectory()) {
+					logger.log(Level.INFO, "adding template  : " + folder.getName());
+					final Template template = new Template();
+					template.setFolder(folder);
+					template.setId(folder.getName());
+					addTemplate(template);
+					new Thread(new Runnable() {
+						public void run() {
+							monitorTemplate(template);
 						}
-					}else if(kind == ENTRY_DELETE) {
-						Template template = getTemplate(fileName);
-						if(template!=null) {
-							logger.log(Level.INFO, "removing template  : " + template.getName());
-							templates.remove(template.getIndex());
-						}
-					}
+					}).start();
 				}
-				if(!key.reset()) break;
+				
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+
+			@Override
+			public void onDeleted(String file) {
+				Template template = getTemplate(file);
+				if(template!=null) {
+					logger.log(Level.INFO, "removing template  : " + template.getName());
+					removeTemplate(template);
+				}
+			}
+			
+		});
+		monitor.watch();
 	}
 
-	private void reloadTemplate(Template template) {
+	private void updateTemplate(Template template) {
 		try {
 			logger.log(Level.INFO, "reloading template  : " + template.getId());
 			int index = template.getIndex();
@@ -181,6 +149,10 @@ public class TemplateManager {
 	public void addTemplate(Template template) {
 		template.setIndex(templates.size());
 		templates.add(template);
+	}
+	
+	public void removeTemplate(Template template) {
+		templates.remove(template.getIndex());
 	}
 
 	public Template getTemplate(String id) {
