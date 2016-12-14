@@ -287,7 +287,7 @@ public class ModuleManager implements DispatcherListener {
 	
 	public void updateModule(Module module) {
 		try {
-			logger.log(Level.INFO, "reloading module  : " + module.getName());
+			logger.log(Level.INFO, "updating module  : " + module.getName());
 			File folder = module.getFolder();
 			int index = module.getIndex();
 			String id = module.getId();

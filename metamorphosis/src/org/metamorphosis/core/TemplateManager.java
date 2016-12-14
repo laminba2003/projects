@@ -91,7 +91,6 @@ public class TemplateManager {
 				
 			}
 
-			
 		});
 		monitor.watch();
 	}
@@ -133,7 +132,7 @@ public class TemplateManager {
 
 	private void updateTemplate(Template template) {
 		try {
-			logger.log(Level.INFO, "reloading template  : " + template.getId());
+			logger.log(Level.INFO, "updating template  : " + template.getId());
 			int index = template.getIndex();
 			File folder = template.getFolder();
 			template = parse(new File(folder+"/"+TEMPLATE_METADATA));
