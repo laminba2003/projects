@@ -29,7 +29,7 @@ public class TemplateManager {
 		}
 		new Thread(new Runnable() {
 		  public void run() {
-				monitorRoot(root);
+			 monitorRoot(root);
 		  }
 		}).start();
 	}
@@ -76,7 +76,7 @@ public class TemplateManager {
 	}
 	
 	private void monitorTemplate(final Template template) {
-		FileMonitor monitor = new FileMonitor(template.getFolder().getAbsolutePath());
+		FileMonitor monitor = new FileMonitor(template.getFolder());
 		monitor.addListener(new FileListener() {
 			
 			@Override
@@ -97,7 +97,7 @@ public class TemplateManager {
 	}
 	
 	private void monitorRoot(final File root) {
-		FileMonitor monitor = new FileMonitor(root.getAbsolutePath());
+		FileMonitor monitor = new FileMonitor(root);
 		monitor.addListener(new FileListener(){
 
 			@Override

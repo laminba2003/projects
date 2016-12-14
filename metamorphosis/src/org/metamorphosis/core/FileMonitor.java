@@ -3,6 +3,7 @@ package org.metamorphosis.core;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 import static java.nio.file.StandardWatchEventKinds.OVERFLOW;
+import java.io.File;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,10 +16,10 @@ import java.util.List;
 public class FileMonitor {
 
 	private List<FileListener> listeners = new ArrayList<FileListener>();
-	private String directory;
+	private File directory;
 	
 
-	public FileMonitor(String directory) {
+	public FileMonitor(File directory) {
 	    this.directory = directory;
 	}
 	
@@ -26,7 +27,7 @@ public class FileMonitor {
 	public void watch() {
 		try {
 			WatchService watcher = FileSystems.getDefault().newWatchService();
-			Path dir = Paths.get(directory);
+			Path dir = Paths.get(directory.getAbsolutePath());
 			dir.register(watcher, ENTRY_CREATE,ENTRY_DELETE);
 			while(true) {
 				WatchKey key;

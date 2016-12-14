@@ -131,7 +131,7 @@ public class ModuleManager implements DispatcherListener {
 	}
 	
 	private void monitorRoot(final File root) {
-		FileMonitor monitor = new FileMonitor(root.getAbsolutePath());
+		FileMonitor monitor = new FileMonitor(root);
 		monitor.addListener(new FileListener() {
 			
 			@Override
@@ -166,21 +166,16 @@ public class ModuleManager implements DispatcherListener {
 	}
 
 	private void monitorModule(final Module module) {
-	    FileMonitor monitor = new FileMonitor(module.getFolder().getAbsolutePath());
+	    FileMonitor monitor = new FileMonitor(module.getFolder());
 	    monitor.addListener(new FileListener() {
-			
+	    	
 	    	@Override
 			public void onCreated(String file) {
 	    		if(file.equals(MODULE_METADATA)) {
 					updateModule(module);
 				}else if(file.endsWith(".jsp")) {
-					try {
-						registerPage(module, file);
-					}catch(Exception es) {
-						es.printStackTrace();
-					}
+					registerPage(module, file);
 				}
-				
 			}
 	    	
 			@Override
@@ -194,19 +189,23 @@ public class ModuleManager implements DispatcherListener {
 
 	
 	
-	private void registerPage(Module module,String file) throws Exception {
-		CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(servletContext);
-		TemplateManager templateManager = TemplateManager.getInstance();
-		Template template = module.isBackend() ? templateManager.getBackendTemplate(null)
-				: templateManager.getFrontendTemplate(null);
-		String name = file.substring(0, file.length() - 4);
-		Definition definition = new Definition();
-		definition.setName(module.getUrl() + "/" + name);
-		definition.setExtends(module.getUrl());
-		definition.setTemplate(template.getIndexPage());
-		definition.setPreparer("org.metamorphosis.core.PagePreparer");
-		definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + file));
-		container.register(definition);
+	private void registerPage(Module module,String file) {
+		try {
+			CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(servletContext);
+			TemplateManager templateManager = TemplateManager.getInstance();
+			Template template = module.isBackend() ? templateManager.getBackendTemplate(null)
+					: templateManager.getFrontendTemplate(null);
+			String name = file.substring(0, file.length() - 4);
+			Definition definition = new Definition();
+			definition.setName(module.getUrl() + "/" + name);
+			definition.setExtends(module.getUrl());
+			definition.setTemplate(template.getIndexPage());
+			definition.setPreparer("org.metamorphosis.core.PagePreparer");
+			definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + file));
+			container.register(definition);
+		}catch(Exception es) {
+			es.printStackTrace();
+		}
 	}
 
 	private void registerPages(Module module) throws Exception {
