@@ -21,7 +21,7 @@
 		     <img src="images/logo.png"/>
 		   </div>
 		   <div class="topmenu">
-		       <s:iterator value="#request.modules">
+		       <s:iterator value="modules">
 		           <a href="${url}" title="${name}"><img src="${icon}"/><span>${name}</span></a> 
 		       </s:iterator>
 		   </div>

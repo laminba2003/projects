@@ -34,7 +34,6 @@ body {
 
 h1 {
 	line-height: 0.4em;
-	text-shadow: rgb(234, 133, 17) 0px 0.3px 0px;
 	position: relative;
 	padding: 0.8125em 0.203125em;
 	text-align: left;
@@ -50,7 +49,6 @@ h1 {
 h2 {
 	font-size: 1.625em;
 	line-height: 1em;
-	text-shadow: rgb(234, 133, 17) 0px 0.2px 0px;
 }
 
 a {
@@ -158,7 +156,6 @@ th {
 	margin: 0px;
 	white-space: nowrap;
 	font-family: Georgia;
-	text-shadow: rgb(234, 133, 17) 0px 0.1px 0px;
 }
 
 td {
@@ -589,7 +586,6 @@ footer p {
 }
 
 #details>h2 {
-	text-shadow: rgb(234, 133, 17) 0px 0.01px 0px;
 	font-size: 1.1em;
 	margin-top: 3px;
 	margin-bottom: 6px;
@@ -652,10 +648,7 @@ span input[type=radio] {
 	color: red;
 	vertical-align: middle;
 	background: #fff;
-	text-shadow: rgb(234, 133, 17) 0px 0.01px 0px;
 	border-radius: 15px;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
 	border: 1px solid rgb(86, 182, 255);
 	padding: 10px;
 }
@@ -682,8 +675,6 @@ span input[type=radio] {
 	background-repeat: no-repeat;
 	background-position: 8px 6px;
 	border-radius: 15px;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
 }
 
 div.pager {
@@ -731,7 +722,6 @@ ul.tabs li {
 	padding-top: 6px;
 	border-radius: 5px;
 	margin-right: 3px;
-	text-shadow: rgb(234, 133, 17) 0px 0.2px 0px;
 }
 
 ul.tabs li:hover {

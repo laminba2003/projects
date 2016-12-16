@@ -1,14 +1,17 @@
 package org.metamorphosis.core;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @SuppressWarnings("serial")
 public class WelcomeAction extends ActionSupport {
 
 	public String execute() {
-		HttpServletRequest request = getRequest();
-		request.setAttribute("modules",getModuleManager().getVisibleModules("front-end"));
-		request.setAttribute("title", "Home");
+		getRequest().setAttribute("title", "Home");
 		return SUCCESS;
 	}
+	
+	public List<Module> getModules() {
+		return getModuleManager().getVisibleModules("front-end");
+	}
+	
 }

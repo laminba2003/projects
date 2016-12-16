@@ -2,8 +2,10 @@ package org.metamorphosis.core;
 
 import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.ServletActionContext;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+import com.opensymphony.xwork2.util.ValueStack;
 
 @SuppressWarnings("serial")
 public class ModuleInterceptor extends AbstractInterceptor {
@@ -14,10 +16,12 @@ public class ModuleInterceptor extends AbstractInterceptor {
 			ModuleManager moduleManager = ModuleManager.getInstance();
 		    Module module = moduleManager.getCurrentModule();
 			if(module!=null) {
+				ValueStack stack = ActionContext.getContext().getValueStack();
+				stack.set("modules",moduleManager.getVisibleModules(module.getType()));
 				HttpServletRequest request = ServletActionContext.getRequest();
 				String uri = request.getRequestURI();
 				String actionURL = uri.substring(request.getContextPath().length()+1,uri.length());
-				request.setAttribute("modules",moduleManager.getVisibleModules(module.getType()));
+				request.setAttribute("module",module);
 				request.setAttribute("module",module);
 				request.setAttribute("title",actionURL);
 				request.setAttribute("js","modules/"+module.getId()+"/js");
