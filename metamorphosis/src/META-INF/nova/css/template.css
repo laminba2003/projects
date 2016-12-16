@@ -120,7 +120,6 @@ aside ul{
 aside ul li{
 	background-color:#fff;
 	background-image: url("../images/square.png");
-	text-shadow : rgb(234, 133, 17) 0px 0.1px 0px;
 }
 
 aside a, aside:visited {
@@ -128,7 +127,6 @@ aside a, aside:visited {
 }
 
 aside a.active {
-	font-weight : 900;
 	color : rgb(234, 133, 17);
 }
 
@@ -300,8 +298,7 @@ ul.tabs li.active h2 {
   text-align:left;
   overflow:visible;    
   z-index:88; 
-  -webkit-border-radius: 5px;
-  -moz-border-radius  : 5px;
+  border-radius: 5px;
   width:100%;
   clear:both;
 }
@@ -319,9 +316,7 @@ ul.tabs li.active h2 {
   text-align:left;
   overflow:auto;    
   z-index:88; 
-
-  -webkit-border-radius: 5px;
-  -moz-border-radius  : 5px;
+  border-radius: 5px;
   left:0;
 }
 
@@ -337,8 +332,7 @@ ul.tabs li.active h2 {
   clear:both;
   text-align:left; 
   z-index:88;
-  -webkit-border-radius: 5px;
-  -moz-border-radius  : 5px;    
+  border-radius: 5px; 
 }
 .swMain ul.anchor {
   position: relative;
@@ -371,8 +365,7 @@ ul.tabs li.active h2 {
   height:60px;
   text-decoration: none;
   outline-style:none;
-  -moz-border-radius  : 5px;
-  -webkit-border-radius: 5px;
+  border-radius  : 5px;
   z-index:99;
 }
 .swMain ul.anchor li a .stepNumber{
@@ -401,8 +394,6 @@ ul.tabs li.active h2 {
   background: #EA8511;  /* EA8511 */
   border: 1px solid #EA8511;
   cursor:text;
-  -moz-box-shadow: 5px 5px 8px #888;
-  -webkit-box-shadow: 5px 5px 8px #888;
   box-shadow: 5px 5px 8px #888;
 }
 .swMain ul.anchor li a.selected:hover {
@@ -455,8 +446,7 @@ ul.tabs li.active h2 {
   outline-style:none;
   background-color:   #5A5655;
   border: 1px solid #5A5655;
-  -moz-border-radius  : 5px; 
-  -webkit-border-radius: 5px;    
+  border-radius  : 5px; 
 }
 .swMain .buttonDisabled {
   color:#F8F8F8  !important;
@@ -477,8 +467,7 @@ ul.tabs li.active h2 {
   outline-style:none;
   background-color:   #5A5655;
   border: 1px solid #5A5655;
-  -moz-border-radius  : 5px; 
-  -webkit-border-radius: 5px;    
+  border-radius  : 5px; 
 }
 .swMain .buttonFinish {
   display:block;
@@ -493,8 +482,7 @@ ul.tabs li.active h2 {
   outline-style:none;
   background-color:   #5A5655;
   border: 1px solid #5A5655;
-  -moz-border-radius  : 5px; 
-  -webkit-border-radius: 5px;    
+  border-radius  : 5px; 
 }
 
 /* Form Styles */
@@ -520,8 +508,7 @@ ul.tabs li.active h2 {
   font: bold 13px Verdana, Arial, Helvetica, sans-serif; 
   color:#5A5655;       
   background: #FFF url(../images/loader.gif) no-repeat 5px;  
-  -moz-border-radius  : 5px;
-  -webkit-border-radius: 5px;
+  border-radius  : 5px;
   z-index:998;
 }
 .swMain .msgBox {
@@ -534,8 +521,7 @@ ul.tabs li.active h2 {
   background-color: #FFFFDD;  
   font: normal 12px Verdana, Arial, Helvetica, sans-serif; 
   color:#5A5655;         
-  -moz-border-radius  : 5px;
-  -webkit-border-radius: 5px;
+  border-radius  : 5px;
   z-index:999;
   min-width:200px;  
 }
