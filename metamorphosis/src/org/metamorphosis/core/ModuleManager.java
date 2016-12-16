@@ -186,21 +186,13 @@ public class ModuleManager implements DispatcherListener {
 		});
 	    monitor.watch();
 	}
-
-	
 	
 	private void registerPage(Module module,String file) {
 		try {
 			CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(servletContext);
-			TemplateManager templateManager = TemplateManager.getInstance();
-			Template template = module.isBackend() ? templateManager.getBackendTemplate(null)
-					: templateManager.getFrontendTemplate(null);
 			String name = file.substring(0, file.length() - 4);
-			Definition definition = new Definition();
-			definition.setName(module.getUrl() + "/" + name);
-			definition.setExtends(module.getUrl());
-			definition.setTemplate(template.getIndexPage());
-			definition.setPreparer("org.metamorphosis.core.PagePreparer");
+			Template template = getCurrentTemplate(module);
+			Definition definition = createDefinition(module.getUrl() + "/" + name,module.getUrl(),template.getIndexPage());
 			definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + file));
 			container.register(definition);
 		}catch(Exception es) {
@@ -210,28 +202,33 @@ public class ModuleManager implements DispatcherListener {
 
 	private void registerPages(Module module) throws Exception {
 		CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(servletContext);
-		TemplateManager templateManager = TemplateManager.getInstance();
-		Template template = module.isBackend() ? templateManager.getBackendTemplate(null)
-				: templateManager.getFrontendTemplate(null);
-		Definition definition = new Definition();
-		definition.setName(module.getUrl());
-		definition.setExtends(module.getType());
-		definition.setTemplate(template.getIndexPage());
-		definition.setPreparer("org.metamorphosis.core.PagePreparer");
+		Template template = getCurrentTemplate(module);
+		Definition definition = createDefinition(module.getUrl(),module.getType(),template.getIndexPage());
 		definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + module.getIndexPage()));
 		container.register(definition);
 		for(File file : module.getFolder().listFiles()) {
 			if(file.isFile() && file.getName().endsWith(".jsp")) {
 				String name = file.getName().substring(0, file.getName().length() - 4);
-				definition = new Definition();
-				definition.setName(module.getUrl() + "/" + name);
-				definition.setExtends(module.getUrl());
-				definition.setTemplate(template.getIndexPage());
-				definition.setPreparer("org.metamorphosis.core.PagePreparer");
+				definition = createDefinition(module.getUrl() + "/" + name,module.getUrl(),template.getIndexPage());
 				definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + file.getName()));
 				container.register(definition);
 			}
 		}
+	}
+	
+	private Template getCurrentTemplate(Module module) {
+		TemplateManager templateManager = TemplateManager.getInstance();
+		return module.isBackend() ? templateManager.getBackendTemplate(null)
+				: templateManager.getFrontendTemplate(null);
+	}
+	
+	private Definition createDefinition(String name,String parent,String template) {
+		Definition definition = new Definition();
+		definition.setName(name);
+		definition.setExtends(parent);
+		definition.setTemplate(template);
+		definition.setPreparer("org.metamorphosis.core.PagePreparer");
+		return definition;
 	}
 
 	public Module getCurrentModule() {
