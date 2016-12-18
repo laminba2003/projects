@@ -1,37 +1,35 @@
 function ProductService() {
 	
 	this.register = function(router) {
-		router.get('/products/', function(req, res) {
+		router.get('/products/', function(response, response) {
 			var products = [
                   {"id":"123456545644",
                 	  "name":"Computer",
                       "price":"2000.0",
 	                   "createdBy":"tetiana"}
                 ];
-			res.send(products);
+			response.send(products);
 		});
 		  
-		router.get('/products/:id/', function(req, res) {
-		    // get products req.params.id, res
-			res.send( {"id":"123456545644",
+		router.get('/products/:id/', function(response, response) {
+			response.send( {"id":"123456545644",
           	  "name":"Computer",
               "price":"2000.0",
                "createdBy":"tetiana"});
 		});
 
-		router.post('/products/', function(req, res) {
-		    // create req.body, res
-			res.send(req.body);
+		router.post('/products/', function(response, response) {
+			response.send(response.body);
 		});
 
-		router.put('/products/', function(req, res) {
-			res.send(req.body);
+		router.put('/products/', function(response, response) {
+			response.send(response.body);
 		});
 
-		router.delete('/products/:id/', function(req, res) {
-			res.send({status : 1, message : "item deleted"});
+		router.delete('/products/:id/', function(response, response) {
+			response.send({status : 1, message : "entity deleted"});
 		});
-		router.post('/products/search', function(req, res) {
+		router.post('/products/search', function(response, response) {
 			var products = [
 			                  {"id":"123456545644",
 			                	  "name":"Computer",
@@ -42,7 +40,7 @@ function ProductService() {
 					                      "price":"500.0",
 						                   "createdBy":"tetiana"}
 			                ];
-			res.send(products);
+			response.send(products);
 		});
 	};
 };

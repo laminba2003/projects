@@ -1,7 +1,7 @@
 function UserService() {
 	
 	this.register = function(router) {
-		router.get('/users/', function(req, res) {
+		router.get('/users/', function(request, response) {
 			var users = [
                   {"id":"123456545644",
                 	  "firstName":"Tetiana",
@@ -12,12 +12,11 @@ function UserService() {
                       "role":"director of marketing",
 	                   "createdBy":"admin"}
                 ];
-			res.send(users);
+			response.send(users);
 		});
 		  
-		router.get('/users/:id/', function(req, res) {
-		    // get users req.params.id, res
-			res.send( {"id":"123456545644",
+		router.get('/users/:id/', function(request, response) {
+			response.send( {"id":"123456545644",
           	  "firstName":"Tetiana",
               "lastName":"Fydorenchyk",
               "login":"tetiana",
@@ -42,20 +41,19 @@ function UserService() {
                });
 		});
 
-		router.post('/users/', function(req, res) {
-		    // create req.body, res
-			res.send(req.body);
+		router.post('/users/', function(request, response) {
+			response.send(request.body);
 		});
 
-		router.put('/users/', function(req, res) {
-			res.send(req.body);
+		router.put('/users/', function(request, response) {
+			response.send(request.body);
 		});
 
-		router.delete('/users/:id/', function(req, res) {
-			res.send({status : 1, message : "item deleted"});
+		router.delete('/users/:id/', function(request, response) {
+			response.send({status : 1, message : "item deleted"});
 		});
 		
-		router.post('/users/search/', function(req, res) {
+		router.post('/users/search/', function(request, response) {
 			var users = [
 			                  {"id":"123456545644",
 			                	  "firstName":"Tetiana",
@@ -74,7 +72,7 @@ function UserService() {
 				                      "role":"support manager",
 					                   "createdBy":"admin"}
 			                ];
-						res.send(users);
+			 response.send(users);
 		});
 	};
 };

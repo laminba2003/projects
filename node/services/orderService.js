@@ -1,7 +1,7 @@
 function OrderService() {
 	
 	this.register = function(router) {
-		router.get('/orders/', function(req, res) {
+		router.get('/orders/', function(request, response) {
 			var orders = [
                   {"id":"123456545644",
                 	  "product":"Computer",
@@ -11,12 +11,11 @@ function OrderService() {
                       "customer":"John Doe",
 	                   "createdBy":"tetiana"}
                 ];
-			res.send(orders);
+			response.send(orders);
 		});
 		  
-		router.get('/orders/:id/', function(req, res) {
-		    // get orders req.params.id, res
-			res.send( {"id":"123456545644",
+		router.get('/orders/:id/', function(request, response) {
+			response.send( {"id":"123456545644",
           	  "product":"Computer",
           	"quantity":"10",
               "price":"2000.0",
@@ -25,19 +24,18 @@ function OrderService() {
                "createdBy":"tetiana"});
 		});
 
-		router.post('/orders/', function(req, res) {
-		    // create req.body, res
-			res.send(req.body);
+		router.post('/orders/', function(request, response) {
+			response.send(request.body);
 		});
 
-		router.put('/orders/', function(req, res) {
-			res.send(req.body);
+		router.put('/orders/', function(request, response) {
+			response.send(request.body);
 		});
 
-		router.delete('/orders/:id/', function(req, res) {
-			res.send({status : 1, message : "item deleted"});
+		router.delete('/orders/:id/', function(request, response) {
+			response.send({status : 1, message : "item deleted"});
 		});
-		router.post('/orders/search', function(req, res) {
+		router.post('/orders/search', function(request, response) {
 			var orders = [
 			                  {"id":"123456545644",
 			                	  "product":"Computer",
@@ -54,7 +52,7 @@ function OrderService() {
 					                      "customer":"John Doe",
 						                   "createdBy":"tetiana"}
 			                ];
-			res.send(orders);
+			response.send(orders);
 		});
 	};
 };
