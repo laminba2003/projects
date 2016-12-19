@@ -211,30 +211,30 @@
 		<legend>Contact</legend>
 		
 		<span class="required">First Name : </span>
-		<input title="First Name" name="contact.firstName" type="text"/>
+		<input title="First Name" name="contact[firstName]" type="text"/>
 		
 		<span class="required">Last Name : </span>
-		<input title="Last Name" name="contact.lastName" type="text"/>
+		<input title="Last Name" name="contact[lastName]" type="text"/>
 		
 		<span class="required">Profession :</span>
-		<input title="Profession" name="contact.profession" type="text"/>
+		<input title="Profession" name="contact[profession]" type="text"/>
 		
 		<span>Date Of Birth :</span>
-		<input title="Date Of Birth" name="contact.dateOfBirth" type="text"/>
+		<input title="Date Of Birth" name="contact[dateOfBirth]" type="text"/>
 		
 		<span class="required">Sex :</span>
-		<select title="Sex" name="contact.sex">
+		<select title="Sex" name="contact[sex]">
 			 <option>Male</option>
 		 	<option selected="selected">Female</option>
 		</select>
 		
 		<span class="required">Country :</span>
-		<select title="Country" name="country">
+		<select title="Country" name="contact[country]">
 			 <option>USA</option>
 		</select>
 		
 		<span class="required">Relation :</span>
-		<select title="Relation"  name="contact.relation">
+		<select title="Relation"  name="contact[relation]">
 		     <option>Wife</option>
 			 <option>Husband</option>
 			 <option>Parent</option>
@@ -243,13 +243,13 @@
 		</select>
 		
 		<span>Telephone :</span>
-		<input title="Telephone" name="contact.telephone" type="text"/>
+		<input title="Telephone" name="contact[telephone]" type="text"/>
 		
 		<span class="required">Mobile :</span>
-		<input title="Mobile" name="contact.mobile" type="text"/>
+		<input title="Mobile" name="contact[mobile]" type="text"/>
 	   
 	    <span>Email :</span>
-		<input title="Email" name="contact.email" type="text"/>
+		<input title="Email" name="contact[email]" type="text"/>
 	
 	</fieldset>
       </div>
