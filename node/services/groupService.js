@@ -25,7 +25,7 @@ function GroupService() {
 		});
 
 		router.delete('/groups/:id/', function(request, response) {
-			response.send({status : 1, message : "item deleted"});
+			response.send({status : 1, message : "entity deleted"});
 		});
 		
 		router.post('/groups/search/', function(request, response) {

@@ -50,7 +50,7 @@ function UserService() {
 		});
 
 		router.delete('/users/:id/', function(request, response) {
-			response.send({status : 1, message : "item deleted"});
+			response.send({status : 1, message : "entity deleted"});
 		});
 		
 		router.post('/users/search/', function(request, response) {

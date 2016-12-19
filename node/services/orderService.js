@@ -33,7 +33,7 @@ function OrderService() {
 		});
 
 		router.delete('/orders/:id/', function(request, response) {
-			response.send({status : 1, message : "item deleted"});
+			response.send({status : 1, message : "entity deleted"});
 		});
 		router.post('/orders/search', function(request, response) {
 			var orders = [

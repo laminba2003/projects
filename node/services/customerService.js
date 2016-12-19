@@ -51,7 +51,7 @@ function CustomerService() {
 		});
 
 		router.delete('/customers/:id/', function(request, response) {
-			response.send({status : 1, message : "item deleted"});
+			response.send({status : 1, message : "entity deleted"});
 		});
 		
 		router.post('/customers/search/', function(request, response) {
