@@ -1,3 +1,7 @@
+body {
+	background-color : #68b3f4;
+}
+
 input[type=submit]{
 	border : 1px solid rgb(10, 136, 247);
 	cursor : pointer;
@@ -17,16 +21,14 @@ input {
 h1 {
 	font-size: 1.6em;
     line-height: 1.0666666664em;
-    text-shadow : rgb(234, 133, 17) 0px 0.3px 0px;
-	background-color : rgb(0, 148, 248);
 	font-family : Exo;
-	border : 1px solid #000;
 	border-left:none;
 	border-right:none;
 	text-align : center;
 	position:relative;
 	color : white;
 	padding : 0.5em;
+	border-bottom : 1px solid #fff;
 }
 
 header {
@@ -118,7 +120,7 @@ b {
 
 main {
 	min-height : 70vh;
-	background : #fff;
+	background-color : #68b3f4;
 	padding : 0;
 	padding-top : 0px;
 	position:relative;

@@ -4,7 +4,6 @@ html {
 
 tr.active {
 	background-color : #ffffe2;
-	text-shadow : rgb(234, 133, 17) 0px 0.01px 0px;
 }
 
 tr.focus {
@@ -20,7 +19,6 @@ th {
 	color : rgb(94, 105, 129);
 	border : 1px solid rgb(86, 182, 255);
 	font-family : Georgia;
-	text-shadow : rgb(234, 133, 17) 0px 0.1px 0px;
 }
 
 td {
@@ -83,7 +81,6 @@ div.pager span {
 	padding-left : 2px;
 	font-size:88%;
 	width : 105px;
-	text-shadow : rgb(234, 133, 17) 0px 0.2px 0px;
 }
 
 .topmenu a.active {
@@ -215,7 +212,6 @@ fieldset {
 
 legend {
 	 color : #000;
-	 text-shadow : rgb(234, 133, 17) 0px 0.2px 0px;
 }
 
 #form legend {
