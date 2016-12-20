@@ -270,7 +270,6 @@ page.list.bindContextmenu = function(element,callback) {
 		});
 		$(".edit-16",contextmenu).click(function(event){
 		    page.list.selectedRow = {id:id,element:row};
-			row.click();
 			app.get(page.list.url+"/"+id,function(data){
 				populate($(".form"),data);
   				page.form.edit(data);
