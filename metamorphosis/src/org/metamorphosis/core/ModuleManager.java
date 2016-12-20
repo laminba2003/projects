@@ -335,6 +335,10 @@ public class ModuleManager implements DispatcherListener {
 						resultBuilder = new ResultConfig.Builder(result.getName(),
 								"org.apache.struts2.dispatcher.ServletDispatcherResult");
 					}
+					else if(type.equals("json")) {
+						resultBuilder = new ResultConfig.Builder(result.getName(),
+								"org.apache.struts2.json.JSONResult");
+					}
 					if(resultBuilder != null) {
 						resultBuilder.addParam("location", result.getValue());
 						actionBuilder.addResultConfig(resultBuilder.build());
