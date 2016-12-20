@@ -302,7 +302,7 @@ function populate(form, data) {
 	    $('[name='+key+']', form).val(value);
 	    if(value === Object(value)) {
 	    	$.each(value, function(k, val){
-	    	    $('[name='+key+"\\."+k+']', form).val(val);
+	    	    $('[name='+key+"\\["+k+'\\]]', form).val(val);
 	    	 });
 	    }
 	  });
