@@ -15,7 +15,7 @@
 	<div>
 	
 		<header>
-		     <img src="images/logo.png" style="display:none"/>
+		     <img src="images/logo.png"/>
 				 <div class="login" style="display:${security==true?'inline-block':'none'}">
 				  <form action="${login}">
 				   <span>Login :</span>
@@ -43,8 +43,6 @@
 			  crossorigin="anonymous"></script>
 <script>
 $(function() {
-	$("header img").fadeIn(1500);
-	$("p").fadeIn(1500);
 	$("#login").val("").focus();
 });
 </script>

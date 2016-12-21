@@ -29,6 +29,7 @@ body {
 	text-rendering: optimizeLegibility;
 	font-style: normal !important;
 	font-family: Arial, Tahoma, Heltevica;
+	background-color : rgb(245, 245, 245);
 }
 
 h1 {
