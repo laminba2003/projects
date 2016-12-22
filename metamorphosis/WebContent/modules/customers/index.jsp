@@ -169,7 +169,7 @@
 		<legend>Customer</legend>
 		
 		<label class="required">First Name : </label>
-		<input  title="First Name" name="firstName" type="text"/>
+		<input title="First Name" name="firstName" type="text"/>
 		
 		<label class="required">Last Name : </label>
 		<input title="Last Name" name="lastName" type="text"/>
