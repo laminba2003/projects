@@ -1,6 +1,7 @@
 function OrderService() {
 	
-	this.register = function(router) {
+	this.mount = function(router) {
+		
 		router.get('/orders/', function(request, response) {
 			var orders = [
                   {"id":"123456545644",

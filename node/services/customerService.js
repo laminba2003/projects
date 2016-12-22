@@ -1,6 +1,7 @@
 function CustomerService() {
 	
-	this.register = function(router) {
+	this.mount = function(router) {
+		
 		router.get('/customers/', function(request, response) {
 			var customers = [
                   {"id":"123456545644",

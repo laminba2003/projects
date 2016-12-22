@@ -1,6 +1,7 @@
 function GroupService() {
 	
-	this.register = function(router) {
+	this.mount = function(router) {
+		
 		router.get('/groups/', function(request, response) {
 			var groups = [
                   {"id":"123456545644",

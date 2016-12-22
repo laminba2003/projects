@@ -14,7 +14,7 @@ var dir = './services';
 fs.readdir(dir, function(err, files) {
 	files.forEach(function(file,index) {
 		var service = require(dir+'/'+file);
-		service.register(router);
+		service.mount(router);
 	});
 });
 

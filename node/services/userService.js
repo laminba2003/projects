@@ -1,6 +1,7 @@
 function UserService() {
 	
-	this.register = function(router) {
+	this.mount = function(router) {
+		
 		router.get('/users/', function(request, response) {
 			var users = [
                   {"id":"123456545644",

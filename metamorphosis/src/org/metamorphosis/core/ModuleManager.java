@@ -177,7 +177,7 @@ public class ModuleManager implements DispatcherListener {
 			public void onCreated(String file) {
 	    		if(file.equals(MODULE_METADATA)) {
 					updateModule(module);
-				}else if(file.endsWith(".jsp")) {
+				}else if(file.endsWith(".jsp") || file.endsWith(".html")) {
 					registerPage(module, file);
 				}
 			}
@@ -194,7 +194,7 @@ public class ModuleManager implements DispatcherListener {
 	private void registerPage(Module module,String file) {
 		try {
 			CachingTilesContainer container = (CachingTilesContainer) TilesAccess.getContainer(servletContext);
-			String name = file.substring(0, file.length() - 4);
+			String name = file.endsWith(".jsp") ? file.substring(0, file.length() - 4) : file.substring(0, file.length() - 5);
 			Template template = getCurrentTemplate(module);
 			Definition definition = createDefinition(module.getUrl() + "/" + name,module.getUrl(),template.getIndexPage());
 			definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + file));
@@ -211,10 +211,11 @@ public class ModuleManager implements DispatcherListener {
 		definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + module.getIndexPage()));
 		container.register(definition);
 		for(File file : module.getFolder().listFiles()) {
-			if(file.isFile() && file.getName().endsWith(".jsp")) {
-				String name = file.getName().substring(0, file.getName().length() - 4);
-				definition = createDefinition(module.getUrl() + "/" + name,module.getUrl(),template.getIndexPage());
-				definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + file.getName()));
+			String name = file.getName();
+			if(file.isFile() && (name.endsWith(".jsp") || name.endsWith(".html"))) {
+				String prefix = name.endsWith(".jsp") ? name.substring(0, name.length() - 4) : name.substring(0, name.length() - 5);
+				definition = createDefinition(module.getUrl() + "/" + prefix,module.getUrl(),template.getIndexPage());
+				definition.putAttribute("content", new Attribute("/modules/" + module.getId() + "/" + name));
 				container.register(definition);
 			}
 		}

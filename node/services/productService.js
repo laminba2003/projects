@@ -1,6 +1,7 @@
 function ProductService() {
 	
-	this.register = function(router) {
+	this.mount = function(router) {
+		
 		router.get('/products/', function(response, response) {
 			var products = [
                   {"id":"123456545644",

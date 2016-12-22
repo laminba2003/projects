@@ -40,21 +40,15 @@ public class StartupListener implements ServletContextListener {
 	private String loadTemplates(ServletContext context,String root) {
 		TemplateManager templateManager = new TemplateManager();
 		templateManager.loadTemplates(new File(root+"/templates"));
-		context.setAttribute("templateManager",templateManager);
 		Template template = templateManager.getBackendTemplate(null);
-		if(template==null) {
-			copyBackendTemplate(root);
-			template = templateManager.loadTemplate(new File(root+"/templates/nova"));
-		}
+		template = template!=null ? template : copyBackendTemplate(templateManager,root);
 		context.setAttribute("template",template.getId());
 		String tilesDefinitions = createTemplateTiles(root,template);
 		template = templateManager.getFrontendTemplate(null);
-		if(template==null) {
-			copyFrontendTemplate(root);
-			template = templateManager.loadTemplate(new File(root+"/templates/medusa"));
-		}
-		context.setAttribute("loginForm","loginForm");
-		context.setAttribute("registerForm","registerForm");
+		template = template!=null ? template : copyFrontendTemplate(templateManager,root);
+		context.setAttribute("templateManager",templateManager);
+		context.setAttribute("loginForm","login");
+		context.setAttribute("registerForm","register");
 		return tilesDefinitions += ","+ createTemplateTiles(root,template);
 	}
 	
@@ -62,7 +56,6 @@ public class StartupListener implements ServletContextListener {
 		String config = "struts-default.xml,struts-plugin.xml,struts.xml";
 		ModuleManager moduleManager = new ModuleManager(context);
 		moduleManager.loadModules(new File(root+"/modules"));
-		context.setAttribute("moduleManager",moduleManager);
 		Dispatcher.addDispatcherListener(moduleManager);
 		for(Module module : moduleManager.getModules()) {
 			buffer.append(","+createModuleTiles(module));
@@ -73,6 +66,7 @@ public class StartupListener implements ServletContextListener {
 			}
 			if(module.getId().equals("users")) context.setAttribute("security",true);
 		}
+		context.setAttribute("moduleManager",moduleManager);
 		return config;
 	}
 
@@ -112,10 +106,11 @@ public class StartupListener implements ServletContextListener {
 				"<put-attribute name='content' value='/modules/"+module.getId()+"/"+module.getIndexPage()+"'/>"+
 				"</definition>";
 		for(File file : module.getFolder().listFiles()) {
-			if(file.isFile() && file.getName().endsWith(".jsp")) {
-				String name = file.getName().substring(0,file.getName().length()-4);
-				content+="<definition name='"+module.getUrl()+"/"+name+"' extends='"+module.getUrl()+"'>";
-				content+="<put-attribute name='content' value='/modules/"+module.getId()+"/"+file.getName()+"'/>";
+			String name = file.getName();
+			if(file.isFile() && (name.endsWith(".jsp") || name.endsWith(".html"))) {
+				String prefix = name.endsWith(".jsp") ? name.substring(0, name.length() - 4) : name.substring(0, name.length() - 5);
+				content+="<definition name='"+module.getUrl()+"/"+prefix+"' extends='"+module.getUrl()+"'>";
+				content+="<put-attribute name='content' value='/modules/"+module.getId()+"/"+name+"'/>";
 				content+="</definition>";
 			}
 		}
@@ -188,7 +183,7 @@ public class StartupListener implements ServletContextListener {
 		}
 	}
 	
-	private void copyBackendTemplate(String root) {
+	private Template copyBackendTemplate(TemplateManager templateManager,String root) {
 		copyFile(root,"templates","nova/index.jsp");
 		copyFile(root,"templates","nova/template.xml");
 		copyFile(root,"templates","nova/thumbnail.png");
@@ -206,13 +201,15 @@ public class StartupListener implements ServletContextListener {
 		copyFile(root,"templates","nova/images/signout.png");
 		copyFile(root,"templates","nova/images/square.png");
 		copyFile(root,"templates","nova/images/wait.gif");
+		return templateManager.loadTemplate(new File(root+"/templates/nova"));
 	}
 	
-	private void copyFrontendTemplate(String root) {
+	private Template copyFrontendTemplate(TemplateManager templateManager,String root) {
 		copyFile(root,"templates","medusa/index.jsp");
 		copyFile(root,"templates","medusa/template.xml");
 		copyFile(root,"templates","medusa/thumbnail.png");
 		copyFile(root,"templates","medusa/css/template.css");
+		return templateManager.loadTemplate(new File(root+"/templates/medusa"));
 	}
 	
 	private void copyFile(String root,String directory,String file)	{
