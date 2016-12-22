@@ -59,7 +59,6 @@ public class ModuleManager implements DispatcherListener {
 			try {
 				final Module module = parse(metadata);
 				module.setFolder(folder);
-				module.setId(folder.getName());
 				initModule(module);
 				addModule(module);
 				monitorModule(module);
@@ -137,7 +136,6 @@ public class ModuleManager implements DispatcherListener {
 					logger.log(Level.INFO, "adding module  : " + folder.getName());
 					final Module module = new Module();
 					module.setFolder(folder);
-					module.setId(folder.getName());
 					initModule(module);
 					addModule(module);
 					monitorModule(module);
@@ -283,7 +281,6 @@ public class ModuleManager implements DispatcherListener {
 			String id = module.getId();
 			module = parse(new File(folder + "/"+MODULE_METADATA));
 			module.setFolder(folder);
-			module.setId(folder.getName());
 			module.setIndex(index);
 			initModule(module);
 			modules.set(index, module);

@@ -22,9 +22,7 @@ public abstract class Extension {
 	public String getId() {
 		return id;
 	}
-	public void setId(String id) {
-		this.id = id;
-	}
+	
 	public String getName() {
 		return name!=null ? name : folder.getName();
 	}
@@ -90,6 +88,7 @@ public abstract class Extension {
 	}
 	public void setFolder(File folder) {
 		this.folder = folder;
+		id = folder.getName();
 	}
 	
 	public boolean isBackend() {

@@ -35,7 +35,6 @@ public class TemplateManager {
 		if(metadata.exists()) {
 		  try {
 			 final Template template = parse(metadata);
-			 template.setId(folder.getName());
 			 template.setFolder(folder);
 			 addTemplate(template);
 			 monitorTemplate(template);
@@ -98,7 +97,6 @@ public class TemplateManager {
 					logger.log(Level.INFO, "adding template  : " + folder.getName());
 					final Template template = new Template();
 					template.setFolder(folder);
-					template.setId(folder.getName());
 					addTemplate(template);
 					monitorTemplate(template);
 				}
@@ -124,7 +122,6 @@ public class TemplateManager {
 			int index = template.getIndex();
 			File folder = template.getFolder();
 			template = parse(new File(folder+"/"+TEMPLATE_METADATA));
-			template.setId(folder.getName());
 			template.setFolder(folder);
 			template.setIndex(index);
 			templates.set(index, template);

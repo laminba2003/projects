@@ -2,7 +2,6 @@ import org.metamorphosis.core.ActionSupport
 
 class UserAction extends ActionSupport {
 
-	String id
 	
 	def login()  {
 		def module = moduleManager.main
@@ -15,11 +14,12 @@ class UserAction extends ActionSupport {
 	}
 	
 	def selectTemplate() {
+	    def id = request.getParameter("id");
 		def template = templateManager.getTemplate(id)
 		if(template && template.backend) {
 			session.setAttribute("template",id)
-			response.sendRedirect(request.getHeader("referer"))
 		}
+		response.sendRedirect(request.getHeader("referer"))
 	}
 	
 }
