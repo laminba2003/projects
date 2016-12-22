@@ -448,7 +448,7 @@ page.render = function(object,callback) {
 			$("fieldset span:even",container).addClass("text-right");
 		}
 	}
-	if(!source.type || source.type == "text/x-handlebars-template") {
+	if(source.type == "text/x-handlebars-template") {
 		head.load("js/handlebars-v4.0.5.js", function() {
 			 var template = Handlebars.compile(source.template);
 			 render(object.element,template(object.data),object.container);
