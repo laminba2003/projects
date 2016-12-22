@@ -27,6 +27,7 @@
 				<includes>
 					<include>metamorphosis.js</include>
 					<include>handlebars-v4.0.5.js</include>
+					<include>dust-full.min.js</include>
 					<include>pdfmake.min.js</include>
 					<include>vfs_fonts.js</include>
 				</includes>

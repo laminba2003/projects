@@ -173,6 +173,7 @@ public class StartupListener implements ServletContextListener {
 		  copyFile(root,"js","metamorphosis.js");
 		}
 		copyFile(root,"js","handlebars-v4.0.5.js");
+		copyFile(root,"js","dust-full.min.js");
 		copyFile(root,"js","pdfmake.min.js");
 		copyFile(root,"js","vfs_fonts.js");
 		if(!new File(root+"/images/logo.png").exists()) {

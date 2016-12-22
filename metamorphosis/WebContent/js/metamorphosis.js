@@ -453,7 +453,14 @@ page.render = function(object,callback) {
 			 var template = Handlebars.compile(source.template);
 			 render(object.element,template(object.data),object.container);
 			 if(callback) callback();
-		 });
+		});
+	}else if(source.type == "text/dust-template") {
+		head.load("js/dust-full.min.js", function() {
+			 dust.renderSource(source.template,object.data, function(err, out) {
+				 render(object.element,out,object.container);
+			 });
+			 if(callback) callback();
+		});
 	}
 	
 };

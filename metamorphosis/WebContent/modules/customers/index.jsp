@@ -25,17 +25,17 @@
  </thead>
 
 <tbody>
-   <script type="text/x-handlebars-template">
-     {{#each this}}
-      <tr id="{{id}}">
-   	        <td class="icon-16">{{firstName}}</td>
-   	    	<td>{{lastName}}</td>
-   	    	<td>{{profession}}</td>
-   	    	<td>{{dateOfBirth}}</td>
-   	    	<td>{{country}}</td>
-   	    	<td>{{createdBy}}</td>
+   <script type="text/dust-template">
+     {#.}
+      <tr id="{id}">
+   	        <td class="icon-16">{firstName}</td>
+   	    	<td>{lastName}</td>
+   	    	<td>{profession}</td>
+   	    	<td>{dateOfBirth}</td>
+   	    	<td>{country}</td>
+   	    	<td>{createdBy}</td>
    	    </tr>
-     {{/each}}
+     {/.}
    </script>
    
  </tbody>
