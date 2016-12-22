@@ -25,6 +25,7 @@
 				<directory>WebContent/js</directory>
 				<targetPath>META-INF</targetPath>
 				<includes>
+				    <include>jquery-3.1.1.min.js</include>
 					<include>metamorphosis.js</include>
 					<include>handlebars-v4.0.5.js</include>
 					<include>dust-full.min.js</include>

@@ -42,6 +42,7 @@
 			   </s:iterator>
 		   </aside>
 		   <section> 
+		    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 		    <script type="text/javascript" src="js/metamorphosis.js"></script>
 		    <script type="text/javascript" src="js/app.js"></script>
 		    <script type="text/javascript" src="templates/nova/js/template.js"></script>
