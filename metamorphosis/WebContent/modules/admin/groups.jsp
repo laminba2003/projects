@@ -1,5 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<h1 class="group-32">List Of Groups <a id="new" href="#form"></a></h1>
+<h1 class="group-32">List Of Groups <a id="new" href="#form">Create</a></h1>
 <form id="search">
 	<span>Filter :</span>
 	<select name="filter">

@@ -460,8 +460,7 @@ module.init = function(entity) {
 		page.form.entity = entity[0].toUpperCase() + entity.slice(1);
 		if($("#form").length==1)page.form.init();
 		if($("#list").length==1){
-			var title="Create ";
-			$('#new').attr("title",title).html(title).click(function(){
+			$('#new').click(function(){
 				$('.form h1').html("Create "+page.form.entity +" : Informations");
 				$('.form input:not([type=hidden]').val("");
 				$('#form').removeClass("hide");
