@@ -52,7 +52,7 @@ div.offering p {
 	display : inline-block;
 	font-size : 1.03em;
 	color : rgb(94, 105, 99);
-	box-shadow: inset 0 -15px 30px rgba(250,250,250,0.1), 0 5px 10px rgba(250,250,250,0.1);
+	box-shadow: inset 0 -15px 30px rgba(200,200,200,0.1), 0 5px 10px rgba(200,200,200,0.1);
 }
 
 main img {
