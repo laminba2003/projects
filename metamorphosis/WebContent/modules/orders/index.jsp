@@ -22,17 +22,17 @@
  </thead>
 
 <tbody>
-   <script type="text/x-handlebars-template">
-     {{#each this}}
-      <tr id="{{id}}">
-   	        <td class="icon-16">{{product}}</td>
-            <td>{{price}}</td>
-   	    	<td>{{quantity}}</td>
-            <td>{{amount}}</td>
-            <td>{{customer}}</td>
-            <td>{{createdBy}}</td>
+   <script type="text/x-dust-template">
+     {#.}
+      <tr id="{id}">
+   	        <td class="icon-16">{product}</td>
+            <td>{price}</td>
+   	    	<td>{quantity}</td>
+            <td>{amount}</td>
+            <td>{customer}</td>
+            <td>{createdBy}</td>
    	    </tr>
-     {{/each}}
+     {/.}
    </script>
    
  </tbody>
@@ -67,23 +67,23 @@
 </ul>
 <div class="tab_container"> 
    <div id="informations-1" class="tab_content">
-     <script  type="text/x-handlebars-template">
+     <script  type="text/x-dust-template">
 
        <fieldset>
 		<span>Product : </span>
-		<span>{{product}}</span>
+		<span>{product}</span>
 		
 		<span>Price : </span>
-		<span>{{price}}</span>
+		<span>{price}</span>
 	
        <span>Quantity : </span>
-		<span>{{quantity}}</span>
+		<span>{quantity}</span>
        
       <span>Amount : </span>
-	  <span>{{amount}}</span>
+	  <span>{amount}</span>
 	
       <span>Customer : </span>
-	  <span>{{customer}}</span>
+	  <span>{customer}</span>
 		
       	
 		</fieldset>
@@ -93,7 +93,7 @@
      
    </div>
    <div id="informations-2" class="tab_content">
-    <script  type="text/x-handlebars-template">
+    <script  type="text/x-dust-template">
       <fieldset>
 		
 		</fieldset>

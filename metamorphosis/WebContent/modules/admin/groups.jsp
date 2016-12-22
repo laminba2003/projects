@@ -18,13 +18,13 @@
  </thead>
 
 <tbody>
-   <script type="text/x-handlebars-template">
-     {{#each this}}
-      <tr id="{{id}}">
-   	        <td class="group-16">{{name}}</td>
-   	    	<td>{{createdBy}}</td>
+   <script type="text/x-dust-template">
+     {#.}
+      <tr id="{id}">
+   	        <td class="group-16">{name}</td>
+   	    	<td>{createdBy}</td>
    	    </tr>
-     {{/each}}
+     {/.}
    </script>
    
  </tbody>
@@ -59,11 +59,11 @@
 </ul>
 <div class="tab_container"> 
    <div id="informations" class="tab_content">
-     <script  type="text/x-handlebars-template">
+     <script  type="text/x-dust-template">
 
        <fieldset>
 		<span>Name : </span>
-		<span>{{name}}</span>
+		<span>{name}</span>
 		
 	  </fieldset>
 
@@ -71,7 +71,7 @@
      
    </div>
       <div id="permissions" class="tab_content">
-    <script  type="text/x-handlebars-template">
+    <script  type="text/x-dust-template">
       <s:iterator value="#application.moduleManager.adminModules">
        <fieldset>
          <legend>Module ${name}</legend>

@@ -19,14 +19,14 @@
  </thead>
 
 <tbody>
-   <script type="text/x-handlebars-template">
-     {{#each this}}
-      <tr id="{{id}}">
-   	        <td class="icon-16">{{name}}</td>
-   	    	<td>{{price}}</td>
-            <td>{{createdBy}}</td>
+   <script type="text/x-dust-template">
+     {#.}
+      <tr id="{id}">
+   	        <td class="icon-16">{name}</td>
+   	    	<td>{price}</td>
+            <td>{createdBy}</td>
    	    </tr>
-     {{/each}}
+     {/.}
    </script>
    
  </tbody>
@@ -61,14 +61,14 @@
 </ul>
 <div class="tab_container"> 
    <div id="informations-1" class="tab_content">
-     <script  type="text/x-handlebars-template">
+     <script  type="text/x-dust-template">
 
        <fieldset>
 		<span>Name : </span>
-		<span>{{name}}</span>
+		<span>{name}</span>
 		
 		<span>Price : </span>
-		<span>{{price}}</span>
+		<span>{price}</span>
 	
 		
 		</fieldset>
@@ -78,7 +78,7 @@
      
    </div>
    <div id="informations-2" class="tab_content">
-    <script  type="text/x-handlebars-template">
+    <script  type="text/x-dust-template">
       <fieldset>
 		
 		</fieldset>

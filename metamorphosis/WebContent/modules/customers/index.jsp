@@ -70,39 +70,39 @@
 </ul>
 <div class="tab_container"> 
    <div id="informations" class="tab_content">
-     <script  type="text/x-handlebars-template">
+     <script  type="text/x-dust-template">
 
        <fieldset>
 		<span>First Name : </span>
-		<span>{{firstName}}</span>
+		<span>{firstName}</span>
 		
 		<span>Last Name : </span>
-		<span>{{lastName}}</span>
+		<span>{lastName}</span>
 		
 		<span>Profession :</span>
-		<span>{{profession}}</span>
+		<span>{profession}</span>
 		
 		<span>Date Of Birth :</span>
-		<span>{{dateOfBirth}}</span>
+		<span>{dateOfBirth}</span>
 		
 		<span>Country :</span>
-		<span>{{country}}</span>
+		<span>{country}</span>
 		
 		<span>Sex :</span>
-		<span>{{sex}}</span>
+		<span>{sex}</span>
 		
 		</fieldset>
 		
 		<fieldset>
 		
 		<span>Telephone :</span>
-		<span>{{telephone}}</span>
+		<span>{telephone}</span>
 		
 		<span>Mobile :</span>
-		<span>{{mobile}}</span>
+		<span>{mobile}</span>
 	   
 	    <span>Email :</span>
-		<span>{{email}}</span>
+		<span>{email}</span>
 	
 	  </fieldset>
 
@@ -110,41 +110,41 @@
      
    </div>
    <div id="contact" class="tab_content">
-    <script  type="text/x-handlebars-template">
+    <script  type="text/x-dust-template">
       <fieldset>
 		<span>First Name : </span>
-		<span>{{contact.firstName}}</span>
+		<span>{contact.firstName}</span>
 		
 		<span>Last Name : </span>
-		<span>{{contact.lastName}}</span>
+		<span>{contact.lastName}</span>
 		
 		<span>Profession :</span>
-		<span>{{contact.profession}}</span>
+		<span>{contact.profession}</span>
 		
 		<span>Date Of Birth :</span>
-		<span>{{contact.dateOfBirth}}</span>
+		<span>{contact.dateOfBirth}</span>
 		
 		<span>Country :</span>
-		<span>{{contact.country}}</span>
+		<span>{contact.country}</span>
 		
 		<span>Sex :</span>
-		<span>{{contact.sex}}</span>
+		<span>{contact.sex}</span>
 		
 		<span>Relation :</span>
-		<span>{{contact.relation}}</span>
+		<span>{contact.relation}</span>
 		
 		</fieldset>
 		
 		<fieldset>
 		
 		<span>Telephone :</span>
-		<span>{{contact.telephone}}</span>
+		<span>{contact.telephone}</span>
 		
 		<span>Mobile :</span>
-		<span>{{contact.mobile}}</span>
+		<span>{contact.mobile}</span>
 	   
 	    <span>Email :</span>
-		<span>{{contact.email}}</span>
+		<span>{contact.email}</span>
 	
 	  </fieldset>
 
