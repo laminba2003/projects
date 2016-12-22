@@ -25,7 +25,7 @@
  </thead>
 
 <tbody>
-   <script type="text/dust-template">
+   <script type="text/x-dust-template">
      {#.}
       <tr id="{id}">
    	        <td class="icon-16">{firstName}</td>
