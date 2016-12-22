@@ -367,9 +367,6 @@ footer p {
 #form fieldset span.required:before {
 	content: "*";
 	color: red;
-	position: absolute;
-	margin-top: 2px;
-	margin-left: -10px;
 }
 
 #form input {
