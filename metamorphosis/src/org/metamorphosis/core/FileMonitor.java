@@ -25,39 +25,43 @@ public class FileMonitor {
 	
 	@SuppressWarnings("unchecked")
 	public void watch() {
-		try {
-			WatchService watcher = FileSystems.getDefault().newWatchService();
-			Path dir = Paths.get(directory.getAbsolutePath());
-			dir.register(watcher, ENTRY_CREATE,ENTRY_DELETE);
-			while(true) {
-				WatchKey key;
-				try {
-					key = watcher.take();
-				} catch (InterruptedException ex) {
-					return;
-				}
-				for(WatchEvent<?> event : key.pollEvents()) {
-					WatchEvent.Kind<?> kind = event.kind();
-					WatchEvent<Path> ev = (WatchEvent<Path>) event;
-					String file = ev.context().toString();
-					if(kind == OVERFLOW) {
-						continue;
-					} else if(kind == ENTRY_CREATE) {
-						for(FileListener listener : listeners) {
-							listener.onCreated(file);
+		new Thread(new Runnable() {
+		  public void run() {
+			try {
+				WatchService watcher = FileSystems.getDefault().newWatchService();
+				Path dir = Paths.get(directory.getAbsolutePath());
+				dir.register(watcher, ENTRY_CREATE,ENTRY_DELETE);
+				while(true) {
+					WatchKey key;
+					try {
+						key = watcher.take();
+					} catch (InterruptedException ex) {
+						return;
+					}
+					for(WatchEvent<?> event : key.pollEvents()) {
+						WatchEvent.Kind<?> kind = event.kind();
+						WatchEvent<Path> ev = (WatchEvent<Path>) event;
+						String file = ev.context().toString();
+						if(kind == OVERFLOW) {
+							continue;
+						} else if(kind == ENTRY_CREATE) {
+							for(FileListener listener : listeners) {
+								listener.onCreated(file);
+							}
+						}
+						else if(kind == ENTRY_DELETE) {
+							for(FileListener listener : listeners) {
+								listener.onDeleted(file);
+							}
 						}
 					}
-					else if(kind == ENTRY_DELETE) {
-						for(FileListener listener : listeners) {
-							listener.onDeleted(file);
-						}
-					}
+					if(!key.reset()) break;
 				}
-				if(!key.reset()) break;
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		  }
+		}).start();
 	}
 	
 	public void addListener(FileListener listener) {

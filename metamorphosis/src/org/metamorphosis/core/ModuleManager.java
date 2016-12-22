@@ -50,11 +50,7 @@ public class ModuleManager implements DispatcherListener {
 		  }
 		}
 		orderModules();
-		new Thread(new Runnable() {
-		  public void run() {
-			monitorRoot(root);
-		  }
-		}).start();
+		monitorRoot(root);
 	}
 
 	public void loadModule(File folder) {
@@ -66,11 +62,7 @@ public class ModuleManager implements DispatcherListener {
 				module.setId(folder.getName());
 				initModule(module);
 				addModule(module);
-				new Thread(new Runnable() {
-					public void run() {
-						monitorModule(module);
-					}
-				}).start();
+				monitorModule(module);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -148,11 +140,7 @@ public class ModuleManager implements DispatcherListener {
 					module.setId(folder.getName());
 					initModule(module);
 					addModule(module);
-					new Thread(new Runnable() {
-						public void run() {
-							monitorModule(module);
-						}
-					}).start();
+					monitorModule(module);
 				}
 			}
 			

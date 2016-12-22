@@ -27,11 +27,7 @@ public class TemplateManager {
 			}
 		  }
 		}
-		new Thread(new Runnable() {
-		  public void run() {
-			 monitorRoot(root);
-		  }
-		}).start();
+		monitorRoot(root);
 	}
 
 	public Template loadTemplate(File folder) {
@@ -42,11 +38,7 @@ public class TemplateManager {
 			 template.setId(folder.getName());
 			 template.setFolder(folder);
 			 addTemplate(template);
-			 new Thread(new Runnable() {
-				public void run() {
-					monitorTemplate(template);
-				}
-			 }).start();
+			 monitorTemplate(template);
 			 return template;
 		   } catch (Exception e) {
 			 e.printStackTrace();
@@ -108,11 +100,7 @@ public class TemplateManager {
 					template.setFolder(folder);
 					template.setId(folder.getName());
 					addTemplate(template);
-					new Thread(new Runnable() {
-						public void run() {
-							monitorTemplate(template);
-						}
-					}).start();
+					monitorTemplate(template);
 				}
 				
 			}
