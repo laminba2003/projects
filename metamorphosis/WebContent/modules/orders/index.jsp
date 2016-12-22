@@ -119,13 +119,13 @@
            <fieldset class="info">
 		<legend>Info 1</legend>
 		
-		<span class="required">Product : </span>
+		<label class="required">Product : </label>
 		<input  title="Product" name="product" type="text"/>
 		
-		<span class="required">Quantity : </span>
+		<label class="required">Quantity : </label>
 		<input title="Quantity" name="quantity" type="text"/>
 		
-		<span class="required">Customer : </span>
+		<label class="required">Customer : </label>
 		<input title="Customer" name="customer" type="text"/>
 		
 		
@@ -139,10 +139,10 @@
            <fieldset class="info">
 		<legend>Info 2</legend>
 		
-		  <span class="required">Field 1 : </span>
+		  <label class="required">Field 1 : </label>
 		<input title="" name="field1" type="text"/>
 		
-		  <span class="required">Field 2 : </span>
+		  <label class="required">Field 2 : </label>
 		<input title="" name="field2" type="text"/>
 	
 	</fieldset>

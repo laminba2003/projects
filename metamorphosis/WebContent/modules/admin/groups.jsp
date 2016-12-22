@@ -122,7 +122,7 @@
            <fieldset class="info">
 		<legend>Group</legend>
 	   
-	   <span class="required">Name : </span>
+	   <label class="required">Name : </label>
 		<input title="Name" name="name" type="text"/>
 		<input name="createdBy" type="hidden" value="admin"/>
 	

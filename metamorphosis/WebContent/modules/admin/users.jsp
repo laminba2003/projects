@@ -219,45 +219,45 @@
            <fieldset class="info">
 		<legend>User</legend>
 		
-		<span class="required">First Name : </span>
+		<label class="required">First Name : </label>
 		<input title="First Name" name="firstName" type="text"/>
 		
-		<span class="required">Last Name : </span>
+		<label class="required">Last Name : </label>
 		<input title="Last Name" name="lastName" type="text"/>
 		
-		<span class="required">Login :</span>
+		<label class="required">Login :</label>
 		<input title="Login" name="login" type="text"/>
 		
-		<span class="required">Password :</span>
+		<label class="required">Password :</label>
 		<input title="Password" name="password" type="text"/>
 		
-		<span class="required">Group :</span>
+		<label class="required">Group :</label>
 		<input title="Group" name="group" type="text"/>
 		
-		<span class="required">Role :</span>
+		<label class="required">Role :</label>
 		<input title="Role" name="role" type="text"/>
 		
-		<span>Date Of Birth :</span>
+		<label>Date Of Birth :</label>
 		<input title="Date Of Birth" name="dateOfBirth" type="text"/>
 		
-		<span class="required">Sex :</span>
+		<label class="required">Sex :</label>
 		<select title="Sex" name="sex">
 			 <option>Male</option>
 		 	<option>Female</option>
 		</select>
 		
-		<span class="required">Country :</span>
+		<label class="required">Country :</label>
 		<select title="Country" name="country">
 			 <option>USA</option>
 		</select>
 		
-		<span>Telephone :</span>
+		<label>Telephone :</label>
 		<input title="Telephone" name="telephone" type="text"/>
 		
-		<span class="required">Mobile :</span>
+		<label class="required">Mobile :</label>
 		<input title="Mobile" name="mobile" type="text"/>
 	   
-	    <span>Email :</span>
+	    <label>Email :</label>
 		<input title="Email" name="email" type="text"/>
 		
 		<input name="createdBy" type="hidden" value="admin"/>
@@ -270,30 +270,30 @@
            <fieldset class="info">
 		<legend>Contact</legend>
 		
-		<span class="required">First Name : </span>
+		<label class="required">First Name : </label>
 		<input title="First Name" name="contact[firstName]" type="text"/>
 		
-		<span class="required">Last Name : </span>
+		<label class="required">Last Name : </label>
 		<input title="Last Name" name="contact[lastName]" type="text"/>
 		
-		<span class="required">Profession :</span>
+		<label class="required">Profession :</label>
 		<input title="Profession" name="contact[profession]" type="text"/>
 		
-		<span>Date Of Birth :</span>
+		<label>Date Of Birth :</label>
 		<input title="Date Of Birth" name="contact[dateOfBirth]" type="text"/>
 		
-		<span class="required">Sex :</span>
+		<label class="required">Sex :</label>
 		<select title="Sex" name="contact[sex]">
 			 <option>Male</option>
 		 	<option selected="selected">Female</option>
 		</select>
 		
-		<span class="required">Country :</span>
+		<label class="required">Country :</label>
 		<select title="Country" name="contact[country]">
 			 <option>USA</option>
 		</select>
 		
-		<span class="required">Relation :</span>
+		<label class="required">Relation :</label>
 		<select title="Relation"  name="contact[relation]">
 		     <option>Wife</option>
 			 <option>Husband</option>
@@ -302,13 +302,13 @@
 			 <option>Other</option>
 		</select>
 		
-		<span>Telephone :</span>
+		<label>Telephone :</label>
 		<input title="Telephone" name="contact[telephone]" type="text"/>
 		
-		<span class="required">Mobile :</span>
+		<label class="required">Mobile :</label>
 		<input title="Mobile" name="contact[mobile]" type="text"/>
 	   
-	    <span>Email :</span>
+	    <label>Email :</label>
 		<input title="Email" name="contact[email]" type="text"/>
 	
 	</fieldset>

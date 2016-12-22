@@ -104,10 +104,10 @@
            <fieldset class="info">
 		<legend>Info 1</legend>
 		
-		<span class="required">Name : </span>
+		<label class="required">Name : </label>
 		<input title="Name" name="name" type="text"/>
 		
-		<span class="required">Price : </span>
+		<label class="required">Price : </label>
 		<input title="Price" name="price" type="text"/>
 		
 	   <input name="createdBy" type="hidden" value="tetiana"/>
@@ -120,10 +120,10 @@
            <fieldset class="info">
 		<legend>Info 2</legend>
 		
-	    <span class="required">Field 1 : </span>
+	    <label class="required">Field 1 : </label>
 		<input title="Field 1" name="field1" type="text"/>
 		
-		  <span class="required">Field 2 : </span>
+		<label class="required">Field 2 : </label>
 		<input title="Field 2" name="field2" type="text"/>
 	
 	</fieldset>

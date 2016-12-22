@@ -355,7 +355,7 @@ footer p {
 	padding: 20px;
 }
 
-#form fieldset span {
+#form fieldset label {
 	display: inline-block;
 	width: 24%;
 	text-align: right;
@@ -364,7 +364,7 @@ footer p {
 	font-size: 1.3em;
 }
 
-#form fieldset span.required:before {
+#form fieldset label.required:before {
 	content: "*";
 	color: red;
 }
@@ -394,7 +394,6 @@ footer p {
 	display: block;
 	margin: 0 79.8%;
 	margin-top: 10px;
-	background-image: url("../images/save.png");
 	background-repeat: no-repeat;
 	padding: 2px;
 	padding-left: 20px;
