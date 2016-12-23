@@ -11,8 +11,9 @@
    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" />
    <link href="css/metamorphosis.css" rel="stylesheet"/>
    <link href="templates/dark/css/jquery.jWizard.min.css" rel="stylesheet" />
-  <link href="templates/dark/css/template.css" rel="stylesheet"/>
-  <link href="${css}/module.css" rel="stylesheet"/>
+   <link href="templates/dark/css/template.css" rel="stylesheet"/>
+   <link href="templates/dark/css/animate.css" rel="stylesheet"/>
+   <link href="${css}/module.css" rel="stylesheet"/>
 </head>
 <body>
 	<div>

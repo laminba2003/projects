@@ -1,9 +1,5 @@
 page.animate = function(element) {
-	element.css({opacity : 0,"margin-left":"-9000px"});
-	element.animate({
-	    opacity: 1,
-	    "margin-left":"10px"
-	  }, 500);
+	element.addClass('animated shake');
 };
 
 page.form.edit = function() {
