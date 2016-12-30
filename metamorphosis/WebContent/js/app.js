@@ -5,7 +5,7 @@ page.list = {};
 page.list.render = (url,message) => {
 	page.list.init(url,message);
 	app.get(page.list.url, entities => {
-		page.render($("#list tbody"), entities, rows => {
+		page.render($("tbody"), entities, rows => {
 			page.list.display(rows);
 		});
 	});
@@ -14,7 +14,7 @@ page.list.render = (url,message) => {
 page.list.init = (url,message) => {
 	page.list.url = app.apiURL+url;
 	page.list.message = message;
-	$("#list").attr("tabindex","1").click(() => {
+	$("table").attr("tabindex","1").click(() => {
 		$("#contextmenu").hide();
 		return false;
 	});
@@ -22,8 +22,8 @@ page.list.init = (url,message) => {
 
 page.list.display = rows => {
 	if(!rows.length) {
-		var size = $("#list th").length;
-		$('#list tbody').append("<tr class='empty'><td valign='top' colspan='"+size+"'>"+page.list.message+"</td></tr>");
+		var size = $("th").length;
+		$('tbody').append("<tr class='empty'><td valign='top' colspan='"+size+"'>"+page.list.message+"</td></tr>");
 	} else {
 		page.list.bindRow(rows);
 		page.list.bindContextmenu(rows);
@@ -35,9 +35,9 @@ page.list.display = rows => {
 
 page.list.bindRow = element => {
 	element.click(function(event){
-		$("#list tr.active").removeClass("active");
-		$("#list tr.focus").removeClass("focus");
-		$("#list").focus();
+		$("tr.active").removeClass("active");
+		$("tr.focus").removeClass("focus");
+		$("table").focus();
 		var row = $(this);
 		row.addClass("active").addClass("focus");
 		$("#selection").hide();
@@ -50,7 +50,7 @@ page.list.bindRow = element => {
 		});
 		return false;
 	}).contextmenu(function(event){
-		$("#list tr.focus").removeClass("focus");
+		$("tr.focus").removeClass("focus");
 		var row = $(this);
 		row.addClass("focus");
 		var id = row.attr("id");
@@ -74,9 +74,9 @@ page.list.removeRow = row => {
 			 row.element.prev().click();
 		}
 		row.element.remove();
-		if(!$("#list tbody tr").length) {
-			var size = $("#list th").length;
-			$('#list tbody').append("<tr class='empty'><td  valign='top' colspan='"+size+"'>"+page.list.message+"</td></tr>");
+		var length = $("tbody th").length;
+		if(!length) {
+			$('tbody').append("<tr class='empty'><td  valign='top' colspan='"+$("th").length+"'>"+page.list.message+"</td></tr>");
 			$("#details").hide();
 			$("#selection").hide();
 		}else {
@@ -138,8 +138,8 @@ function populate(form, data) {
 };
 
 page.list.addRow = data => {
-	$('#list tbody tr.empty').remove();
-	page.render($("#list tbody"),data,true,row => {
+	$('tr.empty').remove();
+	page.render($("tbody"),data,true,row => {
 		page.list.paginate();
 		page.list.bindRow(row);
 		page.list.bindContextmenu(row,page.list.callback);
@@ -151,15 +151,15 @@ page.list.addRow = data => {
 
 page.list.updateRow = data => {
 	var container = $("<div/>");
-	page.render($("#list tbody"),data,false,container,row => {
+	page.render($("tbody"),data,false,container,row => {
 		page.list.selectedRow.element.html($("tr",container).html());
 		page.list.selectedRow.element.click();
 	});
 };
 
 page.list.paginate = () => {
-	$('#list table').unbind("repaginate");
-	$('#list table').each(function() {
+	$('table').unbind("repaginate");
+	$('table').each(function() {
 		 $(".pager").remove();
 	    var currentPage = 0;
 	    var $table = $(this);
@@ -248,7 +248,7 @@ page.search.init = () => {
 	     } 
 	     var formData = $(this).serialize();
 		 app.post(page.list.url+"/search",formData, data => {
-			page.render($("#list tbody"), data, rows => {
+			page.render($("tbody"), data, rows => {
 				page.list.display(rows);
 			});
 		 });
