@@ -10,7 +10,7 @@ app.get = (url, callback, error) => {
 		 dataType : 'json'
 	 }).done(data => {
 	     page.release();
-		 callback(data);
+	     if(callback) callback(data);
 	 }).fail(data => {
 	  	page.release();
 	  	if(error) error(data);
@@ -26,14 +26,14 @@ app.post = (url, formData, callback, error) => {
           dataType : 'json'
 	  }).done(data => {
 		  page.release();
-		  callback(data);
+		  if(callback) callback(data);
 	  }).fail(data => {
 		  page.release();
 		  if(error) error(data);
 	  });
 };
 
-app.put = function(url, formData, callback, error) {
+app.put = (url, formData, callback, error) => {
 	  page.wait();
 	  $.ajax({
 		  type : 'PUT',
@@ -42,14 +42,14 @@ app.put = function(url, formData, callback, error) {
           dataType : 'json'
       }).done(data => {
 	      page.release();
-	      callback(data);
+	      if(callback) callback(data);
       }).fail(data => {
     	  page.release();
     	  if(error) error(data);
       });
 };
 
-app.delete = function(url, callback, error) {
+app.delete = (url, callback, error) => {
 	  page.wait();
 	  $.ajax({
 		  type : 'DELETE',
@@ -57,7 +57,7 @@ app.delete = function(url, callback, error) {
 		  dataType : 'json'
 	  }).done(data => {
 		  page.release();
-		  callback(data);
+		  if(callback) callback(data);
 	  }).fail(data => {
 		  page.release();
 		  if(error) error(data);
