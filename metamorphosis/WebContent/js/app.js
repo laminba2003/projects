@@ -37,24 +37,23 @@ page.list.bindRow = element => {
 		$("tr.active").removeClass("active");
 		$("tr.focus").removeClass("focus");
 		$("table").focus();
-		var row = $(this);
+		const row = $(this);
 		row.addClass("active").addClass("focus");
 		$("#selection").hide();
-		var details = $("#details").show();
-		var id = row.attr("id");
+		const details = $("#details").show();
+		const id = row.attr("id");
 		app.get(page.list.url+"/"+id, data => {
 			page.list.selectedRow = {id:id,data:data,element:row};
 			page.list.details.show(data);
-			var activeTab = $("ul.tabs li.active").attr("rel");
 		});
 		return false;
 	}).contextmenu(function(event){
 		$("tr.focus").removeClass("focus");
-		var row = $(this);
+		const row = $(this);
 		row.addClass("focus");
-		var id = row.attr("id");
-		var top = row.position().top;
-		var left = event.pageX;
+		const id = row.attr("id");
+		const top = row.position().top;
+		const left = event.pageX;
 		if(left>window.innerWidth-100) {
 			left = window.innerWidth -200;
 		}
@@ -88,8 +87,8 @@ page.list.removeRow = row => {
 
 page.list.bindContextmenu = element => {
 	$(element).contextmenu(function(event){
-		var row = $(this);
-		var id = row.attr("id");
+		const row = $(this);
+		const id = row.attr("id");
 		$("a",contextmenu).unbind("click");
 		$(".new-16",contextmenu).click(function(event){
 		   page.form.create();
@@ -131,9 +130,9 @@ function populate(form, data) {
 	  });
 };
 
-page.list.addRow = data => {
+page.list.addRow = entity => {
 	$('tr.empty').remove();
-	page.render($("tbody"),data,true,row => {
+	page.render($("tbody"), entity, true, row => {
 		page.list.paginate();
 		page.list.bindRow(row);
 		page.list.bindContextmenu(row,page.list.callback);
@@ -143,9 +142,9 @@ page.list.addRow = data => {
 	
 };
 
-page.list.updateRow = data => {
-	var container = $("<div/>");
-	page.render($("tbody"),data,false,container,row => {
+page.list.updateRow = entity => {
+	const container = $("<div/>");
+	page.render($("tbody"), entity ,false, container, row => {
 		page.list.selectedRow.element.html($("tr",container).html());
 		page.list.selectedRow.element.click();
 	});
@@ -156,16 +155,16 @@ page.list.paginate = () => {
 	$('table').each(function() {
 		 $(".pager").remove();
 	    var currentPage = 0;
-	    var $table = $(this);
-	    var numPerPage = $table.attr("data-rows")?$table.attr("data-rows") :7;
+	    const $table = $(this);
+	    const numPerPage = $table.attr("data-rows")?$table.attr("data-rows") :7;
 	    $table.bind('repaginate', function() {
 	        $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
 	    });
 	    $table.trigger('repaginate');
-	    var numRows = $table.find('tbody tr').length;
+	    const numRows = $table.find('tbody tr').length;
 	    if(numRows > numPerPage) {
-		    var numPages = Math.ceil(numRows / numPerPage);
-		    var $pager = $('<div class="pager"></div>').attr("id","pager"+$table.parent().attr("id"));
+		    const numPages = Math.ceil(numRows / numPerPage);
+		    const $pager = $('<div class="pager"></div>').attr("id","pager"+$table.parent().attr("id"));
 		    for (var page = 0; page < numPages; page++) {
 		        $('<span class="page-number"></span>').text(page + 1).bind('click', {
 		            newPage: page
@@ -192,7 +191,7 @@ page.list.details.setTitle = title => {
 				populate($(".form"),data);
 				page.form.edit(data);
 				page.edit = true;
-				var number = Math.floor(page.list.selectedRow.element.index() / 7);
+				const number = Math.floor(page.list.selectedRow.element.index() / 7);
 				$(".page-number").eq(number).click();
 			});
 	      return false;
@@ -201,7 +200,7 @@ page.list.details.setTitle = title => {
 	 $("#details > h2 a.delete-16").click(function(event){
 		confirm(function(){
 			 page.list.removeRow(page.list.selectedRow);
-				var number = Math.floor(page.list.selectedRow.element.index() / 7);
+				const number = Math.floor(page.list.selectedRow.element.index() / 7);
 				$(".page-number").eq(number).click();
 		});
 		return false;
