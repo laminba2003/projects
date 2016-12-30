@@ -106,15 +106,15 @@ page.wait = () => $(".wait").show();
 
 page.release = () => $(".wait").hide();
 
-page.pdf = url => {
+page.pdf = (url, callback) => {
 	head.load("js/pdfmake.min.js", "js/vfs_fonts.js", () => {
-		app.get(url, entity => pdfMake.createPdf(doc(entity)).open());
+		app.get(url, entity => pdfMake.createPdf(callback ? callback(entity) : doc(entity)).open());
 	});
 };
 
-page.print = url => {
+page.print = (url, callback) => {
 	head.load("js/pdfmake.min.js", "js/vfs_fonts.js", () => {
-		app.get(url, entity => pdfMake.createPdf(doc(entity)).print());
+		app.get(url, entity => pdfMake.createPdf(callback ? callback(entity) : doc(entity)).print());
 	});
 };
 
