@@ -1,24 +1,24 @@
 page.list = {};
 
 page.list.render = (url,message) => {
-	page.list.url = app.apiURL+url;
-	page.list.message = message;
-	page.list.init();
-	app.get(page.list.url,(data) => {
-		page.render($("#list tbody"),data,(rows) => {
-			page.list.display($(rows));
+	page.list.init(url,message);
+	app.get(page.list.url, entities => {
+		page.render($("#list tbody"), entities, rows => {
+			page.list.display(rows);
 		});
 	});
 };
 
-page.list.init = () => {
+page.list.init = (url,message) => {
+	page.list.url = app.apiURL+url;
+	page.list.message = message;
 	$("#list").attr("tabindex","1").click(() => {
 		$("#contextmenu").hide();
 		return false;
 	});
 };
 
-page.list.display = (rows) => {
+page.list.display = rows => {
 	if(!rows.length) {
 		var size = $("#list th").length;
 		$('#list tbody').append("<tr class='empty'><td valign='top' colspan='"+size+"'>"+page.list.message+"</td></tr>");
@@ -31,7 +31,7 @@ page.list.display = (rows) => {
 	}
 };
 
-page.list.bindRow = (element) => {
+page.list.bindRow = element => {
 	element.click(function(event){
 		$("#list tr.active").removeClass("active");
 		$("#list tr.focus").removeClass("focus");
@@ -41,11 +41,10 @@ page.list.bindRow = (element) => {
 		$("#selection").hide();
 		var details = $("#details").show();
 		var id = row.attr("id");
-		app.get(page.list.url+"/"+id,(data) => {
+		app.get(page.list.url+"/"+id, data => {
 			page.list.selectedRow = {id:id,data:data,element:row};
 			page.list.details.show(data);
 			var activeTab = $("ul.tabs li.active").attr("rel");
-			page.animate($("#"+activeTab));
 		});
 		return false;
 	}).contextmenu(function(event){
@@ -64,8 +63,8 @@ page.list.bindRow = (element) => {
 	
 };
 
-page.list.removeRow = function(row){
-	app.delete(page.list.url+"/"+row.id,function(data){
+page.list.removeRow = row => {
+	app.delete(page.list.url+"/"+row.id, data => {
 		var next = row.element.next();
 		if(next.length) {
 			next.click();
@@ -91,7 +90,7 @@ page.list.removeRow = function(row){
 	
 };
 
-page.list.bindContextmenu = function(element) {
+page.list.bindContextmenu = element => {
 	$(element).contextmenu(function(event){
 		var row = $(this);
 		var id = row.attr("id");
@@ -116,14 +115,10 @@ page.list.bindContextmenu = function(element) {
 			});
 		});
 		$(".print-16",contextmenu).click(function(event){
-			page.pdf(page.list.url+"/"+id,function(data){
-  				print(data);
-  			});
+			page.print(page.list.url+"/"+id);
 		});
 		$(".pdf-16",contextmenu).click(function(event){
-			page.pdf(page.list.url+"/"+id,function(data){
-  				pdf(data);
-  			});
+			page.pdf(page.list.url+"/"+id);
 		});
 	    return false;
 	});
@@ -140,27 +135,27 @@ function populate(form, data) {
 	  });
 };
 
-page.list.addRow = function(data) {
+page.list.addRow = data => {
 	$('#list tbody tr.empty').remove();
-	page.render($("#list tbody"),data,true,(row) => {
+	page.render($("#list tbody"),data,true,row => {
 		page.list.paginate();
-		page.list.bindRow($(row));
-		page.list.bindContextmenu($(row),page.list.callback);
+		page.list.bindRow(row);
+		page.list.bindContextmenu(row,page.list.callback);
 		$("span.page-number:last").click();
 		$(row).attr("id","1455555").click();
 	});
 	
 };
 
-page.list.updateRow = function(data) {
+page.list.updateRow = data => {
 	var container = $("<div/>");
-	page.render($("#list tbody"),data,false,container,(row) => {
+	page.render($("#list tbody"),data,false,container,row => {
 		page.list.selectedRow.element.html($("tr",container).html());
 		page.list.selectedRow.element.click();
 	});
 };
 
-page.list.paginate = function() {
+page.list.paginate = () => {
 	$('#list table').unbind("repaginate");
 	$('#list table').each(function() {
 		 $(".pager").remove();
@@ -193,11 +188,11 @@ page.list.paginate = function() {
 
 page.list.details = {};
 
-page.list.details.setTitle = function(title){
+page.list.details.setTitle = title => {
 	$("#details > h2").html(title);
 	$("#details > h2").append("<a title='Edit' class='edit-16'></a>");
 	 $("#details > h2 a.edit-16").click(function(event){
-		 app.get(page.list.url+"/"+page.list.selectedRow.id,function(data){
+		 app.get(page.list.url+"/"+page.list.selectedRow.id,data => {
 				populate($(".form"),data);
 				page.form.edit(data);
 				page.edit = true;
@@ -218,18 +213,14 @@ page.list.details.setTitle = function(title){
 	if(isChrome) {
   		$("#details > h2").append("<a title='Imprimer' class='print-16'></a>");
   		$("#details > h2 a.print-16").click(function(event){
-  			page.pdf(page.list.url+"/"+page.list.selectedRow.id,function(data){
-  				print(data);
-  			});
+  			page.print(page.list.url+"/"+page.list.selectedRow.id);
  			return false;
  	    });
   	 }
   	 $("#details > h2").append("<a title='PDF' class='pdf-16'></a>");
 	 $("#details > h2 a.pdf-16").click(function(event){
-		 page.pdf(page.list.url+"/"+page.list.selectedRow.id,function(data){
-  				pdf(data);
-  		});
-			return false;
+		 page.pdf(page.list.url+"/"+page.list.selectedRow.id);
+		 return false;
 	});
 };
 
@@ -254,9 +245,9 @@ page.search.init = () => {
 	   	   return false;
 	     } 
 	     var formData = $(this).serialize();
-		 app.post(page.list.url+"/search",formData,(data) => {
-			page.render($("#list tbody"),data,(rows) => {
-				page.list.display($(rows));
+		 app.post(page.list.url+"/search",formData, data => {
+			page.render($("#list tbody"), data, rows => {
+				page.list.display(rows);
 			});
 		 });
 		return false;
@@ -265,14 +256,14 @@ page.search.init = () => {
 
 page.form = {};
 
-page.form.submit = function() {
+page.form.submit = () => {
 	if(!page.edit) {
-		 app.post(page.list.url, $("#form").serialize(), (data) => {
+		 app.post(page.list.url, $("#form").serialize(), data => {
 			 page.list.addRow([data]);
 			 return false;
 		 });
 	}else {
-		 app.put(page.list.url, $("#form").serialize(), (data) => {
+		 app.put(page.list.url, $("#form").serialize(), data => {
 			 page.list.updateRow([data]);
 		 });
 	}
@@ -286,7 +277,7 @@ page.form.create = () => {
 
 const module = {};
 
-module.init = (entity) => {
+module.init = entity => {
 	app.ready(() => {
 		page.form.entity = entity[0].toUpperCase() + entity.slice(1);
 		page.form.init();
@@ -302,22 +293,9 @@ module.init = (entity) => {
 	});
 };
 
-window.addEventListener('offline', () => {
-	var div = $("<div class='modal'/>").appendTo($("body"));
-	div.append("<span>You are currently offline</span>");
-	app.wait();
-});
-
-window.addEventListener('online', () => {
-	$("div.modal").remove();
-	app.release();
-});
-
-const isChrome = !!window.chrome && !!window.chrome.webstore;
-
 page.confirmDialog = {};
 
-page.confirmDialog.confirm = (callback) => {
+page.confirmDialog.confirm = callback => {
 	$("#contextmenu").hide();
 	$(".confirm-dialog-container").show();
 	$("#confirm-dialog-ok").unbind("click").click(() => {
@@ -325,11 +303,6 @@ page.confirmDialog.confirm = (callback) => {
 		callback();
 	}).focus();
 	
-};
-
-const alert = (message) => {
-	$(".alert-dialog-message").html(message);
-	$(".alert-dialog-container").show();
 };
 
 app.ready(() => {

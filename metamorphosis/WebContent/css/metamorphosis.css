@@ -616,7 +616,7 @@ span input[type=radio] {
 	font-weight: normal;
 }
 
-#details fieldset>span.text-right {
+#details fieldset>span:nth-child(odd) {
 	text-align: right;
 	width: 38%;
 }
