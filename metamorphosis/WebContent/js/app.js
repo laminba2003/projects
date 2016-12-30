@@ -22,8 +22,7 @@ page.list.init = (url,message) => {
 
 page.list.display = rows => {
 	if(!rows.length) {
-		var size = $("th").length;
-		$('tbody').append("<tr class='empty'><td valign='top' colspan='"+size+"'>"+page.list.message+"</td></tr>");
+		$('tbody').append("<tr class='empty'><td valign='top' colspan='"+$("th").length+"'>"+page.list.message+"</td></tr>");
 	} else {
 		page.list.bindRow(rows);
 		page.list.bindContextmenu(rows);
@@ -66,21 +65,16 @@ page.list.bindRow = element => {
 };
 
 page.list.removeRow = row => {
-	app.delete(page.list.url+"/"+row.id, data => {
-		var next = row.element.next();
-		if(next.length) {
-			next.click();
-		} else {
-			 row.element.prev().click();
-		}
+	app.delete(page.list.url+"/"+row.id, () => {
+		const next = row.element.next();
+		next.length ? next.click() : row.element.prev().click();
 		row.element.remove();
-		var length = $("tbody th").length;
-		if(!length) {
+		if(!$("tbody tr").length) {
 			$('tbody').append("<tr class='empty'><td  valign='top' colspan='"+$("th").length+"'>"+page.list.message+"</td></tr>");
 			$("#details").hide();
 			$("#selection").hide();
 		}else {
-			var number = $(".page-number.active").text();
+			const number = $(".page-number.active").text();
 			page.list.paginate();
 			if(number <= $(".page-number").length) {
 			  $(".page-number").eq(number-1).click();
@@ -112,7 +106,7 @@ page.list.bindContextmenu = element => {
   			});
 		});
 		$(".delete-16",contextmenu).click(function(event){
-			page.confirmDialog.confirm(function(){
+			confirm(function(){
 				page.list.removeRow({id:id,element:row});
 			});
 		});
@@ -205,7 +199,7 @@ page.list.details.setTitle = title => {
 	});
 	 $("#details > h2").append("<a title='Delete' class='delete-16'></a>");
 	 $("#details > h2 a.delete-16").click(function(event){
-		page.confirmDialog.confirm(function(){
+		confirm(function(){
 			 page.list.removeRow(page.list.selectedRow);
 				var number = Math.floor(page.list.selectedRow.element.index() / 7);
 				$(".page-number").eq(number).click();
@@ -240,15 +234,14 @@ page.search = {};
 
 page.search.init = () => {
 	$('#search input').val("").focus();
-	$('#search').submit(function(){
-	     var value =  $('input',this).val();
-	     if(!value.trim()) {
-	   	   alert("enter your search");
-	   	   return false;
-	     } 
-	     var formData = $(this).serialize();
-		 app.post(page.list.url+"/search",formData, data => {
-			page.render($("tbody"), data, rows => {
+	$('#search').submit(function(){;
+	     if(!$('input',this).val().trim()) {
+	    	 alert("enter your search");
+	    	 return false;
+	     }
+	     const data = $(this).serialize();
+		 app.post(page.list.url+"/search",data, entities => {
+			page.render($("tbody"), entities, rows => {
 				page.list.display(rows);
 			});
 		 });
@@ -295,91 +288,18 @@ module.init = entity => {
 	});
 };
 
-page.confirmDialog = {};
-
-page.confirmDialog.confirm = callback => {
-	$("#contextmenu").hide();
-	$(".confirm-dialog-container").show();
-	$("#confirm-dialog-ok").unbind("click").click(() => {
-		$(".confirm-dialog-container").hide();
-		callback();
-	}).focus();
-	
-};
-
 app.ready(() => {
-	
-	var array = window.location.pathname.split( '/' );
-	var path = "";
-	for( var i = 2;i<array.length;i++) {
-		path += array[i];
-		$('a[href$='+array[i]+"]").addClass('active');
-	}
-	if(path=="") {
-		$('a[href$='+array[1]+"]").addClass('active');
-	}
-	if($("aside a.active").length>1) {
-		$("aside a.active:first").removeClass("active");
-	}
 	
 	$(".tab_content").hide();
 	$(".tab_container .tab_content:first-child").show(); 
 
 	$("ul.tabs li").click(function() {
-		var parent = $(this).parent();
+		const parent = $(this).parent();
 		$("li",parent).removeClass("active");
 		$(this).addClass("active");
-		var activeTab = $(this).attr("rel"); 
+		const activeTab = $(this).attr("rel"); 
 		$("#"+activeTab).parent().find(".tab_content").hide();
 		$("#"+activeTab).fadeIn(); 
 	});
-	
-	if(!isChrome) {
-		$(".print-16").hide();
-		
-	}
-	
-	$("body").append('<div class="confirm-dialog-container">'+
-			'<div class="confirm-dialog">'+
-			'<span class="confirm-dialog-title">Confirmation</span>'+
-			'<span class="confirm-dialog-message">Are you sure you want to delete this item?</span>'+
-			'<a id="confirm-dialog-cancel" tabindex="2" class="confirm-dialog-button">Cancel</a>'+
-			'<a id="confirm-dialog-ok" tabindex="1" class="confirm-dialog-button">OK</a></div></div>');
-	
-	$("body").append('<div class="alert-dialog-container">'+
-			'<div class="alert-dialog">'+
-			'<span class="alert-dialog-title">Alert</span>'+
-			'<span class="alert-dialog-message"></span>'+
-			'<a id="alert-dialog-ok" tabindex="1" class="alert-dialog-button">OK</a></div></div>');
-
-	
-	$("#confirm-dialog-cancel").click(function(event){
-		$(".confirm-dialog-container").hide();
-	});
-	
-	$("#alert-dialog-ok").click(function(event){
-		$(".alert-dialog-container").hide();
-	});
-	
-	 $(".confirm-dialog-container").on('keydown', function (e) {     
-	        switch (e.keyCode) {
-	            case 27: // esc
-	            	$(this).hide();
-	                break;
-	            case 9: // esc
-	            	var element = document.activeElement == $("#confirm-dialog-ok")[0] ? $("#confirm-dialog-cancel") : $("#confirm-dialog-ok"); 
-	            	element.focus();
-	                break;
-	            case 13: // enter
-	            	$(document.activeElement).click();
-	                break;
-	        }
-	       return false;
-	 }).attr("tabindex","1"); 
-	
-	$("body").click(function(event){
-		$("#contextmenu").hide();
-		$("tr.focus").removeClass("focus");
-	}).append("<div class='wait'/>");
 	
 });
