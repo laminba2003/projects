@@ -120,7 +120,7 @@ page.print = url => {
 };
 
 window.addEventListener('offline', () => {
-	var div = $("<div class='modal'/>").appendTo($("body"));
+	const div = $("<div class='modal'/>").appendTo($("body"));
 	div.append("<span>You are currently offline</span>");
 	app.wait();
 });
