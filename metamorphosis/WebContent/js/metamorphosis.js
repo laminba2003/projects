@@ -71,8 +71,7 @@ app.engine = (type, engine) => app.engines[type] = engine;
 app.engine("text/x-handlebars-template", info => {
   head.load("js/handlebars-v4.0.5.js", () => {
     const template = Handlebars.compile(info.source);
-    const out = template(info.data);
-    const html = $.parseHTML(out);
+    const html = $.parseHTML(template(info.data));
     info.append ? info.destination.append(html) : info.destination.html(html);
     if (info.callback) info.callback($(html));
   });
