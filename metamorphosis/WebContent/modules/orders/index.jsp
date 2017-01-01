@@ -22,7 +22,7 @@
  </thead>
 
 <tbody>
-   <script type="text/x-dust-template">
+   <template type="text/x-dust-template">
      {#.}
       <tr id="{id}">
    	        <td class="icon-16">{product}</td>
@@ -33,7 +33,7 @@
             <td>{createdBy}</td>
    	    </tr>
      {/.}
-   </script>
+   </template>
    
  </tbody>
   

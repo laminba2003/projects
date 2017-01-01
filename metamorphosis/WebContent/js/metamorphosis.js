@@ -70,8 +70,7 @@ app.engine = (type, engine) => app.engines[type] = engine;
 
 app.engine("text/x-handlebars-template", info => {
   head.load("js/handlebars-v4.0.5.js", () => {
-    const template = Handlebars.compile(info.source);
-    const html = $.parseHTML(template(info.data));
+    const html = $.parseHTML(Handlebars.compile(info.source)(info.data));
     info.append ? info.destination.append(html) : info.destination.html(html);
     if (info.callback) info.callback($(html));
   });
@@ -91,10 +90,10 @@ const page = {};
 
 page.render = (element, data, ...options) => {
   this.cache = this.cache ? this.cache : {};
-  const script = this.cache[element[0]] ? this.cache[element[0]] : this.cache[element[0]] = $("script", element);
-  const engine = app.engines[script.attr("type")];
+  const template = this.cache[element[0]] ? this.cache[element[0]] : this.cache[element[0]] = $("template", element);
+  const engine = app.engines[template.attr("type")];
   engine({
-    source: script.html(),
+    source: template.html(),
     data: data,
     append: options[0] instanceof Function ? false : options[0],
     destination: options[1] && !(options[1] instanceof Function) ? options[1] : element,
