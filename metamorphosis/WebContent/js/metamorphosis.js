@@ -137,9 +137,9 @@ const alert = message => {
 
 const confirm = callback => {
 	$("#contextmenu").hide();
-	$(".confirm-dialog-container").show();
+	const container = $(".confirm-dialog-container").show();
 	$("#confirm-dialog-ok").unbind("click").click(() => {
-		$(".confirm-dialog-container").hide();
+		container.hide();
 		callback();
 	}).focus();
 };
