@@ -184,6 +184,7 @@ app.ready(() => {
 			'<span class="alert-dialog-message"></span>'+
 			'<a id="alert-dialog-ok" tabindex="1" class="alert-dialog-button">OK</a></div></div>');
 
+	$("body").append('<div class="wait"/>');
 	
 	$("#confirm-dialog-cancel").click(() => $(".confirm-dialog-container").hide());
 	
@@ -206,6 +207,7 @@ app.ready(() => {
 	 }).attr("tabindex","1"); 
 	
 	$("body").click(() => $("#contextmenu").hide());
+	
 	
 });
 
