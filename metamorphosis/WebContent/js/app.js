@@ -140,7 +140,7 @@ page.list.paginate = () => {
 		        $('<span class="page-number"></span>').text(page + 1).bind('click', {
 		            newPage: page
 		        }, function(event) {
-		            currentPage = event.entity['newPage'];
+		            currentPage = event.data['newPage'];
 		            $table.trigger('repaginate');
 		            $(this).addClass('active').siblings().removeClass('active');
 		            $table.parent().focus();
