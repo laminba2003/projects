@@ -124,10 +124,10 @@ page.list.updateRow = entity => {
 page.list.paginate = () => {
 	$('table').unbind("repaginate");
 	$('table').each(function() {
-		 $(".pager").remove();
+		$(".pager").remove();
 	    var currentPage = 0;
 	    const $table = $(this);
-	    const numPerPage = $table.attr("entity-rows")?$table.attr("entity-rows") :7;
+	    const numPerPage = 7;
 	    $table.bind('repaginate', function() {
 	        $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
 	    });
