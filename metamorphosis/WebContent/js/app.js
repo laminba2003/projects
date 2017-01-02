@@ -2,8 +2,8 @@ app.apiURL = "http://env-4347792.mircloud.host/";
 
 page.list = {};
 
-page.list.render = (url,message) => {
-	page.list.init(url,message);
+page.list.render = entity => {
+	page.list.init(entity);
 	app.get(page.list.url, entities => {
 		page.render($("tbody"), entities, rows => {
 			page.list.display(rows);
@@ -11,9 +11,9 @@ page.list.render = (url,message) => {
 	});
 };
 
-page.list.init = (url,message) => {
-	page.list.url = app.apiURL+url;
-	page.list.message = message;
+page.list.init = entity => {
+	page.list.url = app.apiURL+entity+"s";
+	page.list.message = "no "+entity;
 	$("#contextmenu .new-16").click(() => page.form.create());
 	$("#contextmenu .row-select").click(() => page.list.selectedRow.element.click());
 	$("#contextmenu .edit-16").click(() => {
@@ -44,8 +44,7 @@ page.list.bindRow = element => {
 		$("tr.active").removeClass("active");
 		$("tr.focus").removeClass("focus");
 		$("table").focus();
-		const row = $(this);
-		row.addClass("active").addClass("focus");
+		const row = $(this).addClass("active").addClass("focus");
 		$("#selection").hide();
 		$("#details").show();
 		const id = row.attr("id");
@@ -105,7 +104,7 @@ function deserialize(form, entity) {
 
 page.list.addRow = entity => {
 	$('tr.empty').remove();
-	page.render($("tbody"), entity, true, row => {
+	page.render($("tbody"), [entity], true, row => {
 		page.list.paginate();
 		page.list.bindRow(row);
 		$("span.page-number:last").click();
@@ -116,7 +115,7 @@ page.list.addRow = entity => {
 
 page.list.updateRow = entity => {
 	const container = $("<div/>");
-	page.render($("tbody"), entity ,false, container, row => {
+	page.render($("tbody"), [entity] ,false, container, row => {
 		page.list.selectedRow.element.html($("tr",container).html());
 		page.list.selectedRow.element.click();
 	});
@@ -154,8 +153,6 @@ page.list.paginate = () => {
 };
 
 page.list.details = {};
-
-page.search = {};
 
 page.list.details.show = function(entity,row) {
 	$.each($("div.tab_container > div"), function( i, element ){
@@ -196,6 +193,8 @@ page.list.details.show = function(entity,row) {
 	});
 };
 
+page.search = {};
+
 page.search.init = () => {
 	$('#search input').val("").focus();
 	$('#search').submit(function(){;
@@ -218,12 +217,12 @@ page.form = {};
 page.form.submit = () => {
 	if(!page.edit) {
 		 app.post(page.list.url, $("#form").serialize(), entity => {
-			 page.list.addRow([entity]);
+			 page.list.addRow(entity);
 			 return false;
 		 });
 	}else {
 		 app.put(page.list.url, $("#form").serialize(), entity => {
-			 page.list.updateRow([entity]);
+			 page.list.updateRow(entity);
 		 });
 	}
 	page.edit = false;
@@ -247,7 +246,7 @@ module.init = entity => {
 			page.edit = false;
 			return false;
 		});
-		page.list.render(entity+"s","no "+entity);
+		page.list.render(entity);
 		page.search.init();
 	});
 };
