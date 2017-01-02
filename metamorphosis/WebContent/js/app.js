@@ -14,10 +14,18 @@ page.list.render = (url,message) => {
 page.list.init = (url,message) => {
 	page.list.url = app.apiURL+url;
 	page.list.message = message;
-	$("table").attr("tabindex","1").click(() => {
-		$("#contextmenu").hide();
-		return false;
+	$("#contextmenu .new-16").click(() => page.form.create());
+	$("#contextmenu .row-select").click(() => page.list.selectedRow.element.click());
+	$("#contextmenu .edit-16").click(() => {
+		app.get(page.list.url+"/"+page.list.selectedRow.id, data => {
+			populate($(".form"),data);
+			page.form.edit(data);
+			page.edit = true;
+		});
 	});
+	$("#contextmenu .delete-16").click(() => confirm(() => page.list.removeRow(page.list.selectedRow)));
+	$("#contextmenu .print-16").click(() => page.print(page.list.url+"/"+page.list.selectedRow.id));
+	$("#contextmenu .pdf-16").click(() => page.pdf(page.list.url+"/"+page.list.selectedRow.id));
 };
 
 page.list.display = rows => {
@@ -25,7 +33,6 @@ page.list.display = rows => {
 		$('tbody').append("<tr class='empty'><td valign='top' colspan='"+$("th").length+"'>"+page.list.message+"</td></tr>");
 	} else {
 		page.list.bindRow(rows);
-		page.list.bindContextmenu(rows);
 		page.list.paginate();
 		$("#details").hide();
 		$("#selection").slideDown(500);
@@ -52,6 +59,7 @@ page.list.bindRow = element => {
 		const row = $(this);
 		row.addClass("focus");
 		const id = row.attr("id");
+		page.list.selectedRow = {id:id,element:row};
 		const top = row.position().top;
 		const left = event.pageX;
 		if(left>window.innerWidth-100) {
@@ -85,39 +93,7 @@ page.list.removeRow = row => {
 	
 };
 
-page.list.bindContextmenu = element => {
-	$(element).contextmenu(function(event){
-		const row = $(this);
-		const id = row.attr("id");
-		$("a",contextmenu).unbind("click");
-		$(".new-16",contextmenu).click(function(event){
-		   page.form.create();
-		});
-		$(".row-select",contextmenu).click(function(event){
-			row.click();
-		});
-		$(".edit-16",contextmenu).click(function(event){
-		    page.list.selectedRow = {id:id,element:row};
-			app.get(page.list.url+"/"+id,function(data){
-				populate($(".form"),data);
-  				page.form.edit(data);
-  				page.edit = true;
-  			});
-		});
-		$(".delete-16",contextmenu).click(function(event){
-			confirm(function(){
-				page.list.removeRow({id:id,element:row});
-			});
-		});
-		$(".print-16",contextmenu).click(function(event){
-			page.print(page.list.url+"/"+id);
-		});
-		$(".pdf-16",contextmenu).click(function(event){
-			page.pdf(page.list.url+"/"+id);
-		});
-	    return false;
-	});
-};
+
 
 function populate(form, data) {
 	  $.each(data, function(key, value){
@@ -135,7 +111,6 @@ page.list.addRow = entity => {
 	page.render($("tbody"), entity, true, row => {
 		page.list.paginate();
 		page.list.bindRow(row);
-		page.list.bindContextmenu(row,page.list.callback);
 		$("span.page-number:last").click();
 		$(row).attr("id","1455555").click();
 	});
@@ -217,10 +192,6 @@ page.list.details.setTitle = title => {
 		 page.pdf(page.list.url+"/"+page.list.selectedRow.id);
 		 return false;
 	});
-};
-
-page.list.details.addButton = function(title,icon){
-	return $("#details > h2").append("<a title='"+title+"' class='"+icon+"'></a>");
 };
 
 page.list.details.render = (list,entity) => {
