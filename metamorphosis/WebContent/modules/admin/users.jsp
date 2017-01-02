@@ -1,5 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<h1 class="user-32">List Of Users <a id="new" href="#form">Create</a></h1>
+<h1 class="user-32">List Of Users <a id="create" href="#form">Create</a></h1>
 <form id="search">
 	<span>Filter :</span>
 	<select name="filter">
@@ -209,7 +209,7 @@
  
 </div>
 
- <form id="form" class="hide">
+ <form id="form">
   
   <h1 class="user-32"></h1>  
    

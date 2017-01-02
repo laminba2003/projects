@@ -1,4 +1,4 @@
-<h1 class="icon-32">List Of Products <a id="new" href="#form">Create</a></h1>
+<h1 class="icon-32">List Of Products <a id="create" href="#form">Create</a></h1>
 <form id="search">
 	<span>Filter :</span>
 	<select name="filter">
@@ -93,7 +93,7 @@
  
 </div>
 
- <form id="form" class="hide">
+ <form id="form">
   
   <h1 class="icon-32"></h1>  
    

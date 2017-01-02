@@ -14,7 +14,7 @@ h1 a:hover {
 	border : 1px solid rgb(200, 25, 17);
 }
 
-h1 a#new {
+h1 a#create {
 	background-image: url("../images/new-16.png");
 }
 

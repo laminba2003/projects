@@ -227,7 +227,7 @@ page.form.submit = () => {
 
 page.form.create = () => {
 	page.edit = false;
-	$('#new').click();
+	$('#create').click();
 };
 
 const module = {};
@@ -236,10 +236,9 @@ module.init = entity => {
 	app.ready(() => {
 		page.form.entity = entity[0].toUpperCase() + entity.slice(1);
 		page.form.init();
-		$('#new').click(() => {
+		$('#create').click(() => {
 			$('.form h1').html("Create "+page.form.entity +" : Informations");
 			$('.form input:not([type=hidden]').val("");
-			$('#form').removeClass("hide");
 			page.edit = false;
 			return false;
 		});
