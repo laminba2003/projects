@@ -160,7 +160,7 @@ page.list.details.show = function(entity,row) {
 	$("#details > h2").append("<a title='Edit' class='edit-16'></a>");
 	$("#details > h2 a.edit-16").click(() => {
 		 app.get(page.list.url+"/"+row.id,entity => {
-				populate($(".form"),entity);
+				deserialize($(".form"),entity);
 				page.form.edit(entity);
 				page.edit = true;
 				const number = Math.floor(page.list.selectedRow.element.index() / 7);
