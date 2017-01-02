@@ -56,10 +56,8 @@ page.list.bindRow = element => {
 		return false;
 	}).contextmenu(function(event){
 		$("tr.focus").removeClass("focus");
-		const row = $(this);
-		row.addClass("focus");
-		const id = row.attr("id");
-		page.list.selectedRow = {id:id,element:row};
+		const row = $(this).addClass("focus");
+		page.list.selectedRow = {id:row.attr("id"),element:row};
 		const top = row.position().top;
 		const left = event.pageX;
 		if(left>window.innerWidth-100) {
