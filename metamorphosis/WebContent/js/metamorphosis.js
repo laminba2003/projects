@@ -206,7 +206,7 @@ app.ready(() => {
 	       return false;
 	 }).attr("tabindex","1"); 
 	
-	$("body").click(() => $("#contextmenu").hide());
+	$("body").click(() => $("#contextmenu,.contextmenu").hide());
 	
 	
 });
