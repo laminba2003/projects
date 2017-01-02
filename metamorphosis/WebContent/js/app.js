@@ -301,8 +301,6 @@ app.ready(() => {
 		$("#"+activeTab).fadeIn(); 
 	});
 	
-	$("body").click(() => {
-		$(".focus").removeClass("focus");
-	});
+	$("body").click(() => $(".focus").removeClass("focus"));
 	
 });

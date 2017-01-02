@@ -94,8 +94,7 @@ page.render = (element, data, ...options) => {
   if(this.cache.has(element[0])) {
 	  template =  this.cache.get(element[0]);
   }else {
-	  template = $("template", element);
-	  this.cache.set(element[0],template);
+	  this.cache.set(element[0],template = $("template", element));
   }
   const engine = app.engines[template.attr("type")];
   engine({
