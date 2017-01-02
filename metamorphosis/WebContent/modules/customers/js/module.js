@@ -1,14 +1,9 @@
-var doc = function(customer) {
+const doc = customer => {
 	return {content: page.form.entity +" : " +customer.firstName+" "+customer.lastName};
 };
 
-page.list.details.show = function(customer) {
-	page.list.details.setTitle("Details "+page.form.entity + " : " +customer.firstName+" "+customer.lastName);
-	page.list.details.render(["informations","contact"],customer);
-};
+const title = customer => customer.firstName+" "+customer.lastName;
 
-var nextStep = function() {
-	return true;
-};
+const nextStep = () => true;
 
 module.init("customer");

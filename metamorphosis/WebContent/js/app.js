@@ -17,9 +17,9 @@ page.list.init = (url,message) => {
 	$("#contextmenu .new-16").click(() => page.form.create());
 	$("#contextmenu .row-select").click(() => page.list.selectedRow.element.click());
 	$("#contextmenu .edit-16").click(() => {
-		app.get(page.list.url+"/"+page.list.selectedRow.id, data => {
-			deserialize($(".form"),data);
-			page.form.edit(data);
+		app.get(page.list.url+"/"+page.list.selectedRow.id, entity => {
+			deserialize($(".form"),entity);
+			page.form.edit(entity);
 			page.edit = true;
 		});
 	});
@@ -49,9 +49,9 @@ page.list.bindRow = element => {
 		$("#selection").hide();
 		const details = $("#details").show();
 		const id = row.attr("id");
-		app.get(page.list.url+"/"+id, data => {
-			page.list.selectedRow = {id:id,data:data,element:row};
-			page.list.details.show(data);
+		app.get(page.list.url+"/"+id, entity => {
+			page.list.selectedRow = {id:id,data:entity,element:row};
+			page.list.details.show(entity);
 		});
 		return false;
 	}).contextmenu(function(event){
@@ -191,13 +191,14 @@ page.list.details.setTitle = title => {
 	});
 };
 
-page.list.details.render = (list,entity) => {
-	for(var i=0;i<list.length;i++) {
-		page.render($("#"+list[i]),entity);
-	}
-};
-
 page.search = {};
+
+page.list.details.show = function(entity) {
+	page.list.details.setTitle("Details "+page.form.entity + " : " +title(entity));
+	$.each($("div.tab_container > div"), function( i, element ){
+		page.render($(element),entity);
+	});
+};
 
 page.search.init = () => {
 	$('#search input').val("").focus();

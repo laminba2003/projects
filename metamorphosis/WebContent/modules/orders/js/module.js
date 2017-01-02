@@ -1,14 +1,9 @@
-var doc = function(order) {
+const doc = order => {
 	return { content: page.form.entity +" : " +order.product};
 };
 
-page.list.details.show = function(order) {
-	page.list.details.setTitle("Details "+ page.form.entity +" : " +order.product);
-	page.list.details.render(["informations-1","informations-2"],order);
-};
+const title = order => order.product;
 
-var nextStep = function() {
-	return true;
-};
+const nextStep = () => true;
 
 module.init("order");

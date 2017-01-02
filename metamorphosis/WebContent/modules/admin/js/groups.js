@@ -1,14 +1,9 @@
-var doc = function(group) {
+const doc = group => {
 	return { content: page.form.entity +" : " +group.name};
 };
 
-page.list.details.show = function(group) {
-	page.list.details.setTitle("Details "+page.form.entity + " : " +group.name);
-	page.list.details.render(["informations","permissions"],group);
-};
+const title = group => group.name;
 
-var nextStep = function() {
-	return true;
-};
+const nextStep = () => true;
 
 module.init("group");
