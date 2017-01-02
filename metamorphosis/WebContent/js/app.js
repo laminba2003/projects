@@ -18,7 +18,7 @@ page.list.init = (url,message) => {
 	$("#contextmenu .row-select").click(() => page.list.selectedRow.element.click());
 	$("#contextmenu .edit-16").click(() => {
 		app.get(page.list.url+"/"+page.list.selectedRow.id, data => {
-			populate($(".form"),data);
+			deserialize($(".form"),data);
 			page.form.edit(data);
 			page.edit = true;
 		});
@@ -92,8 +92,7 @@ page.list.removeRow = row => {
 };
 
 
-
-function populate(form, data) {
+function deserialize(form, data) {
 	  $.each(data, function(key, value){
 	    $('[name='+key+']', form).val(value);
 	    if(value === Object(value)) {
