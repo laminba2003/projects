@@ -51,7 +51,7 @@ page.list.bindRow = element => {
 		const id = row.attr("id");
 		app.get(page.list.url+"/"+id, entity => {
 			page.list.selectedRow = {id:id,entity:entity,element:row};
-			page.list.details.show(entity);
+			page.list.details.show(entity,page.list.selectedRow);
 		});
 		return false;
 	}).contextmenu(function(event){
@@ -155,11 +155,16 @@ page.list.paginate = () => {
 
 page.list.details = {};
 
-page.list.details.setTitle = title => {
-	$("#details > h2").html(title);
+page.search = {};
+
+page.list.details.show = function(entity,row) {
+	$.each($("div.tab_container > div"), function( i, element ){
+		page.render($(element),entity);
+	});
+	$("#details > h2").html("Details "+page.form.entity + " : " +title(entity));
 	$("#details > h2").append("<a title='Edit' class='edit-16'></a>");
-	 $("#details > h2 a.edit-16").click(function(event){
-		 app.get(page.list.url+"/"+page.list.selectedRow.id,entity => {
+	 $("#details > h2 a.edit-16").click(() => {
+		 app.get(page.list.url+"/"+row.id,entity => {
 				populate($(".form"),entity);
 				page.form.edit(entity);
 				page.edit = true;
@@ -169,34 +174,25 @@ page.list.details.setTitle = title => {
 	      return false;
 	});
 	 $("#details > h2").append("<a title='Delete' class='delete-16'></a>");
-	 $("#details > h2 a.delete-16").click(function(event){
-		confirm(function(){
-			 page.list.removeRow(page.list.selectedRow);
-				const number = Math.floor(page.list.selectedRow.element.index() / 7);
-				$(".page-number").eq(number).click();
+	 $("#details > h2 a.delete-16").click(() => {
+		confirm(() => {
+			 page.list.removeRow(row);
+			 const number = Math.floor(page.list.selectedRow.element.index() / 7);
+			 $(".page-number").eq(number).click();
 		});
 		return false;
 	});
 	if(isChrome) {
   		$("#details > h2").append("<a title='Imprimer' class='print-16'></a>");
-  		$("#details > h2 a.print-16").click(function(event){
-  			page.print(page.list.url+"/"+page.list.selectedRow.id);
+  		$("#details > h2 a.print-16").click(() => {
+  			page.print(page.list.url+"/"+row.id);
  			return false;
  	    });
-  	 }
-  	 $("#details > h2").append("<a title='PDF' class='pdf-16'></a>");
-	 $("#details > h2 a.pdf-16").click(function(event){
-		 page.pdf(page.list.url+"/"+page.list.selectedRow.id);
+  	}
+  	$("#details > h2").append("<a title='PDF' class='pdf-16'></a>");
+	$("#details > h2 a.pdf-16").click(() => {
+		 page.pdf(page.list.url+"/"+row.id);
 		 return false;
-	});
-};
-
-page.search = {};
-
-page.list.details.show = function(entity) {
-	page.list.details.setTitle("Details "+page.form.entity + " : " +title(entity));
-	$.each($("div.tab_container > div"), function( i, element ){
-		page.render($(element),entity);
 	});
 };
 
