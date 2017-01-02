@@ -155,12 +155,10 @@ page.list.paginate = () => {
 page.list.details = {};
 
 page.list.details.show = function(entity,row) {
-	$.each($("div.tab_container > div"), function( i, element ){
-		page.render($(element),entity);
-	});
+	$.each($("div.tab_container > div"),(i, element) => page.render($(element),entity));
 	$("#details > h2").html("Details "+page.form.entity + " : " +title(entity));
 	$("#details > h2").append("<a title='Edit' class='edit-16'></a>");
-	 $("#details > h2 a.edit-16").click(() => {
+	$("#details > h2 a.edit-16").click(() => {
 		 app.get(page.list.url+"/"+row.id,entity => {
 				populate($(".form"),entity);
 				page.form.edit(entity);
@@ -170,8 +168,8 @@ page.list.details.show = function(entity,row) {
 			});
 	      return false;
 	});
-	 $("#details > h2").append("<a title='Delete' class='delete-16'></a>");
-	 $("#details > h2 a.delete-16").click(() => {
+	$("#details > h2").append("<a title='Delete' class='delete-16'></a>");
+	$("#details > h2 a.delete-16").click(() => {
 		confirm(() => {
 			 page.list.removeRow(row);
 			 const number = Math.floor(page.list.selectedRow.element.index() / 7);
@@ -218,7 +216,6 @@ page.form.submit = () => {
 	if(!page.edit) {
 		 app.post(page.list.url, $("#form").serialize(), entity => {
 			 page.list.addRow(entity);
-			 return false;
 		 });
 	}else {
 		 app.put(page.list.url, $("#form").serialize(), entity => {
