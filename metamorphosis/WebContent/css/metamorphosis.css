@@ -608,7 +608,7 @@ span input[type=radio] {
 	margin-left: 3px;
 }
 
-#details fieldset>span {
+#details fieldset span {
 	display: inline-block;
 	width: 44%;
 	text-align: left;
@@ -616,7 +616,7 @@ span input[type=radio] {
 	font-weight: normal;
 }
 
-#details fieldset>span:nth-child(odd) {
+#details fieldset span:nth-child(odd) {
 	text-align: right;
 	width: 38%;
 }

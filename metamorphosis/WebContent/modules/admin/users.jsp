@@ -76,7 +76,7 @@
 </ul>
 <div class="tab_container"> 
    <div id="informations" class="tab_content">
-     <script  type="text/x-dust-template">
+     <template  type="text/x-dust-template">
 
        <fieldset>
 		<span>First Name : </span>
@@ -121,11 +121,11 @@
 	
 	  </fieldset>
 
-     </script>
+     </template>
      
    </div>
    <div id="contact" class="tab_content">
-    <script  type="text/x-dust-template">
+    <template  type="text/x-dust-template">
       <fieldset>
 		<span>First Name : </span>
 		<span>{contact.firstName}</span>
@@ -163,15 +163,16 @@
 	
 	  </fieldset>
 
-   </script>
+   </template>
    
    </div>
    
    <div id="permissions" class="tab_content">
-    <script  type="text/x-dust-template">
+    <template  type="text/x-dust-template">
       <s:iterator value="#application.moduleManager.adminModules">
        <fieldset>
-         <legend>Module ${name}</legend>
+         <span>Module ${name}</span>
+        <span></span>
         <span>Create : </span>
         <span>yes<input type="radio" name="${id}.create" value="yes" checked/>
         no<input type="radio" name="${id}.create" value="no"/>
@@ -200,7 +201,7 @@
       </s:iterator>
        
       <input type="submit" value="Change"/>
-    </script>
+    </template>
    </div>
    
 </div> 

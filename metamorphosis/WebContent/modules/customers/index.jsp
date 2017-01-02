@@ -70,7 +70,7 @@
 </ul>
 <div class="tab_container"> 
    <div id="informations" class="tab_content">
-     <script  type="text/x-dust-template">
+     <template  type="text/x-dust-template">
 
        <fieldset>
 		<span>First Name : </span>
@@ -106,11 +106,11 @@
 	
 	  </fieldset>
 
-     </script>
+     </template>
      
    </div>
    <div id="contact" class="tab_content">
-    <script  type="text/x-dust-template">
+    <template  type="text/x-dust-template">
       <fieldset>
 		<span>First Name : </span>
 		<span>{contact.firstName}</span>
@@ -148,7 +148,7 @@
 	
 	  </fieldset>
 
-   </script>
+   </template>
    
    </div>
    

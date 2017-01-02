@@ -223,9 +223,9 @@ page.list.details.addButton = function(title,icon){
 	return $("#details > h2").append("<a title='"+title+"' class='"+icon+"'></a>");
 };
 
-page.list.details.render = (list,data) => {
+page.list.details.render = (list,entity) => {
 	for(var i=0;i<list.length;i++) {
-		page.render($("#"+list[i]),data);
+		page.render($("#"+list[i]),entity);
 	}
 };
 
@@ -299,6 +299,10 @@ app.ready(() => {
 		const activeTab = $(this).attr("rel"); 
 		$("#"+activeTab).parent().find(".tab_content").hide();
 		$("#"+activeTab).fadeIn(); 
+	});
+	
+	$("body").click(() => {
+		$(".focus").removeClass("focus");
 	});
 	
 });

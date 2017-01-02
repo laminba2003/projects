@@ -89,8 +89,14 @@ app.engine("text/x-dust-template", info => {
 const page = {};
 
 page.render = (element, data, ...options) => {
-  this.cache = this.cache ? this.cache : {};
-  const template = this.cache[element[0]] ? this.cache[element[0]] : this.cache[element[0]] = $("template", element);
+  this.cache = this.cache ? this.cache : new Map();
+  var template;
+  if(this.cache.has(element[0])) {
+	  template =  this.cache.get(element[0]);
+  }else {
+	  template = $("template", element);
+	  this.cache.set(element[0],template);
+  }
   const engine = app.engines[template.attr("type")];
   engine({
     source: template.html(),
@@ -136,18 +142,15 @@ const alert = message => {
 };
 
 const confirm = callback => {
-	$("#contextmenu").hide();
+	$("#contextmenu,.contextmenu").hide();
 	const container = $(".confirm-dialog-container").show();
-	$("#confirm-dialog-ok").unbind("click").click(() => {
+	$("#confirm-dialog-ok").one("click",() => {
 		container.hide();
 		callback();
 	}).focus();
 };
 
-app.ready(() => {
-	
-	if(!isChrome) $(".print-16").hide();
-	
+app.highlight = () => {
 	const array = window.location.pathname.split( '/' );
 	var path = "";
 	for( var i = 2;i<array.length;i++) {
@@ -160,6 +163,13 @@ app.ready(() => {
 	if($("aside a.active").length>1) {
 		$("aside a.active:first").removeClass("active");
 	}
+};
+
+app.ready(() => {
+	
+	if(!isChrome) $(".print-16").hide();
+	
+	app.highlight();
 	
 	$("body").append('<div class="confirm-dialog-container">'+
 			'<div class="confirm-dialog">'+
@@ -179,7 +189,7 @@ app.ready(() => {
 	
 	$("#alert-dialog-ok").click(() => $(".alert-dialog-container").hide());
 	
-	 $(".confirm-dialog-container").on('keydown', function(event) {     
+	$(".confirm-dialog-container").on('keydown', function(event) {     
 	        switch (event.keyCode) {
 	            case 27: // esc
 	            	$(this).hide();
@@ -195,10 +205,7 @@ app.ready(() => {
 	       return false;
 	 }).attr("tabindex","1"); 
 	
-	$("body").click(() => {
-		$("#contextmenu").hide();
-		$(".focus").removeClass("focus");
-	}).append("<div class='wait'/>");
+	$("body").click(() => $("#contextmenu").hide());
 	
 });
 

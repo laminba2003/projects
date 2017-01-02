@@ -61,7 +61,7 @@
 </ul>
 <div class="tab_container"> 
    <div id="informations-1" class="tab_content">
-     <script  type="text/x-dust-template">
+     <template  type="text/x-dust-template">
 
        <fieldset>
 		<span>Name : </span>
@@ -74,17 +74,17 @@
 		</fieldset>
 		
 
-     </script>
+     </template>
      
    </div>
    <div id="informations-2" class="tab_content">
-    <script  type="text/x-dust-template">
+    <template  type="text/x-dust-template">
       <fieldset>
 		
 		</fieldset>
 		
 
-   </script>
+   </template>
    
    </div>
    
