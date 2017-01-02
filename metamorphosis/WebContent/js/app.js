@@ -47,10 +47,10 @@ page.list.bindRow = element => {
 		const row = $(this);
 		row.addClass("active").addClass("focus");
 		$("#selection").hide();
-		const details = $("#details").show();
+		$("#details").show();
 		const id = row.attr("id");
 		app.get(page.list.url+"/"+id, entity => {
-			page.list.selectedRow = {id:id,data:entity,element:row};
+			page.list.selectedRow = {id:id,entity:entity,element:row};
 			page.list.details.show(entity);
 		});
 		return false;
@@ -92,8 +92,8 @@ page.list.removeRow = row => {
 };
 
 
-function deserialize(form, data) {
-	  $.each(data, function(key, value){
+function deserialize(form, entity) {
+	  $.each(entity, function(key, value){
 	    $('[name='+key+']', form).val(value);
 	    if(value === Object(value)) {
 	    	$.each(value, function(k, val){
@@ -128,7 +128,7 @@ page.list.paginate = () => {
 		 $(".pager").remove();
 	    var currentPage = 0;
 	    const $table = $(this);
-	    const numPerPage = $table.attr("data-rows")?$table.attr("data-rows") :7;
+	    const numPerPage = $table.attr("entity-rows")?$table.attr("entity-rows") :7;
 	    $table.bind('repaginate', function() {
 	        $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
 	    });
@@ -141,7 +141,7 @@ page.list.paginate = () => {
 		        $('<span class="page-number"></span>').text(page + 1).bind('click', {
 		            newPage: page
 		        }, function(event) {
-		            currentPage = event.data['newPage'];
+		            currentPage = event.entity['newPage'];
 		            $table.trigger('repaginate');
 		            $(this).addClass('active').siblings().removeClass('active');
 		            $table.parent().focus();
@@ -159,9 +159,9 @@ page.list.details.setTitle = title => {
 	$("#details > h2").html(title);
 	$("#details > h2").append("<a title='Edit' class='edit-16'></a>");
 	 $("#details > h2 a.edit-16").click(function(event){
-		 app.get(page.list.url+"/"+page.list.selectedRow.id,data => {
-				populate($(".form"),data);
-				page.form.edit(data);
+		 app.get(page.list.url+"/"+page.list.selectedRow.id,entity => {
+				populate($(".form"),entity);
+				page.form.edit(entity);
 				page.edit = true;
 				const number = Math.floor(page.list.selectedRow.element.index() / 7);
 				$(".page-number").eq(number).click();
@@ -207,8 +207,8 @@ page.search.init = () => {
 	    	 alert("enter your search");
 	    	 return false;
 	     }
-	     const data = $(this).serialize();
-		 app.post(page.list.url+"/search",data, entities => {
+	     const entity = $(this).serialize();
+		 app.post(page.list.url+"/search",entity, entities => {
 			page.render($("tbody"), entities, rows => {
 				page.list.display(rows);
 			});
@@ -221,13 +221,13 @@ page.form = {};
 
 page.form.submit = () => {
 	if(!page.edit) {
-		 app.post(page.list.url, $("#form").serialize(), data => {
-			 page.list.addRow([data]);
+		 app.post(page.list.url, $("#form").serialize(), entity => {
+			 page.list.addRow([entity]);
 			 return false;
 		 });
 	}else {
-		 app.put(page.list.url, $("#form").serialize(), data => {
-			 page.list.updateRow([data]);
+		 app.put(page.list.url, $("#form").serialize(), entity => {
+			 page.list.updateRow([entity]);
 		 });
 	}
 	page.edit = false;
