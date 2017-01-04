@@ -112,13 +112,13 @@ page.release = () => $(".wait").hide();
 
 page.pdf = (url, callback) => {
 	head.load("js/pdfmake.min.js", "js/vfs_fonts.js", () => {
-		app.get(url, entity => pdfMake.createPdf(callback ? callback(entity) : doc(entity)).open());
+		app.get(url, data => pdfMake.createPdf(callback ? callback(data) : doc(data)).open());
 	});
 };
 
 page.print = (url, callback) => {
 	head.load("js/pdfmake.min.js", "js/vfs_fonts.js", () => {
-		app.get(url, entity => pdfMake.createPdf(callback ? callback(entity) : doc(entity)).print());
+		app.get(url, data => pdfMake.createPdf(callback ? callback(data) : doc(data)).print());
 	});
 };
 
