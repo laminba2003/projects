@@ -99,7 +99,7 @@ page.table.addRow = entity => {
 		page.table.paginate();
 		page.table.bindRow(row);
 		$("span.page-number:last").click();
-		$(row).attr("id","1455555").click();
+		row.attr("id","1455555").click();
 	});
 	
 };
