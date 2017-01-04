@@ -123,8 +123,7 @@ page.print = (url, callback) => {
 };
 
 window.addEventListener('offline', () => {
-	const div = $("<div class='modal'/>").appendTo($("body"));
-	div.append("<span>You are currently offline</span>");
+	$("<div class='modal'><span>You are currently offline</span></div>").appendTo($("body"));
 	app.wait();
 });
 
