@@ -81,7 +81,6 @@ page.table.removeRow = row => {
 	
 };
 
-
 function deserialize(form, entity) {
 	  $.each(entity, function(key, value){
 	    $('[name='+key+']', form).val(value);
