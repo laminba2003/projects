@@ -122,6 +122,21 @@ page.print = (url, callback) => {
 	});
 };
 
+page.highlight = () => {
+	const array = window.location.pathname.split( '/' );
+	var path = "";
+	for( var i = 2;i<array.length;i++) {
+		path += array[i];
+		$('a[href$='+array[i]+"]").addClass('active');
+	}
+	if(path=="") {
+		$('a[href$='+array[1]+"]").addClass('active');
+	}
+	if($("aside a.active").length>1) {
+		$("aside a.active:first").removeClass("active");
+	}
+};
+
 window.addEventListener('offline', () => {
 	$("<div class='modal'><span>You are currently offline</span></div>").appendTo($("body"));
 	app.wait();
@@ -140,7 +155,7 @@ const alert = message => {
 };
 
 const confirm = callback => {
-	$("#contextmenu,.contextmenu").hide();
+	$("body").trigger("click");
 	const container = $(".confirm-dialog-container").show();
 	$("#confirm-dialog-ok").one("click",() => {
 		container.hide();
@@ -148,26 +163,11 @@ const confirm = callback => {
 	}).focus();
 };
 
-app.highlight = () => {
-	const array = window.location.pathname.split( '/' );
-	var path = "";
-	for( var i = 2;i<array.length;i++) {
-		path += array[i];
-		$('a[href$='+array[i]+"]").addClass('active');
-	}
-	if(path=="") {
-		$('a[href$='+array[1]+"]").addClass('active');
-	}
-	if($("aside a.active").length>1) {
-		$("aside a.active:first").removeClass("active");
-	}
-};
-
 app.ready(() => {
 	
 	if(!isChrome) $(".print-16").hide();
 	
-	app.highlight();
+	page.highlight();
 	
 	$("body").append('<div class="confirm-dialog-container">'+
 			'<div class="confirm-dialog">'+
