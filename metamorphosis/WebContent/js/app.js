@@ -78,7 +78,6 @@ page.table.removeRow = row => {
 			}
 		}
 	});
-	
 };
 
 function deserialize(form, entity) {
@@ -244,7 +243,6 @@ app.ready(() => {
 	
 	$(".tab_content").hide();
 	$(".tab_container .tab_content:first-child").show(); 
-
 	$("ul.tabs li").click(function() {
 		const parent = $(this).parent();
 		$("li",parent).removeClass("active");
@@ -253,7 +251,6 @@ app.ready(() => {
 		$("#"+activeTab).parent().find(".tab_content").hide();
 		$("#"+activeTab).fadeIn(); 
 	});
-	
 	$("body").click(() => $(".focus").removeClass("focus"));
 	
 });
