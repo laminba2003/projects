@@ -93,7 +93,7 @@ function deserialize(form, entity) {
 
 page.table.addRow = entity => {
 	$('tr.empty').remove();
-	page.render($("tbody"), entity, true, row => {
+	page.render($("tbody"), entity, row => {
 		page.table.paginate();
 		page.table.bindRow(row);
 		$("span.page-number:last").click();
