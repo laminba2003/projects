@@ -94,7 +94,7 @@ function deserialize(form, entity) {
 
 page.table.addRow = entity => {
 	$('tr.empty').remove();
-	page.render($("tbody"), [entity], true, row => {
+	page.render($("tbody"), entity, true, row => {
 		page.table.paginate();
 		page.table.bindRow(row);
 		$("span.page-number:last").click();
@@ -105,7 +105,7 @@ page.table.addRow = entity => {
 
 page.table.updateRow = entity => {
 	const container = $("<div/>");
-	page.render($("tbody"), [entity] ,false, container, row => {
+	page.render($("tbody"), entity ,false, container, row => {
 		page.table.selectedRow.element.html($("tr",container).html());
 		page.table.selectedRow.element.click();
 	});
@@ -201,8 +201,8 @@ page.search.init = () => {
 	    	 alert("enter your search");
 	    	 return false;
 	     }
-	     const entity = $(this).serialize();
-		 app.post(page.table.url+"/search",entity, entities => page.render($("tbody"), entities, page.table.display));
+	     const data = $(this).serialize();
+		 app.post(page.table.url+"/search",data, entities => page.render($("tbody"), entities, page.table.display));
 		 return false;
 	});
 };

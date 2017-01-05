@@ -99,7 +99,7 @@ page.render = (element, data, ...options) => {
   const engine = app.engines[template.attr("type")];
   engine({
     source: template.html(),
-    data: data,
+    data: data instanceof Array ? data : [data],
     append: options[0] instanceof Function ? false : options[0],
     destination: options[1] && !(options[1] instanceof Function) ? options[1] : element,
     callback: options[0] instanceof Function ? options[0] : options[1] instanceof Function ? options[1] : options[2]
