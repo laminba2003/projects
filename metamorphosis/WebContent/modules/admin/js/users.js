@@ -4,6 +4,4 @@ const doc = user => {
 
 const title = user => user.firstName+" "+user.lastName;
 
-const nextStep = () => true;
-
 module.init("user");

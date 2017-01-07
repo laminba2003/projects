@@ -4,6 +4,4 @@ const doc = product => {
 
 const title = product => product.name;
 
-const nextStep = () => true;
-
 module.init("product");

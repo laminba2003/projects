@@ -16,7 +16,7 @@ var onFinish = function(obj,context) {
 page.form.init = function() {
 	$('#form').addClass("hide form mfp-hide");
 	head.load("templates/nova/js/jquery.smartWizard.js","templates/nova/js/jquery.magnific-popup.min.js", function() {
-		var wizard = $('#wizard').addClass("swMain").smartWizard({noForwardJumping:true,onLeaveStep:nextStep,
+		var wizard = $('#wizard').addClass("swMain").smartWizard({noForwardJumping:true,onLeaveStep:()=>true,
 	       onFinish:onFinish});
 		$('#create').magnificPopup({
 			  type:'inline'

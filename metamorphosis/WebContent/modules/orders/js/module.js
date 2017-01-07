@@ -4,6 +4,4 @@ const doc = order => {
 
 const title = order => order.product;
 
-const nextStep = () => true;
-
 module.init("order");

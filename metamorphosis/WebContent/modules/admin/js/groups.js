@@ -4,6 +4,4 @@ const doc = group => {
 
 const title = group => group.name;
 
-const nextStep = () => true;
-
 module.init("group");
