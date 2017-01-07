@@ -63,7 +63,7 @@ div.pager span {
 	font-family : Maven Pro;
 }
 
-.wait {
+#wait {
 	background-image : url("../images/wait.gif");
 }
 

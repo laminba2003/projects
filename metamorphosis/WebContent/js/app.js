@@ -1,5 +1,46 @@
 app.apiURL = "http://env-4347792.mircloud.host/";
 
+page.highlight = () => {
+	const array = window.location.pathname.split( '/' );
+	var path = "";
+	for( var i = 2;i<array.length;i++) {
+		path += array[i];
+		$('a[href$='+array[i]+"]").addClass('active');
+	}
+	if(path=="") {
+		$('a[href$='+array[1]+"]").addClass('active');
+	}
+	if($("aside a.active").length>1) {
+		$("aside a.active:first").removeClass("active");
+	}
+};
+
+window.addEventListener('offline', () => {
+	$("<div class='modal'><span>You are currently offline</span></div>").appendTo($("body"));
+	app.wait();
+});
+
+window.addEventListener('online', () => {
+	$("div.modal").remove();
+	app.release();
+});
+
+const isChrome = !!window.chrome && !!window.chrome.webstore;
+
+const alert = message => {
+	$(".alert-dialog-message").html(message);
+	$(".alert-dialog-container").show();
+};
+
+const confirm = callback => {
+	$("body").trigger("click");
+	const container = $(".confirm-dialog-container").show();
+	$("#confirm-dialog-ok").one("click",() => {
+		container.hide();
+		callback();
+	}).focus();
+};
+
 page.table = {};
 
 page.table.render = entity => {
@@ -93,7 +134,7 @@ function deserialize(form, entity) {
 
 page.table.addRow = entity => {
 	$('tr.empty').remove();
-	page.render($("tbody"), entity, row => {
+	page.render($("tbody"), [entity], true, row => {
 		page.table.paginate();
 		page.table.bindRow(row);
 		$("span.page-number:last").click();
@@ -104,7 +145,7 @@ page.table.addRow = entity => {
 
 page.table.updateRow = entity => {
 	const container = $("<div/>");
-	page.render($("tbody"), entity ,false, container, row => {
+	page.render($("tbody"), [entity] ,false, container, row => {
 		page.table.selectedRow.element.html($("tr",container).html());
 		page.table.selectedRow.element.click();
 	});
@@ -251,6 +292,49 @@ app.ready(() => {
 		$("#"+activeTab).parent().find(".tab_content").hide();
 		$("#"+activeTab).fadeIn(); 
 	});
-	$("body").click(() => $(".focus").removeClass("focus"));
+	$("body").click(() => {
+		$(".focus").removeClass("focus");
+		$("#contextmenu,.contextmenu").hide()
+	});
+
+	if(!isChrome) $(".print-16").hide();
+	
+	page.highlight();
+	
+	$("body").append('<div class="confirm-dialog-container">'+
+			'<div class="confirm-dialog">'+
+			'<span class="confirm-dialog-title">Confirmation</span>'+
+			'<span class="confirm-dialog-message">Are you sure you want to delete this item?</span>'+
+			'<a id="confirm-dialog-cancel" tabindex="2" class="confirm-dialog-button">Cancel</a>'+
+			'<a id="confirm-dialog-ok" tabindex="1" class="confirm-dialog-button">OK</a></div></div>');
+	
+	$("body").append('<div class="alert-dialog-container">'+
+			'<div class="alert-dialog">'+
+			'<span class="alert-dialog-title">Alert</span>'+
+			'<span class="alert-dialog-message"></span>'+
+			'<a id="alert-dialog-ok" tabindex="1" class="alert-dialog-button">OK</a></div></div>');
+	
+	$("body").append('<div id="wait"/>');
+	
+	$("#confirm-dialog-cancel").click(() => $(".confirm-dialog-container").hide());
+	
+	$("#alert-dialog-ok").click(() => $(".alert-dialog-container").hide());
+	
+	$(".confirm-dialog-container").on('keydown', function(event) {     
+	        switch (event.keyCode) {
+	            case 27: // esc
+	            	$(this).hide();
+	                break;
+	            case 9: // esc
+	            	var element = document.activeElement == $("#confirm-dialog-ok")[0] ? $("#confirm-dialog-cancel") : $("#confirm-dialog-ok"); 
+	            	element.focus();
+	                break;
+	            case 13: // enter
+	            	$(document.activeElement).click();
+	                break;
+	        }
+	       return false;
+	 }).attr("tabindex","1"); 
+
 	
 });
