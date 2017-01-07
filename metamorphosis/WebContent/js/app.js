@@ -320,6 +320,4 @@ app.ready(() => {
 	        }
 	       return false;
 	 }).attr("tabindex","1"); 
-
-	
 });
