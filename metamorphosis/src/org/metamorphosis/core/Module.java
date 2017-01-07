@@ -10,7 +10,7 @@ public class Module extends Extension {
 	private String icon;
 	private boolean main;
 	private boolean administrable = true;
-	private String indexPage = "index.jsp";
+	private String indexPage = "index.html";
 	private List<Menu> menus = new ArrayList<Menu>();
 	private List<Action> actions = new ArrayList<Action>();
 
