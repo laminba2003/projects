@@ -171,7 +171,7 @@ page.table.details = {};
 
 page.table.details.show = (entity,row) => {
 	$.each($("div.tab_container > div"),(i, element) => page.render($(element),entity));
-	$("#details > h2").html("Details "+page.form.entity + " : " +title(entity));
+	$("#details > h2").html("Details "+page.form.entity + " : " +page.table.details.title(entity));
 	$("#details > h2").append("<a title='Edit' class='edit-16'></a>");
 	$("#details > h2 a.edit-16").click(() => {
 		 app.get(page.table.url+"/"+row.id,entity => {
@@ -250,7 +250,7 @@ page.form.create = () => {
 
 const module = {};
 
-module.init = entity => {
+module.init = (entity,title) => {
 	app.ready(() => {
 		page.form.entity = entity[0].toUpperCase() + entity.slice(1);
 		page.form.init();
@@ -262,6 +262,7 @@ module.init = entity => {
 		});
 		page.table.render(entity);
 		page.search.init();
+		page.table.details.title = title;
 	});
 };
 
