@@ -1,20 +1,5 @@
 app.apiURL = "http://env-4347792.mircloud.host/";
 
-page.highlight = () => {
-	const array = window.location.pathname.split( '/' );
-	var path = "";
-	for( var i = 2;i<array.length;i++) {
-		path += array[i];
-		$('a[href$='+array[i]+"]").addClass('active');
-	}
-	if(path=="") {
-		$('a[href$='+array[1]+"]").addClass('active');
-	}
-	if($("aside a.active").length>1) {
-		$("aside a.active:first").removeClass("active");
-	}
-};
-
 window.addEventListener('offline', () => {
 	$("<div class='modal'><span>You are currently offline</span></div>").appendTo($("body"));
 	app.wait();
