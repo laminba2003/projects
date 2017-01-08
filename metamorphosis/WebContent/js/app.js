@@ -107,14 +107,14 @@ page.table.removeRow = row => {
 };
 
 function deserialize(form, entity) {
-	  $.each(entity, function(key, value){
-	    $('[name='+key+']', form).val(value);
-	    if(value === Object(value)) {
-	    	$.each(value, function(k, val){
-	    	    $('[name='+key+"\\["+k+'\\]]', form).val(val);
-	    	 });
-	    }
-	  });
+   $.each(entity, function(key, value){
+     $('[name='+key+']', form).val(value);
+     if(value === Object(value)) {
+    	$.each(value, function(k, val){
+    	    $('[name='+key+"\\["+k+'\\]]', form).val(val);
+    	});
+     }
+   });
 };
 
 page.table.addRow = entity => {
@@ -137,8 +137,7 @@ page.table.updateRow = entity => {
 };
 
 page.table.paginate = () => {
-	$('table').unbind("repaginate");
-	$('table').each(function() {
+	$('table').unbind("repaginate").each(function() {
 		$(".pager").remove();
 	    var currentPage = 0;
 	    const $table = $(this);
@@ -175,12 +174,12 @@ page.table.details.show = (entity,row) => {
 	$("#details > h2").append("<a title='Edit' class='edit-16'></a>");
 	$("#details > h2 a.edit-16").click(() => {
 		 app.get(page.table.url+"/"+row.id,entity => {
-				deserialize($(".form"),entity);
-				page.form.edit(entity);
-				page.edit = true;
-				const number = Math.floor(page.table.selectedRow.element.index() / 7);
-				$(".page-number").eq(number).click();
-			});
+			 deserialize($(".form"),entity);
+			 page.form.edit(entity);
+			 page.edit = true;
+			 const number = Math.floor(page.table.selectedRow.element.index() / 7);
+			 $(".page-number").eq(number).click();
+		  });
 	      return false;
 	});
 	$("#details > h2").append("<a title='Delete' class='delete-16'></a>");
@@ -287,7 +286,7 @@ app.ready(() => {
 	
 	page.highlight();
 	
-	$("body").append('<div class="confirm-dialog-container">'+
+	$("body").append('<div class="confirm-dialog-container" tabindex="1">'+
 			'<div class="confirm-dialog">'+
 			'<span class="confirm-dialog-title">Confirmation</span>'+
 			'<span class="confirm-dialog-message">Are you sure you want to delete this item?</span>'+
@@ -320,5 +319,5 @@ app.ready(() => {
 	                break;
 	        }
 	       return false;
-	 }).attr("tabindex","1"); 
+	 }); 
 });
