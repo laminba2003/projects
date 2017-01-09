@@ -47,6 +47,8 @@ page.table.render = entity => {
 page.table.display = rows => {
 	if(!rows.length) {
 		$('tbody').append("<tr class='empty'><td valign='top' colspan='"+$("th").length+"'>"+page.table.message+"</td></tr>");
+		$("#details").hide();
+		$("#selection").hide();
 	} else {
 		page.table.bind(rows);
 		page.table.paginate();
@@ -60,19 +62,15 @@ page.table.bind = element => {
 		$("tr.focus").removeClass("focus");
 		const row = $(this).addClass("active").addClass("focus");
 		const id = row.attr("id");
-		app.get(page.table.url+"/"+id, entity => {
-			page.table.details.show(entity,{id:id,element:row});
-		});
+		app.get(page.table.url+"/"+id, entity => page.table.details.show(entity,{id:id,element:row}));
 		return false;
 	}).contextmenu(function(event){
 		$("tr.focus").removeClass("focus");
 		const row = $(this).addClass("focus");
 		page.table.selectedRow = {id:row.attr("id"),element:row};
 		const top = row.position().top;
-		const left = event.pageX;
-		if(left>window.innerWidth-100) {
-			left = window.innerWidth -200;
-		}
+		var left = event.pageX;
+		if(left>window.innerWidth-100) left = window.innerWidth -200;
 		$("#contextmenu").show().css({top : top+10, left:left});
 	    return false;
 	});
@@ -205,9 +203,7 @@ page.search = {};
 page.search.init = () => {
 	$('#search input').val("").focus();
 	$('#search').submit(function(){;
-	     if(!$('input',this).val().trim()) {
-	    	 return alert("enter your search");
-	     }
+	     if(!$('input',this).val().trim()) return alert("enter your search");
 	     const data = $(this).serialize();
 		 app.post(page.table.url+"/search",data, entities => page.render($("tbody"), entities, page.table.display));
 		 return false;
