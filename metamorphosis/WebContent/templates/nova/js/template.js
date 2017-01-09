@@ -1,12 +1,10 @@
-page.form.edit = function() {
+page.form.edit = () => {
 	$('#create').magnificPopup('open');
 	$('#wizard').smartWizard('goToStep',1);
 	$('#wizard').smartWizard('disableStep',2);
-	$('.form h1').html("Update "+page.form.entity+": Informations");
-	page.edit = true;
 };
 
-var onFinish = function(obj,context) {
+var onFinish = (obj,context) => {
 	page.form.submit();
 	$('#create').magnificPopup('close');
 	return true;

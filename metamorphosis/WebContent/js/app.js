@@ -30,7 +30,6 @@ page.table = {};
 page.table.init = entity => {
 	page.table.url = app.apiURL+entity+"s";
 	page.table.message = "no "+entity;
-	$("#contextmenu .new-16").click(() => page.form.create());
 	$("#contextmenu .row-select").click(() => page.table.selectedRow.element.click());
 	$("#contextmenu .edit-16").click(() => page.table.editRow(page.table.selectedRow));
 	$("#contextmenu .delete-16").click(() => confirm(() => page.table.removeRow(page.table.selectedRow)));
@@ -113,6 +112,7 @@ page.table.editRow = row => {
 	app.get(page.table.url+"/"+row.id,entity => {
 		deserialize($(".form"),entity);
 		page.form.edit(entity);
+		$('.form h1').html("Update "+page.form.entity+": Informations");
 		page.edit = true;
 		page.table.details.show(entity,row);
 		$(".page-number").eq(Math.floor(row.element.index() / 7)).click();
@@ -128,14 +128,14 @@ page.table.updateRow = entity => {
 };
 
 function deserialize(form, entity) {
-	   $.each(entity, function(key, value){
-	     $('[name='+key+']', form).val(value);
-	     if(value === Object(value)) {
-	    	$.each(value, function(k, val){
-	    	    $('[name='+key+"\\["+k+'\\]]', form).val(val);
-	    	});
-	     }
-	   });
+    $.each(entity, function(key, value){
+      $('[name='+key+']', form).val(value);
+      if(value === Object(value)) {
+    	 $.each(value, function(k, val){
+    	    $('[name='+key+"\\["+k+'\\]]', form).val(val);
+    	 });
+      }
+     });
 };
 
 page.table.paginate = () => {
@@ -223,7 +223,9 @@ page.form.submit = () => {
 
 page.form.create = () => {
 	page.edit = false;
-	$('#create').click();
+	$('.form h1').html("Create "+page.form.entity +" : Informations");
+	$('.form')[0].reset();
+	return false;
 };
 
 const module = {};
@@ -232,11 +234,7 @@ module.init = (entity,title) => {
 	app.ready(() => {
 		page.form.entity = entity[0].toUpperCase() + entity.slice(1);
 		page.form.init();
-		$('#create').click(() => {
-			$('.form h1').html("Create "+page.form.entity +" : Informations");
-			$('.form')[0].reset();
-			return page.edit = false;
-		});
+		$('#create').click(() => page.form.create());
 		page.table.render(entity);
 		page.search.init();
 		page.table.details.title = title;
@@ -255,14 +253,15 @@ app.ready(() => {
 		$("#"+activeTab).parent().find(".tab_content").hide();
 		$("#"+activeTab).fadeIn(); 
 	});
-	$("body").click(() => {
-		$(".focus").removeClass("focus");
-		$("#contextmenu").hide()
-	});
 
 	if(!(!!window.chrome && !!window.chrome.webstore)) $(".print-16").hide();
 	
 	page.highlight();
+	
+	$("body").click(() => {
+		$(".focus").removeClass("focus");
+		$("#contextmenu").hide()
+	});
 	
 	$("body").append('<div id="confirm-dialog-container">'+
 			'<div><span>Confirmation</span>'+
