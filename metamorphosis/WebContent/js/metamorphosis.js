@@ -134,7 +134,6 @@ page.init = () => {
 	page.highlight();
 };
 
-
 app.ready(() => page.init());
 
 /* ! head.core - v1.0.2 */
