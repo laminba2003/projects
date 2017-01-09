@@ -245,7 +245,13 @@ module.init = (entity,title) => {
 
 app.ready(() => {
 	
-	$(".tab_container > div").addClass("tab_content").hide();
+	const ul = $('<ul class="tabs"></ul>').insertBefore("#details .tab_container");
+	$.each($(".tab_container > div"), function(index, element) {
+		  const div= $(element).addClass("tab_content").hide();
+		  const li = $("<li/>").attr("rel",div.attr("id")).html("<h2>"+div.attr("title")+"</h2>");
+		  ul.append(li);
+	});
+	$("li:first-child",ul).addClass("active");
 	$(".tab_container > div:first-child").show(); 
 	$("ul.tabs li").click(function() {
 		const parent = $(this).parent();
