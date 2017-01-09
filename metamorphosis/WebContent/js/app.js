@@ -105,7 +105,6 @@ page.table.addRow = entity => {
 		$("span.page-number:last").click();
 		row.attr("id","1455555").click();
 	});
-	
 };
 
 page.table.editRow = row => {
@@ -238,7 +237,7 @@ module.init = (entity,title) => {
 		page.table.render(entity);
 		page.search.init();
 		page.table.details.title = title ? title : entity => {
-			var names = Object.getOwnPropertyNames(entity);
+			const names = Object.getOwnPropertyNames(entity);
 			return entity[names[1]] + " " + entity[names[2]];
 		};
 	});
