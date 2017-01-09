@@ -138,6 +138,7 @@ page.highlight = () => {
 };
 
 app.ready(() => {
+	$("body").append('<div id="wait"/>');
 	page.highlight();
 });
 

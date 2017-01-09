@@ -275,8 +275,6 @@ app.ready(() => {
 			'<div><span>Alert</span><span></span>'+
 			'<a id="alert-dialog-ok">OK</a></div></div>');
 	
-	$("body").append('<div id="wait"/>');
-	
 	$("#confirm-dialog-cancel").click(() => $("#confirm-dialog-container").hide());
 	
 	$("#alert-dialog-ok").click(() => $("#alert-dialog-container").hide());
