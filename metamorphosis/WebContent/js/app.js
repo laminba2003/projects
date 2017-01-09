@@ -258,8 +258,6 @@ app.ready(() => {
 
 	if(!(!!window.chrome && !!window.chrome.webstore)) $(".print-16").hide();
 	
-	page.highlight();
-	
 	$("body").click(() => {
 		$(".focus").removeClass("focus");
 		$("#contextmenu").hide()
