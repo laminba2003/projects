@@ -227,6 +227,27 @@ page.form.create = () => {
 	return false;
 };
 
+page.tabs = {};
+page.tabs.init = () => {
+	const ul = $('<ul class="tabs"></ul>').insertBefore("#details .tab_container");
+	$.each($(".tab_container > div"),(index, element) => {
+		  const div= $(element).addClass("tab_content").hide();
+		  const h2 = $("<h2>"+div.attr("title")+"</h2>").attr("title",div.attr("title"));
+		  const li = $("<li/>").attr("rel",div.attr("id")).html(h2);
+		  ul.append(li);
+	});
+	$("li:first-child",ul).addClass("active");
+	$(".tab_container > div:first-child").show(); 
+	$("ul.tabs li").click(function() {
+		const parent = $(this).parent();
+		$("li",parent).removeClass("active");
+		$(this).addClass("active");
+		const activeTab = $(this).attr("rel"); 
+		$("#"+activeTab).parent().find(".tab_content").hide();
+		$("#"+activeTab).fadeIn(); 
+	});
+};
+
 const module = {};
 
 module.init = (entity,title) => {
@@ -240,27 +261,11 @@ module.init = (entity,title) => {
 			const names = Object.getOwnPropertyNames(entity);
 			return entity[names[1]] + " " + entity[names[2]];
 		};
+		page.tabs.init();
 	});
 };
 
 app.ready(() => {
-	
-	const ul = $('<ul class="tabs"></ul>').insertBefore("#details .tab_container");
-	$.each($(".tab_container > div"), function(index, element) {
-		  const div= $(element).addClass("tab_content").hide();
-		  const li = $("<li/>").attr("rel",div.attr("id")).html("<h2>"+div.attr("title")+"</h2>");
-		  ul.append(li);
-	});
-	$("li:first-child",ul).addClass("active");
-	$(".tab_container > div:first-child").show(); 
-	$("ul.tabs li").click(function() {
-		const parent = $(this).parent();
-		$("li",parent).removeClass("active");
-		$(this).addClass("active");
-		const activeTab = $(this).attr("rel"); 
-		$("#"+activeTab).parent().find(".tab_content").hide();
-		$("#"+activeTab).fadeIn(); 
-	});
 
 	if(!(!!window.chrome && !!window.chrome.webstore)) $(".print-16").hide();
 	
