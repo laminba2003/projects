@@ -118,8 +118,7 @@ page.print = (url, callback) => {
 	head.load("js/pdfmake.min.js", "js/vfs_fonts.js", () => app.get(url, data => pdfMake.createPdf(callback ? callback(data) : doc(data)).print()));
 };
 
-page.init = () => {
-	$("body").append('<div id="wait"/>');
+page.highlight = () => {
 	const array = window.location.pathname.split( '/' );
 	var path = "";
 	for( var i = 2;i<array.length;i++) {
@@ -129,6 +128,12 @@ page.init = () => {
 	if(path=="") $('a[href$='+array[1]+"]").addClass('active');
 	if($("aside a.active").length>1) $("aside a.active:first").removeClass("active");
 };
+
+page.init = () => {
+	$("body").append('<div id="wait"/>');
+	page.highlight();
+};
+
 
 app.ready(() => page.init());
 
