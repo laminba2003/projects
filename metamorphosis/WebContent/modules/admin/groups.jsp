@@ -113,8 +113,6 @@
 
  <form id="form">
   
-  <h1 class="group-32"></h1>  
-   
     <div id="wizard">
 
       <div  title="Group">	

@@ -63,8 +63,6 @@
   
 </div>
 
-
-
 <div id="details">
  <h2 class="user-16"></h2>
 
@@ -209,8 +207,6 @@
 </div>
 
  <form id="form">
-  
-  <h1 class="user-32"></h1>  
    
     <div id="wizard">
 
