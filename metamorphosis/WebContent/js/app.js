@@ -245,8 +245,8 @@ module.init = (entity,title) => {
 
 app.ready(() => {
 	
-	$(".tab_content").hide();
-	$(".tab_container .tab_content:first-child").show(); 
+	$(".tab_container > div").addClass("tab_content").hide();
+	$(".tab_container > div:first-child").show(); 
 	$("ul.tabs li").click(function() {
 		const parent = $(this).parent();
 		$("li",parent).removeClass("active");

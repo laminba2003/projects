@@ -67,7 +67,7 @@
       <li rel="permissions"><h2 title="Permissions">Permissions</h2></li>
 </ul>
 <div class="tab_container"> 
-   <div id="informations" class="tab_content">
+   <div id="informations">
      <template  type="text/x-dust-template">
 
        <fieldset>
@@ -116,7 +116,7 @@
      </template>
      
    </div>
-   <div id="contact" class="tab_content">
+   <div id="contact">
     <template  type="text/x-dust-template">
       <fieldset>
 		<span>First Name : </span>
@@ -159,7 +159,7 @@
    
    </div>
    
-   <div id="permissions" class="tab_content">
+   <div id="permissions">
     <template  type="text/x-dust-template">
       <s:iterator value="#application.moduleManager.adminModules">
        <fieldset>
