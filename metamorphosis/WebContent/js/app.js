@@ -109,9 +109,9 @@ page.table.addRow = entity => {
 
 page.table.editRow = row => {
 	app.get(page.table.url+"/"+row.id,entity => {
-		deserialize($(".form"),entity);
+		deserialize($("#form"),entity);
 		page.form.edit(entity);
-		$('.form h1').html("Update "+page.form.entity+": Informations");
+		$('#form h1').html("Update "+page.form.entity+": Informations");
 		page.edit = true;
 		page.table.details.show(entity,row);
 		$(".page-number").eq(Math.floor(row.element.index() / 7)).click();
@@ -222,8 +222,8 @@ page.form.submit = () => {
 
 page.form.create = () => {
 	page.edit = false;
-	$('.form h1').html("Create "+page.form.entity +" : Informations");
-	$('.form')[0].reset();
+	$('#form h1').html("Create "+page.form.entity +" : Informations");
+	$('#form')[0].reset();
 	return false;
 };
 
