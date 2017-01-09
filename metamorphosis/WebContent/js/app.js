@@ -237,7 +237,10 @@ module.init = (entity,title) => {
 		$('#create').click(() => page.form.create());
 		page.table.render(entity);
 		page.search.init();
-		page.table.details.title = title;
+		page.table.details.title = title ? title : entity => {
+			var names = Object.getOwnPropertyNames(entity);
+			return entity[names[1]] + " " + entity[names[2]];
+		};
 	});
 };
 
