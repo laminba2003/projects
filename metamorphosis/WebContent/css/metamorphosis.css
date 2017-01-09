@@ -490,7 +490,7 @@ footer p {
 	margin-bottom: 0.5em;
 }
 
-.confirm-dialog-container, .alert-dialog-container {
+#confirm-dialog-container, #alert-dialog-container {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -502,7 +502,7 @@ footer p {
 	display: none;
 }
 
-.confirm-dialog, .alert-dialog {
+#confirm-dialog-container > div, #alert-dialog-container > div {
 	background: #fcfdff;
 	border: 1px solid rgb(86, 182, 255);
 	width: 300px;
@@ -513,7 +513,7 @@ footer p {
 	padding: 0;
 }
 
-.confirm-dialog-title, .alert-dialog-title {
+#confirm-dialog-container span:nth-child(1), #alert-dialog-container span:nth-child(1) {
 	text-align: left;
 	width: 100%;
 	display: block;
@@ -523,16 +523,15 @@ footer p {
 	padding-left: 10px;
 }
 
-.confirm-dialog-message, .alert-dialog-message {
+#confirm-dialog-container span:nth-child(2), #alert-dialog-container span:nth-child(2) {
 	display: block;
 	font-size: 75%;
 	padding: 15px;
 }
 
-.confirm-dialog-button, .alert-dialog-button {
+#confirm-dialog-container a, #alert-dialog-container a {
 	display: block;
 	font-size: 75%;
-	border: 1px solid rgb(10, 136, 247);
 	cursor: pointer;
 	background: rgb(86, 182, 255);
 	color: white;
@@ -621,7 +620,7 @@ span input[type=radio] {
 	width: 38%;
 }
 
-.modal {
+#offline {
 	background: rgba(100, 100, 100, 0.5);
 	z-index: 9999999999999999999999999;
 	width: 100%;
@@ -632,7 +631,7 @@ span input[type=radio] {
 	padding-top: 14.5%;
 }
 
-.modal span {
+#offline span {
 	color: red;
 	vertical-align: middle;
 	background: #fff;

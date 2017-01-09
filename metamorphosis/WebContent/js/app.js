@@ -1,25 +1,24 @@
 app.apiURL = "http://env-4347792.mircloud.host/";
 
 window.addEventListener('offline', () => {
-	$("<div class='modal'><span>You are currently offline</span></div>").appendTo($("body"));
+	$("<div id='offline'><span>You are currently offline</span></div>").appendTo($("body"));
 	app.wait();
 });
 
 window.addEventListener('online', () => {
-	$("div.modal").remove();
+	$("div#offline").remove();
 	app.release();
 });
 
-const isChrome = !!window.chrome && !!window.chrome.webstore;
-
 const alert = message => {
-	$(".alert-dialog-message").html(message);
-	$(".alert-dialog-container").show();
+	$("#alert-dialog-container span:nth-child(2)").html(message);
+	$("#alert-dialog-container").show();
+	return false;
 };
 
 const confirm = callback => {
 	$("body").trigger("click");
-	const container = $(".confirm-dialog-container").show();
+	const container = $("#confirm-dialog-container").show();
 	$("#confirm-dialog-ok").one("click",() => {
 		container.hide();
 		callback();
@@ -28,47 +27,41 @@ const confirm = callback => {
 
 page.table = {};
 
-page.table.render = entity => {
-	page.table.init(entity);
-	app.get(page.table.url, entities => page.render($("tbody"), entities, page.table.display));
-};
-
 page.table.init = entity => {
 	page.table.url = app.apiURL+entity+"s";
 	page.table.message = "no "+entity;
 	$("#contextmenu .new-16").click(() => page.form.create());
 	$("#contextmenu .row-select").click(() => page.table.selectedRow.element.click());
-	$("#contextmenu .edit-16").click(() => {
-		app.get(page.table.url+"/"+page.table.selectedRow.id, entity => {
-			deserialize($(".form"),entity);
-			page.form.edit(entity);
-			page.edit = true;
-		});
-	});
+	$("#contextmenu .edit-16").click(() => page.table.editRow(page.table.selectedRow));
 	$("#contextmenu .delete-16").click(() => confirm(() => page.table.removeRow(page.table.selectedRow)));
 	$("#contextmenu .print-16").click(() => page.print(page.table.url+"/"+page.table.selectedRow.id));
 	$("#contextmenu .pdf-16").click(() => page.pdf(page.table.url+"/"+page.table.selectedRow.id));
+};
+
+
+page.table.render = entity => {
+	page.table.init(entity);
+	app.get(page.table.url, entities => page.render($("tbody"), entities, page.table.display));
 };
 
 page.table.display = rows => {
 	if(!rows.length) {
 		$('tbody').append("<tr class='empty'><td valign='top' colspan='"+$("th").length+"'>"+page.table.message+"</td></tr>");
 	} else {
-		page.table.bindRow(rows);
+		page.table.bind(rows);
 		page.table.paginate();
 		page.table.details.hide(true);
 	}
 };
 
-page.table.bindRow = element => {
+page.table.bind = element => {
 	element.click(function(event){
 		$("tr.active").removeClass("active");
 		$("tr.focus").removeClass("focus");
 		const row = $(this).addClass("active").addClass("focus");
 		const id = row.attr("id");
 		app.get(page.table.url+"/"+id, entity => {
-			page.table.selectedRow = {id:id,element:row};
-			page.table.details.show(entity,page.table.selectedRow);
+			page.table.details.show(entity,{id:id,element:row});
 		});
 		return false;
 	}).contextmenu(function(event){
@@ -93,7 +86,8 @@ page.table.removeRow = row => {
 		row.element.remove();
 		if(!$("tbody tr").length) {
 			$('tbody').append("<tr class='empty'><td  valign='top' colspan='"+$("th").length+"'>"+page.table.message+"</td></tr>");
-			page.table.details.hide(true);
+			$("#details").hide();
+			$("#selection").hide();
 		}else {
 			const number = $(".page-number.active").text();
 			page.table.paginate();
@@ -106,26 +100,25 @@ page.table.removeRow = row => {
 	});
 };
 
-function deserialize(form, entity) {
-   $.each(entity, function(key, value){
-     $('[name='+key+']', form).val(value);
-     if(value === Object(value)) {
-    	$.each(value, function(k, val){
-    	    $('[name='+key+"\\["+k+'\\]]', form).val(val);
-    	});
-     }
-   });
-};
-
 page.table.addRow = entity => {
 	$('tr.empty').remove();
 	page.render($("tbody"), [entity], true, row => {
 		page.table.paginate();
-		page.table.bindRow(row);
+		page.table.bind(row);
 		$("span.page-number:last").click();
 		row.attr("id","1455555").click();
 	});
 	
+};
+
+page.table.editRow = row => {
+	app.get(page.table.url+"/"+row.id,entity => {
+		deserialize($(".form"),entity);
+		page.form.edit(entity);
+		page.edit = true;
+		page.table.details.show(entity,row);
+		$(".page-number").eq(Math.floor(row.element.index() / 7)).click();
+	});
 };
 
 page.table.updateRow = entity => {
@@ -134,6 +127,17 @@ page.table.updateRow = entity => {
 		page.table.selectedRow.element.html($("tr",container).html());
 		page.table.selectedRow.element.click();
 	});
+};
+
+function deserialize(form, entity) {
+	   $.each(entity, function(key, value){
+	     $('[name='+key+']', form).val(value);
+	     if(value === Object(value)) {
+	    	$.each(value, function(k, val){
+	    	    $('[name='+key+"\\["+k+'\\]]', form).val(val);
+	    	});
+	     }
+	   });
 };
 
 page.table.paginate = () => {
@@ -172,38 +176,18 @@ page.table.details.show = (entity,row) => {
 	$.each($("div.tab_container > div"),(i, element) => page.render($(element),entity));
 	$("#details > h2").html("Details "+page.form.entity + " : " +page.table.details.title(entity));
 	$("#details > h2").append("<a title='Edit' class='edit-16'></a>");
-	$("#details > h2 a.edit-16").click(() => {
-		 app.get(page.table.url+"/"+row.id,entity => {
-			 deserialize($(".form"),entity);
-			 page.form.edit(entity);
-			 page.edit = true;
-			 const number = Math.floor(page.table.selectedRow.element.index() / 7);
-			 $(".page-number").eq(number).click();
-		  });
-	      return false;
-	});
+	$("#details > h2 a.edit-16").click(() => page.table.editRow(row));
 	$("#details > h2").append("<a title='Delete' class='delete-16'></a>");
-	$("#details > h2 a.delete-16").click(() => {
-		confirm(() => {
-			 page.table.removeRow(row);
-			 const number = Math.floor(page.table.selectedRow.element.index() / 7);
-			 $(".page-number").eq(number).click();
-		});
-		return false;
-	});
-	if(isChrome) {
+	$("#details > h2 a.delete-16").click(() => confirm(() => page.table.removeRow(row)));
+	if(!!window.chrome && !!window.chrome.webstore) {
   		$("#details > h2").append("<a title='Imprimer' class='print-16'></a>");
-  		$("#details > h2 a.print-16").click(() => {
-  			page.print(page.table.url+"/"+row.id);
- 			return false;
- 	    });
+  		$("#details > h2 a.print-16").click(() => page.print(page.table.url+"/"+row.id));
   	}
   	$("#details > h2").append("<a title='PDF' class='pdf-16'></a>");
-	$("#details > h2 a.pdf-16").click(() => {
-		 page.pdf(page.table.url+"/"+row.id);
-		 return false;
-	});
+	$("#details > h2 a.pdf-16").click(() => page.pdf(page.table.url+"/"+row.id));
+	$("#details > h2 a").click(() => false);
 	page.table.details.hide(false);
+	page.table.selectedRow = row;
 };
 
 page.table.details.hide = hide => {
@@ -222,8 +206,7 @@ page.search.init = () => {
 	$('#search input').val("").focus();
 	$('#search').submit(function(){;
 	     if(!$('input',this).val().trim()) {
-	    	 alert("enter your search");
-	    	 return false;
+	    	 return alert("enter your search");
 	     }
 	     const data = $(this).serialize();
 		 app.post(page.table.url+"/search",data, entities => page.render($("tbody"), entities, page.table.display));
@@ -256,8 +239,7 @@ module.init = (entity,title) => {
 		$('#create').click(() => {
 			$('.form h1').html("Create "+page.form.entity +" : Informations");
 			$('.form')[0].reset();
-			page.edit = false;
-			return false;
+			return page.edit = false;
 		});
 		page.table.render(entity);
 		page.search.init();
@@ -279,42 +261,39 @@ app.ready(() => {
 	});
 	$("body").click(() => {
 		$(".focus").removeClass("focus");
-		$("#contextmenu,.contextmenu").hide()
+		$("#contextmenu").hide()
 	});
 
-	if(!isChrome) $(".print-16").hide();
+	if(!(!!window.chrome && !!window.chrome.webstore)) $(".print-16").hide();
 	
 	page.highlight();
 	
-	$("body").append('<div class="confirm-dialog-container" tabindex="1">'+
-			'<div class="confirm-dialog">'+
-			'<span class="confirm-dialog-title">Confirmation</span>'+
-			'<span class="confirm-dialog-message">Are you sure you want to delete this item?</span>'+
-			'<a id="confirm-dialog-cancel" tabindex="2" class="confirm-dialog-button">Cancel</a>'+
-			'<a id="confirm-dialog-ok" tabindex="1" class="confirm-dialog-button">OK</a></div></div>');
+	$("body").append('<div id="confirm-dialog-container">'+
+			'<div><span>Confirmation</span>'+
+			'<span>Are you sure you want to delete this item?</span>'+
+			'<a id="confirm-dialog-cancel" tabindex="2">Cancel</a>'+
+			'<a id="confirm-dialog-ok" tabindex="1">OK</a></div></div>');
 	
-	$("body").append('<div class="alert-dialog-container">'+
-			'<div class="alert-dialog">'+
-			'<span class="alert-dialog-title">Alert</span>'+
-			'<span class="alert-dialog-message"></span>'+
-			'<a id="alert-dialog-ok" tabindex="1" class="alert-dialog-button">OK</a></div></div>');
+	$("body").append('<div id="alert-dialog-container">'+
+			'<div><span>Alert</span><span></span>'+
+			'<a id="alert-dialog-ok">OK</a></div></div>');
 	
 	$("body").append('<div id="wait"/>');
 	
-	$("#confirm-dialog-cancel").click(() => $(".confirm-dialog-container").hide());
+	$("#confirm-dialog-cancel").click(() => $("#confirm-dialog-container").hide());
 	
-	$("#alert-dialog-ok").click(() => $(".alert-dialog-container").hide());
+	$("#alert-dialog-ok").click(() => $("#alert-dialog-container").hide());
 	
-	$(".confirm-dialog-container").on('keydown', function(event) {     
+	$("#confirm-dialog-container").on('keydown', function(event) {     
 	        switch (event.keyCode) {
-	            case 27: // esc
+	            case 27:
 	            	$(this).hide();
 	                break;
-	            case 9: // esc
-	            	var element = document.activeElement == $("#confirm-dialog-ok")[0] ? $("#confirm-dialog-cancel") : $("#confirm-dialog-ok"); 
+	            case 9:
+	            	const element = document.activeElement == $("#confirm-dialog-ok")[0] ? $("#confirm-dialog-cancel") : $("#confirm-dialog-ok"); 
 	            	element.focus();
 	                break;
-	            case 13: // enter
+	            case 13:
 	            	$(document.activeElement).click();
 	                break;
 	        }
