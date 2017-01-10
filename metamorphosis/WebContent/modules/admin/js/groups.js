@@ -1,4 +1,4 @@
-const doc = group => {
+var doc = group => {
 	return {content : group.name};
 };
 

@@ -1,4 +1,4 @@
-const doc = user => {
+var doc = user => {
 	return {content : user.firstName+" "+user.lastName};
 };
 
