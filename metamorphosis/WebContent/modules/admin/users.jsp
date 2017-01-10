@@ -32,7 +32,7 @@
    <template type="text/x-dust-template">
      {#.}
       <tr id="{id}">
-   	        <td class="user-16">{firstName}</td>
+   	        <td>{firstName}</td>
    	    	<td>{lastName}</td>
    	    	<td>{login}</td>
    	    	<td>{email}</td>

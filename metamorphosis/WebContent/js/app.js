@@ -38,7 +38,6 @@ page.table.init = entity => {
 	$("<a class='pdf-16'>PDF</a>").appendTo(menu).click(() => page.pdf(page.table.url+"/"+page.table.selectedRow.id));
 };
 
-
 page.table.render = entity => {
 	page.table.init(entity);
 	app.get(page.table.url, entities => page.render($("tbody"), entities, page.table.display));
@@ -50,6 +49,7 @@ page.table.display = rows => {
 		$("#details").hide();
 		$("#selection").hide();
 	} else {
+		$.each(rows,(i,row) => $("td:first-child",row).addClass("icon-16").addClass(page.form.entity.toLowerCase()+"-16"));
 		page.table.bind(rows);
 		page.table.paginate();
 		page.table.details.hide(true);
@@ -101,6 +101,7 @@ page.table.removeRow = row => {
 page.table.addRow = entity => {
 	$("tr.empty").remove();
 	page.render($("tbody"), [entity], true, row => {
+		$("td:first-child",row).addClass("icon-16").addClass(page.form.entity.toLowerCase()+"-16");
 		page.table.paginate();
 		page.table.bind(row);
 		$("span.page-number:last").click();
@@ -123,6 +124,7 @@ page.table.updateRow = entity => {
 	const container = $("<div/>");
 	page.render($("tbody"), [entity] ,false, container, row => {
 		page.table.selectedRow.element.html($("tr",container).html());
+		$("td:first-child",page.table.selectedRow.element).addClass("icon-16").addClass(page.form.entity.toLowerCase()+"-16");
 		page.table.selectedRow.element.click();
 	});
 };

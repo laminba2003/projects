@@ -21,7 +21,7 @@
    <template type="text/x-dust-template">
      {#.}
       <tr id="{id}">
-   	        <td class="group-16">{name}</td>
+   	        <td>{name}</td>
    	    	<td>{createdBy}</td>
    	    </tr>
      {/.}
