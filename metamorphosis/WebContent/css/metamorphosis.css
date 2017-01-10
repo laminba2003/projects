@@ -438,7 +438,7 @@ footer p {
     border-radius: 50%;
     width: 90px;
     height: 90px;
-    animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {

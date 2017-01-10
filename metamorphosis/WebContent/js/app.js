@@ -173,7 +173,7 @@ page.table.paginate = () => {
 page.table.details = {};
 
 page.table.details.show = (entity,row) => {
-	$.each($("div.tab_container > div"),(i, element) => page.render($(element),entity));
+	$.each($("#tabs > div"),(i, element) => page.render($(element),entity));
 	const h2 = $("#details > h2").html("Details "+page.form.entity + " : " +page.table.details.title(entity));
 	$("<a title='Edit' class='edit-16'></a>").appendTo(h2).click(() => page.table.editRow(row));
 	$("<a title='Delete' class='delete-16'></a>").appendTo(h2).click(() => confirm(() => page.table.removeRow(row)));
