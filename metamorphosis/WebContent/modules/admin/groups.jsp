@@ -37,7 +37,7 @@
 
 <div id="details">
 
-<div class="tab_container"> 
+<div id="tabs"> 
    <div id="informations" title="Informations">
      <template  type="text/x-dust-template">
 

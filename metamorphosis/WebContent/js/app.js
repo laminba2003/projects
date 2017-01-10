@@ -227,23 +227,24 @@ page.form.create = () => {
 page.tabs = {};
 
 page.tabs.init = () => {
-	const ul = $('<ul class="tabs"></ul>').insertBefore("#details .tab_container");
-	$.each($(".tab_container > div"),(index, element) => {
+	var tabs = $("#details #tabs").addClass("tab_container");
+	const ul = $('<ul class="tabs"></ul>').insertBefore(tabs);
+	$.each($("> div",tabs),(index, element) => {
 		  const div= $(element).attr("id","tab"+index).addClass("tab_content").hide();
 		  const h2 = $("<h2>"+div.attr("title")+"</h2>").attr("title",div.attr("title"));
 		  const li = $("<li/>").attr("rel",div.attr("id")).html(h2);
+		  li.click(function() {
+				const parent = $(this).parent();
+				$("li",parent).removeClass("active");
+				$(this).addClass("active");
+				const activeTab = $(this).attr("rel"); 
+				$("#"+activeTab).parent().find(".tab_content").hide();
+				$("#"+activeTab).fadeIn(); 
+			});
 		  ul.append(li);
 	});
 	$("li:first-child",ul).addClass("active");
-	$(".tab_container > div:first-child").show(); 
-	$("ul.tabs li").click(function() {
-		const parent = $(this).parent();
-		$("li",parent).removeClass("active");
-		$(this).addClass("active");
-		const activeTab = $(this).attr("rel"); 
-		$("#"+activeTab).parent().find(".tab_content").hide();
-		$("#"+activeTab).fadeIn(); 
-	});
+	$("div:first-child",tabs).show(); 
 };
 
 const module = {};
