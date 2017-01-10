@@ -226,7 +226,7 @@ page.form.create = () => {
 
 page.tabs = {};
 
-page.tabs.init = () => {
+page.tabs.init = (entity) => {
 	var tabs = $("#details #tabs").addClass("tab_container");
 	const ul = $('<ul class="tabs"></ul>').insertBefore(tabs);
 	$.each($("> div",tabs),(index, element) => {
@@ -240,11 +240,11 @@ page.tabs.init = () => {
 				const activeTab = $(this).attr("rel"); 
 				$("#"+activeTab).parent().find(".tab_content").hide();
 				$("#"+activeTab).fadeIn(); 
-			});
-		  ul.append(li);
+		  }).appendTo(ul);
 	});
+	$('<h2 class="icon-16"></h2>').addClass(entity+"-16").insertBefore(ul);
 	$("li:first-child",ul).addClass("active");
-	$("div:first-child",tabs).show(); 
+	$("div:first-child",tabs).show();
 };
 
 const module = {};
@@ -263,8 +263,7 @@ module.init = (entity,title) => {
 		$("section > h1").addClass("icon-32").addClass(entity+"-32");
 		$('<h1 class="icon-32"></h1>').addClass(entity+"-32").insertBefore("#wizard");
 		$("#selection span").addClass("icon-16").addClass(entity+"-16");
-		page.tabs.init();
-		$('<h2 class="icon-16"></h2>').addClass(entity+"-16").insertBefore("ul.tabs");
+		page.tabs.init(entity);
 	});
 };
 
