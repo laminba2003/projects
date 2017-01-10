@@ -9,19 +9,17 @@ page.form.reset = () => {
 	for(var i=2;i<=length;i++) wizard.smartWizard('disableStep',i);
 };
 
-const onFinish = (obj,context) => {
+const onFinish = () => {
 	page.form.submit();
 	$('#create').magnificPopup('close');
 	return true;
 };
 
 
-page.form.init = function() {
+page.form.init = () => {
 	$('#form').css("display","block").addClass("mfp-hide");
-	head.load("templates/nova/js/jquery.smartWizard.js","templates/nova/js/jquery.magnific-popup.min.js", function() {
+	head.load("templates/nova/js/jquery.smartWizard.js","templates/nova/js/jquery.magnific-popup.min.js", () => {
 		$('#wizard').addClass("swMain").smartWizard({noForwardJumping:true,onLeaveStep:()=>true,onFinish:onFinish});
-		$('#create').magnificPopup({type:'inline'}).click(function(){
-			page.form.reset();
-		});
+		$('#create').magnificPopup({type:'inline'}).click(() => page.form.reset());
 	});
 };
