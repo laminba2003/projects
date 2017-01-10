@@ -30,11 +30,12 @@ page.table = {};
 page.table.init = entity => {
 	page.table.url = app.apiURL+entity+"s";
 	page.table.message = "no "+entity;
-	$("#contextmenu .row-select").click(() => page.table.selectedRow.element.click());
-	$("#contextmenu .edit-16").click(() => page.table.editRow(page.table.selectedRow));
-	$("#contextmenu .delete-16").click(() => confirm(() => page.table.removeRow(page.table.selectedRow)));
-	$("#contextmenu .print-16").click(() => page.print(page.table.url+"/"+page.table.selectedRow.id));
-	$("#contextmenu .pdf-16").click(() => page.pdf(page.table.url+"/"+page.table.selectedRow.id));
+	const menu = $("<div id='contextmenu'></div>").insertAfter($("#list"));
+	$("<a class='icon-16'>Select</a>").addClass(entity+"-16").appendTo(menu).click(() => page.table.selectedRow.element.click());
+	$("<a class='edit-16'>Update</a>").appendTo(menu).click(() => page.table.editRow(page.table.selectedRow));
+	$("<a class='delete-16'>Delete</a>").appendTo(menu).click(() => confirm(() => page.table.removeRow(page.table.selectedRow)));
+	$("<a class='print-16'>Print</a>").appendTo(menu).click(() => page.print(page.table.url+"/"+page.table.selectedRow.id));
+	$("<a class='pdf-16'>PDF</a>").appendTo(menu).click(() => page.pdf(page.table.url+"/"+page.table.selectedRow.id));
 };
 
 

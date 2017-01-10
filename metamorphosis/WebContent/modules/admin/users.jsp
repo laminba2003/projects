@@ -49,14 +49,6 @@
 
 </div>
 
-<div id="contextmenu">
-    <a class="user-16 row-select">Select</a>
-    <a class="edit-16">Update</a>
-    <a class="delete-16">Delete</a>
-    <a class="print-16">Print</a>
-    <a class="pdf-16">PDF</a>
-</div>
-
 <div id="selection"><span>select a user</span></div>
 
 <div id="details">
