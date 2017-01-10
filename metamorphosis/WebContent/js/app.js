@@ -110,7 +110,7 @@ page.table.addRow = entity => {
 
 page.table.editRow = row => {
 	app.get(page.table.url+"/"+row.id,entity => {
-		deserialize($("#form"),entity);
+		page.deserialize($("#form"),entity);
 		page.form.edit(entity);
 		$('#form h1').html("Update "+page.form.entity+": Informations");
 		page.edit = true;
@@ -127,7 +127,7 @@ page.table.updateRow = entity => {
 	});
 };
 
-function deserialize(form, entity) {
+page.deserialize = (form, entity) => {
     $.each(entity, function(key, value){
       $('[name='+key+']', form).val(value);
       if(value === Object(value)) {
@@ -223,6 +223,7 @@ page.form.create = () => {
 };
 
 page.tabs = {};
+
 page.tabs.init = () => {
 	const ul = $('<ul class="tabs"></ul>').insertBefore("#details .tab_container");
 	$.each($(".tab_container > div"),(index, element) => {
