@@ -27,7 +27,7 @@ html {
 }
 
 tr.active {
-	background-color : #ffffe2;
+	background-color : #f4f4f4;
 }
 
 tr.focus {
@@ -154,7 +154,7 @@ aside h1 {
 }
 
 #details > h2 {
-	 background-color : #ffffe2;
+	 background-color : #fdfdfd;
 	 color : rgb(48, 9, 3);
 }
 
@@ -226,7 +226,7 @@ h1 a:hover {
 
 fieldset {
 	border : 1px solid rgb(86, 182, 255);
-	background-color : #ffe;
+	background-color : #fdfdfd;
 	font-family : Maven Pro;
 }
 
