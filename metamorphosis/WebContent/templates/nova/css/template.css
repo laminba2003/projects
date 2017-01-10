@@ -87,10 +87,6 @@ div.pager span {
 	font-family : Maven Pro;
 }
 
-#wait {
-	background-image : url("../images/wait.gif");
-}
-
 .topmenu >  a {
 	height : 38px;
 	border : 1px solid rgb(86, 182, 255);

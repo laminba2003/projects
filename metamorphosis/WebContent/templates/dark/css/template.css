@@ -224,13 +224,10 @@ span a {
 	color : white;
 }
 
-#wait {
-	background-image : url("../images/wait.gif");
-}
-
 #list {
 	clear : both;
 }
+
 #details,#selection,#list {
 	border : 1px solid #888;
 	background : transparent;
