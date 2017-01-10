@@ -62,7 +62,7 @@
 <div id="details">
 
 <div class="tab_container"> 
-   <div id="informations" title="Personal Informations">
+   <div  title="Personal Informations">
      <template  type="text/x-dust-template">
 
        <fieldset>
@@ -111,7 +111,7 @@
      </template>
      
    </div>
-   <div id="contact" title="Contact">
+   <div title="Contact">
     <template  type="text/x-dust-template">
       <fieldset>
 		<span>First Name : </span>
@@ -154,7 +154,7 @@
    
    </div>
    
-   <div id="permissions" title="Permissions">
+   <div title="Permissions">
     <template  type="text/x-dust-template">
       <s:iterator value="#application.moduleManager.adminModules">
        <fieldset>

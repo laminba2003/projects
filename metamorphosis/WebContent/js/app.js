@@ -225,7 +225,7 @@ page.tabs = {};
 page.tabs.init = () => {
 	const ul = $('<ul class="tabs"></ul>').insertBefore("#details .tab_container");
 	$.each($(".tab_container > div"),(index, element) => {
-		  const div= $(element).addClass("tab_content").hide();
+		  const div= $(element).attr("id","tab"+index).addClass("tab_content").hide();
 		  const h2 = $("<h2>"+div.attr("title")+"</h2>").attr("title",div.attr("title"));
 		  const li = $("<li/>").attr("rel",div.attr("id")).html(h2);
 		  ul.append(li);
