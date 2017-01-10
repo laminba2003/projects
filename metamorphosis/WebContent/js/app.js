@@ -46,7 +46,7 @@ page.table.render = entity => {
 
 page.table.display = rows => {
 	if(!rows.length) {
-		$('tbody').append("<tr class='empty'><td valign='top' colspan='"+$("th").length+"'>"+page.table.message+"</td></tr>");
+		$("tbody").append("<tr class='empty'><td valign='top' colspan='"+$("th").length+"'>"+page.table.message+"</td></tr>");
 		$("#details").hide();
 		$("#selection").hide();
 	} else {
@@ -83,7 +83,7 @@ page.table.removeRow = row => {
 		next.length ? next.click() : row.element.prev().click();
 		row.element.remove();
 		if(!$("tbody tr").length) {
-			$('tbody').append("<tr class='empty'><td  valign='top' colspan='"+$("th").length+"'>"+page.table.message+"</td></tr>");
+			$("tbody").append("<tr class='empty'><td  valign='top' colspan='"+$("th").length+"'>"+page.table.message+"</td></tr>");
 			$("#details").hide();
 			$("#selection").hide();
 		}else {
@@ -99,7 +99,7 @@ page.table.removeRow = row => {
 };
 
 page.table.addRow = entity => {
-	$('tr.empty').remove();
+	$("tr.empty").remove();
 	page.render($("tbody"), [entity], true, row => {
 		page.table.paginate();
 		page.table.bind(row);
@@ -139,7 +139,7 @@ page.deserialize = (form, entity) => {
 };
 
 page.table.paginate = () => {
-	$('table').unbind("repaginate").each(function() {
+	$("table").unbind("repaginate").each(function() {
 		$(".pager").remove();
 	    var currentPage = 0;
 	    const $table = $(this);
