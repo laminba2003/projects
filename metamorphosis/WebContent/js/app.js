@@ -171,17 +171,11 @@ page.table.details = {};
 
 page.table.details.show = (entity,row) => {
 	$.each($("div.tab_container > div"),(i, element) => page.render($(element),entity));
-	$("#details > h2").html("Details "+page.form.entity + " : " +page.table.details.title(entity));
-	$("#details > h2").append("<a title='Edit' class='edit-16'></a>");
-	$("#details > h2 a.edit-16").click(() => page.table.editRow(row));
-	$("#details > h2").append("<a title='Delete' class='delete-16'></a>");
-	$("#details > h2 a.delete-16").click(() => confirm(() => page.table.removeRow(row)));
-	if(!!window.chrome && !!window.chrome.webstore) {
-  		$("#details > h2").append("<a title='Imprimer' class='print-16'></a>");
-  		$("#details > h2 a.print-16").click(() => page.print(page.table.url+"/"+row.id));
-  	}
-  	$("#details > h2").append("<a title='PDF' class='pdf-16'></a>");
-	$("#details > h2 a.pdf-16").click(() => page.pdf(page.table.url+"/"+row.id));
+	const h2 = $("#details > h2").html("Details "+page.form.entity + " : " +page.table.details.title(entity));
+	$("<a title='Edit' class='edit-16'></a>").appendTo(h2).click(() => page.table.editRow(row));
+	$("<a title='Delete' class='delete-16'></a>").appendTo(h2).click(() => confirm(() => page.table.removeRow(row)));
+	$("<a title='Imprimer' class='print-16'></a>").appendTo(h2).click(() => page.print(page.table.url+"/"+row.id));
+	$("<a title='PDF' class='pdf-16'></a>").appendTo(h2).click(() => page.pdf(page.table.url+"/"+row.id));
 	$("#details > h2 a").click(() => false);
 	page.table.details.hide(false);
 	page.table.selectedRow = row;
@@ -261,13 +255,15 @@ module.init = (entity,title) => {
 			const names = Object.getOwnPropertyNames(entity);
 			return entity[names[1]] + " " + entity[names[2]];
 		};
+		$("section > h1").addClass("icon-32").addClass(entity+"-32");
+		$('<h1 class="icon-32"></h1>').addClass(entity+"-32").insertBefore("#wizard");
+		$("#selection span").addClass("icon-16").addClass(entity+"-16");
 		page.tabs.init();
+		$('<h2 class="icon-16"></h2>').addClass(entity+"-16").insertBefore("ul.tabs");
 	});
 };
 
 app.ready(() => {
-
-	if(!(!!window.chrome && !!window.chrome.webstore)) $(".print-16").hide();
 	
 	$("body").click(() => {
 		$(".focus").removeClass("focus");
