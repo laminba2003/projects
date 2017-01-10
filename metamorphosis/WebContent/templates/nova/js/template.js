@@ -12,7 +12,7 @@ const onFinish = (obj,context) => {
 
 
 page.form.init = function() {
-	$('#form').addClass("mfp-hide");
+	$('#form').css("display","block").addClass("mfp-hide");
 	head.load("templates/nova/js/jquery.smartWizard.js","templates/nova/js/jquery.magnific-popup.min.js", function() {
 		var wizard = $('#wizard').addClass("swMain").smartWizard({noForwardJumping:true,onLeaveStep:()=>true,onFinish:onFinish});
 		$('#create').magnificPopup({type:'inline'}).click(function(){

@@ -214,6 +214,10 @@ legend {
 	 color : #000;
 }
 
+#form {
+	 display: none;
+}
+
 #form legend {
 	font-size : 2em;
 }
