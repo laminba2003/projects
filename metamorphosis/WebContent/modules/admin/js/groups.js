@@ -1,5 +1,5 @@
 const doc = group => {
-	return { content: page.form.entity +" : " +group.name};
+	return {content : group.name};
 };
 
-module.init("group",group => group.name);
+module.init("group", group => group.name);

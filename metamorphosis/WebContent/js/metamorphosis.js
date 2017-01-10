@@ -110,6 +110,11 @@ page.wait = () => $("#wait").show();
 
 page.release = () => $("#wait").hide();
 
+var doc = entity => {
+	const names = Object.getOwnPropertyNames(entity);
+	return {content: entity[names[1]] + " " + entity[names[2]]};
+};
+
 page.pdf = (url, callback) => {
 	head.load("js/pdfmake.min.js", "js/vfs_fonts.js", () => app.get(url, data => pdfMake.createPdf(callback ? callback(data) : doc(data)).open()));
 };

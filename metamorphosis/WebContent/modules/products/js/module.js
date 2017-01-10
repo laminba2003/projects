@@ -1,5 +1,5 @@
-const doc = product => {
-	return { content: page.form.entity +" : " +product.name};
+var doc = product => {
+	return {content : product.name};
 };
 
 module.init("product",product => product.name);
