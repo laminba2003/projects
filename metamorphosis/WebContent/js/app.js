@@ -47,7 +47,7 @@ page.table.init = entity => {
             		page.table.selectedRow = next.addClass('focus');
             		$(".page-number").eq(Math.floor(page.table.selectedRow.index() / 7)).click();
             	}
-                return;
+                break;
             case 38:
             	const prev = page.table.selectedRow.prev();
             	if(prev.length) {
@@ -66,6 +66,7 @@ page.table.init = entity => {
             	var left =  window.innerWidth-500;
         		if(left>window.innerWidth-100) left = window.innerWidth -200;
         		$("#contextmenu").show().css({top : page.table.selectedRow.position().top+10, left:left});
+        		page.table.keyboard = true;
             	break;
         }
     	return false;
@@ -101,13 +102,15 @@ page.table.bind = element => {
 		app.get(page.table.url+"/"+row.attr("id"), entity => page.table.details.show(entity,row));
 		return false;
 	}).contextmenu(function(event){
-		$("tr.focus").removeClass("focus");
-		const row = $(this).addClass("focus");
-		var left = event.pageX ? event.pageX : window.innerWidth-500;
-		if(left>window.innerWidth-100) left = window.innerWidth -200;
-		$("#contextmenu").show().css({top : row.position().top+10, left:left});
-		page.table.selectedRow = row;
-	    return false;
+		if(!page.table.keyboard) {
+			$("tr.focus").removeClass("focus");
+			const row = $(this).addClass("focus");
+			var left = event.pageX;
+			if(left>window.innerWidth-100) left = window.innerWidth -200;
+			$("#contextmenu").show().css({top : row.position().top+10, left:left});
+			page.table.selectedRow = row;
+		}
+	    return page.table.keyboard = false;
 	});
 	
 };
