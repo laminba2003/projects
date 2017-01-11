@@ -27,7 +27,7 @@ html {
 }
 
 tr.active {
-	background-color : #f4f4f4;
+	background-color : #fffee2;
 }
 
 tr.focus {
@@ -53,7 +53,7 @@ td {
 	color : rgb(39, 39, 39);
 }
 
-tr:nth-child(7) td {
+tr:nth-child(7n+0) td {
 	border-bottom : none;
 }
 
@@ -531,7 +531,7 @@ ul.tabs li.active h2 {
   border: 1px solid #FFD700; 
   font: bold 13px Verdana, Arial, Helvetica, sans-serif; 
   color:#5A5655;       
-  background: #FFF url(../images/wait.gif) no-repeat 5px;  
+  background: #FFF; 
   border-radius  : 5px;
   z-index:998;
 }
