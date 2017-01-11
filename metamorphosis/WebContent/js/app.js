@@ -31,11 +31,11 @@ page.table.init = entity => {
 	page.table.url = app.apiURL+entity+"s";
 	page.table.message = "no "+entity;
 	const menu = $("<div id='contextmenu'></div>").insertAfter($("#list"));
-	$("<a class='icon-16'>Select</a>").addClass(entity+"-16").appendTo(menu).click(() => page.table.selectedRow.element.click());
+	$("<a class='icon-16'>Select</a>").addClass(entity+"-16").appendTo(menu).click(() => page.table.selectedRow.click());
 	$("<a class='edit-16'>Update</a>").appendTo(menu).click(() => page.table.editRow(page.table.selectedRow));
 	$("<a class='delete-16'>Delete</a>").appendTo(menu).click(() => confirm(() => page.table.removeRow(page.table.selectedRow)));
-	$("<a class='print-16'>Print</a>").appendTo(menu).click(() => page.print(page.table.url+"/"+page.table.selectedRow.id));
-	$("<a class='pdf-16'>PDF</a>").appendTo(menu).click(() => page.pdf(page.table.url+"/"+page.table.selectedRow.id));
+	$("<a class='print-16'>Print</a>").appendTo(menu).click(() => page.print(page.table.url+"/"+page.table.selectedRow.attr("id")));
+	$("<a class='pdf-16'>PDF</a>").appendTo(menu).click(() => page.pdf(page.table.url+"/"+page.table.selectedRow.attr("id")));
 };
 
 page.table.render = entity => {
@@ -60,12 +60,12 @@ page.table.bind = element => {
 	element.click(function(event){
 		const row = $(this);
 		const id = row.attr("id");
-		app.get(page.table.url+"/"+id, entity => page.table.details.show(entity,{id:id,element:row}));
+		app.get(page.table.url+"/"+id, entity => page.table.details.show(entity,row));
 		return false;
 	}).contextmenu(function(event){
 		$("tr.focus").removeClass("focus");
 		const row = $(this).addClass("focus");
-		page.table.selectedRow = {id:row.attr("id"),element:row};
+		page.table.selectedRow = row;
 		const top = row.position().top;
 		var left = event.pageX;
 		if(left>window.innerWidth-100) left = window.innerWidth -200;
@@ -76,10 +76,10 @@ page.table.bind = element => {
 };
 
 page.table.removeRow = row => {
-	app.delete(page.table.url+"/"+row.id, () => {
-		const next = row.element.next();
-		next.length ? next.click() : row.element.prev().click();
-		row.element.remove();
+	app.delete(page.table.url+"/"+row.attr("id"), () => {
+		const next = row.next();
+		next.length ? next.click() : row.prev().click();
+		row.remove();
 		if(!$("tbody tr").length) {
 			$("tbody").append("<tr class='empty'><td  valign='top' colspan='"+$("th").length+"'>"+page.table.message+"</td></tr>");
 			$("#details").hide();
@@ -103,28 +103,28 @@ page.table.addRow = entity => {
 		page.table.paginate();
 		page.table.bind(row);
 		row.attr("id","1455555");
-		page.table.details.show(entity,{id:row.attr("id"),element:row});
+		page.table.details.show(entity,row);
 		$("span.page-number:last").click();
 	});
 };
 
 page.table.editRow = row => {
-	app.get(page.table.url+"/"+row.id,entity => {
+	app.get(page.table.url+"/"+row.attr("id"),entity => {
 		page.deserialize($("#form"),entity);
 		page.form.edit(entity);
 		$('#form h1').html("Update "+page.form.entity+": Informations");
 		page.edit = true;
 		page.table.details.show(entity,row);
-		$(".page-number").eq(Math.floor(row.element.index() / 7)).click();
+		$(".page-number").eq(Math.floor(row.index() / 7)).click();
 	});
 };
 
 page.table.updateRow = entity => {
 	const container = $("<div/>");
 	page.render($("tbody"), [entity] ,false, container, row => {
-		page.table.selectedRow.element.html($("tr",container).html());
-		$("td:first-child",page.table.selectedRow.element).addClass("icon-16").addClass(page.form.entity.toLowerCase()+"-16");
-		page.table.details.show(entity,{id:row.attr("id"),element:page.table.selectedRow.element});
+		page.table.selectedRow.html($("tr",container).html());
+		$("td:first-child",page.table.selectedRow).addClass("icon-16").addClass(page.form.entity.toLowerCase()+"-16");
+		page.table.details.show(entity,page.table.selectedRow);
 	});
 };
 
@@ -176,14 +176,14 @@ page.table.details.show = (entity,row) => {
 	const h2 = $("#details > h2").html("Details "+page.form.entity + " : " +page.table.details.title(entity));
 	$("<a title='Edit' class='edit-16'></a>").appendTo(h2).click(() => page.table.editRow(row));
 	$("<a title='Delete' class='delete-16'></a>").appendTo(h2).click(() => confirm(() => page.table.removeRow(row)));
-	$("<a title='Imprimer' class='print-16'></a>").appendTo(h2).click(() => page.print(page.table.url+"/"+row.id));
-	$("<a title='PDF' class='pdf-16'></a>").appendTo(h2).click(() => page.pdf(page.table.url+"/"+row.id));
+	$("<a title='Imprimer' class='print-16'></a>").appendTo(h2).click(() => page.print(page.table.url+"/"+row.attr("id")));
+	$("<a title='PDF' class='pdf-16'></a>").appendTo(h2).click(() => page.pdf(page.table.url+"/"+row.attr("id")));
 	$("#details > h2 a").click(() => false);
 	page.table.details.hide(false);
 	page.table.selectedRow = row;
 	$("tr.active").removeClass("active");
 	$("tr.focus").removeClass("focus");
-	row.element.addClass("active").addClass("focus");
+	row.addClass("active focus");
 	
 };
 
