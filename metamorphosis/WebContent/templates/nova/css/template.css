@@ -40,17 +40,21 @@ tr.empty td {
 
 th {
 	background : #fff;
-	color : rgb(94, 105, 129);
+	color : #401c15;
 	border : 1px solid rgb(86, 182, 255);
 	font-family : Georgia;
 }
 
 td {
 	border-bottom :1px solid rgb(86, 182, 255);
-	border-right :1px solid #fff;
+	border-right :1px solid #daeeff;
 	background-repeat : no-repeat;
 	background-position : 2px 0px;
 	color : rgb(39, 39, 39);
+}
+
+tr:nth-child(7) td {
+	border-bottom : none;
 }
 
 #contextmenu a:hover {

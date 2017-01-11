@@ -155,7 +155,7 @@ th {
 td {
 	font-size: 73%;
 	border-radius: 0px;
-	line-height: 0.8em;
+	line-height: 0.815em;
 	margin: 0px;
 	border: none;
 	padding: 4px;
@@ -404,6 +404,7 @@ footer p {
 #form select {
 	margin-right: 0;
 	width: 22%;
+	margin-top : 2px;
 }
 
 #details>h2 a:first-of-type {
