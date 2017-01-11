@@ -58,9 +58,7 @@ page.table.display = rows => {
 
 page.table.bind = element => {
 	element.click(function(event){
-		$("tr.active").removeClass("active");
-		$("tr.focus").removeClass("focus");
-		const row = $(this).addClass("active").addClass("focus");
+		const row = $(this);
 		const id = row.attr("id");
 		app.get(page.table.url+"/"+id, entity => page.table.details.show(entity,{id:id,element:row}));
 		return false;
@@ -104,8 +102,9 @@ page.table.addRow = entity => {
 		$("td:first-child",row).addClass("icon-16").addClass(page.form.entity.toLowerCase()+"-16");
 		page.table.paginate();
 		page.table.bind(row);
+		row.attr("id","1455555");
+		page.table.details.show(entity,{id:row.attr("id"),element:row});
 		$("span.page-number:last").click();
-		row.attr("id","1455555").click();
 	});
 };
 
@@ -125,7 +124,7 @@ page.table.updateRow = entity => {
 	page.render($("tbody"), [entity] ,false, container, row => {
 		page.table.selectedRow.element.html($("tr",container).html());
 		$("td:first-child",page.table.selectedRow.element).addClass("icon-16").addClass(page.form.entity.toLowerCase()+"-16");
-		page.table.selectedRow.element.click();
+		page.table.details.show(entity,{id:row.attr("id"),element:page.table.selectedRow.element});
 	});
 };
 
@@ -182,6 +181,10 @@ page.table.details.show = (entity,row) => {
 	$("#details > h2 a").click(() => false);
 	page.table.details.hide(false);
 	page.table.selectedRow = row;
+	$("tr.active").removeClass("active");
+	$("tr.focus").removeClass("focus");
+	row.element.addClass("active").addClass("focus");
+	
 };
 
 page.table.details.hide = hide => {
