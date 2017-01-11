@@ -304,6 +304,11 @@ module.init = (entity,title) => {
 		$('<h1 class="icon-32"></h1>').addClass(entity+"-32").insertBefore("#wizard");
 		$("#selection span").addClass("icon-16").addClass(entity+"-16");
 		page.tabs.init(entity);
+		$("body").click(() => {
+			$("#list").focus();
+			if(page.table.selectedRow) page.table.selectedRow.addClass('focus');
+		});
+		
 	});
 };
 
