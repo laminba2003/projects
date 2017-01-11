@@ -334,9 +334,8 @@ app.ready(() => {
 	            	$(this).hide();
 	                break;
 	            case 9:
-	            	const element = document.activeElement == $("#confirm-dialog-ok")[0] ? $("#confirm-dialog-cancel") : $("#confirm-dialog-ok"); 
-	            	element.focus();
-	                break;
+	            	document.activeElement == $("#confirm-dialog-ok")[0] ? $("#confirm-dialog-cancel").focus() : $("#confirm-dialog-ok").focus(); 
+	            	break;
 	            case 13:
 	            	$(document.activeElement).click();
 	                break;
