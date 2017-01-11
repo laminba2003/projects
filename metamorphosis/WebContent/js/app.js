@@ -30,12 +30,44 @@ page.table = {};
 page.table.init = entity => {
 	page.table.url = app.apiURL+entity+"s";
 	page.table.message = "no "+entity;
-	const menu = $("<div id='contextmenu'></div>").insertAfter($("#list"));
+	var list = $("#list").attr("tabindex","1");
+	const menu = $("<div id='contextmenu'></div>").insertAfter(list);
 	$("<a class='icon-16'>Select</a>").addClass(entity+"-16").appendTo(menu).click(() => page.table.selectedRow.click());
 	$("<a class='edit-16'>Update</a>").appendTo(menu).click(() => page.table.editRow(page.table.selectedRow));
 	$("<a class='delete-16'>Delete</a>").appendTo(menu).click(() => confirm(() => page.table.removeRow(page.table.selectedRow)));
 	$("<a class='print-16'>Print</a>").appendTo(menu).click(() => page.print(page.table.url+"/"+page.table.selectedRow.attr("id")));
 	$("<a class='pdf-16'>PDF</a>").appendTo(menu).click(() => page.pdf(page.table.url+"/"+page.table.selectedRow.attr("id")));
+	list.on('keydown', function (e) {  
+		if(!page.table.selectedRow) return;
+    	switch (e.keyCode) {
+            case 40:
+            	const next = page.table.selectedRow.next();
+            	if(next.length) {
+            		page.table.selectedRow.removeClass('focus');
+            		page.table.selectedRow = next.addClass('focus');
+            		$(".page-number").eq(Math.floor(page.table.selectedRow.index() / 7)).click();
+            	}
+                break;
+            case 38:
+            	const prev = page.table.selectedRow.prev();
+            	if(prev.length) {
+            		page.table.selectedRow.removeClass('focus');
+            		page.table.selectedRow = prev.addClass('focus');
+            		$(".page-number").eq(Math.floor(page.table.selectedRow.index() / 7)).click();
+            	}
+                break;
+            case 46:
+            	confirm(() => page.table.removeRow(page.table.selectedRow));
+                break;
+            case 13:
+            	page.table.selectedRow.click();
+                break;
+        }
+        
+    }).click(() => {
+    	if(page.table.selectedRow) page.table.selectedRow.addClass('focus');
+    	return false;
+    }); 
 };
 
 page.table.render = entity => {
@@ -181,6 +213,7 @@ page.table.details.show = (entity,row) => {
 	$("tr.active").removeClass("active");
 	$("tr.focus").removeClass("focus");
 	page.table.selectedRow = row.addClass("active focus");
+	$("#list").focus();
 	
 };
 
