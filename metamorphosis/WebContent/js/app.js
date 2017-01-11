@@ -30,7 +30,7 @@ page.table = {};
 page.table.init = entity => {
 	page.table.url = app.apiURL+entity+"s";
 	page.table.message = "no "+entity;
-	var list = $("#list").attr("tabindex","1");
+	var list = $("#list").attr("tabindex","1").attr("oncontextmenu","return false;");
 	const menu = $("<div id='contextmenu'></div>").insertAfter(list);
 	$("<a class='icon-16'>Select</a>").addClass(entity+"-16").appendTo(menu).click(() => page.table.selectedRow.click());
 	$("<a class='edit-16'>Update</a>").appendTo(menu).click(() => page.table.editRow(page.table.selectedRow));
@@ -47,7 +47,7 @@ page.table.init = entity => {
             		page.table.selectedRow = next.addClass('focus');
             		$(".page-number").eq(Math.floor(page.table.selectedRow.index() / 7)).click();
             	}
-                break;
+                return;
             case 38:
             	const prev = page.table.selectedRow.prev();
             	if(prev.length) {
@@ -62,10 +62,17 @@ page.table.init = entity => {
             case 13:
             	page.table.selectedRow.click();
                 break;
+            case 93:
+            	var left =  window.innerWidth-500;
+        		if(left>window.innerWidth-100) left = window.innerWidth -200;
+        		$("#contextmenu").show().css({top : page.table.selectedRow.position().top+10, left:left});
+            	break;
         }
+    	return false;
         
     }).click(() => {
     	if(page.table.selectedRow) page.table.selectedRow.addClass('focus');
+    	$("#contextmenu").hide();
     	return false;
     }); 
 };
@@ -96,7 +103,7 @@ page.table.bind = element => {
 	}).contextmenu(function(event){
 		$("tr.focus").removeClass("focus");
 		const row = $(this).addClass("focus");
-		var left = event.pageX;
+		var left = event.pageX ? event.pageX : window.innerWidth-500;
 		if(left>window.innerWidth-100) left = window.innerWidth -200;
 		$("#contextmenu").show().css({top : row.position().top+10, left:left});
 		page.table.selectedRow = row;
