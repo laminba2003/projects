@@ -180,10 +180,9 @@ page.table.details.show = (entity,row) => {
 	$("<a title='PDF' class='pdf-16'></a>").appendTo(h2).click(() => page.pdf(page.table.url+"/"+row.attr("id")));
 	$("#details > h2 a").click(() => false);
 	page.table.details.hide(false);
-	page.table.selectedRow = row;
 	$("tr.active").removeClass("active");
 	$("tr.focus").removeClass("focus");
-	row.addClass("active focus");
+	page.table.selectedRow = row.addClass("active focus");
 	
 };
 
