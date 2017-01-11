@@ -39,7 +39,7 @@ page.table.init = entity => {
 	$("<a class='pdf-16'>PDF</a>").appendTo(menu).click(() => page.pdf(page.table.url+"/"+page.table.selectedRow.attr("id")));
 	list.on('keydown', function (e) {  
 		if(!page.table.selectedRow) return;
-    	switch (e.keyCode) {
+    	switch(e.keyCode) {
             case 40:
             	const next = page.table.selectedRow.next();
             	if(next.length) {
@@ -67,6 +67,15 @@ page.table.init = entity => {
         		if(left>window.innerWidth-100) left = window.innerWidth -200;
         		$("#contextmenu").show().css({top : page.table.selectedRow.position().top+10, left:left});
         		page.table.keyboard = true;
+            	break;
+            case 80:
+            	if(e.ctrlKey) page.print(page.table.url+"/"+page.table.selectedRow.attr("id"));
+            	break;
+            case 69:
+            	if(e.ctrlKey) page.table.editRow(page.table.selectedRow);
+            	break;
+            case 71:
+            	if(e.ctrlKey) page.pdf(page.table.url+"/"+page.table.selectedRow.attr("id"));
             	break;
         }
     	return false;
@@ -307,11 +316,13 @@ module.init = (entity,title) => {
 		$('<h1 class="icon-32"></h1>').addClass(entity+"-32").insertBefore("#wizard");
 		$("#selection span").addClass("icon-16").addClass(entity+"-16");
 		page.tabs.init(entity);
-		$("body").click(() => {
-			$("#list").focus();
-			if(page.table.selectedRow) page.table.selectedRow.addClass('focus');
-		});
-		
+		$("body").on('keydown',event => {
+			switch(event.keyCode) {
+			  case 67:
+            	if(event.ctrlKey) $('#create').click();
+            	break;
+	        }
+	    });
 	});
 };
 
