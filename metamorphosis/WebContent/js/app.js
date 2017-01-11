@@ -59,17 +59,15 @@ page.table.display = rows => {
 page.table.bind = element => {
 	element.click(function(event){
 		const row = $(this);
-		const id = row.attr("id");
-		app.get(page.table.url+"/"+id, entity => page.table.details.show(entity,row));
+		app.get(page.table.url+"/"+row.attr("id"), entity => page.table.details.show(entity,row));
 		return false;
 	}).contextmenu(function(event){
 		$("tr.focus").removeClass("focus");
 		const row = $(this).addClass("focus");
-		page.table.selectedRow = row;
-		const top = row.position().top;
 		var left = event.pageX;
 		if(left>window.innerWidth-100) left = window.innerWidth -200;
-		$("#contextmenu").show().css({top : top+10, left:left});
+		$("#contextmenu").show().css({top : row.position().top+10, left:left});
+		page.table.selectedRow = row;
 	    return false;
 	});
 	
@@ -228,7 +226,7 @@ page.form.create = () => {
 
 page.tabs = {};
 
-page.tabs.init = (entity) => {
+page.tabs.init = entity => {
 	var tabs = $("#details #tabs").addClass("tab_container");
 	const ul = $('<ul class="tabs"></ul>').insertBefore(tabs);
 	$.each($("> div",tabs),(index, element) => {
