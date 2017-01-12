@@ -33,7 +33,7 @@ page.table.init = entity => {
 	var list = $("#list").attr("tabindex","1").attr("oncontextmenu","return false;");
 	const menu = $("<div id='contextmenu' tabindex='0'></div>").insertAfter(list);
 	$("<a class='icon-16' tabindex='1'>Select</a>").addClass(entity+"-16").appendTo(menu).click(() => page.table.selectedRow.click());
-	$("<a class='edit-16' tabindex='2'>Update</a>").appendTo(menu).click(() => page.table.editRow(page.table.selectedRow));
+	$("<a class='edit-16' tabindex='2'>Edit</a>").appendTo(menu).click(() => page.table.editRow(page.table.selectedRow));
 	$("<a class='delete-16' tabindex='3'>Delete</a>").appendTo(menu).click(() => confirm(() => page.table.removeRow(page.table.selectedRow)));
 	$("<a class='print-16' tabindex='4'>Print</a>").appendTo(menu).click(() => page.print(page.table.url+"/"+page.table.selectedRow.attr("id")));
 	$("<a class='pdf-16' tabindex='5'>PDF</a>").appendTo(menu).click(() => page.pdf(page.table.url+"/"+page.table.selectedRow.attr("id")));
