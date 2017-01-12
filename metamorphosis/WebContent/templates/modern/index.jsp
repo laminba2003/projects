@@ -24,7 +24,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>    
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>  
     <!-- Favicon -->
-    <link rel="shortcut icon" href="templates/modern/img/favicon.ico" type="image/x-icon">  
+    <link rel="shortcut icon" href="templates/modern/images/favicon.ico" type="image/x-icon">  
   
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,7 +57,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="index.html">Think <span>Tech</span></a>
-        <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
+        <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
@@ -87,7 +87,7 @@
         <ul class="slides-container">
           <!-- Start single slider-->
           <li>
-            <img src="templates/modern/img/slider/1.jpg" alt="img">
+            <img src="templates/modern/images/slider/1.jpg" alt="img">
             <div class="slider_caption">
               <h2><span>Welcome To</span> Think Tech</h2>
               <p>
@@ -98,7 +98,7 @@
           </li> 
           <!-- Start single slider-->           
           <li>
-            <img src="templates/modern/img/slider/3.jpg" alt="img">
+            <img src="templates/modern/images/slider/3.jpg" alt="img">
              <div class="slider_caption">
               <h2>Beautiful <span>Clear and Flexible</span></h2>
               <p>
@@ -109,7 +109,7 @@
             </li>
           <!-- Start single slider-->
           <li>
-            <img src="templates/modern/img/slider/2.jpg" alt="img">
+            <img src="templates/modern/images/slider/2.jpg" alt="img">
              <div class="slider_caption">
               <h2><span>Beausiness</span> & Corporate</h2>
               <p>
@@ -182,16 +182,16 @@
                       <!-- Set up your HTML -->
                     <div class="slick_slider">
                       <div class="single_iteam">
-                        <a href="single_page.html"> <img src="templates/modern/img/works_slider1.jpg" alt="img"></a>                          
+                        <a href="single_page.html"> <img src="templates/modern/images/works_slider1.jpg" alt="img"></a>                          
                       </div>
                       <div class="single_iteam">
-                        <a href="single_page.html"> <img src="templates/modern/img/works_slider2.jpg" alt="img"></a>                          
+                        <a href="single_page.html"> <img src="templates/modern/images/works_slider2.jpg" alt="img"></a>                          
                       </div>
                       <div class="single_iteam">
-                        <a href="single_page.html"> <img src="templates/modern/img/works_slider1.jpg" alt="img"></a>                          
+                        <a href="single_page.html"> <img src="templates/modern/images/works_slider1.jpg" alt="img"></a>                          
                       </div>
                       <div class="single_iteam">
-                        <a href="single_page.html"> <img src="templates/modern/img/works_slider2.jpg" alt="img"></a>                          
+                        <a href="single_page.html"> <img src="templates/modern/images/works_slider2.jpg" alt="img"></a>                          
                       </div>
                     </div>
                   </div>
@@ -260,7 +260,7 @@
               <ul class="team_nav">
                 <li>
                   <div class="team_img">
-                    <img src="templates/modern/img/leify.png" alt="team-img">
+                    <img src="templates/modern/images/leify.png" alt="team-img">
                   </div>
                   <div class="team_content">
                     <h4>Ben Davis</h4>
@@ -275,7 +275,7 @@
                 </li>
                 <li>
                   <div class="team_img">
-                    <img src="templates/modern/img/leify.png" alt="team-img">
+                    <img src="templates/modern/images/leify.png" alt="team-img">
                   </div>
                   <div class="team_content">
                     <h4 class="team_name">Dania Gerhardt</h4>
@@ -290,7 +290,7 @@
                 </li>
                 <li>
                   <div class="team_img">
-                    <img src="templates/modern/img/leify.png" alt="team-img">
+                    <img src="templates/modern/images/leify.png" alt="team-img">
                   </div>
                   <div class="team_content">
                     <h4 class="team_name">Dania Gerhardt</h4>
@@ -305,7 +305,7 @@
                 </li>
                 <li>
                   <div class="team_img">
-                    <img src="templates/modern/img/leify.png" alt="team-img">
+                    <img src="templates/modern/images/leify.png" alt="team-img">
                   </div>
                   <div class="team_content">
                     <h4 class="team_name">Dania Gerhardt</h4>
@@ -320,7 +320,7 @@
                 </li>
                 <li>
                   <div class="team_img">
-                    <img src="templates/modern/img/leify.png" alt="team-img">
+                    <img src="templates/modern/images/leify.png" alt="team-img">
                   </div>
                   <div class="team_content">
                     <h4 class="team_name">Dania Gerhardt</h4>
@@ -456,7 +456,7 @@
                   <small>Jacquie Ward, Love Movement</small>
                   </blockquote>
                   <div class="client_img">
-                    <img src="templates/modern/img/leify.png" alt="img">
+                    <img src="templates/modern/images/leify.png" alt="img">
                   </div>
                </div>
               </li>
@@ -467,7 +467,7 @@
                   <small>Jacquie Ward, Love Movement</small>
                   </blockquote>
                   <div class="client_img">
-                    <img src="templates/modern/img/leify.png" alt="img">
+                    <img src="templates/modern/images/leify.png" alt="img">
                   </div>
                </div>
               </li>
@@ -478,7 +478,7 @@
                   <small>Jacquie Ward, Love Movement</small>
                   </blockquote>
                   <div class="client_img">
-                    <img src="templates/modern/img/leify.png" alt="img">
+                    <img src="templates/modern/images/leify.png" alt="img">
                   </div>
                </div>
               </li>
@@ -507,7 +507,7 @@
                 <!-- start single featured blog -->
                 <div class="col-lg-4 col-md-4 col-sm-4">
                   <div class="single_featured_blog">                      
-                    <img alt="img" src="templates/modern/img/blog.jpg">
+                    <img alt="img" src="templates/modern/images/blog.jpg">
                     <h2>It's That time of year again! </h2>
                     <div class="post_commentbox">
                       <a href="#"><i class="fa fa-tags"></i>Technology</a>
@@ -520,7 +520,7 @@
                 <!-- start single featured blog -->
                 <div class="col-lg-4 col-md-4 col-sm-4">
                   <div class="single_featured_blog">                      
-                    <img alt="img" src="templates/modern/img/blog.jpg">
+                    <img alt="img" src="templates/modern/images/blog.jpg">
                     <h2>It's That time of year again! Prepare your ecomarce </h2>
                     <div class="post_commentbox">
                       <a href="#"><i class="fa fa-tags"></i>Technology</a>
@@ -533,7 +533,7 @@
                 <!-- start single featured blog -->
                 <div class="col-lg-4 col-md-4 col-sm-4">
                   <div class="single_featured_blog">                      
-                    <img alt="img" src="templates/modern/img/blog.jpg">
+                    <img alt="img" src="templates/modern/images/blog.jpg">
                     <h2>It's That time of year again!</h2>
                     <div class="post_commentbox">
                       <a href="#"><i class="fa fa-tags"></i>Technology</a>
@@ -565,14 +565,14 @@
             <div class="clients_brand">
               <!-- Start clients brand slider -->
              <ul class="clb_nav wow flipInX">
-               <li><img src="templates/modern/img/envato-studio.png" alt="brand-img"></li>
-               <li><img src="templates/modern/img/codecanyon.png" alt="brand-img"></li>
-               <li><img src="templates/modern/img/audiojungle.png" alt="brand-img"></li>
-               <li><img src="templates/modern/img/themeforest.png" alt="brand-img"></li>
-               <li><img src="templates/modern/img/envato-studio.png" alt="brand-img"></li>
-               <li><img src="templates/modern/img/codecanyon.png" alt="brand-img"></li>
-               <li><img src="templates/modern/img/audiojungle.png" alt="brand-img"></li>
-               <li><img src="templates/modern/img/themeforest.png" alt="brand-img"></li>
+               <li><img src="templates/modern/images/envato-studio.png" alt="brand-img"></li>
+               <li><img src="templates/modern/images/codecanyon.png" alt="brand-img"></li>
+               <li><img src="templates/modern/images/audiojungle.png" alt="brand-img"></li>
+               <li><img src="templates/modern/images/themeforest.png" alt="brand-img"></li>
+               <li><img src="templates/modern/images/envato-studio.png" alt="brand-img"></li>
+               <li><img src="templates/modern/images/codecanyon.png" alt="brand-img"></li>
+               <li><img src="templates/modern/images/audiojungle.png" alt="brand-img"></li>
+               <li><img src="templates/modern/images/themeforest.png" alt="brand-img"></li>
              </ul>
              <!-- End clients brand slider -->
             </div>
