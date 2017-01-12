@@ -57,8 +57,8 @@ tr:nth-child(7n+0) td {
 	border-bottom : none;
 }
 
-#contextmenu a:hover {
-	background-color : #ffffe9;
+#contextmenu a:hover, #contextmenu a.focus{
+	background-color : #dfeffd;
 }
 
 .topmenu > a > img {

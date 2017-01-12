@@ -31,12 +31,40 @@ page.table.init = entity => {
 	page.table.url = app.apiURL+entity+"s";
 	page.table.message = "no "+entity;
 	var list = $("#list").attr("tabindex","1").attr("oncontextmenu","return false;");
-	const menu = $("<div id='contextmenu'></div>").insertAfter(list);
-	$("<a class='icon-16'>Select</a>").addClass(entity+"-16").appendTo(menu).click(() => page.table.selectedRow.click());
-	$("<a class='edit-16'>Update</a>").appendTo(menu).click(() => page.table.editRow(page.table.selectedRow));
-	$("<a class='delete-16'>Delete</a>").appendTo(menu).click(() => confirm(() => page.table.removeRow(page.table.selectedRow)));
-	$("<a class='print-16'>Print</a>").appendTo(menu).click(() => page.print(page.table.url+"/"+page.table.selectedRow.attr("id")));
-	$("<a class='pdf-16'>PDF</a>").appendTo(menu).click(() => page.pdf(page.table.url+"/"+page.table.selectedRow.attr("id")));
+	const menu = $("<div id='contextmenu' tabindex='0'></div>").insertAfter(list);
+	$("<a class='icon-16' tabindex='1'>Select</a>").addClass(entity+"-16").appendTo(menu).click(() => page.table.selectedRow.click());
+	$("<a class='edit-16' tabindex='2'>Update</a>").appendTo(menu).click(() => page.table.editRow(page.table.selectedRow));
+	$("<a class='delete-16' tabindex='3'>Delete</a>").appendTo(menu).click(() => confirm(() => page.table.removeRow(page.table.selectedRow)));
+	$("<a class='print-16' tabindex='4'>Print</a>").appendTo(menu).click(() => page.print(page.table.url+"/"+page.table.selectedRow.attr("id")));
+	$("<a class='pdf-16' tabindex='5'>PDF</a>").appendTo(menu).click(() => page.pdf(page.table.url+"/"+page.table.selectedRow.attr("id")));
+	menu.on('keydown', function (e) {
+		const element = $("a.focus",menu);
+		switch(e.keyCode) {
+            case 40:
+            	if(element.length && element.next().length) {
+            		$("a",menu).removeClass("focus");
+            		element.next().addClass("focus");
+            	}else {
+            		$("a",menu).removeClass("focus");
+            		$("a:first-child",menu).addClass("focus");
+            	}
+                break;
+            case 38:
+            	if(element.length && element.prev().length) {
+            		$("a",menu).removeClass("focus");
+            		element.prev().addClass("focus");
+            	}else {
+            		$("a",menu).removeClass("focus");
+            		$("a:last-child",menu).addClass("focus");
+            	}
+                break;
+            case 13:
+            	element.click();
+                break;
+        }
+    	return false;
+        
+    });
 	list.on('keydown', function (e) {  
 		if(!page.table.selectedRow) return;
     	switch(e.keyCode) {
@@ -65,8 +93,9 @@ page.table.init = entity => {
             case 93:
             	var left =  window.innerWidth-500;
         		if(left>window.innerWidth-100) left = window.innerWidth -200;
-        		$("#contextmenu").show().css({top : page.table.selectedRow.position().top+10, left:left});
+        		menu.show().css({top : page.table.selectedRow.position().top+10, left:left});
         		page.table.keyboard = true;
+        		setTimeout(() => menu.focus(), 100);
             	break;
             case 80:
             	if(e.ctrlKey) page.print(page.table.url+"/"+page.table.selectedRow.attr("id"));
@@ -82,7 +111,7 @@ page.table.init = entity => {
         
     }).click(() => {
     	if(page.table.selectedRow) page.table.selectedRow.addClass('focus');
-    	$("#contextmenu").hide();
+    	menu.hide();
     	return false;
     }); 
 };
@@ -116,11 +145,11 @@ page.table.bind = element => {
 			const row = $(this).addClass("focus");
 			var left = event.pageX;
 			if(left>window.innerWidth-100) left = window.innerWidth -200;
-			$("#contextmenu").show().css({top : row.position().top+10, left:left});
+			$("#contextmenu").show().css({top : row.position().top+10, left:left}).focus();
 			page.table.selectedRow = row;
 		}
 	    return page.table.keyboard = false;
-	});
+	}).attr("oncontextmenu","return false;");
 	
 };
 
@@ -273,6 +302,7 @@ page.form.create = () => {
 	page.edit = false;
 	$('#form h1').html("Create "+page.form.entity +" : Informations");
 	$('#form')[0].reset();
+	$("#contextmenu").hide();
 	return false;
 };
 
