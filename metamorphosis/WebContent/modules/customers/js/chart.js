@@ -54,8 +54,7 @@ function getPaidCustomers() {
 	});
 };
 
-
-app.ready(function() {
+document.addEventListener("DOMContentLoaded", () => {
 	getCustomers();
 	getPaidCustomers();
 });

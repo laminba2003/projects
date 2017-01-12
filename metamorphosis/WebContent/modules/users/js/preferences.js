@@ -1,4 +1,4 @@
-app.ready(function(){
+document.addEventListener("DOMContentLoaded", () => {
 	$(".extension > a").click(function(){
 		 $(".extensionDetails").hide();
 	    $(".extensionDetails",$(this).parent()).fadeIn(1000);

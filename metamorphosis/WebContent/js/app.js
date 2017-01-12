@@ -303,6 +303,7 @@ const module = {};
 
 module.init = (entity,title) => {
 	app.ready(() => {
+		if(!$("#list").length) return;
 		page.form.entity = entity[0].toUpperCase() + entity.slice(1);
 		page.form.init();
 		$('#create').click(() => page.form.create());
