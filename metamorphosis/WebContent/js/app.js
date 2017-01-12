@@ -37,9 +37,14 @@ page.table.init = entity => {
 	$("<a class='delete-16' tabindex='3'>Delete</a>").appendTo(menu).click(() => confirm(() => page.table.removeRow(page.table.selectedRow)));
 	$("<a class='print-16' tabindex='4'>Print</a>").appendTo(menu).click(() => page.print(page.table.url+"/"+page.table.selectedRow.attr("id")));
 	$("<a class='pdf-16' tabindex='5'>PDF</a>").appendTo(menu).click(() => page.pdf(page.table.url+"/"+page.table.selectedRow.attr("id")));
+	$("a",menu).attr("oncontextmenu","return false;");
 	menu.on('keydown', function (e) {
 		const element = $("a.focus",menu);
 		switch(e.keyCode) {
+		    case 27:
+		    	menu.hide();
+		    	list.focus();
+		    	break;
             case 40:
             	if(element.length && element.next().length) {
             		$("a",menu).removeClass("focus");
@@ -93,9 +98,10 @@ page.table.init = entity => {
             case 93:
             	var left =  window.innerWidth-500;
         		if(left>window.innerWidth-100) left = window.innerWidth -200;
+        		$("a",menu).removeClass("focus");
         		menu.show().css({top : page.table.selectedRow.position().top+10, left:left});
         		page.table.keyboard = true;
-        		setTimeout(() => menu.focus(), 100);
+        		setTimeout(() => menu.focus(), 1000);
             	break;
             case 80:
             	if(e.ctrlKey) page.print(page.table.url+"/"+page.table.selectedRow.attr("id"));
