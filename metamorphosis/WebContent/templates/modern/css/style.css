@@ -200,7 +200,7 @@ img{
   position:absolute;
   left:50%; /* centers the loading animation horizontally one the screen */
   top:50%; /* centers the loading animation vertically one the screen */
-  background-image:url(img/status.gif); /* path to your loading animation */
+  background-image:url(images/status.gif); /* path to your loading animation */
   background-repeat:no-repeat;
   background-position:center;
   margin:-100px 0 0 -100px; /* is width and height divided by two */
@@ -427,7 +427,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .preloader_img{
   position: absolute;
   display: block;
-  background: url(img/home/loading.gif) no-repeat center center;
+  background: url(images/home/loading.gif) no-repeat center center;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -845,7 +845,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   margin-top: 40px;
 }
 .slider_area{
-  background-image: url(img/works_sliderbg.png);
+  background-image: url(images/works_sliderbg.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%;
@@ -1372,7 +1372,7 @@ transition: all 0.5s;
   font-size: 18px;
 }
 #imgbanner {
-  background-image: url("img/submit-photos.jpg");
+  background-image: url("images/submit-photos.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: inline;
