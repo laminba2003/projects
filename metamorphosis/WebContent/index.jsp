@@ -8,7 +8,6 @@
  Today's mobile salesforce needs a <b>CRM</b> system that is easy to use and provides the relevant information they need to make sales faster.
  </p>
  <p>
- 
  A modern, integrated <b>CRM</b> leverages a multichannel environment to provide better service at a reduced cost.
 </p>
 </div>
