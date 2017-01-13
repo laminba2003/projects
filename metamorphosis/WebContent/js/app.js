@@ -30,6 +30,7 @@ page.table = {};
 page.table.init = entity => {
 	page.table.url = app.apiURL+entity+"s";
 	page.table.message = "no "+entity;
+	sorttable.makeSortable($("table")[0]);
 	const list = $("#list").attr("tabindex","1").attr("oncontextmenu","return false;");
 	const menu = $("<div id='contextmenu' tabindex='0'></div>").insertAfter(list);
 	$("<a class='icon-16' tabindex='1'>Select</a>").addClass(entity+"-16").appendTo(menu).click(() => page.table.selectedRow.click());
