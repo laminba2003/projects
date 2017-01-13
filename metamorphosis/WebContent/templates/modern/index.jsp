@@ -61,7 +61,6 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
-          <li class="active"><a href="${path}">Home</a></li>
           <li><a href="#">Contact Us</a></li> 
           <li><a href="#">Log in</a></li>
           <li><a href="#">Sign up</a></li>                 
