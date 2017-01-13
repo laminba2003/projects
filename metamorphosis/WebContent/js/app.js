@@ -365,6 +365,12 @@ module.init = (entity,title) => {
 					return false;
 				}
 				break;
+			  case 70:
+				if(event.ctrlKey) {
+					$("#search input").select().focus();
+					return false;
+				}
+				break;
 	        }
 	    });
 	});
