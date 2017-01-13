@@ -47,7 +47,7 @@ th {
 
 td {
 	border-bottom :1px solid #06d0d8;
-	border-right :1px solid #daeeff;
+	border-right :none;
 	background-repeat : no-repeat;
 	background-position : 2px 0px;
 	color : rgb(39, 39, 39);
@@ -71,6 +71,11 @@ tr:nth-child(7n+0) td {
 
 #search select {
 	color : rgb(94, 105, 129);
+	background-color: #fffde1;
+}
+
+#search input {
+	background-color: #fffde1;
 }
 
 #search input:focus {
@@ -233,8 +238,10 @@ h1 a:hover {
 }
 
 fieldset {
-	border : 1px solid #06d0d8;
-	background-color : #fffee2;
+	border-radius: 0.5em;
+    border : 1px solid #06d0d8;
+    background-color: #fffde1;
+    box-shadow: 0.08em 0.05em 0.08em #ccc;
 	font-family : Maven Pro;
 }
 
