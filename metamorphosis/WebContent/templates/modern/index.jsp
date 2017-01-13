@@ -326,7 +326,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 wow bounceInLeft">
-          <p>Pairing substantial savings in time and money with the ease and reliability of doing it in-house, ever since… we invented it</p>
+          <p>Pairing substantial savings in time and money with the ease and reliability of doing it in-house, ever since we invented it</p>
         </div>
       </div>
     </div>
