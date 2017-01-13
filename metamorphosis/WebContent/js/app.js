@@ -81,7 +81,7 @@ page.table.init = entity => {
             		page.table.selectedRow = next.addClass('focus');
             		$(".page-number").eq(Math.floor(page.table.selectedRow.index() / 7)).click();
             	}
-                break;
+            	return false;
             case 38:
             	const prev = page.table.selectedRow.prev();
             	if(prev.length) {
@@ -89,32 +89,31 @@ page.table.init = entity => {
             		page.table.selectedRow = prev.addClass('focus');
             		$(".page-number").eq(Math.floor(page.table.selectedRow.index() / 7)).click();
             	}
-                break;
+            	return false;
             case 46:
             	confirm(() => page.table.removeRow(page.table.selectedRow));
-                break;
+            	return false;
             case 13:
             	page.table.selectedRow.click();
-                break;
+            	return false;
             case 93:
             	var left =  window.innerWidth-500;
         		if(left>window.innerWidth-100) left = window.innerWidth -200;
         		$("a",menu).removeClass("focus");
         		menu.show().css({top : page.table.selectedRow.position().top+10, left:left});
         		page.table.keyboard = true;
-        		setTimeout(() => menu.focus(), 1000);
-            	break;
+        		setTimeout(() => menu.focus(), 500);
+        		return false;
             case 80:
             	if(e.ctrlKey) page.print(page.table.url+"/"+page.table.selectedRow.attr("id"));
-            	break;
+            	return false;
             case 69:
             	if(e.ctrlKey) page.table.editRow(page.table.selectedRow);
-            	break;
+            	return false;
             case 71:
             	if(e.ctrlKey) page.pdf(page.table.url+"/"+page.table.selectedRow.attr("id"));
-            	break;
+            	return false;
         }
-    	return false;
         
     }).click(() => {
     	if(page.table.selectedRow) page.table.selectedRow.addClass('focus');
