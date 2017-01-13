@@ -56,13 +56,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Think <span>Tech</span></a>
+        <a class="navbar-brand" href="${path}">Think <span>Tech</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li class="active"><a href="${path}">Home</a></li>
-          <li><a href="#">Contact Us</a></li>                  
+          <li><a href="#">Contact Us</a></li> 
+          <li><a href="#">Log in</a></li>
+          <li><a href="#">Sign up</a></li>                 
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -234,103 +236,6 @@
     </div>
   </section>
   <!-- End How it works area -->
-
-  <!-- start Our Team area -->
-  <section id="ourTeam">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="team_area wow fadeInLeftBig">
-            <div class="team_title">
-              <hr>
-              <h2>Meet <span>Our Team</span></h2>
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
-            </div>
-            <div class="team">
-              <ul class="team_nav">
-                <li>
-                  <div class="team_img">
-                    <img src="templates/modern/images/leify.png" alt="team-img">
-                  </div>
-                  <div class="team_content">
-                    <h4>Ben Davis</h4>
-                    <p>Managing Director</p>
-                  </div>
-                  <div class="team_social">
-                    <a href="#"><span class="fa fa-facebook"></span></a>
-                    <a href="#"><span class="fa fa-twitter"></span></a>
-                    <a href="#"><span class="fa fa-linkedin"></span></a>
-                    <a href="#"><span class="fa fa-google-plus"></span></a>
-                  </div>
-                </li>
-                <li>
-                  <div class="team_img">
-                    <img src="templates/modern/images/leify.png" alt="team-img">
-                  </div>
-                  <div class="team_content">
-                    <h4 class="team_name">Dania Gerhardt</h4>
-                    <p>Managing Director</p>
-                  </div>
-                  <div class="team_social">
-                    <a href="#"><span class="fa fa-facebook"></span></a>
-                    <a href="#"><span class="fa fa-twitter"></span></a>
-                    <a href="#"><span class="fa fa-linkedin"></span></a>
-                    <a href="#"><span class="fa fa-google-plus"></span></a>
-                  </div>
-                </li>
-                <li>
-                  <div class="team_img">
-                    <img src="templates/modern/images/leify.png" alt="team-img">
-                  </div>
-                  <div class="team_content">
-                    <h4 class="team_name">Dania Gerhardt</h4>
-                    <p>Managing Director</p>
-                  </div>
-                  <div class="team_social">
-                    <a href="#"><span class="fa fa-facebook"></span></a>
-                    <a href="#"><span class="fa fa-twitter"></span></a>
-                    <a href="#"><span class="fa fa-linkedin"></span></a>
-                    <a href="#"><span class="fa fa-google-plus"></span></a>
-                  </div>
-                </li>
-                <li>
-                  <div class="team_img">
-                    <img src="templates/modern/images/leify.png" alt="team-img">
-                  </div>
-                  <div class="team_content">
-                    <h4 class="team_name">Dania Gerhardt</h4>
-                    <p>Managing Director</p>
-                  </div>
-                  <div class="team_social">
-                    <a href="#"><span class="fa fa-facebook"></span></a>
-                    <a href="#"><span class="fa fa-twitter"></span></a>
-                    <a href="#"><span class="fa fa-linkedin"></span></a>
-                    <a href="#"><span class="fa fa-google-plus"></span></a>
-                  </div>
-                </li>
-                <li>
-                  <div class="team_img">
-                    <img src="templates/modern/images/leify.png" alt="team-img">
-                  </div>
-                  <div class="team_content">
-                    <h4 class="team_name">Dania Gerhardt</h4>
-                    <p>Managing Director</p>
-                  </div>
-                  <div class="team_social">
-                    <a href="#"><span class="fa fa-facebook"></span></a>
-                    <a href="#"><span class="fa fa-twitter"></span></a>
-                    <a href="#"><span class="fa fa-linkedin"></span></a>
-                    <a href="#"><span class="fa fa-google-plus"></span></a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Our Team area -->
 
   <!-- start price section -->
   <section id="priceSection">
