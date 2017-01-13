@@ -80,11 +80,10 @@
           <li>
             <img src="templates/modern/images/slider/1.jpg" alt="img">
             <div class="slider_caption">
-              <h2><span>Welcome To</span> Think Tech</h2>
+              <h2><span>Welcome To</span> Think Tech CRM</h2>
               <p>
 				<b>We offer</b> a complete and integrated <b>CRM</b> solution that breaks down silos to deliver a seamless customer experience across marketing, sales, commerce, service, and social.
 			 </p>
-              <a class="slider_btn" href="#">Read More</a>
             </div>
           </li> 
           <!-- Start single slider-->           
@@ -95,7 +94,6 @@
               <p>
  				Today's mobile salesforce needs a <b>CRM</b> system that is easy to use and provides the relevant information they need to make sales faster.
  				</p>
-              <a class="slider_btn" href="#">Read More</a>
             </div>
             </li>
           <!-- Start single slider-->
@@ -106,7 +104,6 @@
               <p>
 				 A modern, integrated <b>CRM</b> leverages a multichannel environment to provide better service at a reduced cost.
 			  </p>
-              <a class="slider_btn" href="#">Read More</a>
             </div>
            </li>
         </ul>
@@ -118,43 +115,7 @@
     </div>  
   </section>
   <!-- End slider section -->
-
-  <!-- Start Service area -->
-  <section id="service">
-    <div class="container">
-      <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="service_area">
-          <div class="service_title">
-            <hr>
-            <h2>Think Tech</h2>
-            <p>Trusted by Fortune 500 retailers and the world top brands.</p>
-          </div>
-          <ul class="service_nav wow flipInX">
-            <li>
-              <a class="service_icon" href="#"><i class="fa fa-users"></i></a>
-              <h2>An almost infinite number of project complete</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-              <a class="read_more" href="#">read more<i class="fa fa-long-arrow-right"></i></a>
-            </li>
-           <li>
-              <a class="service_icon" href="#"><i class="fa fa-gears"></i></a>
-              <h2>Efficient Workflow</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-              <a class="read_more" href="#">read more<i class="fa fa-long-arrow-right"></i></a>
-            </li>
-            <li>
-              <a class="service_icon" href="#"><i class="fa fa-support"></i></a>
-              <h2>Extraordinary Support</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-              <a class="read_more" href="#">read more<i class="fa fa-long-arrow-right"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Service area -->
-
+  
   <!-- start How it works area -->
   <section id="howWorks">
     <div class="container">
@@ -383,68 +344,6 @@
   </section>
   <!-- End client testimonial -->  
 
-  <!-- start featured blog area -->
-  <section id="featuredBlog">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="featuredBlog_area">
-            <div class="team_title">
-              <hr>
-              <h2>News <span>From Our Blog</span></h2>
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
-            </div>
-            <!-- start featured blog -->
-            <div class="featured_blog">
-              <div class="row">
-                <!-- start single featured blog -->
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="single_featured_blog">                      
-                    <img alt="img" src="templates/modern/images/blog.jpg">
-                    <h2>It's That time of year again! </h2>
-                    <div class="post_commentbox">
-                      <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                      <a href="#"><i class="fa fa-comments"></i>Comments</a>      
-                    </div>
-                    <p>As the second largest social network in existence, a Google+ profile will give your brand a massive reach. But the most valuable thing about getting your eCommerce store onto Google+ is that Google prioritises all Google+, making it the best social media platform for search engine optimisation.</p>
-                    <a href="single.html" class="read_more">read more<i class="fa fa-long-arrow-right"></i></a>
-                  </div>
-                </div>
-                <!-- start single featured blog -->
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="single_featured_blog">                      
-                    <img alt="img" src="templates/modern/images/blog.jpg">
-                    <h2>It's That time of year again! Prepare your ecomarce </h2>
-                    <div class="post_commentbox">
-                      <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                      <a href="#"><i class="fa fa-comments"></i>Comments</a>      
-                    </div>
-                    <p>As the second largest social network in existence, a Google+ profile will give your brand a massive reach. But the most valuable thing about getting your eCommerce store onto Google+ is that Google prioritises all Google+, making it the best social media platform for search engine optimisation.</p>
-                    <a href="single.html" class="read_more">read more<i class="fa fa-long-arrow-right"></i></a>
-                  </div>
-                </div>
-                <!-- start single featured blog -->
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="single_featured_blog">                      
-                    <img alt="img" src="templates/modern/images/blog.jpg">
-                    <h2>It's That time of year again!</h2>
-                    <div class="post_commentbox">
-                      <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                      <a href="#"><i class="fa fa-comments"></i>Comments</a>      
-                    </div>
-                    <p>As the second largest social network in existence, a Google+ profile will give your brand a massive reach. But the most valuable thing about getting your eCommerce store onto Google+ is that Google prioritises all Google+, making it the best social media platform for search engine optimisation.</p>
-                    <a href="single.html" class="read_more">read more<i class="fa fa-long-arrow-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End featured blog area -->
-
   <!-- start clients brand area -->
   <section id="clients_brand">
     <div class="container">
@@ -527,10 +426,6 @@
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="single_footer_top">
-                  <h2>Think Tech</h2>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                </div>
                 <div class="single_footer_top contact_mail">
                   <h2>Contact us</h2>
                   <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+1 888-522-0212</span> or <a href="#">support@thinktech.sn</a></p>
