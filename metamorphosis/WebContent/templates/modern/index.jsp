@@ -476,6 +476,31 @@
   </section>
   <!-- End clients brand area -->  
 
+ <!-- start partners brand area -->
+  <section id="clients_brand">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="clients_brand_area wow flipInX">
+            <div class="client_title">
+              <hr>
+              <h2><span>Our</span> Partners</h2>
+            </div>              
+            <div class="clients_brand">
+              <!-- Start clients brand slider -->
+             <ul class="clb_nav wow flipInX">
+               <li><img src="templates/modern/images/jelastic.png" alt="brand-img"></li>
+               <li><img src="templates/modern/images/mirhosting.png" alt="brand-img"></li>
+             </ul>
+             <!-- End partners brand slider -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End clients brand area -->  
+
   <!-- start footer -->
   <footer id="footer">
     <div class="container">
