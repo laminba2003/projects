@@ -146,7 +146,7 @@
    
    </div>
    
-   <div title="Permissions">
+   <div  title="Permissions">
     <template  type="text/x-dust-template">
       <s:iterator value="#application.moduleManager.adminModules">
        <fieldset>
@@ -179,7 +179,7 @@
        </fieldset>
       </s:iterator>
        
-      <input type="submit" value="Change"/>
+      <input class="change-permissions" type="submit" value="Change"/>
     </template>
    </div>
    

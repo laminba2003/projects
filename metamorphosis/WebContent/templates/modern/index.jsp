@@ -61,18 +61,8 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#l">Contact Us</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Link one</a></li>
-              <li><a href="#">Link Two</a></li>
-              <li><a href="#">Link Three</a></li>               
-            </ul>
-          </li>             
-          <li><a href="#">Page</a></li>
-          <li><a href="#">Blog</a></li>                    
+          <li class="active"><a href="${path}">Home</a></li>
+          <li><a href="#">Contact Us</a></li>                  
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -615,7 +605,7 @@
                 </div>
                 <div class="single_footer_top contact_mail">
                   <h2>Contact us</h2>
-                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+1 888-522-0212</span> or <a href="#">SupportUS@yourdomain.com</a></p>
+                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+1 888-522-0212</span> or <a href="#">support@thinktech.sn</a></p>
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4">
