@@ -354,7 +354,6 @@ module.init = (entity,title) => {
 		$("#selection span").addClass("icon-16").addClass(entity+"-16");
 		page.tabs.init(entity);
 		$("body").on('keydown',event => {
-			console.log(event.keyCode);
 			switch(event.keyCode) {
 			  case 67:
             	if(event.ctrlKey) $('#create').click();
@@ -363,8 +362,9 @@ module.init = (entity,title) => {
 				if(event.ctrlKey) {
 					page.table.selectedRow = page.table.selectedRow ? page.table.selectedRow.addClass('focus') : $("tbody tr:first-child").addClass('focus');
 					$("#list").focus();
+					return false;
 				}
-				return false;
+				break;
 	        }
 	    });
 	});
