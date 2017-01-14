@@ -629,6 +629,7 @@ span input[type=radio] {
 	text-align: left;
 	white-space: nowrap;
 	font-weight: normal;
+	padding-left : 2px;
 }
 
 #details fieldset span:nth-child(odd) {
