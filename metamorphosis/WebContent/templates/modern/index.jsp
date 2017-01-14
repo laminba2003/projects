@@ -61,7 +61,6 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
-          <li><a href="#">Contact Us</a></li> 
           <li><a href="#">Log in</a></li>
           <li><a href="#">Sign up</a></li>                 
         </ul>
@@ -434,7 +433,6 @@
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">FAQ</a></li>
                     <li><a href="#">Testimonial Archive</a></li>
-                    <li><a href="#">Careers</a></li>
                     <li><a href="#">Developer API</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
                   </ul>
