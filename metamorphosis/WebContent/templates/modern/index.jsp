@@ -461,7 +461,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="footer_bottom">
             <div class="copyright">
-              <p>&copy; 2016 All rights reserved </p>
+              <p>&copy; 2017 All rights reserved </p>
             </div>
             <div class="developer">
               <p>Designed By <a href="http://wpfreeware.com/" rel="nofollow">Wpfreeware</a></p>

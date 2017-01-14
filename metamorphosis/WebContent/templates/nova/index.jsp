@@ -45,7 +45,7 @@
     	</main>
 		
 		<footer>
-			<p>&copy; 2016 powered by Metamorphosis.</p>
+			<p>&copy; 2017 powered by Metamorphosis.</p>
 		</footer>
 		
 	</div>
