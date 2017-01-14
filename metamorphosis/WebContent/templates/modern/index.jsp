@@ -56,7 +56,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="${path}">THINK <span>TECH</span></a>
+        <a class="navbar-brand" href="${path}">THINK <span>TECH</span> CRM</a>
         <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
@@ -78,7 +78,7 @@
         <ul class="slides-container">
           <!-- Start single slider-->
           <li>
-            <img src="templates/modern/images/slider/1.jpg" alt="img">
+            <img src="templates/modern/images/slider/people-office-group-team.jpg" alt="img">
             <div class="slider_caption">
               <h2><span>Welcome To</span> Think Tech CRM</h2>
               <p>
@@ -88,7 +88,7 @@
           </li> 
           <!-- Start single slider-->           
           <li>
-            <img src="templates/modern/images/slider/3.jpg" alt="img">
+            <img src="templates/modern/images/slider/money-card-business-credit-card-50987.jpeg" alt="img">
              <div class="slider_caption">
               <h2>Beautiful <span>Clear and Flexible</span></h2>
               <p>
@@ -133,16 +133,16 @@
                       <!-- Set up your HTML -->
                     <div class="slick_slider">
                       <div class="single_iteam">
-                        <a href="single_page.html"> <img src="templates/modern/images/works_slider1.jpg" alt="img"></a>                          
+                        <a href="#"> <img src="templates/modern/images/pexels-photo-40120.jpeg" alt="img"></a>                          
                       </div>
                       <div class="single_iteam">
-                        <a href="single_page.html"> <img src="templates/modern/images/works_slider2.jpg" alt="img"></a>                          
+                        <a href="#"> <img src="templates/modern/images/pexels-photo-15.jpg" alt="img"></a>                          
                       </div>
                       <div class="single_iteam">
-                        <a href="single_page.html"> <img src="templates/modern/images/works_slider1.jpg" alt="img"></a>                          
+                        <a href="#"> <img src="templates/modern/images/pexels-photo-28462.jpg" alt="img"></a>                          
                       </div>
                       <div class="single_iteam">
-                        <a href="single_page.html"> <img src="templates/modern/images/works_slider2.jpg" alt="img"></a>                          
+                        <a href="#"> <img src="templates/modern/images/pexels-photo-57825.jpeg" alt="img"></a>                          
                       </div>
                     </div>
                   </div>
@@ -285,7 +285,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 wow bounceInLeft">
-          <p>Pairing substantial savings in time and money with the ease and reliability of doing it in-house, ever since we invented it</p>
+          <p>Pairing substantial savings in time and money with the ease and reliability of doing it in-house, ever since we invented it.</p>
         </div>
       </div>
     </div>
@@ -310,7 +310,7 @@
                   <small>Jacquie Ward, Love Movement</small>
                   </blockquote>
                   <div class="client_img">
-                    <img src="templates/modern/images/leify.png" alt="img">
+                    <img src="templates/modern/images/customer.png" alt="img">
                   </div>
                </div>
               </li>
@@ -321,7 +321,7 @@
                   <small>Jacquie Ward, Love Movement</small>
                   </blockquote>
                   <div class="client_img">
-                    <img src="templates/modern/images/leify.png" alt="img">
+                    <img src="templates/modern/images/customer.png" alt="img">
                   </div>
                </div>
               </li>
@@ -332,7 +332,7 @@
                   <small>Jacquie Ward, Love Movement</small>
                   </blockquote>
                   <div class="client_img">
-                    <img src="templates/modern/images/leify.png" alt="img">
+                    <img src="templates/modern/images/customer.png" alt="img">
                   </div>
                </div>
               </li>
