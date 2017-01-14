@@ -240,7 +240,7 @@ h1 a:hover {
 fieldset {
 	border-radius: 0.5em;
     border : 1px solid #06d0d8;
-    background-color: #fffde1;
+    background-color : #fffccc;
     box-shadow: 0.08em 0.05em 0.08em #ccc;
 	font-family : Maven Pro;
 }

@@ -358,9 +358,10 @@ footer p {
 	display: inline-block;
 	width: 24%;
 	text-align: right;
-	font-weight: normal;
 	white-space: nowrap;
 	font-size: 1.3em;
+	font-weight : 600;
+	background-color : rgba(255,255,255,0.05);
 }
 
 #form fieldset label.required:before {
@@ -628,13 +629,14 @@ span input[type=radio] {
 	width: 44%;
 	text-align: left;
 	white-space: nowrap;
-	font-weight: normal;
 	padding-left : 2px;
 }
 
 #details fieldset span:nth-child(odd) {
 	text-align: right;
 	width: 38%;
+	font-weight : 600;
+	background-color : rgba(255,255,255,0.05);
 }
 
 #offline {
