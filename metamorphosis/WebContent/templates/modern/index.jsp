@@ -44,7 +44,7 @@
   </div>
  
   <!-- End Preloader -->   
-  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+  <a class="scrollToTop"><i class="fa fa-angle-up"></i></a>
   
   <!-- start navbar -->
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -56,13 +56,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="${path}">THINK <span>TECH</span> CRM</a>
+        <a class="navbar-brand" href="${path}">THINK <span>TECH</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
-          <li><a href="#">Log in</a></li>
-          <li><a href="#">Sign up</a></li>                 
+          <li><a>Log in</a></li>
+          <li><a>Sign up</a></li>                 
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -107,8 +107,8 @@
            </li>
         </ul>
         <nav class="slides-navigation">
-          <a href="#" class="next"></a>
-          <a href="#" class="prev"></a>
+          <a class="next"></a>
+          <a class="prev"></a>
         </nav>
       </div>
     </div>  
@@ -131,16 +131,16 @@
                       <!-- Set up your HTML -->
                     <div class="slick_slider">
                       <div class="single_iteam">
-                        <a href="#"> <img src="templates/modern/images/pexels-photo-40120.jpeg" alt="img"></a>                          
+                        <a> <img src="templates/modern/images/pexels-photo-40120.jpeg" alt="img"></a>                          
                       </div>
                       <div class="single_iteam">
-                        <a href="#"> <img src="templates/modern/images/pexels-photo-15.jpg" alt="img"></a>                          
+                        <a> <img src="templates/modern/images/pexels-photo-15.jpg" alt="img"></a>                          
                       </div>
                       <div class="single_iteam">
-                        <a href="#"> <img src="templates/modern/images/pexels-photo-28462.jpg" alt="img"></a>                          
+                        <a> <img src="templates/modern/images/pexels-photo-28462.jpg" alt="img"></a>                          
                       </div>
                       <div class="single_iteam">
-                        <a href="#"> <img src="templates/modern/images/pexels-photo-57825.jpeg" alt="img"></a>                          
+                        <a> <img src="templates/modern/images/pexels-photo-57825.jpeg" alt="img"></a>                          
                       </div>
                     </div>
                   </div>
@@ -150,7 +150,7 @@
                 <div class="howworks_featured wow fadeInRightBig">
                 <!-- single featured -->
                   <div class="media">
-                    <a class="media-left media-middle" href="#">
+                    <a class="media-left media-middle">
                       <i class="fa fa-laptop"></i>
                     </a>
                     <div class="media-body">
@@ -162,7 +162,7 @@
 
                   <!-- single featured -->
                   <div class="media">
-                    <a class="media-left media-middle" href="#">
+                    <a class="media-left media-middle">
                       <i class="fa fa-legal"></i>
                     </a>
                     <div class="media-body">
@@ -174,7 +174,7 @@
 
                   <!-- single featured -->
                   <div class="media">
-                    <a class="media-left media-middle" href="#">
+                    <a class="media-left media-middle">
                       <i class="fa fa-line-chart"></i>
                     </a>
                     <div class="media-body">
@@ -183,7 +183,7 @@
                     </div>
                   </div>
                   <!-- End single featured -->
-                  <a class="featured_btn" href="#">Try it now for free!</a>
+                  <a class="featured_btn">Try it now for free!</a>
                 </div>
               </div>
             </div>
@@ -218,7 +218,7 @@
                 </ul>
                 <h3>$30</h3>
                 <p>Per Month</p>
-                <a class="get_button" href="#">Get a quote</a>
+                <a class="get_button">Get a quote</a>
               </li>
               <!-- Start single Plan -->
               <li>
@@ -234,7 +234,7 @@
                 </ul>
                 <h3>$50</h3>
                 <p>Per Month</p>
-                <a class="get_button" href="#">Get a quote</a>
+                <a class="get_button">Get a quote</a>
               </li>
               <!-- Start single Plan -->
               <li>
@@ -251,7 +251,7 @@
                 <h3>$90</h3>
                 <p>Per Month</p>
                 <span class="price_badge">Most Popular!</span>
-                <a class="get_button" href="#">Get a quote</a>
+                <a class="get_button">Get a quote</a>
               </li>
               <!-- Start single Plan -->
               <li>
@@ -267,7 +267,7 @@
                  </ul>
                 <h3>$130</h3>
                 <p>Per Month</p>
-                <a class="get_button" href="#">Get a quote</a>
+                <a class="get_button">Get a quote</a>
               </li>
             </ul>
           </div>
@@ -405,46 +405,46 @@
                 <div class="single_footer_top">
                   <h2>Footer Widget </h2>
                   <ul>
-                    <li><a href="#">Lorem Ipsum is simply dummy text of the printing</a></li>
-                    <li><a href="#">Dummy text of the printing</a></li>
-                    <li><a href="#">There are many variations of passages</a></li>
-                    <li><a href="#">Lorem Ipsum available</a></li>
-                    <li><a href="#">Lorem Ipsum is not simply random text</a></li>
-                    <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
-                    <li><a href="#">Dummy text of the printing</a></li>
-                    <li><a href="#">There are many variations of passages</a></li>
-                    <li><a href="#">Lorem Ipsum available</a></li>
-                    <li><a href="#">Lorem Ipsum is not simply random text</a></li>
-                    <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
+                    <li><a>Lorem Ipsum is simply dummy text of the printing</a></li>
+                    <li><a>Dummy text of the printing</a></li>
+                    <li><a>There are many variations of passages</a></li>
+                    <li><a>Lorem Ipsum available</a></li>
+                    <li><a>Lorem Ipsum is not simply random text</a></li>
+                    <li><a>The standard chunk of Lorem Ipsum</a></li>
+                    <li><a>Dummy text of the printing</a></li>
+                    <li><a>There are many variations of passages</a></li>
+                    <li><a>Lorem Ipsum available</a></li>
+                    <li><a>Lorem Ipsum is not simply random text</a></li>
+                    <li><a>The standard chunk of Lorem Ipsum</a></li>
                   </ul>
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="single_footer_top contact_mail">
                   <h2>Contact us</h2>
-                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+1 888-522-0212</span> or <a href="#">support@thinktech.sn</a></p>
+                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+1 888-522-0212</span> or <a>support@thinktech.sn</a></p>
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="single_footer_top">
                   <h2>Links </h2>
                   <ul>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Testimonial Archive</a></li>
-                    <li><a href="#">Developer API</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a>Support</a></li>
+                    <li><a>Blog</a></li>
+                    <li><a>FAQ</a></li>
+                    <li><a>Testimonial Archive</a></li>
+                    <li><a>Developer API</a></li>
+                    <li><a>Terms & Conditions</a></li>
                   </ul>
                 </div>
                 <div class="single_footer_top">
                   <h2>Social Links </h2>
                   <ul class="social_nav">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a><i class="fa fa-facebook"></i></a></li>
+                    <li><a><i class="fa fa-twitter"></i></a></li>
+                    <li><a><i class="fa fa-google-plus"></i></a></li>
+                    <li><a><i class="fa fa-youtube"></i></a></li>
+                    <li><a><i class="fa fa-linkedin"></i></a></li>
                   </ul>
                 </div>
               </div>
