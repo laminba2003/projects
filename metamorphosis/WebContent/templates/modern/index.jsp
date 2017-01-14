@@ -123,8 +123,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="howworks_area">
             <div class="client_title">
-              <hr>
-              <h2>How <span>It Works</span></h2>
+              <h2>How It Works</h2>
             </div>
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6">
@@ -202,8 +201,7 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="client_title">
-            <hr>
-            <h2>Choose <span>Your Plan</span></h2>
+            <h2>Choose Your Plan</h2>
           </div>
           <!-- Start Plan area -->
           <div class="pricearea">
@@ -299,8 +297,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="testimonial_area wow bounceIn">
             <div class="client_title">
-              <hr>
-              <h2>What <span>Others are Saying</span></h2>
+              <h2>What Others are Saying</h2>
             </div>
             <ul class="testimon_nav">
               <li>
@@ -351,8 +348,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="clients_brand_area wow flipInX">
             <div class="client_title">
-              <hr>
-              <h2><span>Our</span> Clients</h2>
+              <h2>Our Clients</h2>
             </div>              
             <div class="clients_brand">
               <!-- Start clients brand slider -->
@@ -382,8 +378,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="clients_brand_area wow flipInX">
             <div class="client_title">
-              <hr>
-              <h2><span>Our</span> Partners</h2>
+              <h2>Our Partners</h2>
             </div>              
             <div class="clients_brand">
               <!-- Start clients brand slider -->
@@ -485,10 +480,7 @@
   <script src="templates/modern/js/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script>
   <!-- slick slider js file -->
   <script src="templates/modern/js/slick.min.js"></script>
-  <!-- Google map -->
-  <script src="https://maps.googleapis.com/maps/api/js"></script>
-  <script src="templates/modern/js/jquery.ui.map.js"></script>
-
+  
   <!-- custom js file include -->
   <script src="templates/modern/js/custom.js"></script>  
       

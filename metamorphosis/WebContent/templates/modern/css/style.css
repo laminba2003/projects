@@ -200,7 +200,6 @@ img{
   position:absolute;
   left:50%; /* centers the loading animation horizontally one the screen */
   top:50%; /* centers the loading animation vertically one the screen */
-  background-image:url(images/status.gif); /* path to your loading animation */
   background-repeat:no-repeat;
   background-position:center;
   margin:-100px 0 0 -100px; /* is width and height divided by two */
@@ -264,6 +263,7 @@ img{
   font-family: "Raleway",sans-serif;
   font-weight: bold;
   margin-top: 10px;
+  white-space : nowrap;
 }
 .navbar-brand span{
   text-transform: uppercase;
@@ -443,7 +443,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   display: inline;
   width: 100%;
   background-color: #f0f0f0;
-  padding-top: 70px;
+  padding-top: 0px;
 }
 .pricearea {
   display: inline;
@@ -617,8 +617,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   display: inline;
   float: left;
   width: 100%;
-  margin-top: 70px;
-  margin-bottom: 150px;
+  margin-top: 20px;
+  margin-bottom: 70px;
 }
 .client_title{
   display: block;
@@ -827,7 +827,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .howworks_area {
   display: inline;
   float: left;
-  padding: 60px 0 105px;
+  padding: 20px 0 105px;
   width: 100%;
 }
 .howworks_slider {
@@ -836,21 +836,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   min-height: 100px;
   padding-left: 35px;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 .howworks_featured {
   display: inline;
   float: left;  
   width: 100%;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 .slider_area{
-  background-image: url(images/works_sliderbg.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%;
   width: 480px;
-  height: 420px;
+  height: 320px;
   float: left;
   display: block;
 }
@@ -881,8 +880,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   opacity: 1;
 }
 .slick-dots {
-  bottom: -130px;
+  bottom: -25px;
+  text-align : right;
 }
+
 .slick-dots li.slick-active button:before {
   opacity: 1;
 }
@@ -895,7 +896,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   border: 1px solid #ccc;
   padding: 10px;
   font-size: 15px;
-  margin-top: 50px;
+  margin-top: 10px;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
@@ -1047,7 +1048,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .clients_brand_area {
   display: inline;
   float: left;
-  padding: 60px 0 105px;
+  padding: 20px 0 20px;
   width: 100%;
 }
 .clients_brand{
