@@ -93,7 +93,7 @@
           <li>
             <img src="templates/modern/images/slider/pexels-photo-251225.jpeg" alt="img">
              <div class="slider_caption">
-              <h2>Hosting<span> and Cloud Management</span></h2>
+              <h2>Hosting<span> and </span>Cloud Management</h2>
               <p>
  				Deploy your solutions on our Cloud and let us manage everything for you.
  				</p>
@@ -103,7 +103,7 @@
           <li>
             <img src="templates/modern/images/slider/black-and-white-code-programming-tech-79290.jpeg" alt="img">
              <div class="slider_caption">
-              <h2>Consulting<span> and Training</span></h2>
+              <h2>Consulting<span> and </span>Training</h2>
               <p>
 				 <b>Expert advice to help you plan the next steps for your busines and we train our customers through hands-on experience.</b>
 			  </p>
