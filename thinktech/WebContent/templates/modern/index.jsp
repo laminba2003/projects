@@ -347,10 +347,6 @@
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="single_footer_top">
-                  <h2>Think Tech</h2>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                </div>
                 <div class="single_footer_top contact_mail">
                   <h2>Contact us</h2>
                   <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+1 888-522-0212</span> or <a href="#">info@thinktech.sn</a></p>
