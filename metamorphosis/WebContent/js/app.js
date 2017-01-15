@@ -286,9 +286,12 @@ page.search = {};
 page.search.init = () => {
 	$('#search input').val("").focus();
 	$('#search').submit(function(){;
-	     if(!$('input',this).val().trim()) return alert("enter your search");
-	     const data = $(this).serialize();
-		 app.post(page.table.url+"/search",data, entities => page.render($("tbody"), entities, page.table.display));
+	     if(!$('input',this).val().trim()) {
+	    	 app.get(page.table.url, entities => page.render($("tbody"), entities, page.table.display));
+	     }else {
+	    	 const data = $(this).serialize();
+		 	 app.post(page.table.url+"/search",data, entities => page.render($("tbody"), entities, page.table.display));
+	     }
 		 return false;
 	});
 };
