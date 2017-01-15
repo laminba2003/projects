@@ -35,7 +35,7 @@ Tags: light, white, Business,Multiple page, Blog, custom-colors,Bootstrap,respon
 
 body {  
   color: #333;
-  background-color: #f0f0f0;
+  background-color : #fdf9df;
   overflow-x: hidden !important;
   font-family: 'Open Sans', sans-serif;  
 }
@@ -442,7 +442,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   float: left;
   display: inline;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color : #fdf9df;
   padding-top: 0px;
 }
 .pricearea {
@@ -636,7 +636,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   background-color: #d8d8d8;
 }
 .client_title > h2 {
-  background: none repeat scroll 0 0 #f0f0f0;
+  background: none repeat scroll 0 0 transparent;
   display: inline-block;
   margin-top: 7px;
   padding: 0 20px;
@@ -1039,6 +1039,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 /*--------------------*/
 /* Home Clients Brand */
 /*--------------------*/
+
+#clients_brand{
+  background-color : #fdf9df;
+}
 
 .clients_brand{
   display: inline;
