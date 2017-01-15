@@ -1,4 +1,3 @@
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,11 +29,11 @@
 		</header>
 		
 		<main>
-		   <tiles:insertAttribute name="content"/>
+		   content
     	</main>
 		
 		<footer>
-			<p>&copy; 2016 powered by Metamorphosis.</p>
+			<p>&copy; 2017 powered by Metamorphosis.</p>
 		</footer>
 		
 	</div>
