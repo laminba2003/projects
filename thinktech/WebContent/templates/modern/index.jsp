@@ -93,7 +93,7 @@
           <li>
             <img src="templates/modern/images/slider/pexels-photo-251225.jpeg" alt="img">
              <div class="slider_caption">
-              <h2>Hosting<span> and </span>Cloud Management</h2>
+              <h2>Cloud Hosting<span> and </span>Management</h2>
               <p>
  				Deploy your solutions on our Cloud and let us manage everything for you.
  				</p>
