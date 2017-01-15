@@ -81,35 +81,32 @@
         <ul class="slides-container">
           <!-- Start single slider-->
           <li>
-            <img src="templates/modern/images/slider/1.jpg" alt="img">
+            <img src="templates/modern/images/slider/startup-photos.jpg" alt="img">
             <div class="slider_caption">
-              <h2><span>Welcome To</span> Think Tech</h2>
+              <h2><span>Software</span> Development</h2>
               <p>
-				<b>We offer</b> a complete and integrated <b>CRM</b> solution that breaks down silos to deliver a seamless customer experience across marketing, sales, commerce, service, and social.
+				We distinguish ourselves from other IT companies by delivering projects on time and on budget and we have an excellent customer service and support. 
 			 </p>
-              <a class="slider_btn" href="#">Read More</a>
             </div>
           </li> 
           <!-- Start single slider-->           
           <li>
-            <img src="templates/modern/images/slider/3.jpg" alt="img">
+            <img src="templates/modern/images/slider/pexels-photo-251225.jpeg" alt="img">
              <div class="slider_caption">
-              <h2>Beautiful <span>Clear and Flexible</span></h2>
+              <h2>Hosting<span> and Cloud Management</span></h2>
               <p>
- 				Today's mobile salesforce needs a <b>CRM</b> system that is easy to use and provides the relevant information they need to make sales faster.
+ 				Deploy your solutions on our Cloud and let us manage everything for you.
  				</p>
-              <a class="slider_btn" href="#">Read More</a>
             </div>
             </li>
           <!-- Start single slider-->
           <li>
-            <img src="templates/modern/images/slider/2.jpg" alt="img">
+            <img src="templates/modern/images/slider/black-and-white-code-programming-tech-79290.jpeg" alt="img">
              <div class="slider_caption">
-              <h2><span>Beausiness</span> & Corporate</h2>
+              <h2>Consulting<span> and Training</span></h2>
               <p>
-				 A modern, integrated <b>CRM</b> leverages a multichannel environment to provide better service at a reduced cost.
+				 <b>Expert advice to help you plan the next steps for your busines and we train our customers through hands-on experience.</b>
 			  </p>
-              <a class="slider_btn" href="#">Read More</a>
             </div>
            </li>
         </ul>
@@ -166,7 +163,6 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="testimonial_area wow bounceIn">
             <div class="client_title">
-              <hr>
               <h2>What <span>Others are Saying</span></h2>
             </div>
             <ul class="testimon_nav">
@@ -218,9 +214,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="featuredBlog_area">
             <div class="team_title">
-              <hr>
               <h2>News <span>From Our Blog</span></h2>
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
             </div>
             <!-- start featured blog -->
             <div class="featured_blog">
@@ -280,7 +274,6 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="clients_brand_area wow flipInX">
             <div class="client_title">
-              <hr>
               <h2><span>Our</span> Clients</h2>
             </div>              
             <div class="clients_brand">
@@ -311,7 +304,6 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="clients_brand_area wow flipInX">
             <div class="client_title">
-              <hr>
               <h2><span>Our</span> Partners</h2>
             </div>              
             <div class="clients_brand">
@@ -369,9 +361,7 @@
                   <h2>Links </h2>
                   <ul>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">FAQ</a></li>
                     <li><a href="#">Testimonial Archive</a></li>
-                    <li><a href="#">Careers</a></li>
                   </ul>
                 </div>
                 <div class="single_footer_top">
@@ -391,7 +381,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="footer_bottom">
             <div class="copyright">
-              <p>&copy; 2016 All rights reserved </p>
+              <p>&copy; 2017 All rights reserved </p>
             </div>
             <div class="developer">
               <p>Designed By <a href="http://wpfreeware.com/" rel="nofollow">Wpfreeware</a></p>

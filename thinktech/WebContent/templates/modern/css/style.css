@@ -372,7 +372,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   position: relative;
   right: 0;
   text-align: center;
-  top: 33%;
+  top: 41%;
   width: 100%;
 }
 .slider_caption > h2 {
@@ -612,6 +612,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   float: left;
   display: inline;
   width: 100%;
+  background-color : #fdf9df;
 }
 .testimonial_area {
   display: inline;
@@ -636,7 +637,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   background-color: #d8d8d8;
 }
 .client_title > h2 {
-  background: none repeat scroll 0 0 #f0f0f0;
+  background: none repeat scroll 0 0 transparent;
   display: inline-block;
   margin-top: 7px;
   padding: 0 20px;
@@ -1037,11 +1038,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 /* Home Clients Brand */
 /*--------------------*/
 
+#clients_brand{
+  background-color : #fdf9df;
+}
+
 .clients_brand{
   display: inline;
   float: left;
   width: 100%;
 }
+
 .clients_brand_area {
   display: inline;
   float: left;
