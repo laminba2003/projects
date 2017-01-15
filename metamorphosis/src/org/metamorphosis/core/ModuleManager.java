@@ -44,13 +44,11 @@ public class ModuleManager implements DispatcherListener {
 		File[] files = root.listFiles();
 		if(files != null) {
 		  for(File folder : files) {
-			if(folder.isDirectory()) {
-			   loadModule(folder);
-			}
+			if(folder.isDirectory()) loadModule(folder);
 		  }
+		  orderModules();
+		  monitorRoot(root);
 		}
-		orderModules();
-		monitorRoot(root);
 	}
 
 	public void loadModule(File folder) {

@@ -61,6 +61,11 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Developers</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Careers</a></li>
           <li><a href="#">Contact Us</a></li>                 
         </ul>
       </div><!--/.nav-collapse -->
