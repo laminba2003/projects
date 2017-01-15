@@ -347,7 +347,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="clients_brand_area wow flipInX">
             <div class="client_title">
-              <h2>Our Clients</h2>
+              <h2>Our Customers</h2>
             </div>              
             <div class="clients_brand">
               <!-- Start clients brand slider -->
