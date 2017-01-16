@@ -660,8 +660,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   width: 30%;
 }
 .testimonial_content {
-  background-color: #fcfcfc;
-  border-color: white;
+  background-color: #fff;
+  border-color: #fcfcfc;
   border-radius: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05) inset, 0 1px 3px rgba(0, 0, 0, 0.125);
   min-height: 226px !important;
@@ -878,10 +878,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   border: 2px solid #d8d8d8;
   color: #fff;
   opacity: 1;
-  display : none;
+}
+.slick-dots li button {
+	margin-top : 0px;
 }
 .slick-dots {
-  bottom: -25px;
+  bottom: -45px;
   text-align : right;
 }
 
