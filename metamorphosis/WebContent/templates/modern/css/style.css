@@ -878,6 +878,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   border: 2px solid #d8d8d8;
   color: #fff;
   opacity: 1;
+  display : none;
 }
 .slick-dots {
   bottom: -25px;
