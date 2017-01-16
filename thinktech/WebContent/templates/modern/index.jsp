@@ -6,23 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Think Tech</title>
     <base href="${path}"/>
-    <!-- Bootstrap -->
-    <link href="templates/modern/css/bootstrap.min.css" rel="stylesheet">
-    <!-- for fontawesome icon css file -->
-    <link href="templates/modern/css/font-awesome.min.css" rel="stylesheet">
-    <!-- superslides css -->
-    <link rel="stylesheet" href="templates/modern/css/superslides.css">
-    <!-- for content animate css file -->
-    <link rel="stylesheet" href="templates/modern/css/animate.css">    
-    <!-- slick slider css file -->
-    <link href="templates/modern/css/slick.css" rel="stylesheet">        
-    <!-- website theme color file -->   
-     <link id="switcher" href="templates/modern/css/themes/cyan-theme.css" rel="stylesheet">    
-    <!-- main site css file -->    
-    <link href="templates/modern/css/style.css" rel="stylesheet">    
-    <!-- google fonts  -->  
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>    
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>  
+    <!-- Template css -->
+    <link href="templates/modern/css/template.css" rel="stylesheet"> 
     <!-- Favicon -->
     <link rel="shortcut icon" href="templates/modern/images/icons_cloud-32.png"  sizes="32x32">  
   
@@ -402,10 +387,7 @@
   <script src="templates/modern/js/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script>
   <!-- slick slider js file -->
   <script src="templates/modern/js/slick.min.js"></script>
-  <!-- Google map -->
-  <script src="https://maps.googleapis.com/maps/api/js"></script>
-  <script src="templates/modern/js/jquery.ui.map.js"></script>
-
+ 
   <!-- custom js file include -->
   <script src="templates/modern/js/custom.js"></script>  
       
