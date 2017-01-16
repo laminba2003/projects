@@ -1053,7 +1053,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .clients_brand_area {
   display: inline;
   float: left;
-  padding: 60px 0 105px;
+  padding: 20px 0 20px;
   width: 100%;
 }
 .clients_brand{
@@ -1065,6 +1065,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   padding : 20px;
   padding-top : 40px;
 }
+
 .clb_nav{
   text-align: center;
 }
