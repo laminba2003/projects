@@ -25,7 +25,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>    
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>  
     <!-- Favicon -->
-    <link rel="shortcut icon" href="templates/modern/images/favicon.ico" type="image/x-icon">  
+    <link rel="shortcut icon" href="templates/modern/images/icons_cloud-32.png"  sizes="32x32">  
   
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
