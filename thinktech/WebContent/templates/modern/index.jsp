@@ -4,11 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta property="og:site_name" content="thinktech.sn" />
-    <meta property="og:title" content="Welcome to ThinkTech" />
-    <meta property="og:url" content="http://env-3687617.mircloud.host/thinktech/" />
-    <meta property="og:image" content="templates/modern/images/slider/startup-photos.jpg" />
-    <meta property="og:type" content="Site Presentation" />
+    <meta name="description" content="Think Tech is an IT company specialized in Software Development, Consulting and Training"/>
     <title>Think Tech</title>
     <base href="${path}"/>
     <!-- Bootstrap -->
