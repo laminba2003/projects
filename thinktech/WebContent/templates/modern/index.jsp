@@ -4,7 +4,6 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Think Tech is an IT company specialized in Software Development, Consulting and Training"/>
     <title>Think Tech</title>
     <base href="${path}"/>
     <!-- Bootstrap -->
@@ -38,7 +37,7 @@
   <!-- =========================
     //////////////This Theme Design and Developed //////////////////////
     //////////// by www.wpfreeware.com======================--> 
-
+    
   <!-- Preloader -->
   <div id="preloader">
     <div id="status">&nbsp;</div>
