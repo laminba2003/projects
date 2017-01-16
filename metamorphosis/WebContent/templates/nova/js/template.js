@@ -16,7 +16,7 @@ const onFinish = () => {
 	return true;
 };
 
-const onShowStep = (step,context) => {
+const onShowStep = (obj,context) => {
 	$("input:eq(0)",$(".stepContainer div").eq(context.toStep-1)).focus();
 	return true;
 };
