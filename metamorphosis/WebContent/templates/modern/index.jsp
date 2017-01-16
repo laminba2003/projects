@@ -6,23 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>THINK TECH CRM</title>
     <base href="${path}"/>
-    <!-- Bootstrap -->
-    <link href="templates/modern/css/bootstrap.min.css" rel="stylesheet">
-    <!-- for fontawesome icon css file -->
-    <link href="templates/modern/css/font-awesome.min.css" rel="stylesheet">
-    <!-- superslides css -->
-    <link rel="stylesheet" href="templates/modern/css/superslides.css">
-    <!-- for content animate css file -->
-    <link rel="stylesheet" href="templates/modern/css/animate.css">    
-    <!-- slick slider css file -->
-    <link href="templates/modern/css/slick.css" rel="stylesheet">        
-    <!-- website theme color file -->   
-     <link id="switcher" href="templates/modern/css/themes/cyan-theme.css" rel="stylesheet">    
-    <!-- main site css file -->    
-    <link href="templates/modern/css/style.css" rel="stylesheet">    
-    <!-- google fonts  -->  
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>    
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>  
+    <!-- Template CSS -->
+    <link href="templates/modern/css/template.css" rel="stylesheet">  
     <!-- Favicon -->
      <link rel="shortcut icon" href="templates/modern/images/icon-32.png"  sizes="32x32">    
   
