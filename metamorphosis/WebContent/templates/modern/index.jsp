@@ -34,6 +34,7 @@
     <![endif]-->
   </head>
 <body>
+
   <!-- =========================
     //////////////This Theme Design and Developed //////////////////////
     //////////// by www.wpfreeware.com======================--> 
@@ -61,9 +62,27 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
-          <li><a>Log in</a></li>
+          <li><a href="#" id="logIn">Log in</a></li>
           <li><a>Sign up</a></li>                 
         </ul>
+        <div class="loginForm">
+  		 <div class="ribbon"></div>
+  		  <div class="login">
+  		  <h1>Welcome</h1>
+  		  <p>Enter your credentials</p>
+  		  <form action="${login}">
+    		<div class="input">
+      		 <div class="blockinput">
+        		<i class="icon-envelope-alt"></i><input type="email" placeholder="Email">
+      		 </div>
+     		 <div class="blockinput">
+        		<i class="icon-unlock"></i><input type="password" placeholder="Password">
+      		 </div>
+    		</div>
+    		<button>Login</button>
+  		 </form>
+  		</div>
+  		</div>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
@@ -465,7 +484,7 @@
     </div>
   </footer>
   <!-- End footer -->
-
+ 
   <!-- jQuery Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <!-- For content animatin  -->
