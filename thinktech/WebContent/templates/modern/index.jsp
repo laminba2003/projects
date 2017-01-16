@@ -106,7 +106,7 @@
              <div class="slider_caption">
               <h2>Consulting<span> and </span>Training</h2>
               <p>
-				 <b>Expert advice to help you plan the next steps for your busines and we train our customers through hands-on experience.</b>
+				 <b>Expert advice to help you plan the next steps for your business and we train our customers through hands-on experience.</b>
 			  </p>
             </div>
            </li>
