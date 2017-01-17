@@ -4323,16 +4323,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   margin-bottom: 20px;
 }
 .single_footer_top ul li a {
-  color: #d42323;
+  color: #000;
   display: block;
-  font-weight: bold;
   margin-bottom: 6px;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 .single_footer_top p {
-  color: #d42323;
+  color: #000;
   line-height: 22px;
 }
 .footer_middle{
