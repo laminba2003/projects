@@ -49,6 +49,7 @@
           <li><a href="#">Products</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Developers</a></li>
+          <li><a href="#">Education</a></li>
           <li><a href="#">Support</a></li>
           <li><a href="#">Careers</a></li>
           <li><a href="#">About Us</a></li>  
