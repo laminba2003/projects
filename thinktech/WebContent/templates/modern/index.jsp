@@ -342,8 +342,10 @@
                 <div class="single_footer_top">
                   <h2>Links </h2>
                   <ul>
+                    <li><a href="#">Company</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Testimonial Archive</a></li>
+                    <li><a href="#">Events</a></li>
                   </ul>
                 </div>
                 <div class="single_footer_top">
