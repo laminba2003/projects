@@ -12,7 +12,7 @@
    <meta name="description" content="" />
    <meta name="keywords" content="" />
    <base href="${path}/"/>
-   <title><tiles:insertAttribute name="title" ignore="true" /></title>
+   <title>Think Dev</title>
    <link rel="icon" href="images/brain.png">
    <link href="css/app.css" rel="stylesheet" />
    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
