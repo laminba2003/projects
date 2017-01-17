@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>SenTube</title>
     <base href="${path}"/>
+    <!-- Materialize css -->
+    <link href="templates/modern/css/materialize.min.css" rel="stylesheet"> 
     <!-- Template css -->
     <link href="templates/modern/css/template.css" rel="stylesheet"> 
     <!-- Favicon -->
@@ -53,54 +55,15 @@
     </div>
   </nav>
   <!-- End navbar -->
-
-  <!-- start slider section -->
-  <section id="sliderSection">            
-    <div class="mainslider_area">
-      <!-- Start super slider -->
-      <div id="slides">
-        <ul class="slides-container">
-          <!-- Start single slider-->
-          <li>
-            <img src="templates/modern/images/slider/startup-photos.jpg" alt="img">
-            <div class="slider_caption">
-              <h2><span>Software</span> Development</h2>
-              <p>
-				We distinguish ourselves from other IT companies by delivering projects on time and on budget and we have an excellent customer service and support. 
-			 </p>
-            </div>
-          </li> 
-          <!-- Start single slider-->           
-          <li>
-            <img src="templates/modern/images/slider/pexels-photo-251225.jpeg" alt="img">
-             <div class="slider_caption">
-              <h2>Cloud Hosting<span> and </span>Management</h2>
-              <p>
- 				Deploy your solutions on our Cloud and let us manage everything for you.
- 				</p>
-            </div>
-            </li>
-          <!-- Start single slider-->
-          <li>
-            <img src="templates/modern/images/slider/black-and-white-code-programming-tech-79290.jpeg" alt="img">
-             <div class="slider_caption">
-              <h2>Consulting<span> and </span>Training</h2>
-              <p>
-				 <b>Expert advice to help you plan the next steps for your business and we train our customers through hands-on experience.</b>
-			  </p>
-            </div>
-           </li>
-        </ul>
-        <nav class="slides-navigation">
-          <a href="#" class="next"></a>
-          <a href="#" class="prev"></a>
-        </nav>
-      </div>
-    </div>  
-  </section>
-  <!-- End slider section -->
-
   
+  <div style="padding-left:10%;padding-right:10%;padding-top:0%;padding-bottom:15px;margin-top:76px">
+  
+  <div class="video-container">
+     <iframe width="853" height="480" src="//www.youtube.com/embed/BGt1htuyhiU?rel=0" frameborder="0" allowfullscreen></iframe>
+  </div>
+  
+  </div>
+    
   <!-- start footer -->
   <footer id="footer">
     <div class="container">
