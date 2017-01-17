@@ -336,7 +336,7 @@
               <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="single_footer_top contact_mail">
                   <h2>Contact us</h2>
-                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+1 888-522-0212</span> or <a href="#">info@thinktech.sn</a></p>
+                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+221 33-855-10-91</span> or <a href="#">info@thinktech.sn</a></p>
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4">
