@@ -87,7 +87,7 @@
 	    		<h1>Notre Mission</h1>
 	    		<div class="mission">
 	 				<p>
-	 					La mission principale de <strong>Developpez.sn</strong> est d'être la plate-forme de référence en développement informatique au Sénégal pour parfaire votre vision et votre maîtrise du développement informatique.
+	 					La mission principale de <strong>Think Dev</strong> est d'être la plateforme de référence en développement informatique au Sénégal pour parfaire votre vision et votre maîtrise du développement informatique.
 	 				</p>
 		 		</div>
 		 		<a class="scroller" href="#second"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
