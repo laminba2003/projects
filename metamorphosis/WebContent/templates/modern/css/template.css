@@ -3710,7 +3710,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   padding: 10px 0;
 }
 .pfeatured_nav li:nth-child(odd){
-  background-color: #f8f8f8;
+  background-color: #fdf9df;
 }
 .get_button {
   background-color: #8c8c8c;
