@@ -7,7 +7,7 @@
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <meta name="author" content="developpez.sn"/>
+   <meta name="author" content="thinktech.sn"/>
    <meta name="category" content="internet" />
    <meta name="robots" content="All" />
    <meta name="description" content="" />
@@ -60,8 +60,6 @@
 			<span>News</span>
 			<ul>
 				<li><a href="#">Version 1.0 disponible</a></li>
-				<li><a href="#">Présentation à l'UCAD</a></li>
-				<li><a href="#">Night Hacking au Sea Plaza</a></li>
 				<li><a href="#">Nouveaux cours disponibles</a></li>
 			</ul>
 		</div>
@@ -100,7 +98,7 @@
 		
 		<footer>
 			<p><a href="#top"><i class="fa fa-chevron-up backTop" aria-hidden="true"></i></a></p>
-			<p>© 2016 Developpez.sn All rights reserved.</p>
+			<p>© 2017 thinktech.sn All rights reserved.</p>
 		</footer>
 		
 	</div>

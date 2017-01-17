@@ -456,13 +456,8 @@ header {
 	font-family:Roboto Mono;	
 }
 #logo span{
-	background:rgb(106,206,232);
-	background:rgba(106,206,232,0.9);
-	background:-webkit-linear-gradient(128deg,rgba(106,206,232,0.85),rgba(106,206,232,0.95),rgba(106,206,232,0.85));
-	background:linear-gradient(128deg,rgba(106,206,232,0.65),rgba(106,206,232,0.95),rgba(106,206,232,0.85));	
 	font-family:Maven pro;
 	padding:0 0.125em 0.125em 0.125em;
-	border:1px solid rgba(206,236,256,0.9);
 	position:relative;
 	left:0.1875em;
 	z-index:-1;

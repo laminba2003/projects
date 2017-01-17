@@ -6,7 +6,7 @@
 <html>
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-   <meta name="author" content="developpez.sn"/>
+   <meta name="author" content="thinktech.sn"/>
    <meta name="category" content="internet" />
    <meta name="robots" content="All" />
    <meta name="description" content="" />
@@ -121,8 +121,7 @@
 	    		<div class="bloc-left"></div>
 	    		<div class="content-left">
 	    			<h1>Pack Avancé</h1>
-	    			<ul>
-	    			    <li>Cloud IDE</li>	    			
+	    			<ul>    			
 		    			<li>Cours avancés</li>
 		    			<li>Exercices avancés</li>
 		    			<li>Challenges</li>
@@ -144,10 +143,9 @@
 	    		<div class="content-right">
 	    			<h1>Pack Intermédiaire</h1>
 	    			<ul>	    			
-		    			<li>Création de groupes d'amis</li>
+		    			<li>Création de groupes de travail</li>
 		    			<li>Projets</li>
 		    			<li>Mentoring</li>
-		    			<li>VidéoConférence</li>
 		    		</ul>
 		    		<a class="button coming">En Cours</a>
 	    		</div>
@@ -191,7 +189,7 @@
 		
 		<footer>
 			<p><a href="#top"><i class="fa fa-chevron-up backTop" aria-hidden="true"></i></a></p>
-			<p>© 2016 Developpez.sn All rights reserved.</p>
+			<p>© 2017 thinktech.sn All rights reserved.</p>
 		</footer>
 		
 	</div>
