@@ -1,4 +1,3 @@
-
 /*
 Template Name: WpF BGness - Business & Blog Bootstrap HTML5/CSS3 Template
 Author: WpFreeware Team
@@ -443,7 +442,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   float: left;
   display: inline;
   width: 100%;
-  background-color : #fdf9df;
+  background-color : #fff;
   padding-top: 0px;
 }
 .pricearea {

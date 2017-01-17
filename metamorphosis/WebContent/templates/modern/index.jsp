@@ -407,7 +407,7 @@
             <div class="row">
               <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="single_footer_top">
-                  <h2>Footer Widget </h2>
+                  <h2>Latest News</h2>
                   <ul>
                     <li><a>Lorem Ipsum is simply dummy text of the printing</a></li>
                     <li><a>Dummy text of the printing</a></li>
