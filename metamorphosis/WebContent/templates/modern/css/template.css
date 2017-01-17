@@ -4991,7 +4991,8 @@ transition: all 0.5s;
   box-sizing: border-box;
   color: #71747A;
   text-shadow: 0 1px 0 #FFF;
-  padding-left : 3px;
+  padding-left : 0px;
+  font-size : 80%;
 }
 
 input:focus{
