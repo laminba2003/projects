@@ -4985,28 +4985,26 @@ transition: all 0.5s;
   box-shadow: inset 0 0 3px #65686E;
   border-bottom: 1px solid #FFF;
 }
-input{
-  width: 260px;
+.loginForm input{
   background: transparent;
   border: 0;
-  line-height: 3.6em;
+  line-height: 0.5em;
   box-sizing: border-box;
   color: #71747A;
   text-shadow: 0 1px 0 #FFF;
   padding-left : 3px;
 }
+
 input:focus{
   outline: none;
 }
 .blockinput{
-  border-bottom: 1px solid #BDBFC2;
-  border-top: 1px solid #FFFFFF;
+  border: 1px solid #BDBFC2;
 }
 .blockinput:first-child{
-  border-top: 0;
+  margin-bottom : 0px;
 }
 .blockinput:last-child{
-  border-bottom: 0;
 }
 .blockinput i{
   padding-right: 10px;
