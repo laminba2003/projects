@@ -56,7 +56,7 @@
   </nav>
   <!-- End navbar -->
   
-  <div style="padding-left:10%;padding-right:10%;padding-top:0%;padding-bottom:15px;margin-top:76px">
+  <div style="padding-left:11%;padding-right:11%;padding-top:0%;padding-bottom:15px;margin-top:76px">
   
   <div class="video-container">
      <iframe width="853" height="480" src="//www.youtube.com/embed/BGt1htuyhiU?rel=0" frameborder="0" allowfullscreen></iframe>
@@ -99,6 +99,8 @@
                 <div class="single_footer_top">
                   <h2>Links </h2>
                   <ul>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Think Tech</a></li>
                     <li><a href="#">Events</a></li>
                   </ul>
                 </div>
