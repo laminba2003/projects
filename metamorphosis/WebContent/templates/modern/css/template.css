@@ -4965,6 +4965,7 @@ transition: all 0.5s;
   padding: 15px 40px 20px 40px;
   box-shadow: 0 0 3px #000;
 }
+
 .login:before{
   content:"";
   display: block;
@@ -5000,17 +5001,22 @@ input:focus{
 }
 .blockinput{
   border: 1px solid #BDBFC2;
+  height : 30px;
 }
 .blockinput:first-child{
   margin-bottom : 0px;
+  height : 30px;
 }
 .blockinput:last-child{
+  height : 30px;
 }
 .blockinput i{
   padding-right: 10px;
   color: #B1B3B7;
   text-shadow: 0 1px 0 #FFF;
 }
+
+
 ::-webkit-input-placeholder {
   color: #71747A;
   font-family:'Helvetica Neue';
