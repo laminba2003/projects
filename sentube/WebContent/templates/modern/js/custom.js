@@ -96,6 +96,23 @@ $('.team_nav').slick({
   ]
 });
 
+//login form
+
+$("#logIn").click(function(event){
+	$(".loginForm").css({top : 50, left:event.pageX-200}).show();
+	$(".loginForm").removeClass("rollOut").addClass("animated rollIn");
+	$(".loginForm input[type=email]").focus();
+	return false;
+});
+
+$(".loginForm").click(function(event){
+	if(event.target != $("button",this)[0]) return false;
+});
+
+$("body").click(function(event){
+	$(".loginForm").addClass("animated rollOut");
+});
+
 //Clients Slider Call
 
   $('.clb_nav').slick({

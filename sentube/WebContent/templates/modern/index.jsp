@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>SenTube</title>
     <base href="${path}"/>
-    <!-- Materialize css -->
-    <link href="templates/modern/css/materialize.min.css" rel="stylesheet"> 
     <!-- Template css -->
     <link href="templates/modern/css/template.css" rel="stylesheet"> 
     <!-- Favicon -->
@@ -49,14 +47,32 @@
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li><a href="#">Artists</a></li>
-          <li><a href="#">Log In</a></li>                 
+          <li><a href="#" id="logIn">Log In</a></li>                 
         </ul>
+       <div class="loginForm">
+  		 <div class="ribbon"></div>
+  		  <div class="login">
+  		  <h1>Welcome</h1>
+  		  <p>Enter your credentials</p>
+  		  <form action="${path}">
+    		<div class="input">
+      		 <div class="blockinput">
+        		<i class="icon-envelope-alt"></i><input type="email" placeholder="Email">
+      		 </div>
+     		 <div class="blockinput">
+        		<i class="icon-unlock"></i><input type="password" placeholder="Password">
+      		 </div>
+    		</div>
+    		<button>Login</button>
+  		 </form>
+  		</div>
+  		</div>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
   <!-- End navbar -->
   
-  <div style="padding-left:11%;padding-right:11%;padding-top:0%;padding-bottom:15px;margin-top:76px">
+  <div style="padding-left:11%;padding-right:11%;padding-top:15px;padding-bottom:15px;margin-top:76px">
   
   <div class="video-container">
      <iframe width="853" height="480" src="//www.youtube.com/embed/BGt1htuyhiU?rel=0" frameborder="0" allowfullscreen></iframe>
