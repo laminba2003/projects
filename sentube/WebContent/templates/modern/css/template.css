@@ -2993,6 +2993,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   color: #d42323;
   border-color: 1px solid #d42323;
 }
+.navbar-brand {
+	position : absolute;
+}
 .navbar-brand span{
   color: #d42323;
 }
@@ -5111,6 +5114,10 @@ button:active{
 }
 
 @media(max-width:767px ){
+	.navbar-brand {
+	left : 23px;
+	top : 4px;
+}
    .navbar-default li.active:after {display: none;}
    .navbar-nav > li > .dropdown-menu { margin-top: 5px;}
    .navbar-toggle {margin-top: 13px;}
@@ -5147,11 +5154,19 @@ button:active{
 
 }
 @media(max-width:640px){
+  .navbar-brand {
+	left : 23px;
+	top : 4px;
+}
   .slider_caption {top: 0;}
   .slider_caption > h2 { font-size: 25px;line-height: 30px;margin-bottom: 10px;}
   .slider_btn {margin-top: 10px;}
 } 
-@media(max-width:480px ){	
+@media(max-width:480px ){
+  .navbar-brand {
+	left : 23px;
+	top : 4px;
+}
   .client_title hr {display: none;}
   .client_img {left: 39%;}
   .copyright {width: 100%;text-align: center;margin-bottom: 20px;}
@@ -5180,6 +5195,10 @@ button:active{
  
 }
 @media(max-width:360px ){
+.navbar-brand {
+	left : 23px;
+	top : 4px;
+}
  .client_title > h2 {font-size: 20px;}
  .client_img {left: 35%;}
  #imgbanner h2 {font-size: 22px;line-height: 35px;}
