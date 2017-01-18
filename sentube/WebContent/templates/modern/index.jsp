@@ -72,7 +72,7 @@
   </nav>
   <!-- End navbar -->
   
-  <div style="padding-left:11%;padding-right:11%;padding-top:15px;padding-bottom:15px;margin-top:76px">
+  <div style="padding-left:11%;padding-right:11%;padding-top:0px;padding-bottom:15px;margin-top:62px">
   
   <div class="video-container">
      <iframe width="853" height="480" src="//www.youtube.com/embed/BGt1htuyhiU?rel=0" frameborder="0" allowfullscreen></iframe>
