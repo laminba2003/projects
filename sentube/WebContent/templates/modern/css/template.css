@@ -4333,12 +4333,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
-  padding-left : 1.5px;
+  padding-left : 3px;
 }
 .single_footer_top p {
   color: #000;
   line-height: 22px;
-  padding-left : 1.5px;
+  padding-left : 3px;
 }
 .footer_middle{
   float: left;
