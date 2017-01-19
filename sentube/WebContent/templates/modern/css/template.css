@@ -4325,8 +4325,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .single_footer_top > h2 {
   color: #d42323;
   font-weight: bold;
-  line-height: 35px;
-  margin-bottom: 20px;
 }
 .single_footer_top ul li a {
   color: #000;
@@ -4335,10 +4333,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  padding-left : 1.5px;
 }
 .single_footer_top p {
   color: #000;
   line-height: 22px;
+  padding-left : 1.5px;
 }
 .footer_middle{
   float: left;
