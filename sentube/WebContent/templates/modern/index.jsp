@@ -44,10 +44,14 @@
         <a class="navbar-brand" href="${path}">Sen<span>Tube</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a> -->
       </div>
+       <form id="search">
+        <input type="text" placeholder="Search">
+        <input type="submit" value="">
+       </form>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li><a href="#">Artists</a></li>
-          <li><a href="#" id="logIn">Log In</a></li>                 
+          <li><a href="#" id="logIn">Sign In</a></li>                 
         </ul>
        <div class="loginForm">
   		 <div class="ribbon"></div>
@@ -63,7 +67,7 @@
         		<i class="icon-unlock"></i><input type="password" placeholder="Password">
       		 </div>
     		</div>
-    		<button>Login</button>
+    		<button>Sign In</button>
   		 </form>
   		</div>
   		</div>
@@ -71,73 +75,55 @@
     </div>
   </nav>
   <!-- End navbar -->
-  
-  <div style="padding-left:11%;margin-top:59px;padding-right:11%;padding-top:0px;padding-bottom:1%;">
+  <div>
+ <div class="video-player">
   
   <div class="video-container">
      <iframe width="853" height="200" src="//www.youtube.com/embed/BGt1htuyhiU?rel=0" frameborder="0" allowfullscreen></iframe>
   </div>
   
+   <div class="watcher">
+  	 <h1>Youssou Ndour - Be careful (Clip officiel)</h1>
+  	 <div class="photo">
+  	   <img src="images/photo.jpg"/>
+  	 </div>
+  	 <div class="singer">
+  	  <a>YoussouNdourVEVO</a><br>
+  	  <span class="subscribe-button">Subscribe</span>
+  	  <span class="subscribe-count">7,370</span>
+  	 </div>
+  	 <div class="views">
+  	 	<h1>1,331,907 views</h1>
+  	 </div>
   </div>
+  
+  </div>
+  
+  <div class="thumbnails">
+    <span>Up next</span>
+  	<div>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+  </div>
+  
+ 
+ </div>
     
   <!-- start footer -->
   <footer id="footer">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="footer_top">
-            <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="single_footer_top">
-                  <h2>Latest News</h2>
-                  <ul>
-                    <li><a href="#">Lorem Ipsum is simply dummy text of the printing</a></li>
-                    <li><a href="#">Dummy text of the printing</a></li>
-                    <li><a href="#">There are many variations of passages</a></li>
-                    <li><a href="#">Lorem Ipsum available</a></li>
-                    <li><a href="#">Lorem Ipsum is not simply random text</a></li>
-                    <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
-                    <li><a href="#">Dummy text of the printing</a></li>
-                    <li><a href="#">There are many variations of passages</a></li>
-                    <li><a href="#">Lorem Ipsum available</a></li>
-                    <li><a href="#">Lorem Ipsum is not simply random text</a></li>
-                    <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="single_footer_top contact_mail">
-                  <h2>Contact us</h2>
-                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+221 33-855-10-91</span> or <a href="#">info@thinktech.sn</a></p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="single_footer_top">
-                  <h2>Links </h2>
-                  <ul>
-                    <li><a href="#">YouTube</a></li>
-                    <li><a href="#">Think Tech</a></li>
-                    <li><a href="#">Events</a></li>
-                  </ul>
-                </div>
-                <div class="single_footer_top">
-                  <h2>Social Links </h2>
-                  <ul class="social_nav">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>        
+      <div class="row">        
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="footer_bottom">
             <div class="copyright">
-              <p>&copy; 2017 Think Tech All rights reserved </p>
+              <p>&copy; 2017 Think Tech</p>
             </div>
             <div class="developer">
               <p>Designed By <a href="http://wpfreeware.com/" rel="nofollow">Wpfreeware</a></p>
