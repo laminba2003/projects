@@ -3054,10 +3054,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	position : absolute;
 	left:48px;
 	background-image : url(../images/Youtube-32.png);
-	background-position : 2px -2px;
+	background-position : 2px -4px;
 	background-repeat : no-repeat;
     padding-left : 36px;
-    top : -1px;
+    top : 2px;
 }
 
 #search {
@@ -3553,7 +3553,7 @@ img{
   background: #ffffff; /* Old browsers */
 }
 .navbar-brand{
-  font-size: 23px;
+  font-size: 20px;
   font-family: "Tahoma",sans-serif;
   font-weight: bold;
   margin-top: 9px;
@@ -4156,12 +4156,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     text-align : left;
     font-size : 10px;
     margin-top : 7px;
-    background-image : url(../images/play.png);
+    background-image : url(../images/Youtube-16.png);
     background-repeat : no-repeat;
     background-position : 4px 3px;
     height :25px;
-    padding-left : 20px;
-    padding-top : 5px;
+    padding-left : 23px;
+    padding-top : 6px;
 }
 
 .watcher .singer span.subscribe-count {
