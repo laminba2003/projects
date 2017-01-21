@@ -3058,7 +3058,7 @@ body {
 }
 .navbar-brand {
 	position : absolute;
-	left:48px;
+	left:44px;
 	background-image : url(../images/Youtube-32.png);
 	background-position : 2px -3px;
 	background-repeat : no-repeat;
@@ -4587,6 +4587,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   display: block;
   width: 50%;
   color: #d42323;
+  margin-left : -70px;
 }
 .copyright p{
   color: #d42323;
