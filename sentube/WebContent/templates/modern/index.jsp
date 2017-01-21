@@ -97,6 +97,15 @@
   	 </div>
   </div>
   
+  
+  <div class="video-metadata">
+  	 <h1>Published on Oct 20, 2016</h1>
+  </div>
+  
+  <div class="video-comments">
+  	 <h1>COMMENTS</h1>
+  </div>
+  
   </div>
   
   <div class="thumbnails">
