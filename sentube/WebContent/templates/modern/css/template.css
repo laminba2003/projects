@@ -3054,7 +3054,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	position : absolute;
 	left:48px;
 	background-image : url(../images/Youtube-32.png);
-	background-position : 2px -4px;
+	background-position : 2px -3px;
 	background-repeat : no-repeat;
     padding-left : 36px;
     top : 2px;
@@ -3553,7 +3553,7 @@ img{
   background: #ffffff; /* Old browsers */
 }
 .navbar-brand{
-  font-size: 20px;
+  font-size: 21px;
   font-family: "Tahoma",sans-serif;
   font-weight: bold;
   margin-top: 9px;
