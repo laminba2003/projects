@@ -17,7 +17,6 @@
  <script>
  
  document.addEventListener("DOMContentLoaded", () => {
-
 	 const videos = new Array();
 	 videos.push({id : "BGt1htuyhiU", title : "Youssou Ndour - Be careful",channel : "YoussouNdourVEVO"});
 	 videos.push({id : "j2Tj_ejWQf0", title : "Pape Diouf - Du Degn",channel : "Prince Arts"});

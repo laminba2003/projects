@@ -3826,7 +3826,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 
 .thumbnails {
-	border:1px solid #d3d3d3;margin-left:-60px;padding:10px;padding-top:12px;margin-top:59px;background-color:#fff;width:30.7%;vertical-align:top;display:inline-block;
+	min-height : 500px;border:1px solid #d3d3d3;margin-left:-60px;padding:10px;padding-top:12px;margin-top:59px;background-color:#fff;width:30.7%;vertical-align:top;display:inline-block;
 }
 
 .thumbnails > span {
