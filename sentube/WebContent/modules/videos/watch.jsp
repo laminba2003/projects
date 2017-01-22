@@ -55,40 +55,38 @@
     </template>
   </div>
   
-
  </div>
  
  <script>
  
  document.addEventListener("DOMContentLoaded", () => {
-	    
-	    var url = "https://www.googleapis.com/youtube/v3/videos?id=${id}&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,contentDetails,statistics,status";
-	    var object = {};
-		app.get(url,video => {
-			object.title = video.items[0].snippet.title;
-			object.publishedAt = video.items[0].snippet.publishedAt;
-			object.description = video.items[0].snippet.description;
-			object.viewCount = video.items[0].statistics.viewCount;
-			object.commentCount = video.items[0].statistics.commentCount;
-			url = "https://www.googleapis.com/youtube/v3/channels?id="+video.items[0].snippet.channelId+"&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,contentDetails,statistics,status";
-			app.get(url,channel => {
-				object.channel = channel.items[0].snippet.title;
-				object.photo = channel.items[0].snippet.thumbnails.medium.url;
-				object.subscriberCount = channel.items[0].statistics.subscriberCount;
-				page.render($(".watcher"),object);
-				page.render($(".video-metadata"),object);
-				page.render($(".video-comments"),object);
-				url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+video.items[0].snippet.channelId+"&part=snippet&order=date&maxResults=20";
-				app.get(url,results => {
-					const videos = new Array();
-				    for(var i=0;i<results.items.length;i++) {
-						const item = results.items[i];
-						videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle,thumbnail : item.snippet.thumbnails.medium.url});
-					}
-				    page.render($(".thumbnails"),videos);
-				});
+    var url = "https://www.googleapis.com/youtube/v3/videos?id=${id}&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,contentDetails,statistics,status";
+    var object = {};
+	app.get(url,video => {
+		object.title = video.items[0].snippet.title;
+		object.publishedAt = video.items[0].snippet.publishedAt;
+		object.description = video.items[0].snippet.description;
+		object.viewCount = video.items[0].statistics.viewCount;
+		object.commentCount = video.items[0].statistics.commentCount;
+		url = "https://www.googleapis.com/youtube/v3/channels?id="+video.items[0].snippet.channelId+"&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,contentDetails,statistics,status";
+		app.get(url,channel => {
+			object.channel = channel.items[0].snippet.title;
+			object.photo = channel.items[0].snippet.thumbnails.medium.url;
+			object.subscriberCount = channel.items[0].statistics.subscriberCount;
+			page.render($(".watcher"),object);
+			page.render($(".video-metadata"),object);
+			page.render($(".video-comments"),object);
+			url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+video.items[0].snippet.channelId+"&part=snippet&order=date&maxResults=20";
+			app.get(url,results => {
+				const videos = new Array();
+			    for(var i=0;i<results.items.length;i++) {
+					const item = results.items[i];
+					videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle,thumbnail : item.snippet.thumbnails.medium.url});
+				}
+			    page.render($(".thumbnails"),videos);
 			});
 		});
+	});
  });
  
  </script> 

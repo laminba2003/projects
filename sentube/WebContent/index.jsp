@@ -33,9 +33,7 @@
 	 videos.push({id : "doIYcuBkKtM", title : "Fata - Decouverte",channel : "Fata Elpresidente"});
 	 videos.push({id : "_iLU1DVUH9k", title : "Awadi & Duggy Tee - Merci Mon Dieu",channel : "Didier Awadi"});
 	 videos.push({id : "evin2iPw6-0", title : "Gaston - La Foi",channel : "Bamar Ndoye"});
-	 page.render($(".videos"),videos,thumbnail => {
-		 thumbnail.addClass("animated flip");
-	 });
+	 page.render($(".videos"),videos,thumbnail => thumbnail.addClass("animated flip"));
  });
  
  </script> 
