@@ -9,8 +9,8 @@ app.get = (url, callback, error) => {
 		 url : url, 
 		 dataType : 'json'
 	 }).done(data => {
-	     page.release();
 	     if(callback) callback(data);
+	     page.release();
 	 }).fail(data => {
 	  	 page.release();
 	  	 if(error) error(data);
@@ -25,8 +25,8 @@ app.post = (url, formData, callback, error) => {
           data : formData,
           dataType : 'json'
 	  }).done(data => {
-		  page.release();
 		  if(callback) callback(data);
+		  page.release();
 	  }).fail(data => {
 		  page.release();
 		  if(error) error(data);
@@ -41,8 +41,8 @@ app.put = (url, formData, callback, error) => {
           data : formData,
           dataType : 'json'
       }).done(data => {
-	      page.release();
 	      if(callback) callback(data);
+	      page.release();
       }).fail(data => {
     	  page.release();
     	  if(error) error(data);
@@ -56,8 +56,8 @@ app.delete = (url, callback, error) => {
 		  url : url,
 		  dataType : 'json'
 	  }).done(data => {
-		  page.release();
 		  if(callback) callback(data);
+		  page.release();
 	  }).fail(data => {
 		  page.release();
 		  if(error) error(data);
