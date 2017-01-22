@@ -3622,6 +3622,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   opacity: 1;
 }
 .custom_nav {
+	margin-right : -40px;
 }
 .custom_nav .dropdown-menu{
   padding:13px;
