@@ -3853,6 +3853,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .thumbnails a div div span {
 	display : block;
+	text-transform : lowercase;
 }
 
 .thumbnails a div div span:nth-child(1) {
