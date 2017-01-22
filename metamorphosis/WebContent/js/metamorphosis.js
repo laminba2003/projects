@@ -136,7 +136,6 @@ page.highlight = () => {
 
 page.init = () => {
 	$("body").append('<div id="wait"><div id="loader"/></div>');
-	page.highlight();
 };
 
 app.ready(() => page.init());

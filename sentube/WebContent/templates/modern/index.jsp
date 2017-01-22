@@ -1,3 +1,4 @@
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,13 +45,12 @@
         <a class="navbar-brand" href="${path}">Sen<span>Tube</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a> -->
       </div>
-       <form id="search">
-        <input type="text" placeholder="Search">
+       <form id="search" action="videos/search" method="GET">
+        <input name="search_query" type="text" placeholder="Search">
         <input type="submit" value="">
        </form>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
-          <li><a href="#">Artists</a></li>
           <li><a href="#" id="logIn">Sign In</a></li>                 
         </ul>
        <div class="loginForm">
@@ -75,55 +75,8 @@
     </div>
   </nav>
   <!-- End navbar -->
-  <div>
- <div class="video-player">
-  
-  <div class="video-container">
-     <iframe width="853" height="200" src="//www.youtube.com/embed/BGt1htuyhiU?rel=0" frameborder="0" allowfullscreen></iframe>
-  </div>
-  
-   <div class="watcher">
-  	 <h1>Youssou Ndour - Be careful (Clip officiel)</h1>
-  	 <div class="photo">
-  	   <img src="images/photo.jpg"/>
-  	 </div>
-  	 <div class="singer">
-  	  <a>YoussouNdourVEVO</a><br>
-  	  <span class="subscribe-button">Subscribe</span>
-  	  <span class="subscribe-count">7,370</span>
-  	 </div>
-  	 <div class="views">
-  	 	<h1>1,331,907 views</h1>
-  	 </div>
-  </div>
-  
-  
-  <div class="video-metadata">
-  	 <h1>Published on Oct 20, 2016</h1>
-  </div>
-  
-  <div class="video-comments">
-  	 <h1>COMMENTS</h1>
-  </div>
-  
-  </div>
-  
-  <div class="thumbnails">
-    <span>Up next</span>
-  	<div>
-    </div>
-    <div>
-    </div>
-    <div>
-    </div>
-    <div>
-    </div>
-    <div>
-    </div>
-  </div>
-  
  
- </div>
+ <tiles:insertAttribute name="content"/>
     
   <!-- start footer -->
   <footer id="footer">
@@ -157,8 +110,10 @@
   <!-- slick slider js file -->
   <script src="templates/modern/js/slick.min.js"></script>
  
+ <script src="js/metamorphosis.js"></script> 
   <!-- custom js file include -->
   <script src="templates/modern/js/custom.js"></script>  
+   
       
   </body>
 </html>

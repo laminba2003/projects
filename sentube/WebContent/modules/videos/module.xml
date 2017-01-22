@@ -1,0 +1,11 @@
+<module>
+<type>front-end</type>
+<actions>
+	<action url="watch" script="videos.groovy" method="watch">
+	  <result>watch</result>
+	</action>
+	<action url="search" script="videos.groovy" method="search">
+	  <result>search</result>
+	</action>
+</actions>
+</module>

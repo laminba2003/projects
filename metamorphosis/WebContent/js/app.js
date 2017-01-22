@@ -414,4 +414,6 @@ app.ready(() => {
 	        }
 	       return false;
 	 }); 
+	
+	page.highlight();
 });
