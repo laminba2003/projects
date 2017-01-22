@@ -3856,7 +3856,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .thumbnails a div div span:nth-child(1) {
 	font-weight : bold;
-	margin-top : 5px;
+	margin-top : 2px;
+	height : 42px;
+	overflow : hidden;
+	line-height : 1.2em;
 }
 
 .thumbnails a div div span:nth-child(2) {
