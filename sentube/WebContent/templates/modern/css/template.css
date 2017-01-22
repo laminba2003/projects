@@ -3867,6 +3867,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	font-weight : bold;
 	margin-top : 5px;
 	font-size : 70%;
+	color : #d42323;
 }
 
 
@@ -3889,6 +3890,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .videos a div div span {
 	display : block;
+	text-transform : lowercase;
 }
 
 .videos a div div span:nth-child(1) {
@@ -3898,8 +3900,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .videos a div div span:nth-child(2) {
 	font-weight : bold;
-	margin-top : 5px;
-	font-size : 75%;
+	margin-top : 3px;
+	font-size : 70%;
+	color : #d42323;
 }
 
 #wait {
