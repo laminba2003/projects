@@ -19,8 +19,7 @@
  <script>
  
  document.addEventListener("DOMContentLoaded", () => {
-    var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&q=${query}&type=video&part=snippet&order=date&maxResults=50";
-	app.get(url,results => {
+    app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&q=${query}&type=video&part=snippet&order=date&maxResults=50",results => {
 		const videos = new Array();
 		var id = "";
 	    for(var i=0;i<results.items.length;i++) {
@@ -28,13 +27,12 @@
 			id += i < results.items.length-1 ? item.id.videoId +"," : item.id.videoId;
 			videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
 		}
-		url = "https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails";
-		app.get(url,results => {
+		app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails", results => {
 	   	 	for(i=0;i<results.items.length;i++) {
 	    		const duration = results.items[i].contentDetails.duration.substring(2, results.items[i].contentDetails.duration.length);
 	    		const minutes = duration.substring(0, duration.indexOf('M'));
-				const secondes = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
-	    		videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (secondes.length > 1 ? secondes : ("0"+secondes));
+				const seconds = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
+	    		videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
 	    	}
 	    	page.render($(".videos"),videos,thumbnail => thumbnail.addClass("animated flip"));
 		});
