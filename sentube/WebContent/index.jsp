@@ -44,11 +44,10 @@
 	 const url = "https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails";
 	 app.get(url,results => {
 	    for(i=0;i<results.items.length;i++) {
-	    	var duration = results.items[i].contentDetails.duration;
-			duration = duration.substring(2, duration.length);
-			const minutes = duration.substring(0, duration.indexOf('M'));
+	    	const duration = results.items[i].contentDetails.duration.substring(2, results.items[i].contentDetails.duration.length);
+	    	const minutes = duration.substring(0, duration.indexOf('M'));
 			const secondes = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
-	    	videos[i].duration = minutes + " : " + (secondes.length > 1 ? secondes : ("0"+secondes));
+	    	videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (secondes.length > 1 ? secondes : ("0"+secondes));
 	    }
 	    page.render($(".videos"),videos,thumbnail => thumbnail.addClass("animated flip"));
 	 });

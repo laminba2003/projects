@@ -3838,6 +3838,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	width:100%;background-color : #ffff;height:90px;margin:5px;vertical-align:top;
 }
 
+.thumbnails a > div > span {
+	font-family:Tahoma;padding : 2px;color : #fff;background-color:#222;margin-right : 51%;margin-top:-29px;position : relative;float:right;font-size : 75%;
+}
+
 .thumbnails a div img {
 	width : 50%;
 	height : 100%;
