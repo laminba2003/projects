@@ -3889,6 +3889,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	width : 100%;height : 120px;vertical-align : top;
 }
 
+.videos a > div > span {
+	font-family:Tahoma;padding : 2px;color : #fff;background-color:#222;margin-right : 3px;margin-top:-19px;position : relative;float:right;font-size : 75%;
+}
+
+
 .videos a div div {
 	height : 50px;
 	overflow : hidden;

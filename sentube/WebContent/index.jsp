@@ -4,6 +4,7 @@
        <a href="videos/watch?v={id}">
   		<div>
   		   <img src="https://i.ytimg.com/vi/{id}/mqdefault.jpg"/>
+  		   <span>{duration}</span>
   		   <div>
   		     <span>{title}</span>
   		     <span>{channel}</span>
@@ -18,8 +19,8 @@
  
  document.addEventListener("DOMContentLoaded", () => {
 	 const videos = new Array();
-	 videos.push({id : "CTbTXxLCn8Q", title : "Viviane Chidid - Wuyuma",channel : "Viviane Chidid Officiel"});
 	 videos.push({id : "BGt1htuyhiU", title : "Youssou Ndour - Be careful",channel : "YoussouNdourVEVO"});
+	 videos.push({id : "o6OnE-DTBJw", title : "Viviane - Kumu Neexul",channel : "gelongalvideo"});
 	 videos.push({id : "a-B4Q5_I_mI", title : "Cheikh Lo - Degg Gui",channel : "Cheikh Lo"});
 	 videos.push({id : "j2Tj_ejWQf0", title : "Pape Diouf - Du Degn",channel : "Prince Arts"});
 	 videos.push({id : "2Ky8hnq2F-Y", title : "Keur Gui - Diogoufi",channel : "Teledakar.com"});
@@ -38,7 +39,19 @@
 	 videos.push({id : "_iLU1DVUH9k", title : "Awadi & Duggy Tee - Merci Mon Dieu",channel : "Didier Awadi"});
 	 videos.push({id : "evin2iPw6-0", title : "Gaston - La Foi",channel : "Bamar Ndoye"});
 	 videos.push({id : "4U8MZVv1Q88", title : "Fatou Guewel - Santati",channel : "Senepeople.com"});
-	 page.render($(".videos"),videos,thumbnail => thumbnail.addClass("animated flip"));
+	 var id = "";
+	 for(var i=0;i<videos.length;i++) id += i < videos.length-1 ? videos[i].id +"," : videos[i].id;
+	 const url = "https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails";
+	 app.get(url,results => {
+	    for(i=0;i<results.items.length;i++) {
+	    	var duration = results.items[i].contentDetails.duration;
+			duration = duration.substring(2, duration.length);
+			const minutes = duration.substring(0, duration.indexOf('M'));
+			const secondes = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
+	    	videos[i].duration = minutes + " : " + (secondes.length > 1 ? secondes : ("0"+secondes));
+	    }
+	    page.render($(".videos"),videos,thumbnail => thumbnail.addClass("animated flip"));
+	 });
  });
  
  </script> 
