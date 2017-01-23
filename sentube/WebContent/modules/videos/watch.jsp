@@ -76,7 +76,7 @@
 			page.render($(".watcher"),object);
 			page.render($(".video-metadata"),object);
 			page.render($(".video-comments"),object);
-			url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+video.items[0].snippet.channelId+"&part=snippet&order=date&maxResults=20";
+			url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+video.items[0].snippet.channelId+"&type=video&part=snippet&order=date&maxResults=20";
 			app.get(url,results => {
 				const videos = new Array();
 			    for(var i=0;i<results.items.length;i++) {
