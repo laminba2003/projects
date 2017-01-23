@@ -23,7 +23,7 @@
 		const videos = new Array();
 	    for(var i=0;i<results.items.length;i++) {
 			const item = results.items[i];
-			videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle,thumbnail : item.snippet.thumbnails.medium.url});
+			videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
 		}
 	    page.render($(".videos"),videos, thumbnail => thumbnail.addClass("animated flip"));
 	});
