@@ -3797,6 +3797,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     height :25px;
     padding-top : 6px;
     margin-left : -3px;
+    font-family : Tahoma;
 }
 
 .video-metadata,.video-comments {
@@ -3808,7 +3809,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .video-metadata > h1 {
-	margin-bottom:15px;padding:4px;padding-left:13px;margin-top:10px;line-height:0.8em;font-size:13px;font-weight:bold;
+	font-family : Arial;margin-bottom:15px;padding:4px;padding-left:13px;margin-top:10px;line-height:0.8em;font-size:13px;font-weight:bold;
 }
 
 .video-metadata > p {
@@ -3818,11 +3819,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 
 .video-comments > h1 {
-	margin-bottom:15px;padding:4px;padding-left:13px;margin-top:10px;line-height:0.8em;font-size:13px;font-weight:bold;
+	font-family : Arial;margin-bottom:15px;padding:4px;padding-left:13px;margin-top:10px;line-height:0.8em;font-size:13px;font-weight:bold;
 }
 
 .watcher .views h1 {
-	color:#666;margin-right:10px;border-bottom:2px solid #e62117;line-height:1.7em;font-size:20px;padding-right:10px;font-weight:bold;
+	font-family :Tahoma;color:#666;margin-right:10px;border-bottom:2px solid #e62117;line-height:1.8em;font-size:19px;padding-right:10px;
 }
 
 
