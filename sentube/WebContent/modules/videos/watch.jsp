@@ -60,7 +60,7 @@
  <script>
  
  document.addEventListener("DOMContentLoaded", () => {
-    var url = "https://www.googleapis.com/youtube/v3/videos?id=${id}&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,contentDetails,statistics,status";
+    var url = "https://www.googleapis.com/youtube/v3/videos?id=${id}&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,statistics";
     var object = {};
 	app.get(url,video => {
 		object.title = video.items[0].snippet.title;
@@ -68,7 +68,7 @@
 		object.description = video.items[0].snippet.description;
 		object.viewCount = video.items[0].statistics.viewCount;
 		object.commentCount = video.items[0].statistics.commentCount;
-		url = "https://www.googleapis.com/youtube/v3/channels?id="+video.items[0].snippet.channelId+"&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,contentDetails,statistics,status";
+		url = "https://www.googleapis.com/youtube/v3/channels?id="+video.items[0].snippet.channelId+"&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,statistics";
 		app.get(url,channel => {
 			object.channel = channel.items[0].snippet.title;
 			object.photo = channel.items[0].snippet.thumbnails.medium.url;
