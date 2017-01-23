@@ -65,6 +65,7 @@
     var object = {};
 	app.get(url,video => {
 		object.title = video.items[0].snippet.title;
+		document.title = object.title; 
 		object.publishedAt = video.items[0].snippet.publishedAt;
 		object.description = video.items[0].snippet.description;
 		object.viewCount = video.items[0].statistics.viewCount;
