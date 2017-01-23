@@ -3827,7 +3827,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 
 .thumbnails {
-	min-height : 500px;border:1px solid #d3d3d3;margin-left:-60px;padding:10px;padding-top:12px;margin-top:59px;background-color:#fff;width:30.7%;vertical-align:top;display:inline-block;
+	min-height : 550px;border:1px solid #d3d3d3;margin-left:-60px;padding:10px;padding-top:12px;margin-top:59px;background-color:#fff;width:30.7%;vertical-align:top;display:inline-block;
 }
 
 .thumbnails > span {
@@ -4713,7 +4713,7 @@ input:focus{
   margin-bottom: 5px;
 }
 
-.video-container{border:1px solid #f2f1f1;position:relative;padding-bottom:56%;height:0;overflow:hidden}.video-container iframe,.video-container object,.video-container embed{position:absolute;top:0;left:0;width:100%;height:100%}
+.video-container{background-color : #fff;border:1px solid #f2f1f1;position:relative;padding-bottom:56%;height:0;overflow:hidden}.video-container iframe,.video-container object,.video-container embed{position:absolute;top:0;left:0;width:100%;height:100%}
 
 .dropdown {
 	overflow : hidden;

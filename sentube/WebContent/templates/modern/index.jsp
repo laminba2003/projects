@@ -24,11 +24,6 @@
     //////////////This Theme Design and Developed //////////////////////
     //////////// by www.wpfreeware.com======================--> 
     
-  <!-- Preloader -->
-  <div id="preloader">
-    <div id="status">&nbsp;</div>
-  </div>
- 
   <!-- End Preloader -->   
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
   
@@ -98,18 +93,11 @@
   <!-- End footer -->
 
   <!-- jQuery Library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <!-- For content animatin  -->
-  <script src="templates/modern/js/wow.min.js"></script>
+  <script src="templates/modern/js/jquery.min.js"></script>
+ 
   <!-- bootstrap js file -->
   <script src="templates/modern/js/bootstrap.min.js"></script> 
-  <!-- superslides slider -->
-  <script src="templates/modern/js/jquery.easing.1.3.js"></script>
-  <script src="templates/modern/js/jquery.animate-enhanced.min.js"></script>
-  <script src="templates/modern/js/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script>
-  <!-- slick slider js file -->
-  <script src="templates/modern/js/slick.min.js"></script>
- 
+  
  <script src="js/metamorphosis.js"></script> 
   <!-- custom js file include -->
   <script src="templates/modern/js/custom.js"></script>  
