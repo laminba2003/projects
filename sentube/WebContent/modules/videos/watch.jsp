@@ -94,8 +94,8 @@
 					const secondes = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
 			    	videos[i].duration = (minutes.length ? minutes : ("0"+minutes)) + " : " + (secondes.length > 1 ? secondes : ("0"+secondes));
 			      }
-			    page.render($(".thumbnails"),videos,thumbnail => thumbnail.addClass("animated flip"));
-			 });
+			      page.render($(".thumbnails"),videos,thumbnail => thumbnail.addClass("animated flip"));
+			   });
 			});
 		});
 	});
