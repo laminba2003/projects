@@ -83,7 +83,7 @@
               <p>&copy; 2017 Think Tech</p>
             </div>
             <div class="developer">
-              <p>Designed By <a href="http://wpfreeware.com/" rel="nofollow">Wpfreeware</a></p>
+              <p>Designed By <a target="_blank" href="http://wpfreeware.com/" rel="nofollow">Wpfreeware</a></p>
             </div>
           </div>
         </div>
