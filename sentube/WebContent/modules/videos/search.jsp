@@ -9,6 +9,7 @@
   		   <div>
   		     <span>{title}</span>
   		     <span>{channel}</span>
+  		     <span>{viewCount} views</span>
   		   </div>
     	</div>
         </a>
@@ -27,12 +28,13 @@
 			id += i < results.items.length-1 ? item.id.videoId +"," : item.id.videoId;
 			videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
 		}
-		app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails", results => {
+		app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics", results => {
 	   	 	for(i=0;i<results.items.length;i++) {
 	    		const duration = results.items[i].contentDetails.duration.substring(2, results.items[i].contentDetails.duration.length);
 	    		const minutes = duration.substring(0, duration.indexOf('M'));
 				const seconds = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
 	    		videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
+	    		videos[i].viewCount = results.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 	    	}
 	   	    const div = $(".videos").fadeTo(2000,1);
 	    	page.render(div,videos,thumbnail => thumbnail.addClass("animated flip"));
