@@ -54,7 +54,8 @@
 			const seconds = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
 	    	videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
 	    }
-	    page.render($(".videos"),videos,thumbnail => thumbnail.addClass("animated flip"));
+	    const div = $(".videos").fadeTo(2000,1);
+	    page.render(div,videos,thumbnail => thumbnail.addClass("animated flip"));
 	 });
  });
  
