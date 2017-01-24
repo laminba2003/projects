@@ -46,7 +46,7 @@
        </form>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
-          <li><a href="#" id="logIn">Sign In</a></li>                 
+          <li style="display:none"><a href="#" id="logIn">Sign In</a></li>                 
         </ul>
        <div class="loginForm">
   		 <div class="ribbon"></div>
