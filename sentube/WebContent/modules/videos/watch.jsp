@@ -26,7 +26,7 @@
   <div class="video-metadata">
     <template type="text/x-dust-template">
   	 <h1>Published on {publishedAt}</h1>
-  	 <p>{description}</p>
+  	 <p>{description|s}</p>
   	</template>
   </div>
   
@@ -38,7 +38,7 @@
   	     <img src="{photo}"/>
   	     <div>
   	        <span>{author}</span>
-         	<p>{text}</p>
+         	<p>{text|s}</p>
          </div>
   	 </div>
   	 {/comments}
