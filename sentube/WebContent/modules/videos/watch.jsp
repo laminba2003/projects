@@ -33,6 +33,15 @@
   <div class="video-comments">
     <template type="text/x-dust-template">
   	 <h1>COMMENTS - {commentCount}</h1>
+  	 {#comments}
+  	 <div class="video-comment">
+  	     <img src="{photo}"/>
+  	     <div>
+  	        <span>{author}</span>
+         	<p>{text}</p>
+         </div>
+  	 </div>
+  	 {/comments}
   	</template>
   </div>
   
@@ -75,26 +84,31 @@
 			video.subscriberCount = channel.items[0].statistics.subscriberCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 			page.render($(".watcher"),video);
 			page.render($(".video-metadata"),video);
-			page.render($(".video-comments"),video, html => {
-				app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+info.items[0].snippet.channelId+"&type=video&part=snippet&order=date&maxResults=20",results => {
-					const videos = new Array();
-					var id = "";
-				    for(var i=0;i<results.items.length;i++) {
-						const item = results.items[i];
-						id += i < results.items.length-1 ? item.id.videoId +"," : item.id.videoId;
-						videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle,thumbnail : item.snippet.thumbnails.medium.url});
-					}
-				    app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails",results => {
-				      for(i=0;i<results.items.length;i++) {
-				    	const duration = results.items[i].contentDetails.duration.substring(2, results.items[i].contentDetails.duration.length);
-						const minutes = duration.substring(0, duration.indexOf('M'));
-						const seconds = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
-				    	videos[i].duration = (minutes.length ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
-				      }
-				      page.render($(".thumbnails"),videos,thumbnail => thumbnail.addClass("animated flip"));
-				   });
-				});	
-			});
+			app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+info.items[0].snippet.channelId+"&type=video&part=snippet&order=date&maxResults=20",results => {
+				const videos = new Array();
+				var id = "";
+			    for(var i=0;i<results.items.length;i++) {
+					const item = results.items[i];
+					id += i < results.items.length-1 ? item.id.videoId +"," : item.id.videoId;
+					videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle,thumbnail : item.snippet.thumbnails.medium.url});
+				}
+			    app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails",results => {
+			      for(i=0;i<results.items.length;i++) {
+			    	const duration = results.items[i].contentDetails.duration.substring(2, results.items[i].contentDetails.duration.length);
+					const minutes = duration.substring(0, duration.indexOf('M'));
+					const seconds = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
+			    	videos[i].duration = (minutes.length ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
+			      }
+			      page.render($(".thumbnails"),videos,thumbnail => thumbnail.addClass("animated flip"));
+			      app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId=${id}&part=snippet&maxResults=20",results => {
+			    	  const comments = new Array();
+			    	  for(i=0;i<results.items.length;i++) {
+					      comments.push({author : results.items[i].snippet.topLevelComment.snippet.authorDisplayName, photo : results.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,text : results.items[i].snippet.topLevelComment.snippet.textDisplay});
+					  }
+			    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments});
+				  });
+			   });
+			});	
 		});
 	});
  });

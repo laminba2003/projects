@@ -3805,7 +3805,36 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .video-comments {
-	min-height : 300px;
+	min-height : 300px;vertical-align:top;
+}
+
+.video-comment {
+	padding-top : 6px;
+}
+
+.video-comment p {
+	font-size : 12px;
+}
+
+.video-comment span {
+	color: #128ee9;
+    font-weight: 550;
+    margin-bottom : 3px;
+    display : block;
+    font-family : Tahoma;
+}
+
+.video-comment:last-of-type {
+	margin-bottom : 50px;
+}
+
+
+.video-comments > div > img {
+	width : 45px;height:45px;display:inline-block;vertical-align:top;margin-right:5px;margin-left:14px;
+}
+
+.video-comments > div > div {
+	display:inline-block;width:87%;
 }
 
 .video-metadata > h1 {
