@@ -516,7 +516,7 @@ img{
 }
 
 .watcher > h1 {
-	margin-bottom:15px;padding:4px;padding-left:13px;margin-top:10px;line-height:0.8em;font-size:17px;font-weight:bold;
+	margin-bottom:15px;padding:4px;padding-left:13px;margin-top:10px;line-height:1.4em;font-size:17px;font-weight:bold;
 }
 
 .watcher .singer a {
@@ -610,7 +610,7 @@ img{
 }
 
 .video-metadata > h1 {
-	font-family : Arial;padding:4px;padding-left:13px;margin-top:10px;line-height:0.8em;font-size:13px;font-weight:bold;
+	font-family : Arial;padding:4px;padding-left:13px;margin-top:10px;line-height:1.4em;font-size:13px;font-weight:bold;
 }
 
 .video-metadata > p {
@@ -1027,19 +1027,17 @@ input:focus{
 
 
 @media(max-width:1199px ){
-	.watcher h1 {font-size : 12px}
-  .watcher a {font-size : 12px}
-  .watcher .views h1{font-size : 12px;}
   .thumbnails {margin-left: -40px;width:32%}
-  #footer {width:99.6%}
+  #footer {padding-left:17%;margin-top:10px}
 }
   
 @media(max-width:991px ){
-	.videos h1  {margin-top : 3px;}
+   .navbar-brand {margin-left:-20px}
+	.watcher .singer span.subscribe-button,.watcher .singer span.subscribe-count {width:auto;font-size :6px}
+	.watcher .photo img { }
 	.watcher h1 {font-size : 12px}
-  .watcher a {font-size : 10px}
+  .watcher .singer a {font-size : 12px}
   .watcher .views h1{font-size : 12px;}
-  #footer {width:99%}
 	.navbar-default .navbar-nav > li > a {font-size: 12px; padding: 10px;}
   .dropdown-menu > li > a{font-size: 12px;padding: 10px;}
   .navbar-brand {height: auto;margin-top: 9px;width: 213px;}
@@ -1048,11 +1046,14 @@ input:focus{
 }
 
 @media(max-width:767px ){
-	.watcher h1 {font-size : 12px}
-  .watcher a {font-size : 10px}
-  .watcher .views h1{font-size : 12px;}
+	#footer {padding-left:17%;margin-top:10px}
+	 .navbar-brand {margin-left:-20px}
+	.watcher .singer span.subscribe-button,.watcher .singer span.subscribe-count {width:auto;font-size :6px}
+	.watcher .photo img { }
+	.watcher h1 {font-size : 11px}
+  .watcher .singer a {font-size : 11px}
+  .watcher .views h1{font-size : 11px;}
 	.thumbnails {margin-left: -30px;width:32.2%}
-  #footer {width:99.6%}
  .navbar-brand {left : 23px;top : 4px;}
    .navbar-default li.active:after {display: none;}
    .navbar-nav > li > .dropdown-menu { margin-top: 5px;}
@@ -1069,12 +1070,13 @@ input:focus{
   .video-comments > div > div {width:80%;}
 }
 @media(max-width:640px){
-  .watcher .photo img {width:20px;height:20px}
-  .watcher h1 {font-size : 10px}
-  .watcher a {font-size : 9px}
-  .watcher .views h1{font-size : 10px;}
- .thumbnails {margin-left: -20px;width:31.6%}
-  #footer {width:99.6%}
+	.thumbnails {margin-left:-25px;}
+  .navbar-brand {margin-left:-20px}
+	.watcher .singer span.subscribe-button,.watcher .singer span.subscribe-count {width:auto;font-size :6px}
+	.watcher .photo img { }
+	.watcher h1 {font-size : 9px}
+  .watcher .singer a {font-size : 9px}
+  .watcher .views h1{font-size : 9px;}
   .navbar-brand {left : 23px;top : 4px;}
   #search input[type=text] {width : 30%;margin-left:-40px}
   .videos a  {width : 29%;}
@@ -1084,31 +1086,42 @@ input:focus{
 
  
 @media(max-width:480px ){
+  .video-player {width:100%;padding-right:0px}
+	.thumbnails {margin-top:10px;margin-left:2%;width:98%}
+  .navbar-brand {margin-left:-20px}
+	.watcher .singer span.subscribe-button,.watcher .singer span.subscribe-count {width:auto;font-size :6px}
+	.watcher .photo img { }
+	.watcher h1 {font-size : 9px}
+  .watcher .singer a {font-size : 9px}
+  .watcher .views h1{font-size : 9px;}
   #search input[type=text] {width : 20%;margin-left:-70px}
   #search input[type=submit] {width : 30px}
-  .thumbnails {margin-left: -10px;width:30%}
-  #footer {width:99.6%}
-  .watcher .photo img {width:20px;height:20px}
-  .watcher h1 {font-size : 11px}
-  .watcher a {font-size : 8px}
-  .watcher .views h1{font-size : 11px;}
   .navbar-brand {left : 23px;top : 4px;}
    .videos a  {width : 30%;}
   .video-comments > div > div {width:50%;}
 }
 @media(max-width:360px ){
+ .navbar-brand {margin-left:-20px}
+	.watcher .singer span.subscribe-button,.watcher .singer span.subscribe-count {width:auto;font-size :6px}
+	.watcher .photo img { }
+	.watcher h1 {font-size : 6px}
+  .watcher .singer a {font-size : 6px}
+  .watcher .views h1{font-size : 8px;}
 .videos a  {width : 45%;}
 #search input[type=text] {width : 18%;margin-left:-70px}
   #search input[type=submit] {width : 30px}
-.watcher h1 {font-size : 6px}
-  .watcher a {font-size : 6px}
-  .watcher .views h1{font-size : 8px;}
   .navbar-brand {left : 23px;	top : 4px;}
  .video-comments > div > div {width:50%;}
 }
 @media(max-width:320px ){
+	.navbar-brand {margin-left:-20px}
+	.watcher .singer span.subscribe-button,.watcher .singer span.subscribe-count {width:auto;font-size :6px}
+	.watcher .photo img { }
+	.watcher h1 {font-size : 6px}
+  .watcher .singer a {font-size : 6px}
+  .watcher .views h1{font-size : 8px;}
 	.videos a  {width : 95%;}
-	#search input[type=text] {width : 21%;margin-left:-75px}
+	#search input[type=text] {width : 23%;margin-left:-100px}
   #search input[type=submit] {display:none}
   .video-comments > div > div {width:50%;}
 }
