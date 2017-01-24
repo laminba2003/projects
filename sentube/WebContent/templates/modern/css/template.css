@@ -3848,6 +3848,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	padding-right : 12px;
 	width : 76%;
 	font-size : 12px;
+	word-break: break-word;
+	line-height : 1.5em;
 }
 
 
@@ -3892,6 +3894,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .thumbnails a div > div > span {
 	display : block;
 	text-transform : lowercase;
+	word-break: break-word;
 }
 
 .thumbnails a div > div > span:nth-child(1) {
