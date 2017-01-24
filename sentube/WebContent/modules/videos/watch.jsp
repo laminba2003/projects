@@ -71,10 +71,11 @@
  
  document.addEventListener("DOMContentLoaded", () => {
     var video = {};
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 	app.get("https://www.googleapis.com/youtube/v3/videos?id=${id}&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,statistics",info => {
 		video.title = info.items[0].snippet.title;
 		document.title = video.title; 
-		video.publishedAt = info.items[0].snippet.publishedAt;
+		video.publishedAt = new Date(info.items[0].snippet.publishedAt).toLocaleDateString("en-US",options);
 		video.description = info.items[0].snippet.description;
 		video.viewCount = info.items[0].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 		video.commentCount = info.items[0].statistics.commentCount.replace(/\B(?=(\d{3})+\b)/g, ",");
