@@ -37,7 +37,7 @@
   	 <div class="video-comment">
   	     <img src="{photo}"/>
   	     <div>
-  	        <span>{author}</span>
+  	        <span>{author} <span>{date}</span></span>
          	<p>{text|s}</p>
          </div>
   	 </div>
@@ -109,7 +109,10 @@
 			    	  const comments = new Array();
 			    	  length = results.items.length;
 			    	  for(i=0;i<length;i++) {
-					      comments.push({author : results.items[i].snippet.topLevelComment.snippet.authorDisplayName, photo : results.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,text : results.items[i].snippet.topLevelComment.snippet.textDisplay});
+					      comments.push({author : results.items[i].snippet.topLevelComment.snippet.authorDisplayName, 
+					    	  date : new Date(results.items[i].snippet.topLevelComment.snippet.publishedAt).toLocaleDateString("en-US",options),
+					    	  photo : results.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
+					    	  text : results.items[i].snippet.topLevelComment.snippet.textDisplay});
 					  }
 			    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments});
 				  });
