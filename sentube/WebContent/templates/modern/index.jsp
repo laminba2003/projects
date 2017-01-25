@@ -94,14 +94,12 @@
   <!-- End footer -->
 
   <!-- jQuery Library -->
-  <script src="templates/modern/js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
  
-  <!-- bootstrap js file -->
-  <script src="templates/modern/js/bootstrap.min.js"></script> 
-  
  <script src="js/metamorphosis.js"></script> 
-  <!-- custom js file include -->
-  <script src="templates/modern/js/custom.js"></script>  
+ 
+  <!-- template js file include -->
+  <script src="templates/modern/js/template.js"></script>  
    
       
   </body>

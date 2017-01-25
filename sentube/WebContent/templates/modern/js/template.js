@@ -74,7 +74,7 @@ $('.scrollToTop').click(function(){
 /* ----------------------------------------------------------- */
 
 //<![CDATA[
-  jQuery(window).load(function() { // makes sure the whole site is loaded
+  jQuery(window).ready(function() { // makes sure the whole site is loaded
     $('body').delay(100).css({'overflow':'visible'});
     $("nav li").delay(500).addClass("animated rollIn");
     $(".navbar-brand").delay(500).addClass("animated rollIn");
