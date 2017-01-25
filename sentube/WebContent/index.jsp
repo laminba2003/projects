@@ -1,6 +1,6 @@
 <div class="videos">
  <template type="text/x-dust-template">
- <h1>Home</h1>
+ <h1>Music</h1>
   {#.}
        <a href="videos/watch?v={id}">
   		<div>
