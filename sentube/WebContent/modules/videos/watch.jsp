@@ -70,14 +70,30 @@
  
  <script>
  
- document.addEventListener("DOMContentLoaded", () => {
+String.prototype.linkify = function() {
+
+    // http://, https://, ftp://
+    var urlPattern = /\b(?:https?|ftp):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*[a-z0-9-+&@#\/%=~_|]/gim;
+
+    // www. sans http:// or https://
+    var pseudoUrlPattern = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
+
+    // Email addresses
+    var emailAddressPattern = /[\w.]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,6})+/gim;
+
+    return this.replace(urlPattern, '<a target="_blank" href="$&">$&</a>')
+        .replace(pseudoUrlPattern, '$1<a target="_blank" href="http://$2">$2</a>')
+        .replace(emailAddressPattern, '<a target="_blank" href="mailto:$&">$&</a>');
+};
+ 
+document.addEventListener("DOMContentLoaded", () => {
     var video = {};
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 	app.get("https://www.googleapis.com/youtube/v3/videos?id=${id}&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,statistics",info => {
 		video.title = info.items[0].snippet.title;
 		document.title = video.title; 
 		video.publishedAt = new Date(info.items[0].snippet.publishedAt).toLocaleDateString("en-US",options);
-		video.description = info.items[0].snippet.description;
+		video.description = info.items[0].snippet.description.linkify();
 		video.viewCount = info.items[0].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 		video.commentCount = info.items[0].statistics.commentCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 		app.get("https://www.googleapis.com/youtube/v3/channels?id="+info.items[0].snippet.channelId+"&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,statistics",channel => {
@@ -112,7 +128,7 @@
 					      comments.push({author : results.items[i].snippet.topLevelComment.snippet.authorDisplayName, 
 					    	  date : new Date(results.items[i].snippet.topLevelComment.snippet.publishedAt).toLocaleDateString("en-US",options),
 					    	  photo : results.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
-					    	  text : results.items[i].snippet.topLevelComment.snippet.textDisplay});
+					    	  text : results.items[i].snippet.topLevelComment.snippet.textDisplay.linkify()});
 					  }
 			    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments});
 				  });
