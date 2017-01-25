@@ -70,13 +70,9 @@
 /*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license
-
 Copyright (c) 2013 Daniel Eden
-
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
@@ -317,20 +313,8 @@ Tags: light, white, Business,Multiple page, Blog, custom-colors,Bootstrap,respon
 ==================================================
   #BASIC TYPOGRAPHY
   #HEADER
-  #SUPER SLIDES SECTION
-  #HOME PRICE SECTION
-  #HOME SPECIAL QUOTE SECTION
-  #HOME TESTIMONIAL SECTION
-  #HOME SERVICE SECTION
-  #HOME HOW WORKS SECTION
-  #HOME TEAM SECTION
-  #HOME CLIENTS SECTION
-  #HOME FEATURED BLOG
   #FOOTER
-  #CONTACT PAGE
-  #BLOG PAGE
   #RESPONSIVE STYLE
-  
 */
 
 
@@ -1057,6 +1041,7 @@ input:focus{
 @media(max-width:1199px ){
   .thumbnails {margin-left: -40px;width:32%}
   #footer {padding-left:17%;margin-top:10px}
+  .videos h1  {margin-top : 0px;}
 }
   
 @media(max-width:991px ){
@@ -1068,15 +1053,17 @@ input:focus{
   .watcher .views h1{font-size : 12px;}
 	.navbar-default .navbar-nav > li > a {font-size: 12px; padding: 10px;}
   .dropdown-menu > li > a{font-size: 12px;padding: 10px;}
-  .navbar-brand {height: auto;margin-top: 9px;width: 213px;}
+  .navbar-brand {height: auto;margin-top: 11px;width: 213px;}
   .navbar-brand>img{height: 100%;}
     .video-comments > div > div {width:80%;}
-   #search input[type=text] {width : 58%;margin-left:-50px}
+   #search input[type=text] {margin-top:3px;width : 58%;margin-left:-50px}
+   #search input[type=submit] {margin-top:3px;}
+    .videos h1  {margin-top : 0px;}
 }
 
 @media(max-width:767px ){
 	#footer {padding-left:17%;margin-top:10px}
-	 .navbar-brand {margin-left:-20px}
+	 .navbar-brand {margin-left:-20px;margin-top:9px;}
 	.watcher .singer span.subscribe-button,.watcher .singer span.subscribe-count {width:auto;font-size :6px}
 	.watcher .photo img { }
 	.watcher h1 {font-size : 11px}
