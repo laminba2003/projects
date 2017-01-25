@@ -712,7 +712,7 @@ img{
 
 
 .videos a div div {
-	height : 50px;
+	height : 60px;
 	overflow : hidden;
 }
 
@@ -724,6 +724,9 @@ img{
 .videos a div div span:nth-child(1) {
 	font-weight : bold;
 	margin-top : 5px;
+	max-height : 26px;
+	height : auto;
+	overflow : hidden;
 }
 
 .videos a div div span:nth-child(2) {
@@ -1055,6 +1058,7 @@ input:focus{
   .navbar-brand {height: auto;margin-top: 9px;width: 213px;}
   .navbar-brand>img{height: 100%;}
     .video-comments > div > div {width:80%;}
+   #search input[type=text] {width : 58%;margin-left:-50px}
 }
 
 @media(max-width:767px ){
@@ -1078,11 +1082,16 @@ input:focus{
   .dropdown-menu > li > a:hover,.dropdown-menu > li > a:focus{
     border-radius: 0px;
   }
-  #search input[type=text] {width : 40.3%;}
+  #search input[type=text] {width : 58%;margin-left:-90px}
+  #search input[type=submit] {width : 30px}
+  .video-player {width:100%;padding-right:0px}
+	.thumbnails {margin-top:10px;margin-left:2%;width:98%}
   .video-comments > div > div {width:80%;}
 }
 @media(max-width:640px){
-	.thumbnails {margin-left:-25px;}
+	.video-player {width:100%;padding-right:0px}
+	.thumbnails {margin-top:10px;margin-left:2%;width:98%}
+	.video-metadata,.video-comments {display:none}
   .navbar-brand {margin-left:-20px}
 	.watcher .singer span.subscribe-button,.watcher .singer span.subscribe-count {width:auto;font-size :6px}
 	.watcher .photo img { }
@@ -1090,7 +1099,8 @@ input:focus{
   .watcher .singer a {font-size : 9px}
   .watcher .views h1{font-size : 9px;}
   .navbar-brand {left : 23px;top : 4px;}
-  #search input[type=text] {width : 30%;margin-left:-40px}
+  #search input[type=text] {width : 58%;margin-left:-90px}
+  #search input[type=submit] {width : 30px}
   .videos a  {width : 29%;}
   .videos h1  {margin-top : 3px;}
   .video-comments > div > div {width:70%;}
@@ -1100,13 +1110,14 @@ input:focus{
 @media(max-width:480px ){
   .video-player {width:100%;padding-right:0px}
 	.thumbnails {margin-top:10px;margin-left:2%;width:98%}
+	.video-metadata,.video-comments {display:none}
   .navbar-brand {margin-left:-20px}
 	.watcher .singer span.subscribe-button,.watcher .singer span.subscribe-count {width:auto;font-size :6px}
 	.watcher .photo img { }
 	.watcher h1 {font-size : 9px}
   .watcher .singer a {font-size : 9px}
   .watcher .views h1{font-size : 9px;}
-  #search input[type=text] {width : 20%;margin-left:-70px}
+  #search input[type=text] {width : 48%;margin-left:-90px}
   #search input[type=submit] {width : 30px}
   .navbar-brand {left : 23px;top : 4px;}
    .videos a  {width : 30%;}
@@ -1120,7 +1131,7 @@ input:focus{
   .watcher .singer a {font-size : 6px}
   .watcher .views h1{font-size : 8px;}
 .videos a  {width : 45%;}
-#search input[type=text] {width : 18%;margin-left:-70px}
+#search input[type=text] {width : 38%;margin-left:-90px}
   #search input[type=submit] {width : 30px}
   .navbar-brand {left : 23px;	top : 4px;}
  .video-comments > div > div {width:50%;}
@@ -1133,7 +1144,7 @@ input:focus{
   .watcher .singer a {font-size : 6px}
   .watcher .views h1{font-size : 8px;}
 	.videos a  {width : 95%;}
-	#search input[type=text] {width : 23%;margin-left:-100px}
-  #search input[type=submit] {display:none}
+	#search input[type=text] {width : 28%;margin-left:-90px}
+  #search input[type=submit] {}
   .video-comments > div > div {width:50%;}
 }
