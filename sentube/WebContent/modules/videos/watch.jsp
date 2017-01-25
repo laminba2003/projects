@@ -2,7 +2,7 @@
  <div class="video-player">
   
   <div class="video-container">
-     <iframe width="853" height="200" src="//www.youtube.com/embed/${id}?rel=0" frameborder="0" allowfullscreen></iframe>
+     <iframe style="display:none" width="853" height="200" src="//www.youtube.com/embed/${id}?rel=0" frameborder="0" allowfullscreen></iframe>
   </div>
   
    <div class="watcher">
@@ -104,6 +104,7 @@
 			    	videos[i].viewCount = results.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 			      }
 			      page.render($(".thumbnails"),videos,thumbnail => thumbnail.addClass("animated flip"));
+			      $(".video-container iframe").show();
 			      app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId=${id}&part=snippet&maxResults=20",results => {
 			    	  const comments = new Array();
 			    	  length = results.items.length;
