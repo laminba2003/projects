@@ -38,6 +38,7 @@
 	 videos.push({id : "HeFpnYKGXMk", title : "Coumba Gawlo - Topma",channel : "gelongalvideo"});
 	 videos.push({id : "7lENHksMvXM", title : "Safary - Fat Ndiaye Coumba Anta",channel : "Queen Safary"});
 	 videos.push({id : "Km0Ums-d8N0", title : "Nafina - Lane Ngay Khar",channel : "Nafina Officiel"});
+	 videos.push({id : "m-xrL7PkU4w", title : "Amina - Feksima",channel : "gelongalvideo"});
 	 videos.push({id : "TxyhI0CDG-I", title : "Alioune Mbaye Nder - Maladie d'Amour",channel : "Prince Arts"});
 	 videos.push({id : "FwBeLCLMa1s", title : "Adiouza Diallo - Cey Love",channel : "Adiouza Diallo"});
 	 videos.push({id : "SyJWbN7tGbg", title : "Abou Thioubalo - Solution",channel : "Baba"});
@@ -51,6 +52,10 @@
 	 videos.push({id : "VnTyGAmDJXo", title : "Carlou D - Sagn Sagn",channel : "Carlou-D Loucard"});
 	 videos.push({id : "QF6UsqvrxEA", title : "Mbaye Dieye Faye - Puissance",channel : "Pako DIAZ"});
 	 videos.push({id : "EhDOvtQKXrk", title : "Ngaaka Blinde - Deff Buzz",channel : "SAMBATION'ENT Official"});
+	 videos.push({id : "hs6qelc8YtU", title : "Bideew Bou Bess - I Belong",channel : "gelongalvideo"});
+	 videos.push({id : "AqU-432JrRU", title : "Big D - Let's Go !!!",channel : "gelongalvideo"});
+	 videos.push({id : "9bDLVWtPa8k", title : "Nix - Zik des gentlemen",channel : "gelongalvideo"});
+	 videos.push({id : "gGfuwgYE7Ho", title : "Freestyle - Show me",channel : "gelongalvideo"});
 	 var length,id = "";
 	 length = videos.length;
 	 for(var i=0;i<length;i++) id += i < length-1 ? videos[i].id +"," : videos[i].id;
