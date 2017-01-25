@@ -83,8 +83,8 @@
               <p>&copy; 2017 all rights reserved</p>
             </div>
             <div class="developer">
-              <p>Designed By <a target="_blank" href="http://wpfreeware.com/" rel="nofollow">Wpfreeware</a>
-              and <a target="_blank" href="http://env-3687617.mircloud.host/sentube/" rel="nofollow">Think Tech</a></p>
+              <p>Designed by <a target="_blank" href="http://wpfreeware.com/" rel="nofollow">Wpfreeware</a>
+              and <a target="_blank" href="http://env-3687617.mircloud.host/thinktech/" rel="nofollow">Think Tech</a></p>
             </div>
           </div>
         </div>
