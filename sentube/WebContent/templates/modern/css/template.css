@@ -748,8 +748,8 @@ img{
 	top: 0px;
 	background-repeat: no-repeat;
 	background-position: center center;
-	padding-left : 50%;
-	padding-top : 20%;
+	padding-left : 31%;
+	padding-top : 17%;
 }
 
 #loader {
@@ -1042,6 +1042,7 @@ input:focus{
   .thumbnails {margin-left: -40px;width:32%}
   #footer {padding-left:17%;margin-top:10px}
   .videos h1  {margin-top : 0px;}
+  #wait {padding-left: 28%;padding-top : 16%}
 }
   
 @media(max-width:991px ){
@@ -1059,6 +1060,7 @@ input:focus{
    #search input[type=text] {margin-top:3px;width : 58%;margin-left:-50px}
    #search input[type=submit] {margin-top:3px;}
     .videos h1  {margin-top : 0px;}
+    #wait {padding-left: 28%;padding-top : 16%}
 }
 
 @media(max-width:767px ){
@@ -1087,6 +1089,7 @@ input:focus{
   .video-player {width:100%;padding-right:0px}
 	.thumbnails {margin-top:10px;margin-left:2%;width:98%}
   .video-comments > div > div {width:80%;}
+  #wait {padding-top : 27%}
 }
 @media(max-width:640px){
 	.video-player {width:100%;padding-right:0px}
@@ -1104,6 +1107,7 @@ input:focus{
   .videos a  {width : 29%;}
   .videos h1  {margin-top : 3px;}
   .video-comments > div > div {width:70%;}
+  #wait {padding-top : 27%}
 }
 
  
@@ -1122,6 +1126,7 @@ input:focus{
   .navbar-brand {left : 23px;top : 4px;}
    .videos a  {width : 30%;}
   .video-comments > div > div {width:50%;}
+  #wait {padding-top : 28%}
 }
 @media(max-width:360px ){
  .navbar-brand {margin-left:-20px}
@@ -1147,4 +1152,5 @@ input:focus{
 	#search input[type=text] {width : 28%;margin-left:-90px}
   #search input[type=submit] {}
   .video-comments > div > div {width:50%;}
+  #wait {padding-top : 31%}
 }
