@@ -58,7 +58,7 @@
        {#.}
        <a href="videos/watch?v={id}">
   		<div>
-  		   <img src="{thumbnail}"/>
+  		   <img src="https://i.ytimg.com/vi/{id}/mqdefault.jpg"/>
   		   <span>{duration}</span>
   		   <div>
   		     <span>{title}</span>
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			    for(var i=0;i<length;i++) {
 					const item = result.items[i];
 					id += i < length-1 ? item.id.videoId +"," : item.id.videoId;
-					videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle,thumbnail : item.snippet.thumbnails.medium.url});
+					videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
 				}
 			    app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics",result => {
 			      length = result.items.length;	

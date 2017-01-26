@@ -11,20 +11,10 @@
     <link href="templates/modern/css/template.css" rel="stylesheet"> 
     <!-- Favicon -->
     <link rel="shortcut icon" href="templates/modern/images/favicon_32.png"  sizes="32x32">  
-  
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 <body>
-  <!-- =========================
-    //////////////This Theme Design and Developed //////////////////////
-    //////////// by www.wpfreeware.com======================--> 
-    
-  <!-- End Preloader -->   
+ 
+  <!-- scroll to top  -->   
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
   
   <!-- start navbar -->
