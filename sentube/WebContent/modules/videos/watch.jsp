@@ -18,6 +18,10 @@
   	 </div>
   	 <div class="views">
   	      <h1>{viewCount} views</h1>
+  	      <div>
+  	      <span class="like">{likeCount}</span>
+  	      <span class="dislike">{dislikeCount}</span>
+  	      </div>
   	 </div>
   	 </template>
   </div>
@@ -96,6 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		video.description = info.items[0].snippet.description.linkify();
 		video.viewCount = info.items[0].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 		video.commentCount = info.items[0].statistics.commentCount.replace(/\B(?=(\d{3})+\b)/g, ",");
+		video.likeCount = info.items[0].statistics.likeCount.replace(/\B(?=(\d{3})+\b)/g, ",");
+		video.dislikeCount = info.items[0].statistics.dislikeCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 		app.get("https://www.googleapis.com/youtube/v3/channels?id="+info.items[0].snippet.channelId+"&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,statistics",channel => {
 			video.channel = channel.items[0].snippet.title;
 			video.photo = channel.items[0].snippet.thumbnails.medium.url;

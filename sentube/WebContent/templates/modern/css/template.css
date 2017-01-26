@@ -515,8 +515,37 @@ img{
 	width : 45px;height:45px;
 }
 
-.watcher .views {
+.watcher .views, .watcher .views > div {
 	float:right;
+}
+
+.watcher .views > div {
+	margin-right : 8%;
+}
+
+.watcher .views span {
+	width : auto;
+	display : inline-block;
+	background-repeat : no-repeat;
+	padding-left : 21px;
+	height : 26px;
+	background-position : 0px 0px;
+	padding-top : 2px;
+	font-family : Tahoma;
+	color : #333;
+	font-size : 80%;
+}
+
+.watcher .views .like {
+	background-image : url("../images/like-20.png");
+	background-position : 0px 0px;
+	padding-left : 23px;
+}
+
+.watcher .views .dislike {
+	background-image : url("../images/dislike-20.png");
+	background-position : 0px 0px;
+	margin-left : 5px;
 }
 
 .watcher .singer {
@@ -1043,6 +1072,7 @@ input:focus{
   #footer {padding-left:17%;margin-top:10px}
   .videos h1  {margin-top : 0px;}
   #wait {padding-left: 28%;padding-top : 16%}
+  .watcher .views span {font-size : 65%}
 }
   
 @media(max-width:991px ){
@@ -1108,6 +1138,7 @@ input:focus{
   .videos h1  {margin-top : 3px;}
   .video-comments > div > div {width:70%;}
   #wait {padding-top : 27%}
+  .watcher .views span {font-size : 45%}
 }
 
  
@@ -1127,6 +1158,7 @@ input:focus{
    .videos a  {width : 30%;}
   .video-comments > div > div {width:50%;}
   #wait {padding-top : 28%}
+  .watcher .views span {font-size : 35%}
 }
 @media(max-width:360px ){
  .navbar-brand {margin-left:-20px}
