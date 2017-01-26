@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 							    	  token = result.nextPageToken;
 							    	  const container = $("<div/>");
 							    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments},
-							    	      false,container, html => {
+							    	      false,container, () => {
 							    		  $(".video-comment",container).insertBefore($(".video-comments a.show-more"));
 							    	  });
 							    	  $(".video-comments a.show-more").show();
