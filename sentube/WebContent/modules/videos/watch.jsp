@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					    	  photo : result.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
 					    	  text : result.items[i].snippet.topLevelComment.snippet.textDisplay});
 					  }
+			    	  if(length<=19) video.commentCount = length;
 			    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments});
 			    	  var token = result.nextPageToken;
 			    	  if(!token) {
