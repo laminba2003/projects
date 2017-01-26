@@ -137,34 +137,35 @@ document.addEventListener("DOMContentLoaded", () => {
 					    	  photo : result.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
 					    	  text : result.items[i].snippet.topLevelComment.snippet.textDisplay});
 					  }
-			    	  if(length<=19) video.commentCount = length;
-			    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments});
 			    	  var token = result.nextPageToken;
-			    	  if(!token) {
-			    		  $(".video-comments a.show-more").hide();
-			    	  }else {
-			    		  $(".video-comments a.show-more").click(() => {
-			    			  $(".video-comments a.show-more").hide();
-			    			  app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId=${id}&pageToken="+token+"&part=snippet&maxResults=20",result => {
-			    				  comments = new Array();
-						    	  length = result.items.length;
-						    	  for(i=0;i<length;i++) {
-								      comments.push({author : result.items[i].snippet.topLevelComment.snippet.authorDisplayName, 
-								    	  date : new Date(result.items[i].snippet.topLevelComment.snippet.publishedAt).toLocaleDateString("en-US",options),
-								    	  photo : result.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
-								    	  text : result.items[i].snippet.topLevelComment.snippet.textDisplay});
-								  }
-						    	  token = result.nextPageToken;
-						    	  const container = $("<div/>");
-						    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments},
-						    	      false,container, html => {
-						    		  $(".video-comment",container).insertBefore($(".video-comments a.show-more"));
-						    	  });
-						    	  $(".video-comments a.show-more").show();
-						    	  if(!token) $(".video-comments a.show-more").hide();
-			    			  });
-			    		  });
-			    	  }
+			    	  if(!token) video.commentCount = length;
+			    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments}, () => {
+				    	  if(!token) {
+				    		  $(".video-comments a.show-more").hide();
+				    	  }else {
+				    		  $(".video-comments a.show-more").click(() => {
+				    			  $(".video-comments a.show-more").hide();
+				    			  app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId=${id}&pageToken="+token+"&part=snippet&maxResults=20",result => {
+				    				  comments = new Array();
+							    	  length = result.items.length;
+							    	  for(i=0;i<length;i++) {
+									      comments.push({author : result.items[i].snippet.topLevelComment.snippet.authorDisplayName, 
+									    	  date : new Date(result.items[i].snippet.topLevelComment.snippet.publishedAt).toLocaleDateString("en-US",options),
+									    	  photo : result.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
+									    	  text : result.items[i].snippet.topLevelComment.snippet.textDisplay});
+									  }
+							    	  token = result.nextPageToken;
+							    	  const container = $("<div/>");
+							    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments},
+							    	      false,container, html => {
+							    		  $(".video-comment",container).insertBefore($(".video-comments a.show-more"));
+							    	  });
+							    	  $(".video-comments a.show-more").show();
+							    	  if(!token) $(".video-comments a.show-more").hide();
+				    			  });
+				    		  });
+				    	  }
+			    	  });
 				  });
 			   });
 			});	
