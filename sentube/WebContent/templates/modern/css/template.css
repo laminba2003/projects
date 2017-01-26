@@ -534,6 +534,7 @@ img{
 	font-family : Tahoma;
 	color : #333;
 	font-size : 80%;
+	white-space : nowrap;
 }
 
 .watcher .views .like {
