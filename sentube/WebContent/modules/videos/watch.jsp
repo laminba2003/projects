@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					      comments.push({author : results.items[i].snippet.topLevelComment.snippet.authorDisplayName, 
 					    	  date : new Date(results.items[i].snippet.topLevelComment.snippet.publishedAt).toLocaleDateString("en-US",options),
 					    	  photo : results.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
-					    	  text : results.items[i].snippet.topLevelComment.snippet.textDisplay.linkify()});
+					    	  text : results.items[i].snippet.topLevelComment.snippet.textDisplay});
 					  }
 			    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments});
 				  });
