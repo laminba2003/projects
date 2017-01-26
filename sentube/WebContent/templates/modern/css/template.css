@@ -591,6 +591,22 @@ img{
 	min-height : 300px;vertical-align:top;
 }
 
+a.show-more {
+	font-weight: 590;
+    text-align: center;
+    background-color: #f8f8f8;
+    color: #333;
+    font-size: 12px;
+    border : 1px solid rgb(211,211,211);
+    margin-bottom : 30px;
+    padding : 9px;
+    width : 95%;
+    margin-left : auto;
+    margin-right : auto;
+    display : block;
+    cursor : pointer;
+}
+
 .video-comments > h1 {
 	font-family : Arial;margin-bottom:15px;padding:4px;padding-left:13px;margin-top:10px;line-height:0.8em;font-size:13px;font-weight:bold;
 }

@@ -46,6 +46,7 @@
          </div>
   	 </div>
   	 {/comments}
+  	  <a class="show-more">Show more</a>
   	</template>
   </div>
   
