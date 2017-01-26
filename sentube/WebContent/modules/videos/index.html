@@ -73,8 +73,11 @@
 	    	videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
 	    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 	    }
-	    const div = $(".videos").fadeTo(1000,1);
-	    page.render(div,videos,thumbnail => thumbnail.addClass("animated flip"));
+	    const div = $(".videos");
+	    page.render(div,videos,thumbnail => {
+	    	div.fadeTo(1000,1);
+	    	thumbnail.addClass("animated flip");
+	    });
 	 });
  });
  
