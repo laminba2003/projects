@@ -138,10 +138,10 @@ document.addEventListener("DOMContentLoaded", () => {
 					    	  text : result.items[i].snippet.topLevelComment.snippet.textDisplay});
 					  }
 			    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments});
-			    	  if(!length) {
+			    	  var token = result.nextPageToken;
+			    	  if(!token) {
 			    		  $(".video-comments a.show-more").hide();
 			    	  }else {
-			    		  var token = result.nextPageToken;
 			    		  $(".video-comments a.show-more").click(() => {
 			    			  $(".video-comments a.show-more").hide();
 			    			  app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId=${id}&pageToken="+token+"&part=snippet&maxResults=20",result => {
