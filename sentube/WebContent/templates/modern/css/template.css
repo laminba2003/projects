@@ -224,11 +224,20 @@ body {
 .navbar-brand {
 	position : absolute;
 	left:44px;
-	background-image : url(../images/Youtube-32.png);
-	background-position : 2px -3px;
-	background-repeat : no-repeat;
-    padding-left : 36px;
     top : 2px;
+}
+
+.navbar-brand:before {
+	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -234px -478px;
+    background-image: url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp);
+    background-position-x: -234px;
+    background-position-y: -478px;
+    width: 40px;
+    height: 28px;
+    content : "";
+    display : inline-block;
+    vertical-align : middle;
+    margin-right : 2px;
 }
 
 #search {
@@ -526,26 +535,33 @@ img{
 .watcher .views span {
 	width : auto;
 	display : inline-block;
-	background-repeat : no-repeat;
-	padding-left : 21px;
-	height : 26px;
-	background-position : 0px 0px;
-	padding-top : 2px;
 	font-family : Tahoma;
 	color : #333;
 	font-size : 80%;
-	white-space : nowrap;
 }
 
-.watcher .views .like {
-	background-image : url("../images/like-20.png");
-	background-position : 0px 0px;
-	padding-left : 23px;
+.watcher .views .like:before {
+	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -333px -229px;
+    background-image: url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp);
+    background-position-x: -333px;
+    background-position-y: -229px;
+    width : 20px;
+	height : 20px;
+	content : "";
+	display : inline-block;
+	vertical-align : middle;
 }
 
-.watcher .views .dislike {
-	background-image : url("../images/dislike-20.png");
-	background-position : 0px 0px;
+.watcher .views .dislike:before {
+	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -122px -324px;
+    background-image: url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp);
+    background-position-x: -122px;
+    background-position-y: -324px;
+	width : 20px;
+	height : 20px;
+	content : "";
+	display : inline-block;
+	vertical-align : middle;
 	margin-left : 5px;
 }
 
@@ -558,30 +574,39 @@ img{
 	color: #fefefe;
     background-color: #e62117;
     width : 100px;
-    padding:3px;
+    padding:5px;
     display:inline-block;
     text-align : left;
     font-size : 10px;
     margin-top : 7px;
-    background-image : url(../images/Youtube-16.png);
-    background-repeat : no-repeat;
-    background-position : 4px 3px;
     height :25px;
-    padding-left : 23px;
-    padding-top : 6px;
+}
+
+.watcher .singer span.subscribe-button:before {
+	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -146px -151px;
+    background-image: url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp);
+    background-position-x: -146px;
+    background-position-y: -151px;
+    width: 16px;
+    height: 12px;
+    content : "";
+    display : inline-block;
+    vertical-align : middle;
+    padding-top : 4px;
+    margin-right : 2px;
 }
 
 .watcher .singer span.subscribe-count {
-	border : 1px solid #d3d3d3;
-	color: #333;
-    padding:3px;
-    display:inline-block;
-    text-align : center;
-    font-size : 10px;
-    height :25px;
-    padding-top : 6px;
-    margin-left : -3px;
-    font-family : Tahoma;
+	border: 1px solid #d3d3d3;
+    color: #333;
+    padding: 6px;
+    display: inline-block;
+    text-align: center;
+    font-size: 10px;
+    height: 23px;
+    margin-left: -2px;
+    font-family: Tahoma;
+    border-left: none;
 }
 
 .video-metadata,.video-comments {
@@ -1111,7 +1136,7 @@ input:focus{
 
 @media(max-width:767px ){
 	#footer {padding-left:17%;margin-top:10px}
-	 .navbar-brand {margin-left:-20px;margin-top:9px;}
+	 .navbar-brand {margin-left:20px;margin-top:9px;}
 	.watcher .singer span.subscribe-button,.watcher .singer span.subscribe-count {width:auto;font-size :6px}
 	.watcher .photo img { }
 	.watcher h1 {font-size : 11px}
@@ -1190,7 +1215,6 @@ input:focus{
  .video-comments > div > div {width:50%;}
 }
 @media(max-width:320px ){
-	.navbar-brand {margin-left:-20px}
 	.watcher .singer span.subscribe-button,.watcher .singer span.subscribe-count {width:auto;font-size :6px}
 	.watcher .photo img { }
 	.watcher h1 {font-size : 6px}
