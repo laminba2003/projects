@@ -577,23 +577,23 @@ img{
     padding:5px;
     display:inline-block;
     text-align : left;
-    font-size : 10px;
+    font-size : 100%;
     margin-top : 7px;
     height :25px;
 }
 
 .watcher .singer span.subscribe-button:before {
-	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -146px -151px;
+	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -146px -152px;
     background-image: url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp);
     background-position-x: -146px;
-    background-position-y: -151px;
+    background-position-y: -152px;
     width: 16px;
     height: 12px;
     content : "";
     display : inline-block;
     vertical-align : middle;
-    padding-top : 4px;
-    margin-right : 2px;
+    padding-top : 2px;
+    margin-right : 7px;
 }
 
 .watcher .singer span.subscribe-count {
