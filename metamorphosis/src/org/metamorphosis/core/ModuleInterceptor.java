@@ -1,6 +1,8 @@
 package org.metamorphosis.core;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
@@ -46,6 +48,10 @@ public class ModuleInterceptor extends AbstractInterceptor {
 					if(url.equals(actionURL) && action.getTitle()!=null) {
 						request.setAttribute("title",action.getTitle());
 					}
+				}
+				if(module.isCached()) {
+					HttpServletResponse response = ServletActionContext.getResponse();
+					response.setHeader("Cache-control", "private, max-age=86400");
 				}
 			}
 			return invocation.invoke();

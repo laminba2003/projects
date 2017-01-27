@@ -10,6 +10,7 @@ public class Module extends Extension {
 	private String icon;
 	private boolean main;
 	private boolean administrable = true;
+	private boolean cached;
 	private String indexPage = "index.html";
 	private List<Menu> menus = new ArrayList<Menu>();
 	private List<Action> actions = new ArrayList<Action>();
@@ -44,6 +45,13 @@ public class Module extends Extension {
 		this.administrable = administrable;
 	}
 
+	public boolean isCached() {
+		return cached;
+	}
+	public void setCached(boolean cached) {
+		this.cached = cached;
+	}
+	
 	public String getIndexPage() {
 		return indexPage;
 	}
