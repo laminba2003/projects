@@ -228,10 +228,10 @@ body {
 }
 
 .navbar-brand:before {
-	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -234px -478px;
+	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -234px -479px;
     background-image: url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp);
     background-position-x: -234px;
-    background-position-y: -478px;
+    background-position-y: -479px;
     width: 40px;
     height: 28px;
     content : "";
@@ -599,7 +599,7 @@ img{
 .watcher .singer span.subscribe-count {
 	border: 1px solid #d3d3d3;
     color: #333;
-    padding: 6px;
+    padding: 4px;
     display: inline-block;
     text-align: center;
     font-size: 10px;
