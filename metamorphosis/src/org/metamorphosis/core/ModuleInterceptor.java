@@ -51,7 +51,7 @@ public class ModuleInterceptor extends AbstractInterceptor {
 				}
 				if(module.isCached()) {
 					HttpServletResponse response = ServletActionContext.getResponse();
-					response.setHeader("Cache-control", "private, max-age=86400");
+					response.setHeader("Cache-control", "private, max-age=7200");
 				}
 			}
 			return invocation.invoke();
