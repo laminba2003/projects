@@ -1,6 +1,7 @@
 <module>
 <type>front-end</type>
 <main>true</main>
+<cached>true</cached>
 <actions>
 	<action url="watch" script="module.groovy" method="watch">
 	  <result>watch</result>
