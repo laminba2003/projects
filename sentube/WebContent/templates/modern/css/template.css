@@ -308,16 +308,6 @@ input:-moz-placeholder { /* Firefox 18- */
   color: #d42323;
 }
 
-/*
-Template Name: WpF BGness - Business & Blog Bootstrap HTML5/CSS3 Template
-Author: WpFreeware Team
-Author URI: http://wpfreeware.com/
-Description: WpF BGness - Business & Blog Bootstrap HTML5/CSS3 Template.
-Version: 1.0
-Tags: light, white, Business,Multiple page, Blog, custom-colors,Bootstrap,responsive, html5, css3
-*/
-
-
 /* Table of Content
 ==================================================
   #BASIC TYPOGRAPHY
@@ -350,7 +340,7 @@ a{
   
 }
 a:hover{
-  color: #646464;
+  color: #000;
   text-decoration: none;
 }
 a:focus{
@@ -849,54 +839,7 @@ a.show-more {
   width: 100%;
   padding: 0px 0px;
 }
-.footer_top{
-  float: left;
-  display: inline;
-  width: 100%;
-}
-.single_footer_top{
-  float: left;
-  display: inline;
-  width: 100%;
-  min-height: 200px;
-}
-.single_footer_top > h2 {
-  color: #d42323;
-  font-weight: bold;
-}
-.single_footer_top ul li a {
-  color: #000;
-  display: block;
-  margin-bottom: 6px;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  padding-left : 3px;
-}
-.single_footer_top p {
-  color: #000;
-  line-height: 22px;
-  padding-left : 3px;
-}
-.footer_middle{
-  float: left;
-  display: inline;
-  width: 100%;
-}
-.single_footer_middle{
-  float: left;
-  display: inline;
-  width: 100%;
-  color: #d42323;
-}
-.single_footer_middle>h2{
-  font-size: 16px;
-  font-weight: bold;
-  color: #d42323;
-}
-.single_footer_middle address>p{
-  margin-bottom: 0px;
-}
+
 .footer_bottom {
   display: inline;
   float: left;
