@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			      }
 			      page.render($(".watcher"),video);
 				  page.render($(".video-metadata"),video);
-				  page.render($(".thumbnails"),videos,thumbnail => thumbnail.addClass("animated flip"));
+				  page.render($(".thumbnails"),videos);
 			      $(".video-container iframe").show();
 			      app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId=${id}&part=snippet&maxResults=20",result => {
 			    	  var comments = new Array();
