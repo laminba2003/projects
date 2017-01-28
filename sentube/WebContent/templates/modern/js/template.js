@@ -1,4 +1,3 @@
- 
  /**  
   * WpF BGness 
   * Template Scripts
@@ -76,8 +75,10 @@ $('.scrollToTop').click(function(){
 //<![CDATA[
   jQuery(window).ready(function() { // makes sure the whole site is loaded
     $('body').delay(100).css({'overflow':'visible'});
-    $("nav li").delay(500).addClass("animated rollIn");
-    $(".navbar-brand").delay(500).addClass("animated flip");
+    if(window.location.pathname.split( '/' ).length<=3) {
+    	$("nav li").delay(500).addClass("animated rollIn");
+    	$(".navbar-brand").delay(500).addClass("animated flip");
+    }
   })
 //]]>
 
