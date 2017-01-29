@@ -746,6 +746,7 @@ a.show-more {
 	display : inline-block;
 	vertical-align:top;
 	width:45%;
+	text-transform : lowercase;
 }
 .videos .description{
 	width:95%;
