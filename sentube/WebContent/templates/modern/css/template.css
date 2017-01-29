@@ -764,7 +764,7 @@ a.show-more {
 }
 .videos .description .view-count {
 	color:#d42323;
-	font-style:italic;
+	font-style:normal;
 	font-size:85%;
 	margin:0;
 	font-weight:100;
