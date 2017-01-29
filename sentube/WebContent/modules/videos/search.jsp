@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		    	div.fadeTo(1000,1);
 		    	thumbnail.addClass("animated flip");
 		    });
-		});
-	});
+		},true);
+	},true);
 	$("#search input[type=text]").val("${query}");
 });
  </script> 
