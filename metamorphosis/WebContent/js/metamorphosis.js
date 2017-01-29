@@ -2,8 +2,17 @@ const app = {};
 
 app.ready = callback => $(document).ready(callback);
 
-app.get = (url, callback, error) => {
+app.get = (url, callback, ...options) => {
+	 var store =  typeof options[0] == 'boolean' ? options[0] : false;
 	 page.wait();
+	 if(store) {
+		 const data = localStorage.getItem(url); 
+		 if(data) {
+			 page.release();
+			 if(callback) callback(JSON.parse(data));
+		     return false;
+		 }
+	 }
 	 $.ajax({
 		 type : 'GET', 
 		 url : url, 
@@ -11,8 +20,10 @@ app.get = (url, callback, error) => {
 	 }).done(data => {
 		 page.release();
 	     if(callback) callback(data);
+	     if(store) localStorage.setItem(url,JSON.stringify(data));
 	 }).fail(data => {
 	  	 page.release();
+	  	 const error = options[0] instanceof Function ? options[0] : options[1];
 	  	 if(error) error(data);
 	 });
 };

@@ -163,12 +163,12 @@ document.addEventListener("DOMContentLoaded", () => {
 							    	  });
 							    	  $(".video-comments a.show-more").show();
 							    	  if(!token) $(".video-comments a.show-more").hide();
-				    			  });
+				    			  },true);
 				    		  });
 				    	  }
 			    	  });
-				  });
-			   });
+				  },true);
+			   },true);
 			});	
 		});
 	});
