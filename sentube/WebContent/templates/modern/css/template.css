@@ -576,7 +576,7 @@ img{
     padding:0.203125em 0.40625em;
     display:inline-block;
     text-align : left;
-    font-size : 85%;
+    font-size : 87%;
 }
 
 .watcher .singer span.subscribe-button:before {
@@ -733,7 +733,7 @@ a.show-more {
 
 .videos h1,.thumbnails h1 {
 	display:block;font-weight:bold;font-size:135%;
-	margin-bottom:0.203125em;
+	margin-bottom:0.203125em;margin-top : -8px;
 }
 .videos h1 {
 	margin-bottom:0.40625em;
