@@ -54,19 +54,20 @@
   
   <div class="thumbnails">
     <template type="text/x-dust-template">
-    <span>Up next</span>
+      <h1>Up next</h1>
        {#.}
-       <a href="videos/watch?v={id}">
   		<div>
-  		   <img src="https://i.ytimg.com/vi/{id}/mqdefault.jpg"/>
-  		   <span>{duration}</span>
-  		   <div>
+  		  <a href="videos/watch?v={id}">
+  		   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">  		   
+  		     <span>{duration}</span>
+  		   </div>  		   
+  		   <div class="description">
   		     <span>{title}</span>
   		     <span>{channel}</span>
   		     <span>{viewCount} views</span>
   		   </div>
-    	</div>
-        </a>
+  		 </a>
+       </div>
        {/.}
     </template>
   </div>

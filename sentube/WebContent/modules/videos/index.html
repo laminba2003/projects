@@ -2,18 +2,18 @@
  <template type="text/x-dust-template">
  <h1>Music</h1>
   {#.}
-       <a href="videos/watch?v={id}">
-  		<div>
-  		   <img src="https://i.ytimg.com/vi/{id}/mqdefault.jpg"/>
-  		   <span>{duration}</span>
-  		   <div>
-  		     <span>{title}</span>
-  		     <span>{channel}</span>
-  		     <span>{viewCount} views</span>
-  		   </div>
-    	</div>
-        </a>
-       {/.}
+    <div>
+	  <a href="videos/watch?v={id}">
+	   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">  		   	     
+	     <span class="duration">{duration}</span>
+	   </div>  		   
+	   <div class="description">
+	   	<p class="view-count"><span>{viewCount} views</span></p>
+	    <p class="title"><span>{title}</span></p>
+	   </div>
+	 </a>
+    </div>
+  {/.}
   </template>	
  </div>
  
