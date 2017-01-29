@@ -169,9 +169,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			    	  });
 				  },true);
 			   },true);
-			});	
-		});
-	});
+			},true);	
+		},true);
+	},true);
  });
  
  </script> 
