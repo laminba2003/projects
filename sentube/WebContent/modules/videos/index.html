@@ -1,6 +1,7 @@
-<div class="videos">
+<div class="videos" style="margin-top:59px">
  <template type="text/x-dust-template">
  <h1>Music</h1>
+ <a class="video-nav-left" href="#"><i class="fa fa-angle-left"></i></a>
   {#.}
     <div>
 	  <a href="videos/watch?v={id}">
@@ -14,13 +15,81 @@
 	 </a>
     </div>
   {/.}
+  <a class="video-nav-right" href="#"><i class="fa fa-angle-right"></i></a>
+  </template>	
+ </div>
+ 
+ <div class="videos">
+ <template type="text/x-dust-template">
+ <h1>International</h1>
+ <a class="video-nav-left" href="#"><i class="fa fa-angle-left"></i></a>
+  {#.}
+    <div>
+	  <a href="videos/watch?v={id}">
+	   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">  		   	     
+	     <span class="duration">{duration}</span>
+	   </div>  		   
+	   <div class="description">
+	   	<p class="view-count"><span>{viewCount} views</span></p>
+	    <p class="title"><span>{title}</span></p>
+	   </div>
+	 </a>
+    </div>
+  {/.}
+  <a class="video-nav-right" href="#"><i class="fa fa-angle-right"></i></a>
   </template>	
  </div>
  
  <script>
  
+ const display = (div, videos) => {
+	 var length,id = "";
+	 length = videos.length;
+	 for(var i=0;i<length;i++) id += i < length-1 ? videos[i].id +"," : videos[i].id;
+	 app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics", result => {
+		length = result.items.length;
+	    for(i=0;i<length;i++) {
+	    	const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length);
+	    	const minutes = duration.substring(0, duration.indexOf('M'));
+			const seconds = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
+	    	videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
+	    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
+	    }
+	    page.render(div,videos.slice(0,12),thumbnail => {
+	    	var index = 0;
+	    	$(".video-nav-left",div).hide();
+	    	$(".video-nav-left",div).click(() => {
+	    		const container = $("<div/>");
+	    		index-=12;
+	    		if(index<=0) {
+	    			$(".video-nav-left",div).hide();
+	    			$(".video-nav-right",div).show();
+	    		}
+	    		page.render(div,videos.slice(index,index+12),false,container,thumbnail => {
+	    			console.log(index);
+	    	    	$("> div",div).remove();
+	    	    	$("> div",container).insertAfter($(".video-nav-left",div));
+	    	    });
+	    	});
+	    	if(length<=12) $(".video-nav-right",div).hide();
+	    	$(".video-nav-right",div).click(() => {
+	    		$(".video-nav-left",div).show();
+	    		const container = $("<div/>");
+	    		index+=12;
+	    		if(index>=length-12) $(".video-nav-right",div).hide();
+	    		page.render(div,videos.slice(index,index+12),false,container,thumbnail => {
+	    	    	$("> div",div).remove();
+	    	    	$("> div",container).insertAfter($(".video-nav-left",div));
+	    	    });
+	    	});
+	    	div.fadeTo(1000,1);
+	    	thumbnail.addClass("animated flip");
+	    });
+	 },true);
+ };
+ 
  document.addEventListener("DOMContentLoaded", () => {
-	 const videos = new Array();
+	 var videos = new Array();
 	 videos.push({id : "BGt1htuyhiU", title : "Youssou Ndour - Be careful"});
 	 videos.push({id : "KlE8MlCWgmI", title : "Viviane Chidid - No Stress"});
 	 videos.push({id : "a-B4Q5_I_mI", title : "Cheikh Lo - Degg Gui"});
@@ -69,24 +138,21 @@
 	 videos.push({id : "isdWSKnSSyE", title : "Safari - Art Bi"});
 	 videos.push({id : "cgFENtRBWsU", title : "Deesse Major - Gem Sa Bop"});
 	 videos.push({id : "Fjba4g93UX8", title : "HAKILL - Def saRAP"});
-	 var length,id = "";
-	 length = videos.length;
-	 for(var i=0;i<length;i++) id += i < length-1 ? videos[i].id +"," : videos[i].id;
-	 app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics", result => {
-		length = result.items.length;
-	    for(i=0;i<length;i++) {
-	    	const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length);
-	    	const minutes = duration.substring(0, duration.indexOf('M'));
-			const seconds = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
-	    	videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
-	    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
-	    }
-	    const div = $(".videos");
-	    page.render(div,videos,thumbnail => {
-	    	div.fadeTo(1000,1);
-	    	thumbnail.addClass("animated flip");
-	    });
-	 },true);
+	 display($(".videos:eq(0)"),videos);
+	 videos = new Array();
+	 videos.push({id : "rmlmOk4ubcU", title : "Jamiroquai - Automaton"});
+	 videos.push({id : "TwyPsUd9LAk", title : "Missy Elliott - I'm Better"});
+	 videos.push({id : "IhG6pZIlhZQ", title : "Take That - Let in the sun"});
+	 videos.push({id : "hdw1uKiTI5c", title : "Katy Perry - Rise"});
+	 videos.push({id : "SXiSVQZLje8", title : "Ariana Grande - Side to Side"});
+	 videos.push({id : "4HazJhPnrB8", title : "Alicia Keys - In Common"});
+	 videos.push({id : "Y56lpXvXbs0", title : "OneRepublic - Kids"});
+	 videos.push({id : "QxsmWxxouIM", title : "Beyonce - sorry"});
+	 videos.push({id : "kOkQ4T5WO9E", title : "Calvin Harris - This Is What You Came For"});
+	 videos.push({id : "gdx7gN1UyX0", title : "Justin Bieber - Company"});
+	 videos.push({id : "qW44IepcaAA", title : "Sunrise Avenue - You Can Never Be Ready"});
+	 videos.push({id : "_v2J_stvHes", title : "Volbeat - Seal The Deal"});
+	 display($(".videos:eq(1)"),videos);
  });
  
  </script> 
