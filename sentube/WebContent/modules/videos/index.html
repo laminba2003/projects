@@ -64,9 +64,11 @@
 	    		$(".video-nav-right",div).show();
 	    		index-=12;
 	    		if(index<=0) $(".video-nav-left",div).hide();
+	    		const top = $(window).scrollTop();
 	    		page.render(div,videos.slice(index,index+12),false,container,() => {
 	    	    	$("> div",div).remove();
 	    	    	$("> div",container).insertAfter($(".video-nav-left",div));
+	    	    	$('html, body').animate({scrollTop : top},800);
 	    	    });
 	    	});
 	    	if(length<=12) $(".video-nav-right",div).hide();
@@ -75,9 +77,11 @@
 	    		const container = $("<div/>");
 	    		index+=12;
 	    		if(index>=length-12) $(".video-nav-right",div).hide();
+	    		const top = $(window).scrollTop();
 	    		page.render(div,videos.slice(index,index+12),false,container,() => {
 	    	    	$("> div",div).remove();
 	    	    	$("> div",container).insertAfter($(".video-nav-left",div));
+	    	    	$('html, body').animate({scrollTop : top},800);
 	    	    });
 	    	});
 	    	div.fadeTo(1000,1);
