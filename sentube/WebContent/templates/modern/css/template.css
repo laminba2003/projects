@@ -718,7 +718,7 @@ a.show-more {
 }
 
 .videos > a {
-  display : block;
+  display : inline-block;
   background-color: #d42323;
   color: #fff;
   vertical-align : top;
@@ -732,14 +732,14 @@ a.show-more {
 }
 
 .video-nav-left {
-  margin-left : -1px;
+  margin-left : -36px;
   margin-bottom : 3px;
+  margin-right : 10px;
 }
 
 .video-nav-right {
-  position : absolute;
-  margin-top : -27px;
   right : 40px;
+  margin-left : -10px;
 }
 
 .videos > div{
