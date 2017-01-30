@@ -801,13 +801,13 @@ a.show-more {
 .videos .description .view-count {
 	color:#d42323;
 	font-style:normal;
-	font-size:85%;
+	font-size:70%;
 	margin:0;
 	font-weight:100;
 }
 .videos .description .title {
 	line-height:1em;
-	font-size:97%;
+	font-size:90%;
 }
 
 .videos .thumbnail .view-count{
