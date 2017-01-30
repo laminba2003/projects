@@ -255,7 +255,7 @@ body {
 #search input[type=text] {
 	width : 43.3%;
 	height : 30px;
-	border : 1.85px solid #ccc;
+	border : 1.85px solid #b5aeae;
 	font-size : 100%;
 	padding-left : 6px;
 	font-family : Roboto;
@@ -267,7 +267,7 @@ body {
 #search input[type=submit] {
 	width : 66px;
 	height : 30px;
-	border : 1.85px solid #ccc;
+	border : 1.85px solid #b5aeae;
 	border-left : none;
 	background-image : url(../images/search-20.png);
 	background-repeat : no-repeat;
@@ -702,7 +702,7 @@ a.show-more {
 }
 
 .videos {
-	min-height : 340px;opacity:0;padding-left:5%;padding-right:2%;width:95%;margin-left:auto;margin-right:auto;border:1px solid #d3d3d3;padding-bottom:2%;padding-top:2%;background-color:#fffeff;vertical-align:top;
+	min-height : 340px;opacity:0;padding-left:5%;padding-right:2%;width:95%;margin-bottom:1px;margin-left:auto;margin-right:auto;border:1px solid #b5aeae;padding-bottom:1%;padding-top:2%;background-color:#fffeff;vertical-align:top;
 }
 
 body .videos:nth-child(1) {
@@ -802,8 +802,8 @@ body .videos:nth-child(1) {
 	font-weight:100;
 }
 .videos .description .title {
-	line-height:1.125em;
-	font-size:103%;
+	line-height:1em;
+	font-size:97%;
 }
 
 .videos .thumbnail .view-count{
@@ -1089,6 +1089,7 @@ input:focus{
 }
   
 @media(max-width:991px ){
+	.video-nav-right {right:25px}
 	body{font-size:100%;}
 	.thumbnails .thumbnail{width:95%;height:8.75em;display:block;}
 	.thumbnails .description{width:100%;height:auto;}
@@ -1158,6 +1159,7 @@ input:focus{
 
  
 @media(max-width:480px ){
+	.video-nav-right {right:15px}
 	body{font-size:90%;}
 	.videos > div{width:49%;}
 	.videos .thumbnail{height:7.25em;width:100%}
