@@ -60,13 +60,10 @@
 	    	$(".video-nav-left",div).hide();
 	    	$(".video-nav-left",div).click(() => {
 	    		const container = $("<div/>");
+	    		$(".video-nav-right",div).show();
 	    		index-=12;
-	    		if(index<=0) {
-	    			$(".video-nav-left",div).hide();
-	    			$(".video-nav-right",div).show();
-	    		}
-	    		page.render(div,videos.slice(index,index+12),false,container,thumbnail => {
-	    			console.log(index);
+	    		if(index<=0) $(".video-nav-left",div).hide();
+	    		page.render(div,videos.slice(index,index+12),false,container,() => {
 	    	    	$("> div",div).remove();
 	    	    	$("> div",container).insertAfter($(".video-nav-left",div));
 	    	    });
@@ -77,7 +74,7 @@
 	    		const container = $("<div/>");
 	    		index+=12;
 	    		if(index>=length-12) $(".video-nav-right",div).hide();
-	    		page.render(div,videos.slice(index,index+12),false,container,thumbnail => {
+	    		page.render(div,videos.slice(index,index+12),false,container,() => {
 	    	    	$("> div",div).remove();
 	    	    	$("> div",container).insertAfter($(".video-nav-left",div));
 	    	    });
