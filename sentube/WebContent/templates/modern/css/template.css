@@ -796,7 +796,7 @@ a.show-more {
 	font-weight : bold;
 	margin-top : 2px;
 	line-height : 1.3em;
-	font-size : 85%;
+	font-size : 78%;
 }
 .videos .description .view-count {
 	color:#d42323;
@@ -807,7 +807,7 @@ a.show-more {
 }
 .videos .description .title {
 	line-height:1em;
-	font-size:82%;
+	font-size:78%;
 }
 
 .videos .thumbnail .view-count{
