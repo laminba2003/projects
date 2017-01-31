@@ -255,7 +255,7 @@ body {
 #search input[type=text] {
 	width : 43.3%;
 	height : 30px;
-	border : 1.85px solid #b5aeae;
+	border : 1.85px solid #9c3333;
 	font-size : 100%;
 	padding-left : 6px;
 	font-family : Roboto;
@@ -267,7 +267,7 @@ body {
 #search input[type=submit] {
 	width : 66px;
 	height : 30px;
-	border : 1.85px solid #b5aeae;
+	border : 1.85px solid #9c3333;
 	border-left : none;
 	background-image : url(../images/search-20.png);
 	background-repeat : no-repeat;
@@ -702,7 +702,7 @@ a.show-more {
 }
 
 .videos {
-	min-height : 310px;margin-bottom:1px;opacity:0;padding-left:5%;padding-right:1.5%;width:95%;margin-left:auto;margin-right:auto;border:1px solid #b5aeae;padding-bottom:0px;padding-top:1.2%;background-color:#fffeff;vertical-align:top;
+	min-height : 310px;margin-bottom:1px;opacity:0;padding-left:5%;padding-right:1.5%;width:95%;margin-left:auto;margin-right:auto;border:1px solid #ad9696;padding-bottom:0px;padding-top:1.2%;background-color:#fffeff;vertical-align:top;
 }
 
 .videos:first-of-type {
