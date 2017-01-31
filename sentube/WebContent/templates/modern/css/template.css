@@ -276,6 +276,10 @@ body {
 	background-color : #f8f8f8;
 }
 
+.search-results {
+	min-height : 660px;
+}
+
 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color : #888;
   font-family : Roboto;

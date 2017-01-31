@@ -1,3 +1,4 @@
+<div class="search-results">
 <div class="videos">
  <template type="text/x-dust-template">
  <h1>Search Results</h1>
@@ -16,7 +17,7 @@
   {/.}
   </template>	
  </div>
- 
+ </div>
  <script>
 document.addEventListener("DOMContentLoaded", () => {
     app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&q=${query}&type=video&part=snippet&order=date&maxResults=50",result => {
