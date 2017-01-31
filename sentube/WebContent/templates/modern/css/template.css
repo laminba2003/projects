@@ -255,7 +255,7 @@ body {
 #search input[type=text] {
 	width : 43.3%;
 	height : 30px;
-	border : 1.85px solid #9c3333;
+	border : 1.85px solid #8c5959;
 	font-size : 100%;
 	padding-left : 6px;
 	font-family : Roboto;
@@ -267,7 +267,7 @@ body {
 #search input[type=submit] {
 	width : 66px;
 	height : 30px;
-	border : 1.85px solid #9c3333;
+	border : 1.85px solid #8c5959;
 	border-left : none;
 	background-image : url(../images/search-20.png);
 	background-repeat : no-repeat;
@@ -385,11 +385,6 @@ img{
   width: 50px;
   z-index: 9;
   border:1px solid;
-   -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -397,13 +392,7 @@ img{
   transition: all 0.5s;
 
 }
-.scrollToTop>i{
-   -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
+
 .scrollToTop:hover, .scrollToTop:focus{
   text-decoration: none;
   outline: none;
