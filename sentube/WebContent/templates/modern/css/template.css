@@ -766,6 +766,11 @@ a.show-more {
 	font-size:110%;
 	margin-bottom:0.303125em;
 }
+
+.thumbnails h1 {
+	margin-bottom:0.37em;margin-top : 0.37pxpx;
+}
+
 .videos .thumbnail .duration,.thumbnails .thumbnail span {
 	font-family:Tahoma;padding : 2px;color : #fff;background-color:#222;position : absolute;right:0.40625em;bottom:1px;font-size : 75%;
 }
