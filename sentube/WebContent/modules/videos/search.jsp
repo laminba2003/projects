@@ -31,9 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics", result => {
 			length = result.items.length;
 	   	 	for(i=0;i<length;i++) {
-	    		const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length);
-	    		const minutes = duration.substring(0, duration.indexOf('M'));
-				const seconds = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
+	   	 		const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length).toLowerCase();
+	    		const minutes = duration.substring(0, duration.indexOf('m'));
+	    		const index = duration.indexOf('s');
+				const seconds = index > 0 ? duration.substring(duration.indexOf('m')+1, index) : 0;
 	    		videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
 	    		videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 	    	}

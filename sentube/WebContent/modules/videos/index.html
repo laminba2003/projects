@@ -50,9 +50,10 @@
 	 app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics", result => {
 		length = result.items.length;
 	    for(i=0;i<length;i++) {
-	    	const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length);
-	    	const minutes = duration.substring(0, duration.indexOf('M'));
-			const seconds = duration.substring(duration.indexOf('M')+1, duration.indexOf('S'));
+	    	const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length).toLowerCase();
+	    	const minutes = duration.substring(0, duration.indexOf('m'));
+	    	const index = duration.indexOf('s');
+			const seconds = index > 0 ? duration.substring(duration.indexOf('m')+1, index) : 0;
 	    	videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
 	    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 	    }
@@ -165,13 +166,12 @@
 	 videos.push({id : "hXTAn4ELEwM", title : "Years & Years - Shine"});
 	 videos.push({id : "DKRRg150OYU", title : "Ella Henderson - Glow"});
 	 videos.push({id : "C_tnDY-_oxs", title : "Parade Of Lights - Feeling Electric"});
-	 videos.push({id : "Rlwrxh3L6qc", title : "Mali Music - Ready Aim"});
 	 videos.push({id : "g-D_4erfsVQ", title : "Lonely The Brave - Victory Line"});
-	 videos.push({id : "jYDrC25kAS0", title : "Kwabs - Wrong or Right"});
 	 videos.push({id : "8jzDnsjYv9A", title : "Sam Smith - Writing's On The Wall"});
 	 videos.push({id : "X2a_Pxd-F1I", title : "We Came As Romans - Regenerate"});
 	 videos.push({id : "XlViAkzQNec", title : "Chiara Grispo - Come On"});
 	 videos.push({id : "QQXPWwnpnuw", title : "DI-RECT - Paper Plane"});
+	 videos.push({id : "HYplnRjMVhM", title : "Leon Bridges - Smooth Sailin'"});
 	 videos.push({id : "koeW4g8Y-lg", title : "Nero - The Thrill"});
 	 videos.push({id : "RD8y7U_gm0g", title : "Beecake - Perfect Time"});
 	 videos.push({id : "ISDIAVarYjU", title : "Young Guns - I Want Out"});
@@ -182,6 +182,7 @@
 	 videos.push({id : "Rl3ELiPXFRo", title : "Imagine Dragons - Gold"});
 	 videos.push({id : "98xh5Hb9QAM", title : "Within Temptation - Stand My Ground"});
 	 videos.push({id : "LXrP66ot0zs", title : "Jason Aldean - Lights Come On"});
+	 videos.push({id : "faG8RiaANek", title : "Alabama Shakes - Sound & Color"});
 	 videos.push({id : "aULZrgZBkmY", title : "Jodie Abacus - Good Feeling"});
 	 videos.push({id : "5q0xNEFbcfU", title : "Marc Sway - Feel the Same"});
 	 videos.push({id : "fVBLbfEs2BY", title : "Rennata - Trust Your Feelings"});
