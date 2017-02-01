@@ -57,9 +57,11 @@
 	    	videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
 	    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 	    }
-	    page.render(div,videos.slice(0,12),thumbnail => {
-	    	var index = 0;
-	    	$(".video-nav-left",div).hide();
+	    var state = localStorage.getItem("state") ? JSON.parse(localStorage.getItem("state")) : {};
+	    var index = state["panel_"+div.index()] ? state["panel_"+div.index()] : 0;
+	    page.render(div,videos.slice(index,index+12),thumbnail => {
+	    	if(index<12) $(".video-nav-left",div).hide();
+	    	if(index>=length-12) $(".video-nav-right",div).hide();
 	    	$(".video-nav-left",div).click(() => {
 	    		const container = $("<div/>");
 	    		$(".video-nav-right",div).show();
@@ -71,6 +73,8 @@
 	    	    	$("> div",container).insertAfter($(".video-nav-left",div));
 	    	    	$('html, body').animate({scrollTop : top},800);
 	    	    });
+	    		state["panel_"+div.index()] = index;
+	    		localStorage.setItem("state",JSON.stringify(state));
 	    	});
 	    	if(length<=12) $(".video-nav-right",div).hide();
 	    	$(".video-nav-right",div).click(() => {
@@ -84,6 +88,8 @@
 	    	    	$("> div",container).insertAfter($(".video-nav-left",div));
 	    	    	$('html, body').animate({scrollTop : top},800);
 	    	    });
+	    		state["panel_"+div.index()] = index;
+	    		localStorage.setItem("state",JSON.stringify(state));
 	    	});
 	    	div.fadeTo(1000,1);
 	    	thumbnail.addClass("animated flip");
