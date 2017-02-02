@@ -711,6 +711,10 @@ a.show-more {
 	margin-bottom:1px;
 }
 
+.thumbnails a {
+	cursor : pointer;
+}
+
 .videos > a {
   display : inline-block;
   background-color: #d42323;
