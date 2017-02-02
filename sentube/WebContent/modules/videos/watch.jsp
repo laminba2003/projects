@@ -136,6 +136,7 @@ const display = (videoId,cache) => {
 								 display(id,true);
 								 history.pushState({},video.title,"videos/watch?v="+id);
 								 $(".video-container iframe").attr("src","//www.youtube.com/embed/"+id+"?rel=0");
+								 $('html, body').animate({scrollTop : 0},800);
 								 return false;
 							  });
 						  });
