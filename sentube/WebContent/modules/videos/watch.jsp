@@ -108,6 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			video.channel = channel.items[0].snippet.title;
 			video.photo = channel.items[0].snippet.thumbnails.medium.url;
 			video.subscriberCount = channel.items[0].statistics.subscriberCount.replace(/\B(?=(\d{3})+\b)/g, ",");
+			page.render($(".watcher"),video);
+			page.render($(".video-metadata"),video);
 			app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+info.items[0].snippet.channelId+"&type=video&part=snippet&order=date&maxResults=20",result => {
 				const videos = new Array();
 				var length = result.items.length, id = "";
@@ -126,8 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				    videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));	
 			    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 			      }
-			      page.render($(".watcher"),video);
-				  page.render($(".video-metadata"),video);
 				  page.render($(".thumbnails"),videos);
 			      $(".video-container iframe").show();
 			      app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId=${id}&part=snippet&maxResults=20",result => {
