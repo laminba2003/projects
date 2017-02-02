@@ -1,9 +1,9 @@
 <div>
 <div class="videos">
  <template type="text/x-dust-template">
- <h1>Music</h1>
+ <h1>{title}</h1>
  <a class="video-nav-left" href="#"><i class="fa fa-angle-left"></i></a>
-  {#.}
+  {#videos}
     <div>
 	  <a href="videos/watch?v={id}">
 	   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">  		   	     
@@ -15,16 +15,16 @@
 	   </div>
 	 </a>
     </div>
-  {/.}
+  {/videos}
   <a class="video-nav-right" href="#"><i class="fa fa-angle-right"></i></a>
   </template>	
  </div>
  
  <div class="videos">
  <template type="text/x-dust-template">
- <h1>International</h1>
+ <h1>{title}</h1>
  <a class="video-nav-left" href="#"><i class="fa fa-angle-left"></i></a>
-  {#.}
+  {#videos}
     <div>
 	  <a href="videos/watch?v={id}">
 	   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">  		   	     
@@ -36,14 +36,14 @@
 	   </div>
 	 </a>
     </div>
-  {/.}
+  {/videos}
   <a class="video-nav-right" href="#"><i class="fa fa-angle-right"></i></a>
   </template>	
  </div>
  </div>
  <script>
  
- const display = (div, videos) => {
+ const display = (div,title,videos) => {
 	 var length,id = "";
 	 length = videos.length;
 	 for(var i=0;i<length;i++) id += i < length-1 ? videos[i].id +"," : videos[i].id;
@@ -59,7 +59,7 @@
 	    }
 	    var state = localStorage.getItem("state") ? JSON.parse(localStorage.getItem("state")) : {};
 	    var index = state["panel_"+div.index()] ? state["panel_"+div.index()] : 0;
-	    page.render(div,videos.slice(index,index+12),thumbnail => {
+	    page.render(div,{title : title, videos : videos.slice(index,index+12)},thumbnail => {
 	    	if(index<12) $(".video-nav-left",div).hide();
 	    	if(index>=length-12) $(".video-nav-right",div).hide();
 	    	$(".video-nav-left",div).click(() => {
@@ -68,7 +68,7 @@
 	    		index-=12;
 	    		if(index<=0) $(".video-nav-left",div).hide();
 	    		const top = $(window).scrollTop();
-	    		page.render(div,videos.slice(index,index+12),false,container,() => {
+	    		page.render(div,{title : title, videos : videos.slice(index,index+12)},false,container,() => {
 	    	    	$("> div",div).remove();
 	    	    	$("> div",container).insertAfter($(".video-nav-left",div));
 	    	    	$('html, body').animate({scrollTop : top},800);
@@ -83,7 +83,7 @@
 	    		index+=12;
 	    		if(index>=length-12) $(".video-nav-right",div).hide();
 	    		const top = $(window).scrollTop();
-	    		page.render(div,videos.slice(index,index+12),false,container,() => {
+	    		page.render(div,{title : title, videos : videos.slice(index,index+12)},false,container,() => {
 	    	    	$("> div",div).remove();
 	    	    	$("> div",container).insertAfter($(".video-nav-left",div));
 	    	    	$('html, body').animate({scrollTop : top},800);
@@ -147,7 +147,7 @@
 	 videos.push({id : "isdWSKnSSyE", title : "Safari - Art Bi"});
 	 videos.push({id : "cgFENtRBWsU", title : "Deesse Major - Gem Sa Bop"});
 	 videos.push({id : "Fjba4g93UX8", title : "HAKILL - Def saRAP"});
-	 display($(".videos:eq(0)"),videos);
+	 display($(".videos:eq(0)"),"Music",videos);
 	 videos = new Array();
 	 videos.push({id : "rmlmOk4ubcU", title : "Jamiroquai - Automaton"});
 	 videos.push({id : "XD4b0fSuB6c", title : "Eliot Sumner - Information"});
@@ -199,7 +199,7 @@
 	 videos.push({id : "_kqQDCxRCzM", title : "One Direction - You & I"});
 	 videos.push({id : "LDsxtBVLyss", title : "Broods - Free"});
 	 videos.push({id : "nQr-HmfXZ-Q", title : "Usher - moving mountains"});
-	 display($(".videos:eq(1)"),videos);
+	 display($(".videos:eq(1)"),"International",videos);
  });
  
  </script> 
