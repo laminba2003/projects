@@ -394,7 +394,8 @@ img{
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
-
+  border-radius : 50%;
+  line-height : 45px;
 }
 
 .scrollToTop:hover, .scrollToTop:focus{
@@ -722,6 +723,7 @@ a.show-more {
   text-decoration: none;
   width: 25px;
   z-index: 9;
+   border-radius : 50%;
 }
 
 .video-nav-left {
