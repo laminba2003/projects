@@ -5,7 +5,11 @@ app.ready = callback => $(document).ready(callback);
 app.get = (url, callback, ...options) => {
 	 var store =  typeof options[0] == 'boolean' ? options[0] : false;
 	 page.wait();
-	 if(store) {
+	 var localStorage;
+	 try {
+	   localStorage = window.localStorage;
+	 } catch(e) {}
+	 if(store && localStorage) {
 		 const data = localStorage.getItem(url); 
 		 if(data) {
 			 page.release();
@@ -20,7 +24,13 @@ app.get = (url, callback, ...options) => {
 	 }).done(data => {
 		 page.release();
 	     if(callback) callback(data);
-	     if(store) localStorage.setItem(url,JSON.stringify(data));
+	     try {
+	    	 if(store && localStorage) localStorage.setItem(url,JSON.stringify(data));
+	     }catch(e) {
+	    	  if(e.code == 22) {
+	    		 localStorage.clear();
+	    	  }
+	     }
 	 }).fail(data => {
 	  	 page.release();
 	  	 const error = options[0] instanceof Function ? options[0] : options[1];
