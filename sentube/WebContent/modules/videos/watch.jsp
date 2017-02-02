@@ -2,7 +2,7 @@
  <div class="video-player">
   
   <div class="video-container">
-     <iframe style="display:none" width="853" height="200" frameborder="0" allowfullscreen></iframe>
+     <iframe id="player" style="display:none" width="853" height="200" frameborder="0" allowfullscreen></iframe>
   </div>
   
    <div class="watcher">
@@ -98,7 +98,7 @@ const display = (videoId,cache) => {
 		app.get("https://www.googleapis.com/youtube/v3/videos?id="+videoId+"&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,statistics",info => {
 			video.videoId = videoId;
 			video.title = info.items[0].snippet.title;
-			document.title = video.title; 
+			document.title = video.title;
 			video.publishedAt = new Date(info.items[0].snippet.publishedAt).toLocaleDateString("en-US",options);
 			video.description = info.items[0].snippet.description.linkify();
 			video.viewCount = info.items[0].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
@@ -134,13 +134,13 @@ const display = (videoId,cache) => {
 							  $("a",thumbnail).click(function(){
 								 const id = $(this).attr("id");
 								 display(id,true);
-								 history.pushState({},video.title,"videos/watch?v="+id);
-								 $(".video-container iframe").attr("src","//www.youtube.com/embed/"+id+"?rel=0");
+								 history.pushState({id:id},video.title,"videos/watch?v="+id);
+								 $(".video-container iframe").attr("src","//www.youtube.com/embed/"+id+"?enablejsapi=1");
 								 $('html, body').animate({scrollTop : 0},800);
 								 return false;
 							  });
 						  });
-					      $(".video-container iframe").attr("src","//www.youtube.com/embed/"+videoId+"?rel=0").show();
+					      $(".video-container iframe").attr("src","//www.youtube.com/embed/"+videoId+"?enablejsapi=1").show();
 					   },true);
 					},true);
 				}
@@ -192,6 +192,14 @@ const getComments = (video,options) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+   window.addEventListener('popstate', function(e) {
+	   const state = e.state;
+	   if(state && state.id) {
+	       display(state.id,true);
+	 	   $(".video-container iframe").attr("src","//www.youtube.com/embed/"+state.id+"?enablejsapi=1");
+	 	   $('html, body').animate({scrollTop : 0},800);
+	   } 
+   });
    display("${id}");
 });
  
