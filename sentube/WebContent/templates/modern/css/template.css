@@ -608,7 +608,6 @@ img{
 }
 
 a.show-more {
-	font-weight: 590;
     text-align: center;
     background-color: #f8f8f8;
     color: #333;
@@ -621,6 +620,7 @@ a.show-more {
     margin-right : auto;
     display : block;
     cursor : pointer;
+    border-radius : 5px;
 }
 
 .video-comments > h1 {
@@ -1092,7 +1092,7 @@ input:focus{
   .thumbnails .thumbnail{width:44%;height:5em;display:inline-block;}
   .thumbnails .description{width:52%;display:inline-block;vertical-align:top;}
   #footer {padding-left:17%;margin-top:10px}
-  #wait {padding-left: 30%;padding-top : 19%}
+  #wait {padding-left: 29.7%;padding-top : 19%}
   .watcher .views span {font-size : 65%}
    .video-nav-left {margin-left : -15px;margin-right:95%}
 }
@@ -1116,6 +1116,7 @@ input:focus{
    #search input[type=submit] {margin-top:-1px;}
    .video-nav-left {margin-left : -15px;margin-right:95%}
    .videos {padding-bottom : 5px}
+   #wait {padding-left: 29.1%;padding-top : 19%}
 }
 
 @media(max-width:767px ){

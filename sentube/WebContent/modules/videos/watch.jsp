@@ -167,7 +167,7 @@ const getComments = (video,options) => {
 	    	  }else {
 	    		  $(".video-comments a.show-more").click(() => {
 	    			  $(".video-comments a.show-more").hide();
-	    			  app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+videoId+"&pageToken="+token+"&part=snippet&maxResults=20",result => {
+	    			  app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+video.videoId+"&pageToken="+token+"&part=snippet&maxResults=20",result => {
 	    				  comments = new Array();
 				    	  length = result.items.length;
 				    	  for(i=0;i<length;i++) {
