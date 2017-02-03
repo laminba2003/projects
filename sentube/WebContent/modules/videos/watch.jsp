@@ -69,6 +69,7 @@
   		 </a>
        </div>
        {/.}
+      <a class="show-more">Show more</a>
     </template>
   </div>
   
@@ -131,6 +132,7 @@ const getVideos = channelId => {
 			id += i < length-1 ? item.id.videoId +"," : item.id.videoId;
 			videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
 		}
+	    var token = result.nextPageToken;
 	    app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics",result => {
 	      length = result.items.length;	
 	      for(i=0;i<length;i++) {
@@ -150,7 +152,56 @@ const getVideos = channelId => {
 				 $('html, body').animate({scrollTop : 0},800);
 				 return false;
 			  });
+			  if(!token) {
+				 $(".thumbnails a.show-more").hide();
+			  }else {
+				 $(".thumbnails a.show-more").one("click",() => {
+					 getMoreVideos(channelId,token);				 
+				 });
+			  }
 		  });
+	   },true);
+	},true);
+};
+
+const getMoreVideos = (channelId,token) => {
+	$(".thumbnails a.show-more").hide();
+	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&pageToken="+token+"&type=video&part=snippet&order=date&maxResults=20",result => {
+		const videos = new Array();
+		var length = result.items.length, id = "";
+	    for(var i=0;i<length;i++) {
+			const item = result.items[i];
+			id += i < length-1 ? item.id.videoId +"," : item.id.videoId;
+			videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
+		}
+	    if(length==0) {
+	    	$(".thumbnails a.show-more").hide();
+	    	return false;
+	    }
+	    var newToken = result.nextPageToken;
+	    app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics",result => {
+	      length = result.items.length;	
+	      for(i=0;i<length;i++) {
+	    	const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length).toLowerCase();
+		    const minutes = duration.substring(0, duration.indexOf('m'));
+		    const index = duration.indexOf('s');
+			const seconds = index > 0 ? duration.substring(duration.indexOf('m')+1, index) : 0;
+		    videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));	
+	    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
+	      }
+	      if(length) {
+		      var container = $("<div/>");
+			  page.render($(".thumbnails"),videos,false,container,thumbnail => {
+				  $("> div",container).insertAfter($(".thumbnails > div:last"));
+				  if(newToken) {
+					 $(".thumbnails a.show-more").show().one("click",() => {
+						 getMoreVideos(channelId,newToken);				 
+					 });
+				   }
+			  });
+	      }else {
+	    	  $(".thumbnails a.show-more").hide();
+	      }
 	   },true);
 	},true);
 };

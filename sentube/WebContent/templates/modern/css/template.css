@@ -695,6 +695,10 @@ a.show-more {
 	min-height : 800px;border:1px solid #d3d3d3;margin-left:-60px;padding:10px;padding-top:12px;margin-top:59px;background-color:#fffeff;width:30.7%;vertical-align:top;display:inline-block;
 }
 
+.thumbnails a.show-more {
+	margin-top : 20px;
+}
+
 .videos {
 	min-height : 310px;margin-bottom:1px;opacity:0;padding-left:5%;padding-right:1.5%;width:95%;margin-left:auto;margin-right:auto;border:1px solid #ad9696;padding-bottom:0px;padding-top:1.2%;background-color:#fffeff;vertical-align:top;
 }
