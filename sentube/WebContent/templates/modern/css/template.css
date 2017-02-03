@@ -1150,7 +1150,7 @@ input:focus{
 	.thumbnails .description span:nth-child(1){min-height:2.5em;overflow:hidden}
 	.video-comments {display:none}
   .video-comments > div > div {width:80%;}
-  #wait {padding-left: 43%;padding-top : 29%}
+  #wait {padding-left: 43%;padding-top : 29.8%}
   .video-nav-left {margin-left : -15px;margin-right:95%}
 }
 @media(max-width:640px){
