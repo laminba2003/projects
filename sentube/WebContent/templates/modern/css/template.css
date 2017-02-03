@@ -1094,6 +1094,7 @@ input:focus{
   #footer {padding-left:17%;margin-top:10px}
   #wait {padding-left: 30%;padding-top : 19%}
   .watcher .views span {font-size : 65%}
+   .video-nav-left {margin-left : -15px;margin-right:95%}
 }
   
 @media(max-width:991px ){
@@ -1113,9 +1114,12 @@ input:focus{
     .video-comments > div > div {width:80%;}
    #search input[type=text] {margin-top:-1px;width : 60%;margin-left:-5px}
    #search input[type=submit] {margin-top:-1px;}
+   .video-nav-left {margin-left : -15px;margin-right:95%}
+   .videos {padding-bottom : 5px}
 }
 
 @media(max-width:767px ){
+	.videos {padding-bottom : 5px}
 	.videos h1 {margin-top:7px}
 	body{font-size:95%;}
 	.videos > div{width:24.5%;}
@@ -1145,6 +1149,7 @@ input:focus{
 	.thumbnails .description span:nth-child(1){min-height:2.5em;overflow:hidden}
   .video-comments > div > div {width:80%;}
   #wait {padding-left: 45%;padding-top : 29%}
+  .video-nav-left {margin-left : -15px;margin-right:95%}
 }
 @media(max-width:640px){
 	.videos h1 {margin-top:6px}
@@ -1166,6 +1171,7 @@ input:focus{
   .video-comments > div > div {width:70%;}
   #wait {padding-left: 44%;padding-top : 29%}
   .watcher .views span {font-size : 45%}
+  .video-nav-left {margin-left : -15px;margin-right:60%}
 }
 
  
@@ -1190,6 +1196,7 @@ input:focus{
   .video-comments > div > div {width:50%;}
   #wait {padding-left: 37%;padding-top : 31%}
   .watcher .views span {font-size : 35%}
+  .video-nav-left {margin-left : -15px;margin-right:60%}
 }
 @media(max-width:360px ){
 	body{font-size:88%;}
@@ -1206,6 +1213,7 @@ input:focus{
   #search input[type=submit] {width : 30px;margin-top:-0.125em}
   .navbar-brand {left : 23px;}
  .video-comments > div > div {width:50%;}
+ .video-nav-left {margin-left : -8px;}
 }
 @media(max-width:320px ){
 	body{font-size:85%;}
@@ -1220,5 +1228,6 @@ input:focus{
 	#search input[type=text] {width : 28%;margin-left:-62px;margin-top:-0.25em}
   #search input[type=submit] {margin-top:-0.25em}
   .video-comments > div > div {width:50%;}
-  #wait {padding-top : 31%}
+  #wait {padding-top : 32%;padding-left : 32%}
+  .video-nav-left {margin-left : -8px;}
 }
