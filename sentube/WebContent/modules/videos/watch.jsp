@@ -192,6 +192,14 @@ const getMoreVideos = (channelId,token) => {
 	      if(length) {
 		      var container = $("<div/>");
 			  page.render($(".thumbnails"),videos,false,container,thumbnail => {
+				  $("a",thumbnail).click(function(){
+					 const id = $(this).attr("id");
+					 display(id,true);
+					 history.pushState({id:id},null,"videos/watch?v="+id);
+					 $(".video-container iframe").attr("src","//www.youtube.com/embed/"+id+"?enablejsapi=1");
+					 $('html, body').animate({scrollTop : 0},800);
+					 return false;
+				  });
 				  $("> div",container).insertAfter($(".thumbnails > div:last"));
 				  if(newToken) {
 					 $(".thumbnails a.show-more").show().one("click",() => {
