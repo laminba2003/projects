@@ -50,6 +50,13 @@
   	</template>
   </div>
   
+  <div class="channel">
+    <template type="text/x-dust-template">
+      <h1>{channel}</h1>
+      <img src="{image}"/>
+    </template>	   
+  </div> 
+  
   </div>
   
   <div class="thumbnails">
@@ -114,13 +121,14 @@ const display = (videoId,cache) => {
 }; 
 
 const getChannelInfo = (video,channelId,cache) => {
-	app.get("https://www.googleapis.com/youtube/v3/channels?id="+channelId+"&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,statistics",channel => {
-		video.channel = channel.items[0].snippet.title;
-		video.photo = channel.items[0].snippet.thumbnails.medium.url;
-		video.subscriberCount = channel.items[0].statistics.subscriberCount.replace(/\B(?=(\d{3})+\b)/g, ",");
+	app.get("https://www.googleapis.com/youtube/v3/channels?id="+channelId+"&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,statistics,brandingSettings",result => {
+		video.channel = result.items[0].snippet.title;
+		video.photo = result.items[0].snippet.thumbnails.medium.url;
+		video.subscriberCount = result.items[0].statistics.subscriberCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 		page.render($(".watcher"),video);
 		page.render($(".video-metadata"),video);
 		if(!cache) getVideos(channelId);
+		if(!cache) page.render($(".channel"),{channel : video.channel,image : result.items[0].brandingSettings.image.bannerImageUrl});
 	},true);	
 };
 
@@ -225,7 +233,7 @@ const getComments = (video,options) => {
 		    	  date : new Date(result.items[i].snippet.topLevelComment.snippet.publishedAt).toLocaleDateString("en-US",options),
 		    	  photo : result.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
 		    	  text : result.items[i].snippet.topLevelComment.snippet.textDisplay});
-		  }
+	  }
   	  var token = result.nextPageToken;
   	  if(!token) video.commentCount = length;
   	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments}, () => {
