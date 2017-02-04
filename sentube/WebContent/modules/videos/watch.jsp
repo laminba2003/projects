@@ -58,7 +58,8 @@
        {#.}
   		<div>
   		  <a id="{id}">
-  		   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">  		   
+  		   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">
+  		     <span>{index}</span>  		   
   		     <span>{duration}</span>
   		   </div>  		   
   		   <div class="description">
@@ -130,7 +131,7 @@ const getVideos = channelId => {
 	    for(var i=0;i<length;i++) {
 			const item = result.items[i];
 			id += i < length-1 ? item.id.videoId +"," : item.id.videoId;
-			videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
+			videos.push({index : i+1,id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
 		}
 	    var token = result.nextPageToken;
 	    app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics",result => {
@@ -166,13 +167,14 @@ const getVideos = channelId => {
 
 const getMoreVideos = (channelId,token) => {
 	$(".thumbnails a.show-more").hide();
+	const index = parseInt($(".thumbnails > div:last .thumbnail span:eq(0)").html());
 	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&pageToken="+token+"&type=video&part=snippet&order=date&maxResults=20",result => {
 		const videos = new Array();
 		var length = result.items.length, id = "";
 	    for(var i=0;i<length;i++) {
 			const item = result.items[i];
 			id += i < length-1 ? item.id.videoId +"," : item.id.videoId;
-			videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
+			videos.push({index : index +(i+1), id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
 		}
 	    if(length==0) {
 	    	$(".thumbnails a.show-more").hide();

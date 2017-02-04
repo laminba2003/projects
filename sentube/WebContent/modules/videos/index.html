@@ -1,12 +1,11 @@
 <div>
 <div class="videos">
  <template type="text/x-dust-template">
- <h1>{title}</h1>
- <a class="video-nav-left" href="#"><i class="fa fa-angle-left"></i></a>
+ <h1>{title}<a class="video-nav-left" href="#"><i class="fa fa-angle-left"></i></a><a class="video-nav-right" href="#"><i class="fa fa-angle-right"></i></a></h1>
   {#videos}
     <div>
 	  <a href="videos/watch?v={id}">
-	   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">  		   	     
+	   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;"> 		   	     
 	     <span class="duration">{duration}</span>
 	   </div>  		   
 	   <div class="description">
@@ -16,14 +15,12 @@
 	 </a>
     </div>
   {/videos}
-  <a class="video-nav-right" href="#"><i class="fa fa-angle-right"></i></a>
   </template>	
  </div>
  
  <div class="videos">
  <template type="text/x-dust-template">
- <h1>{title}</h1>
- <a class="video-nav-left" href="#"><i class="fa fa-angle-left"></i></a>
+ <h1>{title}<a class="video-nav-left" href="#"><i class="fa fa-angle-left"></i></a><a class="video-nav-right" href="#"><i class="fa fa-angle-right"></i></a></h1>
   {#videos}
     <div>
 	  <a href="videos/watch?v={id}">
@@ -37,7 +34,6 @@
 	 </a>
     </div>
   {/videos}
-  <a class="video-nav-right" href="#"><i class="fa fa-angle-right"></i></a>
   </template>	
  </div>
  </div>
@@ -65,32 +61,34 @@
 	    if(localStorage) state = localStorage.getItem("state") ? JSON.parse(localStorage.getItem("state")) : {};
 	    var index = state["panel_"+div.index()] ? state["panel_"+div.index()] : 0;
 	    page.render(div,{title : title, videos : videos.slice(index,index+12)},thumbnail => {
-	    	if(index<12) $(".video-nav-left",div).hide();
-	    	if(index>=length-12) $(".video-nav-right",div).hide();
-	    	$(".video-nav-left",div).click(() => {
+	    	if(index<12) $(".video-nav-left",div).addClass("disabled");;
+	    	if(index>=length-12) $(".video-nav-right",div).addClass("disabled");
+	    	$(".video-nav-left",div).click(function(e) {
+	    		if($(this).hasClass("disabled")) return false;
 	    		const container = $("<div/>");
-	    		$(".video-nav-right",div).show();
+	    		$(".video-nav-right",div).removeClass("disabled");
 	    		index-=12;
-	    		if(index<=0) $(".video-nav-left",div).hide();
+	    		if(index<=0) $(".video-nav-left",div).addClass("disabled");;
 	    		const top = $(window).scrollTop();
 	    		page.render(div,{title : title, videos : videos.slice(index,index+12)},false,container,() => {
 	    	    	$("> div",div).remove();
-	    	    	$("> div",container).insertAfter($(".video-nav-left",div));
+	    	    	$("> div",container).insertAfter($("h1",div)).addClass("animated flip");
 	    	    	$('html, body').animate({scrollTop : top},800);
 	    	    });
 	    		state["panel_"+div.index()] = index;
 	    		if(localStorage) localStorage.setItem("state",JSON.stringify(state));
 	    	});
-	    	if(length<=12) $(".video-nav-right",div).hide();
-	    	$(".video-nav-right",div).click(() => {
-	    		$(".video-nav-left",div).show();
+	    	if(length<=12) $(".video-nav-right",div).addClass("disabled");
+	    	$(".video-nav-right",div).click(function(e){
+	    		if($(this).hasClass("disabled")) return false;
+	    		$(".video-nav-left",div).removeClass("disabled");
 	    		const container = $("<div/>");
 	    		index+=12;
-	    		if(index>=length-12) $(".video-nav-right",div).hide();
+	    		if(index>=length-12) $(".video-nav-right",div).addClass("disabled");
 	    		const top = $(window).scrollTop();
 	    		page.render(div,{title : title, videos : videos.slice(index,index+12)},false,container,() => {
 	    	    	$("> div",div).remove();
-	    	    	$("> div",container).insertAfter($(".video-nav-left",div));
+	    	    	$("> div",container).insertAfter($("h1",div)).addClass("animated flip");
 	    	    	$('html, body').animate({scrollTop : top},800);
 	    	    });
 	    		state["panel_"+div.index()] = index;
