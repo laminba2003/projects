@@ -637,6 +637,7 @@ a.show-more {
 .video-comment p {
 	font-size : 12px;
 	font-family : Tahoma;
+	margin-top : -6px;
 }
 
 .video-comment p a {
@@ -879,6 +880,7 @@ a.show-more {
   width: 100%;
   padding: 0px 0px;
   font-size : 75%;
+  margin-top : 20px;
 }
 
 .footer_bottom {
@@ -1097,7 +1099,7 @@ input:focus{
   .thumbnails {margin-left: -3.25em;width:30%}
   .thumbnails .thumbnail{width:44%;height:5em;display:inline-block;}
   .thumbnails .description{width:52%;display:inline-block;vertical-align:top;}
-  #footer {padding-left:17%;margin-top:10px}
+  #footer {padding-left:17%;}
   #wait {padding-left: 29.7%;padding-top : 19%}
   .watcher .views span {font-size : 65%}
    .video-nav-left {margin-left : -15px;margin-right:95%}
@@ -1131,7 +1133,7 @@ input:focus{
 	body{font-size:95%;}
 	.videos > div{width:24.5%;}
 	.videos .thumbnail{height:5em;width:100%}
-	#footer {padding-left:17%;margin-top:10px}
+	#footer {padding-left:17%;}
 	 .navbar-brand {margin-left:-8px;}
 	.watcher .photo img { }
  .navbar-brand {left : 23px;}

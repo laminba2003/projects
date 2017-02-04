@@ -257,7 +257,7 @@ const getComments = (video,options) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-   window.addEventListener('popstate', function(e) {
+   window.addEventListener('popstate', e => {
 	   const state = e.state;
 	   if(state && state.id) {
 	       display(state.id,true);
