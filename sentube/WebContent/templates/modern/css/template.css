@@ -1081,7 +1081,7 @@ input:focus{
   margin-bottom: 5px;
 }
 
-.video-container{background-color : #000;border:1px solid #d3d3d3;position:relative;padding-bottom:56%;height:0;overflow:hidden}.video-container iframe,.video-container object,.video-container embed{position:absolute;top:0;left:0;width:100%;height:100%}
+.video-container{background-color : #000;border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;position:relative;padding-bottom:56%;height:0;overflow:hidden}.video-container iframe,.video-container object,.video-container embed{position:absolute;top:0;left:0;width:100%;height:100%}
 
 .dropdown {
 	overflow : hidden;
