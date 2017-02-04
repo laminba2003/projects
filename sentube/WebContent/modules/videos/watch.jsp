@@ -58,7 +58,7 @@
        {#.}
   		<div>
   		  <a id="{id}">
-  		   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">
+  		   <div class="thumbnail" style="background-image:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;background-color:#000">
   		     <span>{index}</span>  		   
   		     <span>{duration}</span>
   		   </div>  		   
