@@ -303,7 +303,8 @@ const getLatestVideos = channel => {
 	    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 	      }
 		  channel.videos = videos;
-		  page.render($(".channel"),channel,thumbnail =>{
+		  page.render($(".channel"),channel,thumbnail => {
+			  if(channel.image.indexOf("default_banner")!=-1) $(".channel img").remove();
 			  $("a",thumbnail).click(function(){
 				 const id = $(this).attr("id");
 				 display(id,true);
