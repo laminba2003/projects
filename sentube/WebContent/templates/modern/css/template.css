@@ -604,6 +604,7 @@ img{
 .channel {
 	margin-top : 20px;
 	background-color : #fff;
+	padding-bottom : 40px;
 }
 
 .channel h1 {
@@ -617,6 +618,18 @@ img{
 	margin-left : 1.25%;
 	margin-right : 1.25%;
 	vertical-align : top;
+	margin-bottom : -15px;
+}
+
+.channel .videos:first-of-type,.channel .videos:last-of-type {
+	opacity : 1;
+	width : 97.5%;
+	margin-left : 1.25%;
+	margin-right : 1.25%;
+	vertical-align : top;
+	min-height : 250px;
+	margin-top : 0;
+	margin-bottom : 0;
 }
 
 .video-metadata,.video-comments {
@@ -773,6 +786,11 @@ a.show-more {
 	display:inline-block;
 	padding-right:6px;
 }
+
+.videos a {
+	cursor : pointer;
+}
+
 .videos .thumbnail,.thumbnails .thumbnail{
 	position:relative;
 	width:11.55em;

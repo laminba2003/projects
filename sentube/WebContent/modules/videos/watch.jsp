@@ -52,8 +52,24 @@
   
   <div class="channel">
     <template type="text/x-dust-template">
-      <h1>{channel}</h1>
+      <h1>{title}</h1>
       <img src="{image}"/>
+      <h1>Latest Videos</h1>
+      <div class="videos">
+       {#videos}
+	    <div>
+		  <a id="{id}">
+		   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">  		   	     
+		     <span class="duration">{duration}</span>
+		   </div>  		   
+		   <div class="description">
+		   	<p class="view-count"><span>{viewCount} views</span></p>
+		    <p class="title"><span>{title}</span></p>
+		   </div>
+		 </a>
+	    </div>
+	  {/videos}	
+	 </div>
     </template>	   
   </div> 
   
@@ -128,12 +144,13 @@ const getChannelInfo = (video,channelId,cache) => {
 		page.render($(".watcher"),video);
 		page.render($(".video-metadata"),video);
 		if(!cache) getVideos(channelId);
-		if(!cache) page.render($(".channel"),{channel : video.channel,image : result.items[0].brandingSettings.image.bannerImageUrl});
+		const channel = {id : channelId,title : video.channel,image : result.items[0].brandingSettings.image.bannerImageUrl};
+		if(!cache) getLatestVideos(channel);
 	},true);	
 };
 
 const getVideos = channelId => {
-	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&type=video&part=snippet&order=date&maxResults=20",result => {
+	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&type=video&part=snippet&order=viewCount&maxResults=20",result => {
 		const videos = new Array();
 		var length = result.items.length, id = "";
 	    for(var i=0;i<length;i++) {
@@ -176,7 +193,7 @@ const getVideos = channelId => {
 const getMoreVideos = (channelId,token) => {
 	$(".thumbnails a.show-more").hide();
 	const index = parseInt($(".thumbnails > div:last .thumbnail span:eq(0)").html());
-	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&pageToken="+token+"&type=video&part=snippet&order=date&maxResults=20",result => {
+	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&pageToken="+token+"&type=video&part=snippet&order=viewCount&maxResults=20",result => {
 		const videos = new Array();
 		var length = result.items.length, id = "";
 	    for(var i=0;i<length;i++) {
@@ -264,6 +281,40 @@ const getComments = (video,options) => {
 	    	  }
   	  });
 	  },true);
+};
+
+const getLatestVideos = channel => {
+	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channel.id+"&type=video&part=snippet&order=date&maxResults=6",result => {
+		const videos = new Array();
+		var length = result.items.length, id = "";
+	    for(var i=0;i<length;i++) {
+			const item = result.items[i];
+			id += i < length-1 ? item.id.videoId +"," : item.id.videoId;
+			videos.push({index : i+1,id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
+		}
+	    app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics",result => {
+	      length = result.items.length;	
+	      for(i=0;i<length;i++) {
+	    	const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length).toLowerCase();
+		    const minutes = duration.substring(0, duration.indexOf('m'));
+		    const index = duration.indexOf('s');
+			const seconds = index > 0 ? duration.substring(duration.indexOf('m')+1, index) : 0;
+		    videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));	
+	    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
+	      }
+		  channel.videos = videos;
+		  page.render($(".channel"),channel,thumbnail =>{
+			  $("a",thumbnail).click(function(){
+				 const id = $(this).attr("id");
+				 display(id,true);
+				 history.pushState({id:id},null,"videos/watch?v="+id);
+				 $(".video-container iframe").attr("src","//www.youtube.com/embed/"+id+"?enablejsapi=1");
+				 $('html, body').animate({scrollTop : 0},800);
+				 return false;
+			 });
+		  });
+	   },false);
+	},false);	
 };
 
 document.addEventListener("DOMContentLoaded", () => {
