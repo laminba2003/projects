@@ -53,7 +53,9 @@
   <div class="channel">
     <template type="text/x-dust-template">
       <h1>{title}</h1>
-      <img src="{image}"/>
+      <div class="image-card">
+      	<img src="{image}"/>
+      </div>
       <h1>Latest Videos</h1>
       <div class="videos">
        {#videos}
