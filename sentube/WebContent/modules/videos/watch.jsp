@@ -127,7 +127,8 @@ const display = (videoId,cache) => {
 		video.title = info.items[0].snippet.title;
 		document.title = video.title;
 		video.publishedAt = new Date(info.items[0].snippet.publishedAt).toLocaleDateString("en-US",options);
-		video.description = info.items[0].snippet.description.linkify();
+		video.description = info.items[0].snippet.description;
+		video.description = video.description.linkify();
 		video.viewCount = info.items[0].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 		video.commentCount = info.items[0].statistics.commentCount ? info.items[0].statistics.commentCount.replace(/\B(?=(\d{3})+\b)/g, ",") : 0;
 		video.likeCount = info.items[0].statistics.likeCount.replace(/\B(?=(\d{3})+\b)/g, ",");

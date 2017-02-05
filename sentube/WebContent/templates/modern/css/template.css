@@ -732,13 +732,14 @@ a.show-more {
 	font-family : Arial;padding:4px;padding-left:13px;margin-top:10px;line-height:1.4em;font-size:13px;font-weight:bold;
 }
 
-.video-metadata > p {
+.video-metadata  p {
 	padding-left : 12px;
 	padding-right : 12px;
 	width : 76%;
 	font-size : 102%;
 	word-break: break-word;
 	line-height : 1.5em;
+	display : table;
 }
 
 .video-metadata p a {
@@ -826,6 +827,7 @@ a.show-more {
 	display:inline-block;
 	border : none;
 	left:0;
+	background-color : #000;
 }
 .videos .thumbnail{
 	width:100%;
