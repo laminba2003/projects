@@ -633,6 +633,14 @@ img{
 	margin-bottom : 0;
 }
 
+.channel .videos .thumbnail {
+	height : 4em;
+}
+
+.channel .videos .thumbnail .duration{
+	font-size : 55%;
+}
+
 .video-metadata,.video-comments {
 	width:100%;margin-bottom:5px;margin-top:6px;display:inline-block;min-height:150px;border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;background-color:#fffeff;padding-top:7px;font-size:85%;
 }
@@ -1162,6 +1170,7 @@ input:focus{
    .navbar-brand {margin-left:-16px;}
 	.videos > div{width:24.75%;}
 	.videos .thumbnail{height:6.75em;width:100%;}
+	.channel .videos .thumbnail{height:4em;}
 	.watcher .photo img { }
 	.navbar-default .navbar-nav > li > a {font-size: 12px; padding: 10px;}
   .dropdown-menu > li > a{font-size: 12px;padding: 10px;}
@@ -1180,6 +1189,7 @@ input:focus{
 	body{font-size:95%;}
 	.videos > div{width:24.5%;}
 	.videos .thumbnail{height:5em;width:100%}
+	.channel .videos .thumbnail{height:5.125em;}
 	#footer {padding-left:17%;}
 	 .navbar-brand {margin-left:-8px;}
 	.watcher .photo img { }
@@ -1211,7 +1221,8 @@ input:focus{
 	.videos h1 {margin-top:6px}
 	body{font-size:93%;}
 	.videos > div{width:49%;}
-	.videos .thumbnail{height:8.75em;width:100%;}
+	.videos .thumbnail{height:9em;width:100%;}
+	.channel .videos .thumbnail{height:9.5em}
 	.video-player {width:100%;padding-left:0.40625em;padding-right:0.40625em}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:97.5%}
 	.thumbnails > div {width:49%;display:inline-block;padding-right:1%;vertical-align:top}
@@ -1236,6 +1247,7 @@ input:focus{
 	body{font-size:90%;}
 	.videos > div{width:49%;}
 	.videos .thumbnail{height:7.25em;width:100%}
+	.channel .videos .thumbnail{height:6.925em}
   .video-player {width:100%;padding-left:0.40625em;padding-right:0.40625em}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:96.75%}
 	.thumbnails > div {width:100%}
@@ -1256,6 +1268,7 @@ input:focus{
 	body{font-size:88%;}
 	.videos > div{width:100%;}
 	.videos .thumbnail{height:10em;width:90%;}
+	.channel .videos .thumbnail{height:10.75em;width:100%;}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:96%}
 	.thumbnails > div {width:100%}
 	.thumbnails .thumbnail{width:50%;height:90px;height:28vw;display:inline-block;}
@@ -1272,6 +1285,7 @@ input:focus{
 	body{font-size:85%;}
 	.videos > div{width:100%;}
 	.videos .thumbnail{height:10em;width:98%;}
+	.channel .videos .thumbnail{height:10.3em;width:100%;}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:96%}
 	.thumbnails > div {width:100%}
 	.thumbnails .thumbnail{width:100%;height:180px;height:57vw}

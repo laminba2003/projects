@@ -284,7 +284,7 @@ const getComments = (video,options) => {
 };
 
 const getLatestVideos = channel => {
-	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channel.id+"&type=video&part=snippet&order=date&maxResults=6",result => {
+	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channel.id+"&type=video&part=snippet&order=date&maxResults=12",result => {
 		const videos = new Array();
 		var length = result.items.length, id = "";
 	    for(var i=0;i<length;i++) {
