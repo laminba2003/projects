@@ -613,6 +613,10 @@ img{
 	font-weight : bold;
 }
 
+.channel h1:first-of-type {
+	font-size : 133%;
+}
+
 .channel .image-card{
 	padding:1em 0.40625em 2em 0.40625em;
 	background:radial-gradient(black 15%, transparent 16%) 0 0,
