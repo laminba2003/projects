@@ -7,14 +7,14 @@
   
    <div class="watcher">
      <template type="text/x-dust-template">
-  	   <h1>{title}</h1>
+  	   <h1 title="{title}">{title}</h1>
   	   <div class="photo">
   	    <img src="{photo}"/>
   	   </div>
   	 <div class="singer">
   	     <a>{channel}</a><br>
   	     <span class="subscribe-button">Subscribe</span>
-  	     <span class="subscribe-count">{subscriberCount}</span>
+  	     <span class="subscribe-count" title="{subscriberCount}">{subscriberCount}</span>
   	 </div>
   	 <div class="views">
   	      <h1>{viewCount} views</h1>
@@ -60,7 +60,7 @@
       <div class="videos">
        {#videos}
 	    <div>
-		  <a id="{id}">
+		  <a id="{id}" title="{title}">
 		   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">  		   	     
 		     <span class="duration">{duration}</span>
 		   </div>  		   
@@ -82,7 +82,7 @@
       <h1>Up next</h1>
        {#.}
   		<div>
-  		  <a id="{id}">
+  		  <a id="{id}" title="{title}">
   		   <div class="thumbnail" style="background-image:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;background-color:#000">
   		     <span>{index}</span>  		   
   		     <span>{duration}</span>
