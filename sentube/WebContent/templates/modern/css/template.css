@@ -663,7 +663,7 @@ img{
 }
 
 .video-comments {
-	min-height : 300px;vertical-align:top;
+	vertical-align:top;
 }
 
 a.show-more {
