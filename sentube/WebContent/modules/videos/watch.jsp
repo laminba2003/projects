@@ -54,7 +54,10 @@
   
   <div class="channel">
     <template type="text/x-dust-template">
-      <h1>{title}</h1>
+      <div class="photo">
+  	    <img src="{photo}"/>
+  	   </div>
+  	  <h1>{title}</h1>
       <div class="image-card">
       	<img src="{image}"/>
       </div>
@@ -149,7 +152,7 @@ const getChannelInfo = (video,channelId,cache) => {
 		page.render($(".watcher"),video);
 		page.render($(".video-metadata"),video);
 		if(!cache) getVideos(channelId);
-		const channel = {id : channelId,title : video.channel,image : result.items[0].brandingSettings.image.bannerImageUrl};
+		const channel = {id : channelId,photo : result.items[0].snippet.thumbnails.medium.url,title : video.channel,image : result.items[0].brandingSettings.image.bannerImageUrl};
 		if(!cache) getLatestVideos(channel);
 	},true);	
 };

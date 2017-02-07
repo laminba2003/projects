@@ -509,13 +509,13 @@ img{
     font-family:Arial;vertical-align:top;font-weight:700;font-size:85%;
 }
 
-.watcher .photo {
+.photo {
 	display:inline-block;margin:-0.203125em 0.8125em;padding:0px;
 	height:100%;
 	max-width:5em;
 }
 
-.watcher .photo img {	
+.photo img {	
 	width:100%;
 }
 
@@ -608,13 +608,28 @@ img{
 }
 
 .channel h1 {
+	display : inline-block;
 	padding : 10px;
 	font-size : 115%;
 	font-weight : bold;
+	vertical-align : true;
 }
 
 .channel h1:first-of-type {
 	font-size : 133%;
+}
+
+.channel h1:last-of-type {
+	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -234px -479px;
+    background-image: url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp);
+    background-position-x: -234px;
+    background-position-y: -479px;
+    width: 40px;
+    height: 28px;
+    white-space : nowrap;
+    padding-left : 45px;
+    padding-top : 4px;
+    margin-left : 14px;
 }
 
 .channel .image-card{
@@ -626,6 +641,7 @@ img{
 	background-color:#050505;
 	background-size: 8px 4px;
 	margin:0 0.40625em;
+	margin-top : 8px;
 }
 
 .channel .image-card img {
@@ -1206,7 +1222,7 @@ input:focus{
 	.videos > div{width:24.75%;}
 	.videos .thumbnail{height:6.75em;width:100%;}
 	.channel .videos .thumbnail{height:4em;}
-	.watcher .photo img { }
+	.photo img { }
 	.navbar-default .navbar-nav > li > a {font-size: 12px; padding: 10px;}
   .dropdown-menu > li > a{font-size: 12px;padding: 10px;}
   .navbar-brand {height: auto;width: 213px;}
@@ -1227,7 +1243,6 @@ input:focus{
 	.channel .videos .thumbnail{height:5.125em;}
 	#footer {padding-left:17%;}
 	 .navbar-brand {margin-left:-8px;}
-	.watcher .photo img { }
  .navbar-brand {left : 23px;}
    .navbar-default li.active:after {display: none;}
    .navbar-nav > li > .dropdown-menu { margin-top: 5px;}
@@ -1266,7 +1281,6 @@ input:focus{
 	.thumbnails .description span:nth-child(1){min-height:2.5em;overflow:hidden}
 	.video-metadata,.video-comments {display:none}
   .navbar-brand {margin-left:-20px;}	
-	.watcher .photo img { }
   .navbar-brand {left : 31px;}
   #search input[type=text] {width : 50%;margin-left:-40px;margin-top:-0.1em}
   #search input[type=submit] {width : 30px;margin-top:-0.1em}
@@ -1291,7 +1305,6 @@ input:focus{
 	.thumbnails .description span:nth-child(1){min-height:auto;margin-top:6px}
 	.video-metadata,.video-comments {display:none}
   .navbar-brand {left:10px;}
-	.watcher .photo img { }
   #search input[type=text] {width : 42%;margin-left:-60px;margin-top:-0.125em}
   #search input[type=submit] {width : 30px;margin-top:-0.125em}
   .navbar-brand {left : 31px;}
@@ -1311,7 +1324,6 @@ input:focus{
 	.thumbnails .description{width:48%;vertical-align:top;display:inline-block;height:auto;}
 	.thumbnails .description span:nth-child(1){min-height:auto;margin-top:6px}
  .navbar-brand {margin-left:-20px}
-	.watcher .photo img { }
 #search input[type=text] {width : 38%;margin-left:-68px;margin-top:-0.125em}
   #search input[type=submit] {width : 30px;margin-top:-0.125em}
   .navbar-brand {left : 23px;}
@@ -1327,7 +1339,6 @@ input:focus{
 	.thumbnails .thumbnail{width:100%;height:180px;height:57vw}
 	.thumbnails .description{height:auto;}
 	.thumbnails .description span:nth-child(1){min-height:auto;margin-top:-1px}
-	.watcher .photo img { }
 	#search input[type=text] {width : 28%;margin-left:-62px;margin-top:-0.25em}
   #search input[type=submit] {margin-top:-0.25em}
   .video-comments > div > div {width:50%;}
