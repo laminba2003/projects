@@ -663,7 +663,21 @@ img{
 }
 
 .video-comments {
-	vertical-align:top;
+	min-height : 100px;vertical-align:top;
+}
+
+.comments-disabled {
+	text-align: center;
+    font-size: 15px;
+    font-weight: normal;
+    color: #767676;
+    padding: 30px 15px;
+    line-height: 1.5;
+    display : block;
+}
+
+.comments-disabled span {
+	display : none;
 }
 
 a.show-more {

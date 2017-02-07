@@ -48,6 +48,7 @@
   	 {/comments}
   	  <a class="show-more">Show more</a>
   	</template>
+  	<div class="comments-disabled"><span>Comments are disabled for this video.</span></div>
   </div>
   
   <div class="channel">
@@ -283,7 +284,11 @@ const getComments = (video,options) => {
 	    		  });
 	    	  }
   	  });
-	  },true);
+	  },true, data => {
+		  const response = JSON.parse(data.responseText);
+		  const code = response.error.code;
+		  if(code == "403") $(".video-comments .comments-disabled span").show();
+	  });
 };
 
 const getLatestVideos = channel => {
