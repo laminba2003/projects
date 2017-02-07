@@ -48,8 +48,9 @@
   	 {/comments}
   	  <a class="show-more">Show more</a>
   	</template>
-  	<div class="comments-disabled"><span>Comments are disabled for this video.</span></div>
   </div>
+  
+  <div class="comments-disabled"><span>Comments are disabled for this video.</span></div>
   
   <div class="channel">
     <template type="text/x-dust-template">
@@ -132,8 +133,8 @@ const display = (videoId,cache) => {
 		video.description = video.description.linkify();
 		video.viewCount = info.items[0].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 		video.commentCount = info.items[0].statistics.commentCount ? info.items[0].statistics.commentCount.replace(/\B(?=(\d{3})+\b)/g, ",") : 0;
-		video.likeCount = info.items[0].statistics.likeCount.replace(/\B(?=(\d{3})+\b)/g, ",");
-		video.dislikeCount = info.items[0].statistics.dislikeCount.replace(/\B(?=(\d{3})+\b)/g, ",");
+		video.likeCount = info.items[0].statistics.likeCount ? info.items[0].statistics.likeCount.replace(/\B(?=(\d{3})+\b)/g, ",") : "";
+		video.dislikeCount = info.items[0].statistics.dislikeCount ? info.items[0].statistics.dislikeCount.replace(/\B(?=(\d{3})+\b)/g, ",") : "";
 		getChannelInfo(video,info.items[0].snippet.channelId,cache);
 		$(".video-container iframe").attr("src","//www.youtube.com/embed/"+video.videoId+"?enablejsapi=1").show();
 		getComments(video,options);
@@ -257,6 +258,8 @@ const getComments = (video,options) => {
 	  }
   	  var token = result.nextPageToken;
   	  if(!token) video.commentCount = length;
+  	  $(".comments-disabled").hide();
+	  $(".video-comments").show();
   	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments}, () => {
 	    	  if(!token) {
 	    		  $(".video-comments a.show-more").hide();
@@ -285,9 +288,10 @@ const getComments = (video,options) => {
 	    	  }
   	  });
 	  },true, data => {
+		  $(".video-comments").hide();
 		  const response = JSON.parse(data.responseText);
 		  const code = response.error.code;
-		  if(code == "403") $(".video-comments .comments-disabled span").show();
+		  if(code == "403") $(".comments-disabled").show();
 	  });
 };
 
