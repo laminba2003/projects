@@ -1265,6 +1265,8 @@ input:focus{
    #search input[type=submit] {margin-top:-1px;}
    .videos {padding-bottom : 5px}
    #wait {padding-left: 29.1%;padding-top : 19%}
+   main {width:100%}
+   aside {display:none} 
 }
 
 @media(max-width:767px ){
