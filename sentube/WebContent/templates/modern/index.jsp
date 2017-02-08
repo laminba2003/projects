@@ -72,11 +72,26 @@
       Best of SenTube
     </h3>
     <div>
-     <span>Music</span>
-     <span>Sports</span>
-     <span>Gaming</span>
-     <span>Movies</span>
-     <span>News</span>
+     <span>
+     <img src="//i.ytimg.com/i/-9-kyTW8ZkZNDHQJ6FgpwQ/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     Music
+     </span>
+     <span>
+     <img src="//i.ytimg.com/i/Egdi0XIXXZ-qJOFPf4JSKw/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     Sports
+     </span>
+     <span>
+     <img src="//i.ytimg.com/i/OpNcN46UbXVtpKMrmU4Abg/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     Gaming
+     </span>
+     <span>
+     <img src="//i.ytimg.com/i/lgRkhTL3_hImCAmdLfDE4g/1.jpg" height="20" width="20" data-ytimg="1" aria-hidden="true" alt="">
+     Movies
+     </span>
+     <span>
+     <img src="//i.ytimg.com/i/YfdidRxbB8Qhf0Nx7ioOYw/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     News
+     </span>
    </div>
    <hr/>
  </aside>

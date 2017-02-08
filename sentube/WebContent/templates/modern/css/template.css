@@ -962,9 +962,14 @@ aside {
 aside span {
 	display : block;
 	padding : 2px;
-	padding-left : 31%;
+	padding-left : 17%;
 	font-size : 90%;
 	font-weight : 600;
+}
+
+aside img {
+	margin-right : 7px;
+	margin-top : -3px;
 }
 
 aside h3 {
