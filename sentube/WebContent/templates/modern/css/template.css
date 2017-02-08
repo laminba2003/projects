@@ -953,6 +953,7 @@ aside {
 	width : 17.2%;
 	vertical-align : top;
 	padding : 10px;
+	padding-top : 22px;
 	margin-top : 49px;
 	background-color : #fefefe;
 	height : 680px;
@@ -961,10 +962,10 @@ aside {
 
 aside span {
 	display : block;
-	padding : 2px;
+	padding : 3px;
 	padding-left : 17%;
 	font-size : 90%;
-	font-weight : 600;
+	font-weight : 550;
 }
 
 aside img {
