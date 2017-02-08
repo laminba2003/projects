@@ -955,7 +955,7 @@ aside {
 	padding : 10px;
 	margin-top : 59px;
 	background-color : #fff;
-	height : 642px;
+	height : 680px;
     border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;
 }
 
@@ -963,8 +963,8 @@ aside h3 {
 	margin: 0 5px;
     padding: 1px 0 8px;
     line-height: 13px;
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 70%;
+    font-weight: bold;
     text-transform: uppercase;
     width: 155px;
     color: #cc181e;
