@@ -63,9 +63,18 @@
  
  <aside style="${watch ? 'display:none' : ''}">
    <div>
-     <span>Home</span>
-     <span>Trending</span>
-     <span>History</span>
+     <span>
+      <img src="//i.ytimg.com/i/YfdidRxbB8Qhf0Nx7ioOYw/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     Home
+     </span>
+     <span>
+       <img src="//i.ytimg.com/i/YfdidRxbB8Qhf0Nx7ioOYw/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     Trending
+     </span>
+     <span>
+        <img src="//i.ytimg.com/i/YfdidRxbB8Qhf0Nx7ioOYw/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     History
+     </span>
    </div>
    <hr/>
    <h3>
