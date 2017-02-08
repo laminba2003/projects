@@ -62,10 +62,23 @@
   <!-- End navbar -->
  
  <aside style="${watch ? 'display:none' : ''}">
+   <div>
+     <span>Home</span>
+     <span>Trending</span>
+     <span>History</span>
+   </div>
    <hr/>
    <h3>
       Best of SenTube
     </h3>
+    <div>
+     <span>Music</span>
+     <span>Sports</span>
+     <span>Gaming</span>
+     <span>Movies</span>
+     <span>News</span>
+   </div>
+   <hr/>
  </aside>
  <main style="${watch ? 'width:100%' : ''}">
    <tiles:insertAttribute name="content"/>
