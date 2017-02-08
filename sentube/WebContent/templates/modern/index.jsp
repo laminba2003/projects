@@ -27,7 +27,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="${path}">Sen<span>Tube</span></a>
+        <a class="navbar-brand" href="${path}" title="SenTube Home">Sen<span>Tube</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a> -->
       </div>
        <form id="search" action="videos/search" method="GET">
@@ -61,8 +61,15 @@
   </nav>
   <!-- End navbar -->
  
- <tiles:insertAttribute name="content"/>
-    
+ <aside style="${watch ? 'display:none' : ''}">
+   <hr/>
+   <h3>
+      Best of SenTube
+    </h3>
+ </aside>
+ <main style="${watch ? 'width:100%' : ''}">
+   <tiles:insertAttribute name="content"/>
+ </main>   
   <!-- start footer -->
   <footer id="footer">
     <div class="container">

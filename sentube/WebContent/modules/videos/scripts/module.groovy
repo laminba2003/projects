@@ -4,9 +4,11 @@ class VideoAction extends ActionSupport {
 
 	def id
 	def query
+	def watch = false
 	
 	def watch()  {
 	    id = request.getParameter("v")
+	    watch = true
 	    id ? SUCCESS : response.sendRedirect(request.contextPath+"/")
 	}
 	
