@@ -94,8 +94,7 @@
 	    		state["panel_"+div.index()] = index;
 	    		if(localStorage) localStorage.setItem("state",JSON.stringify(state));
 	    	});
-	    	div.fadeTo(1000,1);
-	    	thumbnail.addClass("animated flip");
+	    	$("div",thumbnail).addClass("animated flip");
 	    });
 	 },true);
  };
