@@ -103,6 +103,13 @@
      </span>
    </div>
    <hr/>
+   <div>
+    <span>
+     <img src="templates/modern/images/add-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     Browse channels
+     </span>
+   </div>
+   <hr/>
  </aside>
  <main style="${watch ? 'width:100%' : ''}">
    <tiles:insertAttribute name="content"/>
