@@ -948,6 +948,10 @@ a.show-more {
 	color : #444;
 }
 
+div {
+	opacity : 0.99;
+}
+
 aside {
 	display : inline-block;
 	width : 17.2%;
