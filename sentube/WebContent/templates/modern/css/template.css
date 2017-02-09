@@ -963,13 +963,15 @@ aside {
 aside span {
 	display : block;
 	padding : 3px;
-	padding-left : 17%;
-	font-size : 90%;
+	padding-left : 16%;
+	font-size : 80%;
 	font-weight : 550;
+	font-family : Tahoma;
+	margin-bottom : 5px;
 }
 
 aside img {
-	margin-right : 7px;
+	margin-right : 5px;
 	margin-top : -3px;
 }
 
