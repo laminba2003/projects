@@ -843,6 +843,8 @@ a.show-more {
 	width:16%;
 	display:inline-block;
 	padding-right:6px;
+	color : #444;
+	background-color : rgb(254,254,254);
 }
 
 .videos a {
@@ -900,6 +902,8 @@ a.show-more {
 	vertical-align:top;
 	width:45%;
 	text-transform : lowercase;
+	color : #444;
+	background-color : rgb(254,254,254);
 }
 .videos .description{
 	width:95%;
@@ -973,6 +977,7 @@ aside span {
 	font-weight : 600;
 	margin-bottom : 3px;
 	color : #444;
+	background-color : rgb(254,254,254);
 }
 
 aside span:hover {
