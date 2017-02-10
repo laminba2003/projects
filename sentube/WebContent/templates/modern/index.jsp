@@ -81,7 +81,7 @@
       Best of SenTube
     </h3>
     <div>
-     <span>
+     <span class="active">
      <img src="//i.ytimg.com/i/-9-kyTW8ZkZNDHQJ6FgpwQ/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
      Music
      </span>

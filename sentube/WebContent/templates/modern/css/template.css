@@ -957,9 +957,9 @@ aside {
 	width : 17.2%;
 	vertical-align : top;
 	padding : 10px;
-	padding-top : 22px;
+	padding-top : 15px;
 	margin-top : 49px;
-	background-color : #fffffd;
+	background-color : #fffffc;
 	height : 711.5px;
     border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;
     opacity : 0.95;
@@ -968,17 +968,29 @@ aside {
 aside span {
 	display : block;
 	padding : 3px;
-	padding-left : 14.6%;
-	font-size : 70%;
+	padding-left : 14%;
+	font-size : 68%;
 	font-weight : 600;
 	margin-bottom : 3px;
 	color : #444;
+}
+
+aside span:hover {
+	background-color : #444;
+	color : #fff;
+	cursor : pointer;
+}
+
+aside span.active {
+	background-color : #cc181e;
+	color : #fff;
 }
 
 aside img {
 	margin-right : 5px;
 	margin-top : -3px;
 }
+
 
 aside h3 {
 	margin: 0 5px;
