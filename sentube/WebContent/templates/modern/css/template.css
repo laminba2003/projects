@@ -960,7 +960,7 @@ aside {
 	width : 17.2%;
 	vertical-align : top;
 	padding : 10px;
-	padding-top : 15px;
+	padding-top : 25px;
 	margin-top : 49px;
 	background-color : #fffffc;
 	height : 711.5px;
@@ -971,7 +971,7 @@ aside {
 aside span {
 	display : block;
 	padding : 3px;
-	padding-left : 14%;
+	padding-left : 13%;
 	font-size : 68%;
 	font-weight : 600;
 	margin-bottom : 3px;
@@ -994,6 +994,9 @@ aside img {
 	margin-top : -3px;
 }
 
+aside div:nth-child(1) img {
+	margin-right : 3px;
+}
 
 aside h3 {
 	margin: 0 5px;
