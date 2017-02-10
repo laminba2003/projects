@@ -263,8 +263,6 @@ body {
 	color : #888;
 	font-weight : bold;
 	background-color : #fff;
-	border-top-left-radius : 2px;
-	border-bottom-left-radius : 2px;
 }
 
 #search input[type=submit] {
