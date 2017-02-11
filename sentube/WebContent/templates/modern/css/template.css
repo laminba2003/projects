@@ -859,6 +859,7 @@ a.show-more {
 	display:inline-block;
 	border : none;
 	left:0;
+	border-bottom : 4px solid #e62117;
 }
 .videos .thumbnail{
 	width:100%;
@@ -892,7 +893,7 @@ a.show-more {
 }
 
 .videos .thumbnail .duration,.thumbnails .thumbnail > span:nth-child(2) {
-	font-family:Tahoma;padding : 2px;color : #fff;background-color:#222;position : absolute;right:0.40625em;bottom:1px;font-size : 75%;
+	font-family:Tahoma;padding : 2px;color : #fff;background-color:#222;position : absolute;right:0.40625em;bottom:1px;font-size : 65%;
 }
 
 .videos .description ,.thumbnails .description {
