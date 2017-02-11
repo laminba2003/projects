@@ -1356,6 +1356,7 @@ input:focus{
 	.thumbnails .description{width:100%;vertical-align:top;display:block;height:4em;overflow:hidden;position:relative}
 	.thumbnails .description span:nth-child(1){min-height:2.5em;overflow:hidden}
 	.video-metadata,.video-comments {display:none}
+	.videos .description {margin-left:10px}
   .navbar-brand {margin-left:-20px;}	
   .navbar-brand {left : 31px;}
   #search input[type=text] {width : 50%;margin-left:-40px;margin-top:-0.1em}
