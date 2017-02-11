@@ -72,7 +72,7 @@
      Trending
      </span>
      <span>
-        <img src="templates/modern/images/hourglass-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+        <img src="templates/modern/images/history-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
      History
      </span>
    </div>
