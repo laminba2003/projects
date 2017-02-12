@@ -536,7 +536,7 @@ img{
 	font-size : 80%;
 }
 
-.watcher .views .like:before {
+.like:before {
 	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -333px -229px;
     background-image: url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp);
     background-position-x: -333px;
@@ -548,7 +548,7 @@ img{
 	vertical-align : middle;
 }
 
-.watcher .views .dislike:before {
+.dislike:before {
 	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -122px -324px;
     background-image: url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp);
     background-position-x: -122px;
@@ -751,6 +751,24 @@ a.show-more {
 	margin-bottom : 50px;
 }
 
+.video-comment div div a {
+	color : #555;
+	display : inline-block;
+	margin-right : 10px;
+	font-family : Georgia;
+	cursor : pointer;
+}
+
+.video-comment hr {
+	margin-top : 0px;
+	margin-bottom : 5px;
+	height : 1px;
+	line-height : 1px;
+}
+
+.video-comment div div span {
+	display : inline-block;
+}
 
 .video-comments > div > img {
 	width : 48px;height:48px;display:inline-block;vertical-align:top;margin-right:5px;margin-left:14px;

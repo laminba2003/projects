@@ -43,6 +43,12 @@
   	     <div>
   	        <span>{author} <span>{date}</span></span>
          	<p>{text|s}</p>
+         	<hr/>
+         	<div>
+         	  <a>Reply</a>
+         	  <span class="like">{likeCount}</span>
+  	      	  <span class="dislike">{dislikeCount}</span>
+         	</div>
          </div>
   	 </div>
   	 {/comments}
