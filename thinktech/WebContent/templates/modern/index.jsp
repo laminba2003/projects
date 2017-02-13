@@ -4,19 +4,13 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Think Tech</title>
+    <title>ThinkTech</title>
     <base href="${path}"/>
     <!-- Template css -->
     <link href="templates/modern/css/template.css" rel="stylesheet"> 
     <!-- Favicon -->
     <link rel="shortcut icon" href="templates/modern/images/icons_cloud-32.png"  sizes="32x32">  
-  
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+ 
   </head>
 <body>
   <!-- =========================
@@ -41,15 +35,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="${path}">Think <span>Tech</span></a>
+        <a class="navbar-brand" href="${path}">Think<span>Tech</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li><a href="#">Products</a></li>
           <li><a href="#">Services</a></li>
-          <li><a href="#">Developers</a></li>
-          <li><a href="#">Education</a></li>
           <li><a href="#">Support</a></li>
           <li><a href="#">Careers</a></li>
           <li><a href="#">About Us</a></li>  
@@ -193,66 +185,6 @@
     </div>
   </section>
   <!-- End client testimonial -->  
-
-  <!-- start featured blog area -->
-  <section id="featuredBlog">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="featuredBlog_area">
-            <div class="team_title">
-              <h2>News <span>From Our Blog</span></h2>
-            </div>
-            <!-- start featured blog -->
-            <div class="featured_blog">
-              <div class="row">
-                <!-- start single featured blog -->
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="single_featured_blog">                      
-                    <img alt="img" src="templates/modern/images/blog.jpg">
-                    <h2>It's That time of year again! </h2>
-                    <div class="post_commentbox">
-                      <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                      <a href="#"><i class="fa fa-comments"></i>Comments</a>      
-                    </div>
-                    <p>As the second largest social network in existence, a Google+ profile will give your brand a massive reach. But the most valuable thing about getting your eCommerce store onto Google+ is that Google prioritises all Google+, making it the best social media platform for search engine optimisation.</p>
-                    <a href="single.html" class="read_more">read more<i class="fa fa-long-arrow-right"></i></a>
-                  </div>
-                </div>
-                <!-- start single featured blog -->
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="single_featured_blog">                      
-                    <img alt="img" src="templates/modern/images/blog.jpg">
-                    <h2>It's That time of year again! Prepare your ecomarce </h2>
-                    <div class="post_commentbox">
-                      <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                      <a href="#"><i class="fa fa-comments"></i>Comments</a>      
-                    </div>
-                    <p>As the second largest social network in existence, a Google+ profile will give your brand a massive reach. But the most valuable thing about getting your eCommerce store onto Google+ is that Google prioritises all Google+, making it the best social media platform for search engine optimisation.</p>
-                    <a href="single.html" class="read_more">read more<i class="fa fa-long-arrow-right"></i></a>
-                  </div>
-                </div>
-                <!-- start single featured blog -->
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="single_featured_blog">                      
-                    <img alt="img" src="templates/modern/images/blog.jpg">
-                    <h2>It's That time of year again!</h2>
-                    <div class="post_commentbox">
-                      <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                      <a href="#"><i class="fa fa-comments"></i>Comments</a>      
-                    </div>
-                    <p>As the second largest social network in existence, a Google+ profile will give your brand a massive reach. But the most valuable thing about getting your eCommerce store onto Google+ is that Google prioritises all Google+, making it the best social media platform for search engine optimisation.</p>
-                    <a href="single.html" class="read_more">read more<i class="fa fa-long-arrow-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End featured blog area -->
 
   <!-- start clients brand area -->
   <section id="clients_brand">
