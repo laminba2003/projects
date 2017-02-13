@@ -11,7 +11,7 @@ public class Module extends Extension {
 	private boolean main;
 	private boolean administrable = true;
 	private boolean cached;
-	private String indexPage = "index.html";
+	private String indexPage = "index.jsp";
 	private List<Menu> menus = new ArrayList<Menu>();
 	private List<Action> actions = new ArrayList<Action>();
 

@@ -2,7 +2,6 @@
 <module>
 	<name>users</name>
 	<visible>false</visible>
-	<index>index.jsp</index>
 	<administrable>false</administrable>
 	<author>Mamadou Lamine Ba</author>
 	<authorEmail>laminba2003@yahoo.fr</authorEmail>
