@@ -49,6 +49,7 @@
          	  <span class="like">{likeCount}</span>
   	      	  <span class="dislike">{dislikeCount}</span>
          	</div>
+         	<hr/>
          </div>
   	 </div>
   	 {/comments}

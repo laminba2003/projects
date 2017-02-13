@@ -136,10 +136,10 @@ const display = (div,title,videos) => {
 	 videos.push({id : "a9SjkBdpVq4", title : "The Word Alive - Lighthouse"});
 	 videos.push({id : "YqI0q89_Xa0", title : "For Today - Foundation"});
 	 videos.push({id : "7qrRzNidzIc", title : "Breaking Benjamin - I Will Not Bow"});
-	 videos.push({id : "CevxZvSJLk8", title : "Katy Perry - Roar"});
+	 videos.push({id : "jAdxaXSnMq4", title : "TobyMac - Eye on It"});
 	 videos.push({id : "en2D_5TzXCA", title : "Lady Gaga - Million Reasons"});
 	 videos.push({id : "Fy7FzXLin7o", title : "Depeche Mode - Heaven"});
-	 videos.push({id : "Jcv1vNqLVGg", title : "Will Young - Love Revolution"});
+	 videos.push({id : "15QzGe6Meq8", title : "Caro Emerald - Liquid Lunch"});
 	 videos.push({id : "pFptt7Cargc", title : "Tame Impala - Let It Happen"});
 	 videos.push({id : "nUCoYcxNMBE", title : "Eric Prydz - Generate"});
 	 videos.push({id : "xSajDMR1M3U", title : "Yuna - Falling"});
