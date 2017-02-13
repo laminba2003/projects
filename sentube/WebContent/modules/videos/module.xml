@@ -1,7 +1,6 @@
 <module>
 <type>front-end</type>
 <main>true</main>
-<index>index.jsp</index>
 <cached>true</cached>
 <actions>
 	<action url="watch" script="module.groovy" method="watch">
