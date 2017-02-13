@@ -138,10 +138,10 @@ const display = (div,title,videos) => {
 	 videos.push({id : "7qrRzNidzIc", title : "Breaking Benjamin - I Will Not Bow"});
 	 videos.push({id : "CevxZvSJLk8", title : "Katy Perry - Roar"});
 	 videos.push({id : "en2D_5TzXCA", title : "Lady Gaga - Million Reasons"});
-	 videos.push({id : "9I9Ar6upx34", title : "will.i.am - This Is Love"});
+	 videos.push({id : "Fy7FzXLin7o", title : "Depeche Mode - Heaven"});
 	 videos.push({id : "Jcv1vNqLVGg", title : "Will Young - Love Revolution"});
-	 videos.push({id : "MU8B4XDI3Uw", title : "Maroon 5 - Love Somebody"});
-	 videos.push({id : "vW1hv37imjw", title : "Snow Patrol - Just Say Yes"});
+	 videos.push({id : "pFptt7Cargc", title : "Tame Impala - Let It Happen"});
+	 videos.push({id : "nUCoYcxNMBE", title : "Eric Prydz - Generate"});
 	 videos.push({id : "xSajDMR1M3U", title : "Yuna - Falling"});
 	 videos.push({id : "pvP_OwVSFpk", title : "Ellie Goulding - Still falling for you"});
 	 videos.push({id : "JOIYLIgOY1Y", title : "Wild Beasts - A Simple Beautiful Truth"});
@@ -152,7 +152,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "sENM2wA_FTg", title : "Imagine Dragons - It's Time"});
 	 videos.push({id : "q5ReTDxdFl8", title : "Gavin DeGraw - She Sets The City On Fire"});
 	 videos.push({id : "lwObaOnEu4A", title : "Marcus & Martinus - Light It Up"});
-	 videos.push({id : "zZAaU0fwF-M", title : "Town Of Saints - No Place Like This"});
+	 videos.push({id : "6x26O237kP8", title : "Editors - All Sparks"});
 	 videos.push({id : "VRNPkJ0ELPc", title : "Within Temptation - Whole World is Watching"});
 	 videos.push({id : "Vysgv7qVYTo", title : "Taio Cruz - Dynamite"});
 	 videos.push({id : "a_YR4dKArgo", title : "Selena Gomez - Naturally"});
