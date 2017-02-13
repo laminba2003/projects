@@ -3215,6 +3215,17 @@ body {
   font-family: 'Open Sans', sans-serif;  
 }
 
+.content {
+	height : 40em;
+	padding : 30px;
+	margin-top : 59px;
+	background-color : #fff;
+}
+
+.navbar-default .navbar-nav > li > a.active {
+	color : #06d0d8;
+}
+
 ul{
   padding: 0;
   margin: 0;

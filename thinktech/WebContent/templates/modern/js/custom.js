@@ -185,6 +185,7 @@ wow.init();
     $('#status').fadeOut(); // will first fade out the loading animation
     $('#preloader').delay(100).fadeOut('slow'); // will fade out the white DIV that covers the website.
     $('body').delay(100).css({'overflow':'visible'});
+    page.highlight();
   })
 //]]>
 
