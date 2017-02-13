@@ -880,6 +880,9 @@ a.show-more {
 	border : none;
 	left:0;
 	border-bottom : 4px solid #e62117;
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
 }
 .videos .thumbnail{
 	width:100%;
