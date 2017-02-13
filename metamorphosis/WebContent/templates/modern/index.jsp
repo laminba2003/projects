@@ -4,19 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>THINK TECH CRM</title>
+    <title>THINKTECH CRM</title>
     <base href="${path}"/>
     <!-- Template CSS -->
     <link href="templates/modern/css/template.css" rel="stylesheet">  
     <!-- Favicon -->
      <link rel="shortcut icon" href="templates/modern/images/icon-32.png"  sizes="32x32">    
   
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  
   </head>
 <body>
 
@@ -42,7 +37,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="${path}">THINK <span>TECH</span></a>
+        <a class="navbar-brand" href="${path}">THINK<span>TECH</span> CRM</a>
         <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
@@ -83,7 +78,7 @@
           <li>
             <img src="templates/modern/images/slider/people-office-group-team.jpg" alt="img">
             <div class="slider_caption">
-              <h2><span>Welcome To</span> Think Tech CRM</h2>
+              <h2><span>Welcome To</span> ThinkTech CRM</h2>
               <p>
 				<b>We offer</b> a complete and integrated <b>CRM</b> solution that breaks down silos to deliver a seamless customer experience across marketing, sales, commerce, service, and social.
 			 </p>
