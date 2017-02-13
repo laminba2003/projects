@@ -1,3 +1,3 @@
 <div class="content">
-contact us
+<h3>Contact us</h3>
 </div>

@@ -1,3 +1,3 @@
 <div class="content">
-products
+<h3>Products</h3>
 </div>

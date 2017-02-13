@@ -1,3 +1,3 @@
 <div class="content">
-support
+<h3>Support</h3>
 </div>

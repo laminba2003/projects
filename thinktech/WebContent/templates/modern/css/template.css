@@ -3218,6 +3218,7 @@ body {
 .content {
 	height : 40em;
 	padding : 30px;
+	padding-left : 105px;
 	margin-top : 59px;
 	background-color : #fff;
 }

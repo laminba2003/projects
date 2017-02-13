@@ -1,3 +1,3 @@
 <div class="content">
-about us
+<h3>About us</h3>
 </div>
