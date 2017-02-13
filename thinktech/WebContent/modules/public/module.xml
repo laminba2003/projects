@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<name>public</name>
+	<main>true</main>
+	<type>front-end</type>
+	<author>Mamadou Lamine Ba</author>
+	<authorEmail>laminba2003@yahoo.fr</authorEmail>
+	<description>module to manage the public content</description>
+	<creationDate>2016-09-01</creationDate>
+	<copyright>© 2016</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0</version>
+	<menus>
+		<menu>
+			<menuItem label="products" url="products"/>
+			<menuItem label="services" url="services"/>
+			<menuItem label="support" url="support"/>
+			<menuItem label="careers" url="careers"/>
+			<menuItem label="about us" url="about" />
+			<menuItem label="contact us" url="contact" />
+		</menu>
+    </menus>
+</module>
