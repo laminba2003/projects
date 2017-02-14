@@ -773,6 +773,10 @@ a.show-more {
 	line-height : 1px;
 }
 
+.video-comment div div {
+	margin-top : -9px;
+}
+
 .video-comment div div span {
 	display : inline-block;
 }
