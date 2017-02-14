@@ -3923,7 +3923,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   display: inline;
   width: 100%;
   padding: 65px 0px;
-
+  padding-top : 0px;
 }
 .service_title {
   display: block;
@@ -5040,6 +5040,4 @@ transition: all 0.5s;
 @media(max-width:320px ){
 	.client_title > h2 {font-size: 18px;}
   .client_img {left: 33%;}
-  
-	
 }

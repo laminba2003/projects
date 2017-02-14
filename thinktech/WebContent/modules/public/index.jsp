@@ -49,11 +49,6 @@
     <div class="container">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="service_area">
-          <div class="service_title">
-            <hr>
-            <h2>Think Tech</h2>
-            <p>Trusted by Fortune 500 retailers and the world top brands.</p>
-          </div>
           <ul class="service_nav wow flipInX">
             <li>
               <a class="service_icon" href="#"><i class="fa fa-users"></i></a>
@@ -82,7 +77,7 @@
 
 
   <!-- start client testimonial -->
-  <section id="testimonial">
+  <section id="testimonial" style="display:none">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
