@@ -48,6 +48,7 @@
          	  <span class="like">{likeCount}</span>
   	      	  <span class="dislike">{dislikeCount}</span>
          	</div>
+         	<hr/>
          	{#replies}
 		  	 <div class="video-comment">
 		  	     <img src="{photo}"/>

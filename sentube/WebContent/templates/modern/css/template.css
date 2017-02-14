@@ -736,12 +736,12 @@ a.show-more {
 
 .video-comment {
 	padding-top : 6px;
-	margin-top : 15px;
+	margin-top : 3px;
 }
 
 .video-comment .video-comment {
-	margin-left : 30px;
-	margin-top : 0;
+	margin-left : 43px;
+	margin-top : 3px;
 	margin-bottom : 0;
 }
 
@@ -787,6 +787,7 @@ a.show-more {
 	margin-bottom : 5px;
 	height : 1px;
 	line-height : 1px;
+	border-top : 1px solid #f7f7f7;
 }
 
 .video-comment div div {
