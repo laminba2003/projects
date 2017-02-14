@@ -140,14 +140,26 @@ const getMoreVideos = (channelId,token) => {
 };
 
 const getComments = (video,options) => {
-	app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+video.videoId+"&part=snippet,replies&maxResults=5",result => {
+	app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+video.videoId+"&part=snippet,replies&maxResults=2",result => {
   	  var comments = new Array();
   	  length = result.items.length;
   	  for(i=0;i<length;i++) {
-		      comments.push({author : result.items[i].snippet.topLevelComment.snippet.authorDisplayName, 
-		    	  date : new Date(result.items[i].snippet.topLevelComment.snippet.publishedAt).toLocaleDateString("en-US",options),
-		    	  photo : result.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
-		    	  text : result.items[i].snippet.topLevelComment.snippet.textDisplay});
+  		      const comment = {author : result.items[i].snippet.topLevelComment.snippet.authorDisplayName, 
+  			    	  date : new Date(result.items[i].snippet.topLevelComment.snippet.publishedAt).toLocaleDateString("en-US",options),
+  			    	  photo : result.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
+  			    	  text : result.items[i].snippet.topLevelComment.snippet.textDisplay};
+  		      const replies = new Array();
+  		      if(result.items[i].replies){
+  		    	  for(var j =0;j<result.items[i].replies.comments.length;j++) {
+  		    		  const reply = {author : result.items[i].replies.comments[j].snippet.authorDisplayName, 
+	  			    	  date : new Date(result.items[i].replies.comments[j].snippet.publishedAt).toLocaleDateString("en-US",options),
+	  			    	  photo : result.items[i].replies.comments[j].snippet.authorProfileImageUrl,
+	  			    	  text : result.items[i].replies.comments[j].snippet.textDisplay};
+  		    		  replies.push(reply);
+  		    	  }
+  		      }
+  		      comment.replies = replies; 
+		      comments.push(comment);
 	  }
   	  var token = result.nextPageToken;
   	  if(!token) video.commentCount = length;
@@ -163,16 +175,28 @@ const getComments = (video,options) => {
 	    				  comments = new Array();
 				    	  length = result.items.length;
 				    	  for(i=0;i<length;i++) {
-						      comments.push({author : result.items[i].snippet.topLevelComment.snippet.authorDisplayName, 
-						    	  date : new Date(result.items[i].snippet.topLevelComment.snippet.publishedAt).toLocaleDateString("en-US",options),
-						    	  photo : result.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
-						    	  text : result.items[i].snippet.topLevelComment.snippet.textDisplay});
-						  }
+				  		      const comment = {author : result.items[i].snippet.topLevelComment.snippet.authorDisplayName, 
+				  			    	  date : new Date(result.items[i].snippet.topLevelComment.snippet.publishedAt).toLocaleDateString("en-US",options),
+				  			    	  photo : result.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
+				  			    	  text : result.items[i].snippet.topLevelComment.snippet.textDisplay};
+				  		      const replies = new Array();
+				  		      if(result.items[i].replies){
+				  		    	  for(var j =0;j<result.items[i].replies.comments.length;j++) {
+				  		    		  const reply = {author : result.items[i].replies.comments[j].snippet.authorDisplayName, 
+					  			    	  date : new Date(result.items[i].replies.comments[j].snippet.publishedAt).toLocaleDateString("en-US",options),
+					  			    	  photo : result.items[i].replies.comments[j].snippet.authorProfileImageUrl,
+					  			    	  text : result.items[i].replies.comments[j].snippet.textDisplay};
+				  		    		  replies.push(reply);
+				  		    	  }
+				  		      }
+				  		      comment.replies = replies; 
+						      comments.push(comment);
+					      }
 				    	  token = result.nextPageToken;
 				    	  const container = $("<div/>");
 				    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments},
 				    	      false,container, () => {
-				    		  $(".video-comment",container).insertBefore($(".video-comments a.show-more"));
+				    		  $("> .video-comment",container).insertBefore($(".video-comments a.show-more"));
 				    	  });
 				    	  $(".video-comments a.show-more").show();
 				    	  if(!token) $(".video-comments a.show-more").hide();

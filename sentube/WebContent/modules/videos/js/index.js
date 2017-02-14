@@ -116,16 +116,16 @@ const display = (div,title,videos) => {
 	 videos.push({id : "_ovdm2yX4MA", title : "Avicii - Levels"});
 	 videos.push({id : "ntlpTad3PLM", title : "Empire Of The Sun - High And Low"});
 	 videos.push({id : "2FrJxzx3AWI", title : "Guano Apes - Close To The Sun"});
-	 videos.push({id : "BCoZOAn_98A", title : "Vaults - One Day I'll Fly Away"});
+	 videos.push({id : "12CeaxLiMgE", title : "Dillon Francis, DJ Snake - Get Low"});
 	 videos.push({id : "Hc16Y9fiCvQ", title : "The Killers - Spaceman"});
 	 videos.push({id : "KbdCeWoEH1U", title : "Flyleaf - Again"});
 	 videos.push({id : "WnEZzLSPNZY", title : "Rival Sons - Open My Eyes"});
 	 videos.push({id : "8jpjs935OUI", title : "Slayer - World Painted Blood"});
-	 videos.push({id : "3-d6LFLpBvw", title : "Megadeth - The Threat Is Real"});
+	 videos.push({id : "wFrth4NFogc", title : "MO - Waste of Time"});
 	 videos.push({id : "ukigjUvwAR4", title : "Walk Off The Earth - Rule the World"});
 	 videos.push({id : "7F37r50VUTQ", title : "ZAYN, Taylor Swift - I Don't Wanna Live Forever"});
 	 videos.push({id : "jZhQOvvV45w", title : "OneRepublic - Good Life"});
-	 videos.push({id : "ZmwhbJnV05I", title : "Skylar Grey - Come Up For Air"});
+	 videos.push({id : "vjW8wmF5VWc", title : "Silento - Watch Me (Whip/Nae Nae)"});
 	 videos.push({id : "GKSRyLdjsPA", title : "Sia - The Greatest"});
 	 videos.push({id : "z6PYAkXO-bU", title : "Amaranthe - Digital World"});
 	 videos.push({id : "svhGUlB9V5U", title : "Louisa Johnson - So Good"});
@@ -133,7 +133,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "b4Bj7Zb-YD4", title : "Calvin Harris - My Way"});
 	 videos.push({id : "d58VJ-sC1uY", title : "Florence + The Machine - Breath Of Life"});
 	 videos.push({id : "PTOFEgJ9zzI", title : "Jessie J - Masterpiece"});
-	 videos.push({id : "a9SjkBdpVq4", title : "The Word Alive - Lighthouse"});
+	 videos.push({id : "U0YP9aJ_1TQ", title : "Placebo - A Million Little Pieces"});
 	 videos.push({id : "YqI0q89_Xa0", title : "For Today - Foundation"});
 	 videos.push({id : "7qrRzNidzIc", title : "Breaking Benjamin - I Will Not Bow"});
 	 videos.push({id : "jAdxaXSnMq4", title : "TobyMac - Eye on It"});

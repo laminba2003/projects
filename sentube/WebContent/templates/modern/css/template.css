@@ -723,6 +723,12 @@ a.show-more {
 	margin-top : 15px;
 }
 
+.video-comment .video-comment {
+	margin-left : 30px;
+	margin-top : 0;
+	margin-bottom : 0;
+}
+
 .video-comment p {
 	font-size : 12px;
 	font-family : Tahoma;
@@ -747,7 +753,7 @@ a.show-more {
 	margin-left : 7px;
 }
 
-.video-comment:last-of-type {
+.video-comments > .video-comment:last-of-type {
 	margin-bottom : 50px;
 }
 
@@ -771,11 +777,19 @@ a.show-more {
 	display : inline-block;
 }
 
-.video-comments > div > img {
+.video-comment img {
 	width : 48px;height:48px;display:inline-block;vertical-align:top;margin-right:5px;margin-left:14px;
 }
 
-.video-comments > div > div {
+.video-comment .video-comment img {
+	margin-left : 0px;width:30px;height:30px;
+}
+
+.video-comment .video-comment div div span {
+	font-size : 75%;
+}
+
+.video-comment > div {
 	display:inline-block;width:87%;
 }
 
