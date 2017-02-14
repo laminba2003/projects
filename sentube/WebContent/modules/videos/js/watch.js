@@ -90,6 +90,7 @@ const getVideos = channelId => {
 
 const getMoreVideos = (channelId,token) => {
 	$(".thumbnails a.show-more").hide();
+	$(".thumbnails .load-more").show();
 	const index = parseInt($(".thumbnails > div:last .thumbnail span:eq(0)").html());
 	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&pageToken="+token+"&type=video&part=snippet&order=viewCount&maxResults=20",result => {
 		const videos = new Array();
@@ -100,6 +101,7 @@ const getMoreVideos = (channelId,token) => {
 			videos.push({index : index +(i+1), id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
 		}
 	    if(length==0) {
+	    	$(".thumbnails .load-more").hide();
 	    	$(".thumbnails a.show-more").hide();
 	    	return false;
 	    }
@@ -114,6 +116,7 @@ const getMoreVideos = (channelId,token) => {
 		    videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));	
 	    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 	      }
+	      $(".thumbnails .load-more").hide();
 	      if(length) {
 		      var container = $("<div/>");
 			  page.render($(".thumbnails"),videos,false,container,thumbnail => {
@@ -171,6 +174,7 @@ const getComments = (video,options) => {
 	    	  }else {
 	    		  $(".video-comments a.show-more").click(() => {
 	    			  $(".video-comments a.show-more").hide();
+	    			  $(".video-comments .load-more").show();
 	    			  app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+video.videoId+"&pageToken="+token+"&part=snippet,replies&maxResults=20",result => {
 	    				  comments = new Array();
 				    	  length = result.items.length;
@@ -194,9 +198,10 @@ const getComments = (video,options) => {
 					      }
 				    	  token = result.nextPageToken;
 				    	  const container = $("<div/>");
+				    	  $(".video-comments .load-more").hide();
 				    	  page.render($(".video-comments"),{commentCount : video.commentCount,comments:comments},
 				    	      false,container, () => {
-				    		  $("> .video-comment",container).insertBefore($(".video-comments a.show-more"));
+				    		  $("> .video-comment",container).insertBefore($(".video-comments .load-more"));
 				    	  });
 				    	  $(".video-comments a.show-more").show();
 				    	  if(!token) $(".video-comments a.show-more").hide();

@@ -48,7 +48,6 @@
          	  <span class="like">{likeCount}</span>
   	      	  <span class="dislike">{dislikeCount}</span>
          	</div>
-         	<hr/>
          	{#replies}
 		  	 <div class="video-comment">
 		  	     <img src="{photo}"/>
@@ -60,13 +59,13 @@
 		         	  <span class="like">{likeCount}</span>
 		  	      	  <span class="dislike">{dislikeCount}</span>
 		         	</div>
-		         	<hr/>
 		         </div>
 		  	 </div>
   	       {/replies}
          </div>
   	 </div>
   	 {/comments}
+  	 <div class="load-more"><span>loading more comments...</span></div>
   	  <a class="show-more">Show more</a>
   	</template>
   </div>
@@ -121,6 +120,7 @@
   		 </a>
        </div>
        {/.}
+      <div class="load-more"><span>loading more videos...</span></div>
       <a class="show-more">Show more</a>
     </template>
   </div>
