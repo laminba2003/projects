@@ -140,7 +140,7 @@ const getMoreVideos = (channelId,token) => {
 };
 
 const getComments = (video,options) => {
-	app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+video.videoId+"&part=snippet,replies&maxResults=2",result => {
+	app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+video.videoId+"&part=snippet,replies&maxResults=5",result => {
   	  var comments = new Array();
   	  length = result.items.length;
   	  for(i=0;i<length;i++) {
