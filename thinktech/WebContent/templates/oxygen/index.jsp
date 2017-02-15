@@ -43,7 +43,7 @@
         <div class="item" style="background-image: url(templates/oxygen/images/slider/pexels-photo-251225.jpeg)">
           <div class="caption">
             <h1 class="animated fadeInLeftBig">IT Development <span>and</span> Cloud Hosting</h1>
-            <p class="animated fadeInRightBig">Develop and deploy your solutions on our Cloud and let us manage everything for you.</p>
+            <p class="animated fadeInRightBig">Develop and deploy your applications on our Cloud and let us manage everything for you.</p>
             <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
           </div>
         </div>
