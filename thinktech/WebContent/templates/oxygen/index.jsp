@@ -181,7 +181,7 @@
         <div class="col-sm-3">
           <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="400ms">
             <div class="folio-image">
-              <img class="img-responsive" src="templates/oxygen/images/portfolio/3.jpg" alt="">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/sentube.jpg" alt="">
             </div>
             <div class="overlay">
               <div class="overlay-content">
@@ -198,13 +198,13 @@
         <div class="col-sm-3">
           <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="500ms">
             <div class="folio-image">
-              <img class="img-responsive" src="templates/oxygen/images/portfolio/3.jpg" alt="">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/crm.jpg" alt="">
             </div>
             <div class="overlay">
               <div class="overlay-content">
                 <div class="overlay-text">
                   <div class="folio-info">
-                    <h3>SenCRM</h3>
+                    <h3><a href="http://env-3687617.mircloud.host/app/" target="_blank">SenCRM</a></h3>
                     <p>under construction</p>
                   </div>
                 </div>
@@ -215,7 +215,7 @@
         <div class="col-sm-3">
           <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="500ms">
             <div class="folio-image">
-              <img class="img-responsive" src="templates/oxygen/images/portfolio/3.jpg" alt="">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/senplace.jpg" alt="">
             </div>
             <div class="overlay">
               <div class="overlay-content">
@@ -232,7 +232,7 @@
         <div class="col-sm-3">
           <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="500ms">
             <div class="folio-image">
-              <img class="img-responsive" src="templates/oxygen/images/portfolio/3.jpg" alt="">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/senhealth.jpg" alt="">
             </div>
             <div class="overlay">
               <div class="overlay-content">
@@ -249,7 +249,7 @@
         <div class="col-sm-3">
           <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="500ms">
             <div class="folio-image">
-              <img class="img-responsive" src="templates/oxygen/images/portfolio/3.jpg" alt="">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/sendev.jpg" alt="">
             </div>
             <div class="overlay">
               <div class="overlay-content">
@@ -266,7 +266,7 @@
         <div class="col-sm-3">
           <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="folio-image">
-              <img class="img-responsive" src="templates/oxygen/images/portfolio/3.jpg" alt="">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/senaspo.jpg" alt="">
             </div>
             <div class="overlay">
               <div class="overlay-content">
@@ -283,7 +283,7 @@
         <div class="col-sm-3">
           <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="folio-image">
-              <img class="img-responsive" src="templates/oxygen/images/portfolio/3.jpg" alt="">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/btpafrique.jpg" alt="">
             </div>
             <div class="overlay">
               <div class="overlay-content">
@@ -312,7 +312,7 @@
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
           <h2>Our Partners</h2>
           <div class="col-sm-3">
-          <a href="https://mirhosting.com/" target="_blank"><img class="img-responsive" alt="" src="templates/oxygen/images/mirhosting.png"/></a>
+          <a href="https://mirhosting.com/" target="_blank"><img src="templates/oxygen/images/mirhosting.png"/></a>
           </div>
         </div>
       </div> 
@@ -358,7 +358,7 @@
             <div class="col-sm-6">
               <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
                 <ul class="address">
-                  <li><i class="fa fa-map-marker"></i> <span> Address:</span> Parcelles U20-54 </li>
+                  <li><i class="fa fa-map-marker"></i> <span> Address:</span> Parcelles Assainies U20-54 </li>
                   <li><i class="fa fa-phone"></i> <span> Phone:</span> +221 33-855-10-91  </li>
                   <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:info@thinktech.sn">info@thinktech.sn</a></li>
                 </ul>
