@@ -204,7 +204,7 @@
               <div class="overlay-content">
                 <div class="overlay-text">
                   <div class="folio-info">
-                    <h3><a href="http://env-3687617.mircloud.host/app/" target="_blank">SenCRM</a></h3>
+                    <h3><a href="http://env-3687617.mircloud.host/sencrm/" target="_blank">SenCRM</a></h3>
                     <p>under construction</p>
                   </div>
                 </div>
@@ -266,13 +266,13 @@
         <div class="col-sm-3">
           <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="folio-image">
-              <img class="img-responsive" src="templates/oxygen/images/portfolio/senaspo.jpg" alt="">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/senaspo.png" alt="">
             </div>
             <div class="overlay">
               <div class="overlay-content">
                 <div class="overlay-text">
                   <div class="folio-info">
-                    <h3>SenAspo</h3>
+                    <h3>Aspo</h3>
                     <p>under construction</p>
                   </div>
                 </div>
@@ -311,9 +311,8 @@
       <div class="row">
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
           <h2>Our Partners</h2>
-          <div class="col-sm-3">
+           <a href="https://jelastic.com/" target="_blank"><img src="templates/oxygen/images/jelastic.png"/></a>
           <a href="https://mirhosting.com/" target="_blank"><img src="templates/oxygen/images/mirhosting.png"/></a>
-          </div>
         </div>
       </div> 
     </div> 
@@ -360,6 +359,7 @@
                 <ul class="address">
                   <li><i class="fa fa-map-marker"></i> <span> Address:</span> Parcelles Assainies U20-54 </li>
                   <li><i class="fa fa-phone"></i> <span> Phone:</span> +221 33-855-10-91  </li>
+                  <li><i class="fa fa-phone"></i> <span> Mobile:</span> +221 78-135-51-73  </li>
                   <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:info@thinktech.sn">info@thinktech.sn</a></li>
                 </ul>
               </div>                            

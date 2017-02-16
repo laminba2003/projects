@@ -441,12 +441,18 @@ section {
 }
 
 .folio-image img {
-  width: 100%;
+  width: 95%;
+  margin-left : 5%;
   height : 200px;
 }
 
 #partners h2 {
 	margin-bottom : 50px;
+}
+
+#partners a {
+	display : inline-block;
+	margin-right : 40px;
 }
 
 #portfolio {
