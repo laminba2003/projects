@@ -366,9 +366,12 @@ section {
   padding: 0;
 }
 
+#portfolio .col-sm-3  {
+  margin-bottom : 30px;
+}
+
 #portfolio .folio-item {
   position: relative;
-  margin-bottom : 30px;
 }
 
 #portfolio .overlay {
