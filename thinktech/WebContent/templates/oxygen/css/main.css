@@ -368,6 +368,7 @@ section {
 
 #portfolio .folio-item {
   position: relative;
+  margin-bottom : 30px;
 }
 
 #portfolio .overlay {
