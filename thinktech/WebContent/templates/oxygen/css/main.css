@@ -488,6 +488,11 @@ section {
   background-color: #000;
 }
 
+#partners {
+	padding : 0px 0px;
+	margin-top : -50px;
+}
+
 #partners h2 {
 	margin-bottom : 80px;
 }
