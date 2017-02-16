@@ -289,7 +289,7 @@
               <div class="overlay-content">
                 <div class="overlay-text">
                   <div class="folio-info">
-                    <h3>BTP Afrique</h3>
+                    <h3><a href="http://env-3687617.mircloud.host/btp/" target="_blank">BTP Afrique</a></h3>
                     <p>under construction</p>
                   </div>
                 </div>
