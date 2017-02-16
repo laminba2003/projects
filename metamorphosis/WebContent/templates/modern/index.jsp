@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>THINKTECH CRM</title>
+    <title>SenCRM</title>
     <base href="${path}"/>
     <!-- Template CSS -->
     <link href="templates/modern/css/template.css" rel="stylesheet">  
@@ -37,7 +37,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="${path}">THINK<span>TECH</span> CRM</a>
+        <a class="navbar-brand" href="${path}">Sen<span>CRM</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
@@ -78,7 +78,7 @@
           <li>
             <img src="templates/modern/images/slider/people-office-group-team.jpg" alt="img">
             <div class="slider_caption">
-              <h2><span>Welcome To</span> ThinkTech CRM</h2>
+              <h2><span>Welcome To</span> SenCRM</h2>
               <p>
 				<b>We offer</b> a complete and integrated <b>CRM</b> solution that breaks down silos to deliver a seamless customer experience across marketing, sales, commerce, service, and social.
 			 </p>
@@ -421,7 +421,7 @@
               <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="single_footer_top contact_mail">
                   <h2>Contact us</h2>
-                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+1 888-522-0212</span> or <a>support@thinktech.sn</a></p>
+                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>33-855-10-91</span> or <a>support@thinktech.sn</a></p>
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4">
