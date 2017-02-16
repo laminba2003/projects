@@ -26,6 +26,9 @@
 
 <body>
 
+  <!-- scroll to top  -->   
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+  
   <!--.preloader-->
   <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div>
   <!--/.preloader-->

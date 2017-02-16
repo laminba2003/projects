@@ -446,6 +446,44 @@ section {
   height : 200px;
 }
 
+.scrollToTop{
+  background-color: #06d0d8;
+  color: #fff;
+}
+.scrollToTop:hover,.scrollToTop:focus{  
+  color: #fff;
+}
+
+/*scrol to top*/
+
+.scrollToTop {
+  bottom: 40px;
+  display: none;
+  font-size: 2rem;
+  font-weight: bold;
+  height: 50px;
+  position: fixed;
+  right: 40px;
+  text-align: center;
+  text-decoration: none;
+  width: 50px;
+  z-index: 9;
+  border:1px solid;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  border-radius : 50%;
+  line-height : 45px;
+}
+
+.scrollToTop:hover, .scrollToTop:focus{
+  text-decoration: none;
+  outline: none;
+  background-color: #000;
+}
+
 #partners h2 {
 	margin-bottom : 50px;
 }
