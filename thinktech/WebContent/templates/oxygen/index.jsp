@@ -523,7 +523,7 @@
                 <ul class="address">
                   <li><i class="fa fa-map-marker"></i> <span> Address:</span> Parcelles Assainies U20-54 </li>
                   <li><i class="fa fa-phone"></i> <span> Phone:</span> +221 33-855-10-91  </li>
-                  <li><i class="fa fa-phone"></i> <span> Mobile:</span> +221 78-135-51-73  </li>
+                  <li><i class="fa fa-mobile"></i> <span> Mobile:</span> +221 78-135-51-73  </li>
                   <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:info@thinktech.sn">info@thinktech.sn</a></li>
                 </ul>
               </div>                            
