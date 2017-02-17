@@ -1,3 +1,6 @@
+<div class="page-title">
+<a>Music</a>
+</div>
 <div>
 <div class="videos">
  <template type="text/x-dust-template">

@@ -109,7 +109,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "isdWSKnSSyE", title : "Safari - Art Bi"});
 	 videos.push({id : "cgFENtRBWsU", title : "Deesse Major - Gem Sa Bop"});
 	 videos.push({id : "Fjba4g93UX8", title : "HAKILL - Def saRAP"});
-	 display($(".videos:eq(0)"),"Music",videos);
+	 display($(".videos:eq(0)"),"Local",videos);
 	 videos = new Array();
 	 videos.push({id : "PlUqgaddAWc", title : "Kings Of Leon - Around The World"});
 	 videos.push({id : "D3ZNtOcY_1A", title : "Soundgarden - Live to Rise"});
