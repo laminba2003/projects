@@ -34,6 +34,9 @@
 
 /* xs */
 @media (max-width: 767px) {
+	#technology .col {
+		width : 49%;
+	}
 	body {
 		font-size: 14px;
 	}
@@ -221,7 +224,7 @@
 	.team-members .col-sm-3, 
 	.pricing-table .col-sm-3, 
 	#portfolio .col-sm-3, 
-	.blog-posts .col-sm-4 {
+	.blog-posts .col-sm-4,#technology .col {
 		width:100%;
 		float: none;
 	}
