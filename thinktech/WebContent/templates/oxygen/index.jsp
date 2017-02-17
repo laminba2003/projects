@@ -327,7 +327,7 @@
         <div class="row">
           <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
             <h2>Contact Us</h2>
-            <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly.</p>
+            <p>In search of a solution? We are always open for a quick chat! Give us a call or email us any time and we will respond shortly.</p>
           </div>
         </div>
         <div class="contact-form wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
