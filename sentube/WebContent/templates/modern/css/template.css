@@ -1442,7 +1442,7 @@ input:focus{
 	.videos h1 {margin-top:6px}
 	body{font-size:90%;}
 	.videos > div{width:49%;}
-	.videos .thumbnail{height:7em;width:100%}
+	.videos .thumbnail{height:7em;width:90%}
 	.channel .videos .thumbnail{height:6.925em}
   .video-player {width:100%;padding-left:0.40625em;padding-right:0.40625em}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:96.75%}
