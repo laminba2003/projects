@@ -127,7 +127,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "LBr7kECsjcQ", title : "Fall Out Boy - Centuries"});
 	 videos.push({id : "jZhQOvvV45w", title : "OneRepublic - Good Life"});
 	 videos.push({id : "vjW8wmF5VWc", title : "Silento - Watch Me (Whip/Nae Nae)"});
-	 videos.push({id : "GKSRyLdjsPA", title : "Groove Armada - Superstylin'"});
+	 videos.push({id : "Ndpryp2OlUQ", title : "Yelawolf - Till It’s Gone"});
 	 videos.push({id : "mvSvEeD8CVQ", title : "Papa Roach - STILL SWINGIN"});
 	 videos.push({id : "rIVGtd5kjsI", title : "Little Simz - Picture Perfect"});
 	 videos.push({id : "TAdARF4rGcQ", title : "St. Vincent - Birth In Reverse"});
