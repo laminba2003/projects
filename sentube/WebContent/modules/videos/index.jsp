@@ -8,7 +8,8 @@
   {#videos}
     <div>
 	  <a href="videos/watch?v={id}" title="{title}">
-	   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;"> 		   	     
+	   <div class="thumbnail"> 		
+	     <img src="https://i.ytimg.com/vi/{id}/mqdefault.jpg"/>   	     
 	     <span class="duration">{duration}</span>
 	   </div>  		   
 	   <div class="description">
@@ -27,7 +28,8 @@
   {#videos}
     <div>
 	  <a href="videos/watch?v={id}" title="{title}">
-	   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">  		   	     
+	   <div class="thumbnail">
+	     <img src="https://i.ytimg.com/vi/{id}/mqdefault.jpg"/>   		   	     
 	     <span class="duration">{duration}</span>
 	   </div>  		   
 	   <div class="description">
