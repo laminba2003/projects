@@ -131,7 +131,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "mvSvEeD8CVQ", title : "Papa Roach - STILL SWINGIN"});
 	 videos.push({id : "rIVGtd5kjsI", title : "Little Simz - Picture Perfect"});
 	 videos.push({id : "TAdARF4rGcQ", title : "St. Vincent - Birth In Reverse"});
-	 videos.push({id : "d58VJ-sC1uY", title : "Florence + The Machine - Breath Of Life"});
+	 videos.push({id : "PsO6ZnUZI0g", title : "Kanye West - Stronger"});
 	 videos.push({id : "PTOFEgJ9zzI", title : "Jessie J - Masterpiece"});
 	 videos.push({id : "U0YP9aJ_1TQ", title : "Placebo - A Million Little Pieces"});
 	 videos.push({id : "YqI0q89_Xa0", title : "For Today - Foundation"});
@@ -142,10 +142,10 @@ const display = (div,title,videos) => {
 	 videos.push({id : "15QzGe6Meq8", title : "Caro Emerald - Liquid Lunch"});
 	 videos.push({id : "pFptt7Cargc", title : "Tame Impala - Let It Happen"});
 	 videos.push({id : "nUCoYcxNMBE", title : "Eric Prydz - Generate"});
-	 videos.push({id : "xSajDMR1M3U", title : "Yuna - Falling"});
+	 videos.push({id : "mElLqDT7nWk", title : "Lemar - Higher Love"});
 	 videos.push({id : "pvP_OwVSFpk", title : "Ellie Goulding - Still falling for you"});
 	 videos.push({id : "JOIYLIgOY1Y", title : "Wild Beasts - A Simple Beautiful Truth"});
-	 videos.push({id : "nbXgHAzUWB0", title : "Axwell & Ingrosso - Sun Is Shining"});
+	 videos.push({id : "eQWG8BVeryU", title : "Chris Brown - Turn Up the Music"});
 	 videos.push({id : "qWKq1dzfjxU", title : "Mario Biondi - Shine On"});
 	 videos.push({id : "LXrP66ot0zs", title : "Jason Aldean - Lights Come On"});
 	 videos.push({id : "v9uDwppN5-w", title : "Demi Lovato - Neon Lights"});
