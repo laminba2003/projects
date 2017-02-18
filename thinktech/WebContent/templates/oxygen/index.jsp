@@ -72,7 +72,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>                  
+          </button> 
+          <a class="navbar-brand" href="index.html">
+            <h1><img class="img-responsive" src="templates/oxygen/images/logo.png" alt="logo"></h1>
+          </a>                  
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">                 
