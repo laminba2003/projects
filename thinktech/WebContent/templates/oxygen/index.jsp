@@ -475,8 +475,8 @@
       <div class="row">
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
           <h2>Our Partners</h2>
+           <a href="https://mirhosting.com/" target="_blank"><img src="templates/oxygen/images/mirhosting.png"/></a>
            <a href="https://jelastic.com/" target="_blank"><img src="templates/oxygen/images/jelastic.png"/></a>
-          <a href="https://mirhosting.com/" target="_blank"><img src="templates/oxygen/images/mirhosting.png"/></a>
         </div>
       </div> 
     </div> 
