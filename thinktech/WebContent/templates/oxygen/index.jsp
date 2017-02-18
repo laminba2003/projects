@@ -73,7 +73,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button> 
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="${path}">
             <h1><img class="img-responsive" src="templates/oxygen/images/logo.png" alt="logo"></h1>
           </a>                  
         </div>
@@ -82,7 +82,6 @@
             <li class="scroll"><a href="#services">Services</a></li> 
             <li class="scroll"><a href="#about-us">About Us</a></li>                     
             <li class="scroll"><a href="#portfolio">Portfolio</a></li>
-            <li class="scroll"><a href="#technology">Technology</a></li>
             <li class="scroll"><a href="#partners">Partners</a></li>
             <li class="scroll"><a href="#contact">Contact</a></li>       
           </ul>
@@ -330,149 +329,7 @@
     </div><!-- /#portfolio-single-wrap -->
   </section><!--/#portfolio-->
 
-	<section id="technology"  class="wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="500ms">
-				<h2>Technology</h2>
-				<p>
-					Combinations of software solutions: 
-					<ul>
-					<li><b>Odin Virtuozzo, Odin Virtuozzo for Windows </b> - currently the only market ready solution for container virtualization, trusted by enterprise level customers across the world.</li>
-					<li><b>Odin Cloud Storage </b> - unique resilient file storage solution for virtual systems, which provisions instant migration, local level I/O speed and low initial investment requirements.</li>
-					<li><b>Jelastic</b> - cloud orchestration and platform enabler (PaaS), including cloud resource billing and consumption tracking.</li>
-					<li><b>R1Soft</b> - best solution for data snapshots and disaster recovery.  This solution works on the core level and snapshots are taken instantly without additional resource consumption.</li>
-				</ul>
-				</p>
-				<h2 class="wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">Infrastructure and equipment</h2>
-				<p>
-					<ul>
-						<li><b>Regions</b> - MIRhosting Cloud is currently deployed in our main location in the Netherlands, while USA and Russia are coming online soon.</li>
-						<li><b>Minimum two datacenters commitment per region</b> - Each location has at least two datacenter instances with redundant connectivity channels between them.  These datacenters are logically connected to operate as a single cloud infrastructure instance, however, if one of the datacenters goes offline, the other datacenter does not get impacted and customers cloud operations carry on uninterrupted!</li>
-						<li><b>Own network infrastructure</b> - Our networking infrastructure is built on our own equipment, internet connectivity, AS and network peering connections.  This gives our customers highest level of choice of connection and enables independent peering policy provisioning. </li>
-						<li><b>DdoS protection</b> - Our cloud is protected with several levels of network security, including DDoS filtering.  Most all of the DDoS attacks are filtered automatically and this protection is offered as a service also on subscription basis.</li>
-						<li><b>Own equipment</b> - Innovation IT Solutions Corp (branded as MIRhosting) owns all of the hardware without any third party liabilities.</li>
-					</ul>
-				</p>
-				<h2 class="wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">Key programming functions and support</h2>
-				<div class="specs">
-					<div class="col">
-						<div>
-							<h3>Environments</h3>
-						</div>
-						<div>
-							<ul>
-								<li>Tomcat 6 & 7</li>
-								<li>TomEE</li>
-								<li>Jetty</li>
-								<li>Glassfish with connection pools</li>
-								<li>Apache</li>
-								<li>NGINX</li>
-								<li>Elastic VPS</li>
-							</ul>
-						</div>
-						<div>
-							<h3>JVM languages support</h3>
-						</div>
-						<div>
-							<ul>
-								<li>Clojure</li>
-								<li>JRuby</li>
-								<li>ColdFusion</li>
-								<li>Groovy</li>
-								<li>Scala</li>
-							</ul>
-						</div>
-						<div>
-							<h3>Databases</h3>
-						</div>
-						<div>
-							<ul>
-								<li>MySQL</li>
-								<li>MariaDB</li>
-								<li>PostgreSQL</li>
-								<li>MongoDB</li>
-								<li>CouchDB</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col">
-						<div>
-							<h3>JAVA versions</h3>
-						</div>
-						<div>
-							<ul>
-								<li>JDK 6</li>
-								<li>JDK 7</li>
-								<li>JDK 8</li>
-							</ul>
-						</div>
-						<div>
-							<h3>PHP versions </h3>
-						</div>
-						<div>
-							<ul>
-								<li>PHP 5.3</li>
-								<li>PHP 5.4</li>
-								<li>PHP 5.5</li>
-							</ul>
-						</div>
-						<div>
-							<h3>Ruby versions</h3>
-						</div>
-						<div>
-							<ul>
-								<li>Ruby 1.9.2</li>
-								<li>Ruby 1.9.3</li>
-								<li>Ruby 2.0.0</li>
-								<li>Ruby 2.1.1</li>
-							</ul>
-						</div>
-						<div>
-							<h3>Python versions</h3>
-						</div>
-						<div>
-							<ul>
-								<li>Python 2.7</li>
-								<li>Python 3.3</li>
-								<li>Python 3.4</li>
-							</ul>
-						</div>
-						<div>
-							<h3>Node.js versions</h3>
-						</div>
-						<div>
-							<ul>
-								<li>Node.js 0.10</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col">
-						<div>
-							<h3>Key functions </h3>
-						</div>
-						<div>
-							<ul>
-								<li>Docker support</li>
-								<li>Automatic vertical scaling</li>
-								<li>Horizontal scaling</li>
-								<li>HTTP and TCP balancing</li>
-								<li>One-click high availability platform support</li>
-								<li>Session replication</li>
-								<li>Multi domain support for a single setup instance</li>
-								<li>HTTPS SSL support (including own certificates)</li>
-								<li>External IP addresses</li>
-								<li>SSH, FTPs access</li>
-								<li>Memcached</li>
-								<li>API access</li>
-								<li>Cloud resource consumption reporting</li>
-								<li>Environment replication</li>
-								<li>Support for Openshift cartridges</li>
-								<li>One-click application installation library</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- end .howitworks-->
-
+	
  <section id="partners">
    <div class="container">
       <div class="row">
