@@ -81,7 +81,7 @@
           <ul class="nav navbar-nav navbar-right">                 
             <li class="scroll"><a href="#services">Services</a></li> 
             <li class="scroll"><a href="#about-us">About Us</a></li>                     
-            <li class="scroll"><a href="#portfolio">Portfolio</a></li>
+            <li class="scroll"><a href="#portfolio-items">Portfolio</a></li>
             <li class="scroll"><a href="#partners">Partners</a></li>
             <li class="scroll"><a href="#contact">Contact</a></li>       
           </ul>
@@ -132,8 +132,8 @@
     </div>
   </section><!--/#services-->
   <section id="about-us" class="parallax">
-    <div class="container">
-      <div class="row">
+    <div  class="container">
+      <div  class="row">
         <div class="col-sm-6">
           <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
             <h2>About us</h2>
@@ -176,13 +176,13 @@
 
   <section id="portfolio">
     <div class="container">
-      <div class="row">
+      <div id="portfolio-items" class="row">
         <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
           <h2>Our Portfolio</h2>
         </div>
       </div> 
     </div>
-    <div class="container-fluid">
+    <div  class="container-fluid">
       <div class="row">
         <div class="col-sm-3">
           <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="400ms">
