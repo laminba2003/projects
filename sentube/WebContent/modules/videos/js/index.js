@@ -1,5 +1,10 @@
 const display = (div,title,videos) => {
-	 var length,id = "";
+	 var length,id = "",limit=12;
+	 var width = window.innerWidth;
+	 limit = width >= 992 && width <= 1199 ? 10 : limit;
+	 limit = width >= 640 && width <= 767 ? 8 : limit;
+	 limit = width < 640 ? 4 : limit;
+	 limit = width <= 360 ? 1 : limit;
 	 length = videos.length;
 	 for(var i=0;i<length;i++) id += i < length-1 ? videos[i].id +"," : videos[i].id;
 	 app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics", result => {
@@ -19,17 +24,17 @@ const display = (div,title,videos) => {
 	    var state;
 	    if(localStorage) state = localStorage.getItem("state") ? JSON.parse(localStorage.getItem("state")) : {};
 	    var index = state["panel_"+div.index()] ? state["panel_"+div.index()] : 0;
-	    page.render(div,{title : title, videos : videos.slice(index,index+12)},thumbnail => {
-	    	if(index<12) $(".video-nav-left",div).addClass("disabled");;
-	    	if(index>=length-12) $(".video-nav-right",div).addClass("disabled");
+	    page.render(div,{title : title, videos : videos.slice(index,index+limit)},thumbnail => {
+	    	if(index<limit) $(".video-nav-left",div).addClass("disabled");;
+	    	if(index>=length-limit) $(".video-nav-right",div).addClass("disabled");
 	    	$(".video-nav-left",div).click(function(e) {
 	    		if($(this).hasClass("disabled")) return false;
 	    		const container = $("<div/>");
 	    		$(".video-nav-right",div).removeClass("disabled");
-	    		index-=12;
+	    		index-=limit;
 	    		if(index<=0) $(".video-nav-left",div).addClass("disabled");;
 	    		const top = $(window).scrollTop();
-	    		page.render(div,{title : title, videos : videos.slice(index,index+12)},false,container,() => {
+	    		page.render(div,{title : title, videos : videos.slice(index,index+limit)},false,container,() => {
 	    	    	$("> div",div).remove();
 	    	    	$("> div",container).insertAfter($("h1",div)).addClass("animated flip");
 	    	    	$('html, body').animate({scrollTop : top},800);
@@ -37,15 +42,15 @@ const display = (div,title,videos) => {
 	    		state["panel_"+div.index()] = index;
 	    		if(localStorage) localStorage.setItem("state",JSON.stringify(state));
 	    	});
-	    	if(length<=12) $(".video-nav-right",div).addClass("disabled");
+	    	if(length<=limit) $(".video-nav-right",div).addClass("disabled");
 	    	$(".video-nav-right",div).click(function(e){
 	    		if($(this).hasClass("disabled")) return false;
 	    		$(".video-nav-left",div).removeClass("disabled");
 	    		const container = $("<div/>");
-	    		index+=12;
-	    		if(index>=length-12) $(".video-nav-right",div).addClass("disabled");
+	    		index+=limit;
+	    		if(index>=length-limit) $(".video-nav-right",div).addClass("disabled");
 	    		const top = $(window).scrollTop();
-	    		page.render(div,{title : title, videos : videos.slice(index,index+12)},false,container,() => {
+	    		page.render(div,{title : title, videos : videos.slice(index,index+limit)},false,container,() => {
 	    	    	$("> div",div).remove();
 	    	    	$("> div",container).insertAfter($("h1",div)).addClass("animated flip");
 	    	    	$('html, body').animate({scrollTop : top},800);

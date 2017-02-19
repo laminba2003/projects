@@ -862,7 +862,7 @@ a.show-more {
 }
 
 .videos {
-	opacity : 0.1;min-height : 300px;margin-bottom:1px;padding-left:2.5%;padding-right:0%;width:95.5%;margin-left:auto;margin-right:auto;border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;padding-bottom:0px;padding-top:1.2%;background-color:#fffffd;vertical-align:top;
+	opacity : 0.1;margin-bottom:1px;padding-left:2.5%;padding-right:0%;width:95.5%;margin-left:auto;margin-right:auto;border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;padding-bottom:0px;padding-top:1.2%;background-color:#fffffd;vertical-align:top;
 }
 
 .videos:last-of-type {
@@ -996,7 +996,6 @@ a.show-more {
 	margin-top : 2px;
 	line-height : 1.3em;
 	font-size : 78%;
-	color : #222;
 }
 .videos .description .view-count {
 	color:#d42323;
@@ -1098,6 +1097,7 @@ aside h3 {
 main {
 	display : inline-block;
 	width : 82.4%;
+	min-height : 700px;
 }
 
 #wait {
@@ -1363,6 +1363,7 @@ input:focus{
   #footer {padding-left:17%;}
   #wait {padding-left: 29.7%;padding-top : 19%}
   .watcher .views span {font-size : 65%}
+  main {width : 82%}
 }
   
 @media(max-width:991px ){
@@ -1450,6 +1451,8 @@ input:focus{
 @media(max-width:480px ){
 	.videos h1 {margin-top:6px}
 	body{font-size:90%;}
+	 main {min-height : 40em}
+	.videos:last-of-type {margin-bottom:0px}
 	.videos > div{width:49%;}
 	.videos .thumbnail{height:7em;width:90%}
 	.channel .videos .thumbnail{height:6.925em}
@@ -1490,6 +1493,8 @@ input:focus{
 	body{font-size:85%;}
 	.videos > div{width:100%;}
 	.videos .thumbnail{height:11.5em;width:98%;margin-left:2px}
+	 main {min-height : 40em}
+	.videos:last-of-type {margin-bottom:0px}
 	.channel .videos .thumbnail{height:10.3em;width:100%;}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:96%}
 	.thumbnails > div {width:100%}
@@ -1497,7 +1502,6 @@ input:focus{
 	.thumbnails .description{height:auto;}
 	.thumbnails .description span:nth-child(1){min-height:auto;margin-top:-1px}
 	#search input[type=text] {width : 28%;margin-left:-62px;margin-top:-0.25em}
-  #search input[type=submit] {margin-top:-0.25em}
   .video-comments > div > div {width:50%;}
   #wait {padding-top : 32%;padding-left : 32%}
   .videos h1 {margin-left : 2px}
