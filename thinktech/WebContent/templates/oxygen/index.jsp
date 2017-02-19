@@ -137,7 +137,7 @@
         <div class="col-sm-6">
           <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
             <h2>About us</h2>
-            <p>We are an IT company based on Senegal specialized in Software Development with a proven experience in building innovative and robust solutions
+            <p>We are an IT company based on Senegal specialized in Software Development, Cloud Hosting, Consulting and Training with a proven experience in building innovative and robust solutions
             with cutting-edge technologies.
             </p>
           </div>
