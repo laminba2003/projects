@@ -137,9 +137,9 @@ const display = (div,title,videos) => {
 	 videos.push({id : "YqI0q89_Xa0", title : "For Today - Foundation"});
 	 videos.push({id : "7qrRzNidzIc", title : "Breaking Benjamin - I Will Not Bow"});
 	 videos.push({id : "jAdxaXSnMq4", title : "TobyMac - Eye on It"});
-	 videos.push({id : "en2D_5TzXCA", title : "Lady Gaga - Million Reasons"});
+	 videos.push({id : "ZxVdagd_Pv0", title : "Kristoffer Fogelmark - Love Was My Alibi"});
 	 videos.push({id : "Fy7FzXLin7o", title : "Depeche Mode - Heaven"});
-	 videos.push({id : "15QzGe6Meq8", title : "Caro Emerald - Liquid Lunch"});
+	 videos.push({id : "PaKr9gWqwl4", title : "Paloma Faith - Only Love Can Hurt Like This"});
 	 videos.push({id : "pFptt7Cargc", title : "Tame Impala - Let It Happen"});
 	 videos.push({id : "nUCoYcxNMBE", title : "Eric Prydz - Generate"});
 	 videos.push({id : "mElLqDT7nWk", title : "Lemar - Higher Love"});
