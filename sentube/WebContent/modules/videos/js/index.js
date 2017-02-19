@@ -124,11 +124,11 @@ const display = (div,title,videos) => {
 	 videos.push({id : "hSa_hbutFt0", title : "Garbage - Empty"});
 	 videos.push({id : "XleCTkNECko", title : "Escape The Fate - Remember Every Scar"});
 	 videos.push({id : "7F37r50VUTQ", title : "ZAYN, Taylor Swift - I Don't Wanna Live Forever"});
+	 videos.push({id : "jrWIqrGhfwI", title : "Vaults - Lifespan"});
 	 videos.push({id : "LBr7kECsjcQ", title : "Fall Out Boy - Centuries"});
 	 videos.push({id : "jZhQOvvV45w", title : "OneRepublic - Good Life"});
-	 videos.push({id : "vjW8wmF5VWc", title : "Silento - Watch Me (Whip/Nae Nae)"});
 	 videos.push({id : "Ndpryp2OlUQ", title : "Yelawolf - Till It's Gone"});
-	 videos.push({id : "mvSvEeD8CVQ", title : "Papa Roach - STILL SWINGIN"});
+	 videos.push({id : "BZyzX4c1vIs", title : "CHVRCHES - Clearest Blue"});
 	 videos.push({id : "rIVGtd5kjsI", title : "Little Simz - Picture Perfect"});
 	 videos.push({id : "TAdARF4rGcQ", title : "St. Vincent - Birth In Reverse"});
 	 videos.push({id : "PsO6ZnUZI0g", title : "Kanye West - Stronger"});
@@ -146,11 +146,11 @@ const display = (div,title,videos) => {
 	 videos.push({id : "pvP_OwVSFpk", title : "Ellie Goulding - Still falling for you"});
 	 videos.push({id : "JOIYLIgOY1Y", title : "Wild Beasts - A Simple Beautiful Truth"});
 	 videos.push({id : "eQWG8BVeryU", title : "Chris Brown - Turn Up the Music"});
-	 videos.push({id : "qWKq1dzfjxU", title : "Mario Biondi - Shine On"});
+	 videos.push({id : "lfEVLXu3NXs", title : "David Zowie - House Every Weekend"});
 	 videos.push({id : "LXrP66ot0zs", title : "Jason Aldean - Lights Come On"});
 	 videos.push({id : "v9uDwppN5-w", title : "Demi Lovato - Neon Lights"});
 	 videos.push({id : "sENM2wA_FTg", title : "Imagine Dragons - It's Time"});
-	 videos.push({id : "q5ReTDxdFl8", title : "Gavin DeGraw - She Sets The City On Fire"});
+	 videos.push({id : "_b4QiB0u-kw", title : "Sub Focus - Close"});
 	 videos.push({id : "lwObaOnEu4A", title : "Marcus & Martinus - Light It Up"});
 	 videos.push({id : "6x26O237kP8", title : "Editors - All Sparks"});
 	 videos.push({id : "VRNPkJ0ELPc", title : "Within Temptation - Whole World is Watching"});
