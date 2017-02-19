@@ -1367,6 +1367,7 @@ input:focus{
 }
   
 @media(max-width:991px ){
+	.watcher h1 {line-height : 1.45em}
 	.videos h1 {margin-top:6px;margin-left:-9px}
 	body{font-size:100%;}
 	.thumbnails .thumbnail{width:95%;height:8.75em;display:block;}
@@ -1390,6 +1391,7 @@ input:focus{
 }
 
 @media(max-width:767px ){
+	.watcher h1 {line-height : 1.45em}
 	.videos {padding-bottom : 5px}
 	.videos h1 {margin-top:7px}
 	body{font-size:95%;}
@@ -1501,4 +1503,6 @@ input:focus{
   .video-comments > div > div {width:50%;}
   #wait {padding-top : 32%;padding-left : 32%}
   .videos h1 {margin-left : 2px}
+  .watcher h1 {line-height : 1.45em}
+  .video-player .views {margin-top : -20px}
 }
