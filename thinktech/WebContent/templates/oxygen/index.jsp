@@ -133,10 +133,16 @@
   </section><!--/#services-->
   <section id="about-us" class="parallax">
     <div  class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="row">
+          <div class="text-center col-sm-8 col-sm-offset-2">
+            <h2>About Us</h2>
+          </div>
+        </div> 
+      </div>
       <div  class="row">
         <div class="col-sm-6">
           <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <h2>About us</h2>
             <p>We are an IT company based on Senegal specialized in Software Development, Cloud Hosting, Consulting and Training with a proven experience in building innovative and robust solutions
             with cutting-edge technologies.
             </p>
