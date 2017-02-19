@@ -1469,6 +1469,7 @@ input:focus{
   #wait {padding-left: 37%;padding-top : 31%}
   .watcher .views span {font-size : 35%}
   .videos h1 {margin-left : 2px}
+  #footer {font-size : 65%}
 }
 @media(max-width:360px ){
 	body{font-size:88%;}
