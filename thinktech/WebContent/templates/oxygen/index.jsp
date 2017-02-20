@@ -295,13 +295,13 @@
         <div class="col-sm-3">
           <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="folio-image">
-              <img class="img-responsive" src="templates/oxygen/images/portfolio/senaspo.png" alt="">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/soccer.jpg" alt="">
             </div>
             <div class="overlay">
               <div class="overlay-content">
                 <div class="overlay-text">
                   <div class="folio-info">
-                    <h3>Aspo</h3>
+                    <h3>Association Sportive Police</h3>
                     <p>under construction</p>
                   </div>
                 </div>
