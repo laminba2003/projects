@@ -136,7 +136,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "BZyzX4c1vIs", title : "CHVRCHES - Clearest Blue"});
 	 videos.push({id : "rIVGtd5kjsI", title : "Little Simz - Picture Perfect"});
 	 videos.push({id : "TAdARF4rGcQ", title : "St. Vincent - Birth In Reverse"});
-	 videos.push({id : "PsO6ZnUZI0g", title : "Kanye West - Stronger"});
+	 videos.push({id : "uPHKkewD1G0", title : "Daya - Sit Still, Look Pretty"});
 	 videos.push({id : "PTOFEgJ9zzI", title : "Jessie J - Masterpiece"});
 	 videos.push({id : "U0YP9aJ_1TQ", title : "Placebo - A Million Little Pieces"});
 	 videos.push({id : "YqI0q89_Xa0", title : "For Today - Foundation"});
@@ -153,9 +153,9 @@ const display = (div,title,videos) => {
 	 videos.push({id : "eQWG8BVeryU", title : "Chris Brown - Turn Up the Music"});
 	 videos.push({id : "lfEVLXu3NXs", title : "David Zowie - House Every Weekend"});
 	 videos.push({id : "LXrP66ot0zs", title : "Jason Aldean - Lights Come On"});
-	 videos.push({id : "v9uDwppN5-w", title : "Demi Lovato - Neon Lights"});
-	 videos.push({id : "sENM2wA_FTg", title : "Imagine Dragons - It's Time"});
-	 videos.push({id : "_b4QiB0u-kw", title : "Sub Focus - Close"});
+	 videos.push({id : "fgXRzjlbbng", title : "Jordan Smith - Stand In The Light"});
+	 videos.push({id : "ZgbmDMNu42s", title : "Scorpions - We Built This House"});
+	 videos.push({id : "_Ri2KEiXlNk", title : "Bon Jovi - This House Is Not For Sale"});
 	 videos.push({id : "lwObaOnEu4A", title : "Marcus & Martinus - Light It Up"});
 	 videos.push({id : "6x26O237kP8", title : "Editors - All Sparks"});
 	 videos.push({id : "VRNPkJ0ELPc", title : "Within Temptation - Whole World is Watching"});
