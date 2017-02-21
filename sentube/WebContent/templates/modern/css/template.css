@@ -649,7 +649,7 @@ img{
     white-space : nowrap;
     padding-left : 45px;
     padding-top : 4px;
-    margin-left : 14px;
+    margin-left : 9px;
 }
 
 .channel .image-card{
@@ -686,6 +686,7 @@ img{
 	padding-top : 16px;
 }
 
+.channel .videos {border-radius : 0px}
 .channel .videos .thumbnail {
 	height : 4em;
 }
@@ -796,7 +797,7 @@ a.show-more {
 }
 
 .video-comment div div a {
-	color : #442727;
+	color : #888;
 	display : inline-block;
 	margin-right : 10px;
 	font-family : Georgia;
@@ -865,7 +866,7 @@ a.show-more {
 }
 
 .videos {
-	opacity : 0.1;margin-bottom:1px;padding-left:2.5%;padding-right:0%;width:95.5%;margin-left:auto;margin-right:auto;border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;padding-bottom:0px;padding-top:1.2%;background-color:#fffffd;vertical-align:top;
+	opacity : 0.1;margin-bottom:1px;padding-left:2.5%;padding-right:0%;width:95.5%;margin-left:auto;margin-right:auto;border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;padding-bottom:0px;padding-top:1.2%;background-color:#fffffd;vertical-align:top;border-radius : 5px;
 }
 
 .videos:last-of-type {
@@ -1046,6 +1047,7 @@ aside {
 	height : 711.5px;
     border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;
     opacity : 0.95;
+    border-radius : 5px;
 }
 
 aside span {
