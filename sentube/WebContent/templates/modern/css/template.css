@@ -1435,15 +1435,17 @@ input:focus{
 	.thumbnails .thumbnail{width:100%;height:180px;height:28vw;display:block;}
 	.thumbnails .description{width:100%;vertical-align:top;display:block;height:4em;overflow:hidden;position:relative}
 	.thumbnails .description span:nth-child(1){min-height:2.5em;overflow:hidden}
-	.videos .description {margin-left:10px}
-  .navbar-brand {margin-left:-20px;}	
-  .navbar-brand {left : 31px;}
+	.videos .description {margin-top:-6px}
+  .navbar-brand {margin-left:-20px;left : 31px;top : 0.14em}	
+  #search {top : 0.95em}
   #search input[type=text] {width : 50%;margin-left:-40px;margin-top:-0.1em}
   #search input[type=submit] {width : 30px;margin-top:-0.1em}
   .video-comments > div > div {width:70%;}
   #wait {padding-left: 44%;padding-top : 29%}
   .watcher .views span {font-size : 45%}
   .videos h1 {margin-left : 2px}
+  .footer_bottom {margin-left:-40px;font-size : 99%}
+  .footer_bottom p {white-space : nowrap;}
 }
 
  
@@ -1461,15 +1463,18 @@ input:focus{
 	.thumbnails .thumbnail{width:50%;height:90px;height:28vw;display:inline-block;}
 	.thumbnails .description{width:48%;vertical-align:top;display:inline-block;height:auto;}
 	.thumbnails .description span:nth-child(1){min-height:auto;margin-top:6px}
-  .navbar-brand {left:10px;}
+  .navbar-brand {left:10px;left : 31px;top : 0.14em}
+	#search {top : 0.95em}
   #search input[type=text] {width : 42%;margin-left:-60px;margin-top:-0.125em}
   #search input[type=submit] {width : 30px;margin-top:-0.125em}
-  .navbar-brand {left : 31px;}
   .video-comments > div > div {width:50%;}
   #wait {padding-left: 37%;padding-top : 31%}
   .watcher .views span {font-size : 35%}
   .videos h1 {margin-left : 2px}
+  .videos .description {margin-top : -6px}
   #footer {font-size : 65%}
+  .footer_bottom {margin-left:-40px;font-size : 99%}
+  .footer_bottom p {white-space : nowrap;}
 }
 @media(max-width:360px ){
 	body{font-size:88%;}
@@ -1481,12 +1486,15 @@ input:focus{
 	.thumbnails .thumbnail{width:50%;height:90px;height:28vw;display:inline-block;}
 	.thumbnails .description{width:48%;vertical-align:top;display:inline-block;height:auto;}
 	.thumbnails .description span:nth-child(1){min-height:auto;margin-top:6px}
- .navbar-brand {margin-left:-20px}
+ .navbar-brand {top : 0.14em;margin-left:-20px;left : 23px}
+ #search {top : 0.95em}
 #search input[type=text] {width : 38%;margin-left:-68px;margin-top:-0.125em}
   #search input[type=submit] {width : 30px;margin-top:-0.125em}
-  .navbar-brand {left : 23px;}
  .video-comments > div > div {width:50%;}
  .videos h1 {margin-left : 2px}
+ .videos .description {margin-left:10px}
+ .footer_bottom {margin-left:-40px;font-size : 99%}
+  .footer_bottom p {white-space : nowrap;}
 }
 @media(max-width:320px ){
 	body{font-size:85%;}
@@ -1500,10 +1508,15 @@ input:focus{
 	.thumbnails .thumbnail{width:100%;height:180px;height:57vw}
 	.thumbnails .description{height:auto;}
 	.thumbnails .description span:nth-child(1){min-height:auto;margin-top:-1px}
+	.navbar-brand {top : 0.14em}
+	#search {top : 0.95em}
 	#search input[type=text] {width : 28%;margin-left:-62px;margin-top:-0.25em}
   .video-comments > div > div {width:50%;}
   #wait {padding-top : 32%;padding-left : 32%}
   .videos h1 {margin-left : 2px}
+  .videos .description {margin-left:2px}
   .watcher h1 {line-height : 1.45em}
   .video-player .views {margin-top : -20px}
+  .footer_bottom {margin-left:-40px;font-size : 99%}
+  .footer_bottom p {white-space : nowrap;}
 }
