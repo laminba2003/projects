@@ -312,7 +312,7 @@
         <div class="col-sm-3">
           <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="folio-image">
-              <img class="img-responsive" src="templates/oxygen/images/portfolio/btpafrique.jpg" alt="">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/btp-work.jpg" alt="">
             </div>
             <div class="overlay">
               <div class="overlay-content">
