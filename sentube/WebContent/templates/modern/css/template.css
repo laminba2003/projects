@@ -691,8 +691,11 @@ img{
 }
 
 .channel .videos .thumbnail .duration{
-	font-size : 55%;
+	font-size : 55%;right:0.9em;
 }
+
+.channel .videos .description {margin-left : 0px;width:90.5%}
+
 
 .video-metadata,.video-comments,.comments-disabled {
 	width:100%;margin-bottom:5px;margin-top:6px;display:inline-block;min-height:150px;border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;background-color:#fffeff;font-size:85%;
@@ -1364,10 +1367,14 @@ input:focus{
   #wait {padding-left: 29.7%;padding-top : 19%}
   .watcher .views span {font-size : 65%}
   main {width : 82%}
+  .channel .videos .description {margin-left : -5px;width:90%}
+	.channel .videos .thumbnail .duration {right:0.2em}
 }
 
 @media(max-width:1024px ){
   #wait {padding-left: 29.5%;padding-top : 18.8%}  
+   .channel .videos .description {margin-left : -5px;width:90%}
+	.channel .videos .thumbnail .duration {right:0.2em}
 }
   
 @media(max-width:991px ){
@@ -1380,7 +1387,8 @@ input:focus{
 	.videos > div{width:24.75%;}
 	.videos .thumbnail{height:5.5em;width:100%;}
 	.channel .videos .thumbnail{height:4em;}
-	.photo img { }
+	.channel .videos .description {margin-left : 0px}
+	.channel .videos .thumbnail .duration {right:1.5em}
 	.navbar-default .navbar-nav > li > a {font-size: 12px; padding: 10px;}
   .dropdown-menu > li > a{font-size: 12px;padding: 10px;}
   .navbar-brand {height: auto;width: 213px;}
@@ -1402,6 +1410,8 @@ input:focus{
 	.videos > div{width:24.5%;}
 	.videos .thumbnail{width:100%}
 	.channel .videos .thumbnail{height:5.125em;}
+	.channel .videos .description {margin-left : 0.2%;width:80%}
+	.channel .videos .thumbnail .duration {right:1.5em}
 	#footer {padding-left:17%;}
 	 .navbar-brand {margin-left:-8px;}
  .navbar-brand {left : 23px;}
@@ -1433,6 +1443,8 @@ input:focus{
 	.videos > div{width:49%;}
 	.videos .thumbnail{height:8.5em;width:100%;}
 	.channel .videos .thumbnail{height:9.5em}
+	.channel .videos .description {margin-left : 2.5%;width:80%}
+	.channel .videos .thumbnail .duration {right:1.9em}
 	.video-player {width:100%;padding-left:0.40625em;padding-right:0.40625em}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:97.5%}
 	.thumbnails > div:not(.load-more) {width:49%;display:inline-block;padding-right:1%;vertical-align:top}
@@ -1461,6 +1473,8 @@ input:focus{
 	.videos > div{width:49%;}
 	.videos .thumbnail{height:7em;width:90%}
 	.channel .videos .thumbnail{height:6.925em}
+	.channel .videos .description {margin-left : 0.2%;width:80%}
+	.channel .videos .thumbnail .duration {right:0.6em}
   .video-player {width:100%;padding-left:0.40625em;padding-right:0.40625em}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:96.75%}
 	.thumbnails > div:not(.load-more) {width:100%}
@@ -1485,6 +1499,8 @@ input:focus{
 	.videos > div{width:100%;}
 	.videos .thumbnail{height:11.5em;width:90%;margin-left: 10px}
 	.channel .videos .thumbnail{height:10.75em;width:100%;}
+	.channel .videos .description {margin-left : 10%}
+	.channel .videos .thumbnail .duration {right:2.9em}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:96%}
 	.thumbnails > div:not(.load-more) {width:100%}
 	.thumbnails .thumbnail{width:50%;height:90px;height:28vw;display:inline-block;}
@@ -1508,6 +1524,7 @@ input:focus{
 	 main {min-height : 40em}
 	.videos:last-of-type {margin-bottom:0px}
 	.channel .videos .thumbnail{height:10.3em;width:100%;}
+	.channel .videos .description {margin-left : 5%}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:96%}
 	.thumbnails > div {width:100%}
 	.thumbnails .thumbnail{width:100%;height:180px;height:57vw}
