@@ -106,6 +106,12 @@
   <div class="thumbnails">
     <template type="text/x-dust-template">
       <h1>Up next</h1>
+      <span>Autoplay
+       <div class="slideThree">  
+      <input type="checkbox" value="None" id="slideThree" name="check" checked />
+      <label for="slideThree"></label>
+    </div>
+      </span>
        {#.}
   		<div>
   		  <a id="{id}" title="{title}">
