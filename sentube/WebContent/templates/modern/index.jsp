@@ -61,7 +61,7 @@
   </nav>
   <!-- End navbar -->
  
- <aside style="${watch ? 'display:none' : ''}">
+ <aside style="${watch ? 'display:none' : 'opacity:1'}">
    <div>
      <span>
       <img src="templates/modern/images/home-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
@@ -119,7 +119,7 @@
    </div>
    <hr/>
  </aside>
- <main style="${watch ? 'width:100%' : ''}">
+ <main style="${watch ? 'width:100%' : 'opacity:1'}">
    <tiles:insertAttribute name="content"/>
  </main>   
   <!-- start footer -->

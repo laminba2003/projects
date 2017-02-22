@@ -1,7 +1,9 @@
+<div class="page-title">
+<a>Search Results</a>
+</div>
 <div class="search-results">
 <div class="videos">
  <template type="text/x-dust-template">
- <h1>Search Results</h1>
   {#.}
     <div>
 	  <a href="videos/watch?v={id}">
@@ -10,8 +12,8 @@
 	     <span class="duration">{duration}</span>
 	   </div>  		   
 	   <div class="description">
-	   	<p class="view-count"><span>{viewCount} views</span></p>
 	    <p class="title"><span>{title}</span></p>
+	   	<p class="view-count"><span>{viewCount} views</span></p>
 	   </div>
 	 </a>
     </div>
