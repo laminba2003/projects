@@ -880,7 +880,7 @@ a.show-more {
 	margin-top : 10px;
 }
 
-.slideThree {
+.autoplay {
   display : inline-block;
   margin-left : 10px;
   width: 80px;
@@ -890,7 +890,7 @@ a.show-more {
   border-radius: 50px;
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
 }
-.slideThree:after {
+.autoplay:after {
   content: 'OFF';
   color: #000;
   position: absolute;
@@ -900,7 +900,7 @@ a.show-more {
   font-weight: bold;
   text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.15);
 }
-.slideThree:before {
+.autoplay:before {
   content: 'ON';
   color: #27ae60;
   position: absolute;
@@ -909,7 +909,7 @@ a.show-more {
   font: 12px/26px Arial, sans-serif;
   font-weight: bold;
 }
-.slideThree label {
+.autoplay label {
   display: block;
   width: 34px;
   height: 20px;
@@ -926,10 +926,10 @@ a.show-more {
   transition: all 0.4s ease;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
 }
-.slideThree input[type=checkbox] {
+.autoplay input[type=checkbox] {
   visibility: hidden;
 }
-.slideThree input[type=checkbox]:checked + label {
+.autoplay input[type=checkbox]:checked + label {
   left: 43px;
 }
 
@@ -1024,6 +1024,17 @@ a.show-more {
 .videos h1 {
 	font-size:110%;
 	margin-bottom:0.303125em;
+	display : inline-block;
+	width : 80%;
+}
+
+.videos .status {
+	display : inline-block;
+	padding-right : 7px;
+	font-size : 75%;
+	width : 19%;
+	text-align : right;
+	color : #d42323;
 }
 
 .thumbnails h1 {

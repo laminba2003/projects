@@ -107,9 +107,9 @@
     <template type="text/x-dust-template">
       <h1>Up next</h1>
       <span>Autoplay
-       <div class="slideThree">  
-      <input type="checkbox" value="None" id="slideThree" name="check" checked />
-      <label for="slideThree"></label>
+       <div class="autoplay">  
+      <input type="checkbox" value="None" id="autoplay" name="check" checked />
+      <label for="autoplay"></label>
     </div>
       </span>
        {#.}

@@ -27,6 +27,7 @@ const display = (div,title,videos) => {
 	    page.render(div,{title : title, videos : videos.slice(index,index+limit)},thumbnail => {
 	    	if(index<limit) $(".video-nav-left",div).addClass("disabled");;
 	    	if(index>=length-limit) $(".video-nav-right",div).addClass("disabled");
+	    	$(".status",div).html((index+limit)+"/"+length);
 	    	$(".video-nav-left",div).click(function(e) {
 	    		if($(this).hasClass("disabled")) return false;
 	    		const container = $("<div/>");
@@ -36,8 +37,9 @@ const display = (div,title,videos) => {
 	    		const top = $(window).scrollTop();
 	    		page.render(div,{title : title, videos : videos.slice(index,index+limit)},false,container,() => {
 	    	    	$("> div",div).remove();
-	    	    	$("> div",container).insertAfter($("h1",div)).addClass("animated flip");
+	    	    	$("> div",container).insertAfter($(".status",div)).addClass("animated flip");
 	    	    	$('html, body').animate({scrollTop : top},800);
+	    	    	$(".status",div).html((index+limit)+"/"+length);
 	    	    });
 	    		state["panel_"+div.index()] = index;
 	    		if(localStorage) localStorage.setItem("state",JSON.stringify(state));
@@ -52,8 +54,9 @@ const display = (div,title,videos) => {
 	    		const top = $(window).scrollTop();
 	    		page.render(div,{title : title, videos : videos.slice(index,index+limit)},false,container,() => {
 	    	    	$("> div",div).remove();
-	    	    	$("> div",container).insertAfter($("h1",div)).addClass("animated flip");
+	    	    	$("> div",container).insertAfter($(".status",div)).addClass("animated flip");
 	    	    	$('html, body').animate({scrollTop : top},800);
+	    	    	$(".status",div).html((index+limit)+"/"+length);
 	    	    });
 	    		state["panel_"+div.index()] = index;
 	    		if(localStorage) localStorage.setItem("state",JSON.stringify(state));
