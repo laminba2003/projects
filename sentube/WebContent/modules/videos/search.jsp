@@ -13,7 +13,9 @@
 	   </div>  		   
 	   <div class="description">
 	    <p class="title"><span>{title}</span></p>
-	   	<p class="view-count"><span>{viewCount} views</span></p>
+	    <p class="channel"><span>{channel}</span></p>
+	   	<p><span class="publishedAt">{publishedAt}</span> - <span class="view-count">{viewCount} views</span></p>
+	   	<p class="video-description"><span>{description}</span></p>
 	   </div>
 	 </a>
     </div>

@@ -15,8 +15,8 @@ String.prototype.linkify = function() {
 };
 
 const display = (videoId,cache) => {
-	var video = {};
-    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+	const video = {};
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 	app.get("https://www.googleapis.com/youtube/v3/videos?id="+videoId+"&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,statistics",info => {
 		video.videoId = videoId;
 		video.title = info.items[0].snippet.title;

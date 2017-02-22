@@ -2,10 +2,14 @@ const search = query => {
 	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&q="+query+"&type=video&part=snippet&order=date&maxResults=50",result => {
 		const videos = new Array();
 		var length = result.items.length, id = "";
+		const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 	    for(var i=0;i<length;i++) {
 			const item = result.items[i];
 			id += i < length-1 ? item.id.videoId +"," : item.id.videoId;
-			videos.push({id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
+			const video = {id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle};
+			video.publishedAt = new Date(item.snippet.publishedAt).toLocaleDateString("en-US",options);	
+			video.description = item.snippet.description;
+			videos.push(video);
 		}
 		app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics", result => {
 			length = result.items.length;
