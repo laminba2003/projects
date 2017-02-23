@@ -1213,7 +1213,7 @@ aside {
 }
 
 .aside-toggle {
-    position: absolute;
+    position: fixed;
     left : 0px;
     padding: 9px 6px;
     margin-top: 7px;
