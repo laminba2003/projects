@@ -138,7 +138,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "Ndpryp2OlUQ", title : "Yelawolf - Till It's Gone"});
 	 videos.push({id : "qh7BCluk3wc", title : "Gallant - Weight In Gold"});
 	 videos.push({id : "rIVGtd5kjsI", title : "Little Simz - Picture Perfect"});
-	 videos.push({id : "TAdARF4rGcQ", title : "St. Vincent - Birth In Reverse"});
+	 videos.push({id : "mVAxUMuhz98", title : "St. Vincent - Digital Witness"});
 	 videos.push({id : "uPHKkewD1G0", title : "Daya - Sit Still, Look Pretty"});
 	 videos.push({id : "PTOFEgJ9zzI", title : "Jessie J - Masterpiece"});
 	 videos.push({id : "U0YP9aJ_1TQ", title : "Placebo - A Million Little Pieces"});
