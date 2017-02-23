@@ -5,6 +5,7 @@
 <div class="videos">
  <template type="text/x-dust-template">
  <h1>{title}<a title="Previous" class="video-nav-left" href="#"><i class="fa fa-angle-left"></i></a><a title="Next" class="video-nav-right" href="#"><i class="fa fa-angle-right"></i></a></h1>
+ <span class="actions"><a title="Play all" href="#"><i class="fa fa-play"></i></a></span>
  <span class="status">1/21</span>
   {#videos}
     <div>
@@ -26,6 +27,7 @@
  <div class="videos">
  <template type="text/x-dust-template">
  <h1>{title}<a title="Previous" class="video-nav-left" href="#"><i class="fa fa-angle-left"></i></a><a title="Next" class="video-nav-right" href="#"><i class="fa fa-angle-right"></i></a></h1>
+ <span class="actions"><a title="Play all" href="#"><i class="fa fa-play"></i></a></span>
  <span class="status">1/21</span>
   {#videos}
     <div>

@@ -1013,7 +1013,7 @@ a.show-more {
 	margin-bottom:20px;
 }
 
-.videos h1 > a {
+.videos h1 > a, .videos .actions > a {
   display : inline-block;
   background-color: #d42323;
   color: #fff;
@@ -1027,6 +1027,13 @@ a.show-more {
   z-index: 9;
    margin-top : -2px;
    line-height : 23px;
+}
+
+.videos .actions > a {
+    margin-top: 0.9px;
+    font-size: 80%;
+    padding-top: 1px;
+    padding-left: 2px;
 }
 
 .videos h1 a.disabled {
@@ -1089,15 +1096,21 @@ a.show-more {
 	font-size:110%;
 	margin-bottom:0.303125em;
 	display : inline-block;
-	width : 80%;
+	width : 49.5%;
+}
+
+.videos .actions {
+	width : 35%;
+	display : inline-block;
+	text-align : right;
 }
 
 .videos .status {
 	display : inline-block;
-	padding-right : 7px;
+	padding-left : 7px;
 	font-size : 75%;
-	width : 19%;
-	text-align : right;
+	width : 14%;
+	text-align : left;
 	color : #d42323;
 }
 
