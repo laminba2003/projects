@@ -124,10 +124,10 @@ const display = (div,title,videos) => {
 	 videos.push({id : "_ovdm2yX4MA", title : "Avicii - Levels"});
 	 videos.push({id : "ntlpTad3PLM", title : "Empire Of The Sun - High And Low"});
 	 videos.push({id : "2FrJxzx3AWI", title : "Guano Apes - Close To The Sun"});
-	 videos.push({id : "12CeaxLiMgE", title : "Dillon Francis, DJ Snake - Get Low"});
+	 videos.push({id : "7KW_5P1fkws", title : "Tiesto - On My Way"});
 	 videos.push({id : "NEJRuvyGG2Q", title : "Trevor Moran - I Wanna Fly"});
-	 videos.push({id : "KbdCeWoEH1U", title : "Flyleaf - Again"});
-	 videos.push({id : "VuGzJVKtW6g", title : "Black Veil Brides - Fallen Angels"});
+	 videos.push({id : "YSQp1m_H79E", title : "Luca Chikovani - On My Own"});
+	 videos.push({id : "ZNra8eK0K6k", title : "Alessia Cara - How Far I'll Go"});
 	 videos.push({id : "8jpjs935OUI", title : "Slayer - World Painted Blood"});
 	 videos.push({id : "hSa_hbutFt0", title : "Garbage - Empty"});
 	 videos.push({id : "XleCTkNECko", title : "Escape The Fate - Remember Every Scar"});
@@ -136,7 +136,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "LBr7kECsjcQ", title : "Fall Out Boy - Centuries"});
 	 videos.push({id : "jZhQOvvV45w", title : "OneRepublic - Good Life"});
 	 videos.push({id : "Ndpryp2OlUQ", title : "Yelawolf - Till It's Gone"});
-	 videos.push({id : "BZyzX4c1vIs", title : "CHVRCHES - Clearest Blue"});
+	 videos.push({id : "qh7BCluk3wc", title : "Gallant - Weight In Gold"});
 	 videos.push({id : "rIVGtd5kjsI", title : "Little Simz - Picture Perfect"});
 	 videos.push({id : "TAdARF4rGcQ", title : "St. Vincent - Birth In Reverse"});
 	 videos.push({id : "uPHKkewD1G0", title : "Daya - Sit Still, Look Pretty"});
@@ -162,7 +162,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "lwObaOnEu4A", title : "Marcus & Martinus - Light It Up"});
 	 videos.push({id : "6x26O237kP8", title : "Editors - All Sparks"});
 	 videos.push({id : "VRNPkJ0ELPc", title : "Within Temptation - Whole World is Watching"});
-	 videos.push({id : "oKar-tF__ac", title : "Taylor Swift - Sparks Fly"});
+	 videos.push({id : "AQ4MQ_uhBSs", title : "Jonas Blue - By Your Side"});
 	 videos.push({id : "a_YR4dKArgo", title : "Selena Gomez - Naturally"});
 	 videos.push({id : "S0qrinhNnOM", title : "SOLANGE - CRANES IN THE SKY"});
 	 videos.push({id : "BaF-pGyKaOg", title : "Jhene Aiko - Spotless Mind"});
