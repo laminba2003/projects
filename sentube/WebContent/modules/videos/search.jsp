@@ -8,7 +8,8 @@
     <div>
 	  <a href="videos/watch?v={id}">
 	   <div class="thumbnail">
-	     <img src="https://i.ytimg.com/vi/{id}/mqdefault.jpg"/>   		   	     
+	     <img src="https://i.ytimg.com/vi/{id}/mqdefault.jpg"/>  
+	     <span class="index">{index}</span>  		   	     
 	     <span class="duration">{duration}</span>
 	   </div>  		   
 	   <div class="description">

@@ -1118,13 +1118,18 @@ a.show-more {
 	margin-bottom:0.46em;margin-top : 0.37px;
 }
 
-.thumbnails .thumbnail > span:nth-child(1) {
+.thumbnail .index {
 	color : white;
 	background-color : #222;
 	padding : 2px 5px;
-	font-size : 60%;
+	font-size : 50%;
 	border-radius : 50%;
 	margin : 3px;
+}
+
+.videos .thumbnail .index {
+	position : absolute;
+	top : 1px;
 }
 
 .videos .thumbnail .duration,.thumbnails .thumbnail > span:nth-child(2) {

@@ -10,6 +10,7 @@ const display = (div,title,videos) => {
 	 app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics", result => {
 		length = result.items.length;
 	    for(i=0;i<length;i++) {
+	    	videos[i].index = i+1;
 	    	const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length).toLowerCase();
 	    	const minutes = duration.substring(0, duration.indexOf('m'));
 	    	const index = duration.indexOf('s');

@@ -7,6 +7,7 @@ const search = query => {
 			const item = result.items[i];
 			id += i < length-1 ? item.id.videoId +"," : item.id.videoId;
 			const video = {id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle};
+			video.index = i+1;
 			video.publishedAt = new Date(item.snippet.publishedAt).toLocaleDateString("en-US",options);	
 			video.description = item.snippet.description;
 			videos.push(video);
