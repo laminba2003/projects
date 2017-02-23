@@ -1215,13 +1215,17 @@ aside {
     position: absolute;
     left : 0px;
     padding: 9px 6px;
-    margin-top: 8px;
+    margin-top: 7px;
     margin-right: 13px;
     margin-bottom: 8px;
     background-color: transparent;
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+}
+
+.aside-toggle:focus {
+	outline : none;
 }
 
 .navbar-default .aside-toggle .icon-bar {
@@ -1579,7 +1583,6 @@ input:focus{
 	body{font-size:100%;}
 	.thumbnails .thumbnail{width:95%;height:8.75em;display:block;}
 	.thumbnails .description{width:100%;height:auto;}
-	.aside-toggle {margin-top : 7px}
    .navbar-brand {top : 0.19em;margin-left: 10px;font-size: 141%;}
 	.videos > div{width:24.75%;}
 	.videos .thumbnail{height:5.5em;width:100%;}
@@ -1603,7 +1606,6 @@ input:focus{
 }
 
 @media(max-width:767px ){
-	.aside-toggle {margin-top : 8px}
 	.thumbnails > h1 {width:70%}
 	.watcher h1 {line-height : 1.45em}
 	.videos {padding-bottom : 5px}
