@@ -27,7 +27,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <button type="button" class="aside-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <button type="button" class="aside-toggle collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar" onclick="${watch ? 'toggleAside()' : 'showMainFull()'}">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -159,6 +159,28 @@
   <!-- template js file include -->
   <script src="templates/modern/js/template.js"></script>  
    
-      
+  <script type="text/javascript">
+  
+     const toggleAside = () => {
+    	 $("aside").addClass("toggle").toggle()
+     };
+     
+     const showMainFull = () => {
+    	 const aside = $("aside"); 
+    	 const main = $("main");
+    	 if(main.hasClass("full")) {
+    		 const width = window.innerWidth;
+    		 main.removeClass("full");
+    		 if(width>991) {
+    		 	aside.show();
+    		 }else {
+    			 aside.addClass("toggle").toggle();
+    		 }
+    	 }else {
+    	 	aside.hide();
+    	 	$("main").addClass("full");
+    	 }
+     };
+  </script>    
   </body>
 </html>
