@@ -513,7 +513,7 @@ img{
   font-family: "Tahoma",sans-serif;
   font-weight: bold;
   padding-top : 0px;
-  top : 0em;
+  top : -0.019em;
 }
 .navbar-brand {
   font-weight : bold;
@@ -1256,7 +1256,7 @@ aside {
     position: absolute;
     left : 0px;
     padding: 9px 6px;
-    margin-top: 7px;
+    margin-top: 6px;
     margin-right: 13px;
     margin-bottom: 8px;
     background-color: transparent;
@@ -1728,6 +1728,7 @@ input:focus{
 }
 @media(max-width:640px){
 	aside {width : 44%}
+	.aside-toggle {margin-top:9px;margin-left:7px}
 	.thumbnails > h1 {width:60%}
 	.videos h1 {margin-top:6px;margin-left:-7px}
 	body{font-size:93%;}
@@ -1760,6 +1761,7 @@ input:focus{
 
  
 @media(max-width:480px ){
+	.aside-toggle {margin-left:0px}
 	aside {width : 44%}
 	.thumbnails > h1 {width:50%}
 	.videos h1 {margin-top:6px}
