@@ -148,7 +148,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "jAdxaXSnMq4", title : "TobyMac - Eye on It"});
 	 videos.push({id : "ZxVdagd_Pv0", title : "Kristoffer Fogelmark - Love Was My Alibi"});
 	 videos.push({id : "Um7pMggPnug", title : "Katy Perry - Chained To The Rhythm"});
-	 videos.push({id : "PaKr9gWqwl4", title : "Paloma Faith - Only Love Can Hurt Like This"});
+	 videos.push({id : "UqXVgAmqBOs", title : "Far East Movement - Turn Up The Love"});
 	 videos.push({id : "pFptt7Cargc", title : "Tame Impala - Let It Happen"});
 	 videos.push({id : "nUCoYcxNMBE", title : "Eric Prydz - Generate"});
 	 videos.push({id : "mElLqDT7nWk", title : "Lemar - Higher Love"});
