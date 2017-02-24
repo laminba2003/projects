@@ -125,13 +125,13 @@ const display = (div,title,videos) => {
 	 videos.push({id : "_ovdm2yX4MA", title : "Avicii - Levels"});
 	 videos.push({id : "ntlpTad3PLM", title : "Empire Of The Sun - High And Low"});
 	 videos.push({id : "2FrJxzx3AWI", title : "Guano Apes - Close To The Sun"});
-	 videos.push({id : "7KW_5P1fkws", title : "Tiesto - On My Way"});
+	 videos.push({id : "0y555d2j9RY", title : "Unspoken - Open The Clouds"});
 	 videos.push({id : "NEJRuvyGG2Q", title : "Trevor Moran - I Wanna Fly"});
 	 videos.push({id : "YSQp1m_H79E", title : "Luca Chikovani - On My Own"});
 	 videos.push({id : "ZNra8eK0K6k", title : "Alessia Cara - How Far I'll Go"});
-	 videos.push({id : "8jpjs935OUI", title : "Slayer - World Painted Blood"});
-	 videos.push({id : "hSa_hbutFt0", title : "Garbage - Empty"});
-	 videos.push({id : "XleCTkNECko", title : "Escape The Fate - Remember Every Scar"});
+	 videos.push({id : "mDBxlVLTaQA", title : "Kenny Chesney - Setting the World On Fire"});
+	 videos.push({id : "PVUY85gDfaQ", title : "Pop Evil - Ways To Get High"});
+	 videos.push({id : "FVN6CDo02gA", title : "Rob Zombie - Get High"});
 	 videos.push({id : "7F37r50VUTQ", title : "ZAYN, Taylor Swift - I Don't Wanna Live Forever"});
 	 videos.push({id : "jrWIqrGhfwI", title : "Vaults - Lifespan"});
 	 videos.push({id : "LBr7kECsjcQ", title : "Fall Out Boy - Centuries"});

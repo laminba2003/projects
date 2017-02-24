@@ -8,7 +8,7 @@
  <span class="actions"><a title="Play all" href="#"><i class="fa fa-play"></i></a></span>
  <span class="status">1/21</span>
   {#videos}
-    <div>
+    <div class="video">
 	  <a href="videos/watch?v={id}" title="{title}">
 	   <div class="thumbnail"> 		
 	     <img src="https://i.ytimg.com/vi/{id}/mqdefault.jpg"/>  
@@ -31,7 +31,7 @@
  <span class="actions"><a title="Play all" href="#"><i class="fa fa-play"></i></a></span>
  <span class="status">1/21</span>
   {#videos}
-    <div>
+    <div class="video">
 	  <a href="videos/watch?v={id}" title="{title}">
 	   <div class="thumbnail">
 	     <img src="https://i.ytimg.com/vi/{id}/mqdefault.jpg"/>

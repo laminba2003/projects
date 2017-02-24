@@ -13,8 +13,7 @@ const search = query => {
 			videos.push(video);
 		}
 		app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics", result => {
-			length = result.items.length;
-	   	 	for(i=0;i<length;i++) {
+			for(i=0;i<length;i++) {
 	   	 		const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length).toLowerCase();
 	    		const minutes = duration.substring(0, duration.indexOf('m'));
 	    		const index = duration.indexOf('s');
@@ -23,7 +22,31 @@ const search = query => {
 	    		videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 	    	}
 	   	 	const div = $(".videos");
-		    page.render(div,videos,thumbnail => div.fadeTo(1000,1));
+	   	 	const limit = 10;
+		    page.render(div,videos.slice(0,limit),thumbnail => {
+		    	div.fadeTo(1000,1);
+		    	thumbnail.addClass("animated flip");
+		    	const pager = $(".pager",div);
+		    	const pages = length/10;
+		    	for(i=0;i<pages;i++) {
+		    		const link = $("<a/>").html(i+1);
+		    		pager.append(link);
+		    		if(i==0) link.addClass("active");
+		    		link.bind("click",{index : i},function(event){
+		    			const index = event.data.index;
+		    			if(!$(this).hasClass("active")) {
+		    				$("a",pager).removeClass("active");
+		    				$(this).addClass("active");
+		    				const container = $("<div/>");
+		    	    		page.render(div,videos.slice((index*limit),((index+1)*limit)),false,container,() => {
+		    	    	    	$(".video",div).remove();
+		    	    	    	$(".video",container).insertBefore(pager);
+		    	    	    	$('html, body').animate({scrollTop : 0},800);
+		    	    	    });
+		    			}
+		    		});
+		    	}
+		    });
 		},true);
 	},true);
 	$("#search input[type=text]").val(query);

@@ -5,7 +5,7 @@
 <div class="videos">
  <template type="text/x-dust-template">
   {#.}
-    <div>
+    <div class="video">
 	  <a href="videos/watch?v={id}">
 	   <div class="thumbnail">
 	     <img src="https://i.ytimg.com/vi/{id}/mqdefault.jpg"/>  
@@ -21,6 +21,8 @@
 	 </a>
     </div>
   {/.}
+  <div class="pager">
+  </div>
   </template>	
  </div>
  </div>
