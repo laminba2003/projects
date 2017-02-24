@@ -231,6 +231,11 @@ body {
 	left:57px;
 }
 
+.navbar-collapse {
+	width : 40%;
+    float : right;
+}
+
 .navbar-brand:before {
 	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -234px -479px;
     background-image: url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp);
@@ -1671,7 +1676,7 @@ input:focus{
   .navbar-brand {height: auto;width: 213px;}
   .navbar-brand>img{height: 100%;}
     .video-comments > div > div {width:80%;}
-   #search input[type=text] {margin-top:-1px;width : 60%;margin-left:-5px}
+   #search input[type=text] {margin-top:-1px;width : 45%;margin-left:-5px}
    #search input[type=submit] {margin-top:-1px;}
    .videos {padding-bottom : 5px}
    #wait {padding-left: 29.3%;padding-top : 18.8%}
