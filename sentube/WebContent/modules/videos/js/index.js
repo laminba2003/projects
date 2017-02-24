@@ -149,11 +149,11 @@ const display = (div,title,videos) => {
 	 videos.push({id : "ZxVdagd_Pv0", title : "Kristoffer Fogelmark - Love Was My Alibi"});
 	 videos.push({id : "Um7pMggPnug", title : "Katy Perry - Chained To The Rhythm"});
 	 videos.push({id : "UqXVgAmqBOs", title : "Far East Movement - Turn Up The Love"});
-	 videos.push({id : "pFptt7Cargc", title : "Tame Impala - Let It Happen"});
+	 videos.push({id : "RYr96YYEaZY", title : "BORNS - Electric Love"});
 	 videos.push({id : "nUCoYcxNMBE", title : "Eric Prydz - Generate"});
 	 videos.push({id : "mElLqDT7nWk", title : "Lemar - Higher Love"});
-	 videos.push({id : "pvP_OwVSFpk", title : "Ellie Goulding - Still falling for you"});
-	 videos.push({id : "JOIYLIgOY1Y", title : "Wild Beasts - A Simple Beautiful Truth"});
+	 videos.push({id : "Pn-6eOxnEMI", title : "A Day To Remember - All I Want"});
+	 videos.push({id : "-uitU1ndO3s", title : "You Me At Six - Night People"});
 	 videos.push({id : "eQWG8BVeryU", title : "Chris Brown - Turn Up the Music"});
 	 videos.push({id : "lfEVLXu3NXs", title : "David Zowie - House Every Weekend"});
 	 videos.push({id : "LXrP66ot0zs", title : "Jason Aldean - Lights Come On"});
