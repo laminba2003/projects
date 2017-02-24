@@ -1332,7 +1332,7 @@ aside p {
 	font-size : 75%;
 }
 
-aside .signin {
+.signin {
 	display: inline-block;
     height: 26px;
 	border-color: #167ac6;
@@ -1344,6 +1344,17 @@ aside .signin {
     font-size : 70%;
     cursor : pointer;
 }
+
+.upload {
+	display: inline-block;
+    height: 26px;
+	padding : 3px 10px;
+    cursor : pointer;
+    background-image : url(../images/upload-16.png);
+    background-repeat : no-repeat;
+    margin-top : 12px;
+}
+
 
 
 aside.toggled {

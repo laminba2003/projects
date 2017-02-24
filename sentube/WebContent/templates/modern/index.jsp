@@ -42,7 +42,8 @@
        </form>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
-          <li style="display:none"><a href="#" id="logIn">Sign In</a></li>                 
+          <li><a title="upload" class="upload">&nbsp;</a></li>
+          <li><a title="sign in" class="signin">Sign in</a></li>                 
         </ul>
        <div class="loginForm">
   		 <div class="ribbon"></div>
@@ -69,15 +70,15 @@
  
  <aside style="${watch ? 'display:none' : 'opacity:1'}">
    <div>
-     <span>
+     <span title="Home">
       <img src="templates/modern/images/home-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
      Home
      </span>
-     <span>
+     <span title="Trending">
        <img src="templates/modern/images/fire-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
      Trending
      </span>
-     <span>
+     <span title="History">
         <img src="templates/modern/images/history-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
      History
      </span>
@@ -87,38 +88,38 @@
       Best of SenTube
     </h3>
     <div>
-     <span class="active">
+     <span class="active" title="Music">
      <img src="//i.ytimg.com/i/-9-kyTW8ZkZNDHQJ6FgpwQ/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
      Music
      </span>
-     <span>
+     <span title="Sports">
      <img src="//i.ytimg.com/i/Egdi0XIXXZ-qJOFPf4JSKw/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
      Sports
      </span>
-     <span>
+     <span title="Gaming">
      <img src="//i.ytimg.com/i/OpNcN46UbXVtpKMrmU4Abg/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
      Gaming
      </span>
-     <span>
+     <span title="Movies">
      <img src="//i.ytimg.com/i/lgRkhTL3_hImCAmdLfDE4g/1.jpg" height="20" width="20" data-ytimg="1" aria-hidden="true" alt="">
      Movies
      </span>
-     <span>
+     <span title="News">
      <img src="//i.ytimg.com/i/YfdidRxbB8Qhf0Nx7ioOYw/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
      News
      </span>
-     <span>
+     <span title="Live">
      <img src="//i.ytimg.com/i/4R8DWoMoI7CAwX8_LjQHig/1.jpg" data-ytimg="1"  aria-hidden="true" width="20" alt="" height="20">
      Live
      </span>
-     <span>
+     <span title="360° Video">
      <img src="//i.ytimg.com/i/zuqhhs6NWbgTzMuM09WKDQ/1.jpg" data-ytimg="1"  aria-hidden="true" width="20" alt="" height="20">
      360° Video
      </span>
    </div>
    <hr/>
    <div>
-    <span>
+    <span title="Browse channels">
      <img src="templates/modern/images/add-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
      Browse channels
      </span>
@@ -127,7 +128,7 @@
    <p>
    Sign in now to see your channels and recommendations!
    </p>
-   <a class="signin">Sign in</a>
+   <a title="sign in" class="signin">Sign in</a>
  </aside>
  <main style="${watch ? 'width:100%' : 'opacity:1'}">
    <tiles:insertAttribute name="content"/>
