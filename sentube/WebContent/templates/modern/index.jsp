@@ -124,6 +124,10 @@
      </span>
    </div>
    <hr/>
+   <p>
+   Sign in now to see your channels and recommendations!
+   </p>
+   <a class="signin">Sign in</a>
  </aside>
  <main style="${watch ? 'width:100%' : 'opacity:1'}">
    <tiles:insertAttribute name="content"/>

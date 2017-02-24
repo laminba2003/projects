@@ -1293,6 +1293,24 @@ aside h3 {
     text-align : center;
 }
 
+aside p {
+	font-size : 75%;
+}
+
+aside .signin {
+	display: inline-block;
+    height: 26px;
+	border-color: #167ac6;
+    background: #167ac6;
+    color: #fff;
+    padding : 3px 10px;
+    border : 1px solid transparent;
+    border-radius : 2px;
+    font-size : 70%;
+    cursor : pointer;
+}
+
+
 aside.toggled {
     position: fixed;
     z-index: 99;
