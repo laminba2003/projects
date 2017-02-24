@@ -23,10 +23,7 @@ const search = query => {
 	    		videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 	    	}
 	   	 	const div = $(".videos");
-		    page.render(div,videos,thumbnail => {
-		    	div.fadeTo(1000,1);
-		    	thumbnail.addClass("animated flip");
-		    });
+		    page.render(div,videos,thumbnail => div.fadeTo(1000,1));
 		},true);
 	},true);
 	$("#search input[type=text]").val(query);
