@@ -1,4 +1,29 @@
- /**  
+const toggleAside = function() {
+    $("aside").addClass("toggled").toggle()
+};
+     
+const showMainFull = function() {
+	const aside = $("aside"); 
+	const main = $("main");
+	const width = window.innerWidth;
+	if(main.hasClass("full")) {
+	    main.removeClass("full");
+	    if(width>991) {
+	 	  aside.show();
+	    }else {
+		 aside.addClass("toggled").toggle();
+	    }
+	}else {
+		if(width>991) {
+			aside.hide();
+			$("main").addClass("full");
+		}else {
+			aside.addClass("toggled").toggle();
+		}
+	}
+};
+
+/**  
   * WpF BGness 
   * Template Scripts
   * Created by WpFreeware Team

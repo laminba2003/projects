@@ -75,7 +75,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "a-B4Q5_I_mI", title : "Cheikh Lo - Degg Gui"});
 	 videos.push({id : "j2Tj_ejWQf0", title : "Pape Diouf - Du Degn"});
 	 videos.push({id : "NKttmg7NnVw", title : "Dip Doundou Guiss - Deug Deug"});
-	 videos.push({id : "2Ky8hnq2F-Y", title : "Keur Gui - Diogoufi"});
+	 videos.push({id : "-IPOGQ56-pc", title : "Keur Gui - Diogoufi"});
 	 videos.push({id : "cHjiBgNF9GY", title : "NITDOFF - Nattu Dou Wess"});
 	 videos.push({id : "unYEZlYsoSY", title : "Fou Malade - Senegal"});
 	 videos.push({id : "0ChaoRFyytA", title : "Titi - Guen Gui Deuk"});
