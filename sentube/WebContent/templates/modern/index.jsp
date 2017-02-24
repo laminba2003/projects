@@ -37,8 +37,9 @@
         <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a> -->
       </div>
        <form id="search" action="videos/search" method="GET">
-        <input name="search_query" type="text" placeholder="Search...">
-        <input type="submit" value="">
+        <input id="search-input" name="search_query" list="search-list" type="text" placeholder="Search..." autocomplete="off"/>
+        <datalist id="search-list"></datalist>
+        <input type="submit" value=""/>
        </form>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">

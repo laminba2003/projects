@@ -217,6 +217,12 @@ body {
 	font-family : Roboto;
 	font-size : 100%;
 }
+
+option {
+	font-weight : bold;
+	padding : 5px;
+	font-size : 90%;
+}
   
 .scrollToTop{
   background-color: #d42323;
