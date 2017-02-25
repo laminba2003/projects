@@ -59,15 +59,6 @@ $("#search-input").keyup(function(){
 	var list = $("#search-list").empty();
 	if(val && search_over) {
 		search_over = false;
-		app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&q="+val+"&type=video&part=snippet&maxResults=10",result => {
-			 const length = result.items.length;
-			 for(var i=0;i<length;i++) {
-				const item = result.items[i];
-				const option = $("<option/>").attr("value",item.snippet.title);
-				list.append(option);
-			 }
-			 search_over = true;
-		},true);	
 	}
 });
 
