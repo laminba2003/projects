@@ -128,7 +128,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "0y555d2j9RY", title : "Unspoken - Open The Clouds"});
 	 videos.push({id : "NEJRuvyGG2Q", title : "Trevor Moran - I Wanna Fly"});
 	 videos.push({id : "YSQp1m_H79E", title : "Luca Chikovani - On My Own"});
-	 videos.push({id : "ZNra8eK0K6k", title : "Alessia Cara - How Far I'll Go"});
+	 videos.push({id : "RLP--BWIP5c", title : "Eliot Sumner - Dead Arms & Dead Legs"});
 	 videos.push({id : "mDBxlVLTaQA", title : "Kenny Chesney - Setting the World On Fire"});
 	 videos.push({id : "PVUY85gDfaQ", title : "Pop Evil - Ways To Get High"});
 	 videos.push({id : "FVN6CDo02gA", title : "Rob Zombie - Get High"});
@@ -139,13 +139,13 @@ const display = (div,title,videos) => {
 	 videos.push({id : "Ndpryp2OlUQ", title : "Yelawolf - Till It's Gone"});
 	 videos.push({id : "qh7BCluk3wc", title : "Gallant - Weight In Gold"});
 	 videos.push({id : "rIVGtd5kjsI", title : "Little Simz - Picture Perfect"});
-	 videos.push({id : "mVAxUMuhz98", title : "St. Vincent - Digital Witness"});
+	 videos.push({id : "Ow_qI_F2ZJI", title : "Bring Me The Horizon - Throne"});
 	 videos.push({id : "uPHKkewD1G0", title : "Daya - Sit Still, Look Pretty"});
 	 videos.push({id : "PTOFEgJ9zzI", title : "Jessie J - Masterpiece"});
 	 videos.push({id : "U0YP9aJ_1TQ", title : "Placebo - A Million Little Pieces"});
 	 videos.push({id : "YqI0q89_Xa0", title : "For Today - Foundation"});
 	 videos.push({id : "7qrRzNidzIc", title : "Breaking Benjamin - I Will Not Bow"});
-	 videos.push({id : "jAdxaXSnMq4", title : "TobyMac - Eye on It"});
+	 videos.push({id : "RZxhWqxwsBQ", title : "Black Veil Brides - Heart Of Fire"});
 	 videos.push({id : "ZxVdagd_Pv0", title : "Kristoffer Fogelmark - Love Was My Alibi"});
 	 videos.push({id : "Um7pMggPnug", title : "Katy Perry - Chained To The Rhythm"});
 	 videos.push({id : "UqXVgAmqBOs", title : "Far East Movement - Turn Up The Love"});
@@ -159,7 +159,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "LXrP66ot0zs", title : "Jason Aldean - Lights Come On"});
 	 videos.push({id : "fgXRzjlbbng", title : "Jordan Smith - Stand In The Light"});
 	 videos.push({id : "ZgbmDMNu42s", title : "Scorpions - We Built This House"});
-	 videos.push({id : "_Ri2KEiXlNk", title : "Bon Jovi - This House Is Not For Sale"});
+	 videos.push({id : "tqUbLtwdXPA", title : "A Great Big World - Oasis"});
 	 videos.push({id : "lwObaOnEu4A", title : "Marcus & Martinus - Light It Up"});
 	 videos.push({id : "6x26O237kP8", title : "Editors - All Sparks"});
 	 videos.push({id : "VRNPkJ0ELPc", title : "Within Temptation - Whole World is Watching"});
