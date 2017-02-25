@@ -50,8 +50,8 @@ const getChannelInfo = (video,channelId,cache) => {
 const getVideos = channelId => {
 	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&type=video&part=snippet&order=viewCount&maxResults=20",result => {
 		const videos = new Array();
-		var length = result.items.length, id = "";
-	    for(var i=0;i<length;i++) {
+		var length = result.items.length, id = "",i;
+	    for(i=0;i<length;i++) {
 			const item = result.items[i];
 			id += i < length-1 ? item.id.videoId +"," : item.id.videoId;
 			videos.push({index : i+1,id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
@@ -94,8 +94,8 @@ const getMoreVideos = (channelId,token) => {
 	const index = parseInt($(".thumbnails > div:last .thumbnail span:eq(0)").html());
 	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&pageToken="+token+"&type=video&part=snippet&order=viewCount&maxResults=20",result => {
 		const videos = new Array();
-		var length = result.items.length, id = "";
-	    for(var i=0;i<length;i++) {
+		var length = result.items.length, id = "",i;
+	    for(i=0;i<length;i++) {
 			const item = result.items[i];
 			id += i < length-1 ? item.id.videoId +"," : item.id.videoId;
 			videos.push({index : index +(i+1), id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
@@ -143,10 +143,10 @@ const getMoreVideos = (channelId,token) => {
 };
 
 const getComments = (video,options) => {
-	app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+video.videoId+"&part=snippet,replies&maxResults=5",result => {
+	app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+video.videoId+"&part=snippet,replies&maxResults=3",result => {
   	  var comments = new Array();
   	  length = result.items.length;
-  	  for(i=0;i<length;i++) {
+  	  for(var i=0;i<length;i++) {
   		      const comment = {author : result.items[i].snippet.topLevelComment.snippet.authorDisplayName, 
   			    	  date : new Date(result.items[i].snippet.topLevelComment.snippet.publishedAt).toLocaleDateString("en-US",options),
   			    	  photo : result.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl,
@@ -175,7 +175,7 @@ const getComments = (video,options) => {
 	    		  $(".video-comments a.show-more").click(() => {
 	    			  $(".video-comments a.show-more").hide();
 	    			  $(".video-comments .load-more").show();
-	    			  app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+video.videoId+"&pageToken="+token+"&part=snippet,replies&maxResults=20",result => {
+	    			  app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+video.videoId+"&pageToken="+token+"&part=snippet,replies&maxResults=10",result => {
 	    				  comments = new Array();
 				    	  length = result.items.length;
 				    	  for(i=0;i<length;i++) {
