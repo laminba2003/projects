@@ -1637,6 +1637,7 @@ input:focus{
 /*--------------------*/
 
 @media(max-width:1199px ){
+	.navbar-collapse a:last-of-type {margin-right : 25px}
 	.videos h1 {margin-top:6px;margin-left:-8px}
 	.videos > div{width:19%;}
 	.videos .thumbnail{height:6em;}
@@ -1656,6 +1657,7 @@ input:focus{
 }
 
 @media(max-width:1024px ){
+  .navbar-collapse a:last-of-type {margin-right : 30px}	
   #wait {padding-left: 29.5%;padding-top : 18.8%}  
    .channel .videos .description {margin-left : -5px;width:90%}
 	.channel .videos .thumbnail .duration {right:0.2em}
