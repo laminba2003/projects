@@ -207,16 +207,16 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-3">
+         <div class="col-sm-3">
           <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="500ms">
             <div class="folio-image">
-              <img class="img-responsive" src="templates/oxygen/images/portfolio/crm.jpg" alt="">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/senplace.jpg" alt="">
             </div>
             <div class="overlay">
               <div class="overlay-content">
                 <div class="overlay-text">
                   <div class="folio-info">
-                    <h3><a href="http://env-3687617.mircloud.host/sencrm/" target="_blank">SenCRM</a></h3>
+                    <h3>SenPlace</h3>
                     <p>under construction</p>
                   </div>
                 </div>
@@ -227,13 +227,30 @@
         <div class="col-sm-3">
           <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="500ms">
             <div class="folio-image">
-              <img class="img-responsive" src="templates/oxygen/images/portfolio/senplace.jpg" alt="">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/senentreprise.jpg" alt="">
             </div>
             <div class="overlay">
               <div class="overlay-content">
                 <div class="overlay-text">
                   <div class="folio-info">
-                    <h3>SenPlace</h3>
+                    <h3><a>SenEntreprise</a></h3>
+                    <p>under construction</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="500ms">
+            <div class="folio-image">
+              <img class="img-responsive" src="templates/oxygen/images/portfolio/crm.jpg" alt="">
+            </div>
+            <div class="overlay">
+              <div class="overlay-content">
+                <div class="overlay-text">
+                  <div class="folio-info">
+                    <h3><a href="http://env-3687617.mircloud.host/sencrm/" target="_blank">SenCRM</a></h3>
                     <p>under construction</p>
                   </div>
                 </div>
