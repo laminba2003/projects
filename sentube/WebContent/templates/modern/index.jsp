@@ -8,9 +8,11 @@
     <title>SenTube</title>
     <base href="${path}"/>
     <!-- Template css -->
-    <link href="templates/modern/css/template.css" rel="stylesheet"> 
+    <link href="templates/modern/css/template.css" rel="stylesheet"/> 
+    <!-- Module css -->
+    <link href="${css}/module.css" rel="stylesheet"/> 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="templates/modern/images/favicon_32.png"  sizes="32x32">  
+    <link rel="shortcut icon" href="templates/modern/images/favicon_32.png"  sizes="32x32"/>  
   </head>
 <body>
  
