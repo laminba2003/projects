@@ -1636,7 +1636,9 @@ input:focus{
 /* Responsive Style */
 /*--------------------*/
 
+
 @media(max-width:1199px ){
+	main.full .videos > div{width:15.5%;}
 	.navbar-collapse a:last-of-type {margin-right : 25px}
 	.videos h1 {margin-top:6px;margin-left:-8px}
 	.videos > div{width:19%;}
