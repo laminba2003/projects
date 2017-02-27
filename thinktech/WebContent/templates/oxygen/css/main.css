@@ -306,10 +306,10 @@ section {
 }
 
 .service-info h3 {
-    background-color: #444;
+    background-color: #06d0d8;
     color: #fdfcfc;
     border-radius: 10px;
-    padding : 2px;
+    padding: 12px;
     white-space : nowrap;
 }
 
