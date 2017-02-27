@@ -120,7 +120,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "Fjba4g93UX8", title : "HAKILL - Def saRAP"});
 	 display($(".videos:eq(0)"),"Senegal",videos);
 	 videos = new Array();
-	 videos.push({id : "PlUqgaddAWc", title : "Kings Of Leon - Around The World"});
+	 videos.push({id : "kQevK_bUV9g", title : "Lissie - Don't You Give Up On Me"});
 	 videos.push({id : "D3ZNtOcY_1A", title : "Soundgarden - Live to Rise"});
 	 videos.push({id : "_ovdm2yX4MA", title : "Avicii - Levels"});
 	 videos.push({id : "ntlpTad3PLM", title : "Empire Of The Sun - High And Low"});
@@ -130,7 +130,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "YSQp1m_H79E", title : "Luca Chikovani - On My Own"});
 	 videos.push({id : "RLP--BWIP5c", title : "Eliot Sumner - Dead Arms & Dead Legs"});
 	 videos.push({id : "mDBxlVLTaQA", title : "Kenny Chesney - Setting the World On Fire"});
-	 videos.push({id : "PVUY85gDfaQ", title : "Pop Evil - Ways To Get High"});
+	 videos.push({id : "LTtUprnz70I", title : "Mitch James - Move On"});
 	 videos.push({id : "FVN6CDo02gA", title : "Rob Zombie - Get High"});
 	 videos.push({id : "7F37r50VUTQ", title : "ZAYN, Taylor Swift - I Don't Wanna Live Forever"});
 	 videos.push({id : "jrWIqrGhfwI", title : "Vaults - Lifespan"});
@@ -148,7 +148,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "RZxhWqxwsBQ", title : "Black Veil Brides - Heart Of Fire"});
 	 videos.push({id : "ZxVdagd_Pv0", title : "Kristoffer Fogelmark - Love Was My Alibi"});
 	 videos.push({id : "Um7pMggPnug", title : "Katy Perry - Chained To The Rhythm"});
-	 videos.push({id : "UqXVgAmqBOs", title : "Far East Movement - Turn Up The Love"});
+	 videos.push({id : "C_QXxdvinBo", title : "Wolf Gang - Lay Your Love Down"});
 	 videos.push({id : "RYr96YYEaZY", title : "BORNS - Electric Love"});
 	 videos.push({id : "nUCoYcxNMBE", title : "Eric Prydz - Generate"});
 	 videos.push({id : "mElLqDT7nWk", title : "Lemar - Higher Love"});
