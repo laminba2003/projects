@@ -146,8 +146,8 @@
               <p>&copy; 2017 all rights reserved</p>
             </div>
             <div class="developer">
-              <p>Designed by <a target="_blank" href="http://wpfreeware.com/" rel="nofollow">Wpfreeware</a>
-              and <a target="_blank" href="http://env-3687617.mircloud.host/thinktech/" rel="nofollow">ThinkTech</a></p>
+              <p>Designed by <a target="_blank" href="http://wpfreeware.com/">Wpfreeware</a>
+              and <a target="_blank" href="http://env-9204994.mircloud.host/">ThinkTech</a></p>
             </div>
           </div>
         </div>
