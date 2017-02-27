@@ -722,6 +722,11 @@ a.show-more {
 	width : 100%;
 }
 
+main.full .search-results { 
+	margin-left : 10%;
+	width : 60%;
+}
+
 /*--------------------*/
 /* Responsive Style */
 /*--------------------*/
