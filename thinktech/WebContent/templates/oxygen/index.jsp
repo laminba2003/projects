@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="welcome to ThinkTech website">
-  <meta name="author" content="ThinkTech">
   <base href="${path}"/>
   <title>ThinkTech</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="welcome to ThinkTech website"/>
+  <meta name="author" content="ThinkTech"/>
+  <meta property="og:url"  content="www.thinktech.sn" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title"  content="welcome to ThinkTech website" />
+  <meta property="og:description"  content="We deliver projects on time and on budget and we have an excellent customer service and support." />
+  <meta property="og:image" content="templates/oxygen/images/slider/languages.png" />
   <link href="templates/oxygen/css/bootstrap.min.css" rel="stylesheet">
   <link href="templates/oxygen/css/animate.min.css" rel="stylesheet"> 
   <link href="templates/oxygen/css/font-awesome.min.css" rel="stylesheet">
