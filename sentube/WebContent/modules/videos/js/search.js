@@ -38,10 +38,10 @@ const search = query => {
 		    				$("a",pager).removeClass("active");
 		    				$(this).addClass("active");
 		    				const container = $("<div/>");
+		    				$('html, body').animate({scrollTop : 0},800);
 		    	    		page.render(div,videos.slice((index*limit),((index+1)*limit)),false,container,() => {
 		    	    	    	$(".video",div).remove();
 		    	    	    	$(".video",container).insertBefore(pager);
-		    	    	    	$('html, body').animate({scrollTop : 0},800);
 		    	    	    });
 		    			}
 		    		});
