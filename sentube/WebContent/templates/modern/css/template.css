@@ -634,14 +634,23 @@ aside p {
     cursor : pointer;
 }
 
-.upload {
+.navbar-default .navbar-nav > li > a.signin { 
+	padding-top: 3px;
+    margin-top: 10px;
+    border-color: #167ac6;
+    background: #167ac6;
+    color: #fff;
+    margin-left : 5px;
+}
+
+.navbar-default .navbar-nav > li > a.upload {
 	display: inline-block;
     height: 26px;
 	padding : 3px 10px;
     cursor : pointer;
     background-image : url(../images/upload-16.png);
     background-repeat : no-repeat;
-    margin-top : 12px;
+    margin-top : 16px;
 }
 
 
@@ -916,19 +925,19 @@ input:focus{
 
 
 @media(max-width:1199px ){
- .navbar-collapse a:last-of-type {margin-right : 25px}
+ .navbar-collapse a.signin {margin-right : 25px}
   #footer {padding-left:17%;}
   #wait {padding-left: 29.7%;padding-top : 19%}
   main {width : 82%}
 }
 
 @media(max-width:1024px ){
-  .navbar-collapse a:last-of-type {margin-right : 30px}	
+  .navbar-collapse a.signin {margin-right : 30px}	
   #wait {padding-left: 29.5%;padding-top : 18.8%}  
 }
   
 @media(max-width:991px ){
-	.navbar-collapse a:last-of-type {margin-right : 15px}
+	.navbar-collapse a.signin {margin-right : 40px}
 	aside {width : 25%}
 	body{font-size:100%;}
 	.navbar-brand {top : 0.19em;margin-left: 10px;font-size: 141%;}

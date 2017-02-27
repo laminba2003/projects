@@ -762,7 +762,7 @@ a.show-more {
 	.channel .videos .thumbnail .duration {right:1.5em}
 	.video-comments > div > div {width:80%;}
    .videos {padding-bottom : 5px}
-   .thumbnails > h1 {width:29%}
+   .thumbnails > h1 {width:29%;font-size: 95%; margin-top: 2.7px;vertical-align: middle;}
    .search-results .videos .thumbnail {width:40%}
    .search-results .videos .description{width:56%;}
 }
