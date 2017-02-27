@@ -36,21 +36,21 @@
   <header id="home">
     <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="item active" style="background-image: url(templates/oxygen/images/slider/startup-photos.jpg)">
+        <div class="item active" style="background-image: url(templates/oxygen/images/slider/pexels-photo-251225.jpeg)">
           <div class="caption">
             <h1 class="animated fadeInLeftBig">Welcome to <span>ThinkTech</span></h1>
             <p class="animated fadeInRightBig">We deliver projects on time and on budget and we have an excellent customer service and support.</p>
             <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
           </div>
         </div>
-        <div class="item" style="background-image: url(templates/oxygen/images/slider/pexels-photo-251225.jpeg)">
+        <div class="item" style="background-image: url(templates/oxygen/images/slider/black-and-white-code-programming-tech-79290.jpeg)">
           <div class="caption">
             <h1 class="animated fadeInLeftBig">IT Development <span>and</span> Cloud Hosting</h1>
             <p class="animated fadeInRightBig">Develop and deploy your applications on our Cloud and let us manage everything for you.</p>
             <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
           </div>
         </div>
-        <div class="item" style="background-image: url(templates/oxygen/images/slider/black-and-white-code-programming-tech-79290.jpeg)">
+        <div class="item" style="background-image: url(templates/oxygen/images/slider/languages.png)">
           <div class="caption">
             <h1 class="animated fadeInLeftBig">Consulting <span>and</span> Training</h1>
             <p class="animated fadeInRightBig">Expert advice to help you plan the next steps for your business and we train our customers through hands-on experience.</p>
@@ -79,7 +79,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">                 
-            <li class="scroll"><a href="#services">Services</a></li> 
+            <li class="scroll"><a href="#services">Company</a></li> 
             <li class="scroll"><a href="#about-us">About Us</a></li>                     
             <li class="scroll"><a href="#portfolio-items">Portfolio</a></li>
             <li class="scroll"><a href="#partners">Partners</a></li>
@@ -91,13 +91,6 @@
   </header><!--/#home-->
   <section id="services">
     <div class="container">
-      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-        <div class="row">
-          <div class="text-center col-sm-8 col-sm-offset-2">
-            <h2>Our Services</h2>
-          </div>
-        </div> 
-      </div>
       <div class="text-center our-services">
         <div class="row">
           <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
