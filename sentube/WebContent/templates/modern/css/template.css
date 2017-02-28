@@ -238,7 +238,7 @@ option {
 }
 
 .navbar-collapse {
-	width : 40%;
+	width : auto;
     float : right;
 }
 

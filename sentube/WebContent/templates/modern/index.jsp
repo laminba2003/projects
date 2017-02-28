@@ -41,7 +41,7 @@
        <form id="search" action="videos/search" method="GET">
         <input id="search-input" name="search_query" list="search-list" type="text" placeholder="Search..." autocomplete="off"/>
         <datalist id="search-list"></datalist>
-        <input type="submit" value=""/>
+        <input type="submit" value="&nbsp;"/>
        </form>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
