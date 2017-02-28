@@ -140,6 +140,12 @@
  
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-   display("${id}");
+   if("${id}"!= "videos") {
+	   localStorage.removeItem("videos");
+   	   display("${id}");
+   }else {
+	   var videos = JSON.parse(localStorage.getItem("videos"));
+	   display(videos[0].id);
+   }
 });
 </script> 

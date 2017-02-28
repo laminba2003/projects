@@ -62,6 +62,9 @@ const display = (div,title,videos) => {
 	    		state["panel_"+div.index()] = index;
 	    		if(localStorage) localStorage.setItem("state",JSON.stringify(state));
 	    	});
+	    	$(".playall",div).click(function(e){
+	    		if(localStorage) localStorage.setItem("videos",JSON.stringify(videos));
+	    	});	
 	    	div.fadeTo(1000,1);
 	    	$("div",thumbnail).addClass("animated flip");
 	    });

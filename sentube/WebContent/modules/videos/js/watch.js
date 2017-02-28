@@ -48,44 +48,61 @@ const getChannelInfo = (video,channelId,cache) => {
 };
 
 const getVideos = channelId => {
-	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&type=video&part=snippet&order=viewCount&maxResults=20",result => {
-		const videos = new Array();
-		var length = result.items.length, id = "",i;
-	    for(i=0;i<length;i++) {
-			const item = result.items[i];
-			id += i < length-1 ? item.id.videoId +"," : item.id.videoId;
-			videos.push({index : i+1,id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
-		}
-	    var token = result.nextPageToken;
-	    app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics",result => {
-	      length = result.items.length;	
-	      for(i=0;i<length;i++) {
-	    	const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length).toLowerCase();
-		    const minutes = duration.substring(0, duration.indexOf('m'));
-		    const index = duration.indexOf('s');
-			const seconds = index > 0 ? duration.substring(duration.indexOf('m')+1, index) : 0;
-		    videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));	
-	    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
-	      }
-		  page.render($(".thumbnails"),videos,thumbnail => {
-			  $("a",thumbnail).click(function(){
-				 const id = $(this).attr("id");
-				 display(id,true);
-				 history.pushState({id:id},null,"videos/watch?v="+id);
-				 $(".video-container iframe").attr("src","//www.youtube.com/embed/"+id+"?enablejsapi=1");
-				 $('html, body').animate({scrollTop : 0},800);
-				 return false;
+	var videos = JSON.parse(localStorage.getItem("videos"));
+	if(!videos) {
+		app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&type=video&part=snippet&order=viewCount&maxResults=20",result => {
+			videos = new Array();
+			var length = result.items.length, id = "",i;
+		    for(i=0;i<length;i++) {
+				const item = result.items[i];
+				id += i < length-1 ? item.id.videoId +"," : item.id.videoId;
+				videos.push({index : i+1,id : item.id.videoId, title : item.snippet.title,channel : item.snippet.channelTitle});
+			}
+		    var token = result.nextPageToken;
+		    app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics",result => {
+		      length = result.items.length;	
+		      for(i=0;i<length;i++) {
+		    	const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length).toLowerCase();
+			    const minutes = duration.substring(0, duration.indexOf('m'));
+			    const index = duration.indexOf('s');
+				const seconds = index > 0 ? duration.substring(duration.indexOf('m')+1, index) : 0;
+			    videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));	
+		    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
+		      }
+			  page.render($(".thumbnails"),videos,thumbnail => {
+				  $("a",thumbnail).click(function(){
+					 const id = $(this).attr("id");
+					 display(id,true);
+					 history.pushState({id:id},null,"videos/watch?v="+id);
+					 $(".video-container iframe").attr("src","//www.youtube.com/embed/"+id+"?enablejsapi=1");
+					 $('html, body').animate({scrollTop : 0},800);
+					 return false;
+				  });
+				  if(!token) {
+					 $(".thumbnails a.show-more").hide();
+				  }else {
+					 $(".thumbnails a.show-more").one("click",() => {
+						 getMoreVideos(channelId,token);				 
+					 });
+				  }
 			  });
-			  if(!token) {
-				 $(".thumbnails a.show-more").hide();
-			  }else {
-				 $(".thumbnails a.show-more").one("click",() => {
-					 getMoreVideos(channelId,token);				 
-				 });
-			  }
-		  });
-	   },true);
-	},true);
+		   },true);
+		},true);
+	}else {
+		if(!$(".thumbnails .thumbnail").length) {
+			 page.render($(".thumbnails"),videos,thumbnail => {
+				  $(".thumbnails a.show-more").hide();
+				  $("a",thumbnail).click(function(){
+					 const id = $(this).attr("id");
+					 display(id);
+					 history.pushState({id:id},null,"videos/watch?v="+id);
+					 $(".video-container iframe").attr("src","//www.youtube.com/embed/"+id+"?enablejsapi=1");
+					 $('html, body').animate({scrollTop : 0},800);
+					 return false;
+				  });
+			  });
+		}
+	}
 };
 
 const getMoreVideos = (channelId,token) => {
