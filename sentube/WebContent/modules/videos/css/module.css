@@ -559,6 +559,11 @@ a.show-more {
 	width : 49.5%;
 }
 
+.videos h1 > i {
+	font-size : 90%;
+	margin-left : -5px;
+}
+
 .videos .actions {
 	width : 35%;
 	display : inline-block;
