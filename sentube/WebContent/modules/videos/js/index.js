@@ -126,7 +126,7 @@ const display = (div,title,videos) => {
 	 videos = new Array();
 	 videos.push({id : "kQevK_bUV9g", title : "Lissie - Don't You Give Up On Me"});
 	 videos.push({id : "D3ZNtOcY_1A", title : "Soundgarden - Live to Rise"});
-	 videos.push({id : "_ovdm2yX4MA", title : "Avicii - Levels"});
+	 videos.push({id : "oHmBf4ExtZk", title : "Ariana Grande - Everyday"});
 	 videos.push({id : "ntlpTad3PLM", title : "Empire Of The Sun - High And Low"});
 	 videos.push({id : "2FrJxzx3AWI", title : "Guano Apes - Close To The Sun"});
 	 videos.push({id : "0y555d2j9RY", title : "Unspoken - Open The Clouds"});
