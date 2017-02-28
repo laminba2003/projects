@@ -143,7 +143,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "uPHKkewD1G0", title : "Daya - Sit Still, Look Pretty"});
 	 videos.push({id : "PTOFEgJ9zzI", title : "Jessie J - Masterpiece"});
 	 videos.push({id : "U0YP9aJ_1TQ", title : "Placebo - A Million Little Pieces"});
-	 videos.push({id : "YqI0q89_Xa0", title : "For Today - Foundation"});
+	 videos.push({id : "YYxzRYMrcVc", title : "Busta Rhymes - We Made It"});
 	 videos.push({id : "7qrRzNidzIc", title : "Breaking Benjamin - I Will Not Bow"});
 	 videos.push({id : "RZxhWqxwsBQ", title : "Black Veil Brides - Heart Of Fire"});
 	 videos.push({id : "ZxVdagd_Pv0", title : "Kristoffer Fogelmark - Love Was My Alibi"});
