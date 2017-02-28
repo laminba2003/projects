@@ -988,7 +988,7 @@ input:focus{
 
  
 @media(max-width:480px ){
-	.aside-toggle {margin-left:0px}
+	.aside-toggle {margin-left:0px;margin-top:9px}
 	aside {width : 44%}
 	body{font-size:90%;}
 	 main {min-height : 40em}
@@ -1003,6 +1003,7 @@ input:focus{
   
 }
 @media(max-width:360px ){
+	.aside-toggle {margin-left:0px;margin-top:7px}
 	aside {width : 70%}
 	body{font-size:88%;}
  .navbar-brand {top : 0.35em;left : 23px;margin-left: 10px;font-size : 140%}
