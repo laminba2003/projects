@@ -7,7 +7,7 @@ const display = (div,title,videos) => {
 	 limit = width <= 360 ? 1 : limit;
 	 length = videos.length;
 	 for(var i=0;i<length;i++) id += i < length-1 ? videos[i].id +"," : videos[i].id;
-	 app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics", result => {
+	 app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=snippet,contentDetails,statistics", result => {
 		length = result.items.length;
 	    for(i=0;i<length;i++) {
 	    	videos[i].index = i+1;
@@ -15,6 +15,7 @@ const display = (div,title,videos) => {
 	    	const minutes = duration.substring(0, duration.indexOf('m'));
 	    	const index = duration.indexOf('s');
 			const seconds = index > 0 ? duration.substring(duration.indexOf('m')+1, index) : 0;
+			videos[i].channel = result.items[i].snippet.channelTitle;
 	    	videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
 	    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 	    }
