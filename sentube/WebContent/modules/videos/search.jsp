@@ -4,6 +4,8 @@
 <div class="search-results">
 <div class="videos">
  <template type="text/x-dust-template">
+  <button type="button">Filters <i class="fa fa-angle-down"></i></button>
+  <hr/>
   {#.}
     <div class="video">
 	  <a href="videos/watch?v={id}">

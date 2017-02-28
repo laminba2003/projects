@@ -716,6 +716,24 @@ a.show-more {
     padding-bottom : 0px;	
 }
 
+.search-results button {
+	font-size: 11px;
+    color: #000000;
+    border: 1px solid #d3d3d3;
+    width: 75px;
+    background: #f8f8f8;
+}
+
+.search-results button i {
+	margin-left : 10px;
+	font-weight : bold;
+	font-size : 11.5px;
+}
+
+.search-results hr {
+	margin-top : 8px;
+	margin-bottom : 8px;
+}
 
 .search-results .videos h1 {
 	display : block;
