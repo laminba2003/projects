@@ -85,7 +85,7 @@
       <h1>Latest Videos</h1>
       <div class="videos">
        {#videos}
-	    <div>
+	    <div class="video">
 		  <a id="{id}" title="{title}">
 		   <div class="thumbnail" style="background:url(https://i.ytimg.com/vi/{id}/mqdefault.jpg);background-position:center;background-size:contain;background-repeat:no-repeat;">  		   	     
 		     <span class="duration">{duration}</span>
@@ -112,6 +112,7 @@
       <label for="autoplay"></label>
     </div>
       </span>
+      <hr/>
        {#.}
   		<div>
   		  <a id="{id}" title="{title}">

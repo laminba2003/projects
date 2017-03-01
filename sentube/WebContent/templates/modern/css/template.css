@@ -218,6 +218,10 @@ body {
 	font-size : 100%;
 }
 
+button:focus {
+	outline : none;
+}
+
 option {
 	font-weight : bold;
 	padding : 5px;
