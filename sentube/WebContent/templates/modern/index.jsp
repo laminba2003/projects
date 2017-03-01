@@ -23,12 +23,6 @@
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="display:none">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
         <button type="button" class="aside-toggle collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar" onclick="${watch ? 'toggleAside()' : 'showMainFull()'}">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -74,15 +68,15 @@
  <aside style="${watch ? 'display:none' : 'opacity:1'}">
    <div>
      <span title="Home">
-      <img src="templates/modern/images/home-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+      <img src="templates/modern/images/home-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt=""/>
      Home
      </span>
      <span title="Trending">
-       <img src="templates/modern/images/fire-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+       <img src="templates/modern/images/fire-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt=""/>
      Trending
      </span>
      <span title="History">
-        <img src="templates/modern/images/history-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+        <img src="templates/modern/images/history-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt=""/>
      History
      </span>
    </div>
@@ -92,23 +86,23 @@
     </h3>
     <div>
      <span class="active" title="Music">
-     <img src="//i.ytimg.com/i/-9-kyTW8ZkZNDHQJ6FgpwQ/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     <img src="//i.ytimg.com/i/-9-kyTW8ZkZNDHQJ6FgpwQ/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt=""/>
      Music
      </span>
      <span title="Sports">
-     <img src="//i.ytimg.com/i/Egdi0XIXXZ-qJOFPf4JSKw/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     <img src="//i.ytimg.com/i/Egdi0XIXXZ-qJOFPf4JSKw/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt=""/>
      Sports
      </span>
      <span title="Gaming">
-     <img src="//i.ytimg.com/i/OpNcN46UbXVtpKMrmU4Abg/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     <img src="//i.ytimg.com/i/OpNcN46UbXVtpKMrmU4Abg/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt=""/>
      Gaming
      </span>
      <span title="Movies">
-     <img src="//i.ytimg.com/i/lgRkhTL3_hImCAmdLfDE4g/1.jpg" height="20" width="20" data-ytimg="1" aria-hidden="true" alt="">
+     <img src="//i.ytimg.com/i/lgRkhTL3_hImCAmdLfDE4g/1.jpg" height="20" width="20" data-ytimg="1" aria-hidden="true" alt=""/>
      Movies
      </span>
      <span title="News">
-     <img src="//i.ytimg.com/i/YfdidRxbB8Qhf0Nx7ioOYw/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     <img src="//i.ytimg.com/i/YfdidRxbB8Qhf0Nx7ioOYw/1.jpg" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt=""/>
      News
      </span>
      <span title="Live">
@@ -123,7 +117,7 @@
    <hr/>
    <div>
     <span title="Browse channels">
-     <img src="templates/modern/images/add-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt="">
+     <img src="templates/modern/images/add-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt=""/>
      Browse channels
      </span>
    </div>
