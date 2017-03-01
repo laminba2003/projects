@@ -112,7 +112,6 @@
       <label for="autoplay"></label>
     </div>
       </span>
-      <hr/>
        {#.}
   		<div>
   		  <a id="{id}" title="{title}">

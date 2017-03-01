@@ -359,12 +359,6 @@ a.show-more {
 	width : 40%;
 }
 
-.thumbnails hr {
-	margin-top: 3px;
-    margin-bottom: 5px;
-    border-top: 1px solid #fffafa;
-}
-
 .thumbnails > span {
 	display : inline-block;
 	font-size : 90%;
