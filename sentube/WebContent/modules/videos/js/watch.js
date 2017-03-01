@@ -28,22 +28,32 @@ const display = (videoId,cache) => {
 		video.commentCount = info.items[0].statistics.commentCount ? info.items[0].statistics.commentCount.replace(/\B(?=(\d{3})+\b)/g, ",") : 0;
 		video.likeCount = info.items[0].statistics.likeCount ? info.items[0].statistics.likeCount.replace(/\B(?=(\d{3})+\b)/g, ",") : "";
 		video.dislikeCount = info.items[0].statistics.dislikeCount ? info.items[0].statistics.dislikeCount.replace(/\B(?=(\d{3})+\b)/g, ",") : "";
+		if(!cache) getVideos(info.items[0].snippet.channelId);
 		getChannelInfo(video,info.items[0].snippet.channelId,cache);
 		$(".video-container iframe").attr("src","//www.youtube.com/embed/"+video.videoId+"?enablejsapi=1").show();
-		getComments(video,options);
+		$(document).scroll(function(e){
+		    var scrollAmount = $(window).scrollTop();
+		    var documentHeight = $(document).height();
+		    var scrollPercent = (scrollAmount / documentHeight) * 100;
+		    if(scrollPercent > 9 && !video.showComments) getComments(video,options);
+		});
+
 	},true);
 }; 
 
 const getChannelInfo = (video,channelId,cache) => {
 	app.get("https://www.googleapis.com/youtube/v3/channels?id="+channelId+"&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,statistics,brandingSettings",result => {
-		video.channel = result.items[0].snippet.title;
 		video.photo = result.items[0].snippet.thumbnails.medium.url;
 		video.subscriberCount = result.items[0].statistics.subscriberCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 		page.render($(".watcher"),video);
 		page.render($(".video-metadata"),video);
-		if(!cache) getVideos(channelId);
-		const channel = {id : channelId,photo : result.items[0].snippet.thumbnails.medium.url,title : video.channel,image : result.items[0].brandingSettings.image.bannerImageUrl};
-		if(!cache) getLatestVideos(channel);
+		video.channel = {id : channelId,photo : result.items[0].snippet.thumbnails.medium.url,title : result.items[0].snippet.title,image : result.items[0].brandingSettings.image.bannerImageUrl};
+		$(document).scroll(function(e){
+		    var scrollAmount = $(window).scrollTop();
+		    var documentHeight = $(document).height();
+		    var scrollPercent = (scrollAmount / documentHeight) * 100;
+		    if(scrollPercent > 10 && !video.channel.showLatestVideos && !cache) getLatestVideos(video.channel);;
+		});
 	},true);	
 };
 
@@ -161,7 +171,8 @@ const getMoreVideos = (channelId,token) => {
 
 const getComments = (video,options) => {
 	app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+video.videoId+"&part=snippet,replies&maxResults=3",result => {
-  	  var comments = new Array();
+	  video.showComments = true;
+	  var comments = new Array();
   	  length = result.items.length;
   	  for(var i=0;i<length;i++) {
   		      const comment = {author : result.items[i].snippet.topLevelComment.snippet.authorDisplayName, 
@@ -236,6 +247,7 @@ const getComments = (video,options) => {
 
 const getLatestVideos = channel => {
 	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channel.id+"&type=video&part=snippet&order=date&maxResults=12",result => {
+		channel.showLatestVideos = true;
 		const videos = new Array();
 		var length = result.items.length, id = "";
 	    for(var i=0;i<length;i++) {

@@ -12,7 +12,7 @@
   	    <img src="{photo}"/>
   	   </div>
   	 <div class="singer">
-  	     <a>{channel}</a><br>
+  	     <a>{channel.title}</a><br>
   	     <span class="subscribe-button">Subscribe</span>
   	     <span class="subscribe-count" title="{subscriberCount}">{subscriberCount}</span>
   	 </div>
