@@ -749,6 +749,7 @@ a.show-more {
 
 .search-results .filters {
 	padding-bottom : 20px;
+	padding-top : 5px;
 	display : none;
 }
 
@@ -761,6 +762,7 @@ a.show-more {
 
 .search-results .filter-col li {
 	font-size : 66%;
+	line-height : 1.9em;
 }
 
 .search-results .filter-col li a {
