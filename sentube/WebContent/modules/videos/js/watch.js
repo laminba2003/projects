@@ -60,7 +60,7 @@ const getChannelInfo = (video,channelId,cache) => {
 const getVideos = channelId => {
 	var videos = JSON.parse(localStorage.getItem("videos"));
 	if(!videos) {
-		app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&type=video&part=snippet&order=viewCount&maxResults=20",result => {
+		app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&type=video&part=snippet&order=viewCount&maxResults=10",result => {
 			videos = new Array();
 			var length = result.items.length, id = "",i;
 		    for(i=0;i<length;i++) {
@@ -119,7 +119,7 @@ const getMoreVideos = (channelId,token) => {
 	$(".thumbnails a.show-more").hide();
 	$(".thumbnails .load-more").show();
 	const index = parseInt($(".thumbnails > div:last .thumbnail span:eq(0)").html());
-	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&pageToken="+token+"&type=video&part=snippet&order=viewCount&maxResults=20",result => {
+	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channelId+"&pageToken="+token+"&type=video&part=snippet&order=viewCount&maxResults=10",result => {
 		const videos = new Array();
 		var length = result.items.length, id = "",i;
 	    for(i=0;i<length;i++) {
