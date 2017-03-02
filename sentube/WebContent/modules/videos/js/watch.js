@@ -90,7 +90,7 @@ const getVideos = channelId => {
 					 $('html, body').animate({scrollTop : 0},800);
 					 return false;
 				  });
-				  if(!token) {
+				  if(!token || length<10) {
 					 $(".thumbnails a.show-more").hide();
 				  }else {
 					 $(".thumbnails a.show-more").one("click",() => {
