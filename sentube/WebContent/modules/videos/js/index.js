@@ -127,14 +127,14 @@ const display = (div,title,videos) => {
 	 videos.push({id : "kQevK_bUV9g", title : "Lissie - Don't You Give Up On Me"});
 	 videos.push({id : "D3ZNtOcY_1A", title : "Soundgarden - Live to Rise"});
 	 videos.push({id : "oHmBf4ExtZk", title : "Ariana Grande - Everyday"});
-	 videos.push({id : "ntlpTad3PLM", title : "Empire Of The Sun - High And Low"});
+	 videos.push({id : "ZQeq_T_2VE8", title : "Red - Ordinary World"});
 	 videos.push({id : "AxhlozzL6RA", title : "Flyleaf - Call You Out"});
 	 videos.push({id : "0y555d2j9RY", title : "Unspoken - Open The Clouds"});
 	 videos.push({id : "98oMvKF-78Y", title : "The Dead Weather - I Feel Love (Every Million Miles)"});
 	 videos.push({id : "04S6K1jlOkI", title : "Honeyblood - Ready For The Magic"});
 	 videos.push({id : "RLP--BWIP5c", title : "Eliot Sumner - Dead Arms & Dead Legs"});
-	 videos.push({id : "vgkzlu-FaMU", title : "Royal Tailor - Ready Set Go"});
 	 videos.push({id : "nZf_8_0bAGg", title : "Lonely The Brave - What If You Fall In"});
+	 videos.push({id : "z9FmOc0ofGc", title : "Godsmack - Straight Out Of Line"});
 	 videos.push({id : "4p6GWewmTYQ", title : "Avatar - The Eagle Has Landed"});
 	 videos.push({id : "7F37r50VUTQ", title : "ZAYN, Taylor Swift - I Don't Wanna Live Forever"});
 	 videos.push({id : "jrWIqrGhfwI", title : "Vaults - Lifespan"});
@@ -142,7 +142,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "jZhQOvvV45w", title : "OneRepublic - Good Life"});
 	 videos.push({id : "OmVOwlnYDuo", title : "Republica Rock - Life Goes On"});
 	 videos.push({id : "qh7BCluk3wc", title : "Gallant - Weight In Gold"});
-	 videos.push({id : "3-NTv0CdFCk", title : "Lana Del Rey - Love"});
+	 videos.push({id : "rxNO3KBQfmU", title : "Mali Music - Beautiful"});
 	 videos.push({id : "Ow_qI_F2ZJI", title : "Bring Me The Horizon - Throne"});
 	 videos.push({id : "uPHKkewD1G0", title : "Daya - Sit Still, Look Pretty"});
 	 videos.push({id : "PTOFEgJ9zzI", title : "Jessie J - Masterpiece"});
@@ -150,9 +150,9 @@ const display = (div,title,videos) => {
 	 videos.push({id : "YYxzRYMrcVc", title : "Busta Rhymes - We Made It"});
 	 videos.push({id : "7qrRzNidzIc", title : "Breaking Benjamin - I Will Not Bow"});
 	 videos.push({id : "HWYf4PBAmfA", title : "Fatherson - Just Past the Point of Breaking"});
-	 videos.push({id : "ZxVdagd_Pv0", title : "Kristoffer Fogelmark - Love Was My Alibi"});
+	 videos.push({id : "lL2ZwXj1tXM", title : "Three Days Grace - Never Too Late"});
 	 videos.push({id : "Um7pMggPnug", title : "Katy Perry - Chained To The Rhythm"});
-	 videos.push({id : "C_QXxdvinBo", title : "Wolf Gang - Lay Your Love Down"});
+	 videos.push({id : "k-a2jQbXY5Q", title : "Kesington Kross - Gimme Your Love"});
 	 videos.push({id : "RYr96YYEaZY", title : "BORNS - Electric Love"});
 	 videos.push({id : "nUCoYcxNMBE", title : "Eric Prydz - Generate"});
 	 videos.push({id : "_Mllnmx6TM0", title : "The Amazons - Stay With Me"});

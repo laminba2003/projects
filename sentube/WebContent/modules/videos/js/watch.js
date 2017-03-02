@@ -133,6 +133,7 @@ const getMoreVideos = (channelId,token) => {
 	    	return false;
 	    }
 	    var newToken = result.nextPageToken;
+	    var count = $(".thumbnails .thumbnail").length;
 	    app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics",result => {
 	      length = result.items.length;	
 	      for(i=0;i<length;i++) {
@@ -140,12 +141,14 @@ const getMoreVideos = (channelId,token) => {
 		    const minutes = duration.substring(0, duration.indexOf('m'));
 		    const index = duration.indexOf('s');
 			const seconds = index > 0 ? duration.substring(duration.indexOf('m')+1, index) : 0;
+			videos[i].index = count+(i+1);
 		    videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));	
 	    	videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
 	      }
 	      $(".thumbnails .load-more").hide();
 	      if(length) {
 		      var container = $("<div/>");
+		      $(".thumbnails .load-more").remove();
 			  page.render($(".thumbnails"),videos,false,container,thumbnail => {
 				  $("a",thumbnail).click(function(){
 					 const id = $(this).attr("id");
