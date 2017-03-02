@@ -13,8 +13,10 @@
   	   </div>
   	 <div class="singer">
   	     <a>{channel.title}</a><br>
+  	     <div class="subscribe">
   	     <span class="subscribe-button">Subscribe</span>
   	     <span class="subscribe-count" title="{subscriberCount}">{subscriberCount}</span>
+  	     </div>
   	 </div>
   	 <div class="views">
   	      <h1>{viewCount} views</h1>

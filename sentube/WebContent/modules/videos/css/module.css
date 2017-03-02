@@ -74,15 +74,20 @@
 	margin-top:-1px;vertical-align:top;display:inline-block;padding:0px;
 }
 
-.watcher .singer span.subscribe-button {
+.watcher .singer .subscribe {
 	border : 1px solid #d3d3d3;
+	width : auto;
+	height: 30px;
+}
+
+.watcher .singer span.subscribe-button {
 	color: #fffffd;
     background-color: #e62117;
     padding:0.23em 0.40625em;
     display:inline-block;
     text-align : left;
     font-size : 87%;
-    height: 28.578124px;
+    height: 28.9px;
 }
 
 .watcher .singer span.subscribe-button:before {
@@ -100,14 +105,14 @@
 }
 
 .watcher .singer span.subscribe-count {
-	border: 1px solid #d3d3d3;
     color: #444;
-    padding: 0.40625em;
+    padding:0.23em 0.40625em;
     display: inline-block;
     text-align: center;
     font-size: 70%;
     font-family: Tahoma;
     border-left: none;
+    height : 28.9px;
 }
 
 .channel {
@@ -605,6 +610,8 @@ a.show-more {
 	margin-top : 2px;
 	line-height : 1.3em;
 	font-size : 78%;
+	max-height : 2.6em;
+	overflow : hidden;
 }
 .videos .description .view-count {
 	color:#d42323;
@@ -902,7 +909,6 @@ main.full .search-results {
  .videos .description {margin-left:10px}
  .search-results .filter-col {margin-right:4%}
  .videos .status {margin-top : -6px}
- .watcher .singer span.subscribe-button {height : 27px}
 }
 @media(max-width:320px ){
 	.video{width:100%;}
