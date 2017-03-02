@@ -48,12 +48,14 @@ const getChannelInfo = (video,channelId,cache) => {
 		page.render($(".watcher"),video);
 		page.render($(".video-metadata"),video);
 		video.channel = {id : channelId,photo : result.items[0].snippet.thumbnails.medium.url,title : result.items[0].snippet.title,image : result.items[0].brandingSettings.image.bannerImageUrl};
-		$(document).scroll(function(e){
-		    var scrollAmount = $(window).scrollTop();
-		    var documentHeight = $(document).height();
-		    var scrollPercent = (scrollAmount / documentHeight) * 100;
-		    if(scrollPercent > 10 && !video.channel.showLatestVideos && !cache) getLatestVideos(video.channel);;
-		});
+		if(!$(".channel").is(":hidden")) {
+			$(document).scroll(function(e){
+			    var scrollAmount = $(window).scrollTop();
+			    var documentHeight = $(document).height();
+			    var scrollPercent = (scrollAmount / documentHeight) * 100;
+			    if(scrollPercent > 10 && !video.channel.showLatestVideos && !cache) getLatestVideos(video.channel);;
+			});
+		}
 	},true);	
 };
 

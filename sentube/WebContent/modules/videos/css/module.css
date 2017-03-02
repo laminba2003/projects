@@ -167,7 +167,7 @@
 
 .channel .videos .thumbnail .duration{font-size : 55%;right:0.9em;}
 
-.channel .videos .description {margin-left : 0px;width:90.5%}
+.channel .videos .description {margin-left : -7px;width:96%}
 
 .video-metadata,.video-comments,.comments-disabled {
 	width:100%;margin-bottom:5px;margin-top:6px;display:inline-block;min-height:150px;border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;background-color:#fffeff;font-size:85%;
@@ -803,7 +803,6 @@ main.full .search-results {
    .video{width:24.75%;}
 	.videos .thumbnail{height:5.5em;width:100%;}
 	.channel .videos .thumbnail{height:4em;}
-	.channel .videos .description {margin-left : 0px}
 	.channel .videos .thumbnail .duration {right:1.5em}
 	.video-comments > div > div {width:80%;}
    .videos {padding-bottom : 5px}
