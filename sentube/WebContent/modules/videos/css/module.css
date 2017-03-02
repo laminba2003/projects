@@ -162,30 +162,12 @@
 	height : 175px;
 }
 
-.channel .videos:first-of-type,.channel .videos:last-of-type {
-	opacity : 1;
-	width : 97.5%;
-	margin-left : 1.25%;
-	margin-right : 1.25%;
-	vertical-align : top;
-	min-height : 180px;
-	margin-top : 0;
-	margin-bottom : 0;
-	background-color : #f0f0f0;
-	padding-top : 16px;
-}
+.channel .videos {border-radius : 0px;opacity : 1}
+.channel .videos .thumbnail {height : 4em;}
 
-.channel .videos {border-radius : 0px}
-.channel .videos .thumbnail {
-	height : 4em;
-}
-
-.channel .videos .thumbnail .duration{
-	font-size : 55%;right:0.9em;
-}
+.channel .videos .thumbnail .duration{font-size : 55%;right:0.9em;}
 
 .channel .videos .description {margin-left : 0px;width:90.5%}
-
 
 .video-metadata,.video-comments,.comments-disabled {
 	width:100%;margin-bottom:5px;margin-top:6px;display:inline-block;min-height:150px;border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;background-color:#fffeff;font-size:85%;
@@ -497,11 +479,11 @@ a.show-more {
 }
 
 .video-nav-left {
-	margin-left : 5px;
+	margin-left : 7px;
 }
 
 .video-nav-right {
-	margin-left : 2px;
+	margin-left : 7px;
 }
 
 .video{
@@ -550,7 +532,7 @@ a.show-more {
 }
 .videos h1 {
 	font-size:110%;
-	margin-bottom:0.303125em;
+	margin-bottom:10px;
 	display : inline-block;
 	width : 49.5%;
 }
@@ -838,14 +820,14 @@ main.full .search-results {
 	.video{width:24.5%;}
 	.videos .thumbnail{width:100%}
 	.channel .videos .thumbnail{height:5.125em;}
-	.channel .videos .description {margin-left : 0.2%;width:80%}
+	.channel .videos .description {width:95%}
 	.channel .videos .thumbnail .duration {right:1.5em}
   .video-player {width:100%;padding : 0px;margin-left : 0px;margin-right:0px}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:98%}
-	.thumbnails > div:not(.load-more) {width:25%;display:inline-block;padding-right:2%;vertical-align:top}
-	.thumbnails .thumbnail{width:100%;height:64px;height:18vw;display:block;padding:0}
-	.thumbnails .description{width:98%;vertical-align:top;display:block;height:5em;overflow:hidden;position:relative}
-	.thumbnails .description span:nth-child(1){min-height:2.5em;overflow:hidden}
+	.thumbnails > div:not(.load-more) {width:100%;display:inline-block;padding-right:1%;vertical-align:top}
+	.thumbnails .thumbnail{width:35%;height:22vw;display:inline-block;}
+	.thumbnails .description{width:49%;vertical-align:top;display:inline-block;height:4em;overflow:hidden;position:relative}]
+	.thumbnails .description span:nth-child(1){overflow:hidden}
   .video-comments > div > div {width:80%;}
   .search-results .videos .thumbnail {width:50%}
   .search-results .videos .description{width:45%;}
@@ -857,13 +839,13 @@ main.full .search-results {
 	.video{width:49%;}
 	.videos .thumbnail{height:8.5em;width:100%;}
 	.channel .videos .thumbnail{height:9.5em}
-	.channel .videos .description {margin-left : 2.5%;width:80%}
+	.channel .videos .description {width:85%}
 	.channel .videos .thumbnail .duration {right:1.9em}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:97.5%}
-	.thumbnails > div:not(.load-more) {width:49%;display:inline-block;padding-right:1%;vertical-align:top}
-	.thumbnails .thumbnail{width:100%;height:180px;height:28vw;display:block;}
-	.thumbnails .description{width:100%;vertical-align:top;display:block;height:4em;overflow:hidden;position:relative}
-	.thumbnails .description span:nth-child(1){min-height:2.5em;overflow:hidden}
+	.thumbnails > div:not(.load-more) {width:100%;display:inline-block;padding-right:1%;vertical-align:top}
+	.thumbnails .thumbnail{width:35%;height:22vw;display:inline-block;}
+	.thumbnails .description{width:49%;vertical-align:top;display:inline-block;height:4em;overflow:hidden;position:relative}
+	.thumbnails .description span:nth-child(1){overflow:hidden}
 	.videos .description {margin-top:-6px}
   .video-comments > div > div {width:70%;}
   .watcher .views span {font-size : 45%}
@@ -881,7 +863,6 @@ main.full .search-results {
 	.video{width:49%;}
 	.videos .thumbnail{height:7em;width:90%}
 	.channel .videos .thumbnail{height:6.925em}
-	.channel .videos .description {margin-left : 0.2%;width:80%}
 	.channel .videos .thumbnail .duration {right:0.6em}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:96.75%}
 	.thumbnails > div:not(.load-more) {width:100%}
@@ -902,12 +883,11 @@ main.full .search-results {
 	.video{width:100%;}
 	.videos .thumbnail{height:11.5em;width:90%;margin-left: 10px}
 	.channel .videos .thumbnail{height:10.75em;width:100%;}
-	.channel .videos .description {margin-left : 10%}
 	.channel .videos .thumbnail .duration {right:2.9em}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:96%}
 	.thumbnails > div:not(.load-more) {width:100%}
-	.thumbnails .thumbnail{width:50%;height:90px;height:28vw;display:inline-block;}
-	.thumbnails .description{width:48%;vertical-align:top;display:inline-block;height:auto;}
+	.thumbnails .thumbnail{width:100%;height:10.75em;display:inline-block;}
+	.channel .videos .description, .thumbnails .description{width:99%;vertical-align:top;display:inline-block;height:auto;}
 	.thumbnails .description span:nth-child(1){min-height:auto;margin-top:6px}
  .video-comments > div > div {width:50%;}
  .videos h1 {margin-left : 2px;width : 47%;white-space :nowrap;}
@@ -919,11 +899,9 @@ main.full .search-results {
 	.videos .thumbnail{height:11.5em;width:98%;margin-left:2px}
 	.videos:last-of-type {margin-bottom:0px}
 	.channel .videos .thumbnail{height:10.3em;width:100%;}
-	.channel .videos .description {margin-left : 5%}
 	.thumbnails {margin-top:0.40625em;margin-left:0.40625em;width:96%}
 	.thumbnails > div {width:100%}
 	.thumbnails .thumbnail{width:100%;height:180px;height:57vw}
-	.thumbnails .description{height:auto;}
 	.thumbnails .description span:nth-child(1){min-height:auto;margin-top:-1px}
  .video-comments > div > div {width:50%;}
   .videos h1 {margin-left : 2px}
