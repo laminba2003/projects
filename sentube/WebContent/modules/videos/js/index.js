@@ -124,12 +124,12 @@ const display = (div,title,videos) => {
 	 videos.push({id : "Fjba4g93UX8", title : "HAKILL - Def saRAP"});
 	 display($(".videos:eq(0)"),"Senegal",videos);
 	 videos = new Array();
-	 videos.push({id : "kQevK_bUV9g", title : "Lissie - Don't You Give Up On Me"});
+	 videos.push({id : "qLshdZTgtLk", title : "American Authors - I'm Born To Run"});
 	 videos.push({id : "D3ZNtOcY_1A", title : "Soundgarden - Live to Rise"});
 	 videos.push({id : "oHmBf4ExtZk", title : "Ariana Grande - Everyday"});
 	 videos.push({id : "ZQeq_T_2VE8", title : "Red - Ordinary World"});
 	 videos.push({id : "AxhlozzL6RA", title : "Flyleaf - Call You Out"});
-	 videos.push({id : "0y555d2j9RY", title : "Unspoken - Open The Clouds"});
+	 videos.push({id : "mEkXyEIu3OU", title : "Megadeth - Post American World"});
 	 videos.push({id : "98oMvKF-78Y", title : "The Dead Weather - I Feel Love (Every Million Miles)"});
 	 videos.push({id : "04S6K1jlOkI", title : "Honeyblood - Ready For The Magic"});
 	 videos.push({id : "RLP--BWIP5c", title : "Eliot Sumner - Dead Arms & Dead Legs"});

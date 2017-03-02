@@ -5,7 +5,7 @@
 <div class="videos">
  <template type="text/x-dust-template">
   <button type="button">Filters <i class="fa fa-angle-down"></i></button>
-  <span class="result-count">About 50 results</span>
+  <span class="result-count">About {count} results</span>
   <div class="filters">
      <div class="filter-col">
         <h4>Upload date</h4>
@@ -58,7 +58,7 @@
      </div>
   </div>
   <hr/>
-  {#.}
+  {#videos}
     <div class="video">
 	  <a href="videos/watch?v={id}">
 	   <div class="thumbnail">
@@ -74,7 +74,7 @@
 	   </div>
 	 </a>
     </div>
-  {/.}
+  {/videos}
   <div class="pager">
   </div>
   </template>	

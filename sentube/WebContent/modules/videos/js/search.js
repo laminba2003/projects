@@ -14,16 +14,18 @@ const search = query => {
 		}
 		app.get("https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&id="+id+"&part=contentDetails,statistics", result => {
 			for(i=0;i<length;i++) {
-	   	 		const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length).toLowerCase();
-	    		const minutes = duration.substring(0, duration.indexOf('m'));
-	    		const index = duration.indexOf('s');
-				const seconds = index > 0 ? duration.substring(duration.indexOf('m')+1, index) : 0;
-	    		videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
-	    		videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
+				if(result.items[i]) {
+		   	 		const duration = result.items[i].contentDetails.duration.substring(2, result.items[i].contentDetails.duration.length).toLowerCase();
+		    		const minutes = duration.substring(0, duration.indexOf('m'));
+		    		const index = duration.indexOf('s');
+					const seconds = index > 0 ? duration.substring(duration.indexOf('m')+1, index) : 0;
+		    		videos[i].duration = (minutes.length  ? minutes : ("0"+minutes)) + " : " + (seconds.length > 1 ? seconds : ("0"+seconds));
+		    		videos[i].viewCount = result.items[i].statistics.viewCount.replace(/\B(?=(\d{3})+\b)/g, ",");
+				}
 	    	}
 	   	 	const div = $(".videos");
 	   	 	const limit = 10;
-		    page.render(div,videos.slice(0,limit),() => {
+		    page.render(div,{count : length,videos : videos.slice(0,limit)},() => {
 		    	div.fadeTo(1000,1);
 		    	$(".video",div).addClass("animated flip");
 		    	$("button",div).click(() => $(".filters",div).toggle());
@@ -40,7 +42,7 @@ const search = query => {
 		    				$(this).addClass("active");
 		    				const container = $("<div/>");
 		    				$('html, body').animate({scrollTop : 0},800,() => {
-		    					page.render(div,videos.slice((index*limit),((index+1)*limit)),false,container,() => {
+		    					page.render(div,{videos : videos.slice((index*limit),((index+1)*limit))},false,container,() => {
 			    	    	    	$(".video",div).remove();
 			    	    	    	$(".video",container).insertBefore(pager);
 			    	    	    });
