@@ -82,6 +82,7 @@
     display:inline-block;
     text-align : left;
     font-size : 87%;
+    height: 28.578124px;
 }
 
 .watcher .singer span.subscribe-button:before {
@@ -105,7 +106,6 @@
     display: inline-block;
     text-align: center;
     font-size: 70%;
-    margin-left: -2px;
     font-family: Tahoma;
     border-left: none;
 }
@@ -902,6 +902,7 @@ main.full .search-results {
  .videos .description {margin-left:10px}
  .search-results .filter-col {margin-right:4%}
  .videos .status {margin-top : -6px}
+ .watcher .singer span.subscribe-button {height : 27px}
 }
 @media(max-width:320px ){
 	.video{width:100%;}
