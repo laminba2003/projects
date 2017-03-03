@@ -139,10 +139,10 @@ const display = (div,title,videos) => {
 	 videos.push({id : "7F37r50VUTQ", title : "ZAYN, Taylor Swift - I Don't Wanna Live Forever"});
 	 videos.push({id : "jrWIqrGhfwI", title : "Vaults - Lifespan"});
 	 videos.push({id : "LBr7kECsjcQ", title : "Fall Out Boy - Centuries"});
+	 videos.push({id : "dwfKZ-1jyiw", title : "Kelly Rowland - Commander"});
 	 videos.push({id : "jZhQOvvV45w", title : "OneRepublic - Good Life"});
 	 videos.push({id : "OmVOwlnYDuo", title : "Republica Rock - Life Goes On"});
 	 videos.push({id : "qh7BCluk3wc", title : "Gallant - Weight In Gold"});
-	 videos.push({id : "rxNO3KBQfmU", title : "Mali Music - Beautiful"});
 	 videos.push({id : "Ow_qI_F2ZJI", title : "Bring Me The Horizon - Throne"});
 	 videos.push({id : "uPHKkewD1G0", title : "Daya - Sit Still, Look Pretty"});
 	 videos.push({id : "PTOFEgJ9zzI", title : "Jessie J - Masterpiece"});
