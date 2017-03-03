@@ -27,7 +27,6 @@ const search = query => {
 	   	 	const limit = 10;
 		    page.render(div,{count : length,videos : videos.slice(0,limit)},() => {
 		    	div.fadeTo(1000,1);
-		    	$(".video",div).addClass("animated flip");
 		    	$("button",div).click(() => $(".filters",div).toggle());
 		    	const pager = $(".pager",div);
 		    	const pages = length/10;

@@ -25,32 +25,11 @@ const showMainFull = function() {
 	return false;
 };
 
-/**  
-  * WpF BGness 
-  * Template Scripts
-  * Created by WpFreeware Team
-  *Author Uri : http://www.wpfreeware.com/
-
-  Custom JS
-  
-  1. Dropdown Menu
-  5. ScrollTop
-  7. Preloader   
-  
-**/
-
  jQuery(function($){
 
   /* ----------------------------------------------------------- */
-  /*  1. Dropdown Menu
+  /*  1. Body click
   /* ----------------------------------------------------------- */
-
-   // for hover dropdown menu
-  $('ul.nav li.dropdown').hover(function() {
-      $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
-    }, function() {
-      $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
-  });
 
 $("body").click(function(event){
 	const aside = $("aside");
@@ -66,24 +45,6 @@ $("#search-input").keyup(function(){
 		search_over = false;
 	}
 });
-
-//login form
-
-$("#logIn").click(function(event){
-	$(".loginForm").css({top : 50, left:event.pageX-200}).show();
-	$(".loginForm").removeClass("rollOut").addClass("animated rollIn");
-	$(".loginForm input[type=email]").focus();
-	return false;
-});
-
-$(".loginForm").click(function(event){
-	if(event.target != $("button",this)[0]) return false;
-});
-
-$("body").click(function(event){
-	$(".loginForm").addClass("animated rollOut");
-});
-
 
 });
 
@@ -122,6 +83,3 @@ $('.scrollToTop').click(function(){
     }
   })
 //]]>
-
-
-

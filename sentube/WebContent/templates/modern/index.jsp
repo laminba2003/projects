@@ -42,24 +42,6 @@
           <li><a title="upload" class="upload">&nbsp;</a></li>
           <li><a title="sign in" class="signin">Sign in</a></li>                 
         </ul>
-       <div class="loginForm">
-  		 <div class="ribbon"></div>
-  		  <div class="login">
-  		  <h1>Welcome</h1>
-  		  <p>Enter your credentials</p>
-  		  <form action="${path}">
-    		<div class="input">
-      		 <div class="blockinput">
-        		<i class="icon-envelope-alt"></i><input type="email" placeholder="Email">
-      		 </div>
-     		 <div class="blockinput">
-        		<i class="icon-unlock"></i><input type="password" placeholder="Password">
-      		 </div>
-    		</div>
-    		<button>Sign In</button>
-  		 </form>
-  		</div>
-  		</div>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
