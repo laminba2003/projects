@@ -23,7 +23,7 @@
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="aside-toggle collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar" onclick="${watch ? 'toggleAside()' : 'showMainFull()'}">
+        <button type="button" class="aside-toggle collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar" onclick="${watch ? 'return toggleAside();' : 'return showMainFull();'}">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>

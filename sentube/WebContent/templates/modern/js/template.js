@@ -1,5 +1,6 @@
 const toggleAside = function() {
-    $("aside").addClass("toggled").toggle()
+    $("aside").addClass("toggled").toggle();
+    return false;
 };
      
 const showMainFull = function() {
@@ -21,6 +22,7 @@ const showMainFull = function() {
 			aside.addClass("toggled").toggle();
 		}
 	}
+	return false;
 };
 
 /**  
@@ -50,7 +52,10 @@ const showMainFull = function() {
       $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
   });
 
-
+$("body").click(function(event){
+	const aside = $("aside");
+	if(!$("button.aside-toggle").is($(event.target)) && aside.hasClass("toggled")) aside.hide();
+});
 
 //search
 var search_over = true;  
