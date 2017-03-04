@@ -745,7 +745,7 @@ main {
 	body{font-size:93%;}
   .navbar-brand {left : 31px;top : 0.40em;margin-left: 10px;}	
   #search {top : 0.95em}
-  #search input[type=text] {width : 50%;margin-left:-40px;margin-top:-0.1em}
+  #search input[type=text] {width : 45%;margin-left:-40px;margin-top:-0.1em}
   #search input[type=submit] {width : 30px;margin-top:-0.1em}
   #wait {padding-left: 43%;padding-top : 30%}
   .footer_bottom {margin-left:-40px;font-size : 99%}

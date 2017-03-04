@@ -168,6 +168,7 @@
 }
 
 .channel .videos {border-radius : 0px;opacity : 1}
+
 .channel .videos .thumbnail {height : 4em;}
 
 .channel .videos .thumbnail .duration{font-size : 55%;right:0.9em;}
@@ -446,6 +447,16 @@ a.show-more {
 	opacity : 0.1;margin-bottom:1px;padding-left:2.5%;padding-right:0%;width:95.5%;margin-left:auto;margin-right:auto;border:1px solid;border-color:#e5e6e9 #dfe0e4 #d0d1d5;padding-bottom:0px;padding-top:1.2%;background-color:#fffffd;vertical-align:top;
 }
 
+.videos select {
+	margin-right : 8px;
+	font-weight : normal;
+	padding : 4px;
+	font-size : 70%;
+	cursor : pointer;
+	height : 23.2px;
+	background-color : #fff;
+}
+
 .videos .pager {
 	width : 90%;
 	margin : auto;
@@ -502,7 +513,7 @@ a.show-more {
 }
 
 .videos .actions > a {
-    margin-top: 0.9px;
+    margin-top: 0.6px;
     font-size: 80%;
     padding-top: 1px;
     padding-left: 2px;
@@ -889,9 +900,7 @@ main.full .search-results {
   .video-comments > div > div {width:70%;}
   .watcher .views span {font-size : 45%}
   .videos h1 {margin-left : 2px}
-  .videos h1 > a {margin-top : -3px}
   .videos .status {margin-top : -5px}
-  .videos .actions > a {margin-top: -1.95px;}
   .search-results {width : 100%;}
   .search-results .videos .description{width:55%;}
   .search-results .videos .thumbnail {width:40%}
@@ -916,7 +925,6 @@ main.full .search-results {
   .video-comments > div > div {width:50%;}
   .watcher .views span {font-size : 35%}
   .videos h1 {margin-left : 2px}
-   .videos .actions > a {margin-top: -2.5px;}
   .videos .description {margin-top : -6px}
  .search-results .videos .thumbnail {width:50%}
   .search-results .videos .description{width:45%;}
@@ -939,8 +947,6 @@ main.full .search-results {
  .video-comments > div > div {width:50%;}
  .videos h1 {margin-left : 2px;width : 55%;white-space :nowrap;}
  .videos .actions {width : 30%}
- .videos h1 > a {margin-top : -4px}
-  .videos .actions > a {margin-top: -3.98px;}
  .videos .description {margin-left:10px}
  .search-results .filter-col {margin-right:4%}
  .videos .status {margin-top : -6px}
@@ -958,7 +964,6 @@ main.full .search-results {
   .videos h1 {margin-left : 2px}
   .videos .description {margin-left:2px}
   .watcher h1 {line-height : 1.45em}
-  .videos h1 > a {margin-top : -4px}
-  .videos .actions > a {margin-top: -1.5px;}
   .video-player .views {margin-top : -20px}
+  .videos .actions > a {margin-top : 0.9px}
 }
