@@ -204,6 +204,8 @@
 .video-comments .input img {
 	display : inline-block;
 	vertical-align : top;
+	width : 64px;
+	height : 64px;
 }
 
 .video-comments .input textarea {
