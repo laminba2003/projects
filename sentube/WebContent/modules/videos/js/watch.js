@@ -244,6 +244,7 @@ const getComments = (video,options) => {
   	  });
 	  },true, data => {
 		  $(".video-comments").hide();
+		  video.showComments = true;
 		  const response = JSON.parse(data.responseText);
 		  const code = response.error.code;
 		  if(code == "403") $(".comments-disabled").show();
