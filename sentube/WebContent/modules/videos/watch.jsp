@@ -39,6 +39,14 @@
   <div class="video-comments">
     <template type="text/x-dust-template">
   	 <h1>COMMENTS - {commentCount}</h1>
+  	 <div class="input">
+  	   <img src="${images}/user-64.png"/>
+  	   <textarea placeholder="Add a public comment..."></textarea>
+  	 </div>
+  	 <select>
+  	    <option>Top Comments</option>
+  	    <option>Newest first</option>
+  	 </select>
   	 {#comments}
   	 <div class="video-comment">
   	     <img src="{photo}"/>

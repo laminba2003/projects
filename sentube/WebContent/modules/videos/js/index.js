@@ -127,15 +127,15 @@ const display = (div,title,videos) => {
 	 videos.push({id : "qLshdZTgtLk", title : "American Authors - I'm Born To Run"});
 	 videos.push({id : "9fdAt0ke9w8", title : "Jennifer Lopez - Feel The Light"});
 	 videos.push({id : "AXpdFqZt4Us", title : "Lower Than Atlantis - Here We Go"});
-	 videos.push({id : "ZQeq_T_2VE8", title : "Red - Ordinary World"});
+	 videos.push({id : "dMK_npDG12Q", title : "Lorde - Green Light"});
 	 videos.push({id : "AxhlozzL6RA", title : "Flyleaf - Call You Out"});
-	 videos.push({id : "mEkXyEIu3OU", title : "Megadeth - Post American World"});
-	 videos.push({id : "98oMvKF-78Y", title : "The Dead Weather - I Feel Love (Every Million Miles)"});
+	 videos.push({id : "dMV_O_z6-6U", title : "The Jezabels - Pleasure Drive"});
+	 videos.push({id : "GzU8KqOY8YA", title : "Sean Paul - No Lie"});
 	 videos.push({id : "WF7FAUgGAgI", title : "Eliza And The Bear - It Gets Cold"});
 	 videos.push({id : "AmAaWCFlxEE", title : "Kings Of Leon - Chapter 1, Waste a Moment"});
 	 videos.push({id : "nZf_8_0bAGg", title : "Lonely The Brave - What If You Fall In"});
 	 videos.push({id : "VqoyKzgkqR4", title : "Ghost - Square Hammer"});
-	 videos.push({id : "4p6GWewmTYQ", title : "Avatar - The Eagle Has Landed"});
+	 videos.push({id : "PmN9rZW0HGo", title : "Frank Ocean - Swim Good"});
 	 videos.push({id : "7F37r50VUTQ", title : "ZAYN, Taylor Swift - I Don't Wanna Live Forever"});
 	 videos.push({id : "jrWIqrGhfwI", title : "Vaults - Lifespan"});
 	 videos.push({id : "LBr7kECsjcQ", title : "Fall Out Boy - Centuries"});
@@ -153,7 +153,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "lL2ZwXj1tXM", title : "Three Days Grace - Never Too Late"});
 	 videos.push({id : "Um7pMggPnug", title : "Katy Perry - Chained To The Rhythm"});
 	 videos.push({id : "k-a2jQbXY5Q", title : "Kesington Kross - Gimme Your Love"});
-	 videos.push({id : "RYr96YYEaZY", title : "BORNS - Electric Love"});
+	 videos.push({id : "NmCFY1oYDeM", title : "John Legend - Love Me Now"});
 	 videos.push({id : "nUCoYcxNMBE", title : "Eric Prydz - Generate"});
 	 videos.push({id : "_Mllnmx6TM0", title : "The Amazons - Stay With Me"});
 	 videos.push({id : "Pn-6eOxnEMI", title : "A Day To Remember - All I Want"});
