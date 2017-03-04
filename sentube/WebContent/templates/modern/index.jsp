@@ -20,7 +20,7 @@
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
   
   <!-- start navbar -->
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav class="navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="aside-toggle collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar" onclick="${watch ? 'return toggleAside();' : 'return showMainFull();'}">
