@@ -33,7 +33,7 @@ const showMainFull = function() {
 
 $("body").click(function(event){
 	const aside = $("aside");
-	if(!$("button.aside-toggle").is($(event.target)) && aside.hasClass("toggled")) aside.hide();
+	if(!$("button.aside-toggle").is($(event.target)) && !$("button.aside-toggle span.icon-bar").is($(event.target)) && aside.hasClass("toggled")) aside.hide();
 });
 
 //search
