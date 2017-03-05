@@ -125,14 +125,14 @@ const display = (div,title,videos) => {
 	 display($(".videos:eq(0)"),"Senegal",videos);
 	 videos = new Array();
 	 videos.push({id : "qLshdZTgtLk", title : "American Authors - I'm Born To Run"});
-	 videos.push({id : "9fdAt0ke9w8", title : "Jennifer Lopez - Feel The Light"});
+	 videos.push({id : "ENrj5u_lrWw", title : "Gary Barlow - Let Me Go"});
 	 videos.push({id : "AXpdFqZt4Us", title : "Lower Than Atlantis - Here We Go"});
 	 videos.push({id : "dMK_npDG12Q", title : "Lorde - Green Light"});
-	 videos.push({id : "AxhlozzL6RA", title : "Flyleaf - Call You Out"});
+	 videos.push({id : "Ao8cGLIMtvg", title : "Rihanna - American Oxygen"});
 	 videos.push({id : "dMV_O_z6-6U", title : "The Jezabels - Pleasure Drive"});
 	 videos.push({id : "GzU8KqOY8YA", title : "Sean Paul - No Lie"});
 	 videos.push({id : "WF7FAUgGAgI", title : "Eliza And The Bear - It Gets Cold"});
-	 videos.push({id : "AmAaWCFlxEE", title : "Kings Of Leon - Chapter 1, Waste a Moment"});
+	 videos.push({id : "lN2OcgKi9wI", title : "Sia - Never in control"});
 	 videos.push({id : "nZf_8_0bAGg", title : "Lonely The Brave - What If You Fall In"});
 	 videos.push({id : "VqoyKzgkqR4", title : "Ghost - Square Hammer"});
 	 videos.push({id : "PmN9rZW0HGo", title : "Frank Ocean - Swim Good"});
