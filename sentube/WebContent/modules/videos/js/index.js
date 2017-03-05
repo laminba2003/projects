@@ -129,7 +129,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "AXpdFqZt4Us", title : "Lower Than Atlantis - Here We Go"});
 	 videos.push({id : "dMK_npDG12Q", title : "Lorde - Green Light"});
 	 videos.push({id : "Ao8cGLIMtvg", title : "Rihanna - American Oxygen"});
-	 videos.push({id : "dMV_O_z6-6U", title : "The Jezabels - Pleasure Drive"});
+	 videos.push({id : "DGIgXP9SvB8", title : "will.i.am - That POWER"});
 	 videos.push({id : "GzU8KqOY8YA", title : "Sean Paul - No Lie"});
 	 videos.push({id : "11bdcSMZMrA", title : "We Are The Ocean - Do It Together"});
 	 videos.push({id : "lN2OcgKi9wI", title : "Sia - Never in control"});
