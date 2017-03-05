@@ -131,9 +131,9 @@ const display = (div,title,videos) => {
 	 videos.push({id : "Ao8cGLIMtvg", title : "Rihanna - American Oxygen"});
 	 videos.push({id : "dMV_O_z6-6U", title : "The Jezabels - Pleasure Drive"});
 	 videos.push({id : "GzU8KqOY8YA", title : "Sean Paul - No Lie"});
-	 videos.push({id : "WF7FAUgGAgI", title : "Eliza And The Bear - It Gets Cold"});
+	 videos.push({id : "11bdcSMZMrA", title : "We Are The Ocean - Do It Together"});
 	 videos.push({id : "lN2OcgKi9wI", title : "Sia - Never in control"});
-	 videos.push({id : "nZf_8_0bAGg", title : "Lonely The Brave - What If You Fall In"});
+	 videos.push({id : "pyBNd_-F5Ts", title : "Jason Aldean - Gonna Know We Were Here"});
 	 videos.push({id : "VqoyKzgkqR4", title : "Ghost - Square Hammer"});
 	 videos.push({id : "PmN9rZW0HGo", title : "Frank Ocean - Swim Good"});
 	 videos.push({id : "7F37r50VUTQ", title : "ZAYN, Taylor Swift - I Don't Wanna Live Forever"});
