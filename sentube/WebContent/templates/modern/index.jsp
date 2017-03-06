@@ -49,18 +49,18 @@
  
  <aside style="${watch ? 'display:none' : 'opacity:1'}">
    <div>
-     <span title="Home">
-      <img src="templates/modern/images/home-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt=""/>
+    <ol>
+     <li>
      Home
-     </span>
-     <span title="Trending">
-       <img src="templates/modern/images/fire-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt=""/>
+     </li>
+     <li>
      Trending
-     </span>
-     <span title="History">
-        <img src="templates/modern/images/history-20.png" height="20"  width="20" data-ytimg="1" aria-hidden="true" alt=""/>
-     History
-     </span>
+     </li>
+     <li>
+      History
+      
+     </li>
+    </ol>
    </div>
    <hr/>
    <h3>
