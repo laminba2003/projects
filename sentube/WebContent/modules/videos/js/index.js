@@ -125,7 +125,7 @@ const display = (div,title,videos) => {
 	 display($(".videos:eq(0)"),"Senegal",videos);
 	 videos = new Array();
 	 videos.push({id : "qLshdZTgtLk", title : "American Authors - I'm Born To Run"});
-	 videos.push({id : "ENrj5u_lrWw", title : "Gary Barlow - Let Me Go"});
+	 videos.push({id : "ypeP6sqF8OY", title : "Born Cages - Don't Look Back"});
 	 videos.push({id : "AXpdFqZt4Us", title : "Lower Than Atlantis - Here We Go"});
 	 videos.push({id : "eu0KsZ_MVBc", title : "The Avalanches - Because I'm Me"});
 	 videos.push({id : "Ao8cGLIMtvg", title : "Rihanna - American Oxygen"});
