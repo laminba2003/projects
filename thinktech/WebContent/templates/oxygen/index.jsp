@@ -12,13 +12,7 @@
   <meta property="og:title"  content="welcome to ThinkTech" />
   <meta property="og:description"  content="We deliver projects on time and on budget and we have an excellent customer service and support." />
   <meta property="og:image" content="http://env-9204994.mircloud.host/templates/oxygen/images/slider/languages.png" />
-  <link href="templates/oxygen/css/bootstrap.min.css" rel="stylesheet">
-  <link href="templates/oxygen/css/animate.min.css" rel="stylesheet"> 
-  <link href="templates/oxygen/css/font-awesome.min.css" rel="stylesheet">
-  <link href="templates/oxygen/css/lightbox.css" rel="stylesheet">
-  <link href="templates/oxygen/css/main.css" rel="stylesheet">
-  <link id="css-preset" href="templates/oxygen/css/presets/preset1.css" rel="stylesheet">
-  <link href="templates/oxygen/css/responsive.css" rel="stylesheet">
+  <link href="templates/oxygen/css/template.css" rel="stylesheet"/>
 
   <!--[if lt IE 9]>
     <script src="templates/oxygen/js/html5shiv.js"></script>
@@ -141,7 +135,7 @@
       <div  class="row">
         <div class="col-sm-6">
           <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <p>We are an IT company based on Senegal specialized in Software Development, Cloud Hosting, Consulting and Training with a proven experience in building innovative and robust solutions
+            <p>We are an IT company based on Senegal specialized in Software Development, Cloud Hosting, Mechanical Engineering, Consulting and Training with a proven experience in building innovative and robust solutions
             with cutting-edge technologies.
             </p>
           </div>
@@ -445,7 +439,6 @@
 
   <script type="text/javascript" src="templates/oxygen/js/jquery.js"></script>
   <script type="text/javascript" src="templates/oxygen/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
   <script type="text/javascript" src="templates/oxygen/js/jquery.inview.min.js"></script>
   <script type="text/javascript" src="templates/oxygen/js/wow.min.js"></script>
   <script type="text/javascript" src="templates/oxygen/js/mousescroll.js"></script>
