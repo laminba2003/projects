@@ -126,14 +126,14 @@ const display = (div,title,videos) => {
 	 videos = new Array();
 	 videos.push({id : "qLshdZTgtLk", title : "American Authors - I'm Born To Run"});
 	 videos.push({id : "ypeP6sqF8OY", title : "Born Cages - Don't Look Back"});
+	 videos.push({id : "PT4ryVop_Fc", title : "Florida Georgia Line - May We All"});
 	 videos.push({id : "AXpdFqZt4Us", title : "Lower Than Atlantis - Here We Go"});
-	 videos.push({id : "eu0KsZ_MVBc", title : "The Avalanches - Because I'm Me"});
 	 videos.push({id : "Ao8cGLIMtvg", title : "Rihanna - American Oxygen"});
 	 videos.push({id : "DGIgXP9SvB8", title : "will.i.am - That POWER"});
 	 videos.push({id : "I1AmkMuB0pA", title : "Electric Guest - Dear To Me"});
-	 videos.push({id : "11bdcSMZMrA", title : "We Are The Ocean - Do It Together"});
-	 videos.push({id : "lN2OcgKi9wI", title : "Sia - Never in control"});
-	 videos.push({id : "pyBNd_-F5Ts", title : "Jason Aldean - Gonna Know We Were Here"});
+	 videos.push({id : "ckIM58Ecpcw", title : "Sabrina Carpenter - On Purpose"});
+	 videos.push({id : "5hzgS9s-tE8", title : "Ellie Goulding - Anything Could Happen"});
+	 videos.push({id : "7qaHdHpSjX8", title : "Brett Young - In Case You Didn't Know"});
 	 videos.push({id : "3RW1NhMm-4w", title : "ASG - Day's Work"});
 	 videos.push({id : "QwEieJWAbls", title : "Tei Shi - Keep Running"});
 	 videos.push({id : "7F37r50VUTQ", title : "ZAYN, Taylor Swift - I Don't Wanna Live Forever"});
