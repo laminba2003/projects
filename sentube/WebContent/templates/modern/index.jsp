@@ -123,7 +123,7 @@
             </div>
             <div class="developer">
               <p>Designed by <a target="_blank" href="http://wpfreeware.com/">Wpfreeware</a>
-              and <a target="_blank" href="http://env-9204994.mircloud.host/">ThinkTech</a></p>
+              and <a target="_blank" href="http://www.thinktech.sn/">ThinkTech</a></p>
             </div>
           </div>
         </div>
