@@ -135,7 +135,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "5hzgS9s-tE8", title : "Ellie Goulding - Anything Could Happen"});
 	 videos.push({id : "7qaHdHpSjX8", title : "Brett Young - In Case You Didn't Know"});
 	 videos.push({id : "L3wKzyIN1yk", title : "Rag'n'Bone Man - Human"});
-	 videos.push({id : "kBsycvSU6r8", title : "The Weeknd - MANIA"});
+	 videos.push({id : "163_C5UVU-I", title : "Paul McCartney - Hope For The Future"});
 	 videos.push({id : "7F37r50VUTQ", title : "ZAYN, Taylor Swift - I Don't Wanna Live Forever"});
 	 videos.push({id : "jrWIqrGhfwI", title : "Vaults - Lifespan"});
 	 videos.push({id : "LBr7kECsjcQ", title : "Fall Out Boy - Centuries"});
