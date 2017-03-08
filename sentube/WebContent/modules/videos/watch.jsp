@@ -7,7 +7,7 @@
   
    <div class="watcher">
      <template type="text/x-dust-template">
-  	   <h1 title="{title}">{title}</h1>
+  	   <h1 title="{title}"><i class="fa fa-play"></i> {title}</h1>
   	   <div class="photo">
   	    <img src="{photo}"/>
   	   </div>
