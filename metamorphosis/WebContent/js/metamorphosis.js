@@ -5,11 +5,7 @@ app.ready = callback => $(document).ready(callback);
 app.get = (url, callback, ...options) => {
 	 var store =  typeof options[0] == 'boolean' ? options[0] : false;
 	 page.wait();
-	 var localStorage;
-	 try {
-	   localStorage = window.localStorage;
-	 } catch(e) {}
-	 if(store && localStorage) {
+	 if(store) {
 		 const data = localStorage.getItem(url); 
 		 if(data) {
 			 page.release();
@@ -25,7 +21,7 @@ app.get = (url, callback, ...options) => {
 		 page.release();
 	     if(callback) callback(data);
 	     try {
-	    	 if(store && localStorage) localStorage.setItem(url,JSON.stringify(data));
+	    	 if(store) localStorage.setItem(url,JSON.stringify(data));
 	     }catch(e) {
 	    	  if(e.code == 22) {
 	    		 localStorage.clear();
