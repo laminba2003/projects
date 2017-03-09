@@ -5,13 +5,13 @@
      <iframe id="player" style="display:none" width="853" height="200" frameborder="0" allowfullscreen></iframe>
   </div>
   
-   <div class="watcher">
+   <div class="video-info">
      <template type="text/x-dust-template">
   	   <h1 title="{title}"><i class="fa fa-play"></i> {title}</h1>
   	   <div class="photo">
   	    <img src="{photo}"/>
   	   </div>
-  	 <div class="singer">
+  	 <div class="author">
   	     <a>{channel.title}</a><br>
   	     <div class="subscribe">
   	     <span class="subscribe-button">Subscribe</span>

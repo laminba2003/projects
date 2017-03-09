@@ -45,9 +45,9 @@ const getChannelInfo = (video,channelId,cache) => {
 	app.get("https://www.googleapis.com/youtube/v3/channels?id="+channelId+"&key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&part=snippet,statistics,brandingSettings",result => {
 		video.photo = result.items[0].snippet.thumbnails.medium.url;
 		video.subscriberCount = result.items[0].statistics.subscriberCount.replace(/\B(?=(\d{3})+\b)/g, ",");
-		page.render($(".watcher"),video);
-		page.render($(".video-metadata"),video);
 		video.channel = {id : channelId,photo : result.items[0].snippet.thumbnails.medium.url,title : result.items[0].snippet.title,image : result.items[0].brandingSettings.image.bannerImageUrl};
+		page.render($(".video-info"),video);
+		page.render($(".video-metadata"),video);
 		if(!$(".channel").is(":hidden")) {
 			$(document).scroll(function(e){
 			    var scrollAmount = $(window).scrollTop();
@@ -86,7 +86,6 @@ const getVideos = channelId => {
 					 const id = $(this).attr("id");
 					 display(id,true);
 					 history.pushState({id:id},null,"videos/watch?v="+id);
-					 $(".video-container iframe").attr("src","//www.youtube.com/embed/"+id+"?enablejsapi=1");
 					 $('html, body').animate({scrollTop : 0},800);
 					 return false;
 				  });
@@ -108,7 +107,6 @@ const getVideos = channelId => {
 					 const id = $(this).attr("id");
 					 display(id);
 					 history.pushState({id:id},null,"videos/watch?v="+id);
-					 $(".video-container iframe").attr("src","//www.youtube.com/embed/"+id+"?enablejsapi=1");
 					 $('html, body').animate({scrollTop : 0},800);
 					 return false;
 				  });
@@ -156,7 +154,6 @@ const getMoreVideos = (channelId,token) => {
 					 const id = $(this).attr("id");
 					 display(id,true);
 					 history.pushState({id:id},null,"videos/watch?v="+id);
-					 $(".video-container iframe").attr("src","//www.youtube.com/embed/"+id+"?enablejsapi=1");
 					 $('html, body').animate({scrollTop : 0},800);
 					 return false;
 				  });
@@ -278,7 +275,6 @@ const getLatestVideos = channel => {
 				 const id = $(this).attr("id");
 				 display(id,true);
 				 history.pushState({id:id},null,"videos/watch?v="+id);
-				 $(".video-container iframe").attr("src","//www.youtube.com/embed/"+id+"?enablejsapi=1");
 				 $('html, body').animate({scrollTop : 0},800);
 				 return false;
 			 });
@@ -290,7 +286,6 @@ window.addEventListener('popstate', e => {
 	   const state = e.state;
 	   if(state && state.id) {
 	       display(state.id,true);
-	 	   $(".video-container iframe").attr("src","//www.youtube.com/embed/"+state.id+"?enablejsapi=1");
 	 	   $('html, body').animate({scrollTop : 0},800);
 	   } 
 });

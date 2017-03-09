@@ -4,16 +4,16 @@
 	display:inline-block;width:68%;vertical-align:top;padding:0 2.03125em;margin-top:59px;margin-right:42px;
 }
 
-.watcher {
+.video-info {
 	width:100%;margin:0.8125em 0 0.40625em 0;display:inline-block;border:1px solid;border-color:#f3dcdc;background-color:#fffeff;padding-top:0.40625em;
 	padding-bottom:0.4203125em;min-height:9.5em;
 }
 
-.watcher > h1 {
+.video-info > h1 {
 	margin-top:-0.40625em;margin-bottom:0.25em;padding:0.203125em;line-height:1.625em;font-size:150%;font-weight:bold;
 }
 
-.watcher .singer a {
+.video-info .author a {
     color:#000;vertical-align:top;font-weight:bold;font-size:85%;
 }
 
@@ -28,15 +28,15 @@
 	width:100%;
 }
 
-.watcher .views, .watcher .views > div {
+.video-info .views, .video-info .views > div {
 	float:right;
 }
 
-.watcher .views > div {
+.video-info .views > div {
 	margin-right : 8%;
 }
 
-.watcher .views span {
+.video-info .views span {
 	width : auto;
 	display : inline-block;
 	font-family : Tahoma;
@@ -70,18 +70,18 @@
 	margin-top:1px;
 }
 
-.watcher .singer {
+.video-info .author {
 	margin-top:-1px;vertical-align:top;display:inline-block;padding:0px;
 }
 
-.watcher .singer .subscribe {
+.video-info .author .subscribe {
 	border : 1px solid #f3dcdc;
 	width : auto;
 	height: 30px;
 	margin-left : -1px;
 }
 
-.watcher .singer span.subscribe-button {
+.video-info .author span.subscribe-button {
 	color: #fffffd;
     background-color: #e62117;
     padding:0.23em 0.40625em;
@@ -91,7 +91,7 @@
     height: 28.9px;
 }
 
-.watcher .singer span.subscribe-button:before {
+.video-info .author span.subscribe-button:before {
 	background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp) -146px -152px;
     background-image: url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflq9QGbD.webp);
     background-position-x: -146px;
@@ -105,7 +105,7 @@
     margin-right : 7px;
 }
 
-.watcher .singer span.subscribe-count {
+.video-info .author span.subscribe-count {
     color: #444;
     padding:0.23em 0.40625em;
     display: inline-block;
@@ -234,7 +234,7 @@ a.show-more {
     background-color: #f8f8f8;
     color: #444;
     font-size: 12px;
-    border : 1px solid rgb(211,211,211);
+    border : 1px solid #f3dcdc;
     margin-bottom : 20px;
     padding : 9px;
     width : 95%;
@@ -363,7 +363,7 @@ a.show-more {
 	color : blue;
 }
 
-.watcher .views h1 {
+.video-info .views h1 {
 	font-family :Tahoma;color:#666;margin-right:0.8125em;border-bottom:2px solid #e62117;
 	line-height:1.625em;font-size:130%;padding-right:0;padding-top:0em;margin-bottom:0.203125em;
 }
@@ -830,7 +830,7 @@ main.full .search-results {
   .thumbnails {margin-left: -3.25em;width:30%}
   .thumbnails .thumbnail{width:44%;height:5em;display:inline-block;}
   .thumbnails .description{width:52%;display:inline-block;vertical-align:top;}
-  .watcher .views span {font-size : 65%}
+  .video-info .views span {font-size : 65%}
   .channel .videos .description {margin-left : -5px;width:90%}
 	.channel .videos .thumbnail .duration {right:0.2em}
 	.search-results .videos .thumbnail {width:40%}
@@ -846,7 +846,7 @@ main.full .search-results {
 }
   
 @media(max-width:991px ){
-	.watcher h1 {line-height : 1.45em}
+	.video-info h1 {line-height : 1.45em}
 	.videos h1 {margin-top:6px;margin-left:-9px}
 	.thumbnails .thumbnail{width:95%;height:8.75em;display:block;}
 	.thumbnails .description{width:100%;height:auto;}
@@ -864,7 +864,7 @@ main.full .search-results {
 @media(max-width:767px ){
 	.videos h1 > i {margin-left : -5px;}
 	.thumbnails > h1 {width:70%}
-	.watcher h1 {line-height : 1.45em}
+	.video-info h1 {line-height : 1.45em}
 	.videos {padding-bottom : 5px}
 	.videos h1 {margin-top:7px}
 	.video{width:24.5%;}
@@ -900,7 +900,7 @@ main.full .search-results {
 	.thumbnails .description span:nth-child(1){overflow:hidden}
 	.videos .description {margin-top:-6px}
   .video-comments > div > div {width:70%;}
-  .watcher .views span {font-size : 45%}
+  .video-info .views span {font-size : 45%}
   .videos h1 {margin-left : 2px}
   .videos .status {margin-top : -5px}
   .search-results {width : 100%;}
@@ -925,7 +925,7 @@ main.full .search-results {
 	.thumbnails .description{width:48%;vertical-align:top;display:inline-block;height:auto;}
 	.thumbnails .description span:nth-child(1){min-height:auto;margin-top:6px}
   .video-comments > div > div {width:50%;}
-  .watcher .views span {font-size : 35%}
+  .video-info .views span {font-size : 35%}
   .videos h1 {margin-left : 2px}
   .videos .description {margin-top : -6px}
  .search-results .videos .thumbnail {width:50%}
@@ -965,7 +965,7 @@ main.full .search-results {
  .video-comments > div > div {width:50%;}
   .videos h1 {margin-left : 2px}
   .videos .description {margin-left:2px}
-  .watcher h1 {line-height : 1.45em}
+  .video-info h1 {line-height : 1.45em}
   .video-player .views {margin-top : -20px}
   .videos .actions > a {margin-top : 0.9px}
 }
