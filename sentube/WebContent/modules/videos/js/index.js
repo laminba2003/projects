@@ -134,7 +134,7 @@ const display = (div,title,videos) => {
 	 videos.push({id : "ckIM58Ecpcw", title : "Sabrina Carpenter - On Purpose"});
 	 videos.push({id : "5hzgS9s-tE8", title : "Ellie Goulding - Anything Could Happen"});
 	 videos.push({id : "7qaHdHpSjX8", title : "Brett Young - In Case You Didn't Know"});
-	 videos.push({id : "t5Sd5c4o9UM", title : "Katy Perry - E.T"});
+	 videos.push({id : "t5Sd5c4o9UM", title : "Katy Perry, Kanye West - E.T"});
 	 videos.push({id : "163_C5UVU-I", title : "Paul McCartney - Hope For The Future"});
 	 videos.push({id : "7F37r50VUTQ", title : "ZAYN, Taylor Swift - I Don't Wanna Live Forever"});
 	 videos.push({id : "jrWIqrGhfwI", title : "Vaults - Lifespan"});
