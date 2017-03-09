@@ -117,7 +117,7 @@
   <div class="thumbnails">
     <template type="text/x-dust-template">
       <h1>Up next <i class="fa fa-step-forward"></i></h1>
-      <span>Autoplay
+      <span><i class="fa fa-play"></i> Autoplay
        <div class="autoplay">  
       <input type="checkbox" value="None" id="autoplay" name="check" checked />
       <label for="autoplay"></label>
