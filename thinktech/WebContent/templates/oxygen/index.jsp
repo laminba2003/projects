@@ -374,20 +374,20 @@
                 <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <input type="text" name="contact.name" class="form-control" placeholder="Name" required="required">
+                      <input type="text" name="mail.author" class="form-control" placeholder="Name" required="required">
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <input type="email" name="contact.email" class="form-control" placeholder="Email Address" required="required">
+                      <input type="email" name="mail.email" class="form-control" placeholder="Email Address" required="required">
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="text" name="contact.subject" class="form-control" placeholder="Subject" required="required">
+                  <input type="text" name="mail.subject" class="form-control" placeholder="Subject" required="required">
                 </div>
                 <div class="form-group">
-                  <textarea name="contact.message" id="message" class="form-control" rows="4" placeholder="Enter your message" required="required"></textarea>
+                  <textarea name="mail.message" id="message" class="form-control" rows="4" placeholder="Enter your message" required="required"></textarea>
                 </div>                        
                 <div class="form-group">
                   <button type="submit" class="btn-submit">Send Now</button>
@@ -438,15 +438,7 @@
     </div>
   </footer>
 
-  <script type="text/javascript" src="templates/oxygen/js/jquery.js"></script>
-  <script type="text/javascript" src="templates/oxygen/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="templates/oxygen/js/jquery.inview.min.js"></script>
-  <script type="text/javascript" src="templates/oxygen/js/wow.min.js"></script>
-  <script type="text/javascript" src="templates/oxygen/js/mousescroll.js"></script>
-  <script type="text/javascript" src="templates/oxygen/js/smoothscroll.js"></script>
-  <script type="text/javascript" src="templates/oxygen/js/jquery.countTo.js"></script>
-  <script type="text/javascript" src="templates/oxygen/js/lightbox.min.js"></script>
-  <script type="text/javascript" src="templates/oxygen/js/main.js"></script>
-
+  <script type="text/javascript" src="templates/oxygen/js/template.js"></script>
+ 
 </body>
 </html>
