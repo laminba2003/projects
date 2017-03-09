@@ -144,11 +144,12 @@ jQuery(function($) {
 		var form_status = $('<div class="form_status"></div>');
 		$.ajax({
 			url: $(this).attr('action'),
+			type : 'POST',
+			data : form.serialize(),
+	        dataType : 'json',
 			beforeSend: function(){
-				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn() );
+				form.prepend(form_status.html('<p class="text-success">Thank you for contacting us. As early as possible, we will contact you.</p>').delay(3000).fadeOut());
 			}
-		}).done(function(data){
-			form_status.html('<p class="text-success">Thank you for contact us. As early as possible  we will contact you</p>').delay(3000).fadeOut();
 		});
 	});
 
