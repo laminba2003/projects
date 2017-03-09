@@ -78,6 +78,7 @@
 	border : 1px solid #f3dcdc;
 	width : auto;
 	height: 30px;
+	margin-left : -1px;
 }
 
 .watcher .singer span.subscribe-button {
