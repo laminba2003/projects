@@ -279,8 +279,8 @@ const getLatestVideos = channel => {
 				 return false;
 			 });
 		  });
-	   },false);
-	},false);	
+	   },true);
+	},true);	
 };
 window.addEventListener('popstate', e => {
 	   const state = e.state;
