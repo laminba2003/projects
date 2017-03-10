@@ -177,7 +177,7 @@ const getMoreVideos = (channelId,token) => {
 const getComments = (video,options) => {
 	app.get("https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&videoId="+video.videoId+"&part=snippet,replies&maxResults=3",result => {
 	  var comments = new Array();
-  	  length = result.items.length;
+  	  const length = result.items.length;
   	  for(var i=0;i<length;i++) {
   		      const comment = {author : result.items[i].snippet.topLevelComment.snippet.authorDisplayName, 
   			    	  date : new Date(result.items[i].snippet.topLevelComment.snippet.publishedAt).toLocaleDateString("en-US",options),
