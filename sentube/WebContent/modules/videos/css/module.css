@@ -14,7 +14,7 @@
 }
 
 .video-info .author a {
-    color:#000;vertical-align:top;font-weight:bold;font-size:85%;
+    color:#000;vertical-align:top;font-weight:bold;font-size:85%;text-shadow: 1px 1px 30px #040404;
 }
 
 .photo {
@@ -606,7 +606,7 @@ a.show-more {
 }
 
 .thumbnails h1 {
-	margin-left :-1.9px;margin-bottom:0.46em;margin-top : 0.37px;
+	margin-left :-1.9px;margin-bottom:0.46em;margin-top : 0.37px;text-shadow: 1px 1px 70px #e8abab;
 }
 
 .thumbnail .index {
