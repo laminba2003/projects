@@ -126,7 +126,7 @@ const display = (div,title,videos) => {
 	 videos = new Array();
 	 videos.push({id : "xSauTBKoOqE", title : "Empire Of The Sun - Celebrate"});
 	 videos.push({id : "MEkS_mQ0GlI", title : "Kerli - Zero Gravity"});
-	 videos.push({id : "PT4ryVop_Fc", title : "Florida Georgia Line - May We All"});
+	 videos.push({id : "m_8f9BwFZ4k", title : "Stan Walker - Music Won't Break Your Heart"});
 	 videos.push({id : "cHiX35MNEaU", title : "I blame Coco - In Spirit Golden"});
 	 videos.push({id : "qFLhGq0060w", title : "The Weeknd, Daft Punk - I Feel It Coming"});
 	 videos.push({id : "7wtfhZwyrcc", title : "Imagine Dragons - Believer"});
