@@ -56,7 +56,10 @@ const getChannelInfo = (video,channelId,cache) => {
 			    var scrollAmount = $(window).scrollTop();
 			    var documentHeight = $(document).height();
 			    var scrollPercent = (scrollAmount / documentHeight) * 100;
-			    if(scrollPercent > 10 && !video.channel.showLatestVideos && !cache) getLatestVideos(video.channel);;
+			    if(scrollPercent > 10 && !video.channel.showLatestVideos && !cache) {
+			    	video.channel.showLatestVideos = true;
+			    	getLatestVideos(video.channel);
+			    }
 			});
 		}
 	},true);	
@@ -252,7 +255,6 @@ const getComments = (video,options) => {
 
 const getLatestVideos = channel => {
 	app.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBaYaWQcSP8P1Dau3kxDitRo7W9VA4EOPg&channelId="+channel.id+"&type=video&part=snippet&order=date&maxResults=12",result => {
-		channel.showLatestVideos = true;
 		const videos = new Array();
 		var length = result.items.length, id = "";
 	    for(var i=0;i<length;i++) {
